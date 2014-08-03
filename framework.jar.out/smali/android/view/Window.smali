@@ -1168,6 +1168,41 @@
     return-void
 .end method
 
+.method public setExtraFlags(II)V
+    .locals 3
+    .parameter "flags"
+    .parameter "mask"
+
+    .prologue
+    invoke-virtual {p0}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+
+    move-result-object v0
+
+    .local v0, attrs:Landroid/view/WindowManager$LayoutParams;
+    iget v1, v0, Landroid/view/WindowManager$LayoutParams;->extraFlags:I
+
+    xor-int/lit8 v2, p2, -0x1
+
+    and-int/2addr v1, v2
+
+    and-int v2, p1, p2
+
+    or-int/2addr v1, v2
+
+    iput v1, v0, Landroid/view/WindowManager$LayoutParams;->extraFlags:I
+
+    iget-object v1, p0, Landroid/view/Window;->mCallback:Landroid/view/Window$Callback;
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Landroid/view/Window;->mCallback:Landroid/view/Window$Callback;
+
+    invoke-interface {v1, v0}, Landroid/view/Window$Callback;->onWindowAttributesChanged(Landroid/view/WindowManager$LayoutParams;)V
+
+    :cond_0
+    return-void
+.end method
+
 .method public abstract setFeatureDrawable(ILandroid/graphics/drawable/Drawable;)V
 .end method
 
@@ -1602,39 +1637,4 @@
 .end method
 
 .method public abstract togglePanel(ILandroid/view/KeyEvent;)V
-.end method
-
-.method public setExtraFlags(II)V
-    .locals 3
-    .parameter "flags"
-    .parameter "mask"
-
-    .prologue
-    invoke-virtual {p0}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
-
-    move-result-object v0
-
-    .local v0, attrs:Landroid/view/WindowManager$LayoutParams;
-    iget v1, v0, Landroid/view/WindowManager$LayoutParams;->extraFlags:I
-
-    xor-int/lit8 v2, p2, -0x1
-
-    and-int/2addr v1, v2
-
-    and-int v2, p1, p2
-
-    or-int/2addr v1, v2
-
-    iput v1, v0, Landroid/view/WindowManager$LayoutParams;->extraFlags:I
-
-    iget-object v1, p0, Landroid/view/Window;->mCallback:Landroid/view/Window$Callback;
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Landroid/view/Window;->mCallback:Landroid/view/Window$Callback;
-
-    invoke-interface {v1, v0}, Landroid/view/Window$Callback;->onWindowAttributesChanged(Landroid/view/WindowManager$LayoutParams;)V
-
-    :cond_0
-    return-void
 .end method

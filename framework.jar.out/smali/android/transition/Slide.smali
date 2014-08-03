@@ -96,7 +96,7 @@
     .local v0, anim:Landroid/animation/ObjectAnimator;
     sget-object v2, Landroid/transition/Slide;->sDecelerator:Landroid/animation/TimeInterpolator;
 
-    invoke-virtual {v0, v2}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+    invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
     return-object v0
 
@@ -156,7 +156,7 @@
     .local v0, anim:Landroid/animation/ObjectAnimator;
     sget-object v2, Landroid/transition/Slide;->sAccelerator:Landroid/animation/TimeInterpolator;
 
-    invoke-virtual {v0, v2}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+    invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
     return-object v0
 

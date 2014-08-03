@@ -1758,7 +1758,7 @@
 
     move/from16 v1, v35
 
-    invoke-virtual {v0, v1}, Ljava/net/HttpURLConnection;->setConnectTimeout(I)V
+    invoke-virtual {v0, v1}, Ljava/net/URLConnection;->setConnectTimeout(I)V
 
     const/16 v35, 0x1388
 
@@ -1766,7 +1766,7 @@
 
     move/from16 v1, v35
 
-    invoke-virtual {v0, v1}, Ljava/net/HttpURLConnection;->setReadTimeout(I)V
+    invoke-virtual {v0, v1}, Ljava/net/URLConnection;->setReadTimeout(I)V
 
     const/16 v35, 0x0
 
@@ -1774,7 +1774,7 @@
 
     move/from16 v1, v35
 
-    invoke-virtual {v0, v1}, Ljava/net/HttpURLConnection;->setUseCaches(Z)V
+    invoke-virtual {v0, v1}, Ljava/net/URLConnection;->setUseCaches(Z)V
 
     const/16 v35, 0x0
 
@@ -1782,7 +1782,7 @@
 
     move/from16 v1, v35
 
-    invoke-virtual {v0, v1}, Ljava/net/HttpURLConnection;->setAllowUserInteraction(Z)V
+    invoke-virtual {v0, v1}, Ljava/net/URLConnection;->setAllowUserInteraction(Z)V
 
     const-string v35, "Connection"
 
@@ -1794,14 +1794,14 @@
 
     move-object/from16 v2, v36
 
-    invoke-virtual {v0, v1, v2}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, v2}, Ljava/net/URLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual/range {v33 .. v33}, Ljava/net/HttpURLConnection;->getResponseCode()I
 
     move-result v28
 
     .local v28, responseCode:I
-    invoke-virtual/range {v33 .. v33}, Ljava/net/HttpURLConnection;->getHeaderFields()Ljava/util/Map;
+    invoke-virtual/range {v33 .. v33}, Ljava/net/URLConnection;->getHeaderFields()Ljava/util/Map;
 
     move-result-object v13
 
@@ -2593,7 +2593,7 @@
     move-exception v0
 
     .local v0, e:Ljava/lang/InterruptedException;
-    invoke-virtual {v0}, Ljava/lang/InterruptedException;->printStackTrace()V
+    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_0
 .end method

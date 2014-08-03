@@ -351,7 +351,7 @@
 
     move-result-wide v3
 
-    invoke-virtual {v1, v2, v3, v4}, Lcom/android/internal/widget/WaveView;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v1, v2, v3, v4}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
 
     goto :goto_1
 .end method

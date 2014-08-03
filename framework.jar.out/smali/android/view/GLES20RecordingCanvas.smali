@@ -107,7 +107,7 @@
     .parameter "nativeDisplayList"
 
     .prologue
-    invoke-virtual {p0, p1}, Landroid/view/GLES20RecordingCanvas;->getDisplayList(I)I
+    invoke-virtual {p0, p1}, Landroid/view/GLES20Canvas;->getDisplayList(I)I
 
     move-result v0
 
@@ -122,7 +122,7 @@
 
     iput-object v0, p0, Landroid/view/GLES20RecordingCanvas;->mDisplayList:Landroid/view/GLES20DisplayList;
 
-    invoke-virtual {p0}, Landroid/view/GLES20RecordingCanvas;->resetDisplayListRenderer()V
+    invoke-virtual {p0}, Landroid/view/GLES20Canvas;->resetDisplayListRenderer()V
 
     sget-object v0, Landroid/view/GLES20RecordingCanvas;->sPool:Landroid/util/Pools$SynchronizedPool;
 

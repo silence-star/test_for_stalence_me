@@ -3,9 +3,9 @@
 .source "VolumePanel.java"
 
 # interfaces
-.implements Landroid/widget/SeekBar$OnSeekBarChangeListener;
-.implements Landroid/view/View$OnClickListener;
 .implements Landroid/media/VolumeController;
+.implements Landroid/view/View$OnClickListener;
+.implements Landroid/widget/SeekBar$OnSeekBarChangeListener;
 
 
 # annotations
@@ -407,11 +407,11 @@
 
     const/4 v9, -0x2
 
-    iput v9, v2, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v9, v2, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     const/4 v9, -0x2
 
-    iput v9, v2, Landroid/view/WindowManager$LayoutParams;->height:I
+    iput v9, v2, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     iget v9, v2, Landroid/view/WindowManager$LayoutParams;->privateFlags:I
 
@@ -820,13 +820,13 @@
 
     iget-object v7, v4, Landroid/view/VolumePanel$StreamControl;->group:Landroid/view/ViewGroup;
 
-    invoke-virtual {v7, v4}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v7, v4}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
     iget-object v7, v4, Landroid/view/VolumePanel$StreamControl;->group:Landroid/view/ViewGroup;
 
     const v8, 0x10202eb
 
-    invoke-virtual {v7, v8}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v7, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v7
 
@@ -836,7 +836,7 @@
 
     iget-object v7, v4, Landroid/view/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
 
-    invoke-virtual {v7, v4}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v7, v4}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
     iget-object v7, v4, Landroid/view/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
 
@@ -846,7 +846,7 @@
 
     move-result-object v8
 
-    invoke-virtual {v7, v8}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {v7, v8}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
 
     iget v7, v5, Landroid/view/VolumePanel$StreamResources;->iconRes:I
 
@@ -866,7 +866,7 @@
 
     const v8, 0x10202ec
 
-    invoke-virtual {v7, v8}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v7, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v7
 
@@ -893,7 +893,7 @@
 
     add-int/2addr v8, v2
 
-    invoke-virtual {v7, v8}, Landroid/widget/SeekBar;->setMax(I)V
+    invoke-virtual {v7, v8}, Landroid/widget/AbsSeekBar;->setMax(I)V
 
     iget-object v7, v4, Landroid/view/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
 
@@ -901,7 +901,7 @@
 
     iget-object v7, v4, Landroid/view/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
 
-    invoke-virtual {v7, v4}, Landroid/widget/SeekBar;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v7, v4}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
     iget-object v7, p0, Landroid/view/VolumePanel;->mStreamControls:Ljava/util/HashMap;
 
@@ -979,13 +979,13 @@
     .prologue
     const/4 v0, 0x5
 
-    invoke-virtual {p0, v0}, Landroid/view/VolumePanel;->removeMessages(I)V
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->removeMessages(I)V
 
-    invoke-virtual {p0, v0}, Landroid/view/VolumePanel;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Landroid/view/VolumePanel;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     return-void
 .end method
@@ -1338,7 +1338,7 @@
 
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->setVisibility(I)V
+    invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
     invoke-direct {p0, v0}, Landroid/view/VolumePanel;->updateSlider(Landroid/view/VolumePanel$StreamControl;)V
 
@@ -1351,15 +1351,15 @@
     .prologue
     const/4 v0, 0x5
 
-    invoke-virtual {p0, v0}, Landroid/view/VolumePanel;->removeMessages(I)V
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->removeMessages(I)V
 
-    invoke-virtual {p0, v0}, Landroid/view/VolumePanel;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
     const-wide/16 v1, 0xbb8
 
-    invoke-virtual {p0, v0, v1, v2}, Landroid/view/VolumePanel;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {p0, v0, v1, v2}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     return-void
 .end method
@@ -1467,7 +1467,7 @@
 
     move-result v2
 
-    invoke-virtual {v1, v2}, Landroid/widget/SeekBar;->setProgress(I)V
+    invoke-virtual {v1, v2}, Landroid/widget/ProgressBar;->setProgress(I)V
 
     iget v1, p1, Landroid/view/VolumePanel$StreamControl;->streamType:I
 
@@ -1527,7 +1527,7 @@
 
     iget-object v1, p1, Landroid/view/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
 
-    invoke-virtual {v1, v3}, Landroid/widget/SeekBar;->setEnabled(Z)V
+    invoke-virtual {v1, v3}, Landroid/view/View;->setEnabled(Z)V
 
     :goto_1
     return-void
@@ -1560,14 +1560,14 @@
 
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v2}, Landroid/widget/SeekBar;->setEnabled(Z)V
+    invoke-virtual {v1, v2}, Landroid/view/View;->setEnabled(Z)V
 
     goto :goto_1
 
     :cond_6
     iget-object v1, p1, Landroid/view/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
 
-    invoke-virtual {v1, v3}, Landroid/widget/SeekBar;->setEnabled(Z)V
+    invoke-virtual {v1, v3}, Landroid/view/View;->setEnabled(Z)V
 
     goto :goto_1
 .end method
@@ -1658,7 +1658,7 @@
 
     sget-object v0, Landroid/view/VolumePanel;->sConfirmSafeVolumeDialog:Landroid/app/AlertDialog;
 
-    invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
+    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
     :cond_2
     monitor-exit v1
@@ -1839,11 +1839,11 @@
     .local v0, warning:Landroid/view/VolumePanel$WarningDialogReceiver;
     sget-object v1, Landroid/view/VolumePanel;->sConfirmSafeVolumeDialog:Landroid/app/AlertDialog;
 
-    invoke-virtual {v1, v0}, Landroid/app/AlertDialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
+    invoke-virtual {v1, v0}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
     sget-object v1, Landroid/view/VolumePanel;->sConfirmSafeVolumeDialog:Landroid/app/AlertDialog;
 
-    invoke-virtual {v1}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {v1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
@@ -2032,13 +2032,13 @@
     .prologue
     const/4 v2, 0x3
 
-    invoke-virtual {p0, v2}, Landroid/view/VolumePanel;->hasMessages(I)Z
+    invoke-virtual {p0, v2}, Landroid/os/Handler;->hasMessages(I)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    invoke-virtual {p0, v2}, Landroid/view/VolumePanel;->removeMessages(I)V
+    invoke-virtual {p0, v2}, Landroid/os/Handler;->removeMessages(I)V
 
     invoke-virtual {p0}, Landroid/view/VolumePanel;->onStopSounds()V
 
@@ -2059,13 +2059,13 @@
 
     const/4 v1, 0x3
 
-    invoke-virtual {p0, v1}, Landroid/view/VolumePanel;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {p0, v1}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v1
 
     const-wide/16 v2, 0x96
 
-    invoke-virtual {p0, v1, v2, v3}, Landroid/view/VolumePanel;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {p0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     :cond_1
     monitor-exit p0
@@ -2090,7 +2090,7 @@
     .parameter "fromUser"
 
     .prologue
-    invoke-virtual {p1}, Landroid/widget/SeekBar;->getTag()Ljava/lang/Object;
+    invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -2225,39 +2225,39 @@
 
     if-nez v0, :cond_4
 
-    invoke-virtual {p0, v4}, Landroid/view/VolumePanel;->removeMessages(I)V
+    invoke-virtual {p0, v4}, Landroid/os/Handler;->removeMessages(I)V
 
-    invoke-virtual {p0, v4, p1, p2}, Landroid/view/VolumePanel;->obtainMessage(III)Landroid/os/Message;
+    invoke-virtual {p0, v4, p1, p2}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v0
 
     const-wide/16 v1, 0x12c
 
-    invoke-virtual {p0, v0, v1, v2}, Landroid/view/VolumePanel;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {p0, v0, v1, v2}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     :cond_4
     and-int/lit8 v0, p2, 0x8
 
     if-eqz v0, :cond_5
 
-    invoke-virtual {p0, v4}, Landroid/view/VolumePanel;->removeMessages(I)V
+    invoke-virtual {p0, v4}, Landroid/os/Handler;->removeMessages(I)V
 
     const/4 v0, 0x4
 
-    invoke-virtual {p0, v0}, Landroid/view/VolumePanel;->removeMessages(I)V
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->removeMessages(I)V
 
     invoke-virtual {p0}, Landroid/view/VolumePanel;->onStopSounds()V
 
     :cond_5
-    invoke-virtual {p0, v5}, Landroid/view/VolumePanel;->removeMessages(I)V
+    invoke-virtual {p0, v5}, Landroid/os/Handler;->removeMessages(I)V
 
-    invoke-virtual {p0, v5}, Landroid/view/VolumePanel;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {p0, v5}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
     const-wide/16 v1, 0x2710
 
-    invoke-virtual {p0, v0, v1, v2}, Landroid/view/VolumePanel;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {p0, v0, v1, v2}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     invoke-direct {p0}, Landroid/view/VolumePanel;->resetTimeout()V
 
@@ -2421,7 +2421,7 @@
 
     iget-object v5, v3, Landroid/view/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
 
-    invoke-virtual {v5}, Landroid/widget/SeekBar;->getMax()I
+    invoke-virtual {v5}, Landroid/widget/ProgressBar;->getMax()I
 
     move-result v5
 
@@ -2429,12 +2429,12 @@
 
     iget-object v5, v3, Landroid/view/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
 
-    invoke-virtual {v5, v1}, Landroid/widget/SeekBar;->setMax(I)V
+    invoke-virtual {v5, v1}, Landroid/widget/AbsSeekBar;->setMax(I)V
 
     :cond_2
     iget-object v5, v3, Landroid/view/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
 
-    invoke-virtual {v5, v0}, Landroid/widget/SeekBar;->setProgress(I)V
+    invoke-virtual {v5, v0}, Landroid/widget/ProgressBar;->setProgress(I)V
 
     and-int/lit8 v5, p2, 0x20
 
@@ -2464,7 +2464,7 @@
     :cond_4
     iget-object v5, v3, Landroid/view/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
 
-    invoke-virtual {v5, v10}, Landroid/widget/SeekBar;->setEnabled(Z)V
+    invoke-virtual {v5, v10}, Landroid/view/View;->setEnabled(Z)V
 
     :cond_5
     :goto_1
@@ -2529,13 +2529,13 @@
 
     const/4 v5, 0x4
 
-    invoke-virtual {p0, v5}, Landroid/view/VolumePanel;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {p0, v5}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v5
 
     const-wide/16 v6, 0x12c
 
-    invoke-virtual {p0, v5, v6, v7}, Landroid/view/VolumePanel;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {p0, v5, v6, v7}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     :cond_8
     return-void
@@ -2660,7 +2660,7 @@
     :cond_a
     iget-object v5, v3, Landroid/view/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
 
-    invoke-virtual {v5, v8}, Landroid/widget/SeekBar;->setEnabled(Z)V
+    invoke-virtual {v5, v8}, Landroid/view/View;->setEnabled(Z)V
 
     goto/16 :goto_1
 
@@ -2869,7 +2869,7 @@
     .prologue
     const/16 v3, -0xc8
 
-    invoke-virtual {p1}, Landroid/widget/SeekBar;->getTag()Ljava/lang/Object;
+    invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -2891,7 +2891,7 @@
 
     move-result v2
 
-    invoke-virtual {p1, v2}, Landroid/widget/SeekBar;->setProgress(I)V
+    invoke-virtual {p1, v2}, Landroid/widget/ProgressBar;->setProgress(I)V
 
     .end local v0           #sc:Landroid/view/VolumePanel$StreamControl;
     :cond_0
@@ -3007,39 +3007,39 @@
 
     if-nez v0, :cond_3
 
-    invoke-virtual {p0, v3}, Landroid/view/VolumePanel;->removeMessages(I)V
+    invoke-virtual {p0, v3}, Landroid/os/Handler;->removeMessages(I)V
 
-    invoke-virtual {p0, v3, p1, p2}, Landroid/view/VolumePanel;->obtainMessage(III)Landroid/os/Message;
+    invoke-virtual {p0, v3, p1, p2}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v0
 
     const-wide/16 v1, 0x12c
 
-    invoke-virtual {p0, v0, v1, v2}, Landroid/view/VolumePanel;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {p0, v0, v1, v2}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     :cond_3
     and-int/lit8 v0, p2, 0x8
 
     if-eqz v0, :cond_4
 
-    invoke-virtual {p0, v3}, Landroid/view/VolumePanel;->removeMessages(I)V
+    invoke-virtual {p0, v3}, Landroid/os/Handler;->removeMessages(I)V
 
     const/4 v0, 0x4
 
-    invoke-virtual {p0, v0}, Landroid/view/VolumePanel;->removeMessages(I)V
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->removeMessages(I)V
 
     invoke-virtual {p0}, Landroid/view/VolumePanel;->onStopSounds()V
 
     :cond_4
-    invoke-virtual {p0, v4}, Landroid/view/VolumePanel;->removeMessages(I)V
+    invoke-virtual {p0, v4}, Landroid/os/Handler;->removeMessages(I)V
 
-    invoke-virtual {p0, v4}, Landroid/view/VolumePanel;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {p0, v4}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
     const-wide/16 v1, 0x2710
 
-    invoke-virtual {p0, v0, v1, v2}, Landroid/view/VolumePanel;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {p0, v0, v1, v2}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     invoke-direct {p0}, Landroid/view/VolumePanel;->resetTimeout()V
 
@@ -3063,7 +3063,7 @@
     .prologue
     const/16 v1, 0xb
 
-    invoke-virtual {p0, v1}, Landroid/view/VolumePanel;->hasMessages(I)Z
+    invoke-virtual {p0, v1}, Landroid/os/Handler;->hasMessages(I)Z
 
     move-result v0
 
@@ -3075,7 +3075,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v1, p1, v0}, Landroid/view/VolumePanel;->obtainMessage(III)Landroid/os/Message;
+    invoke-virtual {p0, v1, p1, v0}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v0
 
@@ -3090,7 +3090,7 @@
     .prologue
     const/16 v1, 0x9
 
-    invoke-virtual {p0, v1}, Landroid/view/VolumePanel;->hasMessages(I)Z
+    invoke-virtual {p0, v1}, Landroid/os/Handler;->hasMessages(I)Z
 
     move-result v0
 
@@ -3100,7 +3100,7 @@
     return-void
 
     :cond_0
-    invoke-virtual {p0, v1}, Landroid/view/VolumePanel;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {p0, v1}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
@@ -3141,7 +3141,7 @@
     .prologue
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Landroid/view/VolumePanel;->hasMessages(I)Z
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->hasMessages(I)Z
 
     move-result v0
 
@@ -3167,11 +3167,11 @@
 
     const/4 v0, 0x1
 
-    invoke-virtual {p0, v0}, Landroid/view/VolumePanel;->removeMessages(I)V
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->removeMessages(I)V
 
     const/4 v0, 0x7
 
-    invoke-virtual {p0, v0, p1, p2}, Landroid/view/VolumePanel;->obtainMessage(III)Landroid/os/Message;
+    invoke-virtual {p0, v0, p1, p2}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v0
 
@@ -3204,7 +3204,7 @@
     const/4 v0, 0x1
 
     :goto_0
-    invoke-virtual {p0, v1, v2, v0}, Landroid/view/VolumePanel;->obtainMessage(III)Landroid/os/Message;
+    invoke-virtual {p0, v1, v2, v0}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v0
 
@@ -3226,7 +3226,7 @@
     .prologue
     const/16 v1, 0x8
 
-    invoke-virtual {p0, v1}, Landroid/view/VolumePanel;->hasMessages(I)Z
+    invoke-virtual {p0, v1}, Landroid/os/Handler;->hasMessages(I)Z
 
     move-result v0
 
@@ -3252,9 +3252,9 @@
 
     const/4 v0, 0x1
 
-    invoke-virtual {p0, v0}, Landroid/view/VolumePanel;->removeMessages(I)V
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->removeMessages(I)V
 
-    invoke-virtual {p0, v1, p1, p2}, Landroid/view/VolumePanel;->obtainMessage(III)Landroid/os/Message;
+    invoke-virtual {p0, v1, p1, p2}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v0
 
@@ -3281,7 +3281,7 @@
     .prologue
     const/4 v1, 0x0
 
-    invoke-virtual {p0, v1}, Landroid/view/VolumePanel;->hasMessages(I)Z
+    invoke-virtual {p0, v1}, Landroid/os/Handler;->hasMessages(I)Z
 
     move-result v0
 
@@ -3307,9 +3307,9 @@
 
     const/4 v0, 0x1
 
-    invoke-virtual {p0, v0}, Landroid/view/VolumePanel;->removeMessages(I)V
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->removeMessages(I)V
 
-    invoke-virtual {p0, v1, p1, p2}, Landroid/view/VolumePanel;->obtainMessage(III)Landroid/os/Message;
+    invoke-virtual {p0, v1, p1, p2}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v0
 
@@ -3335,7 +3335,7 @@
     .prologue
     iget-object v0, p0, Landroid/view/VolumePanel;->mPanel:Landroid/view/ViewGroup;
 
-    invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->setLayoutDirection(I)V
+    invoke-virtual {v0, p1}, Landroid/view/View;->setLayoutDirection(I)V
 
     invoke-virtual {p0}, Landroid/view/VolumePanel;->updateStates()V
 

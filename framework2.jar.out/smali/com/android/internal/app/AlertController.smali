@@ -495,7 +495,7 @@
     .prologue
     const/4 v5, 0x0
 
-    invoke-virtual {p1}, Landroid/widget/Button;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
@@ -510,7 +510,7 @@
 
     iput v3, v1, Landroid/widget/LinearLayout$LayoutParams;->weight:F
 
-    invoke-virtual {p1, v1}, Landroid/widget/Button;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p1, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     iget-object v3, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
@@ -797,7 +797,7 @@
     add-int/lit8 v14, v14, 0x1
 
     :cond_0
-    invoke-virtual/range {p2 .. p2}, Landroid/widget/LinearLayout;->getVisibility()I
+    invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getVisibility()I
 
     move-result v20
 
@@ -1010,7 +1010,7 @@
 
     const/16 v22, 0x1
 
-    invoke-virtual/range {v20 .. v22}, Landroid/widget/ListView;->setItemChecked(IZ)V
+    invoke-virtual/range {v20 .. v22}, Landroid/widget/AbsListView;->setItemChecked(IZ)V
 
     move-object/from16 v0, p0
 
@@ -1093,7 +1093,7 @@
 
     iget-object v6, p0, Lcom/android/internal/app/AlertController;->mButtonHandler:Landroid/view/View$OnClickListener;
 
-    invoke-virtual {v4, v6}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v4, v6}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonPositiveText:Ljava/lang/CharSequence;
 
@@ -1105,7 +1105,7 @@
 
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonPositive:Landroid/widget/Button;
 
-    invoke-virtual {v4, v7}, Landroid/widget/Button;->setVisibility(I)V
+    invoke-virtual {v4, v7}, Landroid/view/View;->setVisibility(I)V
 
     :goto_0
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
@@ -1124,7 +1124,7 @@
 
     iget-object v6, p0, Lcom/android/internal/app/AlertController;->mButtonHandler:Landroid/view/View$OnClickListener;
 
-    invoke-virtual {v4, v6}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v4, v6}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonNegativeText:Ljava/lang/CharSequence;
 
@@ -1136,7 +1136,7 @@
 
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonNegative:Landroid/widget/Button;
 
-    invoke-virtual {v4, v7}, Landroid/widget/Button;->setVisibility(I)V
+    invoke-virtual {v4, v7}, Landroid/view/View;->setVisibility(I)V
 
     :goto_1
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
@@ -1155,7 +1155,7 @@
 
     iget-object v6, p0, Lcom/android/internal/app/AlertController;->mButtonHandler:Landroid/view/View$OnClickListener;
 
-    invoke-virtual {v4, v6}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v4, v6}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonNeutralText:Ljava/lang/CharSequence;
 
@@ -1167,7 +1167,7 @@
 
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonNeutral:Landroid/widget/Button;
 
-    invoke-virtual {v4, v7}, Landroid/widget/Button;->setVisibility(I)V
+    invoke-virtual {v4, v7}, Landroid/view/View;->setVisibility(I)V
 
     :goto_2
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mContext:Landroid/content/Context;
@@ -1198,11 +1198,11 @@
 
     iget-object v6, p0, Lcom/android/internal/app/AlertController;->mButtonPositiveText:Ljava/lang/CharSequence;
 
-    invoke-virtual {v4, v6}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v4, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonPositive:Landroid/widget/Button;
 
-    invoke-virtual {v4, v5}, Landroid/widget/Button;->setVisibility(I)V
+    invoke-virtual {v4, v5}, Landroid/view/View;->setVisibility(I)V
 
     or-int/2addr v3, v2
 
@@ -1213,11 +1213,11 @@
 
     iget-object v6, p0, Lcom/android/internal/app/AlertController;->mButtonNegativeText:Ljava/lang/CharSequence;
 
-    invoke-virtual {v4, v6}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v4, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonNegative:Landroid/widget/Button;
 
-    invoke-virtual {v4, v5}, Landroid/widget/Button;->setVisibility(I)V
+    invoke-virtual {v4, v5}, Landroid/view/View;->setVisibility(I)V
 
     or-int/2addr v3, v0
 
@@ -1228,11 +1228,11 @@
 
     iget-object v6, p0, Lcom/android/internal/app/AlertController;->mButtonNeutralText:Ljava/lang/CharSequence;
 
-    invoke-virtual {v4, v6}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v4, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonNeutral:Landroid/widget/Button;
 
-    invoke-virtual {v4, v5}, Landroid/widget/Button;->setVisibility(I)V
+    invoke-virtual {v4, v5}, Landroid/view/View;->setVisibility(I)V
 
     or-int/2addr v3, v1
 
@@ -1287,7 +1287,7 @@
 
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mScrollView:Landroid/widget/ScrollView;
 
-    invoke-virtual {v0, v3}, Landroid/widget/ScrollView;->setFocusable(Z)V
+    invoke-virtual {v0, v3}, Landroid/view/View;->setFocusable(Z)V
 
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
@@ -1324,13 +1324,13 @@
     :cond_1
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mMessageView:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v4}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v0, v4}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mScrollView:Landroid/widget/ScrollView;
 
     iget-object v1, p0, Lcom/android/internal/app/AlertController;->mMessageView:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v1}, Landroid/widget/ScrollView;->removeView(Landroid/view/View;)V
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mListView:Landroid/widget/ListView;
 
@@ -1342,7 +1342,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Landroid/widget/LinearLayout;->removeView(Landroid/view/View;)V
+    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mListView:Landroid/widget/ListView;
 
@@ -1350,7 +1350,7 @@
 
     invoke-direct {v1, v2, v2}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
 
-    invoke-virtual {p1, v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p1, v0, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
 
@@ -1358,12 +1358,12 @@
 
     invoke-direct {v0, v2, v3, v1}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
 
-    invoke-virtual {p1, v0}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     goto :goto_0
 
     :cond_2
-    invoke-virtual {p1, v4}, Landroid/widget/LinearLayout;->setVisibility(I)V
+    invoke-virtual {p1, v4}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_0
 .end method
@@ -1397,7 +1397,7 @@
     .local v2, lp:Landroid/widget/LinearLayout$LayoutParams;
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mCustomTitleView:Landroid/view/View;
 
-    invoke-virtual {p1, v4, v0, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p1, v4, v0, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
@@ -1493,25 +1493,25 @@
 
     iget-object v5, p0, Lcom/android/internal/app/AlertController;->mIconView:Landroid/widget/ImageView;
 
-    invoke-virtual {v5}, Landroid/widget/ImageView;->getPaddingLeft()I
+    invoke-virtual {v5}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v5
 
     iget-object v6, p0, Lcom/android/internal/app/AlertController;->mIconView:Landroid/widget/ImageView;
 
-    invoke-virtual {v6}, Landroid/widget/ImageView;->getPaddingTop()I
+    invoke-virtual {v6}, Landroid/view/View;->getPaddingTop()I
 
     move-result v6
 
     iget-object v7, p0, Lcom/android/internal/app/AlertController;->mIconView:Landroid/widget/ImageView;
 
-    invoke-virtual {v7}, Landroid/widget/ImageView;->getPaddingRight()I
+    invoke-virtual {v7}, Landroid/view/View;->getPaddingRight()I
 
     move-result v7
 
     iget-object v8, p0, Lcom/android/internal/app/AlertController;->mIconView:Landroid/widget/ImageView;
 
-    invoke-virtual {v8}, Landroid/widget/ImageView;->getPaddingBottom()I
+    invoke-virtual {v8}, Landroid/view/View;->getPaddingBottom()I
 
     move-result v8
 
@@ -1537,7 +1537,7 @@
 
     invoke-virtual {v4, v9}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    invoke-virtual {p1, v9}, Landroid/widget/LinearLayout;->setVisibility(I)V
+    invoke-virtual {p1, v9}, Landroid/view/View;->setVisibility(I)V
 
     const/4 v1, 0x0
 
@@ -1659,7 +1659,7 @@
 
     invoke-direct {v10, v11, v12}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
-    invoke-virtual {v8, v0, v10}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v8, v0, v10}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     iget-boolean v0, p0, Lcom/android/internal/app/AlertController;->mViewSpacingSpecified:Z
 
@@ -1673,14 +1673,14 @@
 
     iget v12, p0, Lcom/android/internal/app/AlertController;->mViewSpacingBottom:I
 
-    invoke-virtual {v8, v0, v10, v11, v12}, Landroid/widget/FrameLayout;->setPadding(IIII)V
+    invoke-virtual {v8, v0, v10, v11, v12}, Landroid/view/View;->setPadding(IIII)V
 
     :cond_1
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mListView:Landroid/widget/ListView;
 
     if-eqz v0, :cond_2
 
-    invoke-virtual {v3}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
@@ -1885,11 +1885,11 @@
 
     iget-object v2, p0, Lcom/android/internal/app/AlertController;->mAnimationDrawable:Landroid/graphics/drawable/AnimationDrawable;
 
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v1, v2}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     const-wide/16 v1, 0x190
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/ScaleAnimation;->setDuration(J)V
+    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
 
     new-instance v1, Landroid/view/animation/OvershootInterpolator;
 
@@ -1897,7 +1897,7 @@
 
     invoke-direct {v1, v2}, Landroid/view/animation/OvershootInterpolator;-><init>(F)V
 
-    invoke-virtual {v0, v1}, Landroid/view/animation/ScaleAnimation;->setInterpolator(Landroid/view/animation/Interpolator;)V
+    invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
     :goto_0
     iget-object v1, p0, Lcom/android/internal/app/AlertController;->mMainView:Landroid/view/View;
@@ -1908,7 +1908,7 @@
 
     invoke-direct {v1, p0, v9}, Lcom/android/internal/app/AlertController$3;-><init>(Lcom/android/internal/app/AlertController;I)V
 
-    invoke-virtual {v0, v1}, Landroid/view/animation/ScaleAnimation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
+    invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
     return-void
 
@@ -1917,17 +1917,17 @@
 
     const v2, 0x10804b6
 
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setBackgroundResource(I)V
+    invoke-virtual {v1, v2}, Landroid/view/View;->setBackgroundResource(I)V
 
     const-wide/16 v1, 0x96
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/ScaleAnimation;->setDuration(J)V
+    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
 
     new-instance v1, Landroid/view/animation/AccelerateInterpolator;
 
     invoke-direct {v1}, Landroid/view/animation/AccelerateInterpolator;-><init>()V
 
-    invoke-virtual {v0, v1}, Landroid/view/animation/ScaleAnimation;->setInterpolator(Landroid/view/animation/Interpolator;)V
+    invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
     goto :goto_0
 .end method

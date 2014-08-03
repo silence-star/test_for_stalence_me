@@ -308,7 +308,7 @@
 
     invoke-direct {v0, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, p0}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v0, p0}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -330,7 +330,7 @@
 
     :cond_0
     :try_start_0
-    invoke-virtual {p0}, Ljava/security/cert/X509Certificate;->getEncoded()[B
+    invoke-virtual {p0}, Ljava/security/cert/Certificate;->getEncoded()[B
 
     move-result-object v0
 
@@ -423,7 +423,7 @@
 
     invoke-direct {v1, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, p0}, Ljava/text/SimpleDateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
+    invoke-virtual {v1, p0}, Ljava/text/DateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
     :try_end_0
     .catch Ljava/text/ParseException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -615,7 +615,7 @@
     :try_start_0
     const-string v2, "x509-certificate"
 
-    invoke-virtual {v1}, Ljava/security/cert/X509Certificate;->getEncoded()[B
+    invoke-virtual {v1}, Ljava/security/cert/Certificate;->getEncoded()[B
 
     move-result-object v3
 

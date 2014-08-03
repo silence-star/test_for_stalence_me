@@ -299,7 +299,7 @@
 
     sget-object v1, Lcom/android/internal/telephony/cat/CatService$1;->$SwitchMap$com$android$internal$telephony$cat$AppInterface$CommandType:[I
 
-    invoke-virtual {v0}, Lcom/android/internal/telephony/cat/AppInterface$CommandType;->ordinal()I
+    invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
 
     move-result v2
 
@@ -733,7 +733,7 @@
 
     sget-object v0, Lcom/android/internal/telephony/cat/CatService;->mhandlerThread:Landroid/os/HandlerThread;
 
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
     new-instance v0, Lcom/android/internal/telephony/cat/CatService;
 
@@ -930,7 +930,7 @@
 
     iget-object v4, p1, Lcom/android/internal/telephony/cat/CatResponseMessage;->mResCode:Lcom/android/internal/telephony/cat/ResultCode;
 
-    invoke-virtual {v4}, Lcom/android/internal/telephony/cat/ResultCode;->ordinal()I
+    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
 
     move-result v4
 
@@ -946,7 +946,7 @@
     :pswitch_1
     sget-object v2, Lcom/android/internal/telephony/cat/CatService$1;->$SwitchMap$com$android$internal$telephony$cat$AppInterface$CommandType:[I
 
-    invoke-virtual {v9}, Lcom/android/internal/telephony/cat/AppInterface$CommandType;->ordinal()I
+    invoke-virtual {v9}, Ljava/lang/Enum;->ordinal()I
 
     move-result v4
 
@@ -1228,7 +1228,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lcom/android/internal/telephony/cat/AppInterface$CommandType;->name()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object v2
 
@@ -1251,7 +1251,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lcom/android/internal/telephony/cat/AppInterface$CommandType;->ordinal()I
+    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
 
     move-result v3
 
@@ -2809,7 +2809,7 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cat/CatService;->removeCallbacksAndMessages(Ljava/lang/Object;)V
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
     monitor-exit v1
 
@@ -3201,7 +3201,7 @@
     const/4 v1, 0x6
 
     :try_start_0
-    invoke-virtual {p0, v1, p1}, Lcom/android/internal/telephony/cat/CatService;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {p0, v1, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 

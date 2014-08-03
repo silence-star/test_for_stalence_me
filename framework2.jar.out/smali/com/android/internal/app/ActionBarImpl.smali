@@ -576,7 +576,7 @@
 
     if-eqz v1, :cond_1
 
-    invoke-virtual {v0, v3}, Lcom/android/internal/widget/ScrollingTabContainerView;->setVisibility(I)V
+    invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v1, p0, Lcom/android/internal/app/ActionBarImpl;->mActionView:Lcom/android/internal/widget/ActionBarView;
 
@@ -596,7 +596,7 @@
 
     if-ne v1, v2, :cond_3
 
-    invoke-virtual {v0, v3}, Lcom/android/internal/widget/ScrollingTabContainerView;->setVisibility(I)V
+    invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v1, p0, Lcom/android/internal/app/ActionBarImpl;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
@@ -604,7 +604,7 @@
 
     iget-object v1, p0, Lcom/android/internal/app/ActionBarImpl;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
-    invoke-virtual {v1}, Lcom/android/internal/widget/ActionBarOverlayLayout;->requestFitSystemWindows()V
+    invoke-virtual {v1}, Landroid/view/View;->requestFitSystemWindows()V
 
     :cond_2
     :goto_2
@@ -617,7 +617,7 @@
     :cond_3
     const/16 v1, 0x8
 
-    invoke-virtual {v0, v1}, Lcom/android/internal/widget/ScrollingTabContainerView;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_2
 .end method
@@ -873,16 +873,16 @@
 
     move-result v3
 
-    if-eqz v3, :cond_miui
+    if-eqz v3, :cond_0
 
     return-void
 
-    :cond_miui
+    :cond_0
     iput-boolean p1, p0, Lcom/android/internal/app/ActionBarImpl;->mHasEmbeddedTabs:Z
 
     iget-boolean v3, p0, Lcom/android/internal/app/ActionBarImpl;->mHasEmbeddedTabs:Z
 
-    if-nez v3, :cond_1
+    if-nez v3, :cond_2
 
     iget-object v3, p0, Lcom/android/internal/app/ActionBarImpl;->mActionView:Lcom/android/internal/widget/ActionBarView;
 
@@ -901,7 +901,7 @@
 
     const/4 v4, 0x2
 
-    if-ne v3, v4, :cond_2
+    if-ne v3, v4, :cond_3
 
     move v0, v1
 
@@ -909,35 +909,35 @@
     :goto_1
     iget-object v3, p0, Lcom/android/internal/app/ActionBarImpl;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_1
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
     iget-boolean v3, p0, Lcom/android/internal/app/ActionBarImpl;->mShowingForMode:Z
 
-    if-nez v3, :cond_3
+    if-nez v3, :cond_4
 
     iget-object v3, p0, Lcom/android/internal/app/ActionBarImpl;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
 
-    invoke-virtual {v3, v2}, Lcom/android/internal/widget/ScrollingTabContainerView;->setVisibility(I)V
+    invoke-virtual {v3, v2}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v3, p0, Lcom/android/internal/app/ActionBarImpl;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_1
 
     iget-object v3, p0, Lcom/android/internal/app/ActionBarImpl;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
-    invoke-virtual {v3}, Lcom/android/internal/widget/ActionBarOverlayLayout;->requestFitSystemWindows()V
+    invoke-virtual {v3}, Landroid/view/View;->requestFitSystemWindows()V
 
-    :cond_0
+    :cond_1
     :goto_2
     iget-object v3, p0, Lcom/android/internal/app/ActionBarImpl;->mActionView:Lcom/android/internal/widget/ActionBarView;
 
     iget-boolean v4, p0, Lcom/android/internal/app/ActionBarImpl;->mHasEmbeddedTabs:Z
 
-    if-nez v4, :cond_4
+    if-nez v4, :cond_5
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     :goto_3
     invoke-virtual {v3, v1}, Lcom/android/internal/widget/ActionBarView;->setCollapsable(Z)V
@@ -945,7 +945,7 @@
     return-void
 
     .end local v0           #isInTabMode:Z
-    :cond_1
+    :cond_2
     iget-object v3, p0, Lcom/android/internal/app/ActionBarImpl;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
     invoke-virtual {v3, v4}, Lcom/android/internal/widget/ActionBarContainer;->setTabContainer(Lcom/android/internal/widget/ScrollingTabContainerView;)V
@@ -958,22 +958,22 @@
 
     goto :goto_0
 
-    :cond_2
+    :cond_3
     move v0, v2
 
     goto :goto_1
 
     .restart local v0       #isInTabMode:Z
-    :cond_3
+    :cond_4
     iget-object v3, p0, Lcom/android/internal/app/ActionBarImpl;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
 
     const/16 v4, 0x8
 
-    invoke-virtual {v3, v4}, Lcom/android/internal/widget/ScrollingTabContainerView;->setVisibility(I)V
+    invoke-virtual {v3, v4}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_2
 
-    :cond_4
+    :cond_5
     move v1, v2
 
     goto :goto_3
@@ -1161,53 +1161,37 @@
 
     const/4 v2, 0x0
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_2
 
     invoke-direct {p0}, Lcom/android/internal/app/ActionBarImpl;->showForActionMode()V
 
     :goto_0
     iget-object v3, p0, Lcom/android/internal/app/ActionBarImpl;->mActionView:Lcom/android/internal/widget/ActionBarView;
 
-    if-eqz p1, :cond_4
+    if-eqz p1, :cond_3
 
     move v0, v1
 
     :goto_1
-    invoke-virtual {v3, v0}, Lcom/android/internal/widget/ActionBarView;->animateToVisibility(I)V
+    invoke-virtual {v3, v0}, Lcom/android/internal/widget/AbsActionBarView;->animateToVisibility(I)V
 
     iget-object v3, p0, Lcom/android/internal/app/ActionBarImpl;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_4
 
     move v0, v2
 
     :goto_2
-    invoke-virtual {v3, v0}, Lcom/android/internal/widget/ActionBarContextView;->animateToVisibility(I)V
+    invoke-virtual {v3, v0}, Lcom/android/internal/widget/AbsActionBarView;->animateToVisibility(I)V
 
     iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mActionView:Lcom/android/internal/widget/ActionBarView;
-
-    invoke-virtual {v0}, Lcom/android/internal/widget/ActionBarView;->hasEmbeddedTabs()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mActionView:Lcom/android/internal/widget/ActionBarView;
-
-    invoke-virtual {v0}, Lcom/android/internal/widget/ActionBarView;->isCollapsed()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
     :cond_0
     iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mActionView:Lcom/android/internal/widget/ActionBarView;
 
@@ -1217,35 +1201,34 @@
 
     const/4 v3, 0x2
 
-    if-ne v0, v3, :cond_2
+    if-ne v0, v3, :cond_1
 
-    :cond_1
     iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
 
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_5
 
     :goto_3
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/ScrollingTabContainerView;->animateToVisibility(I)V
 
-    :cond_2
+    :cond_1
     return-void
 
-    :cond_3
+    :cond_2
     invoke-direct {p0}, Lcom/android/internal/app/ActionBarImpl;->hideForActionMode()V
 
     goto :goto_0
 
-    :cond_4
+    :cond_3
     move v0, v2
 
     goto :goto_1
 
-    :cond_5
+    :cond_4
     move v0, v1
 
     goto :goto_2
 
-    :cond_6
+    :cond_5
     move v1, v2
 
     goto :goto_3
@@ -1353,7 +1336,7 @@
     :cond_1
     iget-object v5, p0, Lcom/android/internal/app/ActionBarImpl;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
-    invoke-virtual {v5, v11}, Lcom/android/internal/widget/ActionBarContainer;->setAlpha(F)V
+    invoke-virtual {v5, v11}, Landroid/view/View;->setAlpha(F)V
 
     iget-object v5, p0, Lcom/android/internal/app/ActionBarImpl;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
@@ -1366,7 +1349,7 @@
     .local v1, anim:Landroid/animation/AnimatorSet;
     iget-object v5, p0, Lcom/android/internal/app/ActionBarImpl;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
-    invoke-virtual {v5}, Lcom/android/internal/widget/ActionBarContainer;->getHeight()I
+    invoke-virtual {v5}, Landroid/view/View;->getHeight()I
 
     move-result v5
 
@@ -1384,7 +1367,7 @@
     .local v4, topLeft:[I
     iget-object v5, p0, Lcom/android/internal/app/ActionBarImpl;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
-    invoke-virtual {v5, v4}, Lcom/android/internal/widget/ActionBarContainer;->getLocationInWindow([I)V
+    invoke-virtual {v5, v4}, Landroid/view/View;->getLocationInWindow([I)V
 
     aget v5, v4, v9
 
@@ -1409,7 +1392,7 @@
     .local v0, a:Landroid/animation/ObjectAnimator;
     iget-object v5, p0, Lcom/android/internal/app/ActionBarImpl;->mUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
-    invoke-virtual {v0, v5}, Landroid/animation/ObjectAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+    invoke-virtual {v0, v5}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
     invoke-virtual {v1, v0}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
 
@@ -1449,7 +1432,7 @@
 
     iget-object v5, p0, Lcom/android/internal/app/ActionBarImpl;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
-    invoke-virtual {v5}, Lcom/android/internal/widget/ActionBarContainer;->getVisibility()I
+    invoke-virtual {v5}, Landroid/view/View;->getVisibility()I
 
     move-result v5
 
@@ -1457,7 +1440,7 @@
 
     iget-object v5, p0, Lcom/android/internal/app/ActionBarImpl;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
-    invoke-virtual {v5, v11}, Lcom/android/internal/widget/ActionBarContainer;->setAlpha(F)V
+    invoke-virtual {v5, v11}, Landroid/view/View;->setAlpha(F)V
 
     iget-object v5, p0, Lcom/android/internal/app/ActionBarImpl;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
@@ -1467,7 +1450,7 @@
 
     iget-object v8, p0, Lcom/android/internal/app/ActionBarImpl;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
-    invoke-virtual {v8}, Lcom/android/internal/widget/ActionBarContainer;->getHeight()I
+    invoke-virtual {v8}, Landroid/view/View;->getHeight()I
 
     move-result v8
 
@@ -1498,7 +1481,7 @@
 
     iget-object v5, p0, Lcom/android/internal/app/ActionBarImpl;->mHideListener:Landroid/animation/Animator$AnimatorListener;
 
-    invoke-virtual {v1, v5}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v1, v5}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     iput-object v1, p0, Lcom/android/internal/app/ActionBarImpl;->mCurrentShowAnim:Landroid/animation/Animator;
 
@@ -1568,11 +1551,11 @@
     :cond_1
     iget-object v5, p0, Lcom/android/internal/app/ActionBarImpl;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
-    invoke-virtual {v5, v8}, Lcom/android/internal/widget/ActionBarContainer;->setTranslationY(F)V
+    invoke-virtual {v5, v8}, Landroid/view/View;->setTranslationY(F)V
 
     iget-object v5, p0, Lcom/android/internal/app/ActionBarImpl;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
-    invoke-virtual {v5}, Lcom/android/internal/widget/ActionBarContainer;->getHeight()I
+    invoke-virtual {v5}, Landroid/view/View;->getHeight()I
 
     move-result v5
 
@@ -1590,7 +1573,7 @@
     .local v4, topLeft:[I
     iget-object v5, p0, Lcom/android/internal/app/ActionBarImpl;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
-    invoke-virtual {v5, v4}, Lcom/android/internal/widget/ActionBarContainer;->getLocationInWindow([I)V
+    invoke-virtual {v5, v4}, Landroid/view/View;->getLocationInWindow([I)V
 
     aget v5, v4, v10
 
@@ -1602,7 +1585,7 @@
     :cond_2
     iget-object v5, p0, Lcom/android/internal/app/ActionBarImpl;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
-    invoke-virtual {v5, v3}, Lcom/android/internal/widget/ActionBarContainer;->setTranslationY(F)V
+    invoke-virtual {v5, v3}, Landroid/view/View;->setTranslationY(F)V
 
     new-instance v1, Landroid/animation/AnimatorSet;
 
@@ -1624,7 +1607,7 @@
     .local v0, a:Landroid/animation/ObjectAnimator;
     iget-object v5, p0, Lcom/android/internal/app/ActionBarImpl;->mUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
-    invoke-virtual {v0, v5}, Landroid/animation/ObjectAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+    invoke-virtual {v0, v5}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
     invoke-virtual {v1, v0}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
 
@@ -1668,13 +1651,13 @@
 
     iget-object v6, p0, Lcom/android/internal/app/ActionBarImpl;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
-    invoke-virtual {v6}, Lcom/android/internal/widget/ActionBarContainer;->getHeight()I
+    invoke-virtual {v6}, Landroid/view/View;->getHeight()I
 
     move-result v6
 
     int-to-float v6, v6
 
-    invoke-virtual {v5, v6}, Lcom/android/internal/widget/ActionBarContainer;->setTranslationY(F)V
+    invoke-virtual {v5, v6}, Landroid/view/View;->setTranslationY(F)V
 
     iget-object v5, p0, Lcom/android/internal/app/ActionBarImpl;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
@@ -1711,7 +1694,7 @@
 
     iget-object v5, p0, Lcom/android/internal/app/ActionBarImpl;->mShowListener:Landroid/animation/Animator$AnimatorListener;
 
-    invoke-virtual {v1, v5}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v1, v5}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     iput-object v1, p0, Lcom/android/internal/app/ActionBarImpl;->mCurrentShowAnim:Landroid/animation/Animator;
 
@@ -1728,7 +1711,7 @@
 
     iget-object v5, p0, Lcom/android/internal/app/ActionBarImpl;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
-    invoke-virtual {v5}, Lcom/android/internal/widget/ActionBarOverlayLayout;->requestFitSystemWindows()V
+    invoke-virtual {v5}, Landroid/view/View;->requestFitSystemWindows()V
 
     :cond_5
     return-void
@@ -1736,11 +1719,11 @@
     :cond_6
     iget-object v5, p0, Lcom/android/internal/app/ActionBarImpl;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
-    invoke-virtual {v5, v6}, Lcom/android/internal/widget/ActionBarContainer;->setAlpha(F)V
+    invoke-virtual {v5, v6}, Landroid/view/View;->setAlpha(F)V
 
     iget-object v5, p0, Lcom/android/internal/app/ActionBarImpl;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
-    invoke-virtual {v5, v8}, Lcom/android/internal/widget/ActionBarContainer;->setTranslationY(F)V
+    invoke-virtual {v5, v8}, Landroid/view/View;->setTranslationY(F)V
 
     iget-boolean v5, p0, Lcom/android/internal/app/ActionBarImpl;->mContentAnimations:Z
 
@@ -1765,11 +1748,11 @@
 
     iget-object v5, p0, Lcom/android/internal/app/ActionBarImpl;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
-    invoke-virtual {v5, v6}, Lcom/android/internal/widget/ActionBarContainer;->setAlpha(F)V
+    invoke-virtual {v5, v6}, Landroid/view/View;->setAlpha(F)V
 
     iget-object v5, p0, Lcom/android/internal/app/ActionBarImpl;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
-    invoke-virtual {v5, v8}, Lcom/android/internal/widget/ActionBarContainer;->setTranslationY(F)V
+    invoke-virtual {v5, v8}, Landroid/view/View;->setTranslationY(F)V
 
     iget-object v5, p0, Lcom/android/internal/app/ActionBarImpl;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
@@ -1898,7 +1881,7 @@
     .prologue
     iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
-    invoke-virtual {v0}, Lcom/android/internal/widget/ActionBarContainer;->getHeight()I
+    invoke-virtual {v0}, Landroid/view/View;->getHeight()I
 
     move-result v0
 
@@ -3067,7 +3050,7 @@
 
     iget-object v2, p0, Lcom/android/internal/app/ActionBarImpl;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
-    invoke-virtual {v2}, Lcom/android/internal/widget/ActionBarOverlayLayout;->requestFitSystemWindows()V
+    invoke-virtual {v2}, Landroid/view/View;->requestFitSystemWindows()V
 
     :cond_0
     iget-object v2, p0, Lcom/android/internal/app/ActionBarImpl;->mActionView:Lcom/android/internal/widget/ActionBarView;
@@ -3110,7 +3093,7 @@
 
     const/16 v3, 0x8
 
-    invoke-virtual {v2, v3}, Lcom/android/internal/widget/ScrollingTabContainerView;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_0
 
@@ -3119,7 +3102,7 @@
 
     iget-object v2, p0, Lcom/android/internal/app/ActionBarImpl;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
 
-    invoke-virtual {v2, v1}, Lcom/android/internal/widget/ScrollingTabContainerView;->setVisibility(I)V
+    invoke-virtual {v2, v1}, Landroid/view/View;->setVisibility(I)V
 
     iget v2, p0, Lcom/android/internal/app/ActionBarImpl;->mSavedTabPosition:I
 
@@ -3398,7 +3381,7 @@
 
     iget-object v1, p0, Lcom/android/internal/app/ActionBarImpl;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
-    invoke-virtual {v1}, Lcom/android/internal/widget/ActionBarContainer;->getVisibility()I
+    invoke-virtual {v1}, Landroid/view/View;->getVisibility()I
 
     move-result v1
 
@@ -3416,14 +3399,14 @@
 
     iget-object v1, p0, Lcom/android/internal/app/ActionBarImpl;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
-    invoke-virtual {v1}, Lcom/android/internal/widget/ActionBarOverlayLayout;->requestFitSystemWindows()V
+    invoke-virtual {v1}, Landroid/view/View;->requestFitSystemWindows()V
 
     :cond_1
     iget-object v1, p0, Lcom/android/internal/app/ActionBarImpl;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
 
     const/16 v2, 0x20
 
-    invoke-virtual {v1, v2}, Lcom/android/internal/widget/ActionBarContextView;->sendAccessibilityEvent(I)V
+    invoke-virtual {v1, v2}, Landroid/view/View;->sendAccessibilityEvent(I)V
 
     iput-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mActionMode:Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;
 

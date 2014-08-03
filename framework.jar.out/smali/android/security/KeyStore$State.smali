@@ -127,7 +127,7 @@
     .prologue
     sget-object v0, Landroid/security/KeyStore$State;->$VALUES:[Landroid/security/KeyStore$State;
 
-    invoke-virtual {v0}, [Landroid/security/KeyStore$State;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

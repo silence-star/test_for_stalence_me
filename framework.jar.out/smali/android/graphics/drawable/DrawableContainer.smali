@@ -80,7 +80,7 @@
 
     if-eqz v1, :cond_0
 
-    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableContainer;->getLayoutDirection()I
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getLayoutDirection()I
 
     move-result v1
 
@@ -184,7 +184,7 @@
 
     add-long/2addr v5, v2
 
-    invoke-virtual {p0, v4, v5, v6}, Landroid/graphics/drawable/DrawableContainer;->scheduleSelf(Ljava/lang/Runnable;J)V
+    invoke-virtual {p0, v4, v5, v6}, Landroid/graphics/drawable/Drawable;->scheduleSelf(Ljava/lang/Runnable;J)V
 
     :cond_2
     return-void
@@ -667,13 +667,13 @@
 
     if-ne p1, v0, :cond_0
 
-    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableContainer;->getCallback()Landroid/graphics/drawable/Drawable$Callback;
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getCallback()Landroid/graphics/drawable/Drawable$Callback;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableContainer;->getCallback()Landroid/graphics/drawable/Drawable$Callback;
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getCallback()Landroid/graphics/drawable/Drawable$Callback;
 
     move-result-object v0
 
@@ -774,7 +774,7 @@
     :cond_3
     if-eqz v0, :cond_4
 
-    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableContainer;->invalidateSelf()V
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
     :cond_4
     return-void
@@ -917,13 +917,13 @@
 
     if-ne p1, v0, :cond_0
 
-    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableContainer;->getCallback()Landroid/graphics/drawable/Drawable$Callback;
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getCallback()Landroid/graphics/drawable/Drawable$Callback;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableContainer;->getCallback()Landroid/graphics/drawable/Drawable$Callback;
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getCallback()Landroid/graphics/drawable/Drawable$Callback;
 
     move-result-object v0
 
@@ -1040,7 +1040,7 @@
     iput-wide v5, p0, Landroid/graphics/drawable/DrawableContainer;->mEnterAnimationEnd:J
 
     :goto_2
-    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableContainer;->isVisible()Z
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->isVisible()Z
 
     move-result v3
 
@@ -1056,25 +1056,25 @@
 
     invoke-virtual {v0, v3}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableContainer;->getState()[I
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getState()[I
 
     move-result-object v3
 
     invoke-virtual {v0, v3}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableContainer;->getLevel()I
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getLevel()I
 
     move-result v3
 
     invoke-virtual {v0, v3}, Landroid/graphics/drawable/Drawable;->setLevel(I)Z
 
-    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableContainer;->getBounds()Landroid/graphics/Rect;
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v3
 
     invoke-virtual {v0, v3}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableContainer;->getLayoutDirection()I
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getLayoutDirection()I
 
     move-result v3
 
@@ -1115,7 +1115,7 @@
     invoke-virtual {p0, v4}, Landroid/graphics/drawable/DrawableContainer;->animate(Z)V
 
     :cond_4
-    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableContainer;->invalidateSelf()V
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
     move v3, v4
 
@@ -1171,7 +1171,7 @@
     :cond_a
     iget-object v3, p0, Landroid/graphics/drawable/DrawableContainer;->mAnimationRunnable:Ljava/lang/Runnable;
 
-    invoke-virtual {p0, v3}, Landroid/graphics/drawable/DrawableContainer;->unscheduleSelf(Ljava/lang/Runnable;)V
+    invoke-virtual {p0, v3}, Landroid/graphics/drawable/Drawable;->unscheduleSelf(Ljava/lang/Runnable;)V
 
     goto :goto_4
 .end method
@@ -1386,13 +1386,13 @@
 
     if-ne p1, v0, :cond_0
 
-    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableContainer;->getCallback()Landroid/graphics/drawable/Drawable$Callback;
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getCallback()Landroid/graphics/drawable/Drawable$Callback;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableContainer;->getCallback()Landroid/graphics/drawable/Drawable$Callback;
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getCallback()Landroid/graphics/drawable/Drawable$Callback;
 
     move-result-object v0
 

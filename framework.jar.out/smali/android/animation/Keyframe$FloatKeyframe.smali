@@ -26,11 +26,11 @@
     .prologue
     invoke-direct {p0}, Landroid/animation/Keyframe;-><init>()V
 
-    iput p1, p0, Landroid/animation/Keyframe$FloatKeyframe;->mFraction:F
+    iput p1, p0, Landroid/animation/Keyframe;->mFraction:F
 
     sget-object v0, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
 
-    iput-object v0, p0, Landroid/animation/Keyframe$FloatKeyframe;->mValueType:Ljava/lang/Class;
+    iput-object v0, p0, Landroid/animation/Keyframe;->mValueType:Ljava/lang/Class;
 
     return-void
 .end method
@@ -43,17 +43,17 @@
     .prologue
     invoke-direct {p0}, Landroid/animation/Keyframe;-><init>()V
 
-    iput p1, p0, Landroid/animation/Keyframe$FloatKeyframe;->mFraction:F
+    iput p1, p0, Landroid/animation/Keyframe;->mFraction:F
 
     iput p2, p0, Landroid/animation/Keyframe$FloatKeyframe;->mValue:F
 
     sget-object v0, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
 
-    iput-object v0, p0, Landroid/animation/Keyframe$FloatKeyframe;->mValueType:Ljava/lang/Class;
+    iput-object v0, p0, Landroid/animation/Keyframe;->mValueType:Ljava/lang/Class;
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroid/animation/Keyframe$FloatKeyframe;->mHasValue:Z
+    iput-boolean v0, p0, Landroid/animation/Keyframe;->mHasValue:Z
 
     return-void
 .end method
@@ -64,13 +64,13 @@
     .locals 3
 
     .prologue
-    iget-boolean v1, p0, Landroid/animation/Keyframe$FloatKeyframe;->mHasValue:Z
+    iget-boolean v1, p0, Landroid/animation/Keyframe;->mHasValue:Z
 
     if-eqz v1, :cond_0
 
     new-instance v0, Landroid/animation/Keyframe$FloatKeyframe;
 
-    invoke-virtual {p0}, Landroid/animation/Keyframe$FloatKeyframe;->getFraction()F
+    invoke-virtual {p0}, Landroid/animation/Keyframe;->getFraction()F
 
     move-result v1
 
@@ -80,11 +80,11 @@
 
     .local v0, kfClone:Landroid/animation/Keyframe$FloatKeyframe;
     :goto_0
-    invoke-virtual {p0}, Landroid/animation/Keyframe$FloatKeyframe;->getInterpolator()Landroid/animation/TimeInterpolator;
+    invoke-virtual {p0}, Landroid/animation/Keyframe;->getInterpolator()Landroid/animation/TimeInterpolator;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Landroid/animation/Keyframe$FloatKeyframe;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+    invoke-virtual {v0, v1}, Landroid/animation/Keyframe;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
     return-object v0
 
@@ -92,7 +92,7 @@
     :cond_0
     new-instance v0, Landroid/animation/Keyframe$FloatKeyframe;
 
-    invoke-virtual {p0}, Landroid/animation/Keyframe$FloatKeyframe;->getFraction()F
+    invoke-virtual {p0}, Landroid/animation/Keyframe;->getFraction()F
 
     move-result v1
 
@@ -176,7 +176,7 @@
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroid/animation/Keyframe$FloatKeyframe;->mHasValue:Z
+    iput-boolean v0, p0, Landroid/animation/Keyframe;->mHasValue:Z
 
     :cond_0
     return-void

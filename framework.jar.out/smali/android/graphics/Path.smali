@@ -933,7 +933,7 @@
 
     iget v2, p2, Landroid/graphics/Path;->mNativePath:I
 
-    invoke-virtual {p3}, Landroid/graphics/Path$Op;->ordinal()I
+    invoke-virtual {p3}, Ljava/lang/Enum;->ordinal()I
 
     move-result v3
 

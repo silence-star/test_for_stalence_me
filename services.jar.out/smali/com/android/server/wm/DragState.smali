@@ -127,7 +127,7 @@
     return-object v9
 
     :cond_0
-    invoke-virtual {v6}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
@@ -138,7 +138,7 @@
     :goto_1
     if-ltz v3, :cond_4
 
-    invoke-virtual {v6, v3}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v6, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -543,7 +543,7 @@
     .local v2, windows:Lcom/android/server/wm/WindowList;
     if-eqz v2, :cond_1
 
-    invoke-virtual {v2}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
@@ -554,7 +554,7 @@
     :goto_1
     if-ge v1, v0, :cond_1
 
-    invoke-virtual {v2, v1}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -707,7 +707,7 @@
 
     const/16 v2, 0x15
 
-    invoke-virtual {v1, v2, v12}, Lcom/android/server/wm/WindowManagerService$H;->removeMessages(ILjava/lang/Object;)V
+    invoke-virtual {v1, v2, v12}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
 
     iget-object v1, p0, Lcom/android/server/wm/DragState;->mService:Lcom/android/server/wm/WindowManagerService;
 
@@ -715,7 +715,7 @@
 
     const/16 v2, 0x15
 
-    invoke-virtual {v1, v2, v12}, Lcom/android/server/wm/WindowManagerService$H;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v1, v2, v12}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v10
 
@@ -726,7 +726,7 @@
 
     const-wide/16 v2, 0x1388
 
-    invoke-virtual {v1, v10, v2, v3}, Lcom/android/server/wm/WindowManagerService$H;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v1, v10, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -1044,7 +1044,7 @@
 
     iget-object v5, v5, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
 
-    invoke-virtual {v5}, Lcom/android/server/wm/WindowManagerService$H;->getLooper()Landroid/os/Looper;
+    invoke-virtual {v5}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
 
     move-result-object v5
 
@@ -1327,7 +1327,7 @@
 
     iget-object v0, p0, Lcom/android/server/wm/DragState;->mInputEventReceiver:Lcom/android/server/wm/WindowManagerService$DragInputEventReceiver;
 
-    invoke-virtual {v0}, Lcom/android/server/wm/WindowManagerService$DragInputEventReceiver;->dispose()V
+    invoke-virtual {v0}, Landroid/view/InputEventReceiver;->dispose()V
 
     iput-object v2, p0, Lcom/android/server/wm/DragState;->mInputEventReceiver:Lcom/android/server/wm/WindowManagerService$DragInputEventReceiver;
 

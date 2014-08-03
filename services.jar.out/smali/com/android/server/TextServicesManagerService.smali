@@ -152,7 +152,7 @@
 
     const/4 v3, 0x1
 
-    invoke-virtual {v2, p1, v4, v3}, Lcom/android/server/TextServicesManagerService$TextServicesMonitor;->register(Landroid/content/Context;Landroid/os/Looper;Z)V
+    invoke-virtual {v2, p1, v4, v3}, Lcom/android/internal/content/PackageMonitor;->register(Landroid/content/Context;Landroid/os/Looper;Z)V
 
     new-instance v2, Lcom/android/server/TextServicesManagerService$TextServicesSettings;
 
@@ -425,9 +425,9 @@
     .local v8, si:Landroid/content/pm/ServiceInfo;
     new-instance v1, Landroid/content/ComponentName;
 
-    iget-object v9, v8, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    iget-object v9, v8, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
-    iget-object v10, v8, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
+    iget-object v10, v8, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     invoke-direct {v1, v9, v10}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -784,7 +784,7 @@
     move-exception v0
 
     .local v0, e:Ljava/lang/RuntimeException;
-    invoke-virtual {v0}, Ljava/lang/RuntimeException;->getStackTrace()[Ljava/lang/StackTraceElement;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->getStackTrace()[Ljava/lang/StackTraceElement;
 
     move-result-object v1
 

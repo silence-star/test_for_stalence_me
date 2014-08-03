@@ -549,7 +549,7 @@
     :cond_3
     iget-object v7, p0, Landroid/app/backup/BackupHelperDispatcher;->mHelpers:Ljava/util/TreeMap;
 
-    invoke-virtual {v7}, Ljava/util/TreeMap;->values()Ljava/util/Collection;
+    invoke-virtual {v7}, Ljava/util/AbstractMap;->values()Ljava/util/Collection;
 
     move-result-object v7
 

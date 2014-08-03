@@ -177,7 +177,7 @@
 
     if-lez v9, :cond_0
 
-    iget-wide v9, v8, Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;->mTotalTime:J
+    iget-wide v9, v8, Lcom/android/internal/os/BatteryStatsImpl$Timer;->mTotalTime:J
 
     int-to-long v11, v0
 
@@ -185,7 +185,7 @@
 
     add-long/2addr v9, v11
 
-    iput-wide v9, v8, Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;->mTotalTime:J
+    iput-wide v9, v8, Lcom/android/internal/os/BatteryStatsImpl$Timer;->mTotalTime:J
 
     :cond_0
     iput-wide v1, v8, Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;->mUpdateTime:J
@@ -206,7 +206,7 @@
     .locals 1
 
     .prologue
-    iget v0, p0, Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;->mCount:I
+    iget v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Timer;->mCount:I
 
     return v0
 .end method
@@ -241,7 +241,7 @@
     add-long p1, v2, v4
 
     :cond_0
-    iget-wide v2, p0, Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;->mTotalTime:J
+    iget-wide v2, p0, Lcom/android/internal/os/BatteryStatsImpl$Timer;->mTotalTime:J
 
     iget v4, p0, Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;->mNesting:I
 
@@ -452,7 +452,7 @@
     iput-wide v1, p0, Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;->mUpdateTime:J
 
     :cond_0
-    iget-wide v1, p0, Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;->mTotalTime:J
+    iget-wide v1, p0, Lcom/android/internal/os/BatteryStatsImpl$Timer;->mTotalTime:J
 
     iput-wide v1, p0, Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;->mAcquireTime:J
 
@@ -521,13 +521,13 @@
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_0
-    iget v0, p0, Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;->mCount:I
+    iget v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Timer;->mCount:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;->mCount:I
+    iput v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Timer;->mCount:I
 
-    iget-wide v0, p0, Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;->mTotalTime:J
+    iget-wide v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Timer;->mTotalTime:J
 
     iput-wide v0, p0, Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;->mAcquireTime:J
 
@@ -570,7 +570,7 @@
     invoke-virtual {v4, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     :goto_1
-    iget-wide v4, p0, Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;->mTotalTime:J
+    iget-wide v4, p0, Lcom/android/internal/os/BatteryStatsImpl$Timer;->mTotalTime:J
 
     iget-wide v6, p0, Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;->mAcquireTime:J
 
@@ -578,11 +578,11 @@
 
     if-nez v4, :cond_0
 
-    iget v4, p0, Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;->mCount:I
+    iget v4, p0, Lcom/android/internal/os/BatteryStatsImpl$Timer;->mCount:I
 
     add-int/lit8 v4, v4, -0x1
 
-    iput v4, p0, Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;->mCount:I
+    iput v4, p0, Lcom/android/internal/os/BatteryStatsImpl$Timer;->mCount:I
 
     goto :goto_0
 
@@ -609,7 +609,7 @@
 
     move-result-wide v4
 
-    iput-wide v4, p0, Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;->mTotalTime:J
+    iput-wide v4, p0, Lcom/android/internal/os/BatteryStatsImpl$Timer;->mTotalTime:J
 
     const/4 v4, 0x0
 

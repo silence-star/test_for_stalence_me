@@ -80,7 +80,7 @@
     :cond_0
     iget-object v0, p0, Landroid/widget/AbsListView$4;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v0}, Landroid/widget/AbsListView;->isAlwaysDrawnWithCacheEnabled()Z
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->isAlwaysDrawnWithCacheEnabled()Z
 
     move-result v0
 
@@ -88,7 +88,7 @@
 
     iget-object v0, p0, Landroid/widget/AbsListView$4;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v0}, Landroid/widget/AbsListView;->invalidate()V
+    invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
     :cond_1
     return-void

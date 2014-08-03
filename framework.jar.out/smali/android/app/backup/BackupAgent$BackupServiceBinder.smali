@@ -291,7 +291,7 @@
     new-array v0, v6, [B
 
     .local v0, buf:[B
-    invoke-virtual {v5, v0}, Ljava/io/FileOutputStream;->write([B)V
+    invoke-virtual {v5, v0}, Ljava/io/OutputStream;->write([B)V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
@@ -396,7 +396,7 @@
     new-array v0, v7, [B
 
     .restart local v0       #buf:[B
-    invoke-virtual {v5, v0}, Ljava/io/FileOutputStream;->write([B)V
+    invoke-virtual {v5, v0}, Ljava/io/OutputStream;->write([B)V
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_3
 

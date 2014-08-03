@@ -30,7 +30,7 @@
     .locals 0
 
     .prologue
-    invoke-virtual {p0}, Lcom/android/internal/app/AlertActivity;->finish()V
+    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
 
     return-void
 .end method
@@ -39,13 +39,13 @@
     .locals 1
 
     .prologue
-    invoke-virtual {p0}, Lcom/android/internal/app/AlertActivity;->isFinishing()Z
+    invoke-virtual {p0}, Landroid/app/Activity;->isFinishing()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    invoke-virtual {p0}, Lcom/android/internal/app/AlertActivity;->finish()V
+    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
 
     :cond_0
     return-void
@@ -59,7 +59,7 @@
 
     iget-object v0, p0, Lcom/android/internal/app/AlertActivity;->mNubiaDialog:Lnubia/ui/IDialog;
 
-    invoke-virtual {p0}, Lcom/android/internal/app/AlertActivity;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
@@ -77,7 +77,7 @@
 
     new-instance v0, Lcom/android/internal/app/AlertController;
 
-    invoke-virtual {p0}, Lcom/android/internal/app/AlertActivity;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 

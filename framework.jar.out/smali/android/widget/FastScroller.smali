@@ -333,7 +333,7 @@
 
     iput-object v0, v1, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
-    invoke-virtual/range {p1 .. p1}, Landroid/widget/AbsListView;->getOverlay()Landroid/view/ViewGroupOverlay;
+    invoke-virtual/range {p1 .. p1}, Landroid/view/ViewGroup;->getOverlay()Landroid/view/ViewGroupOverlay;
 
     move-result-object v13
 
@@ -341,7 +341,7 @@
 
     iput-object v13, v0, Landroid/widget/FastScroller;->mOverlay:Landroid/view/ViewGroupOverlay;
 
-    invoke-virtual/range {p1 .. p1}, Landroid/widget/AbsListView;->getContext()Landroid/content/Context;
+    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
@@ -401,7 +401,7 @@
 
     iput-boolean v13, v0, Landroid/widget/FastScroller;->mHasTrackImage:Z
 
-    invoke-virtual {v11, v10}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v11, v10}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     move-object/from16 v0, p0
 
@@ -473,7 +473,7 @@
     move-result v3
 
     .local v3, minWidth:I
-    invoke-virtual {v9, v3}, Landroid/widget/ImageView;->setMinimumWidth(I)V
+    invoke-virtual {v9, v3}, Landroid/view/View;->setMinimumWidth(I)V
 
     const v13, 0x1050019
 
@@ -481,7 +481,7 @@
 
     move-result v13
 
-    invoke-virtual {v9, v13}, Landroid/widget/ImageView;->setMinimumHeight(I)V
+    invoke-virtual {v9, v13}, Landroid/view/View;->setMinimumHeight(I)V
 
     invoke-static {v12, v3}, Ljava/lang/Math;->max(II)I
 
@@ -512,13 +512,13 @@
 
     iget-object v13, v0, Landroid/widget/FastScroller;->mPreviewImage:Landroid/widget/ImageView;
 
-    invoke-virtual {v13, v4}, Landroid/widget/ImageView;->setMinimumWidth(I)V
+    invoke-virtual {v13, v4}, Landroid/view/View;->setMinimumWidth(I)V
 
     move-object/from16 v0, p0
 
     iget-object v13, v0, Landroid/widget/FastScroller;->mPreviewImage:Landroid/widget/ImageView;
 
-    invoke-virtual {v13, v4}, Landroid/widget/ImageView;->setMinimumHeight(I)V
+    invoke-virtual {v13, v4}, Landroid/view/View;->setMinimumHeight(I)V
 
     move-object/from16 v0, p0
 
@@ -526,7 +526,7 @@
 
     const/4 v14, 0x0
 
-    invoke-virtual {v13, v14}, Landroid/widget/ImageView;->setAlpha(F)V
+    invoke-virtual {v13, v14}, Landroid/view/View;->setAlpha(F)V
 
     move-object/from16 v0, p0
 
@@ -575,13 +575,13 @@
 
     iget-object v13, v0, Landroid/widget/FastScroller;->mPrimaryText:Landroid/widget/TextView;
 
-    invoke-virtual {v13, v7}, Landroid/widget/TextView;->setMinimumWidth(I)V
+    invoke-virtual {v13, v7}, Landroid/view/View;->setMinimumWidth(I)V
 
     move-object/from16 v0, p0
 
     iget-object v13, v0, Landroid/widget/FastScroller;->mPrimaryText:Landroid/widget/TextView;
 
-    invoke-virtual {v13, v7}, Landroid/widget/TextView;->setMinimumHeight(I)V
+    invoke-virtual {v13, v7}, Landroid/view/View;->setMinimumHeight(I)V
 
     move-object/from16 v0, p0
 
@@ -607,13 +607,13 @@
 
     iget-object v13, v0, Landroid/widget/FastScroller;->mSecondaryText:Landroid/widget/TextView;
 
-    invoke-virtual {v13, v7}, Landroid/widget/TextView;->setMinimumWidth(I)V
+    invoke-virtual {v13, v7}, Landroid/view/View;->setMinimumWidth(I)V
 
     move-object/from16 v0, p0
 
     iget-object v13, v0, Landroid/widget/FastScroller;->mSecondaryText:Landroid/widget/TextView;
 
-    invoke-virtual {v13, v7}, Landroid/widget/TextView;->setMinimumHeight(I)V
+    invoke-virtual {v13, v7}, Landroid/view/View;->setMinimumHeight(I)V
 
     move-object/from16 v0, p0
 
@@ -675,7 +675,7 @@
 
     invoke-virtual {v6}, Landroid/content/res/TypedArray;->recycle()V
 
-    invoke-virtual/range {p1 .. p1}, Landroid/widget/AbsListView;->getScrollBarStyle()I
+    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getScrollBarStyle()I
 
     move-result v13
 
@@ -716,11 +716,11 @@
 
     invoke-direct/range {p0 .. p0}, Landroid/widget/FastScroller;->refreshDrawablePressedState()V
 
-    invoke-virtual/range {p1 .. p1}, Landroid/widget/AbsListView;->getChildCount()I
+    invoke-virtual/range {p1 .. p1}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v13
 
-    invoke-virtual/range {p1 .. p1}, Landroid/widget/AbsListView;->getCount()I
+    invoke-virtual/range {p1 .. p1}, Landroid/widget/AdapterView;->getCount()I
 
     move-result v14
 
@@ -732,7 +732,7 @@
 
     iget-object v13, v0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
-    invoke-virtual {v13}, Landroid/widget/AbsListView;->getVerticalScrollbarPosition()I
+    invoke-virtual {v13}, Landroid/view/View;->getVerticalScrollbarPosition()I
 
     move-result v13
 
@@ -1111,7 +1111,7 @@
 
     iget-object v1, p0, Landroid/widget/FastScroller;->mDeferStartDrag:Ljava/lang/Runnable;
 
-    invoke-virtual {v0, v1}, Landroid/widget/AbsListView;->removeCallbacks(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v1}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     const/4 v0, 0x0
 
@@ -1166,7 +1166,7 @@
     invoke-direct {v5, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     .local v5, textView:Landroid/widget/TextView;
-    invoke-virtual {v5, v1}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v5, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     invoke-virtual {v5, v3}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
 
@@ -1186,15 +1186,15 @@
 
     const/4 v6, 0x0
 
-    invoke-virtual {v5, v6}, Landroid/widget/TextView;->setAlpha(F)V
+    invoke-virtual {v5, v6}, Landroid/view/View;->setAlpha(F)V
 
     iget-object v6, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
-    invoke-virtual {v6}, Landroid/widget/AbsListView;->getLayoutDirection()I
+    invoke-virtual {v6}, Landroid/view/View;->getLayoutDirection()I
 
     move-result v6
 
-    invoke-virtual {v5, v6}, Landroid/widget/TextView;->setLayoutDirection(I)V
+    invoke-virtual {v5, v6}, Landroid/view/View;->setLayoutDirection(I)V
 
     return-object v5
 .end method
@@ -1284,7 +1284,7 @@
 
     const/4 v14, 0x0
 
-    invoke-virtual {v13, v14}, Landroid/widget/AbsListView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v13, v14}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -1373,20 +1373,20 @@
 
     add-int/lit8 v14, p2, -0x1
 
-    invoke-virtual {v13, v14}, Landroid/widget/AbsListView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v13, v14}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
 
     .local v4, lastChild:Landroid/view/View;
     iget-object v13, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
-    invoke-virtual {v13}, Landroid/widget/AbsListView;->getHeight()I
+    invoke-virtual {v13}, Landroid/view/View;->getHeight()I
 
     move-result v13
 
     iget-object v14, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
-    invoke-virtual {v14}, Landroid/widget/AbsListView;->getPaddingBottom()I
+    invoke-virtual {v14}, Landroid/view/View;->getPaddingBottom()I
 
     move-result v14
 
@@ -1431,7 +1431,7 @@
     :cond_8
     iget-object v13, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
-    invoke-virtual {v13}, Landroid/widget/AbsListView;->getPaddingTop()I
+    invoke-virtual {v13}, Landroid/view/View;->getPaddingTop()I
 
     move-result v13
 
@@ -1508,14 +1508,14 @@
     iget-object v7, p0, Landroid/widget/FastScroller;->mTrackImage:Landroid/widget/ImageView;
 
     .local v7, trackImage:Landroid/widget/ImageView;
-    invoke-virtual {v7}, Landroid/widget/ImageView;->getTop()I
+    invoke-virtual {v7}, Landroid/view/View;->getTop()I
 
     move-result v9
 
     int-to-float v3, v9
 
     .local v3, min:F
-    invoke-virtual {v7}, Landroid/widget/ImageView;->getBottom()I
+    invoke-virtual {v7}, Landroid/view/View;->getBottom()I
 
     move-result v9
 
@@ -1559,7 +1559,7 @@
 
     iget-object v2, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
-    invoke-virtual {v2}, Landroid/widget/AbsListView;->getAdapter()Landroid/widget/Adapter;
+    invoke-virtual {v2}, Landroid/widget/AdapterView;->getAdapter()Landroid/widget/Adapter;
 
     move-result-object v0
 
@@ -1787,7 +1787,7 @@
 
     iget-object v2, p0, Landroid/widget/FastScroller;->mThumbImage:Landroid/widget/ImageView;
 
-    invoke-virtual {v2}, Landroid/widget/ImageView;->getLeft()I
+    invoke-virtual {v2}, Landroid/view/View;->getLeft()I
 
     move-result v2
 
@@ -1809,7 +1809,7 @@
     :cond_2
     iget-object v2, p0, Landroid/widget/FastScroller;->mThumbImage:Landroid/widget/ImageView;
 
-    invoke-virtual {v2}, Landroid/widget/ImageView;->getRight()I
+    invoke-virtual {v2}, Landroid/view/View;->getRight()I
 
     move-result v2
 
@@ -1831,14 +1831,14 @@
     .prologue
     iget-object v3, p0, Landroid/widget/FastScroller;->mThumbImage:Landroid/widget/ImageView;
 
-    invoke-virtual {v3}, Landroid/widget/ImageView;->getTranslationY()F
+    invoke-virtual {v3}, Landroid/view/View;->getTranslationY()F
 
     move-result v1
 
     .local v1, offset:F
     iget-object v3, p0, Landroid/widget/FastScroller;->mThumbImage:Landroid/widget/ImageView;
 
-    invoke-virtual {v3}, Landroid/widget/ImageView;->getTop()I
+    invoke-virtual {v3}, Landroid/view/View;->getTop()I
 
     move-result v3
 
@@ -1849,7 +1849,7 @@
     .local v2, top:F
     iget-object v3, p0, Landroid/widget/FastScroller;->mThumbImage:Landroid/widget/ImageView;
 
-    invoke-virtual {v3}, Landroid/widget/ImageView;->getBottom()I
+    invoke-virtual {v3}, Landroid/view/View;->getBottom()I
 
     move-result v3
 
@@ -2133,7 +2133,7 @@
     .local v0, margins:Landroid/graphics/Rect;
     iget-object v1, p0, Landroid/widget/FastScroller;->mPreviewImage:Landroid/widget/ImageView;
 
-    invoke-virtual {v1}, Landroid/widget/ImageView;->getPaddingLeft()I
+    invoke-virtual {v1}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v1
 
@@ -2141,7 +2141,7 @@
 
     iget-object v1, p0, Landroid/widget/FastScroller;->mPreviewImage:Landroid/widget/ImageView;
 
-    invoke-virtual {v1}, Landroid/widget/ImageView;->getPaddingTop()I
+    invoke-virtual {v1}, Landroid/view/View;->getPaddingTop()I
 
     move-result v1
 
@@ -2149,7 +2149,7 @@
 
     iget-object v1, p0, Landroid/widget/FastScroller;->mPreviewImage:Landroid/widget/ImageView;
 
-    invoke-virtual {v1}, Landroid/widget/ImageView;->getPaddingRight()I
+    invoke-virtual {v1}, Landroid/view/View;->getPaddingRight()I
 
     move-result v1
 
@@ -2157,7 +2157,7 @@
 
     iget-object v1, p0, Landroid/widget/FastScroller;->mPreviewImage:Landroid/widget/ImageView;
 
-    invoke-virtual {v1}, Landroid/widget/ImageView;->getPaddingBottom()I
+    invoke-virtual {v1}, Landroid/view/View;->getPaddingBottom()I
 
     move-result v1
 
@@ -2400,7 +2400,7 @@
     :goto_0
     iget-object v0, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
-    invoke-virtual {v0}, Landroid/widget/AbsListView;->resolvePadding()V
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->resolvePadding()V
 
     return-void
 
@@ -2427,7 +2427,7 @@
 
     iget-object v1, p0, Landroid/widget/FastScroller;->mDeferHide:Ljava/lang/Runnable;
 
-    invoke-virtual {v0, v1}, Landroid/widget/AbsListView;->removeCallbacks(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v1}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     iget-object v0, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
@@ -2435,7 +2435,7 @@
 
     const-wide/16 v2, 0x5dc
 
-    invoke-virtual {v0, v1, v2, v3}, Landroid/widget/AbsListView;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v0, v1, v2, v3}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
 
     return-void
 .end method
@@ -2456,11 +2456,11 @@
     :goto_0
     iget-object v1, p0, Landroid/widget/FastScroller;->mThumbImage:Landroid/widget/ImageView;
 
-    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setPressed(Z)V
+    invoke-virtual {v1, v0}, Landroid/view/View;->setPressed(Z)V
 
     iget-object v1, p0, Landroid/widget/FastScroller;->mTrackImage:Landroid/widget/ImageView;
 
-    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setPressed(Z)V
+    invoke-virtual {v1, v0}, Landroid/view/View;->setPressed(Z)V
 
     return-void
 
@@ -2490,7 +2490,7 @@
 
     move-object/from16 v21, v0
 
-    invoke-virtual/range {v21 .. v21}, Landroid/widget/AbsListView;->getCount()I
+    invoke-virtual/range {v21 .. v21}, Landroid/widget/AdapterView;->getCount()I
 
     move-result v3
 
@@ -2785,7 +2785,7 @@
 
     move/from16 v1, v22
 
-    invoke-virtual {v5, v0, v1}, Landroid/widget/ExpandableListView;->setSelectionFromTop(II)V
+    invoke-virtual {v5, v0, v1}, Landroid/widget/ListView;->setSelectionFromTop(II)V
 
     .end local v4           #exactSection:I
     .end local v5           #expList:Landroid/widget/ExpandableListView;
@@ -2945,7 +2945,7 @@
 
     add-int v22, v22, v19
 
-    invoke-virtual/range {v21 .. v22}, Landroid/widget/AbsListView;->setSelection(I)V
+    invoke-virtual/range {v21 .. v22}, Landroid/widget/AdapterView;->setSelection(I)V
 
     goto :goto_5
 
@@ -3028,7 +3028,7 @@
 
     move/from16 v1, v22
 
-    invoke-virtual {v5, v0, v1}, Landroid/widget/ExpandableListView;->setSelectionFromTop(II)V
+    invoke-virtual {v5, v0, v1}, Landroid/widget/ListView;->setSelectionFromTop(II)V
 
     .end local v5           #expList:Landroid/widget/ExpandableListView;
     :goto_7
@@ -3090,7 +3090,7 @@
 
     add-int v22, v22, v7
 
-    invoke-virtual/range {v21 .. v22}, Landroid/widget/AbsListView;->setSelection(I)V
+    invoke-virtual/range {v21 .. v22}, Landroid/widget/AdapterView;->setSelection(I)V
 
     goto :goto_7
 
@@ -3122,7 +3122,7 @@
 
     iget-object v1, p0, Landroid/widget/FastScroller;->mDeferHide:Ljava/lang/Runnable;
 
-    invoke-virtual {v0, v1}, Landroid/widget/AbsListView;->removeCallbacks(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v1}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     iget-boolean v0, p0, Landroid/widget/FastScroller;->mAlwaysShow:Z
 
@@ -3216,7 +3216,7 @@
     iget-object v15, v0, Landroid/widget/FastScroller;->mThumbImage:Landroid/widget/ImageView;
 
     .local v15, thumbImage:Landroid/widget/ImageView;
-    invoke-virtual/range {v18 .. v18}, Landroid/widget/ImageView;->getTop()I
+    invoke-virtual/range {v18 .. v18}, Landroid/view/View;->getTop()I
 
     move-result v19
 
@@ -3225,7 +3225,7 @@
     int-to-float v6, v0
 
     .local v6, min:F
-    invoke-virtual/range {v18 .. v18}, Landroid/widget/ImageView;->getBottom()I
+    invoke-virtual/range {v18 .. v18}, Landroid/view/View;->getBottom()I
 
     move-result v19
 
@@ -3245,7 +3245,7 @@
     add-float v16, v19, v8
 
     .local v16, thumbMiddle:F
-    invoke-virtual {v15}, Landroid/widget/ImageView;->getHeight()I
+    invoke-virtual {v15}, Landroid/view/View;->getHeight()I
 
     move-result v19
 
@@ -3261,7 +3261,7 @@
 
     move/from16 v0, v19
 
-    invoke-virtual {v15, v0}, Landroid/widget/ImageView;->setTranslationY(F)V
+    invoke-virtual {v15, v0}, Landroid/view/View;->setTranslationY(F)V
 
     move-object/from16 v0, p0
 
@@ -3286,7 +3286,7 @@
     iget-object v10, v0, Landroid/widget/FastScroller;->mPreviewImage:Landroid/widget/ImageView;
 
     .local v10, previewImage:Landroid/widget/ImageView;
-    invoke-virtual {v10}, Landroid/widget/ImageView;->getHeight()I
+    invoke-virtual {v10}, Landroid/view/View;->getHeight()I
 
     move-result v19
 
@@ -3325,7 +3325,7 @@
     sub-float v13, v11, v9
 
     .local v13, previewTop:F
-    invoke-virtual {v10, v13}, Landroid/widget/ImageView;->setTranslationY(F)V
+    invoke-virtual {v10, v13}, Landroid/view/View;->setTranslationY(F)V
 
     move-object/from16 v0, p0
 
@@ -3335,7 +3335,7 @@
 
     move-object/from16 v0, v19
 
-    invoke-virtual {v0, v13}, Landroid/widget/TextView;->setTranslationY(F)V
+    invoke-virtual {v0, v13}, Landroid/view/View;->setTranslationY(F)V
 
     move-object/from16 v0, p0
 
@@ -3345,7 +3345,7 @@
 
     move-object/from16 v0, v19
 
-    invoke-virtual {v0, v13}, Landroid/widget/TextView;->setTranslationY(F)V
+    invoke-virtual {v0, v13}, Landroid/view/View;->setTranslationY(F)V
 
     return-void
 
@@ -3376,7 +3376,7 @@
 
     sget-wide v2, Landroid/widget/FastScroller;->TAP_TIMEOUT:J
 
-    invoke-virtual {v0, v1, v2, v3}, Landroid/widget/AbsListView;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v0, v1, v2, v3}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
 
     return-void
 .end method
@@ -3527,7 +3527,7 @@
 
     move-object/from16 v19, v0
 
-    invoke-virtual/range {v19 .. v19}, Landroid/widget/ImageView;->getPaddingLeft()I
+    invoke-virtual/range {v19 .. v19}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v19
 
@@ -3547,7 +3547,7 @@
 
     move-object/from16 v19, v0
 
-    invoke-virtual/range {v19 .. v19}, Landroid/widget/ImageView;->getPaddingTop()I
+    invoke-virtual/range {v19 .. v19}, Landroid/view/View;->getPaddingTop()I
 
     move-result v19
 
@@ -3567,7 +3567,7 @@
 
     move-object/from16 v19, v0
 
-    invoke-virtual/range {v19 .. v19}, Landroid/widget/ImageView;->getPaddingRight()I
+    invoke-virtual/range {v19 .. v19}, Landroid/view/View;->getPaddingRight()I
 
     move-result v19
 
@@ -3587,7 +3587,7 @@
 
     move-object/from16 v19, v0
 
-    invoke-virtual/range {v19 .. v19}, Landroid/widget/ImageView;->getPaddingBottom()I
+    invoke-virtual/range {v19 .. v19}, Landroid/view/View;->getPaddingBottom()I
 
     move-result v19
 
@@ -3639,24 +3639,24 @@
     .local v3, builder:Landroid/animation/AnimatorSet$Builder;
     invoke-virtual {v3, v7}, Landroid/animation/AnimatorSet$Builder;->with(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
 
-    invoke-virtual {v5}, Landroid/widget/ImageView;->getWidth()I
+    invoke-virtual {v5}, Landroid/view/View;->getWidth()I
 
     move-result v18
 
-    invoke-virtual {v5}, Landroid/widget/ImageView;->getPaddingLeft()I
+    invoke-virtual {v5}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v19
 
     sub-int v18, v18, v19
 
-    invoke-virtual {v5}, Landroid/widget/ImageView;->getPaddingRight()I
+    invoke-virtual {v5}, Landroid/view/View;->getPaddingRight()I
 
     move-result v19
 
     sub-int v6, v18, v19
 
     .local v6, previewWidth:I
-    invoke-virtual {v15}, Landroid/widget/TextView;->getWidth()I
+    invoke-virtual {v15}, Landroid/view/View;->getWidth()I
 
     move-result v16
 
@@ -3679,7 +3679,7 @@
 
     move/from16 v0, v18
 
-    invoke-virtual {v15, v0}, Landroid/widget/TextView;->setScaleX(F)V
+    invoke-virtual {v15, v0}, Landroid/view/View;->setScaleX(F)V
 
     const/high16 v18, 0x3f80
 
@@ -3700,7 +3700,7 @@
 
     .end local v9           #scaleAnim:Landroid/animation/Animator;
     :goto_1
-    invoke-virtual {v13}, Landroid/widget/TextView;->getWidth()I
+    invoke-virtual {v13}, Landroid/view/View;->getWidth()I
 
     move-result v14
 
@@ -3790,7 +3790,7 @@
 
     move/from16 v0, v18
 
-    invoke-virtual {v15, v0}, Landroid/widget/TextView;->setScaleX(F)V
+    invoke-virtual {v15, v0}, Landroid/view/View;->setScaleX(F)V
 
     goto :goto_1
 
@@ -3967,7 +3967,7 @@
 
     iget-object v3, p0, Landroid/widget/FastScroller;->mThumbImage:Landroid/widget/ImageView;
 
-    invoke-virtual {v3}, Landroid/widget/ImageView;->getWidth()I
+    invoke-virtual {v3}, Landroid/view/View;->getWidth()I
 
     move-result v3
 
@@ -4025,7 +4025,7 @@
     :cond_1
     iget-object v3, p0, Landroid/widget/FastScroller;->mThumbImage:Landroid/widget/ImageView;
 
-    invoke-virtual {v3}, Landroid/widget/ImageView;->getWidth()I
+    invoke-virtual {v3}, Landroid/view/View;->getWidth()I
 
     move-result v3
 
@@ -4172,7 +4172,7 @@
     iget-object v1, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
     .local v1, list:Landroid/widget/AbsListView;
-    invoke-virtual {v1}, Landroid/widget/AbsListView;->resolvePadding()V
+    invoke-virtual {v1}, Landroid/view/ViewGroup;->resolvePadding()V
 
     iget-object v0, p0, Landroid/widget/FastScroller;->mContainerRect:Landroid/graphics/Rect;
 
@@ -4181,13 +4181,13 @@
 
     iput v4, v0, Landroid/graphics/Rect;->top:I
 
-    invoke-virtual {v1}, Landroid/widget/AbsListView;->getWidth()I
+    invoke-virtual {v1}, Landroid/view/View;->getWidth()I
 
     move-result v4
 
     iput v4, v0, Landroid/graphics/Rect;->right:I
 
-    invoke-virtual {v1}, Landroid/widget/AbsListView;->getHeight()I
+    invoke-virtual {v1}, Landroid/view/View;->getHeight()I
 
     move-result v4
 
@@ -4203,7 +4203,7 @@
     :cond_0
     iget v4, v0, Landroid/graphics/Rect;->left:I
 
-    invoke-virtual {v1}, Landroid/widget/AbsListView;->getPaddingLeft()I
+    invoke-virtual {v1}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v5
 
@@ -4213,7 +4213,7 @@
 
     iget v4, v0, Landroid/graphics/Rect;->top:I
 
-    invoke-virtual {v1}, Landroid/widget/AbsListView;->getPaddingTop()I
+    invoke-virtual {v1}, Landroid/view/View;->getPaddingTop()I
 
     move-result v5
 
@@ -4223,7 +4223,7 @@
 
     iget v4, v0, Landroid/graphics/Rect;->right:I
 
-    invoke-virtual {v1}, Landroid/widget/AbsListView;->getPaddingRight()I
+    invoke-virtual {v1}, Landroid/view/View;->getPaddingRight()I
 
     move-result v5
 
@@ -4233,7 +4233,7 @@
 
     iget v4, v0, Landroid/graphics/Rect;->bottom:I
 
-    invoke-virtual {v1}, Landroid/widget/AbsListView;->getPaddingBottom()I
+    invoke-virtual {v1}, Landroid/view/View;->getPaddingBottom()I
 
     move-result v5
 
@@ -4462,7 +4462,7 @@
 
     iget-object v1, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
-    invoke-virtual {v1}, Landroid/widget/AbsListView;->isInScrollingContainer()Z
+    invoke-virtual {v1}, Landroid/view/View;->isInScrollingContainer()Z
 
     move-result v1
 
@@ -4527,7 +4527,7 @@
     .prologue
     iget-object v3, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
-    invoke-virtual {v3}, Landroid/widget/AbsListView;->getChildCount()I
+    invoke-virtual {v3}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v2
 
@@ -4550,7 +4550,7 @@
 
     iget-object v3, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
-    invoke-virtual {v3}, Landroid/widget/AbsListView;->getFirstVisiblePosition()I
+    invoke-virtual {v3}, Landroid/widget/AdapterView;->getFirstVisiblePosition()I
 
     move-result v0
 
@@ -4940,7 +4940,7 @@
 
     iget-object v4, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
-    invoke-virtual {v4}, Landroid/widget/AbsListView;->isLayoutRtl()Z
+    invoke-virtual {v4}, Landroid/view/View;->isLayoutRtl()Z
 
     move-result v4
 
@@ -4975,11 +4975,11 @@
     .local v2, previewResId:I
     iget-object v3, p0, Landroid/widget/FastScroller;->mPreviewImage:Landroid/widget/ImageView;
 
-    invoke-virtual {v3, v2}, Landroid/widget/ImageView;->setBackgroundResource(I)V
+    invoke-virtual {v3, v2}, Landroid/view/View;->setBackgroundResource(I)V
 
     iget-object v3, p0, Landroid/widget/FastScroller;->mPreviewImage:Landroid/widget/ImageView;
 
-    invoke-virtual {v3}, Landroid/widget/ImageView;->getBackground()Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v3}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -5007,7 +5007,7 @@
 
     iget v7, v1, Landroid/graphics/Rect;->bottom:I
 
-    invoke-virtual {v3, v4, v5, v6, v7}, Landroid/widget/ImageView;->setPadding(IIII)V
+    invoke-virtual {v3, v4, v5, v6, v7}, Landroid/view/View;->setPadding(IIII)V
 
     .end local v1           #padding:Landroid/graphics/Rect;
     :cond_1
@@ -5094,7 +5094,7 @@
 
     iget-object v2, p0, Landroid/widget/FastScroller;->mPreviewImage:Landroid/widget/ImageView;
 
-    invoke-virtual {v2}, Landroid/widget/ImageView;->getPaddingLeft()I
+    invoke-virtual {v2}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v2
 
@@ -5106,7 +5106,7 @@
 
     iget-object v2, p0, Landroid/widget/FastScroller;->mPreviewImage:Landroid/widget/ImageView;
 
-    invoke-virtual {v2}, Landroid/widget/ImageView;->getPaddingTop()I
+    invoke-virtual {v2}, Landroid/view/View;->getPaddingTop()I
 
     move-result v2
 
@@ -5118,7 +5118,7 @@
 
     iget-object v2, p0, Landroid/widget/FastScroller;->mPreviewImage:Landroid/widget/ImageView;
 
-    invoke-virtual {v2}, Landroid/widget/ImageView;->getPaddingRight()I
+    invoke-virtual {v2}, Landroid/view/View;->getPaddingRight()I
 
     move-result v2
 
@@ -5130,7 +5130,7 @@
 
     iget-object v2, p0, Landroid/widget/FastScroller;->mPreviewImage:Landroid/widget/ImageView;
 
-    invoke-virtual {v2}, Landroid/widget/ImageView;->getPaddingBottom()I
+    invoke-virtual {v2}, Landroid/view/View;->getPaddingBottom()I
 
     move-result v2
 

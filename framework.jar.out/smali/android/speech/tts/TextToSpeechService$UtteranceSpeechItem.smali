@@ -58,7 +58,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->getCallerIdentity()Ljava/lang/Object;
+    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$SpeechItem;->getCallerIdentity()Ljava/lang/Object;
 
     move-result-object v2
 
@@ -86,7 +86,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->getCallerIdentity()Ljava/lang/Object;
+    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$SpeechItem;->getCallerIdentity()Ljava/lang/Object;
 
     move-result-object v2
 
@@ -114,7 +114,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->getCallerIdentity()Ljava/lang/Object;
+    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$SpeechItem;->getCallerIdentity()Ljava/lang/Object;
 
     move-result-object v2
 
@@ -130,7 +130,7 @@
     .parameter "defaultValue"
 
     .prologue
-    iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->mParams:Landroid/os/Bundle;
+    iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$SpeechItem;->mParams:Landroid/os/Bundle;
 
     if-nez v0, :cond_0
 
@@ -140,7 +140,7 @@
 
     .restart local p2
     :cond_0
-    iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->mParams:Landroid/os/Bundle;
+    iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$SpeechItem;->mParams:Landroid/os/Bundle;
 
     invoke-virtual {v0, p1, p2}, Landroid/os/Bundle;->getFloat(Ljava/lang/String;F)F
 
@@ -155,7 +155,7 @@
     .parameter "defaultValue"
 
     .prologue
-    iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->mParams:Landroid/os/Bundle;
+    iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$SpeechItem;->mParams:Landroid/os/Bundle;
 
     if-nez v0, :cond_0
 
@@ -165,7 +165,7 @@
 
     .restart local p2
     :cond_0
-    iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->mParams:Landroid/os/Bundle;
+    iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$SpeechItem;->mParams:Landroid/os/Bundle;
 
     invoke-virtual {v0, p1, p2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
 
@@ -210,7 +210,7 @@
     .parameter "defaultValue"
 
     .prologue
-    iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->mParams:Landroid/os/Bundle;
+    iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$SpeechItem;->mParams:Landroid/os/Bundle;
 
     if-nez v0, :cond_0
 
@@ -220,7 +220,7 @@
 
     .restart local p2
     :cond_0
-    iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->mParams:Landroid/os/Bundle;
+    iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$SpeechItem;->mParams:Landroid/os/Bundle;
 
     invoke-virtual {v0, p1, p2}, Landroid/os/Bundle;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 

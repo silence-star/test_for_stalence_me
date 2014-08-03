@@ -71,14 +71,13 @@
     move-result v0
 
     .local v0, ret:I
-    if-eqz v0, :cond_miui
+    if-eqz v0, :cond_0
 
     .end local v0           #ret:I
     return v0
 
     .restart local v0       #ret:I
-    :cond_miui
-
+    :cond_0
     iget-object v2, p0, Landroid/content/pm/ResolveInfo$DisplayNameComparator;->mPM:Landroid/content/pm/PackageManager;
 
     invoke-virtual {p1, v2}, Landroid/content/pm/ResolveInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
@@ -86,13 +85,13 @@
     move-result-object v0
 
     .local v0, sa:Ljava/lang/CharSequence;
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     iget-object v2, p1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v0, v2, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v0, v2, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
-    :cond_0
+    :cond_1
     iget-object v2, p0, Landroid/content/pm/ResolveInfo$DisplayNameComparator;->mPM:Landroid/content/pm/PackageManager;
 
     invoke-virtual {p2, v2}, Landroid/content/pm/ResolveInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
@@ -100,13 +99,13 @@
     move-result-object v1
 
     .local v1, sb:Ljava/lang/CharSequence;
-    if-nez v1, :cond_1
+    if-nez v1, :cond_2
 
     iget-object v2, p2, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v1, v2, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v1, v2, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
-    :cond_1
+    :cond_2
     iget-object v2, p0, Landroid/content/pm/ResolveInfo$DisplayNameComparator;->mCollator:Ljava/text/Collator;
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;

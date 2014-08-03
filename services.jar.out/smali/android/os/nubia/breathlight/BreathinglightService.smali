@@ -1461,7 +1461,7 @@
     .end local v8           #count:I
     .restart local v7       #count:I
     :cond_0
-    const-string v3, "type = 3 and new = 1 and INCOMING_CALL_TIME > 0"
+    const-string v3, "type = 3 and new = 1"
 
     .local v3, selection:Ljava/lang/String;
     sget-object v1, Landroid/provider/CallLog$Calls;->CONTENT_URI:Landroid/net/Uri;
@@ -1502,7 +1502,7 @@
 
     .local v9, e:Ljava/lang/Exception;
     :try_start_1
-    invoke-virtual {v9}, Ljava/lang/Exception;->printStackTrace()V
+    invoke-virtual {v9}, Ljava/lang/Throwable;->printStackTrace()V
 
     const-string v1, "BreathinglightService"
 

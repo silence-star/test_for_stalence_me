@@ -61,12 +61,12 @@
     add-int v19, v23, v24
 
     .local v19, padding:I
-    invoke-virtual/range {p2 .. p2}, Landroid/widget/TextView;->getScrollY()I
+    invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getScrollY()I
 
     move-result v6
 
     .local v6, areatop:I
-    invoke-virtual/range {p2 .. p2}, Landroid/widget/TextView;->getHeight()I
+    invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getHeight()I
 
     move-result v23
 
@@ -476,7 +476,7 @@
     sparse-switch p3, :sswitch_data_0
 
     :cond_0
-    invoke-super/range {p0 .. p5}, Landroid/text/method/ScrollingMovementMethod;->handleMovementKey(Landroid/widget/TextView;Landroid/text/Spannable;IILandroid/view/KeyEvent;)Z
+    invoke-super/range {p0 .. p5}, Landroid/text/method/BaseMovementMethod;->handleMovementKey(Landroid/widget/TextView;Landroid/text/Spannable;IILandroid/view/KeyEvent;)Z
 
     move-result v0
 
@@ -638,13 +638,13 @@
 
     sub-int/2addr v6, v8
 
-    invoke-virtual {p1}, Landroid/widget/TextView;->getScrollX()I
+    invoke-virtual {p1}, Landroid/view/View;->getScrollX()I
 
     move-result v8
 
     add-int/2addr v5, v8
 
-    invoke-virtual {p1}, Landroid/widget/TextView;->getScrollY()I
+    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
 
     move-result v8
 

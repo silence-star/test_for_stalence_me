@@ -115,7 +115,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
 
-    iget-boolean v0, p2, Landroid/content/pm/ProviderInfo;->exported:Z
+    iget-boolean v0, p2, Landroid/content/pm/ComponentInfo;->exported:Z
 
     if-nez v0, :cond_0
 
@@ -183,7 +183,7 @@
     .parameter "extras"
 
     .prologue
-    invoke-virtual {p0}, Landroid/provider/DocumentsProvider;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/content/ContentProvider;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
@@ -233,7 +233,7 @@
 
     .local v1, callerHasManage:Z
     :goto_1
-    invoke-virtual {p0, v5}, Landroid/provider/DocumentsProvider;->enforceWritePermissionInner(Landroid/net/Uri;)V
+    invoke-virtual {p0, v5}, Landroid/content/ContentProvider;->enforceWritePermissionInner(Landroid/net/Uri;)V
 
     new-instance v10, Landroid/os/Bundle;
 
@@ -285,7 +285,7 @@
     move-result-object v9
 
     .local v9, newDocumentUri:Landroid/net/Uri;
-    invoke-virtual {p0}, Landroid/provider/DocumentsProvider;->getCallingPackage()Ljava/lang/String;
+    invoke-virtual {p0}, Landroid/content/ContentProvider;->getCallingPackage()Ljava/lang/String;
 
     move-result-object v11
 

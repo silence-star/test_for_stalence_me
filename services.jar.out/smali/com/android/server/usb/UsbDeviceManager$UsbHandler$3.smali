@@ -61,7 +61,7 @@
 
     const/4 v3, 0x0
 
-    invoke-virtual {v1, v2, v0, v3}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->obtainMessage(III)Landroid/os/Message;
+    invoke-virtual {v1, v2, v0, v3}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v1
 

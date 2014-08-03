@@ -391,7 +391,7 @@
 
     move-object/from16 v0, v35
 
-    iget-object v3, v0, Lcom/android/server/wm/AppWindowToken;->token:Landroid/os/IBinder;
+    iget-object v3, v0, Lcom/android/server/wm/WindowToken;->token:Landroid/os/IBinder;
 
     move-object/from16 v0, v23
 
@@ -504,7 +504,7 @@
 
     move-object/from16 v0, v35
 
-    iget-object v3, v0, Lcom/android/server/wm/AppWindowToken;->token:Landroid/os/IBinder;
+    iget-object v3, v0, Lcom/android/server/wm/WindowToken;->token:Landroid/os/IBinder;
 
     move-object/from16 v0, v31
 
@@ -645,7 +645,7 @@
 
     move-object/from16 v0, v35
 
-    iget-object v0, v0, Lcom/android/server/wm/AppWindowToken;->token:Landroid/os/IBinder;
+    iget-object v0, v0, Lcom/android/server/wm/WindowToken;->token:Landroid/os/IBinder;
 
     move-object/from16 v28, v0
 
@@ -804,7 +804,7 @@
 
     move-object/from16 v0, v35
 
-    iget-object v0, v0, Lcom/android/server/wm/AppWindowToken;->token:Landroid/os/IBinder;
+    iget-object v0, v0, Lcom/android/server/wm/WindowToken;->token:Landroid/os/IBinder;
 
     move-object/from16 v28, v0
 
@@ -996,7 +996,7 @@
     move-result-object v34
 
     .local v34, windows:Lcom/android/server/wm/WindowList;
-    invoke-virtual/range {v34 .. v34}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual/range {v34 .. v34}, Ljava/util/ArrayList;->size()I
 
     move-result v16
 
@@ -1011,7 +1011,7 @@
 
     move/from16 v1, v16
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v32
 
@@ -1254,7 +1254,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v2, v4, v5}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessageDelayed(IJ)Z
+    invoke-virtual {v0, v2, v4, v5}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
     monitor-exit v3
 
@@ -1360,7 +1360,7 @@
     move-object/from16 v30, v0
 
     .local v30, tokens:Lcom/android/server/wm/AppTokenList;
-    invoke-virtual/range {v30 .. v30}, Lcom/android/server/wm/AppTokenList;->size()I
+    invoke-virtual/range {v30 .. v30}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
@@ -1374,7 +1374,7 @@
 
     move/from16 v1, v29
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/AppTokenList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v27
 
@@ -1515,7 +1515,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v2}, Lcom/android/server/wm/WindowManagerService$H;->removeMessages(I)V
+    invoke-virtual {v0, v2}, Landroid/os/Handler;->removeMessages(I)V
 
     move-object/from16 v0, p0
 

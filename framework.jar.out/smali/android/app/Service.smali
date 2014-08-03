@@ -78,7 +78,7 @@
     .parameter "activityManager"
 
     .prologue
-    invoke-virtual {p0, p1}, Landroid/app/Service;->attachBaseContext(Landroid/content/Context;)V
+    invoke-virtual {p0, p1}, Landroid/content/ContextWrapper;->attachBaseContext(Landroid/content/Context;)V
 
     iput-object p2, p0, Landroid/app/Service;->mThread:Landroid/app/ActivityThread;
 
@@ -93,7 +93,7 @@
     .end local p6
     iput-object p6, p0, Landroid/app/Service;->mActivityManager:Landroid/app/IActivityManager;
 
-    invoke-virtual {p0}, Landroid/app/Service;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
+    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
     move-result-object v0
 

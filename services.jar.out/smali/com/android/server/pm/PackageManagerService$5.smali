@@ -58,7 +58,7 @@
 
     iget-object v10, v10, Lcom/android/server/pm/PackageManagerService;->mHandler:Lcom/android/server/pm/PackageManagerService$PackageHandler;
 
-    invoke-virtual {v10, p0}, Lcom/android/server/pm/PackageManagerService$PackageHandler;->removeCallbacks(Ljava/lang/Runnable;)V
+    invoke-virtual {v10, p0}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
     new-instance v5, Lcom/android/server/pm/PackageManagerService$PackageInstalledInfo;
 
@@ -211,7 +211,7 @@
 
     iget-object v8, v8, Landroid/content/pm/PackageParser$Package;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    iget-object v8, v8, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+    iget-object v8, v8, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     invoke-interface {v0, v8, v6}, Landroid/app/backup/IBackupManager;->restoreAtInstall(Ljava/lang/String;I)V
     :try_end_1
@@ -229,7 +229,7 @@
 
     const/16 v10, 0x9
 
-    invoke-virtual {v8, v10, v6, v9}, Lcom/android/server/pm/PackageManagerService$PackageHandler;->obtainMessage(III)Landroid/os/Message;
+    invoke-virtual {v8, v10, v6, v9}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v4
 
@@ -238,7 +238,7 @@
 
     iget-object v8, v8, Lcom/android/server/pm/PackageManagerService;->mHandler:Lcom/android/server/pm/PackageManagerService$PackageHandler;
 
-    invoke-virtual {v8, v4}, Lcom/android/server/pm/PackageManagerService$PackageHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v8, v4}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     .end local v4           #msg:Landroid/os/Message;
     :cond_3

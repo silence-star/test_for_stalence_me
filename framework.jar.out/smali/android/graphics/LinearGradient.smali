@@ -89,9 +89,9 @@
 
     move-result v1
 
-    iput v1, p0, Landroid/graphics/LinearGradient;->native_instance:I
+    iput v1, p0, Landroid/graphics/Shader;->native_instance:I
 
-    iget v2, p0, Landroid/graphics/LinearGradient;->native_instance:I
+    iget v2, p0, Landroid/graphics/Shader;->native_instance:I
 
     move-object/from16 v0, p7
 
@@ -115,7 +115,7 @@
 
     move-result v1
 
-    iput v1, p0, Landroid/graphics/LinearGradient;->native_shader:I
+    iput v1, p0, Landroid/graphics/Shader;->native_shader:I
 
     return-void
 .end method
@@ -211,9 +211,9 @@
 
     move-result v1
 
-    iput v1, p0, Landroid/graphics/LinearGradient;->native_instance:I
+    iput v1, p0, Landroid/graphics/Shader;->native_instance:I
 
-    iget v2, p0, Landroid/graphics/LinearGradient;->native_instance:I
+    iget v2, p0, Landroid/graphics/Shader;->native_instance:I
 
     move-object/from16 v0, p7
 
@@ -237,7 +237,7 @@
 
     move-result v1
 
-    iput v1, p0, Landroid/graphics/LinearGradient;->native_shader:I
+    iput v1, p0, Landroid/graphics/Shader;->native_shader:I
 
     return-void
 .end method
@@ -285,7 +285,7 @@
 
     iget-object v5, p0, Landroid/graphics/LinearGradient;->mColors:[I
 
-    invoke-virtual {v5}, [I->clone()Ljava/lang/Object;
+    invoke-virtual {v5}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v5
 
@@ -297,7 +297,7 @@
 
     iget-object v6, p0, Landroid/graphics/LinearGradient;->mPositions:[F
 
-    invoke-virtual {v6}, [F->clone()Ljava/lang/Object;
+    invoke-virtual {v6}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v6
 
@@ -310,7 +310,7 @@
 
     .local v0, copy:Landroid/graphics/LinearGradient;
     :goto_1
-    invoke-virtual {p0, v0}, Landroid/graphics/LinearGradient;->copyLocalMatrix(Landroid/graphics/Shader;)V
+    invoke-virtual {p0, v0}, Landroid/graphics/Shader;->copyLocalMatrix(Landroid/graphics/Shader;)V
 
     return-object v0
 

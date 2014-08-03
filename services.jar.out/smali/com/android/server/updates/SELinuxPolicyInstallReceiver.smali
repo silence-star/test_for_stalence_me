@@ -51,7 +51,7 @@
 
     new-instance v0, Ljava/io/File;
 
-    iget-object v4, p0, Lcom/android/server/updates/SELinuxPolicyInstallReceiver;->updateDir:Ljava/io/File;
+    iget-object v4, p0, Lcom/android/server/updates/ConfigUpdateInstallReceiver;->updateDir:Ljava/io/File;
 
     invoke-virtual {v4}, Ljava/io/File;->getParentFile()Ljava/io/File;
 
@@ -64,7 +64,7 @@
     .local v0, contexts:Ljava/io/File;
     new-instance v1, Ljava/io/File;
 
-    iget-object v4, p0, Lcom/android/server/updates/SELinuxPolicyInstallReceiver;->updateDir:Ljava/io/File;
+    iget-object v4, p0, Lcom/android/server/updates/ConfigUpdateInstallReceiver;->updateDir:Ljava/io/File;
 
     invoke-virtual {v4}, Ljava/io/File;->getParentFile()Ljava/io/File;
 
@@ -77,7 +77,7 @@
     .local v1, current:Ljava/io/File;
     new-instance v3, Ljava/io/File;
 
-    iget-object v4, p0, Lcom/android/server/updates/SELinuxPolicyInstallReceiver;->updateDir:Ljava/io/File;
+    iget-object v4, p0, Lcom/android/server/updates/ConfigUpdateInstallReceiver;->updateDir:Ljava/io/File;
 
     invoke-virtual {v4}, Ljava/io/File;->getParentFile()Ljava/io/File;
 
@@ -90,7 +90,7 @@
     .local v3, update:Ljava/io/File;
     new-instance v2, Ljava/io/File;
 
-    iget-object v4, p0, Lcom/android/server/updates/SELinuxPolicyInstallReceiver;->updateDir:Ljava/io/File;
+    iget-object v4, p0, Lcom/android/server/updates/ConfigUpdateInstallReceiver;->updateDir:Ljava/io/File;
 
     invoke-virtual {v4}, Ljava/io/File;->getParentFile()Ljava/io/File;
 
@@ -109,7 +109,7 @@
 
     sget-object v4, Llibcore/io/Libcore;->os:Llibcore/io/Os;
 
-    iget-object v5, p0, Lcom/android/server/updates/SELinuxPolicyInstallReceiver;->updateDir:Ljava/io/File;
+    iget-object v5, p0, Lcom/android/server/updates/ConfigUpdateInstallReceiver;->updateDir:Ljava/io/File;
 
     invoke-virtual {v5}, Ljava/io/File;->getPath()Ljava/lang/String;
 
@@ -175,7 +175,7 @@
     :cond_0
     sget-object v4, Llibcore/io/Libcore;->os:Llibcore/io/Os;
 
-    iget-object v5, p0, Lcom/android/server/updates/SELinuxPolicyInstallReceiver;->updateDir:Ljava/io/File;
+    iget-object v5, p0, Lcom/android/server/updates/ConfigUpdateInstallReceiver;->updateDir:Ljava/io/File;
 
     invoke-virtual {v5}, Ljava/io/File;->getPath()Ljava/lang/String;
 
@@ -261,7 +261,7 @@
     .prologue
     new-instance v0, Ljava/io/File;
 
-    iget-object v1, p0, Lcom/android/server/updates/SELinuxPolicyInstallReceiver;->updateDir:Ljava/io/File;
+    iget-object v1, p0, Lcom/android/server/updates/ConfigUpdateInstallReceiver;->updateDir:Ljava/io/File;
 
     const-string v2, "seapp_contexts"
 
@@ -277,7 +277,7 @@
 
     new-instance v0, Ljava/io/File;
 
-    iget-object v1, p0, Lcom/android/server/updates/SELinuxPolicyInstallReceiver;->updateDir:Ljava/io/File;
+    iget-object v1, p0, Lcom/android/server/updates/ConfigUpdateInstallReceiver;->updateDir:Ljava/io/File;
 
     const-string v2, "property_contexts"
 
@@ -293,7 +293,7 @@
 
     new-instance v0, Ljava/io/File;
 
-    iget-object v1, p0, Lcom/android/server/updates/SELinuxPolicyInstallReceiver;->updateDir:Ljava/io/File;
+    iget-object v1, p0, Lcom/android/server/updates/ConfigUpdateInstallReceiver;->updateDir:Ljava/io/File;
 
     const-string v2, "file_contexts"
 
@@ -309,7 +309,7 @@
 
     new-instance v0, Ljava/io/File;
 
-    iget-object v1, p0, Lcom/android/server/updates/SELinuxPolicyInstallReceiver;->updateDir:Ljava/io/File;
+    iget-object v1, p0, Lcom/android/server/updates/ConfigUpdateInstallReceiver;->updateDir:Ljava/io/File;
 
     const-string v2, "sepolicy"
 
@@ -345,13 +345,13 @@
     .local v0, chunk:[B
     invoke-virtual {p2, v0, v2, p3}, Ljava/io/BufferedInputStream;->read([BII)I
 
-    iget-object v1, p0, Lcom/android/server/updates/SELinuxPolicyInstallReceiver;->updateDir:Ljava/io/File;
+    iget-object v1, p0, Lcom/android/server/updates/ConfigUpdateInstallReceiver;->updateDir:Ljava/io/File;
 
     invoke-static {v0, v2}, Landroid/util/Base64;->decode([BI)[B
 
     move-result-object v2
 
-    invoke-virtual {p0, v1, p1, v2}, Lcom/android/server/updates/SELinuxPolicyInstallReceiver;->writeUpdate(Ljava/io/File;Ljava/io/File;[B)V
+    invoke-virtual {p0, v1, p1, v2}, Lcom/android/server/updates/ConfigUpdateInstallReceiver;->writeUpdate(Ljava/io/File;Ljava/io/File;[B)V
 
     return-void
 .end method
@@ -536,7 +536,7 @@
 
     new-instance v2, Ljava/io/FileInputStream;
 
-    iget-object v3, p0, Lcom/android/server/updates/SELinuxPolicyInstallReceiver;->updateContent:Ljava/io/File;
+    iget-object v3, p0, Lcom/android/server/updates/ConfigUpdateInstallReceiver;->updateContent:Ljava/io/File;
 
     invoke-direct {v2, v3}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
@@ -551,7 +551,7 @@
     .local v0, chunkLengths:[I
     new-instance v2, Ljava/io/File;
 
-    iget-object v3, p0, Lcom/android/server/updates/SELinuxPolicyInstallReceiver;->updateDir:Ljava/io/File;
+    iget-object v3, p0, Lcom/android/server/updates/ConfigUpdateInstallReceiver;->updateDir:Ljava/io/File;
 
     const-string v4, "seapp_contexts"
 
@@ -565,7 +565,7 @@
 
     new-instance v2, Ljava/io/File;
 
-    iget-object v3, p0, Lcom/android/server/updates/SELinuxPolicyInstallReceiver;->updateDir:Ljava/io/File;
+    iget-object v3, p0, Lcom/android/server/updates/ConfigUpdateInstallReceiver;->updateDir:Ljava/io/File;
 
     const-string v4, "property_contexts"
 
@@ -579,7 +579,7 @@
 
     new-instance v2, Ljava/io/File;
 
-    iget-object v3, p0, Lcom/android/server/updates/SELinuxPolicyInstallReceiver;->updateDir:Ljava/io/File;
+    iget-object v3, p0, Lcom/android/server/updates/ConfigUpdateInstallReceiver;->updateDir:Ljava/io/File;
 
     const-string v4, "file_contexts"
 
@@ -593,7 +593,7 @@
 
     new-instance v2, Ljava/io/File;
 
-    iget-object v3, p0, Lcom/android/server/updates/SELinuxPolicyInstallReceiver;->updateDir:Ljava/io/File;
+    iget-object v3, p0, Lcom/android/server/updates/ConfigUpdateInstallReceiver;->updateDir:Ljava/io/File;
 
     const-string v4, "sepolicy"
 

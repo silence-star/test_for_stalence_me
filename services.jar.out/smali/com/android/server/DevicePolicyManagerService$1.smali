@@ -46,7 +46,7 @@
     .local v0, action:Ljava/lang/String;
     const-string v2, "android.intent.extra.user_handle"
 
-    invoke-virtual {p0}, Lcom/android/server/DevicePolicyManagerService$1;->getSendingUserId()I
+    invoke-virtual {p0}, Landroid/content/BroadcastReceiver;->getSendingUserId()I
 
     move-result v3
 

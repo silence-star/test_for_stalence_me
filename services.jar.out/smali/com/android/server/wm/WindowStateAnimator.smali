@@ -3271,7 +3271,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v0}, Ljava/lang/RuntimeException;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -3325,7 +3325,7 @@
 
     iget-object v3, v3, Lcom/android/server/wm/WindowState;->mChildWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v3}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
@@ -3339,7 +3339,7 @@
 
     iget-object v3, v3, Lcom/android/server/wm/WindowState;->mChildWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v3, v2}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -3470,7 +3470,7 @@
 
     move-result-object v4
 
-    invoke-virtual {v1}, Ljava/lang/RuntimeException;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v5
 
@@ -3890,7 +3890,7 @@
 
     iget-object v2, v2, Lcom/android/server/wm/WindowState;->mChildWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v2}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
@@ -3905,7 +3905,7 @@
 
     iget-object v2, v2, Lcom/android/server/wm/WindowState;->mChildWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v2, v1}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -4270,7 +4270,7 @@
 
     iget-object v4, v4, Lcom/android/server/wm/WindowState;->mChildWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v4}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
@@ -4285,7 +4285,7 @@
 
     iget-object v4, v4, Lcom/android/server/wm/WindowState;->mChildWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v4, v1}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v4, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -4362,7 +4362,7 @@
 
     const/4 v4, 0x7
 
-    invoke-virtual {v2, v4}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessage(I)Z
+    invoke-virtual {v2, v4}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     :cond_4
     iget-object v2, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
@@ -5858,7 +5858,7 @@
 
     const/4 v4, 0x7
 
-    invoke-virtual {v2, v4}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessage(I)Z
+    invoke-virtual {v2, v4}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     :cond_d
     :goto_3

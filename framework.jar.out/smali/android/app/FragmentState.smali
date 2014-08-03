@@ -244,7 +244,7 @@
 
     iget-object v0, p0, Landroid/app/FragmentState;->mArguments:Landroid/os/Bundle;
 
-    invoke-virtual {p1}, Landroid/app/Activity;->getClassLoader()Ljava/lang/ClassLoader;
+    invoke-virtual {p1}, Landroid/content/ContextWrapper;->getClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v1
 
@@ -267,7 +267,7 @@
 
     iget-object v0, p0, Landroid/app/FragmentState;->mSavedFragmentState:Landroid/os/Bundle;
 
-    invoke-virtual {p1}, Landroid/app/Activity;->getClassLoader()Ljava/lang/ClassLoader;
+    invoke-virtual {p1}, Landroid/content/ContextWrapper;->getClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v1
 

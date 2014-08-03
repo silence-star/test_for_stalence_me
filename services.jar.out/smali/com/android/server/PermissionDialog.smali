@@ -74,7 +74,7 @@
 
     const/4 v3, 0x0
 
-    invoke-virtual {p0, v3}, Lcom/android/server/PermissionDialog;->setCancelable(Z)V
+    invoke-virtual {p0, v3}, Landroid/app/AlertDialog;->setCancelable(Z)V
 
     const/4 v3, -0x1
 
@@ -92,7 +92,7 @@
 
     move-result-object v5
 
-    invoke-virtual {p0, v3, v4, v5}, Lcom/android/server/PermissionDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
+    invoke-virtual {p0, v3, v4, v5}, Landroid/app/AlertDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
 
     const/4 v3, -0x2
 
@@ -110,7 +110,7 @@
 
     move-result-object v5
 
-    invoke-virtual {p0, v3, v4, v5}, Lcom/android/server/PermissionDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
+    invoke-virtual {p0, v3, v4, v5}, Landroid/app/AlertDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
 
     const v3, 0x10405fa
 
@@ -118,9 +118,9 @@
 
     move-result-object v3
 
-    invoke-virtual {p0, v3}, Lcom/android/server/PermissionDialog;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v3}, Landroid/app/AlertDialog;->setTitle(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {p0}, Lcom/android/server/PermissionDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v3
 
@@ -161,7 +161,7 @@
 
     iput v3, v0, Landroid/view/WindowManager$LayoutParams;->privateFlags:I
 
-    invoke-virtual {p0}, Lcom/android/server/PermissionDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v3
 
@@ -207,7 +207,7 @@
 
     move-result-object v3
 
-    invoke-virtual {p0, v3}, Lcom/android/server/PermissionDialog;->setMessage(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v3}, Landroid/app/AlertDialog;->setMessage(Ljava/lang/CharSequence;)V
 
     return-void
 .end method

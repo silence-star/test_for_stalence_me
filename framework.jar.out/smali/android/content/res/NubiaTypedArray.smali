@@ -18,7 +18,7 @@
     .prologue
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/content/res/TypedArray;-><init>(Landroid/content/res/Resources;[I[II)V
 
-    invoke-virtual {p0}, Landroid/content/res/NubiaTypedArray;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/content/res/TypedArray;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -41,7 +41,7 @@
 
     if-eqz v2, :cond_0
 
-    iget-object v2, p0, Landroid/content/res/NubiaTypedArray;->mData:[I
+    iget-object v2, p0, Landroid/content/res/TypedArray;->mData:[I
 
     add-int/lit8 v3, p1, 0x0
 
@@ -51,14 +51,14 @@
 
     if-ne v2, v3, :cond_0
 
-    iget-object v2, p0, Landroid/content/res/NubiaTypedArray;->mData:[I
+    iget-object v2, p0, Landroid/content/res/TypedArray;->mData:[I
 
     add-int/lit8 v3, p1, 0x3
 
     aget v0, v2, v3
 
     .local v0, id:I
-    invoke-virtual {p0}, Landroid/content/res/NubiaTypedArray;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/content/res/TypedArray;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 

@@ -55,7 +55,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/widget/LinearLayout;->getChildCount()I
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
@@ -74,7 +74,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 

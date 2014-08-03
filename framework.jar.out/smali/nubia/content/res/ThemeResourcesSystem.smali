@@ -93,7 +93,7 @@
 
     if-nez v1, :cond_3
 
-    iget-object v1, p0, Lnubia/content/res/ThemeResourcesSystem;->mResources:Landroid/content/res/Resources;
+    iget-object v1, p0, Lnubia/content/res/ThemeResources;->mResources:Landroid/content/res/Resources;
 
     const-string v2, "com.android.systemui"
 
@@ -152,7 +152,7 @@
     :cond_2
     if-nez v0, :cond_0
 
-    invoke-virtual {p0, p1}, Lnubia/content/res/ThemeResourcesSystem;->getThemeFileStreamInner(Ljava/lang/String;)Lnubia/content/res/ThemeZipFile$ThemeFileInfo;
+    invoke-virtual {p0, p1}, Lnubia/content/res/ThemeResources;->getThemeFileStreamInner(Ljava/lang/String;)Lnubia/content/res/ThemeZipFile$ThemeFileInfo;
 
     move-result-object v0
 
@@ -383,7 +383,7 @@
     move-exception v1
 
     .local v1, e:Ljava/io/IOException;
-    invoke-virtual {v1}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_0
 
@@ -393,7 +393,7 @@
 
     .local v1, e:Ljava/lang/OutOfMemoryError;
     :try_start_2
-    invoke-virtual {v1}, Ljava/lang/OutOfMemoryError;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
@@ -410,7 +410,7 @@
     move-exception v1
 
     .local v1, e:Ljava/io/IOException;
-    invoke-virtual {v1}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_0
 
@@ -432,7 +432,7 @@
     move-exception v1
 
     .restart local v1       #e:Ljava/io/IOException;
-    invoke-virtual {v1}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_1
 .end method
@@ -503,11 +503,11 @@
     if-nez v1, :cond_1
 
     :cond_0
-    iget-object v1, p0, Lnubia/content/res/ThemeResourcesSystem;->mWrapped:Lnubia/content/res/ThemeResources;
+    iget-object v1, p0, Lnubia/content/res/ThemeResources;->mWrapped:Lnubia/content/res/ThemeResources;
 
     if-eqz v1, :cond_1
 
-    iget-object v1, p0, Lnubia/content/res/ThemeResourcesSystem;->mWrapped:Lnubia/content/res/ThemeResources;
+    iget-object v1, p0, Lnubia/content/res/ThemeResources;->mWrapped:Lnubia/content/res/ThemeResources;
 
     check-cast v1, Lnubia/content/res/ThemeResourcesSystem;
 
@@ -542,7 +542,7 @@
     :cond_0
     if-nez v0, :cond_1
 
-    invoke-virtual {p0, p1}, Lnubia/content/res/ThemeResourcesSystem;->getThemeCharSequenceInner(I)Ljava/lang/CharSequence;
+    invoke-virtual {p0, p1}, Lnubia/content/res/ThemeResources;->getThemeCharSequenceInner(I)Ljava/lang/CharSequence;
 
     move-result-object v0
 
@@ -611,7 +611,7 @@
     :cond_0
     if-nez v0, :cond_1
 
-    invoke-virtual {p0, p1}, Lnubia/content/res/ThemeResourcesSystem;->getThemeIntInner(I)Ljava/lang/Integer;
+    invoke-virtual {p0, p1}, Lnubia/content/res/ThemeResources;->getThemeIntInner(I)Ljava/lang/Integer;
 
     move-result-object v0
 

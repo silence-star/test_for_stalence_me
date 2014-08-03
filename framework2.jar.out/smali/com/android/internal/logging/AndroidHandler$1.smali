@@ -64,7 +64,7 @@
 
     invoke-virtual {v2, v0}, Ljava/lang/Throwable;->printStackTrace(Ljava/io/PrintWriter;)V
 
-    invoke-virtual {v0}, Ljava/io/PrintWriter;->flush()V
+    invoke-virtual {v0}, Lcom/android/internal/util/FastPrintWriter;->flush()V
 
     invoke-virtual {v1}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
 

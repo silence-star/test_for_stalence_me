@@ -947,7 +947,7 @@
     check-cast p0, Ljava/lang/ref/WeakReference;
 
     .end local p0
-    invoke-virtual {p0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -978,14 +978,14 @@
 
     iget-object v2, v1, Landroid/media/MediaPlayer;->mEventHandler:Landroid/media/MediaPlayer$EventHandler;
 
-    invoke-virtual {v2, p1, p2, p3, p4}, Landroid/media/MediaPlayer$EventHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v2, p1, p2, p3, p4}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
     .local v0, m:Landroid/os/Message;
     iget-object v2, v1, Landroid/media/MediaPlayer;->mEventHandler:Landroid/media/MediaPlayer$EventHandler;
 
-    invoke-virtual {v2, v0}, Landroid/media/MediaPlayer$EventHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v2, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     goto :goto_0
 .end method
@@ -1492,7 +1492,7 @@
     invoke-direct {v3, v4, v5}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;I)V
 
     .local v3, thread:Landroid/os/HandlerThread;
-    invoke-virtual {v3}, Landroid/os/HandlerThread;->start()V
+    invoke-virtual {v3}, Ljava/lang/Thread;->start()V
 
     new-instance v2, Landroid/os/Handler;
 
@@ -1989,7 +1989,7 @@
     .local v1, i:I
     iget-object v5, p0, Landroid/media/MediaPlayer;->mOutOfBandSubtitleTracks:Ljava/util/Vector;
 
-    invoke-virtual {v5}, Ljava/util/Vector;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v5}, Ljava/util/AbstractList;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
@@ -2310,7 +2310,7 @@
     :try_start_0
     iget-object v2, p0, Landroid/media/MediaPlayer;->mOpenSubtitleSources:Ljava/util/Vector;
 
-    invoke-virtual {v2}, Ljava/util/Vector;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v2}, Ljava/util/AbstractList;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
@@ -2393,7 +2393,7 @@
 
     iget-object v2, p0, Landroid/media/MediaPlayer;->mEventHandler:Landroid/media/MediaPlayer$EventHandler;
 
-    invoke-virtual {v2, v5}, Landroid/media/MediaPlayer$EventHandler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
+    invoke-virtual {v2, v5}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
     :cond_3
     invoke-direct {p0}, Landroid/media/MediaPlayer;->disableProxyListener()V

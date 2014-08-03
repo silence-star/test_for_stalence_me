@@ -55,7 +55,7 @@
 
     iput-object v0, p0, Landroid/app/NubiaDialog;->mHandler:Landroid/os/Handler;
 
-    invoke-virtual {p0}, Landroid/app/NubiaDialog;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -121,13 +121,13 @@
 
     iget-object v1, p0, Landroid/app/NubiaDialog;->mButtonHandler:Landroid/view/View$OnClickListener;
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     iget-object v0, p0, Landroid/app/NubiaDialog;->mbutton_cancel:Landroid/widget/TextView;
 
     iget-object v1, p0, Landroid/app/NubiaDialog;->mButtonHandler:Landroid/view/View$OnClickListener;
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     return-void
 .end method
@@ -267,7 +267,7 @@
     .prologue
     invoke-super {p0, p1}, Landroid/app/Dialog;->onCreate(Landroid/os/Bundle;)V
 
-    invoke-virtual {p0}, Landroid/app/NubiaDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
@@ -275,7 +275,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->requestFeature(I)Z
 
-    invoke-virtual {p0}, Landroid/app/NubiaDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
@@ -285,7 +285,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/Window;->setLayout(II)V
 
-    invoke-virtual {p0}, Landroid/app/NubiaDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
@@ -293,7 +293,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->setBackgroundDrawableResource(I)V
 
-    invoke-virtual {p0}, Landroid/app/NubiaDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
@@ -301,7 +301,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->setType(I)V
 
-    invoke-virtual {p0}, Landroid/app/NubiaDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
@@ -419,7 +419,7 @@
     .parameter "view"
 
     .prologue
-    invoke-virtual {p0}, Landroid/app/NubiaDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 

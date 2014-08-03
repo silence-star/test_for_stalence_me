@@ -45,7 +45,7 @@
 
     const/16 v0, 0xb
 
-    invoke-virtual {p0, v0}, Lcom/android/server/connectivity/Tethering$TetherMasterSM$SetDnsForwardersErrorState;->notify(I)V
+    invoke-virtual {p0, v0}, Lcom/android/server/connectivity/Tethering$TetherMasterSM$ErrorState;->notify(I)V
 
     :try_start_0
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$TetherMasterSM$SetDnsForwardersErrorState;->this$1:Lcom/android/server/connectivity/Tethering$TetherMasterSM;

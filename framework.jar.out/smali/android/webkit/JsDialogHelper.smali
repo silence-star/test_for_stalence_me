@@ -361,7 +361,7 @@
 
     iget-object v7, p0, Landroid/webkit/JsDialogHelper;->mResult:Landroid/webkit/JsPromptResult;
 
-    invoke-virtual {v7}, Landroid/webkit/JsPromptResult;->cancel()V
+    invoke-virtual {v7}, Landroid/webkit/JsResult;->cancel()V
 
     :goto_0
     return-void
@@ -491,7 +491,7 @@
     .local v2, edit:Landroid/widget/EditText;
     iget-object v7, p0, Landroid/webkit/JsDialogHelper;->mDefaultValue:Ljava/lang/String;
 
-    invoke-virtual {v2, v7}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     new-instance v7, Landroid/webkit/JsDialogHelper$PositiveListener;
 

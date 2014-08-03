@@ -350,7 +350,7 @@
 
     iget-object v3, v0, Landroid/widget/ListPopupWindow;->mDropDownListHighlight:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v1, v3}, Landroid/widget/ListPopupWindow$DropDownListView;->setSelector(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v1, v3}, Landroid/widget/AbsListView;->setSelector(Landroid/graphics/drawable/Drawable;)V
 
     :cond_0
     move-object/from16 v0, p0
@@ -361,7 +361,7 @@
 
     iget-object v3, v0, Landroid/widget/ListPopupWindow;->mAdapter:Landroid/widget/ListAdapter;
 
-    invoke-virtual {v1, v3}, Landroid/widget/ListPopupWindow$DropDownListView;->setAdapter(Landroid/widget/ListAdapter;)V
+    invoke-virtual {v1, v3}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
     move-object/from16 v0, p0
 
@@ -371,7 +371,7 @@
 
     iget-object v3, v0, Landroid/widget/ListPopupWindow;->mItemClickListener:Landroid/widget/AdapterView$OnItemClickListener;
 
-    invoke-virtual {v1, v3}, Landroid/widget/ListPopupWindow$DropDownListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
+    invoke-virtual {v1, v3}, Landroid/widget/AdapterView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
     move-object/from16 v0, p0
 
@@ -379,7 +379,7 @@
 
     const/4 v3, 0x1
 
-    invoke-virtual {v1, v3}, Landroid/widget/ListPopupWindow$DropDownListView;->setFocusable(Z)V
+    invoke-virtual {v1, v3}, Landroid/widget/AdapterView;->setFocusable(Z)V
 
     move-object/from16 v0, p0
 
@@ -387,7 +387,7 @@
 
     const/4 v3, 0x1
 
-    invoke-virtual {v1, v3}, Landroid/widget/ListPopupWindow$DropDownListView;->setFocusableInTouchMode(Z)V
+    invoke-virtual {v1, v3}, Landroid/widget/AdapterView;->setFocusableInTouchMode(Z)V
 
     move-object/from16 v0, p0
 
@@ -399,7 +399,7 @@
 
     invoke-direct {v3, v0}, Landroid/widget/ListPopupWindow$3;-><init>(Landroid/widget/ListPopupWindow;)V
 
-    invoke-virtual {v1, v3}, Landroid/widget/ListPopupWindow$DropDownListView;->setOnItemSelectedListener(Landroid/widget/AdapterView$OnItemSelectedListener;)V
+    invoke-virtual {v1, v3}, Landroid/widget/AdapterView;->setOnItemSelectedListener(Landroid/widget/AdapterView$OnItemSelectedListener;)V
 
     move-object/from16 v0, p0
 
@@ -409,7 +409,7 @@
 
     iget-object v3, v0, Landroid/widget/ListPopupWindow;->mScrollListener:Landroid/widget/ListPopupWindow$PopupScrollListener;
 
-    invoke-virtual {v1, v3}, Landroid/widget/ListPopupWindow$DropDownListView;->setOnScrollListener(Landroid/widget/AbsListView$OnScrollListener;)V
+    invoke-virtual {v1, v3}, Landroid/widget/AbsListView;->setOnScrollListener(Landroid/widget/AbsListView$OnScrollListener;)V
 
     move-object/from16 v0, p0
 
@@ -425,7 +425,7 @@
 
     iget-object v3, v0, Landroid/widget/ListPopupWindow;->mItemSelectedListener:Landroid/widget/AdapterView$OnItemSelectedListener;
 
-    invoke-virtual {v1, v3}, Landroid/widget/ListPopupWindow$DropDownListView;->setOnItemSelectedListener(Landroid/widget/AdapterView$OnItemSelectedListener;)V
+    invoke-virtual {v1, v3}, Landroid/widget/AdapterView;->setOnItemSelectedListener(Landroid/widget/AdapterView$OnItemSelectedListener;)V
 
     :cond_1
     move-object/from16 v0, p0
@@ -523,11 +523,11 @@
 
     move-result v1
 
-    iget v3, v12, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
+    iget v3, v12, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     add-int/2addr v1, v3
 
-    iget v3, v12, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin:I
+    iget v3, v12, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
     add-int v17, v1, v3
 
@@ -671,16 +671,16 @@
     .restart local v12       #hintParams:Landroid/widget/LinearLayout$LayoutParams;
     .restart local v13       #hintView:Landroid/view/View;
     :pswitch_0
-    invoke-virtual {v11, v9, v12}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v11, v9, v12}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    invoke-virtual {v11, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+    invoke-virtual {v11, v13}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     goto/16 :goto_1
 
     :pswitch_1
-    invoke-virtual {v11, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+    invoke-virtual {v11, v13}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    invoke-virtual {v11, v9, v12}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v11, v9, v12}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     goto/16 :goto_1
 
@@ -721,11 +721,11 @@
 
     move-result v1
 
-    iget v3, v12, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
+    iget v3, v12, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     add-int/2addr v1, v3
 
-    iget v3, v12, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin:I
+    iget v3, v12, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
     add-int v17, v1, v3
 
@@ -782,7 +782,7 @@
 
     const/4 v6, -0x1
 
-    invoke-virtual/range {v1 .. v6}, Landroid/widget/ListPopupWindow$DropDownListView;->measureHeightOfChildren(IIIII)I
+    invoke-virtual/range {v1 .. v6}, Landroid/widget/ListView;->measureHeightOfChildren(IIIII)I
 
     move-result v15
 
@@ -1001,7 +1001,7 @@
 
     iget-object v3, v0, Landroid/widget/ListPopupWindow;->mDropDownListHighlight:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v1, v3}, Landroid/widget/ListPopupWindow$DropDownListView;->setSelector(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v1, v3}, Landroid/widget/AbsListView;->setSelector(Landroid/graphics/drawable/Drawable;)V
 
     :cond_2
     move-object/from16 v0, p0
@@ -1012,7 +1012,7 @@
 
     iget-object v3, v0, Landroid/widget/ListPopupWindow;->mAdapter:Landroid/widget/ListAdapter;
 
-    invoke-virtual {v1, v3}, Landroid/widget/ListPopupWindow$DropDownListView;->setAdapter(Landroid/widget/ListAdapter;)V
+    invoke-virtual {v1, v3}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
     move-object/from16 v0, p0
 
@@ -1022,7 +1022,7 @@
 
     iget-object v3, v0, Landroid/widget/ListPopupWindow;->mItemClickListener:Landroid/widget/AdapterView$OnItemClickListener;
 
-    invoke-virtual {v1, v3}, Landroid/widget/ListPopupWindow$DropDownListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
+    invoke-virtual {v1, v3}, Landroid/widget/AdapterView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
     move-object/from16 v0, p0
 
@@ -1030,7 +1030,7 @@
 
     const/4 v3, 0x1
 
-    invoke-virtual {v1, v3}, Landroid/widget/ListPopupWindow$DropDownListView;->setFocusable(Z)V
+    invoke-virtual {v1, v3}, Landroid/widget/AdapterView;->setFocusable(Z)V
 
     move-object/from16 v0, p0
 
@@ -1038,7 +1038,7 @@
 
     const/4 v3, 0x1
 
-    invoke-virtual {v1, v3}, Landroid/widget/ListPopupWindow$DropDownListView;->setFocusableInTouchMode(Z)V
+    invoke-virtual {v1, v3}, Landroid/widget/AdapterView;->setFocusableInTouchMode(Z)V
 
     move-object/from16 v0, p0
 
@@ -1050,7 +1050,7 @@
 
     invoke-direct {v3, v0}, Landroid/widget/ListPopupWindow$5;-><init>(Landroid/widget/ListPopupWindow;)V
 
-    invoke-virtual {v1, v3}, Landroid/widget/ListPopupWindow$DropDownListView;->setOnItemSelectedListener(Landroid/widget/AdapterView$OnItemSelectedListener;)V
+    invoke-virtual {v1, v3}, Landroid/widget/AdapterView;->setOnItemSelectedListener(Landroid/widget/AdapterView$OnItemSelectedListener;)V
 
     move-object/from16 v0, p0
 
@@ -1060,7 +1060,7 @@
 
     iget-object v3, v0, Landroid/widget/ListPopupWindow;->mScrollListener:Landroid/widget/ListPopupWindow$PopupScrollListener;
 
-    invoke-virtual {v1, v3}, Landroid/widget/ListPopupWindow$DropDownListView;->setOnScrollListener(Landroid/widget/AbsListView$OnScrollListener;)V
+    invoke-virtual {v1, v3}, Landroid/widget/AbsListView;->setOnScrollListener(Landroid/widget/AbsListView$OnScrollListener;)V
 
     move-object/from16 v0, p0
 
@@ -1076,7 +1076,7 @@
 
     iget-object v3, v0, Landroid/widget/ListPopupWindow;->mItemSelectedListener:Landroid/widget/AdapterView$OnItemSelectedListener;
 
-    invoke-virtual {v1, v3}, Landroid/widget/ListPopupWindow$DropDownListView;->setOnItemSelectedListener(Landroid/widget/AdapterView$OnItemSelectedListener;)V
+    invoke-virtual {v1, v3}, Landroid/widget/AdapterView;->setOnItemSelectedListener(Landroid/widget/AdapterView$OnItemSelectedListener;)V
 
     :cond_3
     move-object/from16 v0, p0
@@ -1311,16 +1311,16 @@
     .restart local v14       #hintParams:Landroid/widget/LinearLayout$LayoutParams;
     .restart local v15       #hintView:Landroid/view/View;
     :pswitch_0
-    invoke-virtual {v13, v11, v14}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v13, v11, v14}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    invoke-virtual {v13, v15}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+    invoke-virtual {v13, v15}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     goto/16 :goto_2
 
     :pswitch_1
-    invoke-virtual {v13, v15}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+    invoke-virtual {v13, v15}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    invoke-virtual {v13, v11, v14}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v13, v11, v14}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     goto/16 :goto_2
 
@@ -1349,7 +1349,7 @@
     .local v8, bezierContaint:Landroid/widget/LinearLayout;
     const/16 v1, 0xa
 
-    invoke-virtual {v8, v1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v8, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v9
 
@@ -1358,7 +1358,7 @@
     .local v9, contentContainer:Landroid/widget/LinearLayout;
     const/16 v1, 0xb
 
-    invoke-virtual {v9, v1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v9, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v11
 
@@ -1385,11 +1385,11 @@
 
     move-result v1
 
-    iget v3, v14, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
+    iget v3, v14, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     add-int/2addr v1, v3
 
-    iget v3, v14, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin:I
+    iget v3, v14, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
     add-int v21, v1, v3
 
@@ -1448,7 +1448,7 @@
 
     const/4 v6, -0x1
 
-    invoke-virtual/range {v1 .. v6}, Landroid/widget/ListPopupWindow$DropDownListView;->measureHeightOfChildren(IIIII)I
+    invoke-virtual/range {v1 .. v6}, Landroid/widget/ListView;->measureHeightOfChildren(IIIII)I
 
     move-result v19
 
@@ -1731,9 +1731,9 @@
     #setter for: Landroid/widget/ListPopupWindow$DropDownListView;->mListSelectionHidden:Z
     invoke-static {v0, v1}, Landroid/widget/ListPopupWindow$DropDownListView;->access$502(Landroid/widget/ListPopupWindow$DropDownListView;Z)Z
 
-    invoke-virtual {v0}, Landroid/widget/ListPopupWindow$DropDownListView;->hideSelector()V
+    invoke-virtual {v0}, Landroid/widget/AbsListView;->hideSelector()V
 
-    invoke-virtual {v0}, Landroid/widget/ListPopupWindow$DropDownListView;->requestLayout()V
+    invoke-virtual {v0}, Landroid/widget/AbsListView;->requestLayout()V
 
     :cond_0
     return-void
@@ -1882,7 +1882,7 @@
     :cond_0
     iget-object v0, p0, Landroid/widget/ListPopupWindow;->mDropDownList:Landroid/widget/ListPopupWindow$DropDownListView;
 
-    invoke-virtual {v0}, Landroid/widget/ListPopupWindow$DropDownListView;->getSelectedItem()Ljava/lang/Object;
+    invoke-virtual {v0}, Landroid/widget/AdapterView;->getSelectedItem()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1907,7 +1907,7 @@
     :cond_0
     iget-object v0, p0, Landroid/widget/ListPopupWindow;->mDropDownList:Landroid/widget/ListPopupWindow$DropDownListView;
 
-    invoke-virtual {v0}, Landroid/widget/ListPopupWindow$DropDownListView;->getSelectedItemId()J
+    invoke-virtual {v0}, Landroid/widget/AdapterView;->getSelectedItemId()J
 
     move-result-wide v0
 
@@ -1932,7 +1932,7 @@
     :cond_0
     iget-object v0, p0, Landroid/widget/ListPopupWindow;->mDropDownList:Landroid/widget/ListPopupWindow$DropDownListView;
 
-    invoke-virtual {v0}, Landroid/widget/ListPopupWindow$DropDownListView;->getSelectedItemPosition()I
+    invoke-virtual {v0}, Landroid/widget/AdapterView;->getSelectedItemPosition()I
 
     move-result v0
 
@@ -1957,7 +1957,7 @@
     :cond_0
     iget-object v0, p0, Landroid/widget/ListPopupWindow;->mDropDownList:Landroid/widget/ListPopupWindow$DropDownListView;
 
-    invoke-virtual {v0}, Landroid/widget/ListPopupWindow$DropDownListView;->getSelectedView()Landroid/view/View;
+    invoke-virtual {v0}, Landroid/widget/AbsListView;->getSelectedView()Landroid/view/View;
 
     move-result-object v0
 
@@ -2110,7 +2110,7 @@
 
     iget-object v9, p0, Landroid/widget/ListPopupWindow;->mDropDownList:Landroid/widget/ListPopupWindow$DropDownListView;
 
-    invoke-virtual {v9}, Landroid/widget/ListPopupWindow$DropDownListView;->getSelectedItemPosition()I
+    invoke-virtual {v9}, Landroid/widget/AdapterView;->getSelectedItemPosition()I
 
     move-result v9
 
@@ -2125,7 +2125,7 @@
     :cond_0
     iget-object v9, p0, Landroid/widget/ListPopupWindow;->mDropDownList:Landroid/widget/ListPopupWindow$DropDownListView;
 
-    invoke-virtual {v9}, Landroid/widget/ListPopupWindow$DropDownListView;->getSelectedItemPosition()I
+    invoke-virtual {v9}, Landroid/widget/AdapterView;->getSelectedItemPosition()I
 
     move-result v4
 
@@ -2219,7 +2219,7 @@
     :cond_5
     iget-object v9, p0, Landroid/widget/ListPopupWindow;->mDropDownList:Landroid/widget/ListPopupWindow$DropDownListView;
 
-    invoke-virtual {v9, v8, v7}, Landroid/widget/ListPopupWindow$DropDownListView;->lookForSelectablePosition(IZ)I
+    invoke-virtual {v9, v8, v7}, Landroid/widget/ListView;->lookForSelectablePosition(IZ)I
 
     move-result v5
 
@@ -2234,7 +2234,7 @@
 
     add-int/lit8 v10, v10, -0x1
 
-    invoke-virtual {v9, v10, v8}, Landroid/widget/ListPopupWindow$DropDownListView;->lookForSelectablePosition(IZ)I
+    invoke-virtual {v9, v10, v8}, Landroid/widget/ListView;->lookForSelectablePosition(IZ)I
 
     move-result v6
 
@@ -2249,7 +2249,7 @@
 
     iget-object v9, p0, Landroid/widget/ListPopupWindow;->mDropDownList:Landroid/widget/ListPopupWindow$DropDownListView;
 
-    invoke-virtual {v9, p1, p2}, Landroid/widget/ListPopupWindow$DropDownListView;->onKeyDown(ILandroid/view/KeyEvent;)Z
+    invoke-virtual {v9, p1, p2}, Landroid/widget/ListView;->onKeyDown(ILandroid/view/KeyEvent;)Z
 
     move-result v3
 
@@ -2264,7 +2264,7 @@
 
     iget-object v9, p0, Landroid/widget/ListPopupWindow;->mDropDownList:Landroid/widget/ListPopupWindow$DropDownListView;
 
-    invoke-virtual {v9}, Landroid/widget/ListPopupWindow$DropDownListView;->requestFocusFromTouch()Z
+    invoke-virtual {v9}, Landroid/view/View;->requestFocusFromTouch()Z
 
     invoke-virtual {p0}, Landroid/widget/ListPopupWindow;->show()V
 
@@ -2420,7 +2420,7 @@
 
     iget-object v1, p0, Landroid/widget/ListPopupWindow;->mDropDownList:Landroid/widget/ListPopupWindow$DropDownListView;
 
-    invoke-virtual {v1}, Landroid/widget/ListPopupWindow$DropDownListView;->getSelectedItemPosition()I
+    invoke-virtual {v1}, Landroid/widget/AdapterView;->getSelectedItemPosition()I
 
     move-result v1
 
@@ -2428,7 +2428,7 @@
 
     iget-object v1, p0, Landroid/widget/ListPopupWindow;->mDropDownList:Landroid/widget/ListPopupWindow$DropDownListView;
 
-    invoke-virtual {v1, p1, p2}, Landroid/widget/ListPopupWindow$DropDownListView;->onKeyUp(ILandroid/view/KeyEvent;)Z
+    invoke-virtual {v1, p1, p2}, Landroid/widget/ListView;->onKeyUp(ILandroid/view/KeyEvent;)Z
 
     move-result v0
 
@@ -2472,27 +2472,27 @@
     iget-object v1, p0, Landroid/widget/ListPopupWindow;->mDropDownList:Landroid/widget/ListPopupWindow$DropDownListView;
 
     .local v1, list:Landroid/widget/ListPopupWindow$DropDownListView;
-    invoke-virtual {v1}, Landroid/widget/ListPopupWindow$DropDownListView;->getLastVisiblePosition()I
+    invoke-virtual {v1}, Landroid/widget/AdapterView;->getLastVisiblePosition()I
 
     move-result v0
 
     if-ge v0, p1, :cond_0
 
-    invoke-virtual {v1, p1}, Landroid/widget/ListPopupWindow$DropDownListView;->setSelectionInt(I)V
+    invoke-virtual {v1, p1}, Landroid/widget/ListView;->setSelectionInt(I)V
 
     :cond_0
-    invoke-virtual {v1}, Landroid/widget/ListPopupWindow$DropDownListView;->getFirstVisiblePosition()I
+    invoke-virtual {v1}, Landroid/widget/AdapterView;->getFirstVisiblePosition()I
 
     move-result v0
 
     sub-int v0, p1, v0
 
-    invoke-virtual {v1, v0}, Landroid/widget/ListPopupWindow$DropDownListView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
     .local v2, child:Landroid/view/View;
-    invoke-virtual {v1}, Landroid/widget/ListPopupWindow$DropDownListView;->getAdapter()Landroid/widget/ListAdapter;
+    invoke-virtual {v1}, Landroid/widget/ListView;->getAdapter()Landroid/widget/ListAdapter;
 
     move-result-object v6
 
@@ -2573,7 +2573,7 @@
 
     iget-object v1, p0, Landroid/widget/ListPopupWindow;->mAdapter:Landroid/widget/ListAdapter;
 
-    invoke-virtual {v0, v1}, Landroid/widget/ListPopupWindow$DropDownListView;->setAdapter(Landroid/widget/ListAdapter;)V
+    invoke-virtual {v0, v1}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
     :cond_2
     return-void
@@ -2853,9 +2853,9 @@
     #setter for: Landroid/widget/ListPopupWindow$DropDownListView;->mListSelectionHidden:Z
     invoke-static {v0, v1}, Landroid/widget/ListPopupWindow$DropDownListView;->access$502(Landroid/widget/ListPopupWindow$DropDownListView;Z)Z
 
-    invoke-virtual {v0, p1}, Landroid/widget/ListPopupWindow$DropDownListView;->setSelection(I)V
+    invoke-virtual {v0, p1}, Landroid/widget/ListView;->setSelection(I)V
 
-    invoke-virtual {v0}, Landroid/widget/ListPopupWindow$DropDownListView;->getChoiceMode()I
+    invoke-virtual {v0}, Landroid/widget/AbsListView;->getChoiceMode()I
 
     move-result v1
 
@@ -2863,7 +2863,7 @@
 
     const/4 v1, 0x1
 
-    invoke-virtual {v0, p1, v1}, Landroid/widget/ListPopupWindow$DropDownListView;->setItemChecked(IZ)V
+    invoke-virtual {v0, p1, v1}, Landroid/widget/AbsListView;->setItemChecked(IZ)V
 
     :cond_0
     return-void
@@ -3164,7 +3164,7 @@
 
     iget-object v0, p0, Landroid/widget/ListPopupWindow;->mDropDownList:Landroid/widget/ListPopupWindow$DropDownListView;
 
-    invoke-virtual {v0, v3}, Landroid/widget/ListPopupWindow$DropDownListView;->setSelection(I)V
+    invoke-virtual {v0, v3}, Landroid/widget/ListView;->setSelection(I)V
 
     iget-boolean v0, p0, Landroid/widget/ListPopupWindow;->mModal:Z
 

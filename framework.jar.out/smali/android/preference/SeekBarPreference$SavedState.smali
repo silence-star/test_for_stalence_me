@@ -87,7 +87,7 @@
     .parameter "flags"
 
     .prologue
-    invoke-super {p0, p1, p2}, Landroid/preference/Preference$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
+    invoke-super {p0, p1, p2}, Landroid/view/AbsSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
     iget v0, p0, Landroid/preference/SeekBarPreference$SavedState;->progress:I
 

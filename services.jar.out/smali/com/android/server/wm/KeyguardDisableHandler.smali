@@ -119,7 +119,7 @@
 
     check-cast v2, Ljava/lang/String;
 
-    invoke-virtual {v3, v1, v2}, Lcom/android/server/wm/KeyguardDisableHandler$KeyguardTokenWatcher;->acquire(Landroid/os/IBinder;Ljava/lang/String;)V
+    invoke-virtual {v3, v1, v2}, Landroid/os/TokenWatcher;->acquire(Landroid/os/IBinder;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -131,7 +131,7 @@
 
     check-cast v1, Landroid/os/IBinder;
 
-    invoke-virtual {v2, v1}, Lcom/android/server/wm/KeyguardDisableHandler$KeyguardTokenWatcher;->release(Landroid/os/IBinder;)V
+    invoke-virtual {v2, v1}, Landroid/os/TokenWatcher;->release(Landroid/os/IBinder;)V
 
     goto :goto_0
 

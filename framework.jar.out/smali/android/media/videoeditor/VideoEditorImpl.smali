@@ -296,11 +296,11 @@
     move-exception v0
 
     .restart local v0       #ex:Ljava/lang/Exception;
-    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
     new-instance v3, Ljava/io/IOException;
 
-    invoke-virtual {v0}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v4
 
@@ -773,7 +773,7 @@
 
     invoke-virtual {v6, v10, v11, v8}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    invoke-virtual {v8}, Ljava/io/FileOutputStream;->flush()V
+    invoke-virtual {v8}, Ljava/io/OutputStream;->flush()V
 
     invoke-virtual {v8}, Ljava/io/FileOutputStream;->close()V
     :try_end_0
@@ -1456,7 +1456,7 @@
 
     const/16 v23, 0x0
 
-    invoke-virtual/range {v22 .. v23}, Landroid/media/videoeditor/MediaImageItem;->setRegenerateClip(Z)V
+    invoke-virtual/range {v22 .. v23}, Landroid/media/videoeditor/MediaItem;->setRegenerateClip(Z)V
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_3
@@ -1509,7 +1509,7 @@
 
     const/16 v23, 0x1
 
-    invoke-virtual/range {v22 .. v23}, Landroid/media/videoeditor/MediaImageItem;->setRegenerateClip(Z)V
+    invoke-virtual/range {v22 .. v23}, Landroid/media/videoeditor/MediaItem;->setRegenerateClip(Z)V
 
     goto/16 :goto_1
 
@@ -1533,7 +1533,7 @@
 
     const/16 v23, 0x1
 
-    invoke-virtual/range {v22 .. v23}, Landroid/media/videoeditor/MediaImageItem;->setRegenerateClip(Z)V
+    invoke-virtual/range {v22 .. v23}, Landroid/media/videoeditor/MediaItem;->setRegenerateClip(Z)V
     :try_end_a
     .catchall {:try_start_a .. :try_end_a} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_a .. :try_end_a} :catch_3
@@ -8384,9 +8384,9 @@
 
     move-object/from16 v1, v29
 
-    invoke-virtual {v0, v1}, Ljava/io/FileOutputStream;->write([B)V
+    invoke-virtual {v0, v1}, Ljava/io/OutputStream;->write([B)V
 
-    invoke-virtual/range {v18 .. v18}, Ljava/io/FileOutputStream;->flush()V
+    invoke-virtual/range {v18 .. v18}, Ljava/io/OutputStream;->flush()V
 
     invoke-virtual/range {v18 .. v18}, Ljava/io/FileOutputStream;->close()V
 

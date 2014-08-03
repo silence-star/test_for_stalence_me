@@ -116,7 +116,7 @@
     .prologue
     const/4 v4, 0x3
 
-    invoke-virtual {p0}, Landroid/widget/DateTimeView;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
@@ -174,7 +174,7 @@
     .locals 1
 
     .prologue
-    invoke-virtual {p0}, Landroid/widget/DateTimeView;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -189,7 +189,7 @@
     .locals 6
 
     .prologue
-    invoke-virtual {p0}, Landroid/widget/DateTimeView;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -243,7 +243,7 @@
     .locals 3
 
     .prologue
-    invoke-virtual {p0}, Landroid/widget/DateTimeView;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -553,7 +553,7 @@
 
     move-object/from16 v1, v16
 
-    invoke-virtual {v0, v1}, Landroid/widget/DateTimeView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     if-nez v3, :cond_6
 

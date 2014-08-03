@@ -36,7 +36,7 @@
     .locals 4
 
     .prologue
-    invoke-virtual {p0}, Landroid/inputmethodservice/SoftInputWindow;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
@@ -59,15 +59,15 @@
 
     const/4 v1, -0x1
 
-    iput v1, v0, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    invoke-virtual {p0}, Landroid/inputmethodservice/SoftInputWindow;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
     invoke-virtual {v1, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
-    invoke-virtual {p0}, Landroid/inputmethodservice/SoftInputWindow;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
@@ -87,7 +87,7 @@
     .parameter "ev"
 
     .prologue
-    invoke-virtual {p0}, Landroid/inputmethodservice/SoftInputWindow;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v2
 
@@ -188,7 +188,7 @@
     .locals 3
 
     .prologue
-    invoke-virtual {p0}, Landroid/inputmethodservice/SoftInputWindow;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
@@ -210,13 +210,13 @@
     if-ne v1, v2, :cond_1
 
     :cond_0
-    iget v1, v0, Landroid/view/WindowManager$LayoutParams;->height:I
+    iget v1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     :goto_0
     return v1
 
     :cond_1
-    iget v1, v0, Landroid/view/WindowManager$LayoutParams;->width:I
+    iget v1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     goto :goto_0
 .end method
@@ -248,7 +248,7 @@
 
     const/4 v4, 0x0
 
-    invoke-virtual {p0}, Landroid/inputmethodservice/SoftInputWindow;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v6
 
@@ -287,16 +287,16 @@
     :goto_1
     if-eq v2, v1, :cond_2
 
-    iget v3, v0, Landroid/view/WindowManager$LayoutParams;->width:I
+    iget v3, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .local v3, tmp:I
-    iget v4, v0, Landroid/view/WindowManager$LayoutParams;->height:I
+    iget v4, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    iput v4, v0, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v4, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    iput v3, v0, Landroid/view/WindowManager$LayoutParams;->height:I
+    iput v3, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    invoke-virtual {p0}, Landroid/inputmethodservice/SoftInputWindow;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v4
 
@@ -327,7 +327,7 @@
     .prologue
     const/4 v3, -0x1
 
-    invoke-virtual {p0}, Landroid/inputmethodservice/SoftInputWindow;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
@@ -349,12 +349,12 @@
     if-ne v1, v2, :cond_1
 
     :cond_0
-    iput v3, v0, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v3, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    iput p1, v0, Landroid/view/WindowManager$LayoutParams;->height:I
+    iput p1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     :goto_0
-    invoke-virtual {p0}, Landroid/inputmethodservice/SoftInputWindow;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
@@ -363,9 +363,9 @@
     return-void
 
     :cond_1
-    iput p1, v0, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput p1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    iput v3, v0, Landroid/view/WindowManager$LayoutParams;->height:I
+    iput v3, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     goto :goto_0
 .end method
@@ -375,7 +375,7 @@
     .parameter "token"
 
     .prologue
-    invoke-virtual {p0}, Landroid/inputmethodservice/SoftInputWindow;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
@@ -386,7 +386,7 @@
     .local v0, lp:Landroid/view/WindowManager$LayoutParams;
     iput-object p1, v0, Landroid/view/WindowManager$LayoutParams;->token:Landroid/os/IBinder;
 
-    invoke-virtual {p0}, Landroid/inputmethodservice/SoftInputWindow;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 

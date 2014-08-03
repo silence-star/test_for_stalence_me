@@ -428,7 +428,7 @@
 
     move-result v2
 
-    invoke-virtual {p0}, Lcom/android/internal/os/storage/ExternalStorageFormatter;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getResources()Landroid/content/res/Resources;
 
     move-result-object v7
 
@@ -728,9 +728,9 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/os/storage/ExternalStorageFormatter;->sendBroadcast(Landroid/content/Intent;)V
+    invoke-virtual {p0, v0}, Landroid/content/ContextWrapper;->sendBroadcast(Landroid/content/Intent;)V
 
-    invoke-virtual {p0}, Lcom/android/internal/os/storage/ExternalStorageFormatter;->stopSelf()V
+    invoke-virtual {p0}, Landroid/app/Service;->stopSelf()V
 
     goto :goto_0
 
@@ -808,10 +808,10 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/os/storage/ExternalStorageFormatter;->sendBroadcast(Landroid/content/Intent;)V
+    invoke-virtual {p0, v0}, Landroid/content/ContextWrapper;->sendBroadcast(Landroid/content/Intent;)V
 
     :cond_1
-    invoke-virtual {p0}, Lcom/android/internal/os/storage/ExternalStorageFormatter;->stopSelf()V
+    invoke-virtual {p0}, Landroid/app/Service;->stopSelf()V
 
     goto :goto_0
 .end method
@@ -911,7 +911,7 @@
     .end local v4           #physicalVols:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/os/storage/StorageVolume;>;"
     .end local v5           #volumes:[Landroid/os/storage/StorageVolume;
     :goto_0
-    invoke-virtual {p0}, Lcom/android/internal/os/storage/ExternalStorageFormatter;->stopSelf()V
+    invoke-virtual {p0}, Landroid/app/Service;->stopSelf()V
 
     return-void
 
@@ -986,7 +986,7 @@
 
     const-string v0, "storage"
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/os/storage/ExternalStorageFormatter;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Landroid/content/ContextWrapper;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1003,7 +1003,7 @@
     :cond_0
     const-string v0, "power"
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/os/storage/ExternalStorageFormatter;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Landroid/content/ContextWrapper;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1049,7 +1049,7 @@
 
     iget-object v0, p0, Lcom/android/internal/os/storage/ExternalStorageFormatter;->mProgressDialog:Landroid/app/ProgressDialog;
 
-    invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
+    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
     :cond_1
     iget-object v0, p0, Lcom/android/internal/os/storage/ExternalStorageFormatter;->mWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -1134,11 +1134,11 @@
 
     iget-object v1, p0, Lcom/android/internal/os/storage/ExternalStorageFormatter;->mProgressDialog:Landroid/app/ProgressDialog;
 
-    invoke-virtual {v1, v3}, Landroid/app/ProgressDialog;->setCancelable(Z)V
+    invoke-virtual {v1, v3}, Landroid/app/AlertDialog;->setCancelable(Z)V
 
     iget-object v1, p0, Lcom/android/internal/os/storage/ExternalStorageFormatter;->mProgressDialog:Landroid/app/ProgressDialog;
 
-    invoke-virtual {v1}, Landroid/app/ProgressDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {v1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
@@ -1152,7 +1152,7 @@
 
     iget-object v1, p0, Lcom/android/internal/os/storage/ExternalStorageFormatter;->mProgressDialog:Landroid/app/ProgressDialog;
 
-    invoke-virtual {v1, p0}, Landroid/app/ProgressDialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
+    invoke-virtual {v1, p0}, Landroid/app/Dialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
 
     :cond_2
     const-string v1, "erase_option"
@@ -1169,7 +1169,7 @@
     :goto_0
     iget-object v1, p0, Lcom/android/internal/os/storage/ExternalStorageFormatter;->mProgressDialog:Landroid/app/ProgressDialog;
 
-    invoke-virtual {v1}, Landroid/app/ProgressDialog;->show()V
+    invoke-virtual {v1}, Landroid/app/AlertDialog;->show()V
 
     .end local v0           #option:I
     :cond_3
@@ -1209,11 +1209,11 @@
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setCancelable(Z)V
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog;->setCancelable(Z)V
 
     iget-object v0, p0, Lcom/android/internal/os/storage/ExternalStorageFormatter;->mProgressDialog:Landroid/app/ProgressDialog;
 
-    invoke-virtual {v0}, Landroid/app/ProgressDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {v0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
@@ -1223,12 +1223,12 @@
 
     iget-object v0, p0, Lcom/android/internal/os/storage/ExternalStorageFormatter;->mProgressDialog:Landroid/app/ProgressDialog;
 
-    invoke-virtual {v0}, Landroid/app/ProgressDialog;->show()V
+    invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
     :cond_0
     iget-object v0, p0, Lcom/android/internal/os/storage/ExternalStorageFormatter;->mProgressDialog:Landroid/app/ProgressDialog;
 
-    invoke-virtual {p0, p1}, Lcom/android/internal/os/storage/ExternalStorageFormatter;->getText(I)Ljava/lang/CharSequence;
+    invoke-virtual {p0, p1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v1
 
@@ -1547,7 +1547,7 @@
 
     invoke-direct {v7, p0, v2}, Lcom/android/internal/os/storage/ExternalStorageFormatter$3;-><init>(Lcom/android/internal/os/storage/ExternalStorageFormatter;Landroid/os/storage/IMountService;)V
 
-    invoke-virtual {v7}, Lcom/android/internal/os/storage/ExternalStorageFormatter$3;->start()V
+    invoke-virtual {v7}, Ljava/lang/Thread;->start()V
 
     goto/16 :goto_0
 
@@ -1672,7 +1672,7 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {p0}, Lcom/android/internal/os/storage/ExternalStorageFormatter;->stopSelf()V
+    invoke-virtual {p0}, Landroid/app/Service;->stopSelf()V
 
     goto/16 :goto_0
 .end method

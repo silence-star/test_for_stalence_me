@@ -72,7 +72,7 @@
 
     iget-object v0, p1, Lcom/android/server/pm/GrantedPermissions;->gids:[I
 
-    invoke-virtual {v0}, [I->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

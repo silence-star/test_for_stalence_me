@@ -1478,7 +1478,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Ljava/io/FileOutputStream;->write([B)V
+    invoke-virtual {v2, v3}, Ljava/io/OutputStream;->write([B)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_4

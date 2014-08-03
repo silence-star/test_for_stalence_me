@@ -86,7 +86,7 @@
     .parameter "handler"
 
     .prologue
-    invoke-virtual {p3}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
+    invoke-virtual {p3}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -111,7 +111,7 @@
     :try_start_1
     iget-object v9, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mUserLoadingView:Landroid/widget/RemoteViews;
 
-    invoke-virtual {p3}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
+    invoke-virtual {p3}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v10
 
@@ -132,7 +132,7 @@
 
     invoke-virtual {v8, v9, v10}, Landroid/view/View;->setTagInternal(ILjava/lang/Object;)V
 
-    invoke-virtual {v6, v8}, Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayout;->addView(Landroid/view/View;)V
+    invoke-virtual {v6, v8}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
@@ -154,7 +154,7 @@
     :try_start_3
     iget-object v9, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mFirstView:Landroid/widget/RemoteViews;
 
-    invoke-virtual {p3}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
+    invoke-virtual {p3}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v10
 
@@ -223,9 +223,9 @@
 
     invoke-direct {v9, v10}, Ljava/lang/Integer;-><init>(I)V
 
-    invoke-virtual {v7, v9}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v7, v9}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    invoke-virtual {v6, v7}, Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayout;->addView(Landroid/view/View;)V
+    invoke-virtual {v6, v7}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     .end local v7           #loadingTextView:Landroid/widget/TextView;
     :cond_2

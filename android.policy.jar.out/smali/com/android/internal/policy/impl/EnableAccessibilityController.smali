@@ -418,9 +418,9 @@
     .local v10, serviceInfo:Landroid/content/pm/ServiceInfo;
     new-instance v1, Landroid/content/ComponentName;
 
-    iget-object v13, v10, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    iget-object v13, v10, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
-    iget-object v14, v10, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
+    iget-object v14, v10, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     invoke-direct {v1, v13, v14}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 

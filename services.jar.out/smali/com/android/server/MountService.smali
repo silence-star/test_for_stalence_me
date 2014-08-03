@@ -371,7 +371,7 @@
     invoke-direct {v10, v0}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
 
     .local v10, hthread:Landroid/os/HandlerThread;
-    invoke-virtual {v10}, Landroid/os/HandlerThread;->start()V
+    invoke-virtual {v10}, Ljava/lang/Thread;->start()V
 
     new-instance v0, Lcom/android/server/MountService$MountServiceHandler;
 
@@ -457,7 +457,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/android/server/IoThread;->getLooper()Landroid/os/Looper;
+    invoke-virtual {v1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
 
     move-result-object v1
 
@@ -2650,7 +2650,7 @@
 
     invoke-direct {v6, p0, v7, v3}, Lcom/android/server/MountService$6;-><init>(Lcom/android/server/MountService;Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v6}, Lcom/android/server/MountService$6;->start()V
+    invoke-virtual {v6}, Ljava/lang/Thread;->start()V
 
     .end local v3           #path:Ljava/lang/String;
     :cond_1
@@ -4051,11 +4051,11 @@
 
     const/4 v8, 0x5
 
-    invoke-virtual {v7, v8, v4}, Lcom/android/server/MountService$ObbActionHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v7, v8, v4}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v7
 
-    invoke-virtual {v6, v7}, Lcom/android/server/MountService$ObbActionHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v6, v7}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     :cond_1
     :goto_1
@@ -4812,7 +4812,7 @@
     :try_start_0
     const-string v10, "mObbMounts:"
 
-    invoke-virtual {v8, v10}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v8, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     invoke-virtual {v8}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()V
 
@@ -4863,7 +4863,7 @@
 
     move-result-object v10
 
-    invoke-virtual {v8, v10}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v8, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     invoke-virtual {v8}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()V
 
@@ -4893,7 +4893,7 @@
     check-cast v6, Lcom/android/server/MountService$ObbState;
 
     .local v6, obbState:Lcom/android/server/MountService$ObbState;
-    invoke-virtual {v8, v6}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/Object;)V
+    invoke-virtual {v8, v6}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -4927,11 +4927,11 @@
     :cond_1
     invoke-virtual {v8}, Lcom/android/internal/util/IndentingPrintWriter;->decreaseIndent()V
 
-    invoke-virtual {v8}, Lcom/android/internal/util/IndentingPrintWriter;->println()V
+    invoke-virtual {v8}, Ljava/io/PrintWriter;->println()V
 
     const-string v10, "mObbPathToStateMap:"
 
-    invoke-virtual {v8, v10}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v8, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     invoke-virtual {v8}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()V
 
@@ -4966,17 +4966,17 @@
 
     check-cast v10, Ljava/lang/String;
 
-    invoke-virtual {v8, v10}, Lcom/android/internal/util/IndentingPrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {v8, v10}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v10, " -> "
 
-    invoke-virtual {v8, v10}, Lcom/android/internal/util/IndentingPrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {v8, v10}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v10
 
-    invoke-virtual {v8, v10}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/Object;)V
+    invoke-virtual {v8, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
     goto :goto_2
 
@@ -4993,11 +4993,11 @@
     monitor-enter v11
 
     :try_start_2
-    invoke-virtual {v8}, Lcom/android/internal/util/IndentingPrintWriter;->println()V
+    invoke-virtual {v8}, Ljava/io/PrintWriter;->println()V
 
     const-string v10, "mVolumes:"
 
-    invoke-virtual {v8, v10}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v8, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     invoke-virtual {v8}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()V
 
@@ -5022,7 +5022,7 @@
     check-cast v9, Landroid/os/storage/StorageVolume;
 
     .local v9, volume:Landroid/os/storage/StorageVolume;
-    invoke-virtual {v8, v9}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/Object;)V
+    invoke-virtual {v8, v9}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
     invoke-virtual {v8}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()V
 
@@ -5056,7 +5056,7 @@
 
     move-result-object v10
 
-    invoke-virtual {v8, v10}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v8, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     invoke-virtual {v8}, Lcom/android/internal/util/IndentingPrintWriter;->decreaseIndent()V
 
@@ -5082,11 +5082,11 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    invoke-virtual {v8}, Lcom/android/internal/util/IndentingPrintWriter;->println()V
+    invoke-virtual {v8}, Ljava/io/PrintWriter;->println()V
 
     const-string v10, "mConnection:"
 
-    invoke-virtual {v8, v10}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v8, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     invoke-virtual {v8}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()V
 
@@ -6691,11 +6691,11 @@
 
     const/4 v3, 0x1
 
-    invoke-virtual {v2, v3, v7}, Lcom/android/server/MountService$ObbActionHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v2, v3, v7}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Lcom/android/server/MountService$ObbActionHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     return-void
 .end method
@@ -6867,7 +6867,7 @@
 
     invoke-direct {v0, p0, v1}, Lcom/android/server/MountService$4;-><init>(Lcom/android/server/MountService;Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Lcom/android/server/MountService$4;->start()V
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
     return-void
 .end method
@@ -7222,7 +7222,7 @@
 
     invoke-direct {v0, v1, v2, v12, v3}, Lcom/android/server/MountService$5;-><init>(Lcom/android/server/MountService;Ljava/lang/String;Ljava/lang/String;Landroid/os/storage/StorageVolume;)V
 
-    invoke-virtual/range {v18 .. v18}, Lcom/android/server/MountService$5;->start()V
+    invoke-virtual/range {v18 .. v18}, Ljava/lang/Thread;->start()V
 
     :goto_5
     if-eqz v5, :cond_0
@@ -8060,11 +8060,11 @@
 
     const/4 v3, 0x1
 
-    invoke-virtual {v2, v3, v7}, Lcom/android/server/MountService$ObbActionHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v2, v3, v7}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Lcom/android/server/MountService$ObbActionHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     .end local v0           #newState:Lcom/android/server/MountService$ObbState;
     .end local v4           #callingUid:I

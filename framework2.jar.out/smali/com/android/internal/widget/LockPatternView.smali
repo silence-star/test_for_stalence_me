@@ -278,7 +278,7 @@
     :goto_0
     const/4 v7, 0x1
 
-    invoke-virtual {p0, v7}, Lcom/android/internal/widget/LockPatternView;->setClickable(Z)V
+    invoke-virtual {p0, v7}, Landroid/view/View;->setClickable(Z)V
 
     iget-object v7, p0, Lcom/android/internal/widget/LockPatternView;->mPathPaint:Landroid/graphics/Paint;
 
@@ -1517,7 +1517,7 @@
     .parameter "resId"
 
     .prologue
-    invoke-virtual {p0}, Lcom/android/internal/widget/LockPatternView;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -1537,7 +1537,7 @@
     .parameter "column"
 
     .prologue
-    iget v0, p0, Lcom/android/internal/widget/LockPatternView;->mPaddingLeft:I
+    iget v0, p0, Landroid/view/View;->mPaddingLeft:I
 
     int-to-float v0, v0
 
@@ -1565,7 +1565,7 @@
     .parameter "row"
 
     .prologue
-    iget v0, p0, Lcom/android/internal/widget/LockPatternView;->mPaddingTop:I
+    iget v0, p0, Landroid/view/View;->mPaddingTop:I
 
     int-to-float v0, v0
 
@@ -1601,7 +1601,7 @@
     mul-float v1, v4, v5
 
     .local v1, hitSize:F
-    iget v5, p0, Lcom/android/internal/widget/LockPatternView;->mPaddingLeft:I
+    iget v5, p0, Landroid/view/View;->mPaddingLeft:I
 
     int-to-float v5, v5
 
@@ -1671,7 +1671,7 @@
     mul-float v0, v4, v5
 
     .local v0, hitSize:F
-    iget v5, p0, Lcom/android/internal/widget/LockPatternView;->mPaddingTop:I
+    iget v5, p0, Landroid/view/View;->mPaddingTop:I
 
     int-to-float v5, v5
 
@@ -1808,7 +1808,7 @@
 
     float-to-int v10, v10
 
-    invoke-virtual {p0, v7, v8, v9, v10}, Lcom/android/internal/widget/LockPatternView;->invalidate(IIII)V
+    invoke-virtual {p0, v7, v8, v9, v10}, Landroid/view/View;->invalidate(IIII)V
 
     .end local v0           #heightOffset:F
     .end local v2           #startX:F
@@ -2281,7 +2281,7 @@
 
     move-object/from16 v1, v25
 
-    invoke-virtual {v0, v1}, Lcom/android/internal/widget/LockPatternView;->invalidate(Landroid/graphics/Rect;)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->invalidate(Landroid/graphics/Rect;)V
 
     move-object/from16 v0, p0
 
@@ -2320,7 +2320,7 @@
 
     invoke-direct {p0}, Lcom/android/internal/widget/LockPatternView;->notifyPatternDetected()V
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/LockPatternView;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_0
     return-void
@@ -2487,7 +2487,7 @@
 
     iput-object v0, p0, Lcom/android/internal/widget/LockPatternView;->mPatternDisplayMode:Lcom/android/internal/widget/LockPatternView$DisplayMode;
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/LockPatternView;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
 .end method
@@ -2543,13 +2543,13 @@
     .parameter "resId"
 
     .prologue
-    iget-object v0, p0, Lcom/android/internal/widget/LockPatternView;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, p1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/widget/LockPatternView;->announceForAccessibility(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->announceForAccessibility(Ljava/lang/CharSequence;)V
 
     return-void
 .end method
@@ -2903,7 +2903,7 @@
     .end local v22           #nextCell:Lcom/android/internal/widget/LockPatternView$Cell;
     .end local v29           #percentageOfNextCircle:F
     :cond_1
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/LockPatternView;->invalidate()V
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->invalidate()V
 
     .end local v19           #i:I
     .end local v21           #needToUpdateInProgressPoint:Z
@@ -2962,14 +2962,14 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/widget/LockPatternView;->mPaddingTop:I
+    iget v0, v0, Landroid/view/View;->mPaddingTop:I
 
     move/from16 v27, v0
 
     .local v27, paddingTop:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/widget/LockPatternView;->mPaddingLeft:I
+    iget v0, v0, Landroid/view/View;->mPaddingLeft:I
 
     move/from16 v26, v0
 
@@ -3346,7 +3346,7 @@
     .parameter "event"
 
     .prologue
-    iget-object v1, p0, Lcom/android/internal/widget/LockPatternView;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Landroid/view/accessibility/AccessibilityManager;->getInstance(Landroid/content/Context;)Landroid/view/accessibility/AccessibilityManager;
 
@@ -3443,7 +3443,7 @@
     packed-switch v4, :pswitch_data_0
 
     :goto_0
-    invoke-virtual {p0, v3, v2}, Lcom/android/internal/widget/LockPatternView;->setMeasuredDimension(II)V
+    invoke-virtual {p0, v3, v2}, Landroid/view/View;->setMeasuredDimension(II)V
 
     return-void
 
@@ -3490,7 +3490,7 @@
     check-cast v0, Lcom/android/internal/widget/LockPatternView$SavedState;
 
     .local v0, ss:Lcom/android/internal/widget/LockPatternView$SavedState;
-    invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternView$SavedState;->getSuperState()Landroid/os/Parcelable;
+    invoke-virtual {v0}, Landroid/view/AbsSavedState;->getSuperState()Landroid/os/Parcelable;
 
     move-result-object v1
 
@@ -3560,7 +3560,7 @@
 
     iget-object v3, p0, Lcom/android/internal/widget/LockPatternView;->mPatternDisplayMode:Lcom/android/internal/widget/LockPatternView$DisplayMode;
 
-    invoke-virtual {v3}, Lcom/android/internal/widget/LockPatternView$DisplayMode;->ordinal()I
+    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
 
     move-result v3
 
@@ -3587,11 +3587,11 @@
     .prologue
     const/high16 v4, 0x4040
 
-    iget v2, p0, Lcom/android/internal/widget/LockPatternView;->mPaddingLeft:I
+    iget v2, p0, Landroid/view/View;->mPaddingLeft:I
 
     sub-int v2, p1, v2
 
-    iget v3, p0, Lcom/android/internal/widget/LockPatternView;->mPaddingRight:I
+    iget v3, p0, Landroid/view/View;->mPaddingRight:I
 
     sub-int v1, v2, v3
 
@@ -3602,11 +3602,11 @@
 
     iput v2, p0, Lcom/android/internal/widget/LockPatternView;->mSquareWidth:F
 
-    iget v2, p0, Lcom/android/internal/widget/LockPatternView;->mPaddingTop:I
+    iget v2, p0, Landroid/view/View;->mPaddingTop:I
 
     sub-int v2, p2, v2
 
-    iget v3, p0, Lcom/android/internal/widget/LockPatternView;->mPaddingBottom:I
+    iget v3, p0, Landroid/view/View;->mPaddingBottom:I
 
     sub-int v0, v2, v3
 
@@ -3633,7 +3633,7 @@
 
     if-eqz v2, :cond_0
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/LockPatternView;->isEnabled()Z
+    invoke-virtual {p0}, Landroid/view/View;->isEnabled()Z
 
     move-result v2
 
@@ -3763,7 +3763,7 @@
 
     .end local v0           #first:Lcom/android/internal/widget/LockPatternView$Cell;
     :cond_1
-    invoke-virtual {p0}, Lcom/android/internal/widget/LockPatternView;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
 .end method

@@ -3,10 +3,10 @@
 .source "ActionMenuItemView.java"
 
 # interfaces
-.implements Lcom/android/internal/view/menu/MenuView$ItemView;
 .implements Landroid/view/View$OnClickListener;
 .implements Landroid/view/View$OnLongClickListener;
 .implements Lcom/android/internal/view/menu/ActionMenuView$ActionMenuChildView;
+.implements Lcom/android/internal/view/menu/MenuView$ItemView;
 
 
 # static fields
@@ -127,9 +127,9 @@
 
     iput v2, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mMaxIconSize:I
 
-    invoke-virtual {p0, p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {p0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    invoke-virtual {p0, p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
+    invoke-virtual {p0, p0}, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
     const/4 v2, -0x1
 
@@ -204,7 +204,7 @@
     iget-object v1, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mTitle:Ljava/lang/CharSequence;
 
     :goto_1
-    invoke-virtual {p0, v1}, Lcom/android/internal/view/menu/ActionMenuItemView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     return-void
 
@@ -228,7 +228,7 @@
     .parameter "event"
 
     .prologue
-    invoke-virtual {p0, p1}, Lcom/android/internal/view/menu/ActionMenuItemView;->onHoverEvent(Landroid/view/MotionEvent;)Z
+    invoke-virtual {p0, p1}, Landroid/view/View;->onHoverEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
@@ -278,7 +278,7 @@
     .locals 1
 
     .prologue
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->getText()Ljava/lang/CharSequence;
+    invoke-virtual {p0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v0
 
@@ -333,7 +333,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/view/menu/ActionMenuItemView;->setId(I)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setId(I)V
 
     invoke-virtual {p1}, Lcom/android/internal/view/menu/MenuItemImpl;->isVisible()Z
 
@@ -344,13 +344,13 @@
     const/4 v0, 0x0
 
     :goto_0
-    invoke-virtual {p0, v0}, Lcom/android/internal/view/menu/ActionMenuItemView;->setVisibility(I)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
     invoke-virtual {p1}, Lcom/android/internal/view/menu/MenuItemImpl;->isEnabled()Z
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/view/menu/ActionMenuItemView;->setEnabled(Z)V
+    invoke-virtual {p0, v0}, Landroid/widget/TextView;->setEnabled(Z)V
 
     return-void
 
@@ -437,9 +437,9 @@
     .parameter "newConfig"
 
     .prologue
-    invoke-super {p0, p1}, Landroid/widget/TextView;->onConfigurationChanged(Landroid/content/res/Configuration;)V
+    invoke-super {p0, p1}, Landroid/view/View;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -489,21 +489,21 @@
     invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
     .local v2, displayFrame:Landroid/graphics/Rect;
-    invoke-virtual {p0, v5}, Lcom/android/internal/view/menu/ActionMenuItemView;->getLocationOnScreen([I)V
+    invoke-virtual {p0, v5}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    invoke-virtual {p0, v2}, Lcom/android/internal/view/menu/ActionMenuItemView;->getWindowVisibleDisplayFrame(Landroid/graphics/Rect;)V
+    invoke-virtual {p0, v2}, Landroid/view/View;->getWindowVisibleDisplayFrame(Landroid/graphics/Rect;)V
 
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
     .local v1, context:Landroid/content/Context;
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v7
 
     .local v7, width:I
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->getHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v3
 
@@ -580,9 +580,7 @@
 
     const/high16 v11, 0x4000
 
-    iget-object v7, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mNubiaActionBar:Lnubia/ui/IActionBar;
-
-    invoke-interface {v7, p1, p2}, Lnubia/ui/IActionBar;->getActionMenuItemViewOnMeasure(II)Z
+    invoke-static {p0, p1, p2}, Lcom/android/internal/view/menu/Injector$ActionMenuItemViewHook;->before_onMeasure(Lcom/android/internal/view/menu/ActionMenuItemView;II)Z
 
     move-result v7
 
@@ -621,15 +619,15 @@
 
     iget v7, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mSavedPaddingLeft:I
 
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->getPaddingTop()I
+    invoke-virtual {p0}, Landroid/view/View;->getPaddingTop()I
 
     move-result v8
 
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->getPaddingRight()I
+    invoke-virtual {p0}, Landroid/view/View;->getPaddingRight()I
 
     move-result v9
 
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->getPaddingBottom()I
+    invoke-virtual {p0}, Landroid/view/View;->getPaddingBottom()I
 
     move-result v10
 
@@ -648,7 +646,7 @@
     move-result v6
 
     .local v6, widthSize:I
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->getMeasuredWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
 
@@ -684,7 +682,7 @@
 
     if-eqz v7, :cond_0
 
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->getMeasuredWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v4
 
@@ -704,15 +702,15 @@
 
     div-int/lit8 v7, v7, 0x2
 
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->getPaddingTop()I
+    invoke-virtual {p0}, Landroid/view/View;->getPaddingTop()I
 
     move-result v8
 
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->getPaddingRight()I
+    invoke-virtual {p0}, Landroid/view/View;->getPaddingRight()I
 
     move-result v9
 
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->getPaddingBottom()I
+    invoke-virtual {p0}, Landroid/view/View;->getPaddingBottom()I
 
     move-result v10
 
@@ -736,7 +734,7 @@
     .prologue
     invoke-super {p0, p1}, Landroid/widget/TextView;->onPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->getContentDescription()Ljava/lang/CharSequence;
+    invoke-virtual {p0}, Landroid/view/View;->getContentDescription()Ljava/lang/CharSequence;
 
     move-result-object v0
 
@@ -747,7 +745,7 @@
 
     if-nez v1, :cond_0
 
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->getText()Ljava/util/List;
+    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->getText()Ljava/util/List;
 
     move-result-object v1
 
@@ -931,7 +929,7 @@
 
     iget-object v0, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mTitle:Ljava/lang/CharSequence;
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/view/menu/ActionMenuItemView;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
 
     invoke-direct {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->updateTextButtonVisibility()V
 

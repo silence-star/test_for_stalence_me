@@ -20,15 +20,15 @@
 
     move-result v1
 
-    iput v1, p0, Landroid/graphics/ColorMatrixColorFilter;->native_instance:I
+    iput v1, p0, Landroid/graphics/ColorFilter;->native_instance:I
 
-    iget v1, p0, Landroid/graphics/ColorMatrixColorFilter;->native_instance:I
+    iget v1, p0, Landroid/graphics/ColorFilter;->native_instance:I
 
     invoke-static {v1, v0}, Landroid/graphics/ColorMatrixColorFilter;->nColorMatrixFilter(I[F)I
 
     move-result v1
 
-    iput v1, p0, Landroid/graphics/ColorMatrixColorFilter;->nativeColorFilter:I
+    iput v1, p0, Landroid/graphics/ColorFilter;->nativeColorFilter:I
 
     return-void
 .end method
@@ -57,15 +57,15 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/ColorMatrixColorFilter;->native_instance:I
+    iput v0, p0, Landroid/graphics/ColorFilter;->native_instance:I
 
-    iget v0, p0, Landroid/graphics/ColorMatrixColorFilter;->native_instance:I
+    iget v0, p0, Landroid/graphics/ColorFilter;->native_instance:I
 
     invoke-static {v0, p1}, Landroid/graphics/ColorMatrixColorFilter;->nColorMatrixFilter(I[F)I
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/ColorMatrixColorFilter;->nativeColorFilter:I
+    iput v0, p0, Landroid/graphics/ColorFilter;->nativeColorFilter:I
 
     return-void
 .end method

@@ -119,7 +119,7 @@
     move-exception v17
 
     .local v17, e:Ljava/lang/Exception;
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/Exception;->printStackTrace()V
+    invoke-virtual/range {v17 .. v17}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_1
 .end method
@@ -464,7 +464,7 @@
     move-exception v17
 
     .local v17, e:Ljava/lang/Exception;
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/Exception;->printStackTrace()V
+    invoke-virtual/range {v17 .. v17}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_0
 .end method

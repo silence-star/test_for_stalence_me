@@ -60,7 +60,7 @@
 
     move-result-object v3
 
-    invoke-virtual {p0, v3}, Lcom/android/server/WallpaperManagerService$MyPackageMonitor;->isPackageDisappearing(Ljava/lang/String;)I
+    invoke-virtual {p0, v3}, Lcom/android/internal/content/PackageMonitor;->isPackageDisappearing(Ljava/lang/String;)I
 
     move-result v0
 
@@ -116,7 +116,7 @@
 
     move-result-object v3
 
-    invoke-virtual {p0, v3}, Lcom/android/server/WallpaperManagerService$MyPackageMonitor;->isPackageDisappearing(Ljava/lang/String;)I
+    invoke-virtual {p0, v3}, Lcom/android/internal/content/PackageMonitor;->isPackageDisappearing(Ljava/lang/String;)I
 
     move-result v0
 
@@ -140,7 +140,7 @@
 
     move-result-object v3
 
-    invoke-virtual {p0, v3}, Lcom/android/server/WallpaperManagerService$MyPackageMonitor;->isPackageModified(Ljava/lang/String;)Z
+    invoke-virtual {p0, v3}, Lcom/android/internal/content/PackageMonitor;->isPackageModified(Ljava/lang/String;)Z
 
     move-result v3
 
@@ -175,7 +175,7 @@
 
     move-result-object v3
 
-    invoke-virtual {p0, v3}, Lcom/android/server/WallpaperManagerService$MyPackageMonitor;->isPackageModified(Ljava/lang/String;)Z
+    invoke-virtual {p0, v3}, Lcom/android/internal/content/PackageMonitor;->isPackageModified(Ljava/lang/String;)Z
 
     move-result v3
 
@@ -270,7 +270,7 @@
 
     iget v3, v3, Lcom/android/server/WallpaperManagerService;->mCurrentUserId:I
 
-    invoke-virtual {p0}, Lcom/android/server/WallpaperManagerService$MyPackageMonitor;->getChangingUserId()I
+    invoke-virtual {p0}, Lcom/android/internal/content/PackageMonitor;->getChangingUserId()I
 
     move-result v5
 
@@ -343,7 +343,7 @@
 
     iget v1, v1, Lcom/android/server/WallpaperManagerService;->mCurrentUserId:I
 
-    invoke-virtual {p0}, Lcom/android/server/WallpaperManagerService$MyPackageMonitor;->getChangingUserId()I
+    invoke-virtual {p0}, Lcom/android/internal/content/PackageMonitor;->getChangingUserId()I
 
     move-result v3
 
@@ -435,7 +435,7 @@
 
     iget v0, v0, Lcom/android/server/WallpaperManagerService;->mCurrentUserId:I
 
-    invoke-virtual {p0}, Lcom/android/server/WallpaperManagerService$MyPackageMonitor;->getChangingUserId()I
+    invoke-virtual {p0}, Lcom/android/internal/content/PackageMonitor;->getChangingUserId()I
 
     move-result v2
 
@@ -555,7 +555,7 @@
 
     iget v1, v1, Lcom/android/server/WallpaperManagerService;->mCurrentUserId:I
 
-    invoke-virtual {p0}, Lcom/android/server/WallpaperManagerService$MyPackageMonitor;->getChangingUserId()I
+    invoke-virtual {p0}, Lcom/android/internal/content/PackageMonitor;->getChangingUserId()I
 
     move-result v3
 
@@ -635,7 +635,7 @@
 
     iget v1, v1, Lcom/android/server/WallpaperManagerService;->mCurrentUserId:I
 
-    invoke-virtual {p0}, Lcom/android/server/WallpaperManagerService$MyPackageMonitor;->getChangingUserId()I
+    invoke-virtual {p0}, Lcom/android/internal/content/PackageMonitor;->getChangingUserId()I
 
     move-result v3
 

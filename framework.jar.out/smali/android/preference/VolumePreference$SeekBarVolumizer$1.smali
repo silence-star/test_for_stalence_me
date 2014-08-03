@@ -85,7 +85,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Landroid/widget/SeekBar;->setProgress(I)V
+    invoke-virtual {v1, v0}, Landroid/widget/ProgressBar;->setProgress(I)V
 
     .end local v0           #volume:I
     :cond_0

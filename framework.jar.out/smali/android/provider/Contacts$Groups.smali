@@ -4,8 +4,8 @@
 
 # interfaces
 .implements Landroid/provider/BaseColumns;
-.implements Landroid/provider/SyncConstValue;
 .implements Landroid/provider/Contacts$GroupsColumns;
+.implements Landroid/provider/SyncConstValue;
 
 
 # annotations

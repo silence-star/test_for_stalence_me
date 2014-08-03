@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field private mController:Landroid/widget/NubiaCursorController;
+.field private mController:Landroid/widget/MiuiCursorController;
 
 .field private mMax:I
 
@@ -28,10 +28,10 @@
 
 
 # direct methods
-.method constructor <init>(Landroid/widget/Editor;Landroid/widget/NubiaCursorController;II)V
+.method constructor <init>(Landroid/widget/Editor;Landroid/widget/MiuiCursorController;II)V
     .locals 0
     .parameter
-    .parameter "controller"
+    .parameter "cc"
     .parameter "min"
     .parameter "max"
 
@@ -40,11 +40,11 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Landroid/widget/Editor$PastePanelOnClickListener;->mController:Landroid/widget/NubiaCursorController;
-
-    iput p4, p0, Landroid/widget/Editor$PastePanelOnClickListener;->mMax:I
+    iput-object p2, p0, Landroid/widget/Editor$PastePanelOnClickListener;->mController:Landroid/widget/MiuiCursorController;
 
     iput p3, p0, Landroid/widget/Editor$PastePanelOnClickListener;->mMin:I
+
+    iput p4, p0, Landroid/widget/Editor$PastePanelOnClickListener;->mMax:I
 
     return-void
 .end method
@@ -60,7 +60,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .local v0, tv:Landroid/widget/TextView;
+    .local v0, t:Landroid/widget/TextView;
     iget-object v1, p0, Landroid/widget/Editor$PastePanelOnClickListener;->this$0:Landroid/widget/Editor;
 
     #getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
@@ -82,11 +82,11 @@
 
     invoke-virtual {v1}, Landroid/widget/Editor;->stopTextSelectionMode()V
 
-    iget-object v1, p0, Landroid/widget/Editor$PastePanelOnClickListener;->mController:Landroid/widget/NubiaCursorController;
+    iget-object v1, p0, Landroid/widget/Editor$PastePanelOnClickListener;->mController:Landroid/widget/MiuiCursorController;
 
-    check-cast v1, Landroid/widget/NubiaCursorController$InsertionPointCursorController;
+    check-cast v1, Landroid/widget/MiuiCursorController$InsertionPointCursorController;
 
-    invoke-virtual {v1}, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->onClipBoardPancelClick()V
+    invoke-virtual {v1}, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->onClipBoardPancelClick()V
 
     return-void
 .end method

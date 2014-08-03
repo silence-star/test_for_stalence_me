@@ -47,7 +47,7 @@
 
     const/4 v2, 0x0
 
-    invoke-virtual {p0, v2}, Lcom/android/server/am/AppWaitingForDebuggerDialog;->setCancelable(Z)V
+    invoke-virtual {p0, v2}, Landroid/app/AlertDialog;->setCancelable(Z)V
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -95,7 +95,7 @@
 
     move-result-object v2
 
-    invoke-virtual {p0, v2}, Lcom/android/server/am/AppWaitingForDebuggerDialog;->setMessage(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v2}, Landroid/app/AlertDialog;->setMessage(Ljava/lang/CharSequence;)V
 
     const/4 v2, -0x1
 
@@ -109,13 +109,13 @@
 
     move-result-object v4
 
-    invoke-virtual {p0, v2, v3, v4}, Lcom/android/server/am/AppWaitingForDebuggerDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
+    invoke-virtual {p0, v2, v3, v4}, Landroid/app/AlertDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
 
     const-string v2, "Waiting For Debugger"
 
-    invoke-virtual {p0, v2}, Lcom/android/server/am/AppWaitingForDebuggerDialog;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v2}, Landroid/app/AlertDialog;->setTitle(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {p0}, Lcom/android/server/am/AppWaitingForDebuggerDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v2
 
@@ -148,7 +148,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/WindowManager$LayoutParams;->setTitle(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {p0}, Lcom/android/server/am/AppWaitingForDebuggerDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v2
 

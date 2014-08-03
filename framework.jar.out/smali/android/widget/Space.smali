@@ -38,7 +38,7 @@
     .prologue
     invoke-direct {p0, p1, p2, p3}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    invoke-virtual {p0}, Landroid/widget/Space;->getVisibility()I
+    invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
 
     move-result v0
 
@@ -46,7 +46,7 @@
 
     const/4 v0, 0x4
 
-    invoke-virtual {p0, v0}, Landroid/widget/Space;->setVisibility(I)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
     :cond_0
     return-void
@@ -117,7 +117,7 @@
     .parameter "heightMeasureSpec"
 
     .prologue
-    invoke-virtual {p0}, Landroid/widget/Space;->getSuggestedMinimumWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getSuggestedMinimumWidth()I
 
     move-result v0
 
@@ -125,7 +125,7 @@
 
     move-result v0
 
-    invoke-virtual {p0}, Landroid/widget/Space;->getSuggestedMinimumHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getSuggestedMinimumHeight()I
 
     move-result v1
 
@@ -133,7 +133,7 @@
 
     move-result v1
 
-    invoke-virtual {p0, v0, v1}, Landroid/widget/Space;->setMeasuredDimension(II)V
+    invoke-virtual {p0, v0, v1}, Landroid/view/View;->setMeasuredDimension(II)V
 
     return-void
 .end method

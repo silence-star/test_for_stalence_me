@@ -210,7 +210,7 @@
     invoke-direct {v0, v1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
 
     .local v0, wifiThread:Landroid/os/HandlerThread;
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
     new-instance v1, Lcom/android/server/wifi/WifiService$ClientHandler;
 
@@ -246,7 +246,7 @@
 
     iget-object v1, p0, Lcom/android/server/wifi/WifiService;->mWifiController:Lcom/android/server/wifi/WifiController;
 
-    invoke-virtual {v1}, Lcom/android/server/wifi/WifiController;->start()V
+    invoke-virtual {v1}, Lcom/android/internal/util/StateMachine;->start()V
 
     iget-object v1, p0, Lcom/android/server/wifi/WifiService;->mContext:Landroid/content/Context;
 
@@ -430,7 +430,7 @@
     :try_start_0
     invoke-direct {p0, p1}, Lcom/android/server/wifi/WifiService;->noteAcquireWifiLock(Lcom/android/server/wifi/WifiService$WifiLock;)V
 
-    iget v3, p1, Lcom/android/server/wifi/WifiService$WifiLock;->mMode:I
+    iget v3, p1, Lcom/android/server/wifi/WifiService$DeathRecipient;->mMode:I
 
     packed-switch v3, :pswitch_data_0
 
@@ -439,7 +439,7 @@
 
     const v4, 0x26006
 
-    invoke-virtual {v3, v4}, Lcom/android/server/wifi/WifiController;->sendMessage(I)V
+    invoke-virtual {v3, v4}, Lcom/android/internal/util/StateMachine;->sendMessage(I)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -597,7 +597,7 @@
     .end annotation
 
     .prologue
-    iget v0, p1, Lcom/android/server/wifi/WifiService$WifiLock;->mMode:I
+    iget v0, p1, Lcom/android/server/wifi/WifiService$DeathRecipient;->mMode:I
 
     packed-switch v0, :pswitch_data_0
 
@@ -607,7 +607,7 @@
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/wifi/WifiService;->mBatteryStats:Lcom/android/internal/app/IBatteryStats;
 
-    iget-object v1, p1, Lcom/android/server/wifi/WifiService$WifiLock;->mWorkSource:Landroid/os/WorkSource;
+    iget-object v1, p1, Lcom/android/server/wifi/WifiService$DeathRecipient;->mWorkSource:Landroid/os/WorkSource;
 
     invoke-interface {v0, v1}, Lcom/android/internal/app/IBatteryStats;->noteFullWifiLockAcquiredFromSource(Landroid/os/WorkSource;)V
 
@@ -631,7 +631,7 @@
     .end annotation
 
     .prologue
-    iget v0, p1, Lcom/android/server/wifi/WifiService$WifiLock;->mMode:I
+    iget v0, p1, Lcom/android/server/wifi/WifiService$DeathRecipient;->mMode:I
 
     packed-switch v0, :pswitch_data_0
 
@@ -641,7 +641,7 @@
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/wifi/WifiService;->mBatteryStats:Lcom/android/internal/app/IBatteryStats;
 
-    iget-object v1, p1, Lcom/android/server/wifi/WifiService$WifiLock;->mWorkSource:Landroid/os/WorkSource;
+    iget-object v1, p1, Lcom/android/server/wifi/WifiService$DeathRecipient;->mWorkSource:Landroid/os/WorkSource;
 
     invoke-interface {v0, v1}, Lcom/android/internal/app/IBatteryStats;->noteFullWifiLockReleasedFromSource(Landroid/os/WorkSource;)V
 
@@ -760,7 +760,7 @@
     :try_start_0
     invoke-direct {p0, v3}, Lcom/android/server/wifi/WifiService;->noteReleaseWifiLock(Lcom/android/server/wifi/WifiService$WifiLock;)V
 
-    iget v4, v3, Lcom/android/server/wifi/WifiService$WifiLock;->mMode:I
+    iget v4, v3, Lcom/android/server/wifi/WifiService$DeathRecipient;->mMode:I
 
     packed-switch v4, :pswitch_data_0
 
@@ -769,7 +769,7 @@
 
     const v5, 0x26006
 
-    invoke-virtual {v4, v5}, Lcom/android/server/wifi/WifiController;->sendMessage(I)V
+    invoke-virtual {v4, v5}, Lcom/android/internal/util/StateMachine;->sendMessage(I)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -863,7 +863,7 @@
     .local v2, removed:Lcom/android/server/wifi/WifiService$Multicaster;
     if-eqz v2, :cond_0
 
-    invoke-virtual {v2}, Lcom/android/server/wifi/WifiService$Multicaster;->unlinkDeathRecipient()V
+    invoke-virtual {v2}, Lcom/android/server/wifi/WifiService$DeathRecipient;->unlinkDeathRecipient()V
 
     :cond_0
     iget-object v3, p0, Lcom/android/server/wifi/WifiService;->mMulticasters:Ljava/util/List;
@@ -2315,7 +2315,7 @@
 
     aput-object v0, v2, v3
 
-    invoke-virtual {v1, v2}, Lcom/android/server/wifi/WifiService$TdlsTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v1, v2}, Landroid/os/AsyncTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
     return-void
 .end method
@@ -3648,7 +3648,7 @@
     const/4 v0, 0x1
 
     :goto_0
-    invoke-virtual {v2, v3, v0, v1, p1}, Lcom/android/server/wifi/WifiController;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v2, v3, v0, v1, p1}, Lcom/android/internal/util/StateMachine;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
@@ -3789,7 +3789,7 @@
 
     const v3, 0x26008
 
-    invoke-virtual {v2, v3}, Lcom/android/server/wifi/WifiController;->sendMessage(I)V
+    invoke-virtual {v2, v3}, Lcom/android/internal/util/StateMachine;->sendMessage(I)V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
@@ -3995,7 +3995,7 @@
     invoke-direct {v6, p2}, Landroid/os/WorkSource;-><init>(Landroid/os/WorkSource;)V
 
     :goto_1
-    iput-object v6, v5, Lcom/android/server/wifi/WifiService$WifiLock;->mWorkSource:Landroid/os/WorkSource;
+    iput-object v6, v5, Lcom/android/server/wifi/WifiService$DeathRecipient;->mWorkSource:Landroid/os/WorkSource;
 
     invoke-direct {p0, v5}, Lcom/android/server/wifi/WifiService;->noteAcquireWifiLock(Lcom/android/server/wifi/WifiService$WifiLock;)V
 

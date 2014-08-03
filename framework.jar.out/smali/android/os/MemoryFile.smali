@@ -322,7 +322,7 @@
     .local v0, ex:Ljava/io/IOException;
     sget-object v1, Landroid/os/MemoryFile;->TAG:Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/io/IOException;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v2
 

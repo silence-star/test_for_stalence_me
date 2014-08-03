@@ -729,11 +729,11 @@
     .local v8, paintDrawable:Landroid/graphics/drawable/PaintDrawable;
     sget v11, Lnubia/content/res/IconCustomizer;->sIconWidth:I
 
-    invoke-virtual {v8, v11}, Landroid/graphics/drawable/PaintDrawable;->setIntrinsicWidth(I)V
+    invoke-virtual {v8, v11}, Landroid/graphics/drawable/ShapeDrawable;->setIntrinsicWidth(I)V
 
     sget v11, Lnubia/content/res/IconCustomizer;->sIconHeight:I
 
-    invoke-virtual {v8, v11}, Landroid/graphics/drawable/PaintDrawable;->setIntrinsicHeight(I)V
+    invoke-virtual {v8, v11}, Landroid/graphics/drawable/ShapeDrawable;->setIntrinsicHeight(I)V
 
     .end local v8           #paintDrawable:Landroid/graphics/drawable/PaintDrawable;
     :cond_0
@@ -978,7 +978,7 @@
     .local v1, softReference:Ljava/lang/ref/SoftReference;,"Ljava/lang/ref/SoftReference<Landroid/graphics/Bitmap;>;"
     if-eqz v1, :cond_0
 
-    invoke-virtual {v1}, Ljava/lang/ref/SoftReference;->get()Ljava/lang/Object;
+    invoke-virtual {v1}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1592,7 +1592,7 @@
     invoke-virtual {p1, v6, v7, v2}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
     :try_start_4
-    invoke-virtual {v2}, Ljava/io/FileOutputStream;->flush()V
+    invoke-virtual {v2}, Ljava/io/OutputStream;->flush()V
 
     invoke-virtual {v2}, Ljava/io/FileOutputStream;->close()V
     :try_end_4

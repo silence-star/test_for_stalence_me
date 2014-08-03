@@ -49,7 +49,7 @@
 
     aget-object v5, v5, v6
 
-    invoke-virtual {p0, v5}, Landroid/filterpacks/imageproc/ImageCombineFilter;->getInputFormat(Ljava/lang/String;)Landroid/filterfw/core/FrameFormat;
+    invoke-virtual {p0, v5}, Landroid/filterfw/core/Filter;->getInputFormat(Ljava/lang/String;)Landroid/filterfw/core/FrameFormat;
 
     move-result-object v5
 
@@ -73,7 +73,7 @@
     aget-object v2, v0, v1
 
     .local v2, inputName:Ljava/lang/String;
-    invoke-virtual {p0, v2}, Landroid/filterpacks/imageproc/ImageCombineFilter;->getInputFormat(Ljava/lang/String;)Landroid/filterfw/core/FrameFormat;
+    invoke-virtual {p0, v2}, Landroid/filterfw/core/Filter;->getInputFormat(Ljava/lang/String;)Landroid/filterfw/core/FrameFormat;
 
     move-result-object v5
 
@@ -180,7 +180,7 @@
 
     .end local v2           #i:I
     .restart local v1       #i:I
-    invoke-virtual {p0, v4}, Landroid/filterpacks/imageproc/ImageCombineFilter;->pullInput(Ljava/lang/String;)Landroid/filterfw/core/Frame;
+    invoke-virtual {p0, v4}, Landroid/filterfw/core/Filter;->pullInput(Ljava/lang/String;)Landroid/filterfw/core/Frame;
 
     move-result-object v8
 
@@ -229,7 +229,7 @@
 
     iget-object v8, p0, Landroid/filterpacks/imageproc/ImageCombineFilter;->mOutputName:Ljava/lang/String;
 
-    invoke-virtual {p0, v8, v7}, Landroid/filterpacks/imageproc/ImageCombineFilter;->pushOutput(Ljava/lang/String;Landroid/filterfw/core/Frame;)V
+    invoke-virtual {p0, v8, v7}, Landroid/filterfw/core/Filter;->pushOutput(Ljava/lang/String;Landroid/filterfw/core/Frame;)V
 
     invoke-virtual {v7}, Landroid/filterfw/core/Frame;->release()Landroid/filterfw/core/Frame;
 
@@ -266,7 +266,7 @@
 
     move-object v0, p0
 
-    invoke-virtual/range {v0 .. v5}, Landroid/filterpacks/imageproc/ImageCombineFilter;->addProgramPort(Ljava/lang/String;Ljava/lang/String;Ljava/lang/reflect/Field;Ljava/lang/Class;Z)V
+    invoke-virtual/range {v0 .. v5}, Landroid/filterfw/core/Filter;->addProgramPort(Ljava/lang/String;Ljava/lang/String;Ljava/lang/reflect/Field;Ljava/lang/Class;Z)V
     :try_end_0
     .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -293,7 +293,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v9, v0}, Landroid/filterpacks/imageproc/ImageCombineFilter;->addMaskedInputPort(Ljava/lang/String;Landroid/filterfw/core/FrameFormat;)V
+    invoke-virtual {p0, v9, v0}, Landroid/filterfw/core/Filter;->addMaskedInputPort(Ljava/lang/String;Landroid/filterfw/core/FrameFormat;)V
 
     add-int/lit8 v8, v8, 0x1
 
@@ -326,7 +326,7 @@
 
     aget-object v1, v1, v11
 
-    invoke-virtual {p0, v0, v1}, Landroid/filterpacks/imageproc/ImageCombineFilter;->addOutputBasedOnInput(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p0, v0, v1}, Landroid/filterfw/core/Filter;->addOutputBasedOnInput(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -403,7 +403,7 @@
     :cond_0
     iget-object v0, p0, Landroid/filterpacks/imageproc/ImageCombineFilter;->mProgram:Landroid/filterfw/core/Program;
 
-    invoke-virtual {p0, v0, p2}, Landroid/filterpacks/imageproc/ImageCombineFilter;->initProgramInputs(Landroid/filterfw/core/Program;Landroid/filterfw/core/FilterContext;)V
+    invoke-virtual {p0, v0, p2}, Landroid/filterfw/core/Filter;->initProgramInputs(Landroid/filterfw/core/Program;Landroid/filterfw/core/FilterContext;)V
 
     iput p1, p0, Landroid/filterpacks/imageproc/ImageCombineFilter;->mCurrentTarget:I
 

@@ -200,7 +200,7 @@
 
     iput-object p0, p1, Landroid/transition/Transition;->mParent:Landroid/transition/TransitionSet;
 
-    iget-wide v0, p0, Landroid/transition/TransitionSet;->mDuration:J
+    iget-wide v0, p0, Landroid/transition/Transition;->mDuration:J
 
     const-wide/16 v2, 0x0
 
@@ -208,7 +208,7 @@
 
     if-ltz v0, :cond_0
 
-    iget-wide v0, p0, Landroid/transition/TransitionSet;->mDuration:J
+    iget-wide v0, p0, Landroid/transition/Transition;->mDuration:J
 
     invoke-virtual {p1, v0, v1}, Landroid/transition/Transition;->setDuration(J)Landroid/transition/Transition;
 
@@ -269,7 +269,7 @@
 
     int-to-long v4, v2
 
-    invoke-virtual {p0, v3, v4, v5}, Landroid/transition/TransitionSet;->isValidTarget(Landroid/view/View;J)Z
+    invoke-virtual {p0, v3, v4, v5}, Landroid/transition/Transition;->isValidTarget(Landroid/view/View;J)Z
 
     move-result v3
 
@@ -333,7 +333,7 @@
 
     int-to-long v4, v2
 
-    invoke-virtual {p0, v3, v4, v5}, Landroid/transition/TransitionSet;->isValidTarget(Landroid/view/View;J)Z
+    invoke-virtual {p0, v3, v4, v5}, Landroid/transition/Transition;->isValidTarget(Landroid/view/View;J)Z
 
     move-result v3
 
@@ -843,7 +843,7 @@
     .prologue
     invoke-super {p0, p1, p2}, Landroid/transition/Transition;->setDuration(J)Landroid/transition/Transition;
 
-    iget-wide v2, p0, Landroid/transition/TransitionSet;->mDuration:J
+    iget-wide v2, p0, Landroid/transition/Transition;->mDuration:J
 
     const-wide/16 v4, 0x0
 

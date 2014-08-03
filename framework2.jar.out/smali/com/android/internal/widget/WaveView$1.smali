@@ -78,7 +78,7 @@
     :cond_1
     iget-object v0, p0, Lcom/android/internal/widget/WaveView$1;->this$0:Lcom/android/internal/widget/WaveView;
 
-    invoke-virtual {v0}, Lcom/android/internal/widget/WaveView;->invalidate()V
+    invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
     return-void
 .end method

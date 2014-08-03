@@ -48,7 +48,7 @@
     #calls: Landroid/widget/TimePicker;->updateInputState()V
     invoke-static {v0}, Landroid/widget/TimePicker;->access$000(Landroid/widget/TimePicker;)V
 
-    invoke-virtual {p1}, Landroid/widget/NumberPicker;->requestFocus()Z
+    invoke-virtual {p1}, Landroid/view/View;->requestFocus()Z
 
     iget-object v1, p0, Landroid/widget/TimePicker$5;->this$0:Landroid/widget/TimePicker;
 

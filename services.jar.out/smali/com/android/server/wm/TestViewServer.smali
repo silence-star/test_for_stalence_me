@@ -215,11 +215,11 @@
     .end local v2           #out:Ljava/io/BufferedWriter;
     .local v3, out:Ljava/io/BufferedWriter;
     :try_start_1
-    invoke-virtual {v3, p1}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v3, p1}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     const-string v5, "\n"
 
-    invoke-virtual {v3, v5}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v3, v5}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     invoke-virtual {v3}, Ljava/io/BufferedWriter;->flush()V
     :try_end_1
@@ -494,7 +494,7 @@
     move-exception v2
 
     .local v2, e:Ljava/io/IOException;
-    invoke-virtual {v2}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {v2}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_0
 
@@ -569,7 +569,7 @@
     move-exception v2
 
     .local v2, e:Ljava/io/IOException;
-    invoke-virtual {v2}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {v2}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_0
 
@@ -592,7 +592,7 @@
     move-exception v2
 
     .restart local v2       #e:Ljava/io/IOException;
-    invoke-virtual {v2}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {v2}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_3
 

@@ -64,7 +64,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Landroid/net/http/ConnectionThread;->setName(Ljava/lang/String;)V
+    invoke-virtual {p0, v0}, Ljava/lang/Thread;->setName(Ljava/lang/String;)V
 
     iput p2, p0, Landroid/net/http/ConnectionThread;->mId:I
 

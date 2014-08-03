@@ -176,7 +176,7 @@
 
     invoke-virtual {p0, v0}, Landroid/content/ContentProvider;->setPathPermissions([Landroid/content/pm/PathPermission;)V
 
-    iget-boolean v0, p2, Landroid/content/pm/ProviderInfo;->exported:Z
+    iget-boolean v0, p2, Landroid/content/pm/ComponentInfo;->exported:Z
 
     iput-boolean v0, p0, Landroid/content/ContentProvider;->mExported:Z
 
@@ -492,7 +492,7 @@
     .local v11, pathPerm:Ljava/lang/String;
     if-eqz v11, :cond_3
 
-    invoke-virtual {v13, v10}, Landroid/content/pm/PathPermission;->match(Ljava/lang/String;)Z
+    invoke-virtual {v13, v10}, Landroid/os/PatternMatcher;->match(Ljava/lang/String;)Z
 
     move-result v16
 
@@ -774,7 +774,7 @@
     .local v11, pathPerm:Ljava/lang/String;
     if-eqz v11, :cond_3
 
-    invoke-virtual {v13, v10}, Landroid/content/pm/PathPermission;->match(Ljava/lang/String;)Z
+    invoke-virtual {v13, v10}, Landroid/os/PatternMatcher;->match(Ljava/lang/String;)Z
 
     move-result v16
 

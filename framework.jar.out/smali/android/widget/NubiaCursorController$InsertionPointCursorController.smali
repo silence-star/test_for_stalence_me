@@ -51,7 +51,7 @@
 
     const v1, 0x10900c3
 
-    invoke-virtual {p0, v1}, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->createFloatPanelViewController(I)Landroid/widget/NubiaCursorController$FloatPanelViewController;
+    invoke-virtual {p0, v1}, Landroid/widget/NubiaCursorController;->createFloatPanelViewController(I)Landroid/widget/NubiaCursorController$FloatPanelViewController;
 
     move-result-object v1
 
@@ -59,15 +59,15 @@
 
     const v1, 0x10900c2
 
-    invoke-virtual {p0, v1}, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->createFloatPanelViewController(I)Landroid/widget/NubiaCursorController$FloatPanelViewController;
+    invoke-virtual {p0, v1}, Landroid/widget/NubiaCursorController;->createFloatPanelViewController(I)Landroid/widget/NubiaCursorController$FloatPanelViewController;
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mPanel:Landroid/widget/NubiaCursorController$FloatPanelViewController;
 
-    iget-object v1, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mEditor:Landroid/widget/Editor;
+    iget-object v1, p0, Landroid/widget/NubiaCursorController;->mEditor:Landroid/widget/Editor;
 
-    invoke-virtual {p0, v1, v2, p0}, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->initHandleView(Landroid/widget/Editor;ILandroid/widget/NubiaCursorController;)Landroid/widget/NubiaCursorController$NubiaHandleView;
+    invoke-virtual {p0, v1, v2, p0}, Landroid/widget/NubiaCursorController;->initHandleView(Landroid/widget/Editor;ILandroid/widget/NubiaCursorController;)Landroid/widget/NubiaCursorController$NubiaHandleView;
 
     move-result-object v1
 
@@ -127,7 +127,7 @@
 
     invoke-virtual {v0}, Landroid/widget/NubiaCursorController$NubiaHandleView;->invisible()V
 
-    iget-object v0, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mEditor:Landroid/widget/Editor;
+    iget-object v0, p0, Landroid/widget/NubiaCursorController;->mEditor:Landroid/widget/Editor;
 
     invoke-virtual {v0}, Landroid/widget/Editor;->getSelectionController()Landroid/widget/NubiaCursorController;
 
@@ -361,7 +361,7 @@
     invoke-virtual {v2}, Landroid/widget/NubiaCursorController$FloatPanelViewController;->hide()V
 
     :cond_2
-    iget-object v2, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mEditor:Landroid/widget/Editor;
+    iget-object v2, p0, Landroid/widget/NubiaCursorController;->mEditor:Landroid/widget/Editor;
 
     invoke-virtual {v2}, Landroid/widget/Editor;->needInsertPanel()Z
 
@@ -438,7 +438,7 @@
     check-cast v4, Landroid/widget/LinearLayout;
 
     .local v4, layout:Landroid/widget/LinearLayout;
-    invoke-virtual {v4}, Landroid/widget/LinearLayout;->removeAllViews()V
+    invoke-virtual {v4}, Landroid/view/ViewGroup;->removeAllViews()V
 
     invoke-static {}, Lnubia/ui/content/ClipServiceManagerExtra;->getInstance()Lnubia/ui/content/ClipServiceManagerExtra;
 
@@ -462,7 +462,7 @@
     move-result v5
 
     .local v5, num:I
-    iget-object v7, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mContext:Landroid/content/Context;
+    iget-object v7, p0, Landroid/widget/NubiaCursorController;->mContext:Landroid/content/Context;
 
     invoke-static {v7}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
@@ -494,11 +494,11 @@
 
     invoke-virtual {v6, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v6, p2}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v6, p2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     const v7, 0x1080704
 
-    invoke-virtual {v6, v7}, Landroid/widget/TextView;->setBackgroundResource(I)V
+    invoke-virtual {v6, v7}, Landroid/view/View;->setBackgroundResource(I)V
 
     new-instance v7, Landroid/view/ViewGroup$LayoutParams;
 
@@ -508,7 +508,7 @@
 
     invoke-direct {v7, v8, v9}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
-    invoke-virtual {v4, v6, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v4, v6, v7}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .end local v6           #tv:Landroid/widget/TextView;
     :cond_0
@@ -548,13 +548,13 @@
 
     invoke-virtual {v6, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v6, p2}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v6, p2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     if-nez v1, :cond_3
 
     const v7, 0x1080708
 
-    invoke-virtual {v6, v7}, Landroid/widget/TextView;->setBackgroundResource(I)V
+    invoke-virtual {v6, v7}, Landroid/view/View;->setBackgroundResource(I)V
 
     :goto_1
     new-instance v7, Landroid/view/ViewGroup$LayoutParams;
@@ -565,7 +565,7 @@
 
     invoke-direct {v7, v8, v9}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
-    invoke-virtual {v4, v6, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v4, v6, v7}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     add-int/lit8 v7, v5, -0x1
 
@@ -573,7 +573,7 @@
 
     new-instance v3, Landroid/widget/ImageView;
 
-    iget-object v7, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mContext:Landroid/content/Context;
+    iget-object v7, p0, Landroid/widget/NubiaCursorController;->mContext:Landroid/content/Context;
 
     invoke-direct {v3, v7}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
@@ -594,7 +594,7 @@
 
     invoke-direct {v7, v8, v9}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
-    invoke-virtual {v4, v3, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v4, v3, v7}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .end local v3           #iv:Landroid/widget/ImageView;
     :cond_2
@@ -609,14 +609,14 @@
 
     const v7, 0x1080702
 
-    invoke-virtual {v6, v7}, Landroid/widget/TextView;->setBackgroundResource(I)V
+    invoke-virtual {v6, v7}, Landroid/view/View;->setBackgroundResource(I)V
 
     goto :goto_1
 
     :cond_4
     const v7, 0x1080706
 
-    invoke-virtual {v6, v7}, Landroid/widget/TextView;->setBackgroundResource(I)V
+    invoke-virtual {v6, v7}, Landroid/view/View;->setBackgroundResource(I)V
 
     goto :goto_1
 .end method
@@ -643,7 +643,7 @@
     fill-array-data v4, :array_1
 
     .local v4, splitIds:[I
-    iget-object v9, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mEditor:Landroid/widget/Editor;
+    iget-object v9, p0, Landroid/widget/NubiaCursorController;->mEditor:Landroid/widget/Editor;
 
     invoke-virtual {v9, v0}, Landroid/widget/Editor;->getFloatPanelShowHides([I)Ljava/util/ArrayList;
 
@@ -665,7 +665,7 @@
     const/4 v3, 0x1
 
     .local v3, isShowing:Z
-    iget-object v9, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mTextView:Landroid/widget/TextView;
+    iget-object v9, p0, Landroid/widget/NubiaCursorController;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v9}, Landroid/widget/TextView;->getSelectionStart()I
 
@@ -676,7 +676,7 @@
 
     if-eq v5, v9, :cond_0
 
-    iget-object v9, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mTextView:Landroid/widget/TextView;
+    iget-object v9, p0, Landroid/widget/NubiaCursorController;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v9}, Landroid/widget/TextView;->length()I
 
@@ -689,7 +689,7 @@
 
     .local v1, isShowHandle:Z
     :goto_0
-    iget-object v9, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mEditor:Landroid/widget/Editor;
+    iget-object v9, p0, Landroid/widget/NubiaCursorController;->mEditor:Landroid/widget/Editor;
 
     invoke-virtual {v9}, Landroid/widget/Editor;->hasMagnifierController()Z
 
@@ -697,13 +697,13 @@
 
     if-eqz v9, :cond_3
 
-    iget-object v9, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mEditor:Landroid/widget/Editor;
+    iget-object v9, p0, Landroid/widget/NubiaCursorController;->mEditor:Landroid/widget/Editor;
 
     invoke-virtual {v9}, Landroid/widget/Editor;->getMagnifierController()Landroid/widget/TextMagnifierController;
 
     move-result-object v9
 
-    invoke-virtual {v9}, Landroid/widget/TextMagnifierController;->isShowing()Z
+    invoke-virtual {v9}, Lnubia/ui/widget/MagnifierController;->isShowing()Z
 
     move-result v9
 
@@ -723,7 +723,7 @@
 
     if-nez v2, :cond_1
 
-    iget-object v7, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mEditor:Landroid/widget/Editor;
+    iget-object v7, p0, Landroid/widget/NubiaCursorController;->mEditor:Landroid/widget/Editor;
 
     invoke-virtual {v7}, Landroid/widget/Editor;->needInsertPanel()Z
 
@@ -790,7 +790,7 @@
     .locals 3
 
     .prologue
-    iget-object v0, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mTextView:Landroid/widget/TextView;
+    iget-object v0, p0, Landroid/widget/NubiaCursorController;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getSelectionStart()I
 

@@ -358,7 +358,7 @@
     .local v10, rInfo:Landroid/content/pm/ResolveInfo;
     iget-object v13, v10, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
-    iget-object v9, v13, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    iget-object v9, v13, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     .local v9, packageName:Ljava/lang/String;
     :try_start_0
@@ -449,13 +449,13 @@
     .local v7, isMultiuser:Z
     iget-object v13, v10, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
-    iget-object v13, v13, Landroid/content/pm/ServiceInfo;->metaData:Landroid/os/Bundle;
+    iget-object v13, v13, Landroid/content/pm/PackageItemInfo;->metaData:Landroid/os/Bundle;
 
     if-eqz v13, :cond_3
 
     iget-object v13, v10, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
-    iget-object v13, v13, Landroid/content/pm/ServiceInfo;->metaData:Landroid/os/Bundle;
+    iget-object v13, v13, Landroid/content/pm/PackageItemInfo;->metaData:Landroid/os/Bundle;
 
     const-string v14, "serviceVersion"
 
@@ -467,7 +467,7 @@
 
     iget-object v13, v10, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
-    iget-object v13, v13, Landroid/content/pm/ServiceInfo;->metaData:Landroid/os/Bundle;
+    iget-object v13, v13, Landroid/content/pm/PackageItemInfo;->metaData:Landroid/os/Bundle;
 
     const-string v14, "serviceIsMultiuser"
 
@@ -629,7 +629,7 @@
 
     move-result-object v8
 
-    invoke-virtual {v4, v8}, Ljava/util/HashSet;->addAll(Ljava/util/Collection;)Z
+    invoke-virtual {v4, v8}, Ljava/util/AbstractCollection;->addAll(Ljava/util/Collection;)Z
 
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_0
@@ -765,7 +765,7 @@
     check-cast v4, Ljava/util/HashSet;
 
     .local v4, referenceSet:Ljava/util/HashSet;,"Ljava/util/HashSet<Landroid/content/pm/Signature;>;"
-    invoke-virtual {v4, v2}, Ljava/util/HashSet;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v2}, Ljava/util/AbstractSet;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 

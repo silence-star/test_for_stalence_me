@@ -40,7 +40,7 @@
 
     const-string v0, "android.hardware.location.IFusedLocationHardwareSink"
 
-    invoke-virtual {p0, p0, v0}, Landroid/hardware/location/IFusedLocationHardwareSink$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     return-void
 .end method

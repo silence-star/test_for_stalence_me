@@ -54,7 +54,7 @@
 
     const/4 v1, 0x2
 
-    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->requestFocus(I)Z
+    invoke-virtual {v0, v1}, Landroid/view/View;->requestFocus(I)Z
 
     iget-object v0, p0, Landroid/widget/TabHost$1;->this$0:Landroid/widget/TabHost;
 
@@ -63,7 +63,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p3}, Landroid/widget/FrameLayout;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
+    invoke-virtual {v0, p3}, Landroid/view/ViewGroup;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
     move-result v0
 

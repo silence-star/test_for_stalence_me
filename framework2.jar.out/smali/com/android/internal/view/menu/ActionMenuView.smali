@@ -71,7 +71,7 @@
 
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    invoke-virtual {p0, v4}, Lcom/android/internal/view/menu/ActionMenuView;->setBaselineAligned(Z)V
+    invoke-virtual {p0, v4}, Landroid/widget/LinearLayout;->setBaselineAligned(Z)V
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -334,22 +334,22 @@
     move-result v19
 
     .local v19, heightSize:I
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/view/menu/ActionMenuView;->getPaddingLeft()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v38
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/view/menu/ActionMenuView;->getPaddingRight()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingRight()I
 
     move-result v39
 
     add-int v36, v38, v39
 
     .local v36, widthPadding:I
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/view/menu/ActionMenuView;->getPaddingTop()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingTop()I
 
     move-result v38
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/view/menu/ActionMenuView;->getPaddingBottom()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingBottom()I
 
     move-result v39
 
@@ -404,7 +404,7 @@
 
     move/from16 v2, v38
 
-    invoke-virtual {v0, v1, v2}, Lcom/android/internal/view/menu/ActionMenuView;->setMeasuredDimension(II)V
+    invoke-virtual {v0, v1, v2}, Landroid/view/View;->setMeasuredDimension(II)V
 
     :goto_1
     return-void
@@ -469,7 +469,7 @@
     const-wide/16 v32, 0x0
 
     .local v32, smallestItemsAt:J
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/view/menu/ActionMenuView;->getChildCount()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v12
 
@@ -486,7 +486,7 @@
 
     move/from16 v1, v20
 
-    invoke-virtual {v0, v1}, Lcom/android/internal/view/menu/ActionMenuView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v11
 
@@ -591,7 +591,7 @@
 
     move-object/from16 v1, v23
 
-    iput v0, v1, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->leftMargin:I
+    iput v0, v1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
     const/16 v38, 0x0
 
@@ -599,7 +599,7 @@
 
     move-object/from16 v1, v23
 
-    iput v0, v1, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->rightMargin:I
+    iput v0, v1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     if-eqz v21, :cond_7
 
@@ -763,7 +763,7 @@
 
     move/from16 v1, v20
 
-    invoke-virtual {v0, v1}, Lcom/android/internal/view/menu/ActionMenuView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v11
 
@@ -949,7 +949,7 @@
 
     move/from16 v1, v38
 
-    invoke-virtual {v0, v1}, Lcom/android/internal/view/menu/ActionMenuView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v38
 
@@ -1000,7 +1000,7 @@
 
     move/from16 v1, v38
 
-    invoke-virtual {v0, v1}, Lcom/android/internal/view/menu/ActionMenuView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v38
 
@@ -1098,7 +1098,7 @@
 
     move/from16 v1, v20
 
-    invoke-virtual {v0, v1}, Lcom/android/internal/view/menu/ActionMenuView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v11
 
@@ -1258,7 +1258,7 @@
 
     move/from16 v1, v20
 
-    invoke-virtual {v0, v1}, Lcom/android/internal/view/menu/ActionMenuView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v11
 
@@ -1308,7 +1308,7 @@
 
     move-object/from16 v1, v23
 
-    iput v0, v1, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->leftMargin:I
+    iput v0, v1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
     :cond_1c
     const/16 v30, 0x1
@@ -1346,7 +1346,7 @@
 
     move-object/from16 v1, v23
 
-    iput v0, v1, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->rightMargin:I
+    iput v0, v1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     const/16 v30, 0x1
 
@@ -1361,7 +1361,7 @@
 
     move-object/from16 v1, v23
 
-    iput v0, v1, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->leftMargin:I
+    iput v0, v1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
     :cond_1f
     add-int/lit8 v38, v12, -0x1
@@ -1378,7 +1378,7 @@
 
     move-object/from16 v1, v23
 
-    iput v0, v1, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->rightMargin:I
+    iput v0, v1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     goto/16 :goto_d
 
@@ -1403,7 +1403,7 @@
 
     move/from16 v1, v20
 
-    invoke-virtual {v0, v1}, Lcom/android/internal/view/menu/ActionMenuView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v11
 
@@ -1485,7 +1485,7 @@
 
     move/from16 v2, v19
 
-    invoke-virtual {v0, v1, v2}, Lcom/android/internal/view/menu/ActionMenuView;->setMeasuredDimension(II)V
+    invoke-virtual {v0, v1, v2}, Landroid/view/View;->setMeasuredDimension(II)V
 
     mul-int v38, v8, v5
 
@@ -1567,7 +1567,7 @@
     .local v0, params:Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;
     const/16 v1, 0x10
 
-    iput v1, v0, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->gravity:I
+    iput v1, v0, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
 
     return-object v0
 .end method
@@ -1627,7 +1627,7 @@
     .prologue
     new-instance v0, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;
 
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuView;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -1656,13 +1656,13 @@
 
     .local v0, result:Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;
     :goto_0
-    iget v1, v0, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->gravity:I
+    iget v1, v0, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
 
     if-gtz v1, :cond_0
 
     const/16 v1, 0x10
 
-    iput v1, v0, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->gravity:I
+    iput v1, v0, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
 
     .end local v0           #result:Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;
     :cond_0
@@ -1726,12 +1726,12 @@
     :cond_1
     add-int/lit8 v3, p1, -0x1
 
-    invoke-virtual {p0, v3}, Lcom/android/internal/view/menu/ActionMenuView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
     .local v1, childBefore:Landroid/view/View;
-    invoke-virtual {p0, p1}, Lcom/android/internal/view/menu/ActionMenuView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -1739,7 +1739,7 @@
     const/4 v2, 0x0
 
     .local v2, result:Z
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v3
 
@@ -1864,7 +1864,7 @@
     .parameter "newConfig"
 
     .prologue
-    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onConfigurationChanged(Landroid/content/res/Configuration;)V
+    invoke-super {p0, p1}, Landroid/view/View;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
     iget-object v0, p0, Lcom/android/internal/view/menu/ActionMenuView;->mPresenter:Lcom/android/internal/view/menu/ActionMenuPresenter;
 
@@ -1911,7 +1911,7 @@
     .locals 1
 
     .prologue
-    invoke-super {p0}, Landroid/widget/LinearLayout;->onDetachedFromWindow()V
+    invoke-super {p0}, Landroid/view/ViewGroup;->onDetachedFromWindow()V
 
     iget-object v0, p0, Lcom/android/internal/view/menu/ActionMenuView;->mPresenter:Lcom/android/internal/view/menu/ActionMenuPresenter;
 
@@ -1965,7 +1965,7 @@
     goto :goto_0
 
     :cond_2
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/view/menu/ActionMenuView;->getChildCount()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v11
 
@@ -1975,7 +1975,7 @@
     div-int/lit8 v20, v4, 0x2
 
     .local v20, midVertical:I
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/view/menu/ActionMenuView;->getDividerWidth()I
+    invoke-virtual/range {p0 .. p0}, Landroid/widget/LinearLayout;->getDividerWidth()I
 
     move-result v12
 
@@ -1991,13 +1991,13 @@
     .local v21, nonOverflowCount:I
     sub-int v4, p4, p2
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/view/menu/ActionMenuView;->getPaddingRight()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingRight()I
 
     move-result v5
 
     sub-int/2addr v4, v5
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/view/menu/ActionMenuView;->getPaddingLeft()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v5
 
@@ -2007,7 +2007,7 @@
     const/4 v13, 0x0
 
     .local v13, hasOverflow:Z
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/view/menu/ActionMenuView;->isLayoutRtl()Z
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->isLayoutRtl()Z
 
     move-result v16
 
@@ -2020,7 +2020,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v15}, Lcom/android/internal/view/menu/ActionMenuView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, v15}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v32
 
@@ -2074,13 +2074,13 @@
     .local v14, height:I
     if-eqz v16, :cond_5
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/view/menu/ActionMenuView;->getPaddingLeft()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v4
 
     move-object/from16 v0, v24
 
-    iget v5, v0, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->leftMargin:I
+    iget v5, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
     add-int v17, v4, v5
 
@@ -2118,11 +2118,11 @@
     .end local v25           #r:I
     .end local v31           #t:I
     :cond_5
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/view/menu/ActionMenuView;->getWidth()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getWidth()I
 
     move-result v4
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/view/menu/ActionMenuView;->getPaddingRight()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingRight()I
 
     move-result v5
 
@@ -2130,7 +2130,7 @@
 
     move-object/from16 v0, v24
 
-    iget v5, v0, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->rightMargin:I
+    iget v5, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     sub-int v25, v4, v5
 
@@ -2150,13 +2150,13 @@
 
     move-object/from16 v0, v24
 
-    iget v5, v0, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->leftMargin:I
+    iget v5, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
     add-int/2addr v4, v5
 
     move-object/from16 v0, v24
 
-    iget v5, v0, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->rightMargin:I
+    iget v5, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     add-int v26, v4, v5
 
@@ -2194,7 +2194,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v4}, Lcom/android/internal/view/menu/ActionMenuView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, v4}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v32
 
@@ -2236,11 +2236,11 @@
 
     invoke-virtual {v0, v1, v2, v4, v5}, Landroid/view/View;->layout(IIII)V
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v32
 
     move/from16 v1, p2
 
-    move/from16 v2, v26
+    move/from16 v2, v31
 
     move/from16 v3, p4
 
@@ -2279,11 +2279,11 @@
     .local v28, spacerSize:I
     if-eqz v16, :cond_e
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/view/menu/ActionMenuView;->getWidth()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getWidth()I
 
     move-result v4
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/view/menu/ActionMenuView;->getPaddingRight()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingRight()I
 
     move-result v5
 
@@ -2297,7 +2297,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v15}, Lcom/android/internal/view/menu/ActionMenuView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, v15}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v32
 
@@ -2352,7 +2352,7 @@
     :cond_d
     move-object/from16 v0, v18
 
-    iget v4, v0, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->rightMargin:I
+    iget v4, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     sub-int v30, v30, v4
 
@@ -2385,7 +2385,7 @@
 
     move-object/from16 v0, v18
 
-    iget v4, v0, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->leftMargin:I
+    iget v4, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
     add-int v4, v4, v33
 
@@ -2402,7 +2402,7 @@
     .end local v32           #v:Landroid/view/View;
     .end local v33           #width:I
     :cond_e
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/view/menu/ActionMenuView;->getPaddingLeft()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v29
 
@@ -2414,7 +2414,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v15}, Lcom/android/internal/view/menu/ActionMenuView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, v15}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v32
 
@@ -2449,7 +2449,7 @@
     :cond_10
     move-object/from16 v0, v18
 
-    iget v4, v0, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->leftMargin:I
+    iget v4, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
     add-int v29, v29, v4
 
@@ -2482,7 +2482,7 @@
 
     move-object/from16 v0, v18
 
-    iget v4, v0, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->rightMargin:I
+    iget v4, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     add-int v4, v4, v33
 
@@ -2578,7 +2578,7 @@
 
     .restart local v5       #widthSize:I
     :cond_4
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v1
 
@@ -2589,7 +2589,7 @@
     :goto_2
     if-ge v2, v1, :cond_5
 
-    invoke-virtual {p0, v2}, Lcom/android/internal/view/menu/ActionMenuView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -2601,9 +2601,9 @@
     check-cast v3, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;
 
     .local v3, lp:Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;
-    iput v8, v3, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->rightMargin:I
+    iput v8, v3, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    iput v8, v3, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->leftMargin:I
+    iput v8, v3, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
     add-int/lit8 v2, v2, 0x1
 
@@ -2624,7 +2624,7 @@
     .prologue
     iput p1, p0, Lcom/android/internal/view/menu/ActionMenuView;->mMaxItemHeight:I
 
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuView;->requestLayout()V
+    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
 
     return-void
 .end method
@@ -2653,7 +2653,7 @@
     .locals 2
 
     .prologue
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuView;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
 

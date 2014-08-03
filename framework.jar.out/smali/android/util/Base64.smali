@@ -137,28 +137,28 @@
     throw v2
 
     :cond_0
-    iget v2, v0, Landroid/util/Base64$Decoder;->op:I
+    iget v2, v0, Landroid/util/Base64$Coder;->op:I
 
-    iget-object v3, v0, Landroid/util/Base64$Decoder;->output:[B
+    iget-object v3, v0, Landroid/util/Base64$Coder;->output:[B
 
     array-length v3, v3
 
     if-ne v2, v3, :cond_1
 
-    iget-object v1, v0, Landroid/util/Base64$Decoder;->output:[B
+    iget-object v1, v0, Landroid/util/Base64$Coder;->output:[B
 
     :goto_0
     return-object v1
 
     :cond_1
-    iget v2, v0, Landroid/util/Base64$Decoder;->op:I
+    iget v2, v0, Landroid/util/Base64$Coder;->op:I
 
     new-array v1, v2, [B
 
     .local v1, temp:[B
-    iget-object v2, v0, Landroid/util/Base64$Decoder;->output:[B
+    iget-object v2, v0, Landroid/util/Base64$Coder;->output:[B
 
-    iget v3, v0, Landroid/util/Base64$Decoder;->op:I
+    iget v3, v0, Landroid/util/Base64$Coder;->op:I
 
     invoke-static {v2, v4, v1, v4, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
@@ -243,7 +243,7 @@
     :cond_1
     new-array v2, v1, [B
 
-    iput-object v2, v0, Landroid/util/Base64$Encoder;->output:[B
+    iput-object v2, v0, Landroid/util/Base64$Coder;->output:[B
 
     invoke-virtual {v0, p0, p1, p2, v3}, Landroid/util/Base64$Encoder;->process([BIIZ)Z
 
@@ -251,7 +251,7 @@
 
     if-nez v2, :cond_4
 
-    iget v2, v0, Landroid/util/Base64$Encoder;->op:I
+    iget v2, v0, Landroid/util/Base64$Coder;->op:I
 
     if-eq v2, v1, :cond_4
 
@@ -284,7 +284,7 @@
     goto :goto_1
 
     :cond_4
-    iget-object v2, v0, Landroid/util/Base64$Encoder;->output:[B
+    iget-object v2, v0, Landroid/util/Base64$Coder;->output:[B
 
     return-object v2
 

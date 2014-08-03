@@ -87,7 +87,7 @@
     move-result-object v1
 
     .local v1, dialog:Landroid/app/AlertDialog;
-    invoke-virtual {v1}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {v1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v2
 

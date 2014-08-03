@@ -1663,7 +1663,7 @@
 
     iget-object v5, v4, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v5, v5, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v5, v5, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {v0, v5}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
@@ -1833,7 +1833,7 @@
     .local v1, dr:Landroid/graphics/drawable/Drawable;
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setDither(Z)V
+    invoke-virtual {v1, v2}, Landroid/graphics/drawable/BitmapDrawable;->setDither(Z)V
 
     .end local v1           #dr:Landroid/graphics/drawable/Drawable;
     :goto_0
@@ -2100,7 +2100,7 @@
     invoke-direct {v1, v2, v0}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
 
     .local v1, dr:Landroid/graphics/drawable/Drawable;
-    invoke-virtual {v1, v4}, Landroid/graphics/drawable/Drawable;->setDither(Z)V
+    invoke-virtual {v1, v4}, Landroid/graphics/drawable/BitmapDrawable;->setDither(Z)V
 
     .end local v1           #dr:Landroid/graphics/drawable/Drawable;
     :goto_0
@@ -2278,7 +2278,7 @@
     if-eqz v2, :cond_0
 
     :try_start_3
-    invoke-virtual {v2}, Ljava/io/FileOutputStream;->close()V
+    invoke-virtual {v2}, Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;->close()V
 
     goto :goto_0
 
@@ -2428,7 +2428,7 @@
     if-eqz v2, :cond_0
 
     :try_start_3
-    invoke-virtual {v2}, Ljava/io/FileOutputStream;->close()V
+    invoke-virtual {v2}, Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;->close()V
 
     goto :goto_0
 
@@ -2546,7 +2546,7 @@
     if-eqz v2, :cond_0
 
     :try_start_3
-    invoke-virtual {v2}, Ljava/io/FileOutputStream;->close()V
+    invoke-virtual {v2}, Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;->close()V
 
     goto :goto_0
 

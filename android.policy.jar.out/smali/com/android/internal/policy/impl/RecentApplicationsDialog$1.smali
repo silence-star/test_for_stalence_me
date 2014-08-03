@@ -61,7 +61,7 @@
     .local v2, icon:Landroid/widget/TextView;
     invoke-virtual {v2, v5, v5, v5, v5}, Landroid/widget/TextView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    invoke-virtual {v2, v5}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v2, v5}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
     add-int/lit8 v1, v1, 0x1
 

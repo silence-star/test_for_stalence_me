@@ -45,7 +45,7 @@
 
     const/4 v0, 0x1
 
-    invoke-virtual {p0, v0}, Lcom/android/server/LockSettingsService$DatabaseHelper;->setWriteAheadLoggingEnabled(Z)V
+    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteOpenHelper;->setWriteAheadLoggingEnabled(Z)V
 
     return-void
 .end method
@@ -111,13 +111,13 @@
 
     const/4 v1, 0x1
 
-    invoke-virtual {v0, v1, p2}, Landroid/database/sqlite/SQLiteStatement;->bindString(ILjava/lang/String;)V
+    invoke-virtual {v0, v1, p2}, Landroid/database/sqlite/SQLiteProgram;->bindString(ILjava/lang/String;)V
 
     const/4 v1, 0x2
 
     int-to-long v2, p3
 
-    invoke-virtual {v0, v1, v2, v3}, Landroid/database/sqlite/SQLiteStatement;->bindLong(IJ)V
+    invoke-virtual {v0, v1, v2, v3}, Landroid/database/sqlite/SQLiteProgram;->bindLong(IJ)V
 
     const/4 v3, 0x3
 
@@ -126,7 +126,7 @@
     const-wide/16 v1, 0x1
 
     :goto_0
-    invoke-virtual {v0, v3, v1, v2}, Landroid/database/sqlite/SQLiteStatement;->bindLong(IJ)V
+    invoke-virtual {v0, v3, v1, v2}, Landroid/database/sqlite/SQLiteProgram;->bindLong(IJ)V
 
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteStatement;->execute()V
     :try_end_0
@@ -134,7 +134,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteStatement;->close()V
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteClosable;->close()V
 
     :cond_0
     return-void
@@ -149,7 +149,7 @@
 
     if-eqz v0, :cond_2
 
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteStatement;->close()V
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteClosable;->close()V
 
     :cond_2
     throw v1

@@ -156,7 +156,7 @@
     :cond_0
     move-object/from16 v0, p0
 
-    iget-boolean v11, v0, Landroid/media/WebVttTrack;->DEBUG:Z
+    iget-boolean v11, v0, Landroid/media/SubtitleTrack;->DEBUG:Z
 
     if-eqz v11, :cond_1
 
@@ -234,7 +234,7 @@
 
     move-object/from16 v0, p0
 
-    iget-boolean v11, v0, Landroid/media/WebVttTrack;->DEBUG:Z
+    iget-boolean v11, v0, Landroid/media/SubtitleTrack;->DEBUG:Z
 
     if-eqz v11, :cond_3
 
@@ -310,7 +310,7 @@
 
     move-object/from16 v0, p1
 
-    iget-wide v15, v0, Landroid/media/TextTrackCue;->mStartTimeMs:J
+    iget-wide v15, v0, Landroid/media/SubtitleTrack$Cue;->mStartTimeMs:J
 
     cmp-long v11, v13, v15
 
@@ -320,7 +320,7 @@
 
     move-object/from16 v0, p1
 
-    iget-wide v15, v0, Landroid/media/TextTrackCue;->mEndTimeMs:J
+    iget-wide v15, v0, Landroid/media/SubtitleTrack$Cue;->mEndTimeMs:J
 
     cmp-long v11, v13, v15
 
@@ -395,7 +395,7 @@
 
     move-object/from16 v0, p1
 
-    iput-object v11, v0, Landroid/media/TextTrackCue;->mInnerTimesMs:[J
+    iput-object v11, v0, Landroid/media/SubtitleTrack$Cue;->mInnerTimesMs:[J
 
     const/4 v5, 0x0
 
@@ -413,7 +413,7 @@
 
     move-object/from16 v0, p1
 
-    iget-object v13, v0, Landroid/media/TextTrackCue;->mInnerTimesMs:[J
+    iget-object v13, v0, Landroid/media/SubtitleTrack$Cue;->mInnerTimesMs:[J
 
     move-object/from16 v0, p0
 
@@ -454,13 +454,13 @@
 
     move-object/from16 v0, p1
 
-    iput-wide v13, v0, Landroid/media/TextTrackCue;->mRunID:J
+    iput-wide v13, v0, Landroid/media/SubtitleTrack$Cue;->mRunID:J
 
     monitor-exit v12
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual/range {p0 .. p1}, Landroid/media/WebVttTrack;->addCue(Landroid/media/SubtitleTrack$Cue;)Z
+    invoke-virtual/range {p0 .. p1}, Landroid/media/SubtitleTrack;->addCue(Landroid/media/SubtitleTrack$Cue;)Z
 
     return-void
 
@@ -470,7 +470,7 @@
     :try_start_1
     move-object/from16 v0, p1
 
-    iput-object v11, v0, Landroid/media/TextTrackCue;->mInnerTimesMs:[J
+    iput-object v11, v0, Landroid/media/SubtitleTrack$Cue;->mInnerTimesMs:[J
 
     goto :goto_4
 
@@ -570,7 +570,7 @@
 
     if-eqz p2, :cond_1
 
-    invoke-virtual {p0, p3, p4}, Landroid/media/WebVttTrack;->finishedRun(J)V
+    invoke-virtual {p0, p3, p4}, Landroid/media/SubtitleTrack;->finishedRun(J)V
 
     iget-object v0, p0, Landroid/media/WebVttTrack;->mParser:Landroid/media/WebVttParser;
 
@@ -637,7 +637,7 @@
 
     .prologue
     .local p1, activeCues:Ljava/util/Vector;,"Ljava/util/Vector<Landroid/media/SubtitleTrack$Cue;>;"
-    iget-boolean v1, p0, Landroid/media/WebVttTrack;->mVisible:Z
+    iget-boolean v1, p0, Landroid/media/SubtitleTrack;->mVisible:Z
 
     if-nez v1, :cond_0
 
@@ -645,11 +645,11 @@
     return-void
 
     :cond_0
-    iget-boolean v1, p0, Landroid/media/WebVttTrack;->DEBUG:Z
+    iget-boolean v1, p0, Landroid/media/SubtitleTrack;->DEBUG:Z
 
     if-eqz v1, :cond_1
 
-    iget-object v1, p0, Landroid/media/WebVttTrack;->mTimeProvider:Landroid/media/MediaTimeProvider;
+    iget-object v1, p0, Landroid/media/SubtitleTrack;->mTimeProvider:Landroid/media/MediaTimeProvider;
 
     if-eqz v1, :cond_1
 
@@ -666,7 +666,7 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Landroid/media/WebVttTrack;->mTimeProvider:Landroid/media/MediaTimeProvider;
+    iget-object v3, p0, Landroid/media/SubtitleTrack;->mTimeProvider:Landroid/media/MediaTimeProvider;
 
     const/4 v4, 0x0
 

@@ -126,7 +126,7 @@
 
     iput v0, p0, Lnubia/ui/widget/BezierView;->mStartY:I
 
-    iget-object v0, p0, Lnubia/ui/widget/BezierView;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lnubia/ui/util/UiUtils;->getAnimationSwitch(Landroid/content/Context;)I
 
@@ -593,7 +593,7 @@
 
     if-eq v0, v2, :cond_0
 
-    iget-object v2, p0, Lnubia/ui/widget/BezierView;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     invoke-direct {p0, v2}, Lnubia/ui/widget/BezierView;->getScreenWidth(Landroid/content/Context;)I
 
@@ -649,7 +649,7 @@
     :goto_1
     iput v0, p0, Lnubia/ui/widget/BezierView;->mArcHeight:I
 
-    invoke-virtual {p0}, Lnubia/ui/widget/BezierView;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     goto :goto_0
 
@@ -781,7 +781,7 @@
 
     iput v1, p0, Lnubia/ui/widget/BezierView;->mNumFrame:I
 
-    invoke-virtual {p0}, Lnubia/ui/widget/BezierView;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     goto :goto_0
 
@@ -859,7 +859,7 @@
 
     iget v1, p0, Lnubia/ui/widget/BezierView;->mHeight:I
 
-    invoke-virtual {p0, v0, v1}, Lnubia/ui/widget/BezierView;->setMeasuredDimension(II)V
+    invoke-virtual {p0, v0, v1}, Landroid/view/View;->setMeasuredDimension(II)V
 
     return-void
 .end method
@@ -938,7 +938,7 @@
     :try_start_0
     iput p1, p0, Lnubia/ui/widget/BezierView;->mArcHeight:I
 
-    invoke-virtual {p0}, Lnubia/ui/widget/BezierView;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 

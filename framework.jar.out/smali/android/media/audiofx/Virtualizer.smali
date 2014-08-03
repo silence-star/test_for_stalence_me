@@ -83,11 +83,11 @@
     new-array v0, v1, [I
 
     .local v0, value:[I
-    invoke-virtual {p0, v2, v0}, Landroid/media/audiofx/Virtualizer;->getParameter(I[I)I
+    invoke-virtual {p0, v2, v0}, Landroid/media/audiofx/AudioEffect;->getParameter(I[I)I
 
     move-result v3
 
-    invoke-virtual {p0, v3}, Landroid/media/audiofx/Virtualizer;->checkStatus(I)V
+    invoke-virtual {p0, v3}, Landroid/media/audiofx/AudioEffect;->checkStatus(I)V
 
     aget v3, v0, v2
 
@@ -147,11 +147,11 @@
     new-array v1, v2, [S
 
     .local v1, value:[S
-    invoke-virtual {p0, v2, v1}, Landroid/media/audiofx/Virtualizer;->getParameter(I[S)I
+    invoke-virtual {p0, v2, v1}, Landroid/media/audiofx/AudioEffect;->getParameter(I[S)I
 
     move-result v2
 
-    invoke-virtual {p0, v2}, Landroid/media/audiofx/Virtualizer;->checkStatus(I)V
+    invoke-virtual {p0, v2}, Landroid/media/audiofx/AudioEffect;->checkStatus(I)V
 
     const/4 v2, 0x0
 
@@ -178,11 +178,11 @@
     new-array v0, v1, [S
 
     .local v0, value:[S
-    invoke-virtual {p0, v1, v0}, Landroid/media/audiofx/Virtualizer;->getParameter(I[S)I
+    invoke-virtual {p0, v1, v0}, Landroid/media/audiofx/AudioEffect;->getParameter(I[S)I
 
     move-result v1
 
-    invoke-virtual {p0, v1}, Landroid/media/audiofx/Virtualizer;->checkStatus(I)V
+    invoke-virtual {p0, v1}, Landroid/media/audiofx/AudioEffect;->checkStatus(I)V
 
     const/4 v1, 0x0
 
@@ -259,11 +259,11 @@
 
     iget-short v1, p1, Landroid/media/audiofx/Virtualizer$Settings;->strength:S
 
-    invoke-virtual {p0, v0, v1}, Landroid/media/audiofx/Virtualizer;->setParameter(IS)I
+    invoke-virtual {p0, v0, v1}, Landroid/media/audiofx/AudioEffect;->setParameter(IS)I
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Landroid/media/audiofx/Virtualizer;->checkStatus(I)V
+    invoke-virtual {p0, v0}, Landroid/media/audiofx/AudioEffect;->checkStatus(I)V
 
     return-void
 .end method
@@ -282,11 +282,11 @@
     .prologue
     const/4 v0, 0x1
 
-    invoke-virtual {p0, v0, p1}, Landroid/media/audiofx/Virtualizer;->setParameter(IS)I
+    invoke-virtual {p0, v0, p1}, Landroid/media/audiofx/AudioEffect;->setParameter(IS)I
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Landroid/media/audiofx/Virtualizer;->checkStatus(I)V
+    invoke-virtual {p0, v0}, Landroid/media/audiofx/AudioEffect;->checkStatus(I)V
 
     return-void
 .end method

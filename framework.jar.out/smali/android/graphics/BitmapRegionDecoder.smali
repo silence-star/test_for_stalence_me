@@ -174,7 +174,7 @@
     if-eqz v2, :cond_0
 
     :try_start_2
-    invoke-virtual {v2}, Ljava/io/InputStream;->close()V
+    invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
@@ -191,7 +191,7 @@
     if-eqz v1, :cond_1
 
     :try_start_3
-    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
+    invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
     :try_end_3
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
 

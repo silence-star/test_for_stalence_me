@@ -3,9 +3,9 @@
 .source "NativeDaemonConnector.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
 .implements Landroid/os/Handler$Callback;
 .implements Lcom/android/server/Watchdog$Monitor;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
@@ -1837,7 +1837,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lcom/android/server/FgThread;->getLooper()Landroid/os/Looper;
+    invoke-virtual {v2}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
 
     move-result-object v2
 

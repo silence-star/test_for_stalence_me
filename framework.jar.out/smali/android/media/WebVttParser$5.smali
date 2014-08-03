@@ -211,7 +211,7 @@
 
     move-object/from16 v2, v18
 
-    iput-wide v0, v2, Landroid/media/TextTrackCue;->mStartTimeMs:J
+    iput-wide v0, v2, Landroid/media/SubtitleTrack$Cue;->mStartTimeMs:J
 
     move-object/from16 v0, p0
 
@@ -232,7 +232,7 @@
 
     move-object/from16 v2, v18
 
-    iput-wide v0, v2, Landroid/media/TextTrackCue;->mEndTimeMs:J
+    iput-wide v0, v2, Landroid/media/SubtitleTrack$Cue;->mEndTimeMs:J
 
     const-string v18, " +"
 

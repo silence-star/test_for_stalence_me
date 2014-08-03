@@ -152,7 +152,7 @@
 
     invoke-direct {v2, v6, v7}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v8, v2}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v8, v2}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -497,7 +497,7 @@
 
     invoke-direct {v6, v0, v1}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v2, v6}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v2, v6}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object v6
 

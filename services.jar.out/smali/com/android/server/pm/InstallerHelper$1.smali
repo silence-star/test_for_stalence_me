@@ -38,7 +38,7 @@
 
     sget-object v1, Lcom/android/server/pm/InstallerHelper$Type;->PRESET:Lcom/android/server/pm/InstallerHelper$Type;
 
-    invoke-virtual {v1}, Lcom/android/server/pm/InstallerHelper$Type;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
@@ -54,7 +54,7 @@
 
     sget-object v1, Lcom/android/server/pm/InstallerHelper$Type;->INSTALLED:Lcom/android/server/pm/InstallerHelper$Type;
 
-    invoke-virtual {v1}, Lcom/android/server/pm/InstallerHelper$Type;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
@@ -70,7 +70,7 @@
 
     sget-object v1, Lcom/android/server/pm/InstallerHelper$Type;->RESTORE:Lcom/android/server/pm/InstallerHelper$Type;
 
-    invoke-virtual {v1}, Lcom/android/server/pm/InstallerHelper$Type;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 

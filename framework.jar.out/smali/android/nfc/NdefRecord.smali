@@ -482,7 +482,7 @@
     move-result-object v1
 
     .local v1, rs:[Landroid/nfc/NdefRecord;
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->remaining()I
+    invoke-virtual {v0}, Ljava/nio/Buffer;->remaining()I
 
     move-result v2
 
@@ -2184,7 +2184,7 @@
     .prologue
     iget-object v0, p0, Landroid/nfc/NdefRecord;->mId:[B
 
-    invoke-virtual {v0}, [B->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -2199,7 +2199,7 @@
     .prologue
     iget-object v0, p0, Landroid/nfc/NdefRecord;->mPayload:[B
 
-    invoke-virtual {v0}, [B->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -2223,7 +2223,7 @@
     .prologue
     iget-object v0, p0, Landroid/nfc/NdefRecord;->mType:[B
 
-    invoke-virtual {v0}, [B->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

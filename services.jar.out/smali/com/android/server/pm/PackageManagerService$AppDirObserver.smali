@@ -205,7 +205,7 @@
 
     iget-object v6, v0, Landroid/content/pm/PackageParser$Package;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    iget-object v6, v6, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+    iget-object v6, v6, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {v2, v6}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -229,7 +229,7 @@
 
     move-object/from16 v0, v21
 
-    invoke-virtual {v0, v2, v6}, Lcom/android/server/pm/PackageSetting;->queryInstalledUsers([IZ)[I
+    invoke-virtual {v0, v2, v6}, Lcom/android/server/pm/PackageSettingBase;->queryInstalledUsers([IZ)[I
 
     move-result-object v10
 
@@ -266,7 +266,7 @@
 
     move-object/from16 v0, v21
 
-    iget-object v0, v0, Lcom/android/server/pm/PackageSetting;->name:Ljava/lang/String;
+    iget-object v0, v0, Lcom/android/server/pm/PackageSettingBase;->name:Ljava/lang/String;
 
     move-object/from16 v23, v0
 
@@ -370,7 +370,7 @@
 
     iget-object v2, v0, Landroid/content/pm/PackageParser$Package;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    iget-object v12, v2, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+    iget-object v12, v2, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v0, v20
 

@@ -305,7 +305,7 @@
 
     new-instance v3, Landroid/view/View;
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/SizeAdaptiveLayout;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v4
 
@@ -313,7 +313,7 @@
 
     iput-object v3, p0, Lcom/android/internal/widget/SizeAdaptiveLayout;->mModestyPanel:Landroid/view/View;
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/SizeAdaptiveLayout;->getBackground()Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p0}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -329,9 +329,9 @@
     .local v2, sld:Landroid/graphics/drawable/StateListDrawable;
     sget-object v3, Landroid/util/StateSet;->WILD_CARD:[I
 
-    invoke-virtual {v2, v3}, Landroid/graphics/drawable/StateListDrawable;->setState([I)Z
+    invoke-virtual {v2, v3}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    invoke-virtual {v2}, Landroid/graphics/drawable/StateListDrawable;->getCurrent()Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v2}, Landroid/graphics/drawable/DrawableContainer;->getCurrent()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -357,7 +357,7 @@
 
     iget-object v3, p0, Lcom/android/internal/widget/SizeAdaptiveLayout;->mModestyPanel:Landroid/view/View;
 
-    invoke-virtual {p0, v3}, Lcom/android/internal/widget/SizeAdaptiveLayout;->addView(Landroid/view/View;)V
+    invoke-virtual {p0, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     iget-object v3, p0, Lcom/android/internal/widget/SizeAdaptiveLayout;->mModestyPanel:Landroid/view/View;
 
@@ -421,7 +421,7 @@
 
     iget-object v4, p0, Lcom/android/internal/widget/SizeAdaptiveLayout;->mAnimatorListener:Landroid/animation/Animator$AnimatorListener;
 
-    invoke-virtual {v3, v4}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v3, v4}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     return-void
 
@@ -474,13 +474,13 @@
 
     .local v3, i:I
     :goto_0
-    invoke-virtual {p0}, Lcom/android/internal/widget/SizeAdaptiveLayout;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v10
 
     if-ge v3, v10, :cond_4
 
-    invoke-virtual {p0, v3}, Lcom/android/internal/widget/SizeAdaptiveLayout;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -633,7 +633,7 @@
     .prologue
     new-instance v0, Lcom/android/internal/widget/SizeAdaptiveLayout$LayoutParams;
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/SizeAdaptiveLayout;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -684,13 +684,13 @@
 
     .local v0, i:I
     :goto_0
-    invoke-virtual {p0}, Lcom/android/internal/widget/SizeAdaptiveLayout;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v1
 
     if-ge v0, v1, :cond_0
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/widget/SizeAdaptiveLayout;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -885,7 +885,7 @@
     check-cast v4, Lcom/android/internal/widget/SizeAdaptiveLayout$LayoutParams;
 
     .local v4, lp:Lcom/android/internal/widget/SizeAdaptiveLayout$LayoutParams;
-    invoke-virtual {p0, v5, p1, p2}, Lcom/android/internal/widget/SizeAdaptiveLayout;->measureChild(Landroid/view/View;II)V
+    invoke-virtual {p0, v5, p1, p2}, Landroid/view/ViewGroup;->measureChild(Landroid/view/View;II)V
 
     invoke-virtual {v5}, Landroid/view/View;->getMeasuredHeight()I
 
@@ -923,7 +923,7 @@
     move-result v0
 
     .local v0, boundedHeight:I
-    invoke-virtual {p0, v7, v0}, Lcom/android/internal/widget/SizeAdaptiveLayout;->setMeasuredDimension(II)V
+    invoke-virtual {p0, v7, v0}, Landroid/view/View;->setMeasuredDimension(II)V
 
     return-void
 .end method

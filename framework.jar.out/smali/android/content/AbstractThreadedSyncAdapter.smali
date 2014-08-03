@@ -216,7 +216,7 @@
     .prologue
     iget-object v0, p0, Landroid/content/AbstractThreadedSyncAdapter;->mISyncAdapterImpl:Landroid/content/AbstractThreadedSyncAdapter$ISyncAdapterImpl;
 
-    invoke-virtual {v0}, Landroid/content/AbstractThreadedSyncAdapter$ISyncAdapterImpl;->asBinder()Landroid/os/IBinder;
+    invoke-virtual {v0}, Landroid/content/ISyncAdapter$Stub;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
@@ -252,7 +252,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Landroid/content/AbstractThreadedSyncAdapter$SyncThread;->interrupt()V
+    invoke-virtual {v0}, Ljava/lang/Thread;->interrupt()V
 
     :cond_0
     return-void

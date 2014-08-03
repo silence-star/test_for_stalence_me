@@ -72,7 +72,7 @@
 
     if-ne v4, v1, :cond_1
 
-    iget-object v4, v0, Landroid/sax/Children$Child;->uri:Ljava/lang/String;
+    iget-object v4, v0, Landroid/sax/Element;->uri:Ljava/lang/String;
 
     invoke-virtual {v4, p1}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
 
@@ -80,7 +80,7 @@
 
     if-nez v4, :cond_1
 
-    iget-object v4, v0, Landroid/sax/Children$Child;->localName:Ljava/lang/String;
+    iget-object v4, v0, Landroid/sax/Element;->localName:Ljava/lang/String;
 
     invoke-virtual {v4, p2}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
 
@@ -164,7 +164,7 @@
 
     if-ne v1, v5, :cond_1
 
-    iget-object v1, v0, Landroid/sax/Children$Child;->uri:Ljava/lang/String;
+    iget-object v1, v0, Landroid/sax/Element;->uri:Ljava/lang/String;
 
     invoke-virtual {v1, p2}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
 
@@ -172,7 +172,7 @@
 
     if-nez v1, :cond_1
 
-    iget-object v1, v0, Landroid/sax/Children$Child;->localName:Ljava/lang/String;
+    iget-object v1, v0, Landroid/sax/Element;->localName:Ljava/lang/String;
 
     invoke-virtual {v1, p3}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
 

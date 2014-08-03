@@ -73,7 +73,7 @@
 
     iget-object v1, p0, Lcom/android/internal/app/PlatLogoActivity$2;->val$logo:Landroid/widget/ImageView;
 
-    invoke-virtual {v1}, Landroid/widget/ImageView;->getVisibility()I
+    invoke-virtual {v1}, Landroid/view/View;->getVisibility()I
 
     move-result v1
 
@@ -109,7 +109,7 @@
 
     iget-object v1, p0, Lcom/android/internal/app/PlatLogoActivity$2;->val$letter:Landroid/widget/TextView;
 
-    invoke-virtual {v1}, Landroid/widget/TextView;->animate()Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v1
 
@@ -147,7 +147,7 @@
 
     iget-object v1, p0, Lcom/android/internal/app/PlatLogoActivity$2;->val$logo:Landroid/widget/ImageView;
 
-    invoke-virtual {v1, v8}, Landroid/widget/ImageView;->setAlpha(F)V
+    invoke-virtual {v1, v8}, Landroid/view/View;->setAlpha(F)V
 
     iget-object v1, p0, Lcom/android/internal/app/PlatLogoActivity$2;->val$logo:Landroid/widget/ImageView;
 
@@ -155,15 +155,15 @@
 
     iget-object v1, p0, Lcom/android/internal/app/PlatLogoActivity$2;->val$logo:Landroid/widget/ImageView;
 
-    invoke-virtual {v1, v5}, Landroid/widget/ImageView;->setScaleX(F)V
+    invoke-virtual {v1, v5}, Landroid/view/View;->setScaleX(F)V
 
     iget-object v1, p0, Lcom/android/internal/app/PlatLogoActivity$2;->val$logo:Landroid/widget/ImageView;
 
-    invoke-virtual {v1, v5}, Landroid/widget/ImageView;->setScaleY(F)V
+    invoke-virtual {v1, v5}, Landroid/view/View;->setScaleY(F)V
 
     iget-object v1, p0, Lcom/android/internal/app/PlatLogoActivity$2;->val$logo:Landroid/widget/ImageView;
 
-    invoke-virtual {v1}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v1
 
@@ -201,15 +201,15 @@
 
     iget-object v1, p0, Lcom/android/internal/app/PlatLogoActivity$2;->val$tv:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v8}, Landroid/widget/TextView;->setAlpha(F)V
+    invoke-virtual {v1, v8}, Landroid/view/View;->setAlpha(F)V
 
     iget-object v1, p0, Lcom/android/internal/app/PlatLogoActivity$2;->val$tv:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v0, p0, Lcom/android/internal/app/PlatLogoActivity$2;->val$tv:Landroid/widget/TextView;
 
-    invoke-virtual {v0}, Landroid/widget/TextView;->animate()Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 

@@ -587,7 +587,7 @@
     invoke-direct {v0, v1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
 
     .local v0, thread:Landroid/os/HandlerThread;
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
     new-instance v1, Lcom/android/server/NetworkTimeUpdateService$MyHandler;
 

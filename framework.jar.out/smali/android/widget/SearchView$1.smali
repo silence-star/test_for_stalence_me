@@ -42,7 +42,7 @@
     .prologue
     iget-object v1, p0, Landroid/widget/SearchView$1;->this$0:Landroid/widget/SearchView;
 
-    invoke-virtual {v1}, Landroid/widget/SearchView;->getContext()Landroid/content/Context;
+    invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
 

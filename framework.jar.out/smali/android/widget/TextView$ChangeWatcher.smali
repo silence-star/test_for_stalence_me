@@ -3,8 +3,8 @@
 .source "TextView.java"
 
 # interfaces
-.implements Landroid/text/TextWatcher;
 .implements Landroid/text/SpanWatcher;
+.implements Landroid/text/TextWatcher;
 
 
 # annotations
@@ -262,7 +262,7 @@
 
     iget-object v0, p0, Landroid/widget/TextView$ChangeWatcher;->this$0:Landroid/widget/TextView;
 
-    invoke-virtual {v0}, Landroid/widget/TextView;->isFocused()Z
+    invoke-virtual {v0}, Landroid/view/View;->isFocused()Z
 
     move-result v0
 
@@ -270,7 +270,7 @@
 
     iget-object v0, p0, Landroid/widget/TextView$ChangeWatcher;->this$0:Landroid/widget/TextView;
 
-    invoke-virtual {v0}, Landroid/widget/TextView;->isSelected()Z
+    invoke-virtual {v0}, Landroid/view/View;->isSelected()Z
 
     move-result v0
 
@@ -278,7 +278,7 @@
 
     iget-object v0, p0, Landroid/widget/TextView$ChangeWatcher;->this$0:Landroid/widget/TextView;
 
-    invoke-virtual {v0}, Landroid/widget/TextView;->isShown()Z
+    invoke-virtual {v0}, Landroid/view/View;->isShown()Z
 
     move-result v0
 

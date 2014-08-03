@@ -74,17 +74,17 @@
 
     iput-object v2, p0, Lcom/vzw/nfc/dos/AidRangeDo;->mAidRange:[B
 
-    invoke-virtual {p0}, Lcom/vzw/nfc/dos/AidRangeDo;->getRawData()[B
+    invoke-virtual {p0}, Lcom/vzw/nfc/dos/VzwTlv;->getRawData()[B
 
     move-result-object v0
 
     .local v0, data:[B
-    invoke-virtual {p0}, Lcom/vzw/nfc/dos/AidRangeDo;->getValueIndex()I
+    invoke-virtual {p0}, Lcom/vzw/nfc/dos/VzwTlv;->getValueIndex()I
 
     move-result v1
 
     .local v1, index:I
-    invoke-virtual {p0}, Lcom/vzw/nfc/dos/AidRangeDo;->getValueLength()I
+    invoke-virtual {p0}, Lcom/vzw/nfc/dos/VzwTlv;->getValueLength()I
 
     move-result v2
 
@@ -103,7 +103,7 @@
     throw v2
 
     :cond_0
-    invoke-virtual {p0}, Lcom/vzw/nfc/dos/AidRangeDo;->getValueLength()I
+    invoke-virtual {p0}, Lcom/vzw/nfc/dos/VzwTlv;->getValueLength()I
 
     move-result v2
 
@@ -115,7 +115,7 @@
 
     const/4 v3, 0x0
 
-    invoke-virtual {p0}, Lcom/vzw/nfc/dos/AidRangeDo;->getValueLength()I
+    invoke-virtual {p0}, Lcom/vzw/nfc/dos/VzwTlv;->getValueLength()I
 
     move-result v4
 

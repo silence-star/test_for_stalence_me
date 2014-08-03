@@ -76,7 +76,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v1}, Lcom/android/internal/widget/ActionBarContainer;->setTranslationY(F)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
 
     :cond_0
     iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$1;->this$0:Lcom/android/internal/app/ActionBarImpl;
@@ -156,7 +156,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->requestFitSystemWindows()V
+    invoke-virtual {v0}, Landroid/view/View;->requestFitSystemWindows()V
 
     :cond_2
     return-void

@@ -61,7 +61,7 @@
 
     const v1, 0x60018
 
-    invoke-virtual {v0, v1}, Lcom/android/server/NsdService$NsdStateMachine;->sendMessage(I)V
+    invoke-virtual {v0, v1}, Lcom/android/internal/util/StateMachine;->sendMessage(I)V
 
     :goto_0
     return-void
@@ -78,7 +78,7 @@
 
     const v1, 0x60019
 
-    invoke-virtual {v0, v1}, Lcom/android/server/NsdService$NsdStateMachine;->sendMessage(I)V
+    invoke-virtual {v0, v1}, Lcom/android/internal/util/StateMachine;->sendMessage(I)V
 
     goto :goto_0
 .end method

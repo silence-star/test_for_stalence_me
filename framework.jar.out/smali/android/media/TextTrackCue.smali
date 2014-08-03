@@ -660,7 +660,7 @@
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     .local v0, res:Ljava/lang/StringBuilder;
-    iget-wide v1, p0, Landroid/media/TextTrackCue;->mStartTimeMs:J
+    iget-wide v1, p0, Landroid/media/SubtitleTrack$Cue;->mStartTimeMs:J
 
     invoke-static {v1, v2}, Landroid/media/WebVttParser;->timeToString(J)Ljava/lang/String;
 
@@ -676,7 +676,7 @@
 
     move-result-object v1
 
-    iget-wide v2, p0, Landroid/media/TextTrackCue;->mEndTimeMs:J
+    iget-wide v2, p0, Landroid/media/SubtitleTrack$Cue;->mEndTimeMs:J
 
     invoke-static {v2, v3}, Landroid/media/WebVttParser;->timeToString(J)Ljava/lang/String;
 

@@ -1409,7 +1409,7 @@
 
     const-string v15, "android.appwidget.provider"
 
-    invoke-virtual {v1, v14, v15}, Landroid/content/pm/ActivityInfo;->loadXmlMetaData(Landroid/content/pm/PackageManager;Ljava/lang/String;)Landroid/content/res/XmlResourceParser;
+    invoke-virtual {v1, v14, v15}, Landroid/content/pm/PackageItemInfo;->loadXmlMetaData(Landroid/content/pm/PackageManager;Ljava/lang/String;)Landroid/content/res/XmlResourceParser;
 
     move-result-object v9
 
@@ -1557,7 +1557,7 @@
 
     iput-object v0, v5, Landroid/appwidget/AppWidgetProviderInfo;->provider:Landroid/content/ComponentName;
 
-    iget-object v14, v1, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v14, v1, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget v14, v14, Landroid/content/pm/ApplicationInfo;->uid:I
 
@@ -1571,7 +1571,7 @@
 
     move-result-object v14
 
-    iget-object v15, v1, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v15, v1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v0, p0
 
@@ -1702,7 +1702,7 @@
 
     move-result-object v14
 
-    invoke-virtual {v1, v14}, Landroid/content/pm/ActivityInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
+    invoke-virtual {v1, v14}, Landroid/content/pm/ComponentInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
     move-result-object v14
 
@@ -2116,7 +2116,7 @@
 
     iget-object v2, p1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v2, v2, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v2, v2, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget v2, v2, Landroid/content/pm/ApplicationInfo;->flags:I
 
@@ -2133,7 +2133,7 @@
     :cond_1
     iget-object v2, p1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    invoke-virtual {v2}, Landroid/content/pm/ActivityInfo;->isEnabled()Z
+    invoke-virtual {v2}, Landroid/content/pm/ComponentInfo;->isEnabled()Z
 
     move-result v2
 
@@ -2143,11 +2143,11 @@
 
     iget-object v3, p1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v3, v3, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v3, v3, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     iget-object v4, p1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v4, v4, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v4, v4, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     invoke-direct {v2, v3, v4}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -2230,7 +2230,7 @@
     iget-object v1, v7, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     .local v1, ai:Landroid/content/pm/ActivityInfo;
-    iget-object v8, v1, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v8, v1, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget v8, v8, Landroid/content/pm/ApplicationInfo;->flags:I
 
@@ -2270,7 +2270,7 @@
     .restart local v3       #i:I
     .restart local v7       #ri:Landroid/content/pm/ResolveInfo;
     :cond_2
-    iget-object v8, v1, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v8, v1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {p1, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -8531,7 +8531,7 @@
     iget-object v6, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     .local v6, ai:Landroid/content/pm/ActivityInfo;
-    iget-object v0, v6, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, v6, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     move-object/from16 v21, v0
 
@@ -8581,7 +8581,7 @@
     .restart local v11       #i:I
     .restart local v20       #ri:Landroid/content/pm/ResolveInfo;
     :cond_2
-    iget-object v0, v6, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v0, v6, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v21, v0
 
@@ -8597,11 +8597,11 @@
 
     new-instance v9, Landroid/content/ComponentName;
 
-    iget-object v0, v6, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v0, v6, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v21, v0
 
-    iget-object v0, v6, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v0, v6, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     move-object/from16 v22, v0
 
@@ -8631,7 +8631,7 @@
 
     if-eqz v21, :cond_0
 
-    iget-object v0, v6, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v0, v6, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     move-object/from16 v21, v0
 
@@ -8655,7 +8655,7 @@
     .local v17, parsed:Lcom/android/server/AppWidgetServiceImpl$Provider;
     if-eqz v17, :cond_0
 
-    iget-object v0, v6, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v0, v6, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     move-object/from16 v21, v0
 

@@ -119,7 +119,7 @@
     return-void
 
     :cond_0
-    invoke-virtual {p0}, Landroid/preference/PreferenceFragment;->getView()Landroid/view/View;
+    invoke-virtual {p0}, Landroid/app/Fragment;->getView()Landroid/view/View;
 
     move-result-object v1
 
@@ -177,7 +177,7 @@
 
     iget-object v3, p0, Landroid/preference/PreferenceFragment;->mListOnKeyListener:Landroid/view/View$OnKeyListener;
 
-    invoke-virtual {v2, v3}, Landroid/widget/ListView;->setOnKeyListener(Landroid/view/View$OnKeyListener;)V
+    invoke-virtual {v2, v3}, Landroid/view/View;->setOnKeyListener(Landroid/view/View$OnKeyListener;)V
 
     iget-object v2, p0, Landroid/preference/PreferenceFragment;->mHandler:Landroid/os/Handler;
 
@@ -270,7 +270,7 @@
 
     iget-object v0, p0, Landroid/preference/PreferenceFragment;->mPreferenceManager:Landroid/preference/PreferenceManager;
 
-    invoke-virtual {p0}, Landroid/preference/PreferenceFragment;->getActivity()Landroid/app/Activity;
+    invoke-virtual {p0}, Landroid/app/Fragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
 
@@ -380,7 +380,7 @@
     .local v1, preferenceScreen:Landroid/preference/PreferenceScreen;
     if-eqz v1, :cond_1
 
-    invoke-virtual {v1, v0}, Landroid/preference/PreferenceScreen;->restoreHierarchyState(Landroid/os/Bundle;)V
+    invoke-virtual {v1, v0}, Landroid/preference/Preference;->restoreHierarchyState(Landroid/os/Bundle;)V
 
     .end local v0           #container:Landroid/os/Bundle;
     .end local v1           #preferenceScreen:Landroid/preference/PreferenceScreen;
@@ -413,7 +413,7 @@
 
     new-instance v0, Landroid/preference/PreferenceManager;
 
-    invoke-virtual {p0}, Landroid/preference/PreferenceFragment;->getActivity()Landroid/app/Activity;
+    invoke-virtual {p0}, Landroid/app/Fragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
 
@@ -498,7 +498,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Landroid/preference/PreferenceFragment;->getActivity()Landroid/app/Activity;
+    invoke-virtual {p0}, Landroid/app/Fragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
@@ -506,7 +506,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Landroid/preference/PreferenceFragment;->getActivity()Landroid/app/Activity;
+    invoke-virtual {p0}, Landroid/app/Fragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
@@ -544,7 +544,7 @@
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     .local v0, container:Landroid/os/Bundle;
-    invoke-virtual {v1, v0}, Landroid/preference/PreferenceScreen;->saveHierarchyState(Landroid/os/Bundle;)V
+    invoke-virtual {v1, v0}, Landroid/preference/Preference;->saveHierarchyState(Landroid/os/Bundle;)V
 
     const-string v2, "android:preferences"
 

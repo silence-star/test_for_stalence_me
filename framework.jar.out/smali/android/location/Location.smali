@@ -1552,7 +1552,7 @@
     .end local v0           #degrees:I
     .end local v2           #minutes:I
     :cond_5
-    invoke-virtual {v1, p0, p1}, Ljava/text/DecimalFormat;->format(D)Ljava/lang/String;
+    invoke-virtual {v1, p0, p1}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
 
     move-result-object v4
 

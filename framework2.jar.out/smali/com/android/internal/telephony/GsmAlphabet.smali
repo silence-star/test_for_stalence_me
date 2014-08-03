@@ -2390,7 +2390,7 @@
     .end local v3           #i:I
     .restart local v4       #i:I
     :cond_8
-    invoke-virtual {v7}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
+    invoke-virtual {v7}, Ljava/nio/Buffer;->clear()Ljava/nio/Buffer;
 
     add-int/lit8 v3, v4, 0x1
 
@@ -2400,7 +2400,7 @@
 
     invoke-virtual {v7, p0, v4, v12}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
 
-    invoke-virtual {v7}, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
+    invoke-virtual {v7}, Ljava/nio/Buffer;->flip()Ljava/nio/Buffer;
 
     invoke-virtual {v2, v7}, Ljava/nio/charset/Charset;->decode(Ljava/nio/ByteBuffer;)Ljava/nio/CharBuffer;
 

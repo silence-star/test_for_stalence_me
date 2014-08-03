@@ -224,7 +224,7 @@
 
     iget-object v6, p0, Lcom/android/server/connectivity/Vpn$2;->this$0:Lcom/android/server/connectivity/Vpn;
 
-    #getter for: Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    #getter for: Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
     invoke-static {v6}, Lcom/android/server/connectivity/Vpn;->access$1200(Lcom/android/server/connectivity/Vpn;)Landroid/content/Context;
 
     move-result-object v6

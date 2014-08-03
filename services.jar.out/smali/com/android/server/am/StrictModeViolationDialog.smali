@@ -98,10 +98,10 @@
 
     move-result-object v2
 
-    invoke-virtual {p0, v2}, Lcom/android/server/am/StrictModeViolationDialog;->setMessage(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v2}, Landroid/app/AlertDialog;->setMessage(Ljava/lang/CharSequence;)V
 
     :goto_0
-    invoke-virtual {p0, v5}, Lcom/android/server/am/StrictModeViolationDialog;->setCancelable(Z)V
+    invoke-virtual {p0, v5}, Landroid/app/AlertDialog;->setCancelable(Z)V
 
     const/4 v2, -0x1
 
@@ -117,7 +117,7 @@
 
     move-result-object v4
 
-    invoke-virtual {p0, v2, v3, v4}, Lcom/android/server/am/StrictModeViolationDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
+    invoke-virtual {p0, v2, v3, v4}, Landroid/app/AlertDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
 
     iget-object v2, p4, Lcom/android/server/am/ProcessRecord;->errorReportReceiver:Landroid/content/ComponentName;
 
@@ -137,7 +137,7 @@
 
     move-result-object v4
 
-    invoke-virtual {p0, v2, v3, v4}, Lcom/android/server/am/StrictModeViolationDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
+    invoke-virtual {p0, v2, v3, v4}, Landroid/app/AlertDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
 
     :cond_0
     const v2, 0x1040402
@@ -146,9 +146,9 @@
 
     move-result-object v2
 
-    invoke-virtual {p0, v2}, Lcom/android/server/am/StrictModeViolationDialog;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v2}, Landroid/app/AlertDialog;->setTitle(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {p0}, Lcom/android/server/am/StrictModeViolationDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v2
 
@@ -156,7 +156,7 @@
 
     invoke-virtual {v2, v3}, Landroid/view/Window;->addPrivateFlags(I)V
 
-    invoke-virtual {p0}, Lcom/android/server/am/StrictModeViolationDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v2
 
@@ -207,7 +207,7 @@
 
     new-array v3, v6, [Ljava/lang/Object;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/String;->toString()Ljava/lang/String;
 
     move-result-object v4
 
@@ -217,7 +217,7 @@
 
     move-result-object v2
 
-    invoke-virtual {p0, v2}, Lcom/android/server/am/StrictModeViolationDialog;->setMessage(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v2}, Landroid/app/AlertDialog;->setMessage(Ljava/lang/CharSequence;)V
 
     goto :goto_0
 .end method

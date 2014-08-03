@@ -436,12 +436,12 @@
 
     if-eqz v1, :cond_3
 
-    invoke-virtual {v1}, Landroid/inputmethodservice/ExtractEditText;->getMovementMethod()Landroid/text/method/MovementMethod;
+    invoke-virtual {v1}, Landroid/widget/TextView;->getMovementMethod()Landroid/text/method/MovementMethod;
 
     move-result-object v3
 
     .local v3, movement:Landroid/text/method/MovementMethod;
-    invoke-virtual {v1}, Landroid/inputmethodservice/ExtractEditText;->getLayout()Landroid/text/Layout;
+    invoke-virtual {v1}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
 
     move-result-object v2
 
@@ -454,7 +454,7 @@
 
     if-ne p3, v7, :cond_1
 
-    invoke-virtual {v1}, Landroid/inputmethodservice/ExtractEditText;->getText()Landroid/text/Editable;
+    invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v7
 
@@ -480,7 +480,7 @@
 
     if-ne p3, v7, :cond_4
 
-    invoke-virtual {v1}, Landroid/inputmethodservice/ExtractEditText;->getText()Landroid/text/Editable;
+    invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v7
 
@@ -504,7 +504,7 @@
     .restart local v2       #layout:Landroid/text/Layout;
     .restart local v3       #movement:Landroid/text/method/MovementMethod;
     :cond_4
-    invoke-virtual {v1}, Landroid/inputmethodservice/ExtractEditText;->getText()Landroid/text/Editable;
+    invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v7
 
@@ -524,7 +524,7 @@
     move-result-object v0
 
     .local v0, down:Landroid/view/KeyEvent;
-    invoke-virtual {v1}, Landroid/inputmethodservice/ExtractEditText;->getText()Landroid/text/Editable;
+    invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v7
 
@@ -539,7 +539,7 @@
     move-result-object v4
 
     .local v4, up:Landroid/view/KeyEvent;
-    invoke-virtual {v1}, Landroid/inputmethodservice/ExtractEditText;->getText()Landroid/text/Editable;
+    invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v7
 
@@ -550,13 +550,13 @@
 
     if-lez p3, :cond_6
 
-    invoke-virtual {v1}, Landroid/inputmethodservice/ExtractEditText;->getText()Landroid/text/Editable;
+    invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v7
 
     invoke-interface {v3, v1, v7, p1, v0}, Landroid/text/method/MovementMethod;->onKeyDown(Landroid/widget/TextView;Landroid/text/Spannable;ILandroid/view/KeyEvent;)Z
 
-    invoke-virtual {v1}, Landroid/inputmethodservice/ExtractEditText;->getText()Landroid/text/Editable;
+    invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v7
 
@@ -766,7 +766,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
@@ -1437,7 +1437,7 @@
     .prologue
     const-string v1, "window"
 
-    invoke-virtual {p0, v1}, Landroid/inputmethodservice/InputMethodService;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0, v1}, Landroid/content/ContextWrapper;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1466,7 +1466,7 @@
 
     const v0, 0x10404aa
 
-    invoke-virtual {p0, v0}, Landroid/inputmethodservice/InputMethodService;->getText(I)Ljava/lang/CharSequence;
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v0
 
@@ -1481,7 +1481,7 @@
     :pswitch_1
     const v0, 0x10404a4
 
-    invoke-virtual {p0, v0}, Landroid/inputmethodservice/InputMethodService;->getText(I)Ljava/lang/CharSequence;
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v0
 
@@ -1490,7 +1490,7 @@
     :pswitch_2
     const v0, 0x10404a5
 
-    invoke-virtual {p0, v0}, Landroid/inputmethodservice/InputMethodService;->getText(I)Ljava/lang/CharSequence;
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v0
 
@@ -1499,7 +1499,7 @@
     :pswitch_3
     const v0, 0x10404a6
 
-    invoke-virtual {p0, v0}, Landroid/inputmethodservice/InputMethodService;->getText(I)Ljava/lang/CharSequence;
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v0
 
@@ -1508,7 +1508,7 @@
     :pswitch_4
     const v0, 0x10404a7
 
-    invoke-virtual {p0, v0}, Landroid/inputmethodservice/InputMethodService;->getText(I)Ljava/lang/CharSequence;
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v0
 
@@ -1517,7 +1517,7 @@
     :pswitch_5
     const v0, 0x10404a8
 
-    invoke-virtual {p0, v0}, Landroid/inputmethodservice/InputMethodService;->getText(I)Ljava/lang/CharSequence;
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v0
 
@@ -1526,7 +1526,7 @@
     :pswitch_6
     const v0, 0x10404a9
 
-    invoke-virtual {p0, v0}, Landroid/inputmethodservice/InputMethodService;->getText(I)Ljava/lang/CharSequence;
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v0
 
@@ -1586,7 +1586,7 @@
 
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mWindow:Landroid/inputmethodservice/SoftInputWindow;
 
-    invoke-virtual {v0}, Landroid/inputmethodservice/SoftInputWindow;->hide()V
+    invoke-virtual {v0}, Landroid/app/Dialog;->hide()V
 
     iput-boolean v1, p0, Landroid/inputmethodservice/InputMethodService;->mWindowVisible:Z
 
@@ -1618,7 +1618,7 @@
 
     sget-object v0, Landroid/R$styleable;->InputMethodService:[I
 
-    invoke-virtual {p0, v0}, Landroid/inputmethodservice/InputMethodService;->obtainStyledAttributes([I)Landroid/content/res/TypedArray;
+    invoke-virtual {p0, v0}, Landroid/content/Context;->obtainStyledAttributes([I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
@@ -1644,7 +1644,7 @@
 
     iget-object v1, p0, Landroid/inputmethodservice/InputMethodService;->mRootView:Landroid/view/View;
 
-    invoke-virtual {v0, v1}, Landroid/inputmethodservice/SoftInputWindow;->setContentView(Landroid/view/View;)V
+    invoke-virtual {v0, v1}, Landroid/app/Dialog;->setContentView(Landroid/view/View;)V
 
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mRootView:Landroid/view/View;
 
@@ -1656,7 +1656,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->addOnComputeInternalInsetsListener(Landroid/view/ViewTreeObserver$OnComputeInternalInsetsListener;)V
 
-    invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
@@ -1670,7 +1670,7 @@
 
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mWindow:Landroid/inputmethodservice/SoftInputWindow;
 
-    invoke-virtual {v0}, Landroid/inputmethodservice/SoftInputWindow;->getWindow()Landroid/view/Window;
+    invoke-virtual {v0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
@@ -1745,7 +1745,7 @@
 
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mExtractFrame:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
+    invoke-virtual {v0, v4}, Landroid/view/View;->setVisibility(I)V
 
     invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService;->getCandidatesHiddenVisibility()I
 
@@ -1757,11 +1757,11 @@
 
     iget v1, p0, Landroid/inputmethodservice/InputMethodService;->mCandidatesVisibility:I
 
-    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mInputFrame:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
+    invoke-virtual {v0, v4}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 .end method
@@ -1876,7 +1876,7 @@
     .local v1, loc:[I
     iget-object v2, p0, Landroid/inputmethodservice/InputMethodService;->mInputFrame:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v2}, Landroid/widget/FrameLayout;->getVisibility()I
+    invoke-virtual {v2}, Landroid/view/View;->getVisibility()I
 
     move-result v2
 
@@ -1884,7 +1884,7 @@
 
     iget-object v2, p0, Landroid/inputmethodservice/InputMethodService;->mInputFrame:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v2, v1}, Landroid/widget/FrameLayout;->getLocationInWindow([I)V
+    invoke-virtual {v2, v1}, Landroid/view/View;->getLocationInWindow([I)V
 
     :goto_0
     invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService;->isFullscreenMode()Z
@@ -1916,7 +1916,7 @@
     :goto_1
     iget-object v2, p0, Landroid/inputmethodservice/InputMethodService;->mCandidatesFrame:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v2}, Landroid/widget/FrameLayout;->getVisibility()I
+    invoke-virtual {v2}, Landroid/view/View;->getVisibility()I
 
     move-result v2
 
@@ -1924,7 +1924,7 @@
 
     iget-object v2, p0, Landroid/inputmethodservice/InputMethodService;->mCandidatesFrame:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v2, v1}, Landroid/widget/FrameLayout;->getLocationInWindow([I)V
+    invoke-virtual {v2, v1}, Landroid/view/View;->getLocationInWindow([I)V
 
     :cond_0
     aget v2, v1, v3
@@ -1981,7 +1981,7 @@
 
     const/4 v5, 0x0
 
-    invoke-super {p0, p1}, Landroid/inputmethodservice/AbstractInputMethodService;->onConfigurationChanged(Landroid/content/res/Configuration;)V
+    invoke-super {p0, p1}, Landroid/app/Service;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
     iget-boolean v4, p0, Landroid/inputmethodservice/InputMethodService;->mWindowVisible:Z
 
@@ -2091,7 +2091,7 @@
 
     iget-object v3, p0, Landroid/inputmethodservice/InputMethodService;->mWindow:Landroid/inputmethodservice/SoftInputWindow;
 
-    invoke-virtual {v3}, Landroid/inputmethodservice/SoftInputWindow;->getWindow()Landroid/view/Window;
+    invoke-virtual {v3}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v3
 
@@ -2099,7 +2099,7 @@
 
     move-result-object v3
 
-    iget v0, v3, Landroid/view/WindowManager$LayoutParams;->height:I
+    iget v0, v3, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .local v0, currentHeight:I
     if-eqz p2, :cond_1
@@ -2149,7 +2149,7 @@
     :cond_0
     iget-object v3, p0, Landroid/inputmethodservice/InputMethodService;->mWindow:Landroid/inputmethodservice/SoftInputWindow;
 
-    invoke-virtual {v3}, Landroid/inputmethodservice/SoftInputWindow;->getWindow()Landroid/view/Window;
+    invoke-virtual {v3}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v3
 
@@ -2170,7 +2170,7 @@
     .prologue
     iget v0, p0, Landroid/inputmethodservice/InputMethodService;->mTheme:I
 
-    invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
+    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
     move-result-object v1
 
@@ -2190,13 +2190,13 @@
 
     iget v0, p0, Landroid/inputmethodservice/InputMethodService;->mTheme:I
 
-    invoke-super {p0, v0}, Landroid/inputmethodservice/AbstractInputMethodService;->setTheme(I)V
+    invoke-super {p0, v0}, Landroid/content/ContextWrapper;->setTheme(I)V
 
-    invoke-super {p0}, Landroid/inputmethodservice/AbstractInputMethodService;->onCreate()V
+    invoke-super {p0}, Landroid/app/Service;->onCreate()V
 
     const-string v0, "input_method"
 
-    invoke-virtual {p0, v0}, Landroid/inputmethodservice/InputMethodService;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Landroid/content/ContextWrapper;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -2206,7 +2206,7 @@
 
     const-string v0, "layout_inflater"
 
-    invoke-virtual {p0, v0}, Landroid/inputmethodservice/InputMethodService;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Landroid/content/ContextWrapper;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -2218,7 +2218,7 @@
 
     iget v1, p0, Landroid/inputmethodservice/InputMethodService;->mTheme:I
 
-    iget-object v2, p0, Landroid/inputmethodservice/InputMethodService;->mDispatcherState:Landroid/view/KeyEvent$DispatcherState;
+    iget-object v2, p0, Landroid/inputmethodservice/AbstractInputMethodService;->mDispatcherState:Landroid/view/KeyEvent$DispatcherState;
 
     invoke-direct {v0, p0, v1, v2}, Landroid/inputmethodservice/SoftInputWindow;-><init>(Landroid/content/Context;ILandroid/view/KeyEvent$DispatcherState;)V
 
@@ -2230,7 +2230,7 @@
 
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mWindow:Landroid/inputmethodservice/SoftInputWindow;
 
-    invoke-virtual {v0}, Landroid/inputmethodservice/SoftInputWindow;->getWindow()Landroid/view/Window;
+    invoke-virtual {v0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
@@ -2243,7 +2243,7 @@
 
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mWindow:Landroid/inputmethodservice/SoftInputWindow;
 
-    invoke-virtual {v0}, Landroid/inputmethodservice/SoftInputWindow;->getWindow()Landroid/view/Window;
+    invoke-virtual {v0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
@@ -2325,7 +2325,7 @@
     .locals 2
 
     .prologue
-    invoke-super {p0}, Landroid/inputmethodservice/AbstractInputMethodService;->onDestroy()V
+    invoke-super {p0}, Landroid/app/Service;->onDestroy()V
 
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mRootView:Landroid/view/View;
 
@@ -2345,7 +2345,7 @@
 
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mWindow:Landroid/inputmethodservice/SoftInputWindow;
 
-    invoke-virtual {v0}, Landroid/inputmethodservice/SoftInputWindow;->getWindow()Landroid/view/Window;
+    invoke-virtual {v0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
@@ -2355,7 +2355,7 @@
 
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mWindow:Landroid/inputmethodservice/SoftInputWindow;
 
-    invoke-virtual {v0}, Landroid/inputmethodservice/SoftInputWindow;->dismiss()V
+    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
     :cond_0
     return-void
@@ -2375,7 +2375,7 @@
     .prologue
     const/4 v1, 0x0
 
-    invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
@@ -2421,7 +2421,7 @@
     .prologue
     const/4 v1, 0x1
 
-    invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
@@ -2891,7 +2891,7 @@
     if-nez v3, :cond_0
 
     :cond_2
-    invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
 
@@ -3053,7 +3053,7 @@
 
     iget-object v2, p0, Landroid/inputmethodservice/InputMethodService;->mExtractAccessories:Landroid/view/ViewGroup;
 
-    invoke-virtual {v2, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
+    invoke-virtual {v2, v1}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v1, p0, Landroid/inputmethodservice/InputMethodService;->mExtractAction:Landroid/widget/Button;
 
@@ -3067,14 +3067,14 @@
 
     iget-object v2, p1, Landroid/view/inputmethod/EditorInfo;->actionLabel:Ljava/lang/CharSequence;
 
-    invoke-virtual {v1, v2}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     :goto_2
     iget-object v1, p0, Landroid/inputmethodservice/InputMethodService;->mExtractAction:Landroid/widget/Button;
 
     iget-object v2, p0, Landroid/inputmethodservice/InputMethodService;->mActionClickListener:Landroid/view/View$OnClickListener;
 
-    invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     goto :goto_0
 
@@ -3094,7 +3094,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_2
 
@@ -3103,7 +3103,7 @@
 
     const/16 v2, 0x8
 
-    invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->setVisibility(I)V
+    invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v1, p0, Landroid/inputmethodservice/InputMethodService;->mExtractAction:Landroid/widget/Button;
 
@@ -3113,7 +3113,7 @@
 
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     goto :goto_0
 .end method
@@ -3187,7 +3187,7 @@
 
     sub-int/2addr p4, v2
 
-    invoke-virtual {v0}, Landroid/inputmethodservice/ExtractEditText;->getText()Landroid/text/Editable;
+    invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v3
 
@@ -3208,7 +3208,7 @@
 
     :cond_1
     :goto_1
-    invoke-virtual {v0, p3, p4}, Landroid/inputmethodservice/ExtractEditText;->setSelection(II)V
+    invoke-virtual {v0, p3, p4}, Landroid/widget/EditText;->setSelection(II)V
 
     invoke-virtual {v0}, Landroid/inputmethodservice/ExtractEditText;->finishInternalChanges()V
 
@@ -3524,7 +3524,7 @@
     .prologue
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mCandidatesFrame:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v0}, Landroid/widget/FrameLayout;->removeAllViews()V
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->removeAllViews()V
 
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mCandidatesFrame:Landroid/widget/FrameLayout;
 
@@ -3536,7 +3536,7 @@
 
     invoke-direct {v1, v2, v3}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
 
-    invoke-virtual {v0, p1, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, p1, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     return-void
 .end method
@@ -3583,7 +3583,7 @@
 
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mExtractFrame:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v0}, Landroid/widget/FrameLayout;->removeAllViews()V
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->removeAllViews()V
 
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mExtractFrame:Landroid/widget/FrameLayout;
 
@@ -3591,7 +3591,7 @@
 
     invoke-direct {v1, v3, v3}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
 
-    invoke-virtual {v0, p1, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, p1, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     iput-object p1, p0, Landroid/inputmethodservice/InputMethodService;->mExtractView:Landroid/view/View;
 
@@ -3687,7 +3687,7 @@
     .prologue
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mInputFrame:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v0}, Landroid/widget/FrameLayout;->removeAllViews()V
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->removeAllViews()V
 
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mInputFrame:Landroid/widget/FrameLayout;
 
@@ -3699,7 +3699,7 @@
 
     invoke-direct {v1, v2, v3}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
 
-    invoke-virtual {v0, p1, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, p1, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     iput-object p1, p0, Landroid/inputmethodservice/InputMethodService;->mInputView:Landroid/view/View;
 
@@ -3740,7 +3740,7 @@
 
     iget-object v1, p0, Landroid/inputmethodservice/InputMethodService;->mToken:Landroid/os/IBinder;
 
-    invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService;->getPackageName()Ljava/lang/String;
+    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getPackageName()Ljava/lang/String;
 
     move-result-object v2
 
@@ -3901,7 +3901,7 @@
 
     iget-object v3, p0, Landroid/inputmethodservice/InputMethodService;->mWindow:Landroid/inputmethodservice/SoftInputWindow;
 
-    invoke-virtual {v3}, Landroid/inputmethodservice/SoftInputWindow;->show()V
+    invoke-virtual {v3}, Landroid/app/Dialog;->show()V
 
     :cond_5
     return-void
@@ -4058,11 +4058,11 @@
     or-int/2addr v3, v5
 
     :cond_2
-    invoke-virtual {v0, v3}, Landroid/inputmethodservice/ExtractEditText;->setInputType(I)V
+    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setInputType(I)V
 
     iget-object v5, v1, Landroid/view/inputmethod/EditorInfo;->hintText:Ljava/lang/CharSequence;
 
-    invoke-virtual {v0, v5}, Landroid/inputmethodservice/ExtractEditText;->setHint(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v5}, Landroid/widget/TextView;->setHint(Ljava/lang/CharSequence;)V
 
     iget-object v5, p0, Landroid/inputmethodservice/InputMethodService;->mExtractedText:Landroid/view/inputmethod/ExtractedText;
 
@@ -4070,7 +4070,7 @@
 
     const/4 v5, 0x1
 
-    invoke-virtual {v0, v5}, Landroid/inputmethodservice/ExtractEditText;->setEnabled(Z)V
+    invoke-virtual {v0, v5}, Landroid/widget/TextView;->setEnabled(Z)V
 
     iget-object v5, p0, Landroid/inputmethodservice/InputMethodService;->mExtractedText:Landroid/view/inputmethod/ExtractedText;
 
@@ -4107,11 +4107,11 @@
     const/4 v5, 0x0
 
     :try_start_1
-    invoke-virtual {v0, v5}, Landroid/inputmethodservice/ExtractEditText;->setEnabled(Z)V
+    invoke-virtual {v0, v5}, Landroid/widget/TextView;->setEnabled(Z)V
 
     const-string v5, ""
 
-    invoke-virtual {v0, v5}, Landroid/inputmethodservice/ExtractEditText;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -4157,7 +4157,7 @@
 
     iget-object v1, p0, Landroid/inputmethodservice/InputMethodService;->mCandidatesFrame:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
+    invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
 
     iput v0, p0, Landroid/inputmethodservice/InputMethodService;->mCandidatesVisibility:I
 
@@ -4197,7 +4197,7 @@
     :goto_0
     iget-object v3, p0, Landroid/inputmethodservice/InputMethodService;->mExtractFrame:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v3, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
+    invoke-virtual {v3, v1}, Landroid/view/View;->setVisibility(I)V
 
     :goto_1
     iget v3, p0, Landroid/inputmethodservice/InputMethodService;->mCandidatesVisibility:I
@@ -4215,7 +4215,7 @@
 
     iget-object v3, p0, Landroid/inputmethodservice/InputMethodService;->mFullscreenArea:Landroid/view/ViewGroup;
 
-    invoke-virtual {v3}, Landroid/view/ViewGroup;->getVisibility()I
+    invoke-virtual {v3}, Landroid/view/View;->getVisibility()I
 
     move-result v3
 
@@ -4239,13 +4239,13 @@
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->startAnimation(Landroid/view/animation/Animation;)V
+    invoke-virtual {v2, v3}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
     .end local v0           #animRes:I
     :cond_0
     iget-object v2, p0, Landroid/inputmethodservice/InputMethodService;->mFullscreenArea:Landroid/view/ViewGroup;
 
-    invoke-virtual {v2, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
+    invoke-virtual {v2, v1}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 
@@ -4263,7 +4263,7 @@
 
     const/16 v5, 0x8
 
-    invoke-virtual {v3, v5}, Landroid/widget/FrameLayout;->setVisibility(I)V
+    invoke-virtual {v3, v5}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_1
 
@@ -4339,7 +4339,7 @@
 
     iget-object v5, p0, Landroid/inputmethodservice/InputMethodService;->mFullscreenArea:Landroid/view/ViewGroup;
 
-    invoke-virtual {v5}, Landroid/view/ViewGroup;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v3
 
@@ -4356,9 +4356,9 @@
 
     move-result-object v8
 
-    invoke-virtual {v5, v8}, Landroid/view/ViewGroup;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v5, v8}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    iput v7, v3, Landroid/widget/LinearLayout$LayoutParams;->height:I
+    iput v7, v3, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     const/high16 v5, 0x3f80
 
@@ -4367,7 +4367,7 @@
     :goto_2
     iget-object v5, p0, Landroid/inputmethodservice/InputMethodService;->mFullscreenArea:Landroid/view/ViewGroup;
 
-    invoke-virtual {v5}, Landroid/view/ViewGroup;->getParent()Landroid/view/ViewParent;
+    invoke-virtual {v5}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v5
 
@@ -4406,7 +4406,7 @@
 
     iget-object v5, p0, Landroid/inputmethodservice/InputMethodService;->mWindow:Landroid/inputmethodservice/SoftInputWindow;
 
-    invoke-virtual {v5}, Landroid/inputmethodservice/SoftInputWindow;->getWindow()Landroid/view/Window;
+    invoke-virtual {v5}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v5
 
@@ -4445,11 +4445,11 @@
 
     const/4 v8, 0x0
 
-    invoke-virtual {v5, v8}, Landroid/view/ViewGroup;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v5, v8}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     const/4 v5, -0x2
 
-    iput v5, v3, Landroid/widget/LinearLayout$LayoutParams;->height:I
+    iput v5, v3, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     const/4 v5, 0x0
 
@@ -4500,7 +4500,7 @@
     if-eqz v0, :cond_2
 
     :goto_1
-    invoke-virtual {v3, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
+    invoke-virtual {v3, v2}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v2, p0, Landroid/inputmethodservice/InputMethodService;->mInputView:Landroid/view/View;
 

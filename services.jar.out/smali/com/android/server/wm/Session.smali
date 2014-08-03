@@ -703,7 +703,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v0}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -964,7 +964,7 @@
 
     move-result-object v6
 
-    invoke-virtual {v3, v5, v6}, Lcom/android/server/wm/WindowManagerService$H;->removeMessages(ILjava/lang/Object;)V
+    invoke-virtual {v3, v5, v6}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
 
     iget-object v3, v0, Lcom/android/server/wm/WindowState;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
 
@@ -1422,7 +1422,7 @@
 
     move-result-object v7
 
-    invoke-virtual {v4, v6, v7}, Lcom/android/server/wm/WindowManagerService$H;->removeMessages(ILjava/lang/Object;)V
+    invoke-virtual {v4, v6, v7}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
 
     iget-object v4, p0, Lcom/android/server/wm/Session;->mService:Lcom/android/server/wm/WindowManagerService;
 

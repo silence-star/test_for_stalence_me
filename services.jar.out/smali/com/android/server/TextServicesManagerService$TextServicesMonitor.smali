@@ -46,7 +46,7 @@
     .locals 3
 
     .prologue
-    invoke-virtual {p0}, Lcom/android/server/TextServicesManagerService$TextServicesMonitor;->getChangingUserId()I
+    invoke-virtual {p0}, Lcom/android/internal/content/PackageMonitor;->getChangingUserId()I
 
     move-result v1
 
@@ -167,7 +167,7 @@
     move-result-object v1
 
     .local v1, packageName:Ljava/lang/String;
-    invoke-virtual {p0, v1}, Lcom/android/server/TextServicesManagerService$TextServicesMonitor;->isPackageDisappearing(Ljava/lang/String;)I
+    invoke-virtual {p0, v1}, Lcom/android/internal/content/PackageMonitor;->isPackageDisappearing(Ljava/lang/String;)I
 
     move-result v0
 
@@ -180,7 +180,7 @@
 
     if-eq v0, v3, :cond_2
 
-    invoke-virtual {p0, v1}, Lcom/android/server/TextServicesManagerService$TextServicesMonitor;->isPackageModified(Ljava/lang/String;)Z
+    invoke-virtual {p0, v1}, Lcom/android/internal/content/PackageMonitor;->isPackageModified(Ljava/lang/String;)Z
 
     move-result v3
 

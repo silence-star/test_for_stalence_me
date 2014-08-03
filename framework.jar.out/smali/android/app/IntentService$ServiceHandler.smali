@@ -51,7 +51,7 @@
 
     iget v1, p1, Landroid/os/Message;->arg1:I
 
-    invoke-virtual {v0, v1}, Landroid/app/IntentService;->stopSelf(I)V
+    invoke-virtual {v0, v1}, Landroid/app/Service;->stopSelf(I)V
 
     return-void
 .end method

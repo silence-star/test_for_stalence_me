@@ -90,7 +90,7 @@
 
     iget-object v1, p0, Landroid/widget/AbsListView$MultiChoiceModeWrapper;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v1, v0}, Landroid/widget/AbsListView;->setLongClickable(Z)V
+    invoke-virtual {v1, v0}, Landroid/view/View;->setLongClickable(Z)V
 
     const/4 v0, 0x1
 
@@ -121,11 +121,11 @@
 
     iget-object v0, p0, Landroid/widget/AbsListView$MultiChoiceModeWrapper;->this$0:Landroid/widget/AbsListView;
 
-    iput-boolean v2, v0, Landroid/widget/AbsListView;->mDataChanged:Z
+    iput-boolean v2, v0, Landroid/widget/AdapterView;->mDataChanged:Z
 
     iget-object v0, p0, Landroid/widget/AbsListView$MultiChoiceModeWrapper;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v0}, Landroid/widget/AbsListView;->rememberSyncState()V
+    invoke-virtual {v0}, Landroid/widget/AdapterView;->rememberSyncState()V
 
     iget-object v0, p0, Landroid/widget/AbsListView$MultiChoiceModeWrapper;->this$0:Landroid/widget/AbsListView;
 
@@ -133,7 +133,7 @@
 
     iget-object v0, p0, Landroid/widget/AbsListView$MultiChoiceModeWrapper;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v0, v2}, Landroid/widget/AbsListView;->setLongClickable(Z)V
+    invoke-virtual {v0, v2}, Landroid/view/View;->setLongClickable(Z)V
 
     return-void
 .end method

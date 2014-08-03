@@ -16,7 +16,9 @@
 # instance fields
 .field private mContext:Landroid/content/Context;
 
-.field private final mHandler:Landroid/os/Handler;
+.field mCrashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
+
+.field final mHandler:Landroid/os/Handler;
 
 .field private mMsg:Ljava/lang/String;
 
@@ -108,10 +110,10 @@
 
     move-result-object v4
 
-    invoke-virtual {p0, v4}, Lcom/android/server/am/AppErrorDialog;->setMessage(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v4}, Landroid/app/AlertDialog;->setMessage(Ljava/lang/CharSequence;)V
 
     :goto_0
-    invoke-virtual {p0, v7}, Lcom/android/server/am/AppErrorDialog;->setCancelable(Z)V
+    invoke-virtual {p0, v7}, Landroid/app/AlertDialog;->setCancelable(Z)V
 
     iget-object v4, p0, Lcom/android/server/am/AppErrorDialog;->mHandler:Landroid/os/Handler;
 
@@ -132,7 +134,7 @@
 
     move-result-object v5
 
-    invoke-virtual {p0, v4, v5, v1}, Lcom/android/server/am/AppErrorDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
+    invoke-virtual {p0, v4, v5, v1}, Landroid/app/AlertDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
 
     const/4 v4, -0x2
 
@@ -148,7 +150,7 @@
 
     move-result-object v6
 
-    invoke-virtual {p0, v4, v5, v6}, Lcom/android/server/am/AppErrorDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
+    invoke-virtual {p0, v4, v5, v6}, Landroid/app/AlertDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
 
     const v4, 0x1040402
 
@@ -156,9 +158,9 @@
 
     move-result-object v4
 
-    invoke-virtual {p0, v4}, Lcom/android/server/am/AppErrorDialog;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v4}, Landroid/app/AlertDialog;->setTitle(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {p0}, Lcom/android/server/am/AppErrorDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v4
 
@@ -197,7 +199,7 @@
 
     iput v4, v0, Landroid/view/WindowManager$LayoutParams;->privateFlags:I
 
-    invoke-virtual {p0}, Lcom/android/server/am/AppErrorDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v4
 
@@ -207,7 +209,7 @@
 
     if-eqz v4, :cond_0
 
-    invoke-virtual {p0}, Lcom/android/server/am/AppErrorDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v4
 
@@ -253,7 +255,7 @@
 
     new-array v5, v8, [Ljava/lang/Object;
 
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/String;->toString()Ljava/lang/String;
 
     move-result-object v6
 
@@ -263,7 +265,7 @@
 
     move-result-object v4
 
-    invoke-virtual {p0, v4}, Lcom/android/server/am/AppErrorDialog;->setMessage(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v4}, Landroid/app/AlertDialog;->setMessage(Ljava/lang/CharSequence;)V
 
     goto/16 :goto_0
 .end method
@@ -291,7 +293,7 @@
 
     move-result-object v2
 
-    sget v3, Lcom/android/internal/R$string;->report:I
+    const v3, 0x104040b
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -458,13 +460,13 @@
 
     iget-object v3, p1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
 
-    iget-object v3, v3, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+    iget-object v3, v3, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     if-eqz v3, :cond_1
 
     iget-object v3, p1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
 
-    iget-object v1, v3, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+    iget-object v1, v3, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     :cond_1
     return-object v1
@@ -555,20 +557,6 @@
 
 
 # virtual methods
-.method setMsg(Ljava/lang/String;)V
-    .locals 0
-    .parameter "msg"
-
-    .prologue
-    iput-object p1, p0, Lcom/android/server/am/AppErrorDialog;->mMsg:Ljava/lang/String;
-
-    invoke-direct {p0}, Lcom/android/server/am/AppErrorDialog;->sendBroadcastCatchLog()V
-
-    return-void
-.end method
-
-
-# virtual methods
 .method sendFcReport(Landroid/os/Message;)V
     .locals 5
     .parameter "msg"
@@ -602,4 +590,16 @@
     const/4 v0, 0x0
 
     goto :goto_0
+.end method
+
+.method setMsg(Ljava/lang/String;)V
+    .locals 0
+    .parameter "msg"
+
+    .prologue
+    iput-object p1, p0, Lcom/android/server/am/AppErrorDialog;->mMsg:Ljava/lang/String;
+
+    invoke-direct {p0}, Lcom/android/server/am/AppErrorDialog;->sendBroadcastCatchLog()V
+
+    return-void
 .end method

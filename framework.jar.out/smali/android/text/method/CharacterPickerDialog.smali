@@ -3,8 +3,8 @@
 .source "CharacterPickerDialog.java"
 
 # interfaces
-.implements Landroid/widget/AdapterView$OnItemClickListener;
 .implements Landroid/view/View$OnClickListener;
+.implements Landroid/widget/AdapterView$OnItemClickListener;
 
 
 # annotations
@@ -104,7 +104,7 @@
     invoke-interface {v1, v0, p1}, Landroid/text/Editable;->insert(ILjava/lang/CharSequence;)Landroid/text/Editable;
 
     :goto_0
-    invoke-virtual {p0}, Landroid/text/method/CharacterPickerDialog;->dismiss()V
+    invoke-virtual {p0}, Landroid/app/Dialog;->dismiss()V
 
     return-void
 
@@ -129,7 +129,7 @@
 
     if-ne p1, v1, :cond_1
 
-    invoke-virtual {p0}, Landroid/text/method/CharacterPickerDialog;->dismiss()V
+    invoke-virtual {p0}, Landroid/app/Dialog;->dismiss()V
 
     .end local p1
     :cond_0
@@ -145,7 +145,7 @@
     check-cast p1, Landroid/widget/Button;
 
     .end local p1
-    invoke-virtual {p1}, Landroid/widget/Button;->getText()Ljava/lang/CharSequence;
+    invoke-virtual {p1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v0
 
@@ -162,7 +162,7 @@
     .prologue
     invoke-super {p0, p1}, Landroid/app/Dialog;->onCreate(Landroid/os/Bundle;)V
 
-    invoke-virtual {p0}, Landroid/text/method/CharacterPickerDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v2
 
@@ -191,11 +191,11 @@
 
     const v2, 0x1090032
 
-    invoke-virtual {p0, v2}, Landroid/text/method/CharacterPickerDialog;->setContentView(I)V
+    invoke-virtual {p0, v2}, Landroid/app/Dialog;->setContentView(I)V
 
     const v2, 0x102028f
 
-    invoke-virtual {p0, v2}, Landroid/text/method/CharacterPickerDialog;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -204,7 +204,7 @@
     .local v0, grid:Landroid/widget/GridView;
     new-instance v2, Landroid/text/method/CharacterPickerDialog$OptionsAdapter;
 
-    invoke-virtual {p0}, Landroid/text/method/CharacterPickerDialog;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v3
 
@@ -212,11 +212,11 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/GridView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    invoke-virtual {v0, p0}, Landroid/widget/GridView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
+    invoke-virtual {v0, p0}, Landroid/widget/AdapterView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
     const v2, 0x1020290
 
-    invoke-virtual {p0, v2}, Landroid/text/method/CharacterPickerDialog;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
     move-result-object v2
 
@@ -226,7 +226,7 @@
 
     iget-object v2, p0, Landroid/text/method/CharacterPickerDialog;->mCancelButton:Landroid/widget/Button;
 
-    invoke-virtual {v2, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v2, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     return-void
 .end method

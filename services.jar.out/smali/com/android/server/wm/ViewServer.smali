@@ -118,11 +118,11 @@
     .end local v2           #out:Ljava/io/BufferedWriter;
     .local v3, out:Ljava/io/BufferedWriter;
     :try_start_1
-    invoke-virtual {v3, p1}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v3, p1}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     const-string v5, "\n"
 
-    invoke-virtual {v3, v5}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v3, v5}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     invoke-virtual {v3}, Ljava/io/BufferedWriter;->flush()V
     :try_end_1
@@ -344,7 +344,7 @@
 
     .local v1, e:Ljava/io/IOException;
     :try_start_2
-    invoke-virtual {v1}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 

@@ -59,7 +59,7 @@
 
     invoke-virtual {v1}, Landroid/webkit/WebSyncManager;->syncFromRamToFlash()V
 
-    invoke-virtual {p0, v2}, Landroid/webkit/WebSyncManager$SyncHandler;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {p0, v2}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
@@ -70,7 +70,7 @@
 
     int-to-long v1, v1
 
-    invoke-virtual {p0, v0, v1, v2}, Landroid/webkit/WebSyncManager$SyncHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {p0, v0, v1, v2}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     .end local v0           #newmsg:Landroid/os/Message;
     :cond_0

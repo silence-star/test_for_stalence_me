@@ -116,7 +116,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/text/SimpleDateFormat;->setTimeZone(Ljava/util/TimeZone;)V
+    invoke-virtual {v0, v1}, Ljava/text/DateFormat;->setTimeZone(Ljava/util/TimeZone;)V
 
     new-instance v0, Ljava/lang/Object;
 

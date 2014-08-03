@@ -291,7 +291,7 @@
     move-exception v4
 
     .local v4, e:Ljavax/xml/parsers/ParserConfigurationException;
-    invoke-virtual {v4}, Ljavax/xml/parsers/ParserConfigurationException;->printStackTrace()V
+    invoke-virtual {v4}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_0
 
@@ -300,7 +300,7 @@
     move-exception v4
 
     .local v4, e:Ljava/io/FileNotFoundException;
-    invoke-virtual {v4}, Ljava/io/FileNotFoundException;->printStackTrace()V
+    invoke-virtual {v4}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_1
 
@@ -309,7 +309,7 @@
     move-exception v5
 
     .local v5, e1:Lorg/xml/sax/SAXException;
-    invoke-virtual {v5}, Lorg/xml/sax/SAXException;->printStackTrace()V
+    invoke-virtual {v5}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_2
 
@@ -318,7 +318,7 @@
     move-exception v5
 
     .local v5, e1:Ljava/io/IOException;
-    invoke-virtual {v5}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {v5}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_2
 
@@ -451,7 +451,7 @@
     .end local v7           #em_seq:Lorg/w3c/dom/Element;
     :cond_1
     :try_start_3
-    invoke-virtual {v11}, Ljava/io/InputStream;->close()V
+    invoke-virtual {v11}, Ljava/io/BufferedInputStream;->close()V
     :try_end_3
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_4
 
@@ -461,7 +461,7 @@
     move-exception v4
 
     .local v4, e:Ljava/io/IOException;
-    invoke-virtual {v4}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {v4}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto/16 :goto_3
 

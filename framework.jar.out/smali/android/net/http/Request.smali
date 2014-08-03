@@ -328,7 +328,7 @@
     :cond_2
     iget-object v1, p0, Landroid/net/http/Request;->mHttpRequest:Lorg/apache/http/message/BasicHttpRequest;
 
-    invoke-virtual {v1, p1, p2}, Lorg/apache/http/message/BasicHttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v1, p1, p2}, Lorg/apache/http/message/AbstractHttpMessage;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -909,7 +909,7 @@
 
     move-result-object v21
 
-    invoke-virtual {v8}, Ljava/lang/InterruptedException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v22
 
@@ -1169,7 +1169,7 @@
 
     const-string v1, "content-length"
 
-    invoke-virtual {v0, v1}, Lorg/apache/http/message/BasicHttpRequest;->removeHeaders(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lorg/apache/http/message/AbstractHttpMessage;->removeHeaders(Ljava/lang/String;)V
 
     iget-object v0, p0, Landroid/net/http/Request;->mBodyProvider:Ljava/io/InputStream;
 
@@ -1250,7 +1250,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v0, v1, v2}, Lorg/apache/http/message/BasicHttpRequest;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, v2}, Lorg/apache/http/message/AbstractHttpMessage;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_1
     return-void

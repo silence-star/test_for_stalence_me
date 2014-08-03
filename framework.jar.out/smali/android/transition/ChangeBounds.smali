@@ -277,11 +277,11 @@
 
     if-eq v0, v14, :cond_5
 
-    invoke-virtual/range {v33 .. v33}, Landroid/view/ViewGroup;->getId()I
+    invoke-virtual/range {v33 .. v33}, Landroid/view/View;->getId()I
 
     move-result v47
 
-    invoke-virtual {v14}, Landroid/view/ViewGroup;->getId()I
+    invoke-virtual {v14}, Landroid/view/View;->getId()I
 
     move-result v48
 
@@ -699,7 +699,7 @@
 
     move-object/from16 v1, v44
 
-    invoke-virtual {v0, v1}, Landroid/transition/ChangeBounds;->addListener(Landroid/transition/Transition$TransitionListener;)Landroid/transition/Transition;
+    invoke-virtual {v0, v1}, Landroid/transition/Transition;->addListener(Landroid/transition/Transition$TransitionListener;)Landroid/transition/Transition;
 
     goto/16 :goto_0
 
@@ -1101,7 +1101,7 @@
 
     move-object/from16 v1, v44
 
-    invoke-virtual {v0, v1}, Landroid/transition/ChangeBounds;->addListener(Landroid/transition/Transition$TransitionListener;)Landroid/transition/Transition;
+    invoke-virtual {v0, v1}, Landroid/transition/Transition;->addListener(Landroid/transition/Transition$TransitionListener;)Landroid/transition/Transition;
 
     .end local v23           #parent:Landroid/view/ViewGroup;
     .end local v44           #transitionListener:Landroid/transition/Transition$TransitionListener;
@@ -1118,7 +1118,7 @@
 
     move-object/from16 v0, v47
 
-    invoke-virtual {v5, v0}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v5, v0}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     goto/16 :goto_0
 
@@ -1244,7 +1244,7 @@
 
     move-object/from16 v1, v47
 
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getLocationInWindow([I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->getLocationInWindow([I)V
 
     invoke-virtual/range {v45 .. v45}, Landroid/view/View;->getWidth()I
 
@@ -1289,7 +1289,7 @@
 
     move-object/from16 v0, v47
 
-    invoke-virtual {v0, v8}, Landroid/view/ViewGroupOverlay;->add(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, v8}, Landroid/view/ViewOverlay;->add(Landroid/graphics/drawable/Drawable;)V
 
     new-instance v30, Landroid/graphics/Rect;
 
@@ -1484,7 +1484,7 @@
 
     move-object/from16 v0, v47
 
-    invoke-virtual {v5, v0}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v5, v0}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     goto/16 :goto_0
 

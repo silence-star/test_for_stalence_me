@@ -25,7 +25,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p1}, Landroid/widget/TextView;->getScrollY()I
+    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
 
     move-result v1
 
@@ -51,7 +51,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/text/TextPaint;->getFontSpacing()F
+    invoke-virtual {v0}, Landroid/graphics/Paint;->getFontSpacing()F
 
     move-result v0
 
@@ -71,7 +71,7 @@
     .parameter "widget"
 
     .prologue
-    invoke-virtual {p1}, Landroid/widget/TextView;->getHeight()I
+    invoke-virtual {p1}, Landroid/view/View;->getHeight()I
 
     move-result v0
 
@@ -95,7 +95,7 @@
     .parameter "widget"
 
     .prologue
-    invoke-virtual {p1}, Landroid/widget/TextView;->getWidth()I
+    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
     move-result v0
 
@@ -243,7 +243,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p1}, Landroid/widget/TextView;->getScrollY()I
+    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
 
     move-result v1
 
@@ -1063,7 +1063,7 @@
 
     if-gt v2, v3, :cond_0
 
-    invoke-virtual {p1}, Landroid/widget/TextView;->getScrollX()I
+    invoke-virtual {p1}, Landroid/view/View;->getScrollX()I
 
     move-result v2
 
@@ -1107,7 +1107,7 @@
     move-result v2
 
     .local v2, innerHeight:I
-    invoke-virtual {p1}, Landroid/widget/TextView;->getScrollY()I
+    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
 
     move-result v5
 
@@ -1149,7 +1149,7 @@
 
     move-result v1
 
-    invoke-virtual {p1}, Landroid/widget/TextView;->getScrollX()I
+    invoke-virtual {p1}, Landroid/view/View;->getScrollX()I
 
     move-result v5
 
@@ -1186,7 +1186,7 @@
     move-result v0
 
     .local v0, minScrollX:I
-    invoke-virtual {p1}, Landroid/widget/TextView;->getScrollX()I
+    invoke-virtual {p1}, Landroid/view/View;->getScrollX()I
 
     move-result v1
 
@@ -1205,11 +1205,11 @@
 
     move-result v1
 
-    invoke-virtual {p1}, Landroid/widget/TextView;->getScrollY()I
+    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
 
     move-result v2
 
-    invoke-virtual {p1, v1, v2}, Landroid/widget/TextView;->scrollTo(II)V
+    invoke-virtual {p1, v1, v2}, Landroid/view/View;->scrollTo(II)V
 
     const/4 v2, 0x1
 
@@ -1239,18 +1239,18 @@
     sub-int v0, v2, v3
 
     .local v0, maxScrollX:I
-    invoke-virtual {p1}, Landroid/widget/TextView;->getScrollX()I
+    invoke-virtual {p1}, Landroid/view/View;->getScrollX()I
 
     move-result v1
 
     .local v1, scrollX:I
     if-ge v1, v0, :cond_0
 
-    invoke-virtual {p1}, Landroid/widget/TextView;->getScrollY()I
+    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
 
     move-result v2
 
-    invoke-virtual {p1, v0, v2}, Landroid/widget/TextView;->scrollTo(II)V
+    invoke-virtual {p1, v0, v2}, Landroid/view/View;->scrollTo(II)V
 
     const/4 v2, 0x1
 
@@ -1274,18 +1274,18 @@
     move-result v0
 
     .local v0, minScrollX:I
-    invoke-virtual {p1}, Landroid/widget/TextView;->getScrollX()I
+    invoke-virtual {p1}, Landroid/view/View;->getScrollX()I
 
     move-result v1
 
     .local v1, scrollX:I
     if-le v1, v0, :cond_0
 
-    invoke-virtual {p1}, Landroid/widget/TextView;->getScrollY()I
+    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
 
     move-result v2
 
-    invoke-virtual {p1, v0, v2}, Landroid/widget/TextView;->scrollTo(II)V
+    invoke-virtual {p1, v0, v2}, Landroid/view/View;->scrollTo(II)V
 
     const/4 v2, 0x1
 
@@ -1314,7 +1314,7 @@
     move-result v2
 
     .local v2, innerHeight:I
-    invoke-virtual {p1}, Landroid/widget/TextView;->getScrollY()I
+    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
 
     move-result v4
 
@@ -1336,7 +1336,7 @@
 
     if-gt v1, v4, :cond_0
 
-    invoke-virtual {p1}, Landroid/widget/TextView;->getScrollX()I
+    invoke-virtual {p1}, Landroid/view/View;->getScrollX()I
 
     move-result v4
 
@@ -1372,7 +1372,7 @@
     move-result-object v0
 
     .local v0, layout:Landroid/text/Layout;
-    invoke-virtual {p1}, Landroid/widget/TextView;->getScrollY()I
+    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
 
     move-result v3
 
@@ -1390,7 +1390,7 @@
     .local v2, topLine:I
     if-ltz v2, :cond_0
 
-    invoke-virtual {p1}, Landroid/widget/TextView;->getScrollX()I
+    invoke-virtual {p1}, Landroid/view/View;->getScrollX()I
 
     move-result v3
 
@@ -1429,7 +1429,7 @@
     sub-int v0, v2, v3
 
     .local v0, maxScrollX:I
-    invoke-virtual {p1}, Landroid/widget/TextView;->getScrollX()I
+    invoke-virtual {p1}, Landroid/view/View;->getScrollX()I
 
     move-result v1
 
@@ -1448,11 +1448,11 @@
 
     move-result v1
 
-    invoke-virtual {p1}, Landroid/widget/TextView;->getScrollY()I
+    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
 
     move-result v2
 
-    invoke-virtual {p1, v1, v2}, Landroid/widget/TextView;->scrollTo(II)V
+    invoke-virtual {p1, v1, v2}, Landroid/view/View;->scrollTo(II)V
 
     const/4 v2, 0x1
 
@@ -1484,7 +1484,7 @@
 
     if-ltz v2, :cond_0
 
-    invoke-virtual {p1}, Landroid/widget/TextView;->getScrollX()I
+    invoke-virtual {p1}, Landroid/view/View;->getScrollX()I
 
     move-result v2
 
@@ -1514,7 +1514,7 @@
     move-result-object v0
 
     .local v0, layout:Landroid/text/Layout;
-    invoke-virtual {p1}, Landroid/widget/TextView;->getScrollY()I
+    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
 
     move-result v1
 
@@ -1543,7 +1543,7 @@
 
     move-result v2
 
-    invoke-virtual {p1}, Landroid/widget/TextView;->getScrollX()I
+    invoke-virtual {p1}, Landroid/view/View;->getScrollX()I
 
     move-result v3
 

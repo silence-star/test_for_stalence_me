@@ -31,7 +31,7 @@
 
     iput v0, p0, Landroid/filterfw/core/VertexFrame;->vertexFrameId:I
 
-    invoke-virtual {p0}, Landroid/filterfw/core/VertexFrame;->getFormat()Landroid/filterfw/core/FrameFormat;
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v0
 
@@ -50,7 +50,7 @@
     throw v0
 
     :cond_0
-    invoke-virtual {p0}, Landroid/filterfw/core/VertexFrame;->getFormat()Landroid/filterfw/core/FrameFormat;
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v0
 
@@ -255,14 +255,14 @@
     .parameter "length"
 
     .prologue
-    invoke-virtual {p0}, Landroid/filterfw/core/VertexFrame;->assertFrameMutable()V
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->assertFrameMutable()V
 
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->array()[B
 
     move-result-object v0
 
     .local v0, bytes:[B
-    invoke-virtual {p0}, Landroid/filterfw/core/VertexFrame;->getFormat()Landroid/filterfw/core/FrameFormat;
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v1
 
@@ -316,7 +316,7 @@
     .parameter "floats"
 
     .prologue
-    invoke-virtual {p0}, Landroid/filterfw/core/VertexFrame;->assertFrameMutable()V
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->assertFrameMutable()V
 
     invoke-direct {p0, p1}, Landroid/filterfw/core/VertexFrame;->setNativeFloats([F)Z
 
@@ -341,7 +341,7 @@
     .parameter "ints"
 
     .prologue
-    invoke-virtual {p0}, Landroid/filterfw/core/VertexFrame;->assertFrameMutable()V
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->assertFrameMutable()V
 
     invoke-direct {p0, p1}, Landroid/filterfw/core/VertexFrame;->setNativeInts([I)Z
 
@@ -375,7 +375,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Landroid/filterfw/core/VertexFrame;->getFormat()Landroid/filterfw/core/FrameFormat;
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v1
 

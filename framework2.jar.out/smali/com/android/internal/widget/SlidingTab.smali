@@ -132,7 +132,7 @@
 
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/SlidingTab;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
@@ -367,7 +367,7 @@
 
     .end local v1           #deltaX:I
     :goto_0
-    invoke-virtual {p0}, Lcom/android/internal/widget/SlidingTab;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
 
@@ -461,7 +461,7 @@
     monitor-enter p0
 
     :try_start_0
-    iget-object v1, p0, Lcom/android/internal/widget/SlidingTab;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -487,7 +487,7 @@
 
     if-nez v1, :cond_0
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/SlidingTab;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -935,7 +935,7 @@
 
     .local v0, height:I
     :goto_0
-    invoke-virtual {p0, v7, v0}, Lcom/android/internal/widget/SlidingTab;->setMeasuredDimension(II)V
+    invoke-virtual {p0, v7, v0}, Landroid/view/View;->setMeasuredDimension(II)V
 
     return-void
 
@@ -998,7 +998,7 @@
 
     if-nez v7, :cond_1
 
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-super {p0, p1}, Landroid/view/View;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v7
 
@@ -1040,7 +1040,7 @@
 
     if-eqz v7, :cond_4
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/SlidingTab;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v7
 
@@ -1123,7 +1123,7 @@
 
     .restart local v2       #position:F
     :cond_4
-    invoke-virtual {p0}, Lcom/android/internal/widget/SlidingTab;->getHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v7
 
@@ -1227,7 +1227,7 @@
     .parameter "visibility"
 
     .prologue
-    invoke-super {p0, p1, p2}, Landroid/view/ViewGroup;->onVisibilityChanged(Landroid/view/View;I)V
+    invoke-super {p0, p1, p2}, Landroid/view/View;->onVisibilityChanged(Landroid/view/View;I)V
 
     if-ne p1, p0, :cond_0
 
@@ -1394,7 +1394,7 @@
     .parameter "visibility"
 
     .prologue
-    invoke-virtual {p0}, Lcom/android/internal/widget/SlidingTab;->getVisibility()I
+    invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
 
     move-result v0
 
@@ -1409,7 +1409,7 @@
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/SlidingTab;->reset(Z)V
 
     :cond_0
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->setVisibility(I)V
+    invoke-super {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 .end method
@@ -1448,7 +1448,7 @@
 
     move-result-object v19
 
-    invoke-virtual/range {v19 .. v19}, Landroid/widget/ImageView;->getRight()I
+    invoke-virtual/range {v19 .. v19}, Landroid/view/View;->getRight()I
 
     move-result v11
 
@@ -1458,7 +1458,7 @@
 
     move-result-object v19
 
-    invoke-virtual/range {v19 .. v19}, Landroid/widget/ImageView;->getWidth()I
+    invoke-virtual/range {v19 .. v19}, Landroid/view/View;->getWidth()I
 
     move-result v18
 
@@ -1468,12 +1468,12 @@
 
     move-result-object v19
 
-    invoke-virtual/range {v19 .. v19}, Landroid/widget/ImageView;->getLeft()I
+    invoke-virtual/range {v19 .. v19}, Landroid/view/View;->getLeft()I
 
     move-result v9
 
     .local v9, left:I
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/SlidingTab;->getWidth()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getWidth()I
 
     move-result v17
 
@@ -1657,7 +1657,7 @@
 
     move-result-object v19
 
-    invoke-virtual/range {v19 .. v19}, Landroid/widget/ImageView;->getTop()I
+    invoke-virtual/range {v19 .. v19}, Landroid/view/View;->getTop()I
 
     move-result v13
 
@@ -1667,7 +1667,7 @@
 
     move-result-object v19
 
-    invoke-virtual/range {v19 .. v19}, Landroid/widget/ImageView;->getBottom()I
+    invoke-virtual/range {v19 .. v19}, Landroid/view/View;->getBottom()I
 
     move-result v4
 
@@ -1677,12 +1677,12 @@
 
     move-result-object v19
 
-    invoke-virtual/range {v19 .. v19}, Landroid/widget/ImageView;->getHeight()I
+    invoke-virtual/range {v19 .. v19}, Landroid/view/View;->getHeight()I
 
     move-result v7
 
     .local v7, height:I
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/SlidingTab;->getHeight()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getHeight()I
 
     move-result v16
 

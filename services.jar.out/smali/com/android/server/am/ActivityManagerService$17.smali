@@ -302,7 +302,7 @@
 
     .local v0, buf:[C
     :goto_3
-    invoke-virtual {v3, v0}, Ljava/io/InputStreamReader;->read([C)I
+    invoke-virtual {v3, v0}, Ljava/io/Reader;->read([C)I
 
     move-result v6
 

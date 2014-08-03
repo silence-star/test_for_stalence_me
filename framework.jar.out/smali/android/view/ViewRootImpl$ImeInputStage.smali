@@ -53,13 +53,13 @@
 
     const/4 v1, 0x1
 
-    invoke-virtual {p0, v0, v1}, Landroid/view/ViewRootImpl$ImeInputStage;->finish(Landroid/view/ViewRootImpl$QueuedInputEvent;Z)V
+    invoke-virtual {p0, v0, v1}, Landroid/view/ViewRootImpl$InputStage;->finish(Landroid/view/ViewRootImpl$QueuedInputEvent;Z)V
 
     :goto_0
     return-void
 
     :cond_0
-    invoke-virtual {p0, v0}, Landroid/view/ViewRootImpl$ImeInputStage;->forward(Landroid/view/ViewRootImpl$QueuedInputEvent;)V
+    invoke-virtual {p0, v0}, Landroid/view/ViewRootImpl$AsyncInputStage;->forward(Landroid/view/ViewRootImpl$QueuedInputEvent;)V
 
     goto :goto_0
 .end method
@@ -75,7 +75,7 @@
 
     iget-boolean v4, v4, Landroid/view/ViewRootImpl;->mLastWasImTarget:Z
 
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_3
 
     iget-object v4, p0, Landroid/view/ViewRootImpl$ImeInputStage;->this$0:Landroid/view/ViewRootImpl;
 
@@ -84,14 +84,14 @@
 
     move-result v4
 
-    if-nez v4, :cond_2
+    if-nez v4, :cond_3
 
     invoke-static {}, Landroid/view/inputmethod/InputMethodManager;->peekInstance()Landroid/view/inputmethod/InputMethodManager;
 
     move-result-object v1
 
     .local v1, imm:Landroid/view/inputmethod/InputMethodManager;
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
     iget-object v0, p1, Landroid/view/ViewRootImpl$QueuedInputEvent;->mEvent:Landroid/view/InputEvent;
 
@@ -107,14 +107,14 @@
     .local v2, result:I
     const/16 v4, 0x63
 
-    if-ne v2, v4, :cond_miui
+    if-ne v2, v4, :cond_0
 
     const/4 v3, 0x0
 
     return v3
 
-    :cond_miui
-    if-ne v2, v3, :cond_0
+    :cond_0
+    if-ne v2, v3, :cond_1
 
     .end local v0           #event:Landroid/view/InputEvent;
     .end local v1           #imm:Landroid/view/inputmethod/InputMethodManager;
@@ -125,14 +125,14 @@
     .restart local v0       #event:Landroid/view/InputEvent;
     .restart local v1       #imm:Landroid/view/inputmethod/InputMethodManager;
     .restart local v2       #result:I
-    :cond_0
-    if-nez v2, :cond_1
+    :cond_1
+    if-nez v2, :cond_2
 
     const/4 v3, 0x2
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
     const/4 v3, 0x3
 
     goto :goto_0
@@ -140,7 +140,7 @@
     .end local v0           #event:Landroid/view/InputEvent;
     .end local v1           #imm:Landroid/view/inputmethod/InputMethodManager;
     .end local v2           #result:I
-    :cond_2
+    :cond_3
     const/4 v3, 0x0
 
     goto :goto_0

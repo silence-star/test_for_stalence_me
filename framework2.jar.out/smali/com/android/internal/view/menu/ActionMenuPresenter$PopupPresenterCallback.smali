@@ -72,7 +72,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/internal/view/menu/ActionMenuPresenter$PopupPresenterCallback;->this$0:Lcom/android/internal/view/menu/ActionMenuPresenter;
 
-    invoke-virtual {v1}, Lcom/android/internal/view/menu/ActionMenuPresenter;->getCallback()Lcom/android/internal/view/menu/MenuPresenter$Callback;
+    invoke-virtual {v1}, Lcom/android/internal/view/menu/BaseMenuPresenter;->getCallback()Lcom/android/internal/view/menu/MenuPresenter$Callback;
 
     move-result-object v0
 
@@ -116,7 +116,7 @@
 
     iget-object v1, p0, Lcom/android/internal/view/menu/ActionMenuPresenter$PopupPresenterCallback;->this$0:Lcom/android/internal/view/menu/ActionMenuPresenter;
 
-    invoke-virtual {v1}, Lcom/android/internal/view/menu/ActionMenuPresenter;->getCallback()Lcom/android/internal/view/menu/MenuPresenter$Callback;
+    invoke-virtual {v1}, Lcom/android/internal/view/menu/BaseMenuPresenter;->getCallback()Lcom/android/internal/view/menu/MenuPresenter$Callback;
 
     move-result-object v0
 

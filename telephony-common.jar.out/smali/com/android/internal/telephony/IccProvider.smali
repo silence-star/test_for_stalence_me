@@ -629,7 +629,7 @@
     goto :goto_2
 
     :cond_6
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/IccProvider;->getContext()Landroid/content/Context;
+    invoke-virtual/range {p0 .. p0}, Landroid/content/ContentProvider;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -824,7 +824,7 @@
     move-result-object v8
 
     .local v8, resultUri:Landroid/net/Uri;
-    invoke-virtual {p0}, Lcom/android/internal/telephony/IccProvider;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/content/ContentProvider;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -1278,7 +1278,7 @@
     .restart local v9       #newEmails:[Ljava/lang/String;
     .restart local v10       #success:Z
     :cond_0
-    invoke-virtual {p0}, Lcom/android/internal/telephony/IccProvider;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/content/ContentProvider;->getContext()Landroid/content/Context;
 
     move-result-object v0
 

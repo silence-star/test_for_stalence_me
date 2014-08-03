@@ -67,13 +67,13 @@
 
     if-eqz v0, :cond_0
 
-    iget v0, p0, Lcom/android/server/pm/SharedUserSetting;->pkgFlags:I
+    iget v0, p0, Lcom/android/server/pm/GrantedPermissions;->pkgFlags:I
 
-    iget v1, p1, Lcom/android/server/pm/PackageSetting;->pkgFlags:I
+    iget v1, p1, Lcom/android/server/pm/GrantedPermissions;->pkgFlags:I
 
     or-int/2addr v0, v1
 
-    invoke-virtual {p0, v0}, Lcom/android/server/pm/SharedUserSetting;->setFlags(I)V
+    invoke-virtual {p0, v0}, Lcom/android/server/pm/GrantedPermissions;->setFlags(I)V
 
     :cond_0
     return-void
@@ -92,9 +92,9 @@
 
     if-eqz v3, :cond_1
 
-    iget v3, p0, Lcom/android/server/pm/SharedUserSetting;->pkgFlags:I
+    iget v3, p0, Lcom/android/server/pm/GrantedPermissions;->pkgFlags:I
 
-    iget v4, p1, Lcom/android/server/pm/PackageSetting;->pkgFlags:I
+    iget v4, p1, Lcom/android/server/pm/GrantedPermissions;->pkgFlags:I
 
     and-int/2addr v3, v4
 
@@ -124,7 +124,7 @@
     check-cast v2, Lcom/android/server/pm/PackageSetting;
 
     .local v2, ps:Lcom/android/server/pm/PackageSetting;
-    iget v3, v2, Lcom/android/server/pm/PackageSetting;->pkgFlags:I
+    iget v3, v2, Lcom/android/server/pm/GrantedPermissions;->pkgFlags:I
 
     or-int/2addr v0, v3
 
@@ -132,7 +132,7 @@
 
     .end local v2           #ps:Lcom/android/server/pm/PackageSetting;
     :cond_0
-    invoke-virtual {p0, v0}, Lcom/android/server/pm/SharedUserSetting;->setFlags(I)V
+    invoke-virtual {p0, v0}, Lcom/android/server/pm/GrantedPermissions;->setFlags(I)V
 
     .end local v0           #aggregatedFlags:I
     .end local v1           #i$:Ljava/util/Iterator;

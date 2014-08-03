@@ -459,7 +459,7 @@
 
     aget-object v1, v1, v0
 
-    invoke-virtual {v1}, Landroid/net/http/ConnectionThread;->start()V
+    invoke-virtual {v1}, Ljava/lang/Thread;->start()V
 
     add-int/lit8 v0, v0, 0x1
 

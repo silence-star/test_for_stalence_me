@@ -172,7 +172,7 @@
 
     move/from16 v1, v25
 
-    invoke-virtual {v0, v1}, Lcom/android/server/BluetoothManagerService$BluetoothHandler;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v20
 
@@ -196,7 +196,7 @@
 
     move-wide/from16 v2, v25
 
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/server/BluetoothManagerService$BluetoothHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     new-instance v10, Landroid/content/Intent;
 
@@ -263,7 +263,7 @@
 
     move/from16 v1, v25
 
-    invoke-virtual {v0, v1}, Lcom/android/server/BluetoothManagerService$BluetoothHandler;->removeMessages(I)V
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
     .end local v10           #i:Landroid/content/Intent;
     .end local v20           #timeoutMsg:Landroid/os/Message;
@@ -322,7 +322,7 @@
 
     move/from16 v1, v25
 
-    invoke-virtual {v0, v1}, Lcom/android/server/BluetoothManagerService$BluetoothHandler;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v18
 
@@ -363,7 +363,7 @@
 
     move-object/from16 v1, v18
 
-    invoke-virtual {v0, v1}, Lcom/android/server/BluetoothManagerService$BluetoothHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     goto :goto_1
 
@@ -387,7 +387,7 @@
 
     move-wide/from16 v2, v25
 
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/server/BluetoothManagerService$BluetoothHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -790,7 +790,7 @@
 
     move/from16 v1, v25
 
-    invoke-virtual {v0, v1}, Lcom/android/server/BluetoothManagerService$BluetoothHandler;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v17
 
@@ -860,7 +860,7 @@
 
     move-wide/from16 v2, v25
 
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/server/BluetoothManagerService$BluetoothHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     goto/16 :goto_4
 
@@ -934,7 +934,7 @@
 
     move/from16 v1, v25
 
-    invoke-virtual {v0, v1}, Lcom/android/server/BluetoothManagerService$BluetoothHandler;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v9
 
@@ -952,7 +952,7 @@
 
     move-object/from16 v0, v23
 
-    invoke-virtual {v0, v9}, Lcom/android/server/BluetoothManagerService$BluetoothHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v0, v9}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
     :try_end_c
     .catchall {:try_start_c .. :try_end_c} :catchall_2
 
@@ -1007,7 +1007,7 @@
 
     const/16 v24, 0x2a
 
-    invoke-virtual/range {v23 .. v24}, Lcom/android/server/BluetoothManagerService$BluetoothHandler;->removeMessages(I)V
+    invoke-virtual/range {v23 .. v24}, Landroid/os/Handler;->removeMessages(I)V
 
     move-object/from16 v0, p0
 
@@ -1071,7 +1071,7 @@
 
     const/16 v24, 0x2a
 
-    invoke-virtual/range {v23 .. v24}, Lcom/android/server/BluetoothManagerService$BluetoothHandler;->removeMessages(I)V
+    invoke-virtual/range {v23 .. v24}, Landroid/os/Handler;->removeMessages(I)V
 
     move-object/from16 v0, p0
 
@@ -1633,7 +1633,7 @@
 
     move/from16 v1, v25
 
-    invoke-virtual {v0, v1}, Lcom/android/server/BluetoothManagerService$BluetoothHandler;->removeMessages(I)V
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
     move-object/from16 v0, p0
 
@@ -1777,7 +1777,7 @@
 
     move/from16 v1, v25
 
-    invoke-virtual {v0, v1}, Lcom/android/server/BluetoothManagerService$BluetoothHandler;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v9
 
@@ -1795,7 +1795,7 @@
 
     move-object/from16 v0, v23
 
-    invoke-virtual {v0, v9}, Lcom/android/server/BluetoothManagerService$BluetoothHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v0, v9}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     move-object/from16 v0, p0
 
@@ -2574,7 +2574,7 @@
 
     const/16 v24, 0x2a
 
-    invoke-virtual/range {v23 .. v24}, Lcom/android/server/BluetoothManagerService$BluetoothHandler;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual/range {v23 .. v24}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v16
 
@@ -2598,7 +2598,7 @@
 
     move-wide/from16 v2, v24
 
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/server/BluetoothManagerService$BluetoothHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     .end local v16           #restartMsg:Landroid/os/Message;
     :cond_1e
@@ -2747,7 +2747,7 @@
 
     const/16 v24, 0x3c
 
-    invoke-virtual/range {v23 .. v24}, Lcom/android/server/BluetoothManagerService$BluetoothHandler;->removeMessages(I)V
+    invoke-virtual/range {v23 .. v24}, Landroid/os/Handler;->removeMessages(I)V
 
     move-object/from16 v0, p0
 
@@ -2979,7 +2979,7 @@
 
     const/16 v24, 0x12c
 
-    invoke-virtual/range {v23 .. v24}, Lcom/android/server/BluetoothManagerService$BluetoothHandler;->removeMessages(I)V
+    invoke-virtual/range {v23 .. v24}, Landroid/os/Handler;->removeMessages(I)V
 
     move-object/from16 v0, p0
 
@@ -3394,7 +3394,7 @@
 
     const/16 v24, 0x3c
 
-    invoke-virtual/range {v23 .. v24}, Lcom/android/server/BluetoothManagerService$BluetoothHandler;->removeMessages(I)V
+    invoke-virtual/range {v23 .. v24}, Landroid/os/Handler;->removeMessages(I)V
 
     move-object/from16 v0, p0
 
@@ -3507,7 +3507,7 @@
 
     const/16 v24, 0x12c
 
-    invoke-virtual/range {v23 .. v24}, Lcom/android/server/BluetoothManagerService$BluetoothHandler;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual/range {v23 .. v24}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v22
 
@@ -3545,7 +3545,7 @@
 
     move-wide/from16 v2, v24
 
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/server/BluetoothManagerService$BluetoothHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     const-string v23, "BluetoothManagerService"
 

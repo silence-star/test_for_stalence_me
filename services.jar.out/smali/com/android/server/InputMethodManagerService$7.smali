@@ -127,7 +127,7 @@
 
     iget-object v2, p0, Lcom/android/server/InputMethodManagerService$7;->val$adapter:Lcom/android/server/InputMethodManagerService$ImeSubtypeListAdapter;
 
-    invoke-virtual {v2}, Lcom/android/server/InputMethodManagerService$ImeSubtypeListAdapter;->notifyDataSetChanged()V
+    invoke-virtual {v2}, Landroid/widget/ArrayAdapter;->notifyDataSetChanged()V
 
     iget-object v2, p0, Lcom/android/server/InputMethodManagerService$7;->this$0:Lcom/android/server/InputMethodManagerService;
 

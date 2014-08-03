@@ -54,7 +54,7 @@
 
     iput-boolean v0, p0, Landroid/widget/RemoteViews$TextViewDrawableAction;->isRelative:Z
 
-    iput p2, p0, Landroid/widget/RemoteViews$TextViewDrawableAction;->viewId:I
+    iput p2, p0, Landroid/widget/RemoteViews$Action;->viewId:I
 
     iput-boolean p3, p0, Landroid/widget/RemoteViews$TextViewDrawableAction;->isRelative:Z
 
@@ -89,7 +89,7 @@
 
     move-result v1
 
-    iput v1, p0, Landroid/widget/RemoteViews$TextViewDrawableAction;->viewId:I
+    iput v1, p0, Landroid/widget/RemoteViews$Action;->viewId:I
 
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
@@ -138,7 +138,7 @@
     .parameter "handler"
 
     .prologue
-    iget v1, p0, Landroid/widget/RemoteViews$TextViewDrawableAction;->viewId:I
+    iget v1, p0, Landroid/widget/RemoteViews$Action;->viewId:I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -202,7 +202,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    iget v0, p0, Landroid/widget/RemoteViews$TextViewDrawableAction;->viewId:I
+    iget v0, p0, Landroid/widget/RemoteViews$Action;->viewId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 

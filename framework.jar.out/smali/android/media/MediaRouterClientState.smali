@@ -186,7 +186,7 @@
 
     iget-object v1, p0, Landroid/media/MediaRouterClientState;->routes:Ljava/util/ArrayList;
 
-    invoke-virtual {v1}, Ljava/util/ArrayList;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/util/AbstractCollection;->toString()Ljava/lang/String;
 
     move-result-object v1
 

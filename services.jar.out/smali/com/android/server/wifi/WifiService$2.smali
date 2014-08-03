@@ -63,7 +63,7 @@
 
     const v5, 0x26002
 
-    invoke-virtual {v4, v5}, Lcom/android/server/wifi/WifiController;->sendMessage(I)V
+    invoke-virtual {v4, v5}, Lcom/android/internal/util/StateMachine;->sendMessage(I)V
 
     :cond_0
     :goto_0
@@ -87,7 +87,7 @@
 
     const v5, 0x2600c
 
-    invoke-virtual {v4, v5}, Lcom/android/server/wifi/WifiController;->sendMessage(I)V
+    invoke-virtual {v4, v5}, Lcom/android/internal/util/StateMachine;->sendMessage(I)V
 
     goto :goto_0
 
@@ -109,7 +109,7 @@
 
     const v5, 0x26003
 
-    invoke-virtual {v4, v5}, Lcom/android/server/wifi/WifiController;->sendMessage(I)V
+    invoke-virtual {v4, v5}, Lcom/android/internal/util/StateMachine;->sendMessage(I)V
 
     goto :goto_0
 
@@ -140,7 +140,7 @@
 
     const/4 v7, 0x0
 
-    invoke-virtual {v4, v6, v2, v5, v7}, Lcom/android/server/wifi/WifiController;->sendMessage(IIILjava/lang/Object;)V
+    invoke-virtual {v4, v6, v2, v5, v7}, Lcom/android/internal/util/StateMachine;->sendMessage(IIILjava/lang/Object;)V
 
     goto :goto_0
 
@@ -200,7 +200,7 @@
     const/4 v4, 0x1
 
     :goto_1
-    invoke-virtual {v6, v7, v4, v5}, Lcom/android/server/wifi/WifiController;->sendMessage(III)V
+    invoke-virtual {v6, v7, v4, v5}, Lcom/android/internal/util/StateMachine;->sendMessage(III)V
 
     goto :goto_0
 

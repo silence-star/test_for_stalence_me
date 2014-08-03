@@ -194,7 +194,7 @@
 
     invoke-static {v0, v10, v8}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    invoke-virtual {v8}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v9
 

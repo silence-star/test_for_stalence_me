@@ -1378,7 +1378,7 @@
 
     iput-object v1, v0, Landroid/view/MotionEvent;->mNext:Landroid/view/MotionEvent;
 
-    invoke-virtual {v0}, Landroid/view/MotionEvent;->prepareForReuse()V
+    invoke-virtual {v0}, Landroid/view/InputEvent;->prepareForReuse()V
 
     goto :goto_0
 

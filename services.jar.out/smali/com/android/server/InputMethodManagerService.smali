@@ -542,7 +542,7 @@
 
     const/4 v4, 0x1
 
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/server/InputMethodManagerService$MyPackageMonitor;->register(Landroid/content/Context;Landroid/os/Looper;Landroid/os/UserHandle;Z)V
+    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/internal/content/PackageMonitor;->register(Landroid/content/Context;Landroid/os/Looper;Landroid/os/UserHandle;Z)V
 
     new-instance v0, Lcom/android/internal/inputmethod/InputMethodUtils$InputMethodSettings;
 
@@ -1322,7 +1322,7 @@
 
     move-result-object v11
 
-    iget-object v11, v11, Landroid/content/pm/ServiceInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v11, v11, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget v11, v11, Landroid/content/pm/ApplicationInfo;->flags:I
 
@@ -3276,7 +3276,7 @@
 
     move-object/from16 v0, v22
 
-    invoke-virtual {v11, v0}, Landroid/widget/Switch;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
+    invoke-virtual {v11, v0}, Landroid/widget/CompoundButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/InputMethodManagerService;->removeCustomTitle()V
 
@@ -3374,7 +3374,7 @@
 
     move-object/from16 v22, v0
 
-    invoke-virtual/range {v22 .. v22}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual/range {v22 .. v22}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v22
 
@@ -3392,7 +3392,7 @@
 
     move-object/from16 v22, v0
 
-    invoke-virtual/range {v22 .. v22}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual/range {v22 .. v22}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v22
 
@@ -3420,7 +3420,7 @@
 
     move-object/from16 v22, v0
 
-    invoke-virtual/range {v22 .. v22}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual/range {v22 .. v22}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v22
 
@@ -3845,13 +3845,13 @@
 
     move-object/from16 v0, v16
 
-    iget-object v0, v0, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    iget-object v0, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v17, v0
 
     move-object/from16 v0, v16
 
-    iget-object v0, v0, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
+    iget-object v0, v0, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     move-object/from16 v18, v0
 
@@ -6113,6 +6113,8 @@
 
     goto/16 :goto_1
 
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_0
@@ -6272,7 +6274,7 @@
 
     iget-object v0, p0, Lcom/android/server/InputMethodManagerService;->mSwitchingDialog:Landroid/app/AlertDialog;
 
-    invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
+    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
     iput-object v1, p0, Lcom/android/server/InputMethodManagerService;->mSwitchingDialog:Landroid/app/AlertDialog;
 

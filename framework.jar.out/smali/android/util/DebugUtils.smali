@@ -286,7 +286,7 @@
     move-exception v1
 
     .local v1, e:Ljava/lang/NoSuchMethodException;
-    invoke-virtual {v1}, Ljava/lang/NoSuchMethodException;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_2
 
@@ -295,7 +295,7 @@
     move-exception v1
 
     .local v1, e:Ljava/lang/IllegalAccessException;
-    invoke-virtual {v1}, Ljava/lang/IllegalAccessException;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_2
 
@@ -304,7 +304,7 @@
     move-exception v1
 
     .local v1, e:Ljava/lang/reflect/InvocationTargetException;
-    invoke-virtual {v1}, Ljava/lang/reflect/InvocationTargetException;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_2
 

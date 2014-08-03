@@ -85,7 +85,7 @@
     :cond_1
     iget-object v0, p0, Landroid/view/LayoutInflater$BlinkLayout$1;->this$0:Landroid/view/LayoutInflater$BlinkLayout;
 
-    invoke-virtual {v0}, Landroid/view/LayoutInflater$BlinkLayout;->invalidate()V
+    invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
     :goto_0
     return v1

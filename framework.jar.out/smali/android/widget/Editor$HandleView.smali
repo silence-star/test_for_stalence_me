@@ -131,7 +131,7 @@
 
     const/4 v3, 0x0
 
-    const v4, 0x10102c8
+    sget v4, Lcom/android/internal/R$attr;->textSelectHandleWindowStyle:I
 
     invoke-direct {v1, v2, v3, v4}, Landroid/widget/PopupWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -145,17 +145,12 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/PopupWindow;->setClippingEnabled(Z)V
 
-    sget-boolean v1, Landroid/util/PowerMoConfig;->WITHOUT_ALL:Z
-
-    if-eqz v1, :cond_0
-
     iget-object v1, p0, Landroid/widget/Editor$HandleView;->mContainer:Landroid/widget/PopupWindow;
 
     const/16 v2, 0x3ea
 
     invoke-virtual {v1, v2}, Landroid/widget/PopupWindow;->setWindowLayoutType(I)V
 
-    :goto_0
     iget-object v1, p0, Landroid/widget/Editor$HandleView;->mContainer:Landroid/widget/PopupWindow;
 
     invoke-virtual {v1, p0}, Landroid/widget/PopupWindow;->setContentView(Landroid/view/View;)V
@@ -190,16 +185,6 @@
     iput v1, p0, Landroid/widget/Editor$HandleView;->mIdealVerticalOffset:F
 
     return-void
-
-    .end local v0           #handleHeight:I
-    :cond_0
-    iget-object v1, p0, Landroid/widget/Editor$HandleView;->mContainer:Landroid/widget/PopupWindow;
-
-    const/16 v2, 0x514
-
-    invoke-virtual {v1, v2}, Landroid/widget/PopupWindow;->setWindowLayoutType(I)V
-
-    goto :goto_0
 .end method
 
 .method private addPositionToTouchUpFilter(I)V

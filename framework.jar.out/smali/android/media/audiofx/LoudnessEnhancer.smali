@@ -163,11 +163,11 @@
     new-array v1, v2, [I
 
     .local v1, value:[I
-    invoke-virtual {p0, v3, v1}, Landroid/media/audiofx/LoudnessEnhancer;->getParameter(I[I)I
+    invoke-virtual {p0, v3, v1}, Landroid/media/audiofx/AudioEffect;->getParameter(I[I)I
 
     move-result v2
 
-    invoke-virtual {p0, v2}, Landroid/media/audiofx/LoudnessEnhancer;->checkStatus(I)V
+    invoke-virtual {p0, v2}, Landroid/media/audiofx/AudioEffect;->checkStatus(I)V
 
     aget v2, v1, v3
 
@@ -194,11 +194,11 @@
     new-array v0, v1, [I
 
     .local v0, value:[I
-    invoke-virtual {p0, v2, v0}, Landroid/media/audiofx/LoudnessEnhancer;->getParameter(I[I)I
+    invoke-virtual {p0, v2, v0}, Landroid/media/audiofx/AudioEffect;->getParameter(I[I)I
 
     move-result v1
 
-    invoke-virtual {p0, v1}, Landroid/media/audiofx/LoudnessEnhancer;->checkStatus(I)V
+    invoke-virtual {p0, v1}, Landroid/media/audiofx/AudioEffect;->checkStatus(I)V
 
     aget v1, v0, v2
 
@@ -266,11 +266,11 @@
 
     iget v1, p1, Landroid/media/audiofx/LoudnessEnhancer$Settings;->targetGainmB:I
 
-    invoke-virtual {p0, v0, v1}, Landroid/media/audiofx/LoudnessEnhancer;->setParameter(II)I
+    invoke-virtual {p0, v0, v1}, Landroid/media/audiofx/AudioEffect;->setParameter(II)I
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Landroid/media/audiofx/LoudnessEnhancer;->checkStatus(I)V
+    invoke-virtual {p0, v0}, Landroid/media/audiofx/AudioEffect;->checkStatus(I)V
 
     return-void
 .end method
@@ -289,11 +289,11 @@
     .prologue
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0, p1}, Landroid/media/audiofx/LoudnessEnhancer;->setParameter(II)I
+    invoke-virtual {p0, v0, p1}, Landroid/media/audiofx/AudioEffect;->setParameter(II)I
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Landroid/media/audiofx/LoudnessEnhancer;->checkStatus(I)V
+    invoke-virtual {p0, v0}, Landroid/media/audiofx/AudioEffect;->checkStatus(I)V
 
     return-void
 .end method

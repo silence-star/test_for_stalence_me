@@ -55,7 +55,7 @@
     :try_start_0
     iget-object v3, p0, Lcom/android/server/am/AppNotRespondingDialog$1;->this$0:Lcom/android/server/am/AppNotRespondingDialog;
 
-    invoke-virtual {v3}, Lcom/android/server/am/AppNotRespondingDialog;->getContext()Landroid/content/Context;
+    invoke-virtual {v3}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v3
 
@@ -186,6 +186,8 @@
     invoke-static {v3, v4, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_1
+
+    nop
 
     nop
 

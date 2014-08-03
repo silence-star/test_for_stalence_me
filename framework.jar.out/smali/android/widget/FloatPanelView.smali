@@ -107,21 +107,21 @@
 
     const v11, 0x1020382
 
-    invoke-virtual {p0, v11}, Landroid/widget/FloatPanelView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v11}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v5
 
     .local v5, arrowUpView:Landroid/view/View;
     const v11, 0x1020383
 
-    invoke-virtual {p0, v11}, Landroid/widget/FloatPanelView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v11}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
     .local v1, arrowDownView:Landroid/view/View;
     const v11, 0x102037a
 
-    invoke-virtual {p0, v11}, Landroid/widget/FloatPanelView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v11}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -195,7 +195,7 @@
     sub-int v3, v11, v12
 
     .local v3, arrowPosX:I
-    invoke-virtual {v0}, Landroid/widget/LinearLayout;->getMeasuredHeight()I
+    invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v11
 
@@ -212,7 +212,7 @@
     .local v7, panelBgResId:I
     iget v11, p0, Landroid/widget/FloatPanelView;->mRoundCornerWidth:I
 
-    invoke-virtual {v0}, Landroid/widget/LinearLayout;->getLeft()I
+    invoke-virtual {v0}, Landroid/view/View;->getLeft()I
 
     move-result v12
 
@@ -222,7 +222,7 @@
 
     iget v11, p0, Landroid/widget/FloatPanelView;->mRoundCornerWidth:I
 
-    invoke-virtual {v0}, Landroid/widget/LinearLayout;->getLeft()I
+    invoke-virtual {v0}, Landroid/view/View;->getLeft()I
 
     move-result v12
 
@@ -249,29 +249,29 @@
 
     invoke-virtual {v9, v3, v4, v11, v12}, Landroid/view/View;->layout(IIII)V
 
-    invoke-virtual {v0}, Landroid/widget/LinearLayout;->getLeft()I
+    invoke-virtual {v0}, Landroid/view/View;->getLeft()I
 
     move-result v11
 
-    invoke-virtual {v0}, Landroid/widget/LinearLayout;->getLeft()I
+    invoke-virtual {v0}, Landroid/view/View;->getLeft()I
 
     move-result v12
 
-    invoke-virtual {v0}, Landroid/widget/LinearLayout;->getMeasuredWidth()I
+    invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v13
 
     add-int/2addr v12, v13
 
-    invoke-virtual {v0}, Landroid/widget/LinearLayout;->getMeasuredHeight()I
+    invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v13
 
     add-int/2addr v13, v8
 
-    invoke-virtual {v0, v11, v8, v12, v13}, Landroid/widget/LinearLayout;->layout(IIII)V
+    invoke-virtual {v0, v11, v8, v12, v13}, Landroid/view/ViewGroup;->layout(IIII)V
 
-    iget-object v11, p0, Landroid/widget/FloatPanelView;->mContext:Landroid/content/Context;
+    iget-object v11, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     invoke-virtual {v11}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -281,7 +281,7 @@
 
     move-result-object v11
 
-    invoke-virtual {v0, v11}, Landroid/widget/LinearLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, v11}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_0
 
@@ -339,7 +339,7 @@
     :cond_0
     iput-boolean p1, p0, Landroid/widget/FloatPanelView;->mOnTop:Z
 
-    invoke-virtual {p0}, Landroid/widget/FloatPanelView;->requestLayout()V
+    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
 
     goto :goto_0
 .end method
@@ -359,7 +359,7 @@
     :cond_0
     iput p1, p0, Landroid/widget/FloatPanelView;->mPos:I
 
-    invoke-virtual {p0}, Landroid/widget/FloatPanelView;->requestLayout()V
+    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
 
     goto :goto_0
 .end method

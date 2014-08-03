@@ -378,7 +378,7 @@
     invoke-direct {v1, v2}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
 
     .local v1, thread:Landroid/os/HandlerThread;
-    invoke-virtual {v1}, Landroid/os/HandlerThread;->start()V
+    invoke-virtual {v1}, Ljava/lang/Thread;->start()V
 
     new-instance v2, Landroid/os/Handler;
 
@@ -2243,7 +2243,7 @@
 
     move-result-object v9
 
-    invoke-virtual {v4, v9}, Lcom/android/server/net/NetworkIdentitySet;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v9}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     iget-object v9, v7, Landroid/net/NetworkState;->networkInfo:Landroid/net/NetworkInfo;
 
@@ -2663,7 +2663,7 @@
 
     const-string v15, "Forced poll"
 
-    invoke-virtual {v14, v15}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v14, v15}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     monitor-exit v16
 
@@ -2709,7 +2709,7 @@
 
     const-string v15, "Current files:"
 
-    invoke-virtual {v14, v15}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v14, v15}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     invoke-virtual {v14}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()V
 
@@ -2731,7 +2731,7 @@
     aget-object v5, v3, v7
 
     .local v5, file:Ljava/lang/String;
-    invoke-virtual {v14, v5}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v14, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     add-int/lit8 v7, v7, 0x1
 
@@ -2760,7 +2760,7 @@
     :try_start_1
     const-string v15, "Active interfaces:"
 
-    invoke-virtual {v14, v15}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v14, v15}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     invoke-virtual {v14}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()V
 
@@ -2804,19 +2804,19 @@
     .local v8, ident:Lcom/android/server/net/NetworkIdentitySet;
     const-string v15, "iface="
 
-    invoke-virtual {v14, v15}, Lcom/android/internal/util/IndentingPrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {v14, v15}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    invoke-virtual {v14, v9}, Lcom/android/internal/util/IndentingPrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {v14, v9}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v15, " ident="
 
-    invoke-virtual {v14, v15}, Lcom/android/internal/util/IndentingPrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {v14, v15}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    invoke-virtual {v8}, Lcom/android/server/net/NetworkIdentitySet;->toString()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/util/AbstractCollection;->toString()Ljava/lang/String;
 
     move-result-object v15
 
-    invoke-virtual {v14, v15}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v14, v15}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     goto :goto_7
 
@@ -2827,7 +2827,7 @@
 
     const-string v15, "Dev stats:"
 
-    invoke-virtual {v14, v15}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v14, v15}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     invoke-virtual {v14}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()V
 
@@ -2841,7 +2841,7 @@
 
     const-string v15, "Xt stats:"
 
-    invoke-virtual {v14, v15}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v14, v15}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     invoke-virtual {v14}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()V
 
@@ -2857,7 +2857,7 @@
 
     const-string v15, "UID stats:"
 
-    invoke-virtual {v14, v15}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v14, v15}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     invoke-virtual {v14}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()V
 
@@ -2874,7 +2874,7 @@
 
     const-string v15, "UID tag stats:"
 
-    invoke-virtual {v14, v15}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v14, v15}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     invoke-virtual {v14}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()V
 

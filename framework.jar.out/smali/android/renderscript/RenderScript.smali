@@ -543,7 +543,7 @@
 
     iget-object v1, v0, Landroid/renderscript/RenderScript;->mMessageThread:Landroid/renderscript/RenderScript$MessageThread;
 
-    invoke-virtual {v1}, Landroid/renderscript/RenderScript$MessageThread;->start()V
+    invoke-virtual {v1}, Ljava/lang/Thread;->start()V
 
     goto :goto_0
 .end method
@@ -626,7 +626,7 @@
     :try_start_0
     iget-object v0, p0, Landroid/renderscript/RenderScript;->mMessageThread:Landroid/renderscript/RenderScript$MessageThread;
 
-    invoke-virtual {v0}, Landroid/renderscript/RenderScript$MessageThread;->join()V
+    invoke-virtual {v0}, Ljava/lang/Thread;->join()V
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 

@@ -35,7 +35,7 @@
 
     iget-object v0, p0, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
 
-    invoke-virtual {v0, p1}, Lcom/android/server/wm/AppTokenList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     iput-object p2, p0, Lcom/android/server/wm/Task;->mStack:Lcom/android/server/wm/TaskStack;
 
@@ -54,7 +54,7 @@
     .prologue
     iget-object v0, p0, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
 
-    invoke-virtual {v0, p1, p2}, Lcom/android/server/wm/AppTokenList;->add(ILjava/lang/Object;)V
+    invoke-virtual {v0, p1, p2}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     return-void
 .end method
@@ -83,11 +83,11 @@
 
     iget-object v2, p0, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
 
-    invoke-virtual {v2, p1}, Lcom/android/server/wm/AppTokenList;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v2, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     iget-object v2, p0, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
 
-    invoke-virtual {v2}, Lcom/android/server/wm/AppTokenList;->size()I
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 

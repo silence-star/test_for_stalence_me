@@ -129,7 +129,7 @@
     .parameter "cursor"
 
     .prologue
-    invoke-virtual {p0}, Landroid/content/CursorLoader;->isReset()Z
+    invoke-virtual {p0}, Landroid/content/Loader;->isReset()Z
 
     move-result v1
 
@@ -149,13 +149,13 @@
     .local v0, oldCursor:Landroid/database/Cursor;
     iput-object p1, p0, Landroid/content/CursorLoader;->mCursor:Landroid/database/Cursor;
 
-    invoke-virtual {p0}, Landroid/content/CursorLoader;->isStarted()Z
+    invoke-virtual {p0}, Landroid/content/Loader;->isStarted()Z
 
     move-result v1
 
     if-eqz v1, :cond_2
 
-    invoke-super {p0, p1}, Landroid/content/AsyncTaskLoader;->deliverResult(Ljava/lang/Object;)V
+    invoke-super {p0, p1}, Landroid/content/Loader;->deliverResult(Ljava/lang/Object;)V
 
     :cond_2
     if-eqz v0, :cond_0
@@ -270,7 +270,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-boolean v0, p0, Landroid/content/CursorLoader;->mContentChanged:Z
+    iget-boolean v0, p0, Landroid/content/Loader;->mContentChanged:Z
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Z)V
 
@@ -329,7 +329,7 @@
     monitor-enter p0
 
     :try_start_0
-    invoke-virtual {p0}, Landroid/content/CursorLoader;->isLoadInBackgroundCanceled()Z
+    invoke-virtual {p0}, Landroid/content/AsyncTaskLoader;->isLoadInBackgroundCanceled()Z
 
     move-result v0
 
@@ -363,7 +363,7 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :try_start_2
-    invoke-virtual {p0}, Landroid/content/CursorLoader;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/content/Loader;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -515,7 +515,7 @@
     .locals 1
 
     .prologue
-    invoke-super {p0}, Landroid/content/AsyncTaskLoader;->onReset()V
+    invoke-super {p0}, Landroid/content/Loader;->onReset()V
 
     invoke-virtual {p0}, Landroid/content/CursorLoader;->onStopLoading()V
 
@@ -556,7 +556,7 @@
     invoke-virtual {p0, v0}, Landroid/content/CursorLoader;->deliverResult(Landroid/database/Cursor;)V
 
     :cond_0
-    invoke-virtual {p0}, Landroid/content/CursorLoader;->takeContentChanged()Z
+    invoke-virtual {p0}, Landroid/content/Loader;->takeContentChanged()Z
 
     move-result v0
 
@@ -567,7 +567,7 @@
     if-nez v0, :cond_2
 
     :cond_1
-    invoke-virtual {p0}, Landroid/content/CursorLoader;->forceLoad()V
+    invoke-virtual {p0}, Landroid/content/Loader;->forceLoad()V
 
     :cond_2
     return-void
@@ -577,7 +577,7 @@
     .locals 0
 
     .prologue
-    invoke-virtual {p0}, Landroid/content/CursorLoader;->cancelLoad()Z
+    invoke-virtual {p0}, Landroid/content/Loader;->cancelLoad()Z
 
     return-void
 .end method

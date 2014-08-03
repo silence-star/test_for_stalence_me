@@ -3,8 +3,8 @@
 .source "RestrictionsPinActivity.java"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
 .implements Landroid/text/TextWatcher;
+.implements Landroid/view/View$OnClickListener;
 .implements Landroid/widget/TextView$OnEditorActionListener;
 
 
@@ -84,7 +84,7 @@
     div-int/lit16 v2, v3, 0x3e8
 
     .local v2, seconds:I
-    invoke-virtual {p0}, Lcom/android/internal/app/RestrictionsPinActivity;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/ContextThemeWrapper;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
 
@@ -121,13 +121,13 @@
     .local v0, enableInput:Z
     iget-object v3, p0, Lcom/android/internal/app/RestrictionsPinActivity;->mPinErrorMessage:Landroid/widget/TextView;
 
-    invoke-virtual {v3, v6}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v3, v6}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v3, p0, Lcom/android/internal/app/RestrictionsPinActivity;->mPinText:Landroid/widget/EditText;
 
     const-string v4, ""
 
-    invoke-virtual {v3, v4}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     iget-object v3, p0, Lcom/android/internal/app/RestrictionsPinActivity;->mPinText:Landroid/widget/EditText;
 
@@ -141,12 +141,12 @@
 
     int-to-long v5, v5
 
-    invoke-virtual {v3, v4, v5, v6}, Landroid/widget/EditText;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v3, v4, v5, v6}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
 
     :goto_1
     iget-object v3, p0, Lcom/android/internal/app/RestrictionsPinActivity;->mPinText:Landroid/widget/EditText;
 
-    invoke-virtual {v3, v0}, Landroid/widget/EditText;->setEnabled(Z)V
+    invoke-virtual {v3, v0}, Landroid/widget/TextView;->setEnabled(Z)V
 
     invoke-virtual {p0, v0}, Lcom/android/internal/app/RestrictionsPinActivity;->setPositiveButtonState(Z)V
 
@@ -200,12 +200,12 @@
     .locals 4
 
     .prologue
-    iget-object v0, p0, Lcom/android/internal/app/RestrictionsPinActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
+    iget-object v0, p0, Lcom/android/internal/app/AlertActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
     .local v0, ap:Lcom/android/internal/app/AlertController$AlertParams;
     const v2, 0x10405e8
 
-    invoke-virtual {p0, v2}, Lcom/android/internal/app/RestrictionsPinActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
@@ -213,7 +213,7 @@
 
     const-string v2, "layout_inflater"
 
-    invoke-virtual {p0, v2}, Lcom/android/internal/app/RestrictionsPinActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0, v2}, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -280,15 +280,15 @@
 
     iget-object v2, p0, Lcom/android/internal/app/RestrictionsPinActivity;->mPinText:Landroid/widget/EditText;
 
-    invoke-virtual {v2, p0}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
+    invoke-virtual {v2, p0}, Landroid/widget/TextView;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
     iget-object v2, p0, Lcom/android/internal/app/RestrictionsPinActivity;->mOkButton:Landroid/widget/Button;
 
-    invoke-virtual {v2, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v2, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     iget-object v2, p0, Lcom/android/internal/app/RestrictionsPinActivity;->mCancelButton:Landroid/widget/Button;
 
-    invoke-virtual {v2, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v2, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     return-void
 .end method
@@ -315,9 +315,9 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/app/RestrictionsPinActivity;->setResult(I)V
+    invoke-virtual {p0, v0}, Landroid/app/Activity;->setResult(I)V
 
-    invoke-virtual {p0}, Lcom/android/internal/app/RestrictionsPinActivity;->finish()V
+    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
 
     goto :goto_0
 .end method
@@ -331,7 +331,7 @@
 
     const-string v0, "user"
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/app/RestrictionsPinActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -349,7 +349,7 @@
 
     invoke-virtual {p0}, Lcom/android/internal/app/RestrictionsPinActivity;->initUi()V
 
-    invoke-virtual {p0}, Lcom/android/internal/app/RestrictionsPinActivity;->setupAlert()V
+    invoke-virtual {p0}, Lcom/android/internal/app/AlertActivity;->setupAlert()V
 
     return-void
 .end method
@@ -374,7 +374,7 @@
     .prologue
     const/4 v3, -0x1
 
-    invoke-super {p0}, Lcom/android/internal/app/AlertActivity;->onResume()V
+    invoke-super {p0}, Landroid/app/Activity;->onResume()V
 
     const/4 v1, 0x0
 
@@ -393,11 +393,11 @@
 
     const/4 v2, 0x4
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v1, p0, Lcom/android/internal/app/RestrictionsPinActivity;->mPinText:Landroid/widget/EditText;
 
-    invoke-virtual {v1, p0}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
+    invoke-virtual {v1, p0}, Landroid/widget/TextView;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
 
     invoke-direct {p0, v3}, Lcom/android/internal/app/RestrictionsPinActivity;->updatePinTimer(I)Z
 
@@ -412,9 +412,9 @@
 
     if-eqz v1, :cond_0
 
-    invoke-virtual {p0, v3}, Lcom/android/internal/app/RestrictionsPinActivity;->setResult(I)V
+    invoke-virtual {p0, v3}, Landroid/app/Activity;->setResult(I)V
 
-    invoke-virtual {p0}, Lcom/android/internal/app/RestrictionsPinActivity;->finish()V
+    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
 
     goto :goto_0
 .end method
@@ -482,9 +482,9 @@
     .local v0, result:I
     if-ne v0, v3, :cond_1
 
-    invoke-virtual {p0, v3}, Lcom/android/internal/app/RestrictionsPinActivity;->setResult(I)V
+    invoke-virtual {p0, v3}, Landroid/app/Activity;->setResult(I)V
 
-    invoke-virtual {p0}, Lcom/android/internal/app/RestrictionsPinActivity;->finish()V
+    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
 
     :cond_0
     :goto_0
@@ -503,7 +503,7 @@
 
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
     invoke-direct {p0, v0}, Lcom/android/internal/app/RestrictionsPinActivity;->updatePinTimer(I)Z
 
@@ -511,7 +511,7 @@
 
     const-string v2, ""
 
-    invoke-virtual {v1, v2}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_0
 .end method
@@ -523,7 +523,7 @@
     .prologue
     iget-object v0, p0, Lcom/android/internal/app/RestrictionsPinActivity;->mOkButton:Landroid/widget/Button;
 
-    invoke-virtual {v0, p1}, Landroid/widget/Button;->setEnabled(Z)V
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setEnabled(Z)V
 
     return-void
 .end method

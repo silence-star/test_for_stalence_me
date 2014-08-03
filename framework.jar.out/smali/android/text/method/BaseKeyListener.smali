@@ -264,7 +264,7 @@
     .local v0, contentType:I
     sget-object v1, Landroid/text/method/BaseKeyListener$1;->$SwitchMap$android$text$method$TextKeyListener$Capitalize:[I
 
-    invoke-virtual {p0}, Landroid/text/method/TextKeyListener$Capitalize;->ordinal()I
+    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
 
     move-result v2
 

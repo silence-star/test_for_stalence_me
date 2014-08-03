@@ -99,7 +99,7 @@
 
     iget-object v0, p0, Lcom/android/server/am/StrictModeViolationDialog$1;->this$0:Lcom/android/server/am/StrictModeViolationDialog;
 
-    invoke-virtual {v0}, Lcom/android/server/am/StrictModeViolationDialog;->dismiss()V
+    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
     return-void
 

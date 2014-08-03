@@ -435,7 +435,7 @@
     .end local v3           #parser:Lorg/xmlpull/v1/XmlPullParser;
     :goto_3
     :try_start_2
-    invoke-virtual {v5}, Ljava/io/FileReader;->close()V
+    invoke-virtual {v5}, Ljava/io/InputStreamReader;->close()V
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
 

@@ -437,7 +437,7 @@
     monitor-enter p0
 
     :try_start_0
-    invoke-virtual {p0}, Lcom/android/server/Watchdog;->isAlive()Z
+    invoke-virtual {p0}, Ljava/lang/Thread;->isAlive()Z
 
     move-result v0
 
@@ -496,7 +496,7 @@
     monitor-enter p0
 
     :try_start_0
-    invoke-virtual {p0}, Lcom/android/server/Watchdog;->isAlive()Z
+    invoke-virtual {p0}, Ljava/lang/Thread;->isAlive()Z
 
     move-result v0
 
@@ -1029,9 +1029,9 @@
 
     move-object/from16 v1, v33
 
-    invoke-virtual {v0, v1}, Ljava/io/FileWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
-    invoke-virtual/range {v26 .. v26}, Ljava/io/FileWriter;->close()V
+    invoke-virtual/range {v26 .. v26}, Ljava/io/OutputStreamWriter;->close()V
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
 
@@ -1248,7 +1248,7 @@
 
     const-string v33, "Watchdog"
 
-    invoke-virtual {v10}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v10}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v34
 

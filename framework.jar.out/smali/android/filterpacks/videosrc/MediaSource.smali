@@ -963,7 +963,7 @@
 
     if-eqz v0, :cond_3
 
-    invoke-virtual {p0}, Landroid/filterpacks/videosrc/MediaSource;->isOpen()Z
+    invoke-virtual {p0}, Landroid/filterfw/core/Filter;->isOpen()Z
 
     move-result v0
 
@@ -1001,7 +1001,7 @@
 
     if-eqz v0, :cond_5
 
-    invoke-virtual {p0}, Landroid/filterpacks/videosrc/MediaSource;->isOpen()Z
+    invoke-virtual {p0}, Landroid/filterfw/core/Filter;->isOpen()Z
 
     move-result v0
 
@@ -1037,7 +1037,7 @@
 
     if-eqz v0, :cond_6
 
-    invoke-virtual {p0}, Landroid/filterpacks/videosrc/MediaSource;->isOpen()Z
+    invoke-virtual {p0}, Landroid/filterfw/core/Filter;->isOpen()Z
 
     move-result v0
 
@@ -1060,7 +1060,7 @@
 
     if-eqz v0, :cond_9
 
-    invoke-virtual {p0}, Landroid/filterpacks/videosrc/MediaSource;->isOpen()Z
+    invoke-virtual {p0}, Landroid/filterfw/core/Filter;->isOpen()Z
 
     move-result v0
 
@@ -1110,7 +1110,7 @@
 
     if-eqz v0, :cond_a
 
-    invoke-virtual {p0}, Landroid/filterpacks/videosrc/MediaSource;->isOpen()Z
+    invoke-virtual {p0}, Landroid/filterfw/core/Filter;->isOpen()Z
 
     move-result v0
 
@@ -1289,7 +1289,7 @@
     monitor-enter p0
 
     :try_start_0
-    invoke-virtual {p0}, Landroid/filterpacks/videosrc/MediaSource;->isOpen()Z
+    invoke-virtual {p0}, Landroid/filterfw/core/Filter;->isOpen()Z
 
     move-result v0
 
@@ -1421,7 +1421,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v3}, Landroid/filterpacks/videosrc/MediaSource;->closeOutputPort(Ljava/lang/String;)V
+    invoke-virtual {v0, v3}, Landroid/filterfw/core/Filter;->closeOutputPort(Ljava/lang/String;)V
 
     :goto_0
     return-void
@@ -1482,7 +1482,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v3}, Landroid/filterpacks/videosrc/MediaSource;->closeOutputPort(Ljava/lang/String;)V
+    invoke-virtual {v0, v3}, Landroid/filterfw/core/Filter;->closeOutputPort(Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -1589,7 +1589,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v3}, Landroid/filterpacks/videosrc/MediaSource;->closeOutputPort(Ljava/lang/String;)V
+    invoke-virtual {v0, v3}, Landroid/filterfw/core/Filter;->closeOutputPort(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -1925,7 +1925,7 @@
 
     iget-object v5, v0, Landroid/filterpacks/videosrc/MediaSource;->mMediaFrame:Landroid/filterfw/core/GLFrame;
 
-    invoke-virtual {v3, v5, v15}, Landroid/filterfw/core/ShaderProgram;->process(Landroid/filterfw/core/Frame;Landroid/filterfw/core/Frame;)V
+    invoke-virtual {v3, v5, v15}, Landroid/filterfw/core/Program;->process(Landroid/filterfw/core/Frame;Landroid/filterfw/core/Frame;)V
 
     move-object/from16 v0, p0
 
@@ -1987,7 +1987,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v3, v15}, Landroid/filterpacks/videosrc/MediaSource;->pushOutput(Ljava/lang/String;Landroid/filterfw/core/Frame;)V
+    invoke-virtual {v0, v3, v15}, Landroid/filterfw/core/Filter;->pushOutput(Ljava/lang/String;Landroid/filterfw/core/Frame;)V
 
     invoke-virtual {v15}, Landroid/filterfw/core/Frame;->release()Landroid/filterfw/core/Frame;
 
@@ -2072,7 +2072,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0, v0, v1}, Landroid/filterpacks/videosrc/MediaSource;->addOutputPort(Ljava/lang/String;Landroid/filterfw/core/FrameFormat;)V
+    invoke-virtual {p0, v0, v1}, Landroid/filterfw/core/Filter;->addOutputPort(Ljava/lang/String;Landroid/filterfw/core/FrameFormat;)V
 
     return-void
 .end method
@@ -2088,7 +2088,7 @@
 
     iget-object v0, p0, Landroid/filterpacks/videosrc/MediaSource;->mMediaFrame:Landroid/filterfw/core/GLFrame;
 
-    invoke-virtual {v0}, Landroid/filterfw/core/GLFrame;->release()Landroid/filterfw/core/Frame;
+    invoke-virtual {v0}, Landroid/filterfw/core/Frame;->release()Landroid/filterfw/core/Frame;
 
     :cond_0
     return-void

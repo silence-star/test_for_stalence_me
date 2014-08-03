@@ -80,7 +80,7 @@
 
     iget-object v1, p0, Landroid/speech/tts/FileSynthesisCallback;->mFileChannel:Ljava/nio/channels/FileChannel;
 
-    invoke-virtual {v1}, Ljava/nio/channels/FileChannel;->close()V
+    invoke-virtual {v1}, Ljava/nio/channels/spi/AbstractInterruptibleChannel;->close()V
 
     const/4 v1, 0x0
 
@@ -204,7 +204,7 @@
 
     invoke-virtual {v3, p4}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
-    invoke-virtual {v3}, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
+    invoke-virtual {v3}, Ljava/nio/Buffer;->flip()Ljava/nio/Buffer;
 
     return-object v3
 

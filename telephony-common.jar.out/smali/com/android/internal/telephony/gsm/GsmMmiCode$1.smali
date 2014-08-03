@@ -40,7 +40,7 @@
 
     sget-object v1, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->SS_CFU:Lcom/android/internal/telephony/gsm/SsData$ServiceType;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
@@ -56,7 +56,7 @@
 
     sget-object v1, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->SS_CF_BUSY:Lcom/android/internal/telephony/gsm/SsData$ServiceType;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
@@ -72,7 +72,7 @@
 
     sget-object v1, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->SS_CF_NO_REPLY:Lcom/android/internal/telephony/gsm/SsData$ServiceType;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
@@ -88,7 +88,7 @@
 
     sget-object v1, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->SS_CF_NOT_REACHABLE:Lcom/android/internal/telephony/gsm/SsData$ServiceType;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
@@ -104,7 +104,7 @@
 
     sget-object v1, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->SS_CF_ALL:Lcom/android/internal/telephony/gsm/SsData$ServiceType;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
@@ -120,7 +120,7 @@
 
     sget-object v1, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->SS_CF_ALL_CONDITIONAL:Lcom/android/internal/telephony/gsm/SsData$ServiceType;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
@@ -136,7 +136,7 @@
 
     sget-object v1, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->SS_CLIP:Lcom/android/internal/telephony/gsm/SsData$ServiceType;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
@@ -152,7 +152,7 @@
 
     sget-object v1, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->SS_CLIR:Lcom/android/internal/telephony/gsm/SsData$ServiceType;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
@@ -168,7 +168,7 @@
 
     sget-object v1, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->SS_WAIT:Lcom/android/internal/telephony/gsm/SsData$ServiceType;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
@@ -184,7 +184,7 @@
 
     sget-object v1, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->SS_BAOC:Lcom/android/internal/telephony/gsm/SsData$ServiceType;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
@@ -200,7 +200,7 @@
 
     sget-object v1, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->SS_BAOIC:Lcom/android/internal/telephony/gsm/SsData$ServiceType;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
@@ -216,7 +216,7 @@
 
     sget-object v1, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->SS_BAOIC_EXC_HOME:Lcom/android/internal/telephony/gsm/SsData$ServiceType;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
@@ -232,7 +232,7 @@
 
     sget-object v1, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->SS_BAIC:Lcom/android/internal/telephony/gsm/SsData$ServiceType;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
@@ -248,7 +248,7 @@
 
     sget-object v1, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->SS_BAIC_ROAMING:Lcom/android/internal/telephony/gsm/SsData$ServiceType;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
@@ -264,7 +264,7 @@
 
     sget-object v1, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->SS_ALL_BARRING:Lcom/android/internal/telephony/gsm/SsData$ServiceType;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
@@ -280,7 +280,7 @@
 
     sget-object v1, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->SS_OUTGOING_BARRING:Lcom/android/internal/telephony/gsm/SsData$ServiceType;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
@@ -296,7 +296,7 @@
 
     sget-object v1, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->SS_INCOMING_BARRING:Lcom/android/internal/telephony/gsm/SsData$ServiceType;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SsData$ServiceType;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
@@ -322,7 +322,7 @@
 
     sget-object v1, Lcom/android/internal/telephony/gsm/SsData$RequestType;->SS_ACTIVATION:Lcom/android/internal/telephony/gsm/SsData$RequestType;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SsData$RequestType;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
@@ -338,7 +338,7 @@
 
     sget-object v1, Lcom/android/internal/telephony/gsm/SsData$RequestType;->SS_DEACTIVATION:Lcom/android/internal/telephony/gsm/SsData$RequestType;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SsData$RequestType;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
@@ -354,7 +354,7 @@
 
     sget-object v1, Lcom/android/internal/telephony/gsm/SsData$RequestType;->SS_REGISTRATION:Lcom/android/internal/telephony/gsm/SsData$RequestType;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SsData$RequestType;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
@@ -370,7 +370,7 @@
 
     sget-object v1, Lcom/android/internal/telephony/gsm/SsData$RequestType;->SS_ERASURE:Lcom/android/internal/telephony/gsm/SsData$RequestType;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SsData$RequestType;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
@@ -386,7 +386,7 @@
 
     sget-object v1, Lcom/android/internal/telephony/gsm/SsData$RequestType;->SS_INTERROGATION:Lcom/android/internal/telephony/gsm/SsData$RequestType;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SsData$RequestType;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 

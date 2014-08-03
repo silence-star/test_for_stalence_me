@@ -50,7 +50,7 @@
     .prologue
     const/4 v0, 0x1
 
-    invoke-virtual {p1, v0}, Landroid/widget/SearchView$SearchAutoComplete;->useDropDownOriginStyle(Z)V
+    invoke-virtual {p1, v0}, Landroid/widget/AutoCompleteTextView;->useDropDownOriginStyle(Z)V
 
     return-void
 .end method

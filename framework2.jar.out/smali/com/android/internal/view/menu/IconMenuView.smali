@@ -237,13 +237,13 @@
 
     iput-object v1, p0, Lcom/android/internal/view/menu/IconMenuView;->mLayout:[I
 
-    invoke-virtual {p0, v3}, Lcom/android/internal/view/menu/IconMenuView;->setWillNotDraw(Z)V
+    invoke-virtual {p0, v3}, Landroid/view/View;->setWillNotDraw(Z)V
 
-    invoke-virtual {p0, v4}, Lcom/android/internal/view/menu/IconMenuView;->setFocusableInTouchMode(Z)V
+    invoke-virtual {p0, v4}, Landroid/view/View;->setFocusableInTouchMode(Z)V
 
     const/high16 v1, 0x4
 
-    invoke-virtual {p0, v1}, Lcom/android/internal/view/menu/IconMenuView;->setDescendantFocusability(I)V
+    invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->setDescendantFocusability(I)V
 
     return-void
 .end method
@@ -266,7 +266,7 @@
     iget v3, p0, Lcom/android/internal/view/menu/IconMenuView;->mMaxItemsPerRow:I
 
     .local v3, maxNumItemsPerRow:I
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/IconMenuView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v4
 
@@ -277,7 +277,7 @@
     :goto_0
     if-ge v1, v4, :cond_2
 
-    invoke-virtual {p0, v1}, Lcom/android/internal/view/menu/IconMenuView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
 
@@ -370,7 +370,7 @@
 
     .end local v2           #itemPos:I
     .restart local v1       #itemPos:I
-    invoke-virtual {p0, v2}, Lcom/android/internal/view/menu/IconMenuView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -423,7 +423,7 @@
     .parameter "width"
 
     .prologue
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/IconMenuView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v1
 
@@ -667,7 +667,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v9}, Lcom/android/internal/view/menu/IconMenuView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, v9}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
 
@@ -929,7 +929,7 @@
     .prologue
     iput-boolean p1, p0, Lcom/android/internal/view/menu/IconMenuView;->mLastChildrenCaptionMode:Z
 
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/IconMenuView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v1
 
@@ -939,7 +939,7 @@
     :goto_0
     if-ltz v0, :cond_0
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/view/menu/IconMenuView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -964,7 +964,7 @@
 
     if-nez p1, :cond_0
 
-    invoke-virtual {p0, p0}, Lcom/android/internal/view/menu/IconMenuView;->removeCallbacks(Ljava/lang/Runnable;)Z
+    invoke-virtual {p0, p0}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     invoke-direct {p0, v0}, Lcom/android/internal/view/menu/IconMenuView;->setChildrenCaptionMode(Z)V
 
@@ -997,7 +997,7 @@
     .locals 6
 
     .prologue
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/IconMenuView;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -1037,7 +1037,7 @@
 
     invoke-direct {v4, p0}, Lcom/android/internal/view/menu/IconMenuView$1;-><init>(Lcom/android/internal/view/menu/IconMenuView;)V
 
-    invoke-virtual {v2, v4}, Lcom/android/internal/view/menu/IconMenuItemView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v2, v4}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     return-object v2
 .end method
@@ -1069,7 +1069,7 @@
 
     if-nez v1, :cond_1
 
-    invoke-virtual {p0, p0}, Lcom/android/internal/view/menu/IconMenuView;->removeCallbacks(Ljava/lang/Runnable;)Z
+    invoke-virtual {p0, p0}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     invoke-static {}, Landroid/view/ViewConfiguration;->getLongPressTimeout()I
 
@@ -1077,7 +1077,7 @@
 
     int-to-long v0, v0
 
-    invoke-virtual {p0, p0, v0, v1}, Lcom/android/internal/view/menu/IconMenuView;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {p0, p0, v0, v1}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
 
     :cond_0
     :goto_0
@@ -1106,7 +1106,7 @@
     goto :goto_1
 
     :cond_2
-    invoke-virtual {p0, p0}, Lcom/android/internal/view/menu/IconMenuView;->removeCallbacks(Ljava/lang/Runnable;)Z
+    invoke-virtual {p0, p0}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     goto :goto_0
 .end method
@@ -1130,7 +1130,7 @@
     .prologue
     new-instance v0, Lcom/android/internal/view/menu/IconMenuView$LayoutParams;
 
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/IconMenuView;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -1149,7 +1149,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/IconMenuView;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -1247,7 +1247,7 @@
 
     iput-boolean v0, p0, Lcom/android/internal/view/menu/IconMenuView;->mHasStaleChildren:Z
 
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/IconMenuView;->requestLayout()V
+    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
 
     :cond_0
     return-void
@@ -1259,7 +1259,7 @@
     .prologue
     invoke-super {p0}, Landroid/view/ViewGroup;->onAttachedToWindow()V
 
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/IconMenuView;->requestFocus()Z
+    invoke-virtual {p0}, Landroid/view/View;->requestFocus()Z
 
     return-void
 .end method
@@ -1363,7 +1363,7 @@
     .parameter "b"
 
     .prologue
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/IconMenuView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v3
 
@@ -1373,7 +1373,7 @@
     :goto_0
     if-ltz v2, :cond_0
 
-    invoke-virtual {p0, v2}, Lcom/android/internal/view/menu/IconMenuView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -1442,15 +1442,15 @@
 
     move-result v3
 
-    invoke-virtual {p0, v2, v3}, Lcom/android/internal/view/menu/IconMenuView;->setMeasuredDimension(II)V
+    invoke-virtual {p0, v2, v3}, Landroid/view/View;->setMeasuredDimension(II)V
 
     if-lez v1, :cond_0
 
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/IconMenuView;->getMeasuredWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v3
 
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/IconMenuView;->getMeasuredHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v4
 
@@ -1470,15 +1470,15 @@
     check-cast v0, Lcom/android/internal/view/menu/IconMenuView$SavedState;
 
     .local v0, ss:Lcom/android/internal/view/menu/IconMenuView$SavedState;
-    invoke-virtual {v0}, Lcom/android/internal/view/menu/IconMenuView$SavedState;->getSuperState()Landroid/os/Parcelable;
+    invoke-virtual {v0}, Landroid/view/AbsSavedState;->getSuperState()Landroid/os/Parcelable;
 
     move-result-object v2
 
-    invoke-super {p0, v2}, Landroid/view/ViewGroup;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-super {p0, v2}, Landroid/view/View;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     iget v2, v0, Lcom/android/internal/view/menu/IconMenuView$SavedState;->focusedPosition:I
 
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/IconMenuView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v3
 
@@ -1491,7 +1491,7 @@
     :cond_1
     iget v2, v0, Lcom/android/internal/view/menu/IconMenuView$SavedState;->focusedPosition:I
 
-    invoke-virtual {p0, v2}, Lcom/android/internal/view/menu/IconMenuView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -1507,17 +1507,17 @@
     .locals 5
 
     .prologue
-    invoke-super {p0}, Landroid/view/ViewGroup;->onSaveInstanceState()Landroid/os/Parcelable;
+    invoke-super {p0}, Landroid/view/View;->onSaveInstanceState()Landroid/os/Parcelable;
 
     move-result-object v2
 
     .local v2, superState:Landroid/os/Parcelable;
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/IconMenuView;->getFocusedChild()Landroid/view/View;
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getFocusedChild()Landroid/view/View;
 
     move-result-object v0
 
     .local v0, focusedView:Landroid/view/View;
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/IconMenuView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v3
 
@@ -1527,7 +1527,7 @@
     :goto_0
     if-ltz v1, :cond_1
 
-    invoke-virtual {p0, v1}, Lcom/android/internal/view/menu/IconMenuView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
@@ -1567,7 +1567,7 @@
     invoke-direct {p0, v0}, Lcom/android/internal/view/menu/IconMenuView;->setCycleShortcutCaptionMode(Z)V
 
     :cond_0
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onWindowFocusChanged(Z)V
+    invoke-super {p0, p1}, Landroid/view/View;->onWindowFocusChanged(Z)V
 
     return-void
 .end method
@@ -1592,7 +1592,7 @@
     :goto_1
     const-wide/16 v0, 0x3e8
 
-    invoke-virtual {p0, p0, v0, v1}, Lcom/android/internal/view/menu/IconMenuView;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {p0, p0, v0, v1}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
 
     return-void
 

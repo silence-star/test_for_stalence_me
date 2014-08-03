@@ -87,12 +87,12 @@
     .prologue
     const/high16 v7, -0x8000
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/FaceUnlockView;->getSuggestedMinimumWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getSuggestedMinimumWidth()I
 
     move-result v2
 
     .local v2, minimumWidth:I
-    invoke-virtual {p0}, Lcom/android/internal/widget/FaceUnlockView;->getSuggestedMinimumHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getSuggestedMinimumHeight()I
 
     move-result v1
 

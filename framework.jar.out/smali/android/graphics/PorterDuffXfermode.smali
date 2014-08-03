@@ -23,7 +23,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/PorterDuffXfermode;->native_instance:I
+    iput v0, p0, Landroid/graphics/Xfermode;->native_instance:I
 
     return-void
 .end method

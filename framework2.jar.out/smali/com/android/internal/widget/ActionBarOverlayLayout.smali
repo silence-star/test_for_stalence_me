@@ -204,7 +204,7 @@
     .local v1, lp:Lcom/android/internal/widget/ActionBarOverlayLayout$LayoutParams;
     if-eqz p3, :cond_0
 
-    iget v2, v1, Lcom/android/internal/widget/ActionBarOverlayLayout$LayoutParams;->leftMargin:I
+    iget v2, v1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
     iget v3, p2, Landroid/graphics/Rect;->left:I
 
@@ -214,12 +214,12 @@
 
     iget v2, p2, Landroid/graphics/Rect;->left:I
 
-    iput v2, v1, Lcom/android/internal/widget/ActionBarOverlayLayout$LayoutParams;->leftMargin:I
+    iput v2, v1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
     :cond_0
     if-eqz p4, :cond_1
 
-    iget v2, v1, Lcom/android/internal/widget/ActionBarOverlayLayout$LayoutParams;->topMargin:I
+    iget v2, v1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     iget v3, p2, Landroid/graphics/Rect;->top:I
 
@@ -229,12 +229,12 @@
 
     iget v2, p2, Landroid/graphics/Rect;->top:I
 
-    iput v2, v1, Lcom/android/internal/widget/ActionBarOverlayLayout$LayoutParams;->topMargin:I
+    iput v2, v1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     :cond_1
     if-eqz p6, :cond_2
 
-    iget v2, v1, Lcom/android/internal/widget/ActionBarOverlayLayout$LayoutParams;->rightMargin:I
+    iget v2, v1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     iget v3, p2, Landroid/graphics/Rect;->right:I
 
@@ -244,12 +244,12 @@
 
     iget v2, p2, Landroid/graphics/Rect;->right:I
 
-    iput v2, v1, Lcom/android/internal/widget/ActionBarOverlayLayout$LayoutParams;->rightMargin:I
+    iput v2, v1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     :cond_2
     if-eqz p5, :cond_3
 
-    iget v2, v1, Lcom/android/internal/widget/ActionBarOverlayLayout$LayoutParams;->bottomMargin:I
+    iget v2, v1, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
     iget v3, p2, Landroid/graphics/Rect;->bottom:I
 
@@ -259,7 +259,7 @@
 
     iget v2, p2, Landroid/graphics/Rect;->bottom:I
 
-    iput v2, v1, Lcom/android/internal/widget/ActionBarOverlayLayout$LayoutParams;->bottomMargin:I
+    iput v2, v1, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
     :cond_3
     return v0
@@ -274,7 +274,7 @@
 
     const/4 v3, 0x0
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -308,7 +308,7 @@
     move v1, v2
 
     :goto_0
-    invoke-virtual {p0, v1}, Lcom/android/internal/widget/ActionBarOverlayLayout;->setWillNotDraw(Z)V
+    invoke-virtual {p0, v1}, Landroid/view/View;->setWillNotDraw(Z)V
 
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
@@ -357,7 +357,7 @@
     .prologue
     const/4 v1, 0x0
 
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->draw(Landroid/graphics/Canvas;)V
+    invoke-super {p0, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
     iget-object v2, p0, Lcom/android/internal/widget/ActionBarOverlayLayout;->mWindowContentOverlay:Landroid/graphics/drawable/Drawable;
 
@@ -369,7 +369,7 @@
 
     iget-object v2, p0, Lcom/android/internal/widget/ActionBarOverlayLayout;->mActionBarTop:Lcom/android/internal/widget/ActionBarContainer;
 
-    invoke-virtual {v2}, Lcom/android/internal/widget/ActionBarContainer;->getVisibility()I
+    invoke-virtual {v2}, Landroid/view/View;->getVisibility()I
 
     move-result v2
 
@@ -377,7 +377,7 @@
 
     iget-object v2, p0, Lcom/android/internal/widget/ActionBarOverlayLayout;->mActionBarTop:Lcom/android/internal/widget/ActionBarContainer;
 
-    invoke-virtual {v2}, Lcom/android/internal/widget/ActionBarContainer;->getBottom()I
+    invoke-virtual {v2}, Landroid/view/View;->getBottom()I
 
     move-result v2
 
@@ -385,7 +385,7 @@
 
     iget-object v3, p0, Lcom/android/internal/widget/ActionBarOverlayLayout;->mActionBarTop:Lcom/android/internal/widget/ActionBarContainer;
 
-    invoke-virtual {v3}, Lcom/android/internal/widget/ActionBarContainer;->getTranslationY()F
+    invoke-virtual {v3}, Landroid/view/View;->getTranslationY()F
 
     move-result v3
 
@@ -401,7 +401,7 @@
     :goto_0
     iget-object v2, p0, Lcom/android/internal/widget/ActionBarOverlayLayout;->mWindowContentOverlay:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v3
 
@@ -445,7 +445,7 @@
     .prologue
     invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->pullChildren()V
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->getWindowSystemUiVisibility()I
+    invoke-virtual {p0}, Landroid/view/View;->getWindowSystemUiVisibility()I
 
     move-result v9
 
@@ -510,7 +510,7 @@
 
     iget-object v1, p0, Lcom/android/internal/widget/ActionBarOverlayLayout;->mBaseContentInsets:Landroid/graphics/Rect;
 
-    invoke-virtual {p0, v0, v1}, Lcom/android/internal/widget/ActionBarOverlayLayout;->computeFitSystemWindows(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
+    invoke-virtual {p0, v0, v1}, Landroid/view/View;->computeFitSystemWindows(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
 
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarOverlayLayout;->mLastBaseContentInsets:Landroid/graphics/Rect;
 
@@ -533,7 +533,7 @@
     :cond_1
     if-eqz v7, :cond_2
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->requestLayout()V
+    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
 
     :cond_2
     const/4 v0, 0x1
@@ -603,7 +603,7 @@
     .prologue
     new-instance v0, Lcom/android/internal/widget/ActionBarOverlayLayout$LayoutParams;
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -729,33 +729,33 @@
     .parameter "bottom"
 
     .prologue
-    invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v3
 
     .local v3, count:I
-    invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->getPaddingLeft()I
+    invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v8
 
     .local v8, parentLeft:I
     sub-int v12, p4, p2
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->getPaddingRight()I
+    invoke-virtual {p0}, Landroid/view/View;->getPaddingRight()I
 
     move-result v13
 
     sub-int v9, v12, v13
 
     .local v9, parentRight:I
-    invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->getPaddingTop()I
+    invoke-virtual {p0}, Landroid/view/View;->getPaddingTop()I
 
     move-result v10
 
     .local v10, parentTop:I
     sub-int v12, p5, p3
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->getPaddingBottom()I
+    invoke-virtual {p0}, Landroid/view/View;->getPaddingBottom()I
 
     move-result v13
 
@@ -768,7 +768,7 @@
     :goto_0
     if-ge v5, v3, :cond_2
 
-    invoke-virtual {p0, v5}, Lcom/android/internal/widget/ActionBarOverlayLayout;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v5}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -798,7 +798,7 @@
     move-result v4
 
     .local v4, height:I
-    iget v12, v6, Lcom/android/internal/widget/ActionBarOverlayLayout$LayoutParams;->leftMargin:I
+    iget v12, v6, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
     add-int v1, v8, v12
 
@@ -809,7 +809,7 @@
 
     sub-int v12, v7, v4
 
-    iget v13, v6, Lcom/android/internal/widget/ActionBarOverlayLayout$LayoutParams;->bottomMargin:I
+    iget v13, v6, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
     sub-int v2, v12, v13
 
@@ -836,7 +836,7 @@
     .restart local v6       #lp:Lcom/android/internal/widget/ActionBarOverlayLayout$LayoutParams;
     .restart local v11       #width:I
     :cond_1
-    iget v12, v6, Lcom/android/internal/widget/ActionBarOverlayLayout$LayoutParams;->topMargin:I
+    iget v12, v6, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     add-int v2, v10, v12
 
@@ -890,13 +890,13 @@
 
     move/from16 v5, p2
 
-    invoke-virtual/range {v1 .. v6}, Lcom/android/internal/widget/ActionBarOverlayLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
+    invoke-virtual/range {v1 .. v6}, Landroid/view/ViewGroup;->measureChildWithMargins(Landroid/view/View;IIII)V
 
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/internal/widget/ActionBarOverlayLayout;->mActionBarTop:Lcom/android/internal/widget/ActionBarContainer;
 
-    invoke-virtual {v1}, Lcom/android/internal/widget/ActionBarContainer;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v10
 
@@ -907,15 +907,15 @@
 
     iget-object v1, v0, Lcom/android/internal/widget/ActionBarOverlayLayout;->mActionBarTop:Lcom/android/internal/widget/ActionBarContainer;
 
-    invoke-virtual {v1}, Lcom/android/internal/widget/ActionBarContainer;->getMeasuredWidth()I
+    invoke-virtual {v1}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
 
-    iget v2, v10, Lcom/android/internal/widget/ActionBarOverlayLayout$LayoutParams;->leftMargin:I
+    iget v2, v10, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
     add-int/2addr v1, v2
 
-    iget v2, v10, Lcom/android/internal/widget/ActionBarOverlayLayout$LayoutParams;->rightMargin:I
+    iget v2, v10, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     add-int/2addr v1, v2
 
@@ -927,15 +927,15 @@
 
     iget-object v1, v0, Lcom/android/internal/widget/ActionBarOverlayLayout;->mActionBarTop:Lcom/android/internal/widget/ActionBarContainer;
 
-    invoke-virtual {v1}, Lcom/android/internal/widget/ActionBarContainer;->getMeasuredHeight()I
+    invoke-virtual {v1}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v1
 
-    iget v2, v10, Lcom/android/internal/widget/ActionBarOverlayLayout$LayoutParams;->topMargin:I
+    iget v2, v10, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     add-int/2addr v1, v2
 
-    iget v2, v10, Lcom/android/internal/widget/ActionBarOverlayLayout$LayoutParams;->bottomMargin:I
+    iget v2, v10, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
     add-int/2addr v1, v2
 
@@ -947,7 +947,7 @@
 
     iget-object v1, v0, Lcom/android/internal/widget/ActionBarOverlayLayout;->mActionBarTop:Lcom/android/internal/widget/ActionBarContainer;
 
-    invoke-virtual {v1}, Lcom/android/internal/widget/ActionBarContainer;->getMeasuredState()I
+    invoke-virtual {v1}, Landroid/view/View;->getMeasuredState()I
 
     move-result v1
 
@@ -975,7 +975,7 @@
 
     move/from16 v5, p2
 
-    invoke-virtual/range {v1 .. v6}, Lcom/android/internal/widget/ActionBarOverlayLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
+    invoke-virtual/range {v1 .. v6}, Landroid/view/ViewGroup;->measureChildWithMargins(Landroid/view/View;IIII)V
 
     move-object/from16 v0, p0
 
@@ -997,11 +997,11 @@
 
     move-result v1
 
-    iget v2, v10, Lcom/android/internal/widget/ActionBarOverlayLayout$LayoutParams;->leftMargin:I
+    iget v2, v10, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
     add-int/2addr v1, v2
 
-    iget v2, v10, Lcom/android/internal/widget/ActionBarOverlayLayout$LayoutParams;->rightMargin:I
+    iget v2, v10, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     add-int/2addr v1, v2
 
@@ -1017,11 +1017,11 @@
 
     move-result v1
 
-    iget v2, v10, Lcom/android/internal/widget/ActionBarOverlayLayout$LayoutParams;->topMargin:I
+    iget v2, v10, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     add-int/2addr v1, v2
 
-    iget v2, v10, Lcom/android/internal/widget/ActionBarOverlayLayout$LayoutParams;->bottomMargin:I
+    iget v2, v10, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
     add-int/2addr v1, v2
 
@@ -1042,7 +1042,7 @@
     move-result v9
 
     :cond_0
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->getWindowSystemUiVisibility()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getWindowSystemUiVisibility()I
 
     move-result v16
 
@@ -1239,7 +1239,7 @@
 
     move/from16 v5, p2
 
-    invoke-virtual/range {v1 .. v6}, Lcom/android/internal/widget/ActionBarOverlayLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
+    invoke-virtual/range {v1 .. v6}, Landroid/view/ViewGroup;->measureChildWithMargins(Landroid/view/View;IIII)V
 
     move-object/from16 v0, p0
 
@@ -1261,11 +1261,11 @@
 
     move-result v1
 
-    iget v2, v10, Lcom/android/internal/widget/ActionBarOverlayLayout$LayoutParams;->leftMargin:I
+    iget v2, v10, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
     add-int/2addr v1, v2
 
-    iget v2, v10, Lcom/android/internal/widget/ActionBarOverlayLayout$LayoutParams;->rightMargin:I
+    iget v2, v10, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     add-int/2addr v1, v2
 
@@ -1281,11 +1281,11 @@
 
     move-result v1
 
-    iget v2, v10, Lcom/android/internal/widget/ActionBarOverlayLayout$LayoutParams;->topMargin:I
+    iget v2, v10, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     add-int/2addr v1, v2
 
-    iget v2, v10, Lcom/android/internal/widget/ActionBarOverlayLayout$LayoutParams;->bottomMargin:I
+    iget v2, v10, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
     add-int/2addr v1, v2
 
@@ -1305,11 +1305,11 @@
 
     move-result v9
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->getPaddingLeft()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v1
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->getPaddingRight()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingRight()I
 
     move-result v2
 
@@ -1317,11 +1317,11 @@
 
     add-int/2addr v12, v1
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->getPaddingTop()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingTop()I
 
     move-result v1
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->getPaddingBottom()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingBottom()I
 
     move-result v2
 
@@ -1329,7 +1329,7 @@
 
     add-int/2addr v11, v1
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->getSuggestedMinimumHeight()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getSuggestedMinimumHeight()I
 
     move-result v1
 
@@ -1337,7 +1337,7 @@
 
     move-result v11
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->getSuggestedMinimumWidth()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getSuggestedMinimumWidth()I
 
     move-result v1
 
@@ -1361,7 +1361,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v1, v2}, Lcom/android/internal/widget/ActionBarOverlayLayout;->setMeasuredDimension(II)V
+    invoke-virtual {v0, v1, v2}, Landroid/view/View;->setMeasuredDimension(II)V
 
     return-void
 
@@ -1377,7 +1377,7 @@
 
     iget-object v1, v0, Lcom/android/internal/widget/ActionBarOverlayLayout;->mActionBarTop:Lcom/android/internal/widget/ActionBarContainer;
 
-    invoke-virtual {v1}, Lcom/android/internal/widget/ActionBarContainer;->getVisibility()I
+    invoke-virtual {v1}, Landroid/view/View;->getVisibility()I
 
     move-result v1
 
@@ -1387,7 +1387,7 @@
 
     iget-object v1, v0, Lcom/android/internal/widget/ActionBarOverlayLayout;->mActionBarTop:Lcom/android/internal/widget/ActionBarContainer;
 
-    invoke-virtual {v1}, Lcom/android/internal/widget/ActionBarContainer;->getMeasuredHeight()I
+    invoke-virtual {v1}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v15
 
@@ -1437,7 +1437,7 @@
 
     const/4 v4, 0x1
 
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onWindowSystemUiVisibilityChanged(I)V
+    invoke-super {p0, p1}, Landroid/view/View;->onWindowSystemUiVisibilityChanged(I)V
 
     invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->pullChildren()V
 
@@ -1506,7 +1506,7 @@
 
     if-eqz v4, :cond_2
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->requestFitSystemWindows()V
+    invoke-virtual {p0}, Landroid/view/View;->requestFitSystemWindows()V
 
     :cond_2
     return-void
@@ -1550,7 +1550,7 @@
     .parameter "visibility"
 
     .prologue
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onWindowVisibilityChanged(I)V
+    invoke-super {p0, p1}, Landroid/view/View;->onWindowVisibilityChanged(I)V
 
     iput p1, p0, Lcom/android/internal/widget/ActionBarOverlayLayout;->mWindowVisibility:I
 
@@ -1576,7 +1576,7 @@
 
     const v0, 0x1020002
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -1584,7 +1584,7 @@
 
     const v0, 0x1020341
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -1594,7 +1594,7 @@
 
     const v0, 0x1020342
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -1604,7 +1604,7 @@
 
     const v0, 0x1020344
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -1621,7 +1621,7 @@
     .prologue
     iput-object p1, p0, Lcom/android/internal/widget/ActionBarOverlayLayout;->mActionBar:Lcom/android/internal/app/ActionBarImpl;
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->getWindowToken()Landroid/os/IBinder;
+    invoke-virtual {p0}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
 
     move-result-object v1
 
@@ -1642,7 +1642,7 @@
     .local v0, newVis:I
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->onWindowSystemUiVisibilityChanged(I)V
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->requestFitSystemWindows()V
+    invoke-virtual {p0}, Landroid/view/View;->requestFitSystemWindows()V
 
     .end local v0           #newVis:I
     :cond_0
@@ -1658,7 +1658,7 @@
 
     if-eqz p1, :cond_0
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -1692,7 +1692,7 @@
     .prologue
     if-eqz p1, :cond_1
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->getWindowSystemUiVisibility()I
+    invoke-virtual {p0}, Landroid/view/View;->getWindowSystemUiVisibility()I
 
     move-result v0
 
@@ -1704,7 +1704,7 @@
 
     const/4 v0, 0x4
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->setDisabledSystemUiVisibility(I)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setDisabledSystemUiVisibility(I)V
 
     :cond_0
     :goto_0
@@ -1713,7 +1713,7 @@
     :cond_1
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->setDisabledSystemUiVisibility(I)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setDisabledSystemUiVisibility(I)V
 
     goto :goto_0
 .end method

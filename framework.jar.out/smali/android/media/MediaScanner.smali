@@ -3918,7 +3918,7 @@
     .local v0, e:Lorg/xml/sax/SAXException;
     :goto_1
     :try_start_3
-    invoke-virtual {v0}, Lorg/xml/sax/SAXException;->printStackTrace()V
+    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
@@ -3950,7 +3950,7 @@
     .restart local v0       #e:Ljava/io/IOException;
     :goto_2
     :try_start_5
-    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 

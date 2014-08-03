@@ -60,7 +60,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {p0}, Landroid/view/Choreographer$FrameDisplayEventReceiver;->scheduleVsync()V
+    invoke-virtual {p0}, Landroid/view/DisplayEventReceiver;->scheduleVsync()V
 
     :goto_0
     return-void
@@ -160,7 +160,7 @@
 
     div-long v4, p1, v4
 
-    invoke-virtual {v3, v0, v4, v5}, Landroid/view/Choreographer$FrameHandler;->sendMessageAtTime(Landroid/os/Message;J)Z
+    invoke-virtual {v3, v0, v4, v5}, Landroid/os/Handler;->sendMessageAtTime(Landroid/os/Message;J)Z
 
     goto :goto_0
 

@@ -172,7 +172,7 @@
     .prologue
     const/4 v2, 0x0
 
-    iget-object v3, p0, Landroid/nfc/tech/Ndef;->mTag:Landroid/nfc/Tag;
+    iget-object v3, p0, Landroid/nfc/tech/BasicTagTechnology;->mTag:Landroid/nfc/Tag;
 
     invoke-virtual {v3}, Landroid/nfc/Tag;->getTagService()Landroid/nfc/INfcTag;
 
@@ -267,10 +267,10 @@
     .prologue
     const/4 v4, 0x0
 
-    invoke-virtual {p0}, Landroid/nfc/tech/Ndef;->checkConnected()V
+    invoke-virtual {p0}, Landroid/nfc/tech/BasicTagTechnology;->checkConnected()V
 
     :try_start_0
-    iget-object v5, p0, Landroid/nfc/tech/Ndef;->mTag:Landroid/nfc/Tag;
+    iget-object v5, p0, Landroid/nfc/tech/BasicTagTechnology;->mTag:Landroid/nfc/Tag;
 
     invoke-virtual {v5}, Landroid/nfc/Tag;->getTagService()Landroid/nfc/INfcTag;
 
@@ -310,7 +310,7 @@
     .restart local v3       #tagService:Landroid/nfc/INfcTag;
     :cond_1
     :try_start_1
-    iget-object v5, p0, Landroid/nfc/tech/Ndef;->mTag:Landroid/nfc/Tag;
+    iget-object v5, p0, Landroid/nfc/tech/BasicTagTechnology;->mTag:Landroid/nfc/Tag;
 
     invoke-virtual {v5}, Landroid/nfc/Tag;->getServiceHandle()I
 
@@ -459,10 +459,10 @@
     .prologue
     const/4 v3, 0x0
 
-    invoke-virtual {p0}, Landroid/nfc/tech/Ndef;->checkConnected()V
+    invoke-virtual {p0}, Landroid/nfc/tech/BasicTagTechnology;->checkConnected()V
 
     :try_start_0
-    iget-object v4, p0, Landroid/nfc/tech/Ndef;->mTag:Landroid/nfc/Tag;
+    iget-object v4, p0, Landroid/nfc/tech/BasicTagTechnology;->mTag:Landroid/nfc/Tag;
 
     invoke-virtual {v4}, Landroid/nfc/Tag;->getTagService()Landroid/nfc/INfcTag;
 
@@ -478,7 +478,7 @@
 
     .restart local v2       #tagService:Landroid/nfc/INfcTag;
     :cond_0
-    iget-object v4, p0, Landroid/nfc/tech/Ndef;->mTag:Landroid/nfc/Tag;
+    iget-object v4, p0, Landroid/nfc/tech/BasicTagTechnology;->mTag:Landroid/nfc/Tag;
 
     invoke-virtual {v4}, Landroid/nfc/Tag;->getServiceHandle()I
 
@@ -490,7 +490,7 @@
 
     if-eqz v4, :cond_1
 
-    iget-object v4, p0, Landroid/nfc/tech/Ndef;->mTag:Landroid/nfc/Tag;
+    iget-object v4, p0, Landroid/nfc/tech/BasicTagTechnology;->mTag:Landroid/nfc/Tag;
 
     invoke-virtual {v4}, Landroid/nfc/Tag;->getServiceHandle()I
 
@@ -588,10 +588,10 @@
     .end annotation
 
     .prologue
-    invoke-virtual {p0}, Landroid/nfc/tech/Ndef;->checkConnected()V
+    invoke-virtual {p0}, Landroid/nfc/tech/BasicTagTechnology;->checkConnected()V
 
     :try_start_0
-    iget-object v4, p0, Landroid/nfc/tech/Ndef;->mTag:Landroid/nfc/Tag;
+    iget-object v4, p0, Landroid/nfc/tech/BasicTagTechnology;->mTag:Landroid/nfc/Tag;
 
     invoke-virtual {v4}, Landroid/nfc/Tag;->getTagService()Landroid/nfc/INfcTag;
 
@@ -628,7 +628,7 @@
     .restart local v3       #tagService:Landroid/nfc/INfcTag;
     :cond_0
     :try_start_1
-    iget-object v4, p0, Landroid/nfc/tech/Ndef;->mTag:Landroid/nfc/Tag;
+    iget-object v4, p0, Landroid/nfc/tech/BasicTagTechnology;->mTag:Landroid/nfc/Tag;
 
     invoke-virtual {v4}, Landroid/nfc/Tag;->getServiceHandle()I
 

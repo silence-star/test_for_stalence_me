@@ -67,7 +67,7 @@
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Landroid/view/AccessibilityIterators$WordTextSegmentIterator;->mText:Ljava/lang/String;
+    iget-object v0, p0, Landroid/view/AccessibilityIterators$AbstractTextSegmentIterator;->mText:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
@@ -100,7 +100,7 @@
     .prologue
     if-ltz p1, :cond_0
 
-    iget-object v1, p0, Landroid/view/AccessibilityIterators$WordTextSegmentIterator;->mText:Ljava/lang/String;
+    iget-object v1, p0, Landroid/view/AccessibilityIterators$AbstractTextSegmentIterator;->mText:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
@@ -108,7 +108,7 @@
 
     if-ge p1, v1, :cond_0
 
-    iget-object v1, p0, Landroid/view/AccessibilityIterators$WordTextSegmentIterator;->mText:Ljava/lang/String;
+    iget-object v1, p0, Landroid/view/AccessibilityIterators$AbstractTextSegmentIterator;->mText:Ljava/lang/String;
 
     invoke-virtual {v1, p1}, Ljava/lang/String;->codePointAt(I)I
 
@@ -173,7 +173,7 @@
 
     const/4 v3, 0x0
 
-    iget-object v4, p0, Landroid/view/AccessibilityIterators$WordTextSegmentIterator;->mText:Ljava/lang/String;
+    iget-object v4, p0, Landroid/view/AccessibilityIterators$AbstractTextSegmentIterator;->mText:Ljava/lang/String;
 
     invoke-virtual {v4}, Ljava/lang/String;->length()I
 
@@ -187,7 +187,7 @@
     return-object v3
 
     :cond_1
-    iget-object v4, p0, Landroid/view/AccessibilityIterators$WordTextSegmentIterator;->mText:Ljava/lang/String;
+    iget-object v4, p0, Landroid/view/AccessibilityIterators$AbstractTextSegmentIterator;->mText:Ljava/lang/String;
 
     invoke-virtual {v4}, Ljava/lang/String;->length()I
 
@@ -215,7 +215,7 @@
 
     if-nez v4, :cond_3
 
-    iget-object v4, p0, Landroid/view/AccessibilityIterators$WordTextSegmentIterator;->mImpl:Ljava/text/BreakIterator;
+    iget-object v4, p0, Landroid/view/AccessibilityIterators$CharacterTextSegmentIterator;->mImpl:Ljava/text/BreakIterator;
 
     invoke-virtual {v4, v1}, Ljava/text/BreakIterator;->following(I)I
 
@@ -226,7 +226,7 @@
     goto :goto_0
 
     :cond_3
-    iget-object v4, p0, Landroid/view/AccessibilityIterators$WordTextSegmentIterator;->mImpl:Ljava/text/BreakIterator;
+    iget-object v4, p0, Landroid/view/AccessibilityIterators$CharacterTextSegmentIterator;->mImpl:Ljava/text/BreakIterator;
 
     invoke-virtual {v4, v1}, Ljava/text/BreakIterator;->following(I)I
 
@@ -241,7 +241,7 @@
 
     if-eqz v4, :cond_0
 
-    invoke-virtual {p0, v1, v0}, Landroid/view/AccessibilityIterators$WordTextSegmentIterator;->getRange(II)[I
+    invoke-virtual {p0, v1, v0}, Landroid/view/AccessibilityIterators$AbstractTextSegmentIterator;->getRange(II)[I
 
     move-result-object v3
 
@@ -257,7 +257,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Landroid/view/AccessibilityIterators$WordTextSegmentIterator;->mImpl:Ljava/text/BreakIterator;
+    iput-object v0, p0, Landroid/view/AccessibilityIterators$CharacterTextSegmentIterator;->mImpl:Ljava/text/BreakIterator;
 
     return-void
 .end method
@@ -271,7 +271,7 @@
 
     const/4 v3, 0x0
 
-    iget-object v4, p0, Landroid/view/AccessibilityIterators$WordTextSegmentIterator;->mText:Ljava/lang/String;
+    iget-object v4, p0, Landroid/view/AccessibilityIterators$AbstractTextSegmentIterator;->mText:Ljava/lang/String;
 
     invoke-virtual {v4}, Ljava/lang/String;->length()I
 
@@ -311,7 +311,7 @@
 
     if-nez v4, :cond_3
 
-    iget-object v4, p0, Landroid/view/AccessibilityIterators$WordTextSegmentIterator;->mImpl:Ljava/text/BreakIterator;
+    iget-object v4, p0, Landroid/view/AccessibilityIterators$CharacterTextSegmentIterator;->mImpl:Ljava/text/BreakIterator;
 
     invoke-virtual {v4, v0}, Ljava/text/BreakIterator;->preceding(I)I
 
@@ -322,7 +322,7 @@
     goto :goto_0
 
     :cond_3
-    iget-object v4, p0, Landroid/view/AccessibilityIterators$WordTextSegmentIterator;->mImpl:Ljava/text/BreakIterator;
+    iget-object v4, p0, Landroid/view/AccessibilityIterators$CharacterTextSegmentIterator;->mImpl:Ljava/text/BreakIterator;
 
     invoke-virtual {v4, v0}, Ljava/text/BreakIterator;->preceding(I)I
 
@@ -337,7 +337,7 @@
 
     if-eqz v4, :cond_0
 
-    invoke-virtual {p0, v1, v0}, Landroid/view/AccessibilityIterators$WordTextSegmentIterator;->getRange(II)[I
+    invoke-virtual {p0, v1, v0}, Landroid/view/AccessibilityIterators$AbstractTextSegmentIterator;->getRange(II)[I
 
     move-result-object v3
 

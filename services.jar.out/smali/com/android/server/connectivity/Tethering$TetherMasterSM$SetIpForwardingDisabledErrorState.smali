@@ -45,7 +45,7 @@
 
     const/16 v0, 0x8
 
-    invoke-virtual {p0, v0}, Lcom/android/server/connectivity/Tethering$TetherMasterSM$SetIpForwardingDisabledErrorState;->notify(I)V
+    invoke-virtual {p0, v0}, Lcom/android/server/connectivity/Tethering$TetherMasterSM$ErrorState;->notify(I)V
 
     return-void
 .end method

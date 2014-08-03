@@ -90,7 +90,7 @@
 
     const/16 v0, 0x12c
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/telephony/dataconnection/DcController;->setLogRecSize(I)V
+    invoke-virtual {p0, v0}, Lcom/android/internal/util/StateMachine;->setLogRecSize(I)V
 
     const-string v0, "E ctor"
 
@@ -102,11 +102,11 @@
 
     iget-object v0, p0, Lcom/android/internal/telephony/dataconnection/DcController;->mDccDefaultState:Lcom/android/internal/telephony/dataconnection/DcController$DccDefaultState;
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/telephony/dataconnection/DcController;->addState(Lcom/android/internal/util/State;)V
+    invoke-virtual {p0, v0}, Lcom/android/internal/util/StateMachine;->addState(Lcom/android/internal/util/State;)V
 
     iget-object v0, p0, Lcom/android/internal/telephony/dataconnection/DcController;->mDccDefaultState:Lcom/android/internal/telephony/dataconnection/DcController$DccDefaultState;
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/telephony/dataconnection/DcController;->setInitialState(Lcom/android/internal/util/State;)V
+    invoke-virtual {p0, v0}, Lcom/android/internal/util/StateMachine;->setInitialState(Lcom/android/internal/util/State;)V
 
     const-string v0, "X ctor"
 
@@ -182,7 +182,7 @@
     .parameter "s"
 
     .prologue
-    invoke-virtual {p0, p1}, Lcom/android/internal/telephony/dataconnection/DcController;->logAndAddLogRec(Ljava/lang/String;)V
+    invoke-virtual {p0, p1}, Lcom/android/internal/util/StateMachine;->logAndAddLogRec(Ljava/lang/String;)V
 
     return-void
 .end method
@@ -201,7 +201,7 @@
     invoke-direct {v0, v1, p0, p1, p2}, Lcom/android/internal/telephony/dataconnection/DcController;-><init>(Ljava/lang/String;Lcom/android/internal/telephony/PhoneBase;Lcom/android/internal/telephony/dataconnection/DcTrackerBase;Landroid/os/Handler;)V
 
     .local v0, dcc:Lcom/android/internal/telephony/dataconnection/DcController;
-    invoke-virtual {v0}, Lcom/android/internal/telephony/dataconnection/DcController;->start()V
+    invoke-virtual {v0}, Lcom/android/internal/util/StateMachine;->start()V
 
     return-object v0
 .end method
@@ -271,7 +271,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/dataconnection/DcController;->log(Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Lcom/android/internal/telephony/dataconnection/DcController;->quitNow()V
+    invoke-virtual {p0}, Lcom/android/internal/util/StateMachine;->quitNow()V
 
     return-void
 .end method
@@ -381,7 +381,7 @@
     .parameter "s"
 
     .prologue
-    invoke-virtual {p0}, Lcom/android/internal/telephony/dataconnection/DcController;->getName()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/android/internal/util/StateMachine;->getName()Ljava/lang/String;
 
     move-result-object v0
 
@@ -395,7 +395,7 @@
     .parameter "s"
 
     .prologue
-    invoke-virtual {p0}, Lcom/android/internal/telephony/dataconnection/DcController;->getName()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/android/internal/util/StateMachine;->getName()Ljava/lang/String;
 
     move-result-object v0
 

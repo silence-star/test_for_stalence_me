@@ -46,7 +46,7 @@
 
     iput p2, p0, Landroid/gesture/GestureStroke;->length:F
 
-    invoke-virtual {p3}, [F->clone()Ljava/lang/Object;
+    invoke-virtual {p3}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -54,7 +54,7 @@
 
     iput-object v0, p0, Landroid/gesture/GestureStroke;->points:[F
 
-    invoke-virtual {p4}, [J->clone()Ljava/lang/Object;
+    invoke-virtual {p4}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

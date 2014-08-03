@@ -530,7 +530,7 @@
     :try_start_0
     iget-object v3, p0, Landroid/media/SubtitleController;->mRenderers:Ljava/util/Vector;
 
-    invoke-virtual {v3}, Ljava/util/Vector;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v3}, Ljava/util/AbstractList;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
@@ -715,7 +715,7 @@
 
     iget-object v15, v0, Landroid/media/SubtitleController;->mTracks:Ljava/util/Vector;
 
-    invoke-virtual {v15}, Ljava/util/Vector;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v15}, Ljava/util/AbstractList;->iterator()Ljava/util/Iterator;
 
     move-result-object v6
 

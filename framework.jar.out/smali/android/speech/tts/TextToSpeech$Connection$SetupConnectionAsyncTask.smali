@@ -66,7 +66,7 @@
     monitor-enter v3
 
     :try_start_0
-    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeech$Connection$SetupConnectionAsyncTask;->isCancelled()Z
+    invoke-virtual {p0}, Landroid/os/AsyncTask;->isCancelled()Z
 
     move-result v2
 
@@ -117,7 +117,7 @@
     move-result-object v0
 
     .local v0, defaultLanguage:[Ljava/lang/String;
-    if-eqz v0, :cond_miui
+    if-eqz v0, :cond_1
 
     iget-object v2, p0, Landroid/speech/tts/TextToSpeech$Connection$SetupConnectionAsyncTask;->this$1:Landroid/speech/tts/TextToSpeech$Connection;
 
@@ -170,7 +170,7 @@
 
     invoke-virtual {v2, v4, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_miui
+    :cond_1
     const-string v2, "TextToSpeech"
 
     new-instance v4, Ljava/lang/StringBuilder;

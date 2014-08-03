@@ -385,7 +385,7 @@
 
     iget-object v0, p0, Landroid/content/pm/PackageParser$Package;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    iput-object p1, v0, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+    iput-object p1, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     iget-object v0, p0, Landroid/content/pm/PackageParser$Package;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
@@ -425,7 +425,7 @@
 
     check-cast v1, Landroid/content/pm/PackageParser$Activity;
 
-    iget-object v1, v1, Landroid/content/pm/PackageParser$Activity;->className:Ljava/lang/String;
+    iget-object v1, v1, Landroid/content/pm/PackageParser$Component;->className:Ljava/lang/String;
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -463,7 +463,7 @@
 
     check-cast v1, Landroid/content/pm/PackageParser$Activity;
 
-    iget-object v1, v1, Landroid/content/pm/PackageParser$Activity;->className:Ljava/lang/String;
+    iget-object v1, v1, Landroid/content/pm/PackageParser$Component;->className:Ljava/lang/String;
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -500,7 +500,7 @@
 
     check-cast v1, Landroid/content/pm/PackageParser$Provider;
 
-    iget-object v1, v1, Landroid/content/pm/PackageParser$Provider;->className:Ljava/lang/String;
+    iget-object v1, v1, Landroid/content/pm/PackageParser$Component;->className:Ljava/lang/String;
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -537,7 +537,7 @@
 
     check-cast v1, Landroid/content/pm/PackageParser$Service;
 
-    iget-object v1, v1, Landroid/content/pm/PackageParser$Service;->className:Ljava/lang/String;
+    iget-object v1, v1, Landroid/content/pm/PackageParser$Component;->className:Ljava/lang/String;
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -574,7 +574,7 @@
 
     check-cast v1, Landroid/content/pm/PackageParser$Instrumentation;
 
-    iget-object v1, v1, Landroid/content/pm/PackageParser$Instrumentation;->className:Ljava/lang/String;
+    iget-object v1, v1, Landroid/content/pm/PackageParser$Component;->className:Ljava/lang/String;
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -606,7 +606,7 @@
 
     iget-object v1, p0, Landroid/content/pm/PackageParser$Package;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    iput-object p1, v1, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+    iput-object p1, v1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     iget-object v1, p0, Landroid/content/pm/PackageParser$Package;->permissions:Ljava/util/ArrayList;
 

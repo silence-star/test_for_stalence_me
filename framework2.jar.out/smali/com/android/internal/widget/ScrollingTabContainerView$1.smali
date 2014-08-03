@@ -53,7 +53,7 @@
 
     iget-object v2, p0, Lcom/android/internal/widget/ScrollingTabContainerView$1;->this$0:Lcom/android/internal/widget/ScrollingTabContainerView;
 
-    invoke-virtual {v2}, Lcom/android/internal/widget/ScrollingTabContainerView;->getWidth()I
+    invoke-virtual {v2}, Landroid/view/View;->getWidth()I
 
     move-result v2
 
@@ -74,7 +74,7 @@
 
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v0, v2}, Lcom/android/internal/widget/ScrollingTabContainerView;->smoothScrollTo(II)V
+    invoke-virtual {v1, v0, v2}, Landroid/widget/HorizontalScrollView;->smoothScrollTo(II)V
 
     iget-object v1, p0, Lcom/android/internal/widget/ScrollingTabContainerView$1;->this$0:Lcom/android/internal/widget/ScrollingTabContainerView;
 

@@ -192,7 +192,7 @@
 
     const/4 v4, 0x0
 
-    invoke-virtual {p0, v5}, Lcom/android/server/am/ActiveServices$ServiceMap;->removeMessages(I)V
+    invoke-virtual {p0, v5}, Landroid/os/Handler;->removeMessages(I)V
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -396,12 +396,12 @@
 
     .local v12, when:J
     :goto_2
-    invoke-virtual {p0, v5}, Lcom/android/server/am/ActiveServices$ServiceMap;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {p0, v5}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v8
 
     .local v8, msg:Landroid/os/Message;
-    invoke-virtual {p0, v8, v12, v13}, Lcom/android/server/am/ActiveServices$ServiceMap;->sendMessageAtTime(Landroid/os/Message;J)Z
+    invoke-virtual {p0, v8, v12, v13}, Landroid/os/Handler;->sendMessageAtTime(Landroid/os/Message;J)Z
 
     .end local v8           #msg:Landroid/os/Message;
     .end local v9           #next:Lcom/android/server/am/ServiceRecord;

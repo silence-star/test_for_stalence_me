@@ -57,7 +57,7 @@
 
     iget-object v1, p0, Lcom/android/server/display/HeadlessDisplayAdapter$HeadlessDisplayDevice;->this$0:Lcom/android/server/display/HeadlessDisplayAdapter;
 
-    invoke-virtual {v1}, Lcom/android/server/display/HeadlessDisplayAdapter;->getContext()Landroid/content/Context;
+    invoke-virtual {v1}, Lcom/android/server/display/DisplayAdapter;->getContext()Landroid/content/Context;
 
     move-result-object v1
 

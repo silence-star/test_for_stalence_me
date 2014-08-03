@@ -123,7 +123,7 @@
 
     if-ne v0, p1, :cond_0
 
-    invoke-virtual {p0}, Landroid/content/AsyncTaskLoader;->rollbackContentChanged()V
+    invoke-virtual {p0}, Landroid/content/Loader;->rollbackContentChanged()V
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -135,7 +135,7 @@
 
     iput-object v0, p0, Landroid/content/AsyncTaskLoader;->mCancellingTask:Landroid/content/AsyncTaskLoader$LoadTask;
 
-    invoke-virtual {p0}, Landroid/content/AsyncTaskLoader;->deliverCancellation()V
+    invoke-virtual {p0}, Landroid/content/Loader;->deliverCancellation()V
 
     invoke-virtual {p0}, Landroid/content/AsyncTaskLoader;->executePendingTask()V
 
@@ -171,7 +171,7 @@
     return-void
 
     :cond_0
-    invoke-virtual {p0}, Landroid/content/AsyncTaskLoader;->isAbandoned()Z
+    invoke-virtual {p0}, Landroid/content/Loader;->isAbandoned()Z
 
     move-result v0
 
@@ -182,7 +182,7 @@
     goto :goto_0
 
     :cond_1
-    invoke-virtual {p0}, Landroid/content/AsyncTaskLoader;->commitContentChanged()V
+    invoke-virtual {p0}, Landroid/content/Loader;->commitContentChanged()V
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -194,7 +194,7 @@
 
     iput-object v0, p0, Landroid/content/AsyncTaskLoader;->mTask:Landroid/content/AsyncTaskLoader$LoadTask;
 
-    invoke-virtual {p0, p2}, Landroid/content/AsyncTaskLoader;->deliverResult(Ljava/lang/Object;)V
+    invoke-virtual {p0, p2}, Landroid/content/Loader;->deliverResult(Ljava/lang/Object;)V
 
     goto :goto_0
 .end method
@@ -383,7 +383,7 @@
 
     check-cast v2, [Ljava/lang/Void;
 
-    invoke-virtual {v3, v4, v2}, Landroid/content/AsyncTaskLoader$LoadTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v3, v4, v2}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
     goto :goto_0
 .end method
@@ -480,7 +480,7 @@
     :cond_3
     iget-object v1, p0, Landroid/content/AsyncTaskLoader;->mTask:Landroid/content/AsyncTaskLoader$LoadTask;
 
-    invoke-virtual {v1, v0}, Landroid/content/AsyncTaskLoader$LoadTask;->cancel(Z)Z
+    invoke-virtual {v1, v0}, Landroid/os/AsyncTask;->cancel(Z)Z
 
     move-result v0
 
@@ -521,7 +521,7 @@
     .local p0, this:Landroid/content/AsyncTaskLoader;,"Landroid/content/AsyncTaskLoader<TD;>;"
     invoke-super {p0}, Landroid/content/Loader;->onForceLoad()V
 
-    invoke-virtual {p0}, Landroid/content/AsyncTaskLoader;->cancelLoad()Z
+    invoke-virtual {p0}, Landroid/content/Loader;->cancelLoad()Z
 
     new-instance v0, Landroid/content/AsyncTaskLoader$LoadTask;
 

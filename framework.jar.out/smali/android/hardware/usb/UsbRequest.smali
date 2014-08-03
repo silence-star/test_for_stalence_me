@@ -118,7 +118,7 @@
 
     move-result v4
 
-    invoke-virtual {v3, v4}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {v3, v4}, Ljava/nio/Buffer;->position(I)Ljava/nio/Buffer;
 
     :cond_0
     const/4 v3, 0x0

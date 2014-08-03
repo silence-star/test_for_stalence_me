@@ -72,7 +72,7 @@
 
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v2}, Lcom/android/internal/policy/impl/BreathingLightCtrl$BreathLightHandler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/BreathingLightCtrl$BreathLightPointerEventListener;->this$0:Lcom/android/internal/policy/impl/BreathingLightCtrl;
 
@@ -85,7 +85,7 @@
 
     const-wide/16 v3, 0x64
 
-    invoke-virtual {v1, v2, v3, v4}, Lcom/android/internal/policy/impl/BreathingLightCtrl$BreathLightHandler;->sendEmptyMessageDelayed(IJ)Z
+    invoke-virtual {v1, v2, v3, v4}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
     goto :goto_0
 

@@ -122,17 +122,17 @@
     .end annotation
 
     .prologue
-    invoke-virtual {p0}, Landroid/nfc/tech/NdefFormatable;->checkConnected()V
+    invoke-virtual {p0}, Landroid/nfc/tech/BasicTagTechnology;->checkConnected()V
 
     :try_start_0
-    iget-object v4, p0, Landroid/nfc/tech/NdefFormatable;->mTag:Landroid/nfc/Tag;
+    iget-object v4, p0, Landroid/nfc/tech/BasicTagTechnology;->mTag:Landroid/nfc/Tag;
 
     invoke-virtual {v4}, Landroid/nfc/Tag;->getServiceHandle()I
 
     move-result v2
 
     .local v2, serviceHandle:I
-    iget-object v4, p0, Landroid/nfc/tech/NdefFormatable;->mTag:Landroid/nfc/Tag;
+    iget-object v4, p0, Landroid/nfc/tech/BasicTagTechnology;->mTag:Landroid/nfc/Tag;
 
     invoke-virtual {v4}, Landroid/nfc/Tag;->getTagService()Landroid/nfc/INfcTag;
 

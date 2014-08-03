@@ -1020,7 +1020,7 @@
     move-result v4
 
     :try_start_1
-    invoke-virtual {v5}, Ljava/io/DataInputStream;->close()V
+    invoke-virtual {v5}, Ljava/io/FilterInputStream;->close()V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_3
 
@@ -1056,7 +1056,7 @@
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     :try_start_3
-    invoke-virtual {v5}, Ljava/io/DataInputStream;->close()V
+    invoke-virtual {v5}, Ljava/io/FilterInputStream;->close()V
     :try_end_3
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
 
@@ -1072,7 +1072,7 @@
     move-exception v9
 
     :try_start_4
-    invoke-virtual {v5}, Ljava/io/DataInputStream;->close()V
+    invoke-virtual {v5}, Ljava/io/FilterInputStream;->close()V
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_4
 
@@ -1511,7 +1511,7 @@
 
     move-result-object v5
 
-    invoke-virtual {v15}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v15}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v6
 

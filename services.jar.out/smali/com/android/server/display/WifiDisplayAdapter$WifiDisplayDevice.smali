@@ -88,7 +88,7 @@
     iput-object v0, p0, Lcom/android/server/display/WifiDisplayAdapter$WifiDisplayDevice;->mSurface:Landroid/view/Surface;
 
     :cond_0
-    invoke-virtual {p0}, Lcom/android/server/display/WifiDisplayAdapter$WifiDisplayDevice;->getDisplayTokenLocked()Landroid/os/IBinder;
+    invoke-virtual {p0}, Lcom/android/server/display/DisplayDevice;->getDisplayTokenLocked()Landroid/os/IBinder;
 
     move-result-object v0
 
@@ -183,7 +183,7 @@
 
     iget-object v0, p0, Lcom/android/server/display/WifiDisplayAdapter$WifiDisplayDevice;->mSurface:Landroid/view/Surface;
 
-    invoke-virtual {p0, v0}, Lcom/android/server/display/WifiDisplayAdapter$WifiDisplayDevice;->setSurfaceInTransactionLocked(Landroid/view/Surface;)V
+    invoke-virtual {p0, v0}, Lcom/android/server/display/DisplayDevice;->setSurfaceInTransactionLocked(Landroid/view/Surface;)V
 
     :cond_0
     return-void

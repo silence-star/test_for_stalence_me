@@ -48,7 +48,7 @@
 
     iget-object v1, v1, Landroid/app/ListFragment;->mList:Landroid/widget/ListView;
 
-    invoke-virtual {v0, v1}, Landroid/widget/ListView;->focusableViewAvailable(Landroid/view/View;)V
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->focusableViewAvailable(Landroid/view/View;)V
 
     return-void
 .end method

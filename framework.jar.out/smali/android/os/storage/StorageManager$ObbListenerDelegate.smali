@@ -99,7 +99,7 @@
     :cond_0
     iget-object v0, p0, Landroid/os/storage/StorageManager$ObbListenerDelegate;->mObbEventListenerRef:Ljava/lang/ref/WeakReference;
 
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -123,7 +123,7 @@
     .local v0, e:Landroid/os/storage/StorageManager$ObbStateChangedStorageEvent;
     iget-object v1, p0, Landroid/os/storage/StorageManager$ObbListenerDelegate;->mHandler:Landroid/os/Handler;
 
-    invoke-virtual {v0}, Landroid/os/storage/StorageManager$ObbStateChangedStorageEvent;->getMessage()Landroid/os/Message;
+    invoke-virtual {v0}, Landroid/os/storage/StorageManager$StorageEvent;->getMessage()Landroid/os/Message;
 
     move-result-object v2
 

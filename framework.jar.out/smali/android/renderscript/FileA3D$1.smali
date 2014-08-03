@@ -38,7 +38,7 @@
 
     sget-object v1, Landroid/renderscript/FileA3D$EntryType;->MESH:Landroid/renderscript/FileA3D$EntryType;
 
-    invoke-virtual {v1}, Landroid/renderscript/FileA3D$EntryType;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 

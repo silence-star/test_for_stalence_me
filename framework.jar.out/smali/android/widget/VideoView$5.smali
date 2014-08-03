@@ -149,7 +149,7 @@
     :cond_2
     iget-object v2, p0, Landroid/widget/VideoView$5;->this$0:Landroid/widget/VideoView;
 
-    invoke-virtual {v2}, Landroid/widget/VideoView;->getWindowToken()Landroid/os/IBinder;
+    invoke-virtual {v2}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
 
     move-result-object v2
 
@@ -157,7 +157,7 @@
 
     iget-object v2, p0, Landroid/widget/VideoView$5;->this$0:Landroid/widget/VideoView;
 
-    #getter for: Landroid/widget/VideoView;->mContext:Landroid/content/Context;
+    #getter for: Landroid/view/View;->mContext:Landroid/content/Context;
     invoke-static {v2}, Landroid/widget/VideoView;->access$1700(Landroid/widget/VideoView;)Landroid/content/Context;
 
     move-result-object v2
@@ -179,7 +179,7 @@
 
     iget-object v3, p0, Landroid/widget/VideoView$5;->this$0:Landroid/widget/VideoView;
 
-    #getter for: Landroid/widget/VideoView;->mContext:Landroid/content/Context;
+    #getter for: Landroid/view/View;->mContext:Landroid/content/Context;
     invoke-static {v3}, Landroid/widget/VideoView;->access$1800(Landroid/widget/VideoView;)Landroid/content/Context;
 
     move-result-object v3

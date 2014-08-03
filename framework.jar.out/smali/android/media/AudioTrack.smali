@@ -966,7 +966,7 @@
     check-cast p0, Ljava/lang/ref/WeakReference;
 
     .end local p0
-    invoke-virtual {p0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     move-result-object v3
 

@@ -91,7 +91,7 @@
 
     sget-object v0, Landroid/os/UEventObserver;->sThread:Landroid/os/UEventObserver$UEventThread;
 
-    invoke-virtual {v0}, Landroid/os/UEventObserver$UEventThread;->start()V
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
     :cond_0
     sget-object v0, Landroid/os/UEventObserver;->sThread:Landroid/os/UEventObserver$UEventThread;

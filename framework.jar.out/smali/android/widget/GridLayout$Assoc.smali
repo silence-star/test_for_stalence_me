@@ -120,7 +120,7 @@
 
     .prologue
     .local p0, this:Landroid/widget/GridLayout$Assoc;,"Landroid/widget/GridLayout$Assoc<TK;TV;>;"
-    invoke-virtual {p0}, Landroid/widget/GridLayout$Assoc;->size()I
+    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
@@ -157,7 +157,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    invoke-virtual {p0, v1}, Landroid/widget/GridLayout$Assoc;->get(I)Ljava/lang/Object;
+    invoke-virtual {p0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
@@ -167,7 +167,7 @@
 
     aput-object v4, v2, v1
 
-    invoke-virtual {p0, v1}, Landroid/widget/GridLayout$Assoc;->get(I)Ljava/lang/Object;
+    invoke-virtual {p0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
@@ -209,7 +209,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Landroid/widget/GridLayout$Assoc;->add(Ljava/lang/Object;)Z
+    invoke-virtual {p0, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     return-void
 .end method

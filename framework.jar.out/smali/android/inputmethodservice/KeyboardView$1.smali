@@ -66,7 +66,7 @@
 
     const/4 v2, 0x4
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_0
 
@@ -89,7 +89,7 @@
     .local v0, repeat:Landroid/os/Message;
     const-wide/16 v1, 0x32
 
-    invoke-virtual {p0, v0, v1, v2}, Landroid/inputmethodservice/KeyboardView$1;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {p0, v0, v1, v2}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     goto :goto_0
 

@@ -720,7 +720,7 @@
 
     iget-object v0, p0, Landroid/media/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
 
-    invoke-virtual {v0}, Ljava/util/Stack;->isEmpty()Z
+    invoke-virtual {v0}, Ljava/util/Vector;->isEmpty()Z
 
     move-result v0
 
@@ -774,7 +774,7 @@
     .prologue
     iget-object v0, p0, Landroid/media/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
 
-    invoke-virtual {v0}, Ljava/util/Stack;->isEmpty()Z
+    invoke-virtual {v0}, Ljava/util/Vector;->isEmpty()Z
 
     move-result v0
 
@@ -946,7 +946,7 @@
     .prologue
     iget-object v4, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v4}, Ljava/util/Stack;->isEmpty()Z
+    invoke-virtual {v4}, Ljava/util/Vector;->isEmpty()Z
 
     move-result v4
 
@@ -954,7 +954,7 @@
 
     iget-object v4, p0, Landroid/media/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
 
-    invoke-virtual {v4}, Ljava/util/Stack;->isEmpty()Z
+    invoke-virtual {v4}, Ljava/util/Vector;->isEmpty()Z
 
     move-result v4
 
@@ -973,7 +973,7 @@
     :try_start_0
     iget-object v4, p0, Landroid/media/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
 
-    invoke-virtual {v4}, Ljava/util/Stack;->size()I
+    invoke-virtual {v4}, Ljava/util/Vector;->size()I
 
     move-result v4
 
@@ -985,7 +985,7 @@
 
     iget-object v4, p0, Landroid/media/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
 
-    invoke-virtual {v4, v3}, Ljava/util/Stack;->elementAt(I)Ljava/lang/Object;
+    invoke-virtual {v4, v3}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -1154,7 +1154,7 @@
     .local v1, oldTop:Landroid/media/MediaFocusControl$RemoteControlStackEntry;
     iget-object v5, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v5}, Ljava/util/Stack;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v5}, Ljava/util/AbstractList;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
 
@@ -1265,11 +1265,11 @@
 
     const/4 v11, 0x0
 
-    invoke-virtual {v7, v8, v9, v10, v11}, Landroid/media/MediaFocusControl$MediaEventHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v7, v8, v9, v10, v11}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v7
 
-    invoke-virtual {v5, v7}, Landroid/media/MediaFocusControl$MediaEventHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v5, v7}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     :cond_4
     :goto_2
@@ -1311,11 +1311,11 @@
 
     iget-object v11, v3, Landroid/media/MediaFocusControl$RemoteControlStackEntry;->mReceiverComponent:Landroid/content/ComponentName;
 
-    invoke-virtual {v7, v8, v9, v10, v11}, Landroid/media/MediaFocusControl$MediaEventHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v7, v8, v9, v10, v11}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v7
 
-    invoke-virtual {v5, v7}, Landroid/media/MediaFocusControl$MediaEventHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v5, v7}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
@@ -1345,11 +1345,11 @@
 
     const/4 v2, 0x1
 
-    invoke-virtual {v1, v2}, Landroid/media/MediaFocusControl$MediaEventHandler;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Landroid/media/MediaFocusControl$MediaEventHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     return-void
 
@@ -1491,7 +1491,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {v12}, Landroid/app/PendingIntent$CanceledException;->printStackTrace()V
+    invoke-virtual {v12}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_1
 
@@ -1659,7 +1659,7 @@
     :try_start_0
     iget-object v1, p0, Landroid/media/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
 
-    invoke-virtual {v1}, Ljava/util/Stack;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v1}, Ljava/util/AbstractList;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
@@ -1717,7 +1717,7 @@
     :try_start_0
     iget-object v2, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v2}, Ljava/util/Stack;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v2}, Ljava/util/AbstractList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
@@ -2256,7 +2256,7 @@
     :try_start_0
     iget-object v2, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v2}, Ljava/util/Stack;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v2}, Ljava/util/AbstractList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
@@ -2400,7 +2400,7 @@
     .prologue
     iget-object v3, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v3}, Ljava/util/Stack;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v3}, Ljava/util/AbstractList;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
@@ -3000,7 +3000,7 @@
     :try_start_0
     iget-object v3, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v3}, Ljava/util/Stack;->size()I
+    invoke-virtual {v3}, Ljava/util/Vector;->size()I
 
     move-result v3
 
@@ -3012,7 +3012,7 @@
 
     iget-object v3, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v3, v1}, Ljava/util/Stack;->elementAt(I)Ljava/lang/Object;
+    invoke-virtual {v3, v1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -3272,7 +3272,7 @@
     :try_start_0
     iget-object v3, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v3}, Ljava/util/Stack;->size()I
+    invoke-virtual {v3}, Ljava/util/Vector;->size()I
 
     move-result v3
 
@@ -3284,7 +3284,7 @@
 
     iget-object v3, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v3, v1}, Ljava/util/Stack;->elementAt(I)Ljava/lang/Object;
+    invoke-virtual {v3, v1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -3403,7 +3403,7 @@
     :try_start_1
     iget-object v4, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v4}, Ljava/util/Stack;->isEmpty()Z
+    invoke-virtual {v4}, Ljava/util/Vector;->isEmpty()Z
 
     move-result v4
 
@@ -3440,7 +3440,7 @@
     :try_start_3
     iget-object v4, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v4}, Ljava/util/Stack;->size()I
+    invoke-virtual {v4}, Ljava/util/Vector;->size()I
 
     move-result v4
 
@@ -3452,7 +3452,7 @@
 
     iget-object v4, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v4, v1}, Ljava/util/Stack;->elementAt(I)Ljava/lang/Object;
+    invoke-virtual {v4, v1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -3471,7 +3471,7 @@
 
     iget-object v4, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v4, v2}, Ljava/util/Stack;->remove(I)Ljava/lang/Object;
+    invoke-virtual {v4, v2}, Ljava/util/Vector;->remove(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -3873,7 +3873,7 @@
     :try_start_0
     iget-object v3, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v3}, Ljava/util/Stack;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v3}, Ljava/util/AbstractList;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
@@ -4198,7 +4198,7 @@
     :try_start_0
     iget-object v3, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v3}, Ljava/util/Stack;->size()I
+    invoke-virtual {v3}, Ljava/util/Vector;->size()I
 
     move-result v3
 
@@ -4210,7 +4210,7 @@
 
     iget-object v3, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v3, v1}, Ljava/util/Stack;->elementAt(I)Ljava/lang/Object;
+    invoke-virtual {v3, v1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -4668,7 +4668,7 @@
     .prologue
     iget-object v1, p0, Landroid/media/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
 
-    invoke-virtual {v1}, Ljava/util/Stack;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v1}, Ljava/util/AbstractList;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
@@ -4765,7 +4765,7 @@
     :try_start_0
     iget-object v5, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v5}, Ljava/util/Stack;->size()I
+    invoke-virtual {v5}, Ljava/util/Vector;->size()I
 
     move-result v5
 
@@ -4777,7 +4777,7 @@
 
     iget-object v5, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v5, v2}, Ljava/util/Stack;->elementAt(I)Ljava/lang/Object;
+    invoke-virtual {v5, v2}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
 
     move-result-object v5
 
@@ -4797,7 +4797,7 @@
 
     iget-object v5, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v5, v2}, Ljava/util/Stack;->removeElementAt(I)V
+    invoke-virtual {v5, v2}, Ljava/util/Vector;->removeElementAt(I)V
     :try_end_0
     .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -4825,11 +4825,11 @@
 
     iget-object v7, p0, Landroid/media/MediaFocusControl;->mEventHandler:Landroid/media/MediaFocusControl$MediaEventHandler;
 
-    invoke-virtual {v7, v6, v6, v6, p2}, Landroid/media/MediaFocusControl$MediaEventHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v7, v6, v6, v6, p2}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v6
 
-    invoke-virtual {v5, v6}, Landroid/media/MediaFocusControl$MediaEventHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v5, v6}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     :cond_4
     const/4 v5, 0x1
@@ -5021,7 +5021,7 @@
 
     iget-object v4, v0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v4}, Ljava/util/Stack;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v4}, Ljava/util/AbstractList;->iterator()Ljava/util/Iterator;
 
     move-result-object v14
 
@@ -5253,7 +5253,7 @@
     :cond_1
     iget-object v2, p0, Landroid/media/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
 
-    invoke-virtual {v2}, Ljava/util/Stack;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v2}, Ljava/util/AbstractList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
@@ -5315,7 +5315,7 @@
     .prologue
     iget-object v3, p0, Landroid/media/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
 
-    invoke-virtual {v3}, Ljava/util/Stack;->isEmpty()Z
+    invoke-virtual {v3}, Ljava/util/Vector;->isEmpty()Z
 
     move-result v3
 
@@ -5341,7 +5341,7 @@
     :goto_0
     iget-object v3, p0, Landroid/media/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
 
-    invoke-virtual {v3}, Ljava/util/Stack;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v3}, Ljava/util/AbstractList;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
@@ -5440,7 +5440,7 @@
     :try_start_0
     iget-object v3, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v3}, Ljava/util/Stack;->size()I
+    invoke-virtual {v3}, Ljava/util/Vector;->size()I
 
     move-result v3
 
@@ -5452,7 +5452,7 @@
 
     iget-object v3, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v3, v1}, Ljava/util/Stack;->elementAt(I)Ljava/lang/Object;
+    invoke-virtual {v3, v1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -5471,7 +5471,7 @@
 
     iget-object v3, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v3, v1}, Ljava/util/Stack;->removeElementAt(I)V
+    invoke-virtual {v3, v1}, Ljava/util/Vector;->removeElementAt(I)V
     :try_end_0
     .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -5593,7 +5593,7 @@
     :try_start_0
     iget-object v4, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v4}, Ljava/util/Stack;->size()I
+    invoke-virtual {v4}, Ljava/util/Vector;->size()I
 
     move-result v4
 
@@ -5605,7 +5605,7 @@
 
     iget-object v4, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v4, v1}, Ljava/util/Stack;->elementAt(I)Ljava/lang/Object;
+    invoke-virtual {v4, v1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -5694,7 +5694,7 @@
     .prologue
     iget-object v3, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v3}, Ljava/util/Stack;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v3}, Ljava/util/AbstractList;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
@@ -6242,11 +6242,11 @@
 
     const/4 v5, 0x0
 
-    invoke-virtual {v3, v4, v0, v5, v1}, Landroid/media/MediaFocusControl$MediaEventHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v3, v4, v0, v5, v1}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Landroid/media/MediaFocusControl$MediaEventHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v2, v3}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     goto :goto_0
 
@@ -6348,7 +6348,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {v0}, Ljava/util/ConcurrentModificationException;->printStackTrace()V
+    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_0
 .end method
@@ -6441,7 +6441,7 @@
     :try_start_0
     iget-object v6, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v6}, Ljava/util/Stack;->size()I
+    invoke-virtual {v6}, Ljava/util/Vector;->size()I
 
     move-result v6
 
@@ -6453,7 +6453,7 @@
 
     iget-object v6, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v6, v1}, Ljava/util/Stack;->elementAt(I)Ljava/lang/Object;
+    invoke-virtual {v6, v1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -7039,7 +7039,7 @@
     :try_start_1
     iget-object v6, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v6}, Ljava/util/Stack;->size()I
+    invoke-virtual {v6}, Ljava/util/Vector;->size()I
 
     move-result v6
 
@@ -7051,7 +7051,7 @@
 
     iget-object v6, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v6, v2}, Ljava/util/Stack;->elementAt(I)Ljava/lang/Object;
+    invoke-virtual {v6, v2}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
 
     move-result-object v5
 
@@ -7522,7 +7522,7 @@
 
     iget-object v6, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v6}, Ljava/util/Stack;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v6}, Ljava/util/AbstractList;->iterator()Ljava/util/Iterator;
 
     move-result-object v5
 
@@ -7667,7 +7667,7 @@
     :cond_2
     iget-object v6, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v6}, Ljava/util/Stack;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v6}, Ljava/util/AbstractList;->iterator()Ljava/util/Iterator;
 
     move-result-object v5
 
@@ -8317,7 +8317,7 @@
     :try_start_1
     iget-object v5, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v5}, Ljava/util/Stack;->size()I
+    invoke-virtual {v5}, Ljava/util/Vector;->size()I
 
     move-result v5
 
@@ -8329,7 +8329,7 @@
 
     iget-object v5, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v5, v1}, Ljava/util/Stack;->elementAt(I)Ljava/lang/Object;
+    invoke-virtual {v5, v1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -8609,7 +8609,7 @@
     :try_start_1
     iget-object v7, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v7}, Ljava/util/Stack;->size()I
+    invoke-virtual {v7}, Ljava/util/Vector;->size()I
 
     move-result v7
 
@@ -8621,7 +8621,7 @@
 
     iget-object v7, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v7, v1}, Ljava/util/Stack;->elementAt(I)Ljava/lang/Object;
+    invoke-virtual {v7, v1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -8662,7 +8662,7 @@
 
     iget-object v7, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v7}, Ljava/util/Stack;->size()I
+    invoke-virtual {v7}, Ljava/util/Vector;->size()I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_1 .. :try_end_1} :catch_0
@@ -8839,7 +8839,7 @@
     :try_start_1
     iget-object v6, p0, Landroid/media/MediaFocusControl;->mRCStack:Ljava/util/Stack;
 
-    invoke-virtual {v6}, Ljava/util/Stack;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v6}, Ljava/util/AbstractList;->iterator()Ljava/util/Iterator;
 
     move-result-object v5
 

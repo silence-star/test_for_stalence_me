@@ -62,7 +62,7 @@
 
     iput-object p2, p0, Landroid/app/Presentation;->mDisplay:Landroid/view/Display;
 
-    invoke-virtual {p0}, Landroid/app/Presentation;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -76,7 +76,7 @@
 
     iput-object v0, p0, Landroid/app/Presentation;->mDisplayManager:Landroid/hardware/display/DisplayManager;
 
-    invoke-virtual {p0}, Landroid/app/Presentation;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
@@ -84,7 +84,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->setGravity(I)V
 
-    invoke-virtual {p0, v2}, Landroid/app/Presentation;->setCanceledOnTouchOutside(Z)V
+    invoke-virtual {p0, v2}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
 
     return-void
 .end method
@@ -207,7 +207,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-virtual {p0}, Landroid/app/Presentation;->cancel()V
+    invoke-virtual {p0}, Landroid/app/Dialog;->cancel()V
 
     :cond_0
     return-void
@@ -219,7 +219,7 @@
     .prologue
     invoke-virtual {p0}, Landroid/app/Presentation;->onDisplayRemoved()V
 
-    invoke-virtual {p0}, Landroid/app/Presentation;->cancel()V
+    invoke-virtual {p0}, Landroid/app/Dialog;->cancel()V
 
     return-void
 .end method
@@ -267,7 +267,7 @@
     .locals 1
 
     .prologue
-    invoke-virtual {p0}, Landroid/app/Presentation;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v0
 

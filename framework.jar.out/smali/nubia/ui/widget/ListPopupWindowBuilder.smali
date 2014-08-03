@@ -193,11 +193,11 @@
 
     invoke-direct {v2, v4, v4}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
 
-    invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     const v2, 0x1080738
 
-    invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setBackgroundResource(I)V
+    invoke-virtual {v0, v2}, Landroid/view/View;->setBackgroundResource(I)V
 
     iput-object v0, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mLinearBezierContainer:Landroid/widget/LinearLayout;
 
@@ -205,7 +205,7 @@
 
     invoke-direct {v2, p0, p3}, Lnubia/ui/widget/ListPopupWindowBuilder$1;-><init>(Lnubia/ui/widget/ListPopupWindowBuilder;Landroid/widget/PopupWindow;)V
 
-    invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     new-instance v1, Landroid/widget/LinearLayout;
 
@@ -220,7 +220,7 @@
 
     invoke-direct {v2, v4, v3}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
 
-    invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v1, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     iput-object v1, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mContentContainer:Landroid/widget/LinearLayout;
 
@@ -346,25 +346,25 @@
 
     iget-object v4, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mBezierViewParams:Landroid/widget/LinearLayout$LayoutParams;
 
-    invoke-virtual {v2, v3, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v2, v3, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     iget-object v2, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mDropDownViewParams:Landroid/widget/LinearLayout$LayoutParams;
 
     const/4 v3, -0x1
 
-    invoke-virtual {v2, v5, v3, v5, v5}, Landroid/widget/LinearLayout$LayoutParams;->setMargins(IIII)V
+    invoke-virtual {v2, v5, v3, v5, v5}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
     iget-object v2, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mContentContainer:Landroid/widget/LinearLayout;
 
     iget-object v3, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mDropDownViewParams:Landroid/widget/LinearLayout$LayoutParams;
 
-    invoke-virtual {v2, p2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v2, p2, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     iget-object v2, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mContentContainer:Landroid/widget/LinearLayout;
 
     iget-object v3, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mLastDivider:Landroid/view/View;
 
-    invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+    invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     iget-object v2, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mContentContainer:Landroid/widget/LinearLayout;
 
@@ -372,7 +372,7 @@
 
     iget-object v4, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mBezierViewParams:Landroid/widget/LinearLayout$LayoutParams;
 
-    invoke-virtual {v2, v3, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v2, v3, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     if-eqz p3, :cond_0
 
@@ -390,7 +390,7 @@
 
     iget-object v4, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mContentParams:Landroid/widget/LinearLayout$LayoutParams;
 
-    invoke-virtual {v2, v3, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v2, v3, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     return-void
 
@@ -410,23 +410,23 @@
 
     const/16 v1, 0xa
 
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setId(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setId(I)V
 
     const/16 v0, 0xb
 
-    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->setId(I)V
+    invoke-virtual {p1, v0}, Landroid/view/View;->setId(I)V
 
     iget-object v0, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mBezierViewTop:Lnubia/ui/widget/BezierView;
 
     const/16 v1, 0x14
 
-    invoke-virtual {v0, v1}, Lnubia/ui/widget/BezierView;->setId(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setId(I)V
 
     iget-object v0, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mBezierViewBottom:Lnubia/ui/widget/BezierView;
 
     const/16 v1, 0x15
 
-    invoke-virtual {v0, v1}, Lnubia/ui/widget/BezierView;->setId(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setId(I)V
 
     return-void
 .end method
@@ -456,11 +456,11 @@
 
     iget-object v0, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mBezierViewTop:Lnubia/ui/widget/BezierView;
 
-    invoke-virtual {v0, v1}, Lnubia/ui/widget/BezierView;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v0, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mBezierViewBottom:Lnubia/ui/widget/BezierView;
 
-    invoke-virtual {v0, v2}, Lnubia/ui/widget/BezierView;->setVisibility(I)V
+    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v0, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mLastDivider:Landroid/view/View;
 
@@ -473,7 +473,7 @@
     :goto_0
     const/4 v0, -0x1
 
-    invoke-virtual {p2, v0}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
+    invoke-virtual {p2, v0}, Landroid/view/View;->setBackgroundColor(I)V
 
     iget-object v0, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mNubiaPWAnimation:Lnubia/ui/widget/ListPopupWindowAnimation;
 
@@ -501,11 +501,11 @@
     :cond_0
     iget-object v0, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mBezierViewTop:Lnubia/ui/widget/BezierView;
 
-    invoke-virtual {v0, v2}, Lnubia/ui/widget/BezierView;->setVisibility(I)V
+    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v0, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mBezierViewBottom:Lnubia/ui/widget/BezierView;
 
-    invoke-virtual {v0, v1}, Lnubia/ui/widget/BezierView;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v0, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mLastDivider:Landroid/view/View;
 
@@ -740,7 +740,7 @@
 
     iget-object v0, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mShowBezierView:Lnubia/ui/widget/BezierView;
 
-    invoke-virtual {v0}, Lnubia/ui/widget/BezierView;->invalidate()V
+    invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
     :cond_0
     return-void
@@ -808,11 +808,11 @@
 
     iget-object v1, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mBezierViewTop:Lnubia/ui/widget/BezierView;
 
-    invoke-virtual {v1, v2}, Lnubia/ui/widget/BezierView;->setVisibility(I)V
+    invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v1, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mBezierViewBottom:Lnubia/ui/widget/BezierView;
 
-    invoke-virtual {v1, v3}, Lnubia/ui/widget/BezierView;->setVisibility(I)V
+    invoke-virtual {v1, v3}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v1, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mLastDivider:Landroid/view/View;
 
@@ -835,7 +835,7 @@
 
     iget-object v1, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mLinearBezierContainer:Landroid/widget/LinearLayout;
 
-    invoke-virtual {v1}, Landroid/widget/LinearLayout;->removeAllViews()V
+    invoke-virtual {v1}, Landroid/view/ViewGroup;->removeAllViews()V
 
     iget-object v1, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mLinearBezierContainer:Landroid/widget/LinearLayout;
 
@@ -843,7 +843,7 @@
 
     iget-object v3, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mContentParams:Landroid/widget/LinearLayout$LayoutParams;
 
-    invoke-virtual {v1, v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v1, v2, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     iget-object v1, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mNubiaPWAnimation:Lnubia/ui/widget/ListPopupWindowAnimation;
 
@@ -865,11 +865,11 @@
     :cond_1
     iget-object v1, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mBezierViewTop:Lnubia/ui/widget/BezierView;
 
-    invoke-virtual {v1, v3}, Lnubia/ui/widget/BezierView;->setVisibility(I)V
+    invoke-virtual {v1, v3}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v1, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mBezierViewBottom:Lnubia/ui/widget/BezierView;
 
-    invoke-virtual {v1, v2}, Lnubia/ui/widget/BezierView;->setVisibility(I)V
+    invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v1, p0, Lnubia/ui/widget/ListPopupWindowBuilder;->mLastDivider:Landroid/view/View;
 

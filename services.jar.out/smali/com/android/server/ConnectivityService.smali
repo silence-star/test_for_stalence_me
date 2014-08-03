@@ -753,7 +753,7 @@
     invoke-direct {v14, v2}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
 
     .local v14, handlerThread:Landroid/os/HandlerThread;
-    invoke-virtual {v14}, Landroid/os/HandlerThread;->start()V
+    invoke-virtual {v14}, Ljava/lang/Thread;->start()V
 
     new-instance v2, Lcom/android/server/ConnectivityService$InternalHandler;
 
@@ -1173,7 +1173,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v12}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
+    invoke-virtual {v12}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -2097,7 +2097,7 @@
 
     iget-object v6, v0, Lcom/android/server/ConnectivityService;->mHandler:Lcom/android/server/ConnectivityService$InternalHandler;
 
-    invoke-virtual {v6}, Lcom/android/server/ConnectivityService$InternalHandler;->getLooper()Landroid/os/Looper;
+    invoke-virtual {v6}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
 
     move-result-object v7
 
@@ -3627,7 +3627,7 @@
     if-eqz v4, :cond_1
 
     :try_start_2
-    invoke-virtual {v4}, Ljava/io/FileReader;->close()V
+    invoke-virtual {v4}, Ljava/io/InputStreamReader;->close()V
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_6
 
@@ -3727,7 +3727,7 @@
     if-eqz v4, :cond_4
 
     :try_start_5
-    invoke-virtual {v4}, Ljava/io/FileReader;->close()V
+    invoke-virtual {v4}, Ljava/io/InputStreamReader;->close()V
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_7
 
@@ -3796,7 +3796,7 @@
     if-eqz v3, :cond_2
 
     :try_start_8
-    invoke-virtual {v3}, Ljava/io/FileReader;->close()V
+    invoke-virtual {v3}, Ljava/io/InputStreamReader;->close()V
     :try_end_8
     .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_2
 
@@ -3839,7 +3839,7 @@
     if-eqz v3, :cond_2
 
     :try_start_a
-    invoke-virtual {v3}, Ljava/io/FileReader;->close()V
+    invoke-virtual {v3}, Ljava/io/InputStreamReader;->close()V
     :try_end_a
     .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_2
 
@@ -3877,7 +3877,7 @@
     if-eqz v3, :cond_2
 
     :try_start_c
-    invoke-virtual {v3}, Ljava/io/FileReader;->close()V
+    invoke-virtual {v3}, Ljava/io/InputStreamReader;->close()V
     :try_end_c
     .catch Ljava/io/IOException; {:try_start_c .. :try_end_c} :catch_2
 
@@ -3891,7 +3891,7 @@
     if-eqz v3, :cond_5
 
     :try_start_d
-    invoke-virtual {v3}, Ljava/io/FileReader;->close()V
+    invoke-virtual {v3}, Ljava/io/InputStreamReader;->close()V
     :try_end_d
     .catch Ljava/io/IOException; {:try_start_d .. :try_end_d} :catch_5
 
@@ -4455,13 +4455,13 @@
 
     const/4 v9, 0x0
 
-    invoke-virtual {v6, v7, v8, v9}, Lcom/android/server/ConnectivityService$InternalHandler;->obtainMessage(III)Landroid/os/Message;
+    invoke-virtual {v6, v7, v8, v9}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v6
 
     const-wide/16 v7, 0x3e8
 
-    invoke-virtual {v5, v6, v7, v8}, Lcom/android/server/ConnectivityService$InternalHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v5, v6, v7, v8}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     :cond_3
     monitor-exit p0
@@ -6358,13 +6358,13 @@
 
     iget v5, p0, Lcom/android/server/ConnectivityService;->mDefaultConnectionSequence:I
 
-    invoke-virtual {v2, v3, v4, v5}, Lcom/android/server/ConnectivityService$InternalHandler;->obtainMessage(III)Landroid/os/Message;
+    invoke-virtual {v2, v3, v4, v5}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v2
 
     int-to-long v3, v0
 
-    invoke-virtual {v1, v2, v3, v4}, Lcom/android/server/ConnectivityService$InternalHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v1, v2, v3, v4}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     goto :goto_0
 
@@ -7503,16 +7503,16 @@
 
     .local v5, wimaxClassLoader:Ldalvik/system/DexClassLoader;
     :try_start_1
-    invoke-virtual {v5, v9}, Ldalvik/system/DexClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
+    invoke-virtual {v5, v9}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v8
 
     .local v8, wimaxManagerClass:Ljava/lang/Class;
-    invoke-virtual {v5, v14}, Ldalvik/system/DexClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
+    invoke-virtual {v5, v14}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v13
 
-    invoke-virtual {v5, v11}, Ldalvik/system/DexClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
+    invoke-virtual {v5, v11}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
     :try_end_1
     .catch Ljava/lang/ClassNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Landroid/content/res/Resources$NotFoundException; {:try_start_1 .. :try_end_1} :catch_1
@@ -7606,7 +7606,7 @@
 
     move/from16 v0, v17
 
-    invoke-virtual {v15, v0}, Ljava/lang/reflect/Constructor;->setAccessible(Z)V
+    invoke-virtual {v15, v0}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
 
     const/16 v17, 0x2
 
@@ -7637,7 +7637,7 @@
 
     move/from16 v0, v17
 
-    invoke-virtual {v15, v0}, Ljava/lang/reflect/Constructor;->setAccessible(Z)V
+    invoke-virtual {v15, v0}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
 
     const-string v17, "WiMax"
 
@@ -7683,7 +7683,7 @@
 
     move-result-object v17
 
-    invoke-virtual {v2}, Ljava/lang/ClassNotFoundException;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v18
 
@@ -7744,7 +7744,7 @@
 
     move-result-object v17
 
-    invoke-virtual {v2}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v18
 
@@ -8279,7 +8279,7 @@
 
     iget-object v2, p0, Lcom/android/server/ConnectivityService;->mTrackerHandler:Lcom/android/server/ConnectivityService$NetworkStateTrackerHandler;
 
-    invoke-virtual {v0, v1, v2}, Lcom/android/server/connectivity/Vpn;->startMonitoring(Landroid/content/Context;Landroid/os/Handler;)V
+    invoke-virtual {v0, v1, v2}, Landroid/net/BaseNetworkStateTracker;->startMonitoring(Landroid/content/Context;Landroid/os/Handler;)V
 
     monitor-exit v6
 
@@ -8915,13 +8915,13 @@
 
     const/16 v2, 0xb
 
-    invoke-virtual {v1, v2, p1}, Lcom/android/server/ConnectivityService$InternalHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v1, v2, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v1
 
     int-to-long v2, p2
 
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/server/ConnectivityService$InternalHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     goto :goto_0
 .end method
@@ -9078,11 +9078,11 @@
 
     const/16 v3, 0xe
 
-    invoke-virtual {v2, v3, v0, p1}, Lcom/android/server/ConnectivityService$InternalHandler;->obtainMessage(III)Landroid/os/Message;
+    invoke-virtual {v2, v3, v0, p1}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Lcom/android/server/ConnectivityService$InternalHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     return-void
 
@@ -9509,7 +9509,7 @@
 
     invoke-static {v9}, Lcom/android/server/ConnectivityService;->loge(Ljava/lang/String;)V
 
-    invoke-virtual {v6}, Ljava/lang/NullPointerException;->printStackTrace()V
+    invoke-virtual {v6}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto/16 :goto_1
 
@@ -9553,7 +9553,7 @@
 
     invoke-static {v9}, Lcom/android/server/ConnectivityService;->loge(Ljava/lang/String;)V
 
-    invoke-virtual {v6}, Ljava/lang/NullPointerException;->printStackTrace()V
+    invoke-virtual {v6}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto/16 :goto_1
 
@@ -11236,7 +11236,7 @@
 
     aput-object v2, v6, v7
 
-    invoke-virtual {v1, v6}, Lcom/android/server/ConnectivityService$CheckMp;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v1, v6}, Landroid/os/AsyncTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
@@ -11479,14 +11479,14 @@
 
     move-result-object v12
 
-    invoke-virtual {v10, v12}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v10, v12}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     :cond_0
     :goto_0
     return-void
 
     :cond_1
-    invoke-virtual {v10}, Lcom/android/internal/util/IndentingPrintWriter;->println()V
+    invoke-virtual {v10}, Ljava/io/PrintWriter;->println()V
 
     const/4 v2, 0x0
 
@@ -11533,7 +11533,7 @@
 
     move-result-object v12
 
-    invoke-virtual {v10, v12}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v10, v12}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     invoke-virtual {v10}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()V
 
@@ -11573,24 +11573,24 @@
 
     move-result-object v12
 
-    invoke-virtual {v10, v12}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v10, v12}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     :cond_2
     invoke-interface {v7}, Landroid/net/NetworkStateTracker;->getNetworkInfo()Landroid/net/NetworkInfo;
 
     move-result-object v12
 
-    invoke-virtual {v10, v12}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/Object;)V
+    invoke-virtual {v10, v12}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
     invoke-interface {v7}, Landroid/net/NetworkStateTracker;->getLinkProperties()Landroid/net/LinkProperties;
 
     move-result-object v12
 
-    invoke-virtual {v10, v12}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/Object;)V
+    invoke-virtual {v10, v12}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    invoke-virtual {v10, v7}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/Object;)V
+    invoke-virtual {v10, v7}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    invoke-virtual {v10}, Lcom/android/internal/util/IndentingPrintWriter;->println()V
+    invoke-virtual {v10}, Ljava/io/PrintWriter;->println()V
 
     invoke-virtual {v10}, Lcom/android/internal/util/IndentingPrintWriter;->decreaseIndent()V
 
@@ -11603,7 +11603,7 @@
     :cond_4
     const-string v12, "Network Requester Pids:"
 
-    invoke-virtual {v10, v12}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v10, v12}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     invoke-virtual {v10}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()V
 
@@ -11699,7 +11699,7 @@
 
     .end local v8           #pid:Ljava/lang/Integer;
     :cond_5
-    invoke-virtual {v10, v9}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v10, v9}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     add-int/lit8 v3, v4, 0x1
 
@@ -11713,13 +11713,13 @@
     .end local v6           #net:I
     .end local v9           #pidString:Ljava/lang/String;
     :cond_6
-    invoke-virtual {v10}, Lcom/android/internal/util/IndentingPrintWriter;->println()V
+    invoke-virtual {v10}, Ljava/io/PrintWriter;->println()V
 
     invoke-virtual {v10}, Lcom/android/internal/util/IndentingPrintWriter;->decreaseIndent()V
 
     const-string v12, "FeatureUsers:"
 
-    invoke-virtual {v10, v12}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v10, v12}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     invoke-virtual {v10}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()V
 
@@ -11745,17 +11745,17 @@
     check-cast v11, Lcom/android/server/ConnectivityService$FeatureUser;
 
     .local v11, requester:Lcom/android/server/ConnectivityService$FeatureUser;
-    invoke-virtual {v11}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v11}, Lcom/android/server/ConnectivityService$FeatureUser;->toString()Ljava/lang/String;
 
     move-result-object v12
 
-    invoke-virtual {v10, v12}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v10, v12}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     goto :goto_4
 
     .end local v11           #requester:Lcom/android/server/ConnectivityService$FeatureUser;
     :cond_7
-    invoke-virtual {v10}, Lcom/android/internal/util/IndentingPrintWriter;->println()V
+    invoke-virtual {v10}, Ljava/io/PrintWriter;->println()V
 
     invoke-virtual {v10}, Lcom/android/internal/util/IndentingPrintWriter;->decreaseIndent()V
 
@@ -11797,7 +11797,7 @@
 
     move-result-object v12
 
-    invoke-virtual {v10, v12}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v10, v12}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     new-instance v12, Ljava/lang/StringBuilder;
 
@@ -11819,13 +11819,13 @@
 
     move-result-object v12
 
-    invoke-virtual {v10, v12}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v10, v12}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {v10}, Lcom/android/internal/util/IndentingPrintWriter;->println()V
+    invoke-virtual {v10}, Ljava/io/PrintWriter;->println()V
 
     iget-object v12, p0, Lcom/android/server/ConnectivityService;->mTethering:Lcom/android/server/connectivity/Tethering;
 
@@ -11837,11 +11837,11 @@
 
     if-eqz v12, :cond_0
 
-    invoke-virtual {v10}, Lcom/android/internal/util/IndentingPrintWriter;->println()V
+    invoke-virtual {v10}, Ljava/io/PrintWriter;->println()V
 
     const-string v12, "Inet condition reports:"
 
-    invoke-virtual {v10, v12}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v10, v12}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     invoke-virtual {v10}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()V
 
@@ -11862,7 +11862,7 @@
 
     move-result-object v12
 
-    invoke-virtual {v10, v12}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/Object;)V
+    invoke-virtual {v10, v12}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
     add-int/lit8 v2, v2, 0x1
 
@@ -13678,11 +13678,11 @@
 
     const/4 v5, 0x4
 
-    invoke-virtual {v4, v5, p1, p2}, Lcom/android/server/ConnectivityService$InternalHandler;->obtainMessage(III)Landroid/os/Message;
+    invoke-virtual {v4, v5, p1, p2}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v4
 
-    invoke-virtual {v3, v4}, Lcom/android/server/ConnectivityService$InternalHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v3, v4}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     return-void
 .end method
@@ -13737,7 +13737,7 @@
 
     const/4 v4, 0x0
 
-    invoke-virtual {v1, v2, v3, v4}, Lcom/android/server/ConnectivityService$InternalHandler;->obtainMessage(III)Landroid/os/Message;
+    invoke-virtual {v1, v2, v3, v4}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v1
 
@@ -13745,7 +13745,7 @@
 
     int-to-long v2, v2
 
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/server/ConnectivityService$InternalHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     goto :goto_0
 
@@ -13952,7 +13952,7 @@
 
     move-result-object v9
 
-    invoke-virtual {v1}, Ljava/net/UnknownHostException;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v10
 
@@ -14113,11 +14113,11 @@
     const/4 v0, 0x1
 
     :goto_0
-    invoke-virtual {v2, v3, v0, p1}, Lcom/android/server/ConnectivityService$InternalHandler;->obtainMessage(III)Landroid/os/Message;
+    invoke-virtual {v2, v3, v0, p1}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v0
 
-    invoke-virtual {v1, v0}, Lcom/android/server/ConnectivityService$InternalHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     return-void
 
@@ -14445,11 +14445,11 @@
     const/4 v2, 0x1
 
     :goto_1
-    invoke-virtual {v5, v6, v2, v3}, Lcom/android/server/ConnectivityService$InternalHandler;->obtainMessage(III)Landroid/os/Message;
+    invoke-virtual {v5, v6, v2, v3}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v2
 
-    invoke-virtual {v4, v2}, Lcom/android/server/ConnectivityService$InternalHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v4, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     goto :goto_0
 
@@ -14474,11 +14474,11 @@
 
     const/4 v3, 0x0
 
-    invoke-virtual {v1, v2, p1, v3}, Lcom/android/server/ConnectivityService$InternalHandler;->obtainMessage(III)Landroid/os/Message;
+    invoke-virtual {v1, v2, p1, v3}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/android/server/ConnectivityService$InternalHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     return-void
 .end method
@@ -14508,11 +14508,11 @@
     const/4 v0, 0x1
 
     :goto_0
-    invoke-virtual {v2, v3, p1, v0}, Lcom/android/server/ConnectivityService$InternalHandler;->obtainMessage(III)Landroid/os/Message;
+    invoke-virtual {v2, v3, p1, v0}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v0
 
-    invoke-virtual {v1, v0}, Lcom/android/server/ConnectivityService$InternalHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     return-void
 
@@ -15341,7 +15341,7 @@
 
     move/from16 v1, v23
 
-    invoke-virtual {v0, v1, v8}, Lcom/android/server/ConnectivityService$InternalHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v0, v1, v8}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v22
 
@@ -15349,7 +15349,7 @@
 
     move-wide/from16 v23, v0
 
-    invoke-virtual/range {v21 .. v24}, Lcom/android/server/ConnectivityService$InternalHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual/range {v21 .. v24}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     :cond_d
     invoke-virtual {v12}, Landroid/net/NetworkInfo;->isConnectedOrConnecting()Z
@@ -15997,11 +15997,11 @@
 
     const/16 v3, 0x9
 
-    invoke-virtual {v2, v3}, Lcom/android/server/ConnectivityService$InternalHandler;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {v2, v3}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Lcom/android/server/ConnectivityService$InternalHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     invoke-virtual {p0}, Lcom/android/server/ConnectivityService;->updateLockdownVpn()Z
 

@@ -215,7 +215,7 @@
     or-int/lit16 v0, v0, 0xd00
 
     :cond_3
-    invoke-static {v0}, Landroid/app/NubiaThemeHelper;->handleExtraConfigurationChanges(I)V
+    invoke-static {v0, p1}, Landroid/app/Injector$ActivityThreadHook;->handleExtraConfigurationChanges(ILandroid/content/res/Configuration;)V
 
     iget-object v10, p1, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
 
@@ -262,7 +262,7 @@
 
     check-cast v10, Ljava/lang/ref/WeakReference;
 
-    invoke-virtual {v10}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v10}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     move-result-object v8
 
@@ -650,7 +650,7 @@
     .local v15, wr:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/content/res/Resources;>;"
     if-eqz v15, :cond_0
 
-    invoke-virtual {v15}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v15}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     move-result-object v3
 
@@ -778,7 +778,7 @@
 
     move-object/from16 v1, p5
 
-    invoke-static {v8, v10, v9, v0, v1}, Landroid/content/res/NubiaClassFactory;->newResources(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;Landroid/os/IBinder;)Landroid/content/res/Resources;
+    invoke-static {v8, v10, v9, v0, v1}, Landroid/app/Injector$ActivityThreadHook;->createResources(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;Landroid/os/IBinder;)Landroid/content/res/Resources;
 
     move-result-object v14
 
@@ -799,7 +799,7 @@
     .restart local v15       #wr:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/content/res/Resources;>;"
     if-eqz v15, :cond_8
 
-    invoke-virtual {v15}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v15}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     move-result-object v3
 
@@ -914,15 +914,5 @@
 
     move-result-object v6
 
-    .local v6, r:Landroid/content/res/Resources;
-    if-eqz v6, :cond_0
-
-    move-object v0, v6
-
-    check-cast v0, Landroid/content/res/NubiaResources;
-
-    invoke-virtual {v0, p1}, Landroid/content/res/NubiaResources;->init(Ljava/lang/String;)V
-
-    :cond_0
     return-object v6
 .end method

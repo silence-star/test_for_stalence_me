@@ -119,14 +119,14 @@
 
     move-result-object v4
 
-    #calls: Lcom/android/server/wifi/WifiController;->log(Ljava/lang/String;)V
+    #calls: Lcom/android/internal/util/StateMachine;->log(Ljava/lang/String;)V
     invoke-static {v3, v4}, Lcom/android/server/wifi/WifiController;->access$2300(Lcom/android/server/wifi/WifiController;Ljava/lang/String;)V
 
     iget-object v3, p0, Lcom/android/server/wifi/WifiController$ApStaDisabledState;->this$0:Lcom/android/server/wifi/WifiController;
 
     const v4, 0x2600b
 
-    invoke-virtual {v3, v4}, Lcom/android/server/wifi/WifiController;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {v3, v4}, Lcom/android/internal/util/StateMachine;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
@@ -160,7 +160,7 @@
 
     add-long/2addr v4, v6
 
-    invoke-virtual {v3, v0, v4, v5}, Lcom/android/server/wifi/WifiController;->sendMessageDelayed(Landroid/os/Message;J)V
+    invoke-virtual {v3, v0, v4, v5}, Lcom/android/internal/util/StateMachine;->sendMessageDelayed(Landroid/os/Message;J)V
 
     const/4 v3, 0x1
 
@@ -276,7 +276,7 @@
 
     move-result-object v2
 
-    #calls: Lcom/android/server/wifi/WifiController;->transitionTo(Lcom/android/internal/util/IState;)V
+    #calls: Lcom/android/internal/util/StateMachine;->transitionTo(Lcom/android/internal/util/IState;)V
     invoke-static {v0, v2}, Lcom/android/server/wifi/WifiController;->access$1400(Lcom/android/server/wifi/WifiController;Lcom/android/internal/util/IState;)V
 
     goto :goto_1
@@ -309,7 +309,7 @@
 
     move-result-object v2
 
-    #calls: Lcom/android/server/wifi/WifiController;->transitionTo(Lcom/android/internal/util/IState;)V
+    #calls: Lcom/android/internal/util/StateMachine;->transitionTo(Lcom/android/internal/util/IState;)V
     invoke-static {v0, v2}, Lcom/android/server/wifi/WifiController;->access$1700(Lcom/android/server/wifi/WifiController;Lcom/android/internal/util/IState;)V
 
     goto :goto_1
@@ -338,7 +338,7 @@
 
     move-result-object v2
 
-    #calls: Lcom/android/server/wifi/WifiController;->transitionTo(Lcom/android/internal/util/IState;)V
+    #calls: Lcom/android/internal/util/StateMachine;->transitionTo(Lcom/android/internal/util/IState;)V
     invoke-static {v0, v2}, Lcom/android/server/wifi/WifiController;->access$1900(Lcom/android/server/wifi/WifiController;Lcom/android/internal/util/IState;)V
 
     goto :goto_1
@@ -354,7 +354,7 @@
 
     const-string v2, "DEFERRED_TOGGLE ignored due to serial mismatch"
 
-    #calls: Lcom/android/server/wifi/WifiController;->log(Ljava/lang/String;)V
+    #calls: Lcom/android/internal/util/StateMachine;->log(Ljava/lang/String;)V
     invoke-static {v0, v2}, Lcom/android/server/wifi/WifiController;->access$2000(Lcom/android/server/wifi/WifiController;Ljava/lang/String;)V
 
     goto :goto_1
@@ -364,7 +364,7 @@
 
     const-string v2, "DEFERRED_TOGGLE handled"
 
-    #calls: Lcom/android/server/wifi/WifiController;->log(Ljava/lang/String;)V
+    #calls: Lcom/android/internal/util/StateMachine;->log(Ljava/lang/String;)V
     invoke-static {v0, v2}, Lcom/android/server/wifi/WifiController;->access$2100(Lcom/android/server/wifi/WifiController;Ljava/lang/String;)V
 
     iget-object v2, p0, Lcom/android/server/wifi/WifiController$ApStaDisabledState;->this$0:Lcom/android/server/wifi/WifiController;
@@ -375,7 +375,7 @@
 
     check-cast v0, Landroid/os/Message;
 
-    invoke-virtual {v2, v0}, Lcom/android/server/wifi/WifiController;->sendMessage(Landroid/os/Message;)V
+    invoke-virtual {v2, v0}, Lcom/android/internal/util/StateMachine;->sendMessage(Landroid/os/Message;)V
 
     goto :goto_1
 

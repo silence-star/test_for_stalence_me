@@ -62,7 +62,7 @@
 
     iget-object v3, p0, Lcom/android/server/AssetAtlasService$WorkerResult;->type:Landroid/graphics/Atlas$Type;
 
-    invoke-virtual {v3}, Landroid/graphics/Atlas$Type;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/Enum;->toString()Ljava/lang/String;
 
     move-result-object v3
 

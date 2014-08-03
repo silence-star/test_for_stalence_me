@@ -85,7 +85,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/app/AlertDialog;->isShowing()Z
+    invoke-virtual {v0}, Landroid/app/Dialog;->isShowing()Z
 
     move-result v0
 

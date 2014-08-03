@@ -187,7 +187,7 @@
 
     const/4 v1, 0x3
 
-    invoke-virtual {v0, v1}, Lcom/android/server/media/MediaRouterService$UserHandler;->sendEmptyMessage(I)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     :cond_2
     invoke-virtual {p1}, Lcom/android/server/media/MediaRouterService$ClientRecord;->dispose()V
@@ -386,7 +386,7 @@
 
     const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Lcom/android/server/media/MediaRouterService$UserHandler;->sendEmptyMessage(I)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     :cond_1
     return-void
@@ -533,7 +533,7 @@
 
     const/4 v4, 0x0
 
-    invoke-virtual {v2, v3, p3, v4, p2}, Lcom/android/server/media/MediaRouterService$UserHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v2, v3, p3, v4, p2}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v2
 
@@ -574,7 +574,7 @@
 
     const/4 v4, 0x0
 
-    invoke-virtual {v2, v3, p3, v4, p2}, Lcom/android/server/media/MediaRouterService$UserHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v2, v3, p3, v4, p2}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v2
 
@@ -678,7 +678,7 @@
 
     const/4 v3, 0x3
 
-    invoke-virtual {v2, v3}, Lcom/android/server/media/MediaRouterService$UserHandler;->sendEmptyMessage(I)Z
+    invoke-virtual {v2, v3}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     :cond_3
     return-void
@@ -778,7 +778,7 @@
 
     const/4 v3, 0x5
 
-    invoke-virtual {v2, v3, v1}, Lcom/android/server/media/MediaRouterService$UserHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v2, v3, v1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v2
 
@@ -797,7 +797,7 @@
 
     const/4 v3, 0x4
 
-    invoke-virtual {v2, v3, p2}, Lcom/android/server/media/MediaRouterService$UserHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v2, v3, p2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v2
 
@@ -1622,7 +1622,7 @@
 
     const/4 v6, 0x2
 
-    invoke-virtual {v4, v6}, Lcom/android/server/media/MediaRouterService$UserHandler;->sendEmptyMessage(I)Z
+    invoke-virtual {v4, v6}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     invoke-direct {p0, v1}, Lcom/android/server/media/MediaRouterService;->disposeUserIfNeededLocked(Lcom/android/server/media/MediaRouterService$UserRecord;)V
 
@@ -1642,7 +1642,7 @@
 
     const/4 v6, 0x1
 
-    invoke-virtual {v4, v6}, Lcom/android/server/media/MediaRouterService$UserHandler;->sendEmptyMessage(I)Z
+    invoke-virtual {v4, v6}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     .end local v0           #newUser:Lcom/android/server/media/MediaRouterService$UserRecord;
     .end local v1           #oldUser:Lcom/android/server/media/MediaRouterService$UserRecord;

@@ -56,7 +56,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/android/internal/widget/ActionBarContextView;->getApplicationWindowToken()Landroid/os/IBinder;
+    invoke-virtual {v1}, Landroid/view/View;->getApplicationWindowToken()Landroid/os/IBinder;
 
     move-result-object v1
 

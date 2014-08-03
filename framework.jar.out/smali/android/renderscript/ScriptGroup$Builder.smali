@@ -888,7 +888,7 @@
 
     move-object/from16 v0, v17
 
-    invoke-virtual {v0, v1}, Landroid/renderscript/Script$KernelID;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {v0, v1}, Landroid/renderscript/BaseObj;->getID(Landroid/renderscript/RenderScript;)I
 
     move-result v1
 
@@ -1116,7 +1116,7 @@
 
     move-object/from16 v0, v21
 
-    invoke-virtual {v1, v0}, Landroid/renderscript/Script$KernelID;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {v1, v0}, Landroid/renderscript/BaseObj;->getID(Landroid/renderscript/RenderScript;)I
 
     move-result v1
 
@@ -1136,7 +1136,7 @@
 
     move-object/from16 v0, v21
 
-    invoke-virtual {v1, v0}, Landroid/renderscript/Script$KernelID;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {v1, v0}, Landroid/renderscript/BaseObj;->getID(Landroid/renderscript/RenderScript;)I
 
     move-result v1
 
@@ -1157,7 +1157,7 @@
 
     move-object/from16 v0, v21
 
-    invoke-virtual {v1, v0}, Landroid/renderscript/Script$FieldID;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {v1, v0}, Landroid/renderscript/BaseObj;->getID(Landroid/renderscript/RenderScript;)I
 
     move-result v1
 
@@ -1174,7 +1174,7 @@
 
     move-object/from16 v0, v21
 
-    invoke-virtual {v1, v0}, Landroid/renderscript/Type;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {v1, v0}, Landroid/renderscript/BaseObj;->getID(Landroid/renderscript/RenderScript;)I
 
     move-result v1
 

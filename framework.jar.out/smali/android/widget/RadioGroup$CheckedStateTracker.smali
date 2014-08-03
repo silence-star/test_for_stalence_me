@@ -104,7 +104,7 @@
     #setter for: Landroid/widget/RadioGroup;->mProtectFromCheckedChange:Z
     invoke-static {v1, v3}, Landroid/widget/RadioGroup;->access$302(Landroid/widget/RadioGroup;Z)Z
 
-    invoke-virtual {p1}, Landroid/widget/CompoundButton;->getId()I
+    invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     move-result v0
 

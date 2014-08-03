@@ -346,6 +346,8 @@
 
     nop
 
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x2000c -> :sswitch_0

@@ -47,7 +47,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/widget/AbsListView;->isAttachedToWindow()Z
+    invoke-virtual {v1}, Landroid/view/View;->isAttachedToWindow()Z
 
     move-result v1
 

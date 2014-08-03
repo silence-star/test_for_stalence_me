@@ -480,7 +480,7 @@
     .local v0, e:Ljava/lang/RuntimeException;
     const-string v4, "MessageQueue"
 
-    invoke-virtual {v0}, Ljava/lang/RuntimeException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v5
 

@@ -389,7 +389,7 @@
     .locals 2
 
     .prologue
-    iget-object v0, p0, Lcom/android/internal/widget/WaveView;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     const v1, 0x1040515
 
@@ -397,15 +397,15 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/widget/WaveView;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
 
     const/16 v0, 0x8
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/widget/WaveView;->sendAccessibilityEvent(I)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->sendAccessibilityEvent(I)V
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/widget/WaveView;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
 
     return-void
 .end method
@@ -435,7 +435,7 @@
     .locals 2
 
     .prologue
-    iget-object v0, p0, Lcom/android/internal/widget/WaveView;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/accessibility/AccessibilityManager;->getInstance(Landroid/content/Context;)Landroid/view/accessibility/AccessibilityManager;
 
@@ -736,7 +736,7 @@
 
     iput v3, p0, Lcom/android/internal/widget/WaveView;->mLockState:I
 
-    iget-object v3, p0, Lcom/android/internal/widget/WaveView;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     invoke-static {v3}, Landroid/view/accessibility/AccessibilityManager;->getInstance(Landroid/content/Context;)Landroid/view/accessibility/AccessibilityManager;
 
@@ -764,7 +764,7 @@
     monitor-enter p0
 
     :try_start_0
-    iget-object v1, p0, Lcom/android/internal/widget/WaveView;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -790,7 +790,7 @@
 
     if-nez v1, :cond_0
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/WaveView;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -1441,7 +1441,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v4}, Lcom/android/internal/widget/WaveView;->removeCallbacks(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v4}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     const/4 v4, 0x1
 
@@ -1796,7 +1796,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v4, v10, v11}, Lcom/android/internal/widget/WaveView;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v0, v4, v10, v11}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
 
     :cond_4
     move-object/from16 v0, p0
@@ -2468,7 +2468,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v4}, Lcom/android/internal/widget/WaveView;->removeCallbacks(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v4}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     move-object/from16 v0, p0
 
@@ -2478,7 +2478,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v4, v10, v11}, Lcom/android/internal/widget/WaveView;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v0, v4, v10, v11}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
 
     const/16 v4, 0xa
 
@@ -2512,7 +2512,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v4}, Lcom/android/internal/widget/WaveView;->removeCallbacks(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v4}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     goto/16 :goto_0
 
@@ -2534,7 +2534,7 @@
     .parameter "resId"
 
     .prologue
-    invoke-virtual {p0}, Lcom/android/internal/widget/WaveView;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
@@ -2598,7 +2598,7 @@
     .parameter "animation"
 
     .prologue
-    invoke-virtual {p0}, Lcom/android/internal/widget/WaveView;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
 .end method
@@ -2677,7 +2677,7 @@
     .parameter "event"
 
     .prologue
-    iget-object v1, p0, Lcom/android/internal/widget/WaveView;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Landroid/view/accessibility/AccessibilityManager;->getInstance(Landroid/content/Context;)Landroid/view/accessibility/AccessibilityManager;
 
@@ -2797,7 +2797,7 @@
 
     .local v0, height:I
     :goto_1
-    invoke-virtual {p0, v3, v0}, Lcom/android/internal/widget/WaveView;->setMeasuredDimension(II)V
+    invoke-virtual {p0, v3, v0}, Landroid/view/View;->setMeasuredDimension(II)V
 
     return-void
 
@@ -2897,7 +2897,7 @@
     packed-switch v0, :pswitch_data_0
 
     :goto_0
-    invoke-virtual {p0}, Lcom/android/internal/widget/WaveView;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     if-eqz v1, :cond_0
 
@@ -2907,7 +2907,7 @@
     :pswitch_0
     iget-object v3, p0, Lcom/android/internal/widget/WaveView;->mLockTimerActions:Ljava/lang/Runnable;
 
-    invoke-virtual {p0, v3}, Lcom/android/internal/widget/WaveView;->removeCallbacks(Ljava/lang/Runnable;)Z
+    invoke-virtual {p0, v3}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     iput-boolean v2, p0, Lcom/android/internal/widget/WaveView;->mFingerDown:Z
 
@@ -2931,7 +2931,7 @@
 
     const-wide/16 v4, 0xbb8
 
-    invoke-virtual {p0, v3, v4, v5}, Lcom/android/internal/widget/WaveView;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {p0, v3, v4, v5}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
 
     invoke-direct {p0, v6}, Lcom/android/internal/widget/WaveView;->setGrabbedState(I)V
 
@@ -2980,7 +2980,7 @@
 
     iput v0, p0, Lcom/android/internal/widget/WaveView;->mLockState:I
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/WaveView;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
 .end method

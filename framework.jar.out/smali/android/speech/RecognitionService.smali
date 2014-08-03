@@ -139,7 +139,7 @@
     .prologue
     const-string v1, "android.permission.RECORD_AUDIO"
 
-    invoke-virtual {p0, v1}, Landroid/speech/RecognitionService;->checkCallingOrSelfPermission(Ljava/lang/String;)I
+    invoke-virtual {p0, v1}, Landroid/content/ContextWrapper;->checkCallingOrSelfPermission(Ljava/lang/String;)I
 
     move-result v1
 

@@ -130,7 +130,7 @@
     move-exception v1
 
     .local v1, e:Landroid/content/ActivityNotFoundException;
-    invoke-virtual {v1}, Landroid/content/ActivityNotFoundException;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     iget-object v4, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$15;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
@@ -147,7 +147,7 @@
 
     .local v1, e:Ljava/lang/InterruptedException;
     :try_start_3
-    invoke-virtual {v1}, Ljava/lang/InterruptedException;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_0
 

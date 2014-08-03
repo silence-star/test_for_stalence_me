@@ -210,7 +210,7 @@
     const/4 v0, 0x1
 
     :cond_2
-    invoke-virtual {p1}, Landroid/filterfw/core/KeyValueMap;->entrySet()Ljava/util/Set;
+    invoke-virtual {p1}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
     move-result-object v6
 
@@ -308,7 +308,7 @@
 
     aget-object v6, v6, v10
 
-    invoke-virtual {v6}, Landroid/filterfw/core/FilterFunction$FrameHolderPort;->hasFrame()Z
+    invoke-virtual {v6}, Landroid/filterfw/core/StreamPort;->hasFrame()Z
 
     move-result v6
 
@@ -318,7 +318,7 @@
 
     aget-object v6, v6, v10
 
-    invoke-virtual {v6}, Landroid/filterfw/core/FilterFunction$FrameHolderPort;->pullFrame()Landroid/filterfw/core/Frame;
+    invoke-virtual {v6}, Landroid/filterfw/core/StreamPort;->pullFrame()Landroid/filterfw/core/Frame;
 
     move-result-object v5
 

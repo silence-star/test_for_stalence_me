@@ -43,7 +43,7 @@
     .prologue
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView$3;->this$0:Lcom/android/internal/widget/multiwaveview/GlowPadView;
 
-    invoke-virtual {v0}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->invalidate()V
+    invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
     return-void
 .end method

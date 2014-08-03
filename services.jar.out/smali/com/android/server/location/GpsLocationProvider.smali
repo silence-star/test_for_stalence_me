@@ -4214,6 +4214,8 @@
 
     nop
 
+    nop
+
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -6148,7 +6150,7 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     :goto_3
-    invoke-virtual {v4}, Ljava/util/Properties;->entrySet()Ljava/util/Set;
+    invoke-virtual {v4}, Ljava/util/Hashtable;->entrySet()Ljava/util/Set;
 
     move-result-object v7
 

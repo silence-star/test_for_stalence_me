@@ -62,7 +62,7 @@
 
     iget-object v4, p0, Landroid/animation/LayoutTransition$6;->val$child:Landroid/view/View;
 
-    invoke-virtual {v3, v4}, Ljava/util/LinkedHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v4}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v3, p0, Landroid/animation/LayoutTransition$6;->val$child:Landroid/view/View;
 

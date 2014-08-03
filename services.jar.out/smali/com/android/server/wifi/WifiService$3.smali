@@ -54,7 +54,7 @@
 
     const v1, 0x26007
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wifi/WifiController;->sendMessage(I)V
+    invoke-virtual {v0, v1}, Lcom/android/internal/util/StateMachine;->sendMessage(I)V
 
     return-void
 .end method

@@ -212,7 +212,7 @@
     :cond_0
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/NubiaVolumeBar;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v2
 
@@ -351,7 +351,7 @@
     .prologue
     invoke-super {p0, p1, p2}, Landroid/view/View;->onMeasure(II)V
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/NubiaVolumeBar;->getMeasuredWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
 
@@ -365,7 +365,7 @@
 
     move-result v1
 
-    invoke-virtual {p0, v0, v1}, Lcom/android/internal/widget/NubiaVolumeBar;->setMeasuredDimension(II)V
+    invoke-virtual {p0, v0, v1}, Landroid/view/View;->setMeasuredDimension(II)V
 
     return-void
 .end method
@@ -386,7 +386,7 @@
 
     iput p1, p0, Lcom/android/internal/widget/NubiaVolumeBar;->max:I
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/NubiaVolumeBar;->postInvalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->postInvalidate()V
 
     :cond_1
     return-void
@@ -415,7 +415,7 @@
 
     iput p1, p0, Lcom/android/internal/widget/NubiaVolumeBar;->progress:I
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/NubiaVolumeBar;->postInvalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->postInvalidate()V
 
     :cond_2
     return-void

@@ -39,7 +39,7 @@
     .parameter "data"
 
     .prologue
-    invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService$InputMethodSessionImpl;->isEnabled()Z
+    invoke-virtual {p0}, Landroid/inputmethodservice/AbstractInputMethodService$AbstractInputMethodSessionImpl;->isEnabled()Z
 
     move-result v0
 
@@ -61,7 +61,7 @@
     .parameter "completions"
 
     .prologue
-    invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService$InputMethodSessionImpl;->isEnabled()Z
+    invoke-virtual {p0}, Landroid/inputmethodservice/AbstractInputMethodService$AbstractInputMethodSessionImpl;->isEnabled()Z
 
     move-result v0
 
@@ -86,7 +86,7 @@
     .locals 1
 
     .prologue
-    invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService$InputMethodSessionImpl;->isEnabled()Z
+    invoke-virtual {p0}, Landroid/inputmethodservice/AbstractInputMethodService$AbstractInputMethodSessionImpl;->isEnabled()Z
 
     move-result v0
 
@@ -122,7 +122,7 @@
     .parameter "newCursor"
 
     .prologue
-    invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService$InputMethodSessionImpl;->isEnabled()Z
+    invoke-virtual {p0}, Landroid/inputmethodservice/AbstractInputMethodService$AbstractInputMethodSessionImpl;->isEnabled()Z
 
     move-result v0
 
@@ -145,7 +145,7 @@
     .parameter "text"
 
     .prologue
-    invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService$InputMethodSessionImpl;->isEnabled()Z
+    invoke-virtual {p0}, Landroid/inputmethodservice/AbstractInputMethodService$AbstractInputMethodSessionImpl;->isEnabled()Z
 
     move-result v0
 
@@ -172,7 +172,7 @@
     .parameter "candidatesEnd"
 
     .prologue
-    invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService$InputMethodSessionImpl;->isEnabled()Z
+    invoke-virtual {p0}, Landroid/inputmethodservice/AbstractInputMethodService$AbstractInputMethodSessionImpl;->isEnabled()Z
 
     move-result v0
 
@@ -206,7 +206,7 @@
     .parameter "focusChanged"
 
     .prologue
-    invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService$InputMethodSessionImpl;->isEnabled()Z
+    invoke-virtual {p0}, Landroid/inputmethodservice/AbstractInputMethodService$AbstractInputMethodSessionImpl;->isEnabled()Z
 
     move-result v0
 

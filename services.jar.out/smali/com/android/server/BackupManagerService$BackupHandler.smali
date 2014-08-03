@@ -281,7 +281,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v3, v2}, Lcom/android/server/BackupManagerService$BackupHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v0, v3, v2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v25
 
@@ -290,7 +290,7 @@
 
     move-object/from16 v1, v25
 
-    invoke-virtual {v0, v1}, Lcom/android/server/BackupManagerService$BackupHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
     :try_end_4
     .catch Landroid/os/RemoteException; {:try_start_4 .. :try_end_4} :catch_0
 
@@ -487,11 +487,11 @@
 
     move-object/from16 v0, v24
 
-    iget-object v10, v0, Lcom/android/server/BackupManagerService$FullBackupParams;->fd:Landroid/os/ParcelFileDescriptor;
+    iget-object v10, v0, Lcom/android/server/BackupManagerService$FullParams;->fd:Landroid/os/ParcelFileDescriptor;
 
     move-object/from16 v0, v24
 
-    iget-object v11, v0, Lcom/android/server/BackupManagerService$FullBackupParams;->observer:Landroid/app/backup/IFullBackupRestoreObserver;
+    iget-object v11, v0, Lcom/android/server/BackupManagerService$FullParams;->observer:Landroid/app/backup/IFullBackupRestoreObserver;
 
     move-object/from16 v0, v24
 
@@ -507,11 +507,11 @@
 
     move-object/from16 v0, v24
 
-    iget-object v15, v0, Lcom/android/server/BackupManagerService$FullBackupParams;->curPassword:Ljava/lang/String;
+    iget-object v15, v0, Lcom/android/server/BackupManagerService$FullParams;->curPassword:Ljava/lang/String;
 
     move-object/from16 v0, v24
 
-    iget-object v0, v0, Lcom/android/server/BackupManagerService$FullBackupParams;->encryptPassword:Ljava/lang/String;
+    iget-object v0, v0, Lcom/android/server/BackupManagerService$FullParams;->encryptPassword:Ljava/lang/String;
 
     move-object/from16 v16, v0
 
@@ -535,7 +535,7 @@
 
     move-object/from16 v0, v24
 
-    iget-object v0, v0, Lcom/android/server/BackupManagerService$FullBackupParams;->latch:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v0, v0, Lcom/android/server/BackupManagerService$FullParams;->latch:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     move-object/from16 v20, v0
 
@@ -639,7 +639,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v3, v8}, Lcom/android/server/BackupManagerService$BackupHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v0, v3, v8}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v28
 
@@ -648,7 +648,7 @@
 
     move-object/from16 v1, v28
 
-    invoke-virtual {v0, v1}, Lcom/android/server/BackupManagerService$BackupHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     goto/16 :goto_0
 
@@ -673,23 +673,23 @@
 
     move-object/from16 v0, v24
 
-    iget-object v10, v0, Lcom/android/server/BackupManagerService$FullRestoreParams;->fd:Landroid/os/ParcelFileDescriptor;
+    iget-object v10, v0, Lcom/android/server/BackupManagerService$FullParams;->fd:Landroid/os/ParcelFileDescriptor;
 
     move-object/from16 v0, v24
 
-    iget-object v11, v0, Lcom/android/server/BackupManagerService$FullRestoreParams;->curPassword:Ljava/lang/String;
+    iget-object v11, v0, Lcom/android/server/BackupManagerService$FullParams;->curPassword:Ljava/lang/String;
 
     move-object/from16 v0, v24
 
-    iget-object v12, v0, Lcom/android/server/BackupManagerService$FullRestoreParams;->encryptPassword:Ljava/lang/String;
+    iget-object v12, v0, Lcom/android/server/BackupManagerService$FullParams;->encryptPassword:Ljava/lang/String;
 
     move-object/from16 v0, v24
 
-    iget-object v13, v0, Lcom/android/server/BackupManagerService$FullRestoreParams;->observer:Landroid/app/backup/IFullBackupRestoreObserver;
+    iget-object v13, v0, Lcom/android/server/BackupManagerService$FullParams;->observer:Landroid/app/backup/IFullBackupRestoreObserver;
 
     move-object/from16 v0, v24
 
-    iget-object v14, v0, Lcom/android/server/BackupManagerService$FullRestoreParams;->latch:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v14, v0, Lcom/android/server/BackupManagerService$FullParams;->latch:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-direct/range {v8 .. v14}, Lcom/android/server/BackupManagerService$PerformFullRestoreTask;-><init>(Lcom/android/server/BackupManagerService;Landroid/os/ParcelFileDescriptor;Ljava/lang/String;Ljava/lang/String;Landroid/app/backup/IFullBackupRestoreObserver;Ljava/util/concurrent/atomic/AtomicBoolean;)V
 
@@ -981,7 +981,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v3}, Lcom/android/server/BackupManagerService$BackupHandler;->removeMessages(I)V
+    invoke-virtual {v0, v3}, Landroid/os/Handler;->removeMessages(I)V
 
     const/16 v3, 0x8
 
@@ -989,7 +989,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v3, v9, v10}, Lcom/android/server/BackupManagerService$BackupHandler;->sendEmptyMessageDelayed(IJ)Z
+    invoke-virtual {v0, v3, v9, v10}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
     move-object/from16 v0, p0
 
@@ -1052,7 +1052,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v3}, Lcom/android/server/BackupManagerService$BackupHandler;->removeMessages(I)V
+    invoke-virtual {v0, v3}, Landroid/os/Handler;->removeMessages(I)V
 
     const/16 v3, 0x8
 
@@ -1060,7 +1060,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v3, v9, v10}, Lcom/android/server/BackupManagerService$BackupHandler;->sendEmptyMessageDelayed(IJ)Z
+    invoke-virtual {v0, v3, v9, v10}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
     move-object/from16 v0, p0
 
@@ -1154,7 +1154,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v9}, Lcom/android/server/BackupManagerService$BackupHandler;->removeMessages(I)V
+    invoke-virtual {v0, v9}, Landroid/os/Handler;->removeMessages(I)V
 
     const/16 v9, 0x8
 
@@ -1162,7 +1162,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v9, v10, v11}, Lcom/android/server/BackupManagerService$BackupHandler;->sendEmptyMessageDelayed(IJ)Z
+    invoke-virtual {v0, v9, v10, v11}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
     move-object/from16 v0, p0
 
@@ -1267,7 +1267,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v3}, Lcom/android/server/BackupManagerService$BackupHandler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     :cond_a
     monitor-exit v9

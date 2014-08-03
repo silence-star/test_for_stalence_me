@@ -550,7 +550,7 @@
     throw v7
 
     :cond_0
-    iget-object v7, v6, Lcom/android/server/pm/PackageSetting;->keySetData:Lcom/android/server/pm/PackageKeySetData;
+    iget-object v7, v6, Lcom/android/server/pm/PackageSettingBase;->keySetData:Lcom/android/server/pm/PackageKeySetData;
 
     if-nez v7, :cond_1
 
@@ -568,7 +568,7 @@
     invoke-direct {v2}, Ljava/util/HashSet;-><init>()V
 
     .local v2, knownKeySets:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/Long;>;"
-    iget-object v7, v6, Lcom/android/server/pm/PackageSetting;->keySetData:Lcom/android/server/pm/PackageKeySetData;
+    iget-object v7, v6, Lcom/android/server/pm/PackageSettingBase;->keySetData:Lcom/android/server/pm/PackageKeySetData;
 
     invoke-virtual {v7}, Lcom/android/server/pm/PackageKeySetData;->getSigningKeySets()[J
 
@@ -599,7 +599,7 @@
 
     .end local v3           #ks:J
     :cond_2
-    iget-object v7, v6, Lcom/android/server/pm/PackageSetting;->keySetData:Lcom/android/server/pm/PackageKeySetData;
+    iget-object v7, v6, Lcom/android/server/pm/PackageSettingBase;->keySetData:Lcom/android/server/pm/PackageKeySetData;
 
     invoke-virtual {v7}, Lcom/android/server/pm/PackageKeySetData;->getDefinedKeySets()[J
 
@@ -712,7 +712,7 @@
     move-result-wide v0
 
     .local v0, id:J
-    iget-object v4, v3, Lcom/android/server/pm/PackageSetting;->keySetData:Lcom/android/server/pm/PackageKeySetData;
+    iget-object v4, v3, Lcom/android/server/pm/PackageSettingBase;->keySetData:Lcom/android/server/pm/PackageKeySetData;
 
     invoke-virtual {v4, v0, v1, p3}, Lcom/android/server/pm/PackageKeySetData;->addDefinedKeySet(JLjava/lang/String;)V
 
@@ -824,11 +824,11 @@
     throw v11
 
     :cond_3
-    iget-object v11, v9, Lcom/android/server/pm/PackageSetting;->keySetData:Lcom/android/server/pm/PackageKeySetData;
+    iget-object v11, v9, Lcom/android/server/pm/PackageSettingBase;->keySetData:Lcom/android/server/pm/PackageKeySetData;
 
     invoke-virtual {v11, v4, v5}, Lcom/android/server/pm/PackageKeySetData;->addSigningKeySet(J)V
 
-    iget-object v11, v9, Lcom/android/server/pm/PackageSetting;->keySetData:Lcom/android/server/pm/PackageKeySetData;
+    iget-object v11, v9, Lcom/android/server/pm/PackageSettingBase;->keySetData:Lcom/android/server/pm/PackageKeySetData;
 
     invoke-virtual {v11}, Lcom/android/server/pm/PackageKeySetData;->getDefinedKeySets()[J
 
@@ -870,7 +870,7 @@
 
     if-eqz v11, :cond_4
 
-    iget-object v11, v9, Lcom/android/server/pm/PackageSetting;->keySetData:Lcom/android/server/pm/PackageKeySetData;
+    iget-object v11, v9, Lcom/android/server/pm/PackageSettingBase;->keySetData:Lcom/android/server/pm/PackageKeySetData;
 
     invoke-virtual {v6}, Ljava/lang/Long;->longValue()J
 
@@ -998,14 +998,14 @@
 
     invoke-virtual {v0, v13}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    iget-object v13, v10, Lcom/android/server/pm/PackageSetting;->keySetData:Lcom/android/server/pm/PackageKeySetData;
+    iget-object v13, v10, Lcom/android/server/pm/PackageSettingBase;->keySetData:Lcom/android/server/pm/PackageKeySetData;
 
     if-eqz v13, :cond_0
 
     const/4 v12, 0x0
 
     .local v12, printedLabel:Z
-    iget-object v13, v10, Lcom/android/server/pm/PackageSetting;->keySetData:Lcom/android/server/pm/PackageKeySetData;
+    iget-object v13, v10, Lcom/android/server/pm/PackageSettingBase;->keySetData:Lcom/android/server/pm/PackageKeySetData;
 
     invoke-virtual {v13}, Lcom/android/server/pm/PackageKeySetData;->getAliases()Ljava/util/Map;
 
@@ -1125,7 +1125,7 @@
     :cond_6
     const/4 v12, 0x0
 
-    iget-object v13, v10, Lcom/android/server/pm/PackageSetting;->keySetData:Lcom/android/server/pm/PackageKeySetData;
+    iget-object v13, v10, Lcom/android/server/pm/PackageSettingBase;->keySetData:Lcom/android/server/pm/PackageKeySetData;
 
     invoke-virtual {v13}, Lcom/android/server/pm/PackageKeySetData;->getDefinedKeySets()[J
 
@@ -1189,7 +1189,7 @@
     :cond_9
     const/4 v12, 0x0
 
-    iget-object v13, v10, Lcom/android/server/pm/PackageSetting;->keySetData:Lcom/android/server/pm/PackageKeySetData;
+    iget-object v13, v10, Lcom/android/server/pm/PackageSettingBase;->keySetData:Lcom/android/server/pm/PackageKeySetData;
 
     invoke-virtual {v13}, Lcom/android/server/pm/PackageKeySetData;->getSigningKeySets()[J
 
@@ -1362,7 +1362,7 @@
     .restart local v2       #p:Lcom/android/server/pm/PackageSetting;
     :cond_0
     :try_start_1
-    iget-object v3, v2, Lcom/android/server/pm/PackageSetting;->keySetData:Lcom/android/server/pm/PackageKeySetData;
+    iget-object v3, v2, Lcom/android/server/pm/PackageSettingBase;->keySetData:Lcom/android/server/pm/PackageKeySetData;
 
     if-nez v3, :cond_1
 
@@ -1375,7 +1375,7 @@
     throw v3
 
     :cond_1
-    iget-object v3, v2, Lcom/android/server/pm/PackageSetting;->keySetData:Lcom/android/server/pm/PackageKeySetData;
+    iget-object v3, v2, Lcom/android/server/pm/PackageSettingBase;->keySetData:Lcom/android/server/pm/PackageKeySetData;
 
     invoke-virtual {v3}, Lcom/android/server/pm/PackageKeySetData;->getAliases()Ljava/util/Map;
 
@@ -1499,7 +1499,7 @@
     .restart local v6       #signingKeySets:Ljava/util/Set;,"Ljava/util/Set<Landroid/content/pm/KeySet;>;"
     :cond_0
     :try_start_1
-    iget-object v7, v5, Lcom/android/server/pm/PackageSetting;->keySetData:Lcom/android/server/pm/PackageKeySetData;
+    iget-object v7, v5, Lcom/android/server/pm/PackageSettingBase;->keySetData:Lcom/android/server/pm/PackageKeySetData;
 
     if-nez v7, :cond_1
 
@@ -1512,7 +1512,7 @@
     throw v7
 
     :cond_1
-    iget-object v7, v5, Lcom/android/server/pm/PackageSetting;->keySetData:Lcom/android/server/pm/PackageKeySetData;
+    iget-object v7, v5, Lcom/android/server/pm/PackageSettingBase;->keySetData:Lcom/android/server/pm/PackageKeySetData;
 
     invoke-virtual {v7}, Lcom/android/server/pm/PackageKeySetData;->getSigningKeySets()[J
 
@@ -1595,7 +1595,7 @@
     .restart local v2       #pkg:Lcom/android/server/pm/PackageSetting;
     :cond_0
     :try_start_1
-    iget-object v3, v2, Lcom/android/server/pm/PackageSetting;->keySetData:Lcom/android/server/pm/PackageKeySetData;
+    iget-object v3, v2, Lcom/android/server/pm/PackageSettingBase;->keySetData:Lcom/android/server/pm/PackageKeySetData;
 
     if-nez v3, :cond_1
 
@@ -1613,7 +1613,7 @@
     move-result-wide v0
 
     .local v0, id:J
-    iget-object v3, v2, Lcom/android/server/pm/PackageSetting;->keySetData:Lcom/android/server/pm/PackageKeySetData;
+    iget-object v3, v2, Lcom/android/server/pm/PackageSettingBase;->keySetData:Lcom/android/server/pm/PackageKeySetData;
 
     invoke-virtual {v3, v0, v1}, Lcom/android/server/pm/PackageKeySetData;->packageIsSignedBy(J)Z
 
@@ -2295,7 +2295,7 @@
     check-cast v7, Ljava/lang/Long;
 
     .restart local v7       #ks:Ljava/lang/Long;
-    iget-object v10, v8, Lcom/android/server/pm/PackageSetting;->keySetData:Lcom/android/server/pm/PackageKeySetData;
+    iget-object v10, v8, Lcom/android/server/pm/PackageSettingBase;->keySetData:Lcom/android/server/pm/PackageKeySetData;
 
     invoke-virtual {v7}, Ljava/lang/Long;->longValue()J
 
@@ -2303,7 +2303,7 @@
 
     invoke-virtual {v10, v12, v13}, Lcom/android/server/pm/PackageKeySetData;->removeSigningKeySet(J)V
 
-    iget-object v10, v8, Lcom/android/server/pm/PackageSetting;->keySetData:Lcom/android/server/pm/PackageKeySetData;
+    iget-object v10, v8, Lcom/android/server/pm/PackageSettingBase;->keySetData:Lcom/android/server/pm/PackageKeySetData;
 
     invoke-virtual {v7}, Ljava/lang/Long;->longValue()J
 

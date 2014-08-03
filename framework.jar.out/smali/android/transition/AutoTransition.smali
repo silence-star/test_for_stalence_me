@@ -12,7 +12,7 @@
 
     invoke-direct {p0}, Landroid/transition/TransitionSet;-><init>()V
 
-    invoke-virtual {p0, v2}, Landroid/transition/AutoTransition;->setOrdering(I)Landroid/transition/TransitionSet;
+    invoke-virtual {p0, v2}, Landroid/transition/TransitionSet;->setOrdering(I)Landroid/transition/TransitionSet;
 
     new-instance v0, Landroid/transition/Fade;
 
@@ -20,7 +20,7 @@
 
     invoke-direct {v0, v1}, Landroid/transition/Fade;-><init>(I)V
 
-    invoke-virtual {p0, v0}, Landroid/transition/AutoTransition;->addTransition(Landroid/transition/Transition;)Landroid/transition/TransitionSet;
+    invoke-virtual {p0, v0}, Landroid/transition/TransitionSet;->addTransition(Landroid/transition/Transition;)Landroid/transition/TransitionSet;
 
     move-result-object v0
 

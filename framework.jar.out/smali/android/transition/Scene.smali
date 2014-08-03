@@ -100,7 +100,7 @@
     .prologue
     const v3, 0x1020263
 
-    invoke-virtual {p0, v3}, Landroid/view/ViewGroup;->getTag(I)Ljava/lang/Object;
+    invoke-virtual {p0, v3}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -115,7 +115,7 @@
     invoke-direct {v2}, Landroid/util/SparseArray;-><init>()V
 
     .restart local v2       #scenes:Landroid/util/SparseArray;,"Landroid/util/SparseArray<Landroid/transition/Scene;>;"
-    invoke-virtual {p0, v3, v2}, Landroid/view/ViewGroup;->setTagInternal(ILjava/lang/Object;)V
+    invoke-virtual {p0, v3, v2}, Landroid/view/View;->setTagInternal(ILjava/lang/Object;)V
 
     :cond_0
     invoke-virtual {v2, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;

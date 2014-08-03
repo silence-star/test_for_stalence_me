@@ -117,7 +117,7 @@
 
     iget-object v1, p0, Landroid/widget/AdapterView$AdapterDataSetObserver;->mInstanceState:Landroid/os/Parcelable;
 
-    #calls: Landroid/widget/AdapterView;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    #calls: Landroid/view/View;->onRestoreInstanceState(Landroid/os/Parcelable;)V
     invoke-static {v0, v1}, Landroid/widget/AdapterView;->access$000(Landroid/widget/AdapterView;Landroid/os/Parcelable;)V
 
     const/4 v0, 0x0
@@ -131,7 +131,7 @@
 
     iget-object v0, p0, Landroid/widget/AdapterView$AdapterDataSetObserver;->this$0:Landroid/widget/AdapterView;
 
-    invoke-virtual {v0}, Landroid/widget/AdapterView;->requestLayout()V
+    invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
 
     return-void
 
@@ -174,7 +174,7 @@
 
     iget-object v0, p0, Landroid/widget/AdapterView$AdapterDataSetObserver;->this$0:Landroid/widget/AdapterView;
 
-    #calls: Landroid/widget/AdapterView;->onSaveInstanceState()Landroid/os/Parcelable;
+    #calls: Landroid/view/View;->onSaveInstanceState()Landroid/os/Parcelable;
     invoke-static {v0}, Landroid/widget/AdapterView;->access$100(Landroid/widget/AdapterView;)Landroid/os/Parcelable;
 
     move-result-object v0
@@ -220,7 +220,7 @@
 
     iget-object v0, p0, Landroid/widget/AdapterView$AdapterDataSetObserver;->this$0:Landroid/widget/AdapterView;
 
-    invoke-virtual {v0}, Landroid/widget/AdapterView;->requestLayout()V
+    invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
 
     return-void
 .end method

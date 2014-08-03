@@ -1632,6 +1632,8 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    invoke-static {}, Lcom/android/internal/os/ZygoteInit;->preloadMiuiResources()V
+
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v4
@@ -1696,8 +1698,6 @@
     move-result-object v7
 
     invoke-static {v6, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    invoke-static {}, Lcom/android/internal/os/ZygoteInit;->preloadMiuiResources()V
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 

@@ -59,7 +59,7 @@
     .prologue
     new-instance v0, Landroid/hardware/SensorEvent;
 
-    iget-object v1, p0, Landroid/hardware/SystemSensorManager$SensorEventQueue;->mManager:Landroid/hardware/SystemSensorManager;
+    iget-object v1, p0, Landroid/hardware/SystemSensorManager$BaseEventQueue;->mManager:Landroid/hardware/SystemSensorManager;
 
     #getter for: Landroid/hardware/SystemSensorManager;->mTargetSdkLevel:I
     invoke-static {v1}, Landroid/hardware/SystemSensorManager;->access$100(Landroid/hardware/SystemSensorManager;)I
@@ -213,7 +213,7 @@
 
     packed-switch v4, :pswitch_data_0
 
-    iget-object v4, p0, Landroid/hardware/SystemSensorManager$SensorEventQueue;->mFirstEvent:Landroid/util/SparseBooleanArray;
+    iget-object v4, p0, Landroid/hardware/SystemSensorManager$BaseEventQueue;->mFirstEvent:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v4, p1}, Landroid/util/SparseBooleanArray;->get(I)Z
 
@@ -221,7 +221,7 @@
 
     if-nez v4, :cond_1
 
-    iget-object v4, p0, Landroid/hardware/SystemSensorManager$SensorEventQueue;->mFirstEvent:Landroid/util/SparseBooleanArray;
+    iget-object v4, p0, Landroid/hardware/SystemSensorManager$BaseEventQueue;->mFirstEvent:Landroid/util/SparseBooleanArray;
 
     const/4 v5, 0x1
 
@@ -244,7 +244,7 @@
     goto :goto_0
 
     :pswitch_0
-    iget-object v4, p0, Landroid/hardware/SystemSensorManager$SensorEventQueue;->mSensorAccuracies:Landroid/util/SparseIntArray;
+    iget-object v4, p0, Landroid/hardware/SystemSensorManager$BaseEventQueue;->mSensorAccuracies:Landroid/util/SparseIntArray;
 
     invoke-virtual {v4, p1}, Landroid/util/SparseIntArray;->get(I)I
 
@@ -259,7 +259,7 @@
 
     if-eq v1, v4, :cond_1
 
-    iget-object v4, p0, Landroid/hardware/SystemSensorManager$SensorEventQueue;->mSensorAccuracies:Landroid/util/SparseIntArray;
+    iget-object v4, p0, Landroid/hardware/SystemSensorManager$BaseEventQueue;->mSensorAccuracies:Landroid/util/SparseIntArray;
 
     iget v5, v3, Landroid/hardware/SensorEvent;->accuracy:I
 

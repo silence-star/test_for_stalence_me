@@ -95,7 +95,7 @@
 
     const/4 v1, 0x2
 
-    invoke-virtual {p0, v1}, Landroid/widget/MediaController$3;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {p0, v1}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object p1
 
@@ -105,7 +105,7 @@
 
     int-to-long v1, v1
 
-    invoke-virtual {p0, p1, v1, v2}, Landroid/widget/MediaController$3;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {p0, p1, v1, v2}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     goto :goto_0
 

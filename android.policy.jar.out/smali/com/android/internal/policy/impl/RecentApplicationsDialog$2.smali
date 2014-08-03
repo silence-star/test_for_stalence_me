@@ -69,7 +69,7 @@
 
     iget-object v2, p0, Lcom/android/internal/policy/impl/RecentApplicationsDialog$2;->this$0:Lcom/android/internal/policy/impl/RecentApplicationsDialog;
 
-    invoke-virtual {v2}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->dismiss()V
+    invoke-virtual {v2}, Landroid/app/Dialog;->dismiss()V
 
     .end local v1           #reason:Ljava/lang/String;
     :cond_0

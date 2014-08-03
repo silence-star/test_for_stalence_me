@@ -35,7 +35,7 @@
 
     iput-boolean v1, p0, Lcom/android/server/am/BaseErrorDialog;->mConsuming:Z
 
-    invoke-virtual {p0}, Lcom/android/server/am/BaseErrorDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
@@ -43,13 +43,13 @@
 
     invoke-virtual {v1, v2}, Landroid/view/Window;->setType(I)V
 
-    invoke-virtual {p0}, Lcom/android/server/am/BaseErrorDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
     invoke-virtual {v1, v3, v3}, Landroid/view/Window;->setFlags(II)V
 
-    invoke-virtual {p0}, Lcom/android/server/am/BaseErrorDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
@@ -62,7 +62,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/WindowManager$LayoutParams;->setTitle(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {p0}, Lcom/android/server/am/BaseErrorDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
@@ -70,7 +70,7 @@
 
     const v1, 0x1010355
 
-    invoke-virtual {p0, v1}, Lcom/android/server/am/BaseErrorDialog;->setIconAttribute(I)V
+    invoke-virtual {p0, v1}, Landroid/app/AlertDialog;->setIconAttribute(I)V
 
     return-void
 .end method
@@ -104,7 +104,7 @@
     .prologue
     const v1, 0x1020019
 
-    invoke-virtual {p0, v1}, Lcom/android/server/am/BaseErrorDialog;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -113,12 +113,12 @@
     .local v0, b:Landroid/widget/Button;
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0, p1}, Landroid/widget/Button;->setEnabled(Z)V
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setEnabled(Z)V
 
     :cond_0
     const v1, 0x102001a
 
-    invoke-virtual {p0, v1}, Lcom/android/server/am/BaseErrorDialog;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -128,12 +128,12 @@
     .restart local v0       #b:Landroid/widget/Button;
     if-eqz v0, :cond_1
 
-    invoke-virtual {v0, p1}, Landroid/widget/Button;->setEnabled(Z)V
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setEnabled(Z)V
 
     :cond_1
     const v1, 0x102001b
 
-    invoke-virtual {p0, v1}, Lcom/android/server/am/BaseErrorDialog;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -143,7 +143,7 @@
     .restart local v0       #b:Landroid/widget/Button;
     if-eqz v0, :cond_2
 
-    invoke-virtual {v0, p1}, Landroid/widget/Button;->setEnabled(Z)V
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setEnabled(Z)V
 
     :cond_2
     return-void
@@ -166,7 +166,7 @@
     return v0
 
     :cond_0
-    invoke-super {p0, p1}, Landroid/app/AlertDialog;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
+    invoke-super {p0, p1}, Landroid/app/Dialog;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
     move-result v0
 

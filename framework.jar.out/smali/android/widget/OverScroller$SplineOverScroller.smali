@@ -1670,6 +1670,15 @@
     goto :goto_0
 .end method
 
+.method public getState()I
+    .locals 1
+
+    .prologue
+    iget v0, p0, Landroid/widget/OverScroller$SplineOverScroller;->mState:I
+
+    return v0
+.end method
+
 .method notifyEdgeReached(III)V
     .locals 2
     .parameter "start"
@@ -2709,13 +2718,4 @@
     iput v0, p0, Landroid/widget/OverScroller$SplineOverScroller;->mCurrentPosition:I
 
     return-void
-.end method
-
-.method public getState()I
-    .locals 1
-
-    .prologue
-    iget v0, p0, Landroid/widget/OverScroller$SplineOverScroller;->mState:I
-
-    return v0
 .end method

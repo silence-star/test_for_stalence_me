@@ -918,7 +918,7 @@
     return-void
 
     :sswitch_0
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->getWindowId()I
+    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->getWindowId()I
 
     move-result v3
 
@@ -935,7 +935,7 @@
 
     .end local v3           #windowId:I
     :sswitch_1
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->getSourceNodeId()J
+    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->getSourceNodeId()J
 
     move-result-wide v4
 
@@ -949,7 +949,7 @@
     monitor-enter v5
 
     :try_start_0
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->getSourceNodeId()J
+    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->getSourceNodeId()J
 
     move-result-wide v6
 
@@ -974,7 +974,7 @@
     monitor-enter v5
 
     :try_start_1
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->getSourceNodeId()J
+    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->getSourceNodeId()J
 
     move-result-wide v1
 

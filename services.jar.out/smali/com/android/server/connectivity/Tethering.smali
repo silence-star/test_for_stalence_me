@@ -258,7 +258,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/android/server/IoThread;->getLooper()Landroid/os/Looper;
+    invoke-virtual {v1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
 
     move-result-object v1
 
@@ -2484,7 +2484,7 @@
 
     invoke-virtual {v3, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v1}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->start()V
+    invoke-virtual {v1}, Lcom/android/internal/util/StateMachine;->start()V
 
     monitor-exit v4
     :try_end_1
@@ -2542,7 +2542,7 @@
     :cond_0
     const/4 v1, 0x4
 
-    invoke-virtual {v0, v1}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->sendMessage(I)V
+    invoke-virtual {v0, v1}, Lcom/android/internal/util/StateMachine;->sendMessage(I)V
 
     iget-object v1, p0, Lcom/android/server/connectivity/Tethering;->mIfaces:Ljava/util/HashMap;
 
@@ -2647,7 +2647,7 @@
 
     invoke-virtual {v3, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v1}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->start()V
+    invoke-virtual {v1}, Lcom/android/internal/util/StateMachine;->start()V
 
     :cond_4
     :goto_2
@@ -2678,7 +2678,7 @@
 
     const/4 v3, 0x4
 
-    invoke-virtual {v1, v3}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->sendMessage(I)V
+    invoke-virtual {v1, v3}, Lcom/android/internal/util/StateMachine;->sendMessage(I)V
 
     iget-object v3, p0, Lcom/android/server/connectivity/Tethering;->mIfaces:Ljava/util/HashMap;
 
@@ -3060,7 +3060,7 @@
     :cond_1
     const/4 v2, 0x2
 
-    invoke-virtual {v1, v2}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->sendMessage(I)V
+    invoke-virtual {v1, v2}, Lcom/android/internal/util/StateMachine;->sendMessage(I)V
 
     const/4 v2, 0x0
 
@@ -3205,7 +3205,7 @@
     :cond_1
     const/4 v2, 0x3
 
-    invoke-virtual {v1, v2}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->sendMessage(I)V
+    invoke-virtual {v1, v2}, Lcom/android/internal/util/StateMachine;->sendMessage(I)V
 
     const/4 v2, 0x0
 

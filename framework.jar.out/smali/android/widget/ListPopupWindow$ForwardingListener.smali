@@ -3,8 +3,8 @@
 .source "ListPopupWindow.java"
 
 # interfaces
-.implements Landroid/view/View$OnTouchListener;
 .implements Landroid/view/View$OnAttachStateChangeListener;
+.implements Landroid/view/View$OnTouchListener;
 
 
 # annotations
@@ -121,7 +121,7 @@
     .local v0, dst:Landroid/widget/ListPopupWindow$DropDownListView;
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Landroid/widget/ListPopupWindow$DropDownListView;->isShown()Z
+    invoke-virtual {v0}, Landroid/view/View;->isShown()Z
 
     move-result v5
 
@@ -134,7 +134,7 @@
     .local v1, dstEvent:Landroid/view/MotionEvent;
     invoke-virtual {v4, v1}, Landroid/view/View;->toGlobalMotionEvent(Landroid/view/MotionEvent;)Z
 
-    invoke-virtual {v0, v1}, Landroid/widget/ListPopupWindow$DropDownListView;->toLocalMotionEvent(Landroid/view/MotionEvent;)Z
+    invoke-virtual {v0, v1}, Landroid/view/View;->toLocalMotionEvent(Landroid/view/MotionEvent;)Z
 
     iget v5, p0, Landroid/widget/ListPopupWindow$ForwardingListener;->mActivePointerId:I
 

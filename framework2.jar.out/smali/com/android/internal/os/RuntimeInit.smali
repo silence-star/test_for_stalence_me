@@ -128,7 +128,7 @@
     .local v1, ex:Ljava/lang/IllegalArgumentException;
     const-string v2, "AndroidRuntime"
 
-    invoke-virtual {v1}, Ljava/lang/IllegalArgumentException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v3
 

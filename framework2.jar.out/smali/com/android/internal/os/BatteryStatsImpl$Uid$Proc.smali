@@ -540,7 +540,7 @@
     .local v0, c:Lcom/android/internal/os/BatteryStatsImpl$SamplingCounter;
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0, p2}, Lcom/android/internal/os/BatteryStatsImpl$SamplingCounter;->getCountLocked(I)I
+    invoke-virtual {v0, p2}, Lcom/android/internal/os/BatteryStatsImpl$Counter;->getCountLocked(I)I
 
     move-result v1
 
@@ -1029,7 +1029,7 @@
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    invoke-virtual {v0, p1}, Lcom/android/internal/os/BatteryStatsImpl$SamplingCounter;->writeToParcel(Landroid/os/Parcel;)V
+    invoke-virtual {v0, p1}, Lcom/android/internal/os/BatteryStatsImpl$Counter;->writeToParcel(Landroid/os/Parcel;)V
 
     :goto_1
     add-int/lit8 v1, v1, 0x1

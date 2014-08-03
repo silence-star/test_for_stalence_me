@@ -807,7 +807,7 @@
 
     invoke-static {v1}, Lcom/android/internal/util/AsyncChannel;->log(Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Landroid/os/RemoteException;->printStackTrace()V
+    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_0
 .end method

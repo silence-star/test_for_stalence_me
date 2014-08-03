@@ -68,7 +68,7 @@
 
     .restart local v1       #lp:Landroid/widget/FrameLayout$LayoutParams;
     :cond_0
-    invoke-virtual {p0, v0, v1}, Landroid/widget/ViewSwitcher;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p0, v0, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     return-object v0
 .end method
@@ -82,7 +82,7 @@
     .parameter "params"
 
     .prologue
-    invoke-virtual {p0}, Landroid/widget/ViewSwitcher;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
@@ -108,7 +108,7 @@
     .locals 2
 
     .prologue
-    iget v1, p0, Landroid/widget/ViewSwitcher;->mWhichChild:I
+    iget v1, p0, Landroid/widget/ViewAnimator;->mWhichChild:I
 
     if-nez v1, :cond_0
 
@@ -116,7 +116,7 @@
 
     .local v0, which:I
     :goto_0
-    invoke-virtual {p0, v0}, Landroid/widget/ViewSwitcher;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -142,7 +142,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityRecord;->setClassName(Ljava/lang/CharSequence;)V
 
     return-void
 .end method
@@ -173,11 +173,11 @@
 
     const/4 v2, 0x1
 
-    iput-boolean v2, p0, Landroid/widget/ViewSwitcher;->mFirstTime:Z
+    iput-boolean v2, p0, Landroid/widget/ViewAnimator;->mFirstTime:Z
 
     const/4 v1, 0x0
 
-    invoke-virtual {p0, v1}, Landroid/widget/ViewSwitcher;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -187,7 +187,7 @@
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
     :cond_0
-    invoke-virtual {p0, v2}, Landroid/widget/ViewSwitcher;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 

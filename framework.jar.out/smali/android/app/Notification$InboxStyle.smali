@@ -60,7 +60,7 @@
 
     iput-object v0, p0, Landroid/app/Notification$InboxStyle;->mTexts:Ljava/util/ArrayList;
 
-    invoke-virtual {p0, p1}, Landroid/app/Notification$InboxStyle;->setBuilder(Landroid/app/Notification$Builder;)V
+    invoke-virtual {p0, p1}, Landroid/app/Notification$Style;->setBuilder(Landroid/app/Notification$Builder;)V
 
     return-void
 .end method
@@ -73,7 +73,7 @@
 
     const/16 v10, 0x8
 
-    iget-object v8, p0, Landroid/app/Notification$InboxStyle;->mBuilder:Landroid/app/Notification$Builder;
+    iget-object v8, p0, Landroid/app/Notification$Style;->mBuilder:Landroid/app/Notification$Builder;
 
     const/4 v11, 0x0
 
@@ -82,7 +82,7 @@
 
     const v8, 0x109006b
 
-    invoke-virtual {p0, v8}, Landroid/app/Notification$InboxStyle;->getStandardView(I)Landroid/widget/RemoteViews;
+    invoke-virtual {p0, v8}, Landroid/app/Notification$Style;->getStandardView(I)Landroid/widget/RemoteViews;
 
     move-result-object v1
 
@@ -299,7 +299,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Landroid/app/Notification$InboxStyle;->internalSetBigContentTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v0}, Landroid/app/Notification$Style;->internalSetBigContentTitle(Ljava/lang/CharSequence;)V
 
     return-object p0
 .end method
@@ -313,7 +313,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Landroid/app/Notification$InboxStyle;->internalSetSummaryText(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v0}, Landroid/app/Notification$Style;->internalSetSummaryText(Ljava/lang/CharSequence;)V
 
     return-object p0
 .end method

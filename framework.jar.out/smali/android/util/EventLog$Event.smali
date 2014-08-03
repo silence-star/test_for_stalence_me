@@ -145,7 +145,7 @@
     .local v3, length:I
     iget-object v6, p0, Landroid/util/EventLog$Event;->mBuffer:Ljava/nio/ByteBuffer;
 
-    invoke-virtual {v6}, Ljava/nio/ByteBuffer;->position()I
+    invoke-virtual {v6}, Ljava/nio/Buffer;->position()I
 
     move-result v4
 
@@ -154,7 +154,7 @@
 
     add-int v7, v4, v3
 
-    invoke-virtual {v6, v7}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {v6, v7}, Ljava/nio/Buffer;->position(I)Ljava/nio/Buffer;
 
     new-instance v0, Ljava/lang/String;
 
@@ -255,13 +255,13 @@
 
     add-int/lit8 v3, v3, 0x14
 
-    invoke-virtual {v2, v3}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
+    invoke-virtual {v2, v3}, Ljava/nio/Buffer;->limit(I)Ljava/nio/Buffer;
 
     iget-object v2, p0, Landroid/util/EventLog$Event;->mBuffer:Ljava/nio/ByteBuffer;
 
     const/16 v3, 0x18
 
-    invoke-virtual {v2, v3}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {v2, v3}, Ljava/nio/Buffer;->position(I)Ljava/nio/Buffer;
 
     invoke-direct {p0}, Landroid/util/EventLog$Event;->decodeObject()Ljava/lang/Object;
     :try_end_0

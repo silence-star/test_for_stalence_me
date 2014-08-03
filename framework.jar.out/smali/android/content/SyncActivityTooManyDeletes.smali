@@ -107,7 +107,7 @@
     .prologue
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    invoke-virtual {p0}, Landroid/content/SyncActivityTooManyDeletes;->getIntent()Landroid/content/Intent;
+    invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
     move-result-object v8
 
@@ -118,7 +118,7 @@
     .local v1, extras:Landroid/os/Bundle;
     if-nez v1, :cond_0
 
-    invoke-virtual {p0}, Landroid/content/SyncActivityTooManyDeletes;->finish()V
+    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
 
     :goto_0
     return-void
@@ -164,7 +164,7 @@
 
     const/4 v8, 0x0
 
-    invoke-virtual {p0}, Landroid/content/SyncActivityTooManyDeletes;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/ContextThemeWrapper;->getResources()Landroid/content/res/Resources;
 
     move-result-object v9
 
@@ -178,7 +178,7 @@
 
     const/4 v8, 0x1
 
-    invoke-virtual {p0}, Landroid/content/SyncActivityTooManyDeletes;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/ContextThemeWrapper;->getResources()Landroid/content/res/Resources;
 
     move-result-object v9
 
@@ -192,7 +192,7 @@
 
     const/4 v8, 0x2
 
-    invoke-virtual {p0}, Landroid/content/SyncActivityTooManyDeletes;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/ContextThemeWrapper;->getResources()Landroid/content/res/Resources;
 
     move-result-object v9
 
@@ -225,14 +225,14 @@
 
     invoke-virtual {v2, v8}, Landroid/widget/ListView;->setItemsCanFocus(Z)V
 
-    invoke-virtual {v2, p0}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
+    invoke-virtual {v2, p0}, Landroid/widget/AdapterView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
     new-instance v6, Landroid/widget/TextView;
 
     invoke-direct {v6, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     .local v6, textView:Landroid/widget/TextView;
-    invoke-virtual {p0}, Landroid/content/SyncActivityTooManyDeletes;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/ContextThemeWrapper;->getResources()Landroid/content/res/Resources;
 
     move-result-object v8
 
@@ -301,11 +301,11 @@
     invoke-direct {v4, v8, v9, v10}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
 
     .local v4, lp:Landroid/widget/LinearLayout$LayoutParams;
-    invoke-virtual {v3, v6, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v3, v6, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    invoke-virtual {v3, v2, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v3, v2, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    invoke-virtual {p0, v3}, Landroid/content/SyncActivityTooManyDeletes;->setContentView(Landroid/view/View;)V
+    invoke-virtual {p0, v3}, Landroid/app/Activity;->setContentView(Landroid/view/View;)V
 
     goto/16 :goto_0
 .end method
@@ -334,7 +334,7 @@
 
     :cond_0
     :goto_0
-    invoke-virtual {p0}, Landroid/content/SyncActivityTooManyDeletes;->finish()V
+    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
 
     return-void
 

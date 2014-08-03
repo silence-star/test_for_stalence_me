@@ -388,7 +388,7 @@
 
     move-result-object v8
 
-    invoke-virtual {v8, v9}, Lcom/android/server/MountService$ObbActionHandler;->sendEmptyMessage(I)Z
+    invoke-virtual {v8, v9}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     goto/16 :goto_0
 

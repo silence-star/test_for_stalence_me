@@ -58,7 +58,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/webkit/JsPromptResult;->confirm()V
+    invoke-virtual {v0}, Landroid/webkit/JsResult;->confirm()V
 
     :goto_0
     return-void

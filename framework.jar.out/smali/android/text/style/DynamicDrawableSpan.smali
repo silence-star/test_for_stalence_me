@@ -64,7 +64,7 @@
     .local v0, d:Landroid/graphics/drawable/Drawable;
     if-eqz v1, :cond_0
 
-    invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v1}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     move-result-object v0
 

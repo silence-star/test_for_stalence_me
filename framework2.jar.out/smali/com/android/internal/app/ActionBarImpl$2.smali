@@ -52,7 +52,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/android/internal/widget/ActionBarContainer;->requestLayout()V
+    invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
 
     return-void
 .end method

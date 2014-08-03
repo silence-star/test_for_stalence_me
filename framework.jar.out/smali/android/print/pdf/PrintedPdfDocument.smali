@@ -190,7 +190,7 @@
     move-result-object v0
 
     .local v0, pageInfo:Landroid/graphics/pdf/PdfDocument$PageInfo;
-    invoke-virtual {p0, v0}, Landroid/print/pdf/PrintedPdfDocument;->startPage(Landroid/graphics/pdf/PdfDocument$PageInfo;)Landroid/graphics/pdf/PdfDocument$Page;
+    invoke-virtual {p0, v0}, Landroid/graphics/pdf/PdfDocument;->startPage(Landroid/graphics/pdf/PdfDocument$PageInfo;)Landroid/graphics/pdf/PdfDocument$Page;
 
     move-result-object v1
 

@@ -88,7 +88,7 @@
     :try_start_0
     iget-object v0, p0, Lcom/android/internal/view/BaseIWindow;->mSession:Landroid/view/IWindowSession;
 
-    invoke-virtual {p0}, Lcom/android/internal/view/BaseIWindow;->asBinder()Landroid/os/IBinder;
+    invoke-virtual {p0}, Landroid/view/IWindow$Stub;->asBinder()Landroid/os/IBinder;
 
     move-result-object v1
 
@@ -122,7 +122,7 @@
     :try_start_0
     iget-object v0, p0, Lcom/android/internal/view/BaseIWindow;->mSession:Landroid/view/IWindowSession;
 
-    invoke-virtual {p0}, Lcom/android/internal/view/BaseIWindow;->asBinder()Landroid/os/IBinder;
+    invoke-virtual {p0}, Landroid/view/IWindow$Stub;->asBinder()Landroid/os/IBinder;
 
     move-result-object v1
 

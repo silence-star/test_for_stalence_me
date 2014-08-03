@@ -40,7 +40,7 @@
     .locals 1
 
     .prologue
-    iget-object v0, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mTextView:Landroid/widget/TextView;
+    iget-object v0, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getSelectionStart()I
 
@@ -56,9 +56,9 @@
     .prologue
     const/4 v0, 0x0
 
-    iget v1, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mContainerX:I
+    iget v1, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mContainerX:I
 
-    iget v2, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mHotspotX:I
+    iget v2, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mHotspotX:I
 
     add-int/2addr v1, v2
 
@@ -66,9 +66,9 @@
 
     const/4 v0, 0x1
 
-    iget v1, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mContainerY:I
+    iget v1, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mContainerY:I
 
-    iget v2, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mLineHeight:I
+    iget v2, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mLineHeight:I
 
     add-int/2addr v1, v2
 
@@ -91,7 +91,7 @@
 
     int-to-float v0, v0
 
-    iget v1, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mRatio:F
+    iget v1, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mRatio:F
 
     mul-float/2addr v0, v1
 
@@ -104,7 +104,7 @@
     .locals 5
 
     .prologue
-    iget-boolean v0, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mIsDragging:Z
+    iget-boolean v0, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mIsDragging:Z
 
     if-eqz v0, :cond_0
 
@@ -114,7 +114,7 @@
     return v0
 
     :cond_0
-    iget-object v0, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mTextView:Landroid/widget/TextView;
+    iget-object v0, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->isInBatchEditMode()Z
 
@@ -127,21 +127,21 @@
     goto :goto_0
 
     :cond_1
-    iget-object v0, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mEditor:Landroid/widget/Editor;
+    iget-object v0, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mEditor:Landroid/widget/Editor;
 
-    iget v1, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mPositionX:I
+    iget v1, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mPositionX:I
 
-    iget v2, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mHotspotX:I
+    iget v2, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mHotspotX:I
 
     add-int/2addr v1, v2
 
-    iget v2, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mPositionY:I
+    iget v2, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mPositionY:I
 
-    iget v3, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mHandleNoShadowHeight:I
+    iget v3, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mHandleNoShadowHeight:I
 
     int-to-float v3, v3
 
-    iget v4, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mRatio:F
+    iget v4, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mRatio:F
 
     mul-float/2addr v3, v4
 
@@ -163,7 +163,7 @@
     .prologue
     const/4 v6, 0x0
 
-    iget-object v4, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object v4, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v4}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
@@ -171,33 +171,33 @@
 
     int-to-float v4, v4
 
-    iget v5, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mRatio:F
+    iget v5, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mRatio:F
 
     mul-float/2addr v4, v5
 
     float-to-int v0, v4
 
     .local v0, bottom:I
-    iget-object v4, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object v4, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    iget v5, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mRight:I
+    iget v5, p0, Landroid/view/View;->mRight:I
 
     invoke-virtual {v4, v6, v6, v5, v0}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    iget-object v4, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object v4, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v4, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    iget-object v4, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mDrawableMark:Landroid/graphics/drawable/Drawable;
+    iget-object v4, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mDrawableMark:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v4}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v3
 
     .local v3, markWidth:I
-    iget v4, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mRight:I
+    iget v4, p0, Landroid/view/View;->mRight:I
 
-    iget v5, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mLeft:I
+    iget v5, p0, Landroid/view/View;->mLeft:I
 
     sub-int/2addr v4, v5
 
@@ -209,13 +209,13 @@
     add-int v2, v1, v3
 
     .local v2, markRight:I
-    iget-object v4, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mDrawableMark:Landroid/graphics/drawable/Drawable;
+    iget-object v4, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mDrawableMark:Landroid/graphics/drawable/Drawable;
 
-    iget v5, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mBottom:I
+    iget v5, p0, Landroid/view/View;->mBottom:I
 
     invoke-virtual {v4, v1, v0, v2, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    iget-object v4, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mDrawableMark:Landroid/graphics/drawable/Drawable;
+    iget-object v4, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mDrawableMark:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v4, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
@@ -228,14 +228,14 @@
     .prologue
     const/high16 v3, 0x3f80
 
-    iget-object v1, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mTextView:Landroid/widget/TextView;
+    iget-object v1, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v1}, Landroid/widget/TextView;->getLineHeight()I
 
     move-result v0
 
     .local v0, lineheight:I
-    iget v1, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mLineHeight:I
+    iget v1, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mLineHeight:I
 
     if-ne v1, v0, :cond_0
 
@@ -243,11 +243,11 @@
     return-void
 
     :cond_0
-    iput v0, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mLineHeight:I
+    iput v0, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mLineHeight:I
 
-    iget v1, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mMinHandleRatio:F
+    iget v1, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mMinHandleRatio:F
 
-    iget v2, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mMarkHeightMatchHandleHeight:I
+    iget v2, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mMarkHeightMatchHandleHeight:I
 
     div-int v2, v0, v2
 
@@ -257,20 +257,20 @@
 
     move-result v1
 
-    iput v1, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mRatio:F
+    iput v1, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mRatio:F
 
-    iget v1, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mRatio:F
+    iget v1, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mRatio:F
 
     cmpl-float v1, v1, v3
 
     if-lez v1, :cond_1
 
-    iput v3, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mRatio:F
+    iput v3, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mRatio:F
 
     :cond_1
-    iget-object v1, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mContainer:Landroid/widget/PopupWindow;
+    iget-object v1, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mContainer:Landroid/widget/PopupWindow;
 
-    iget-object v2, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object v2, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
@@ -278,7 +278,7 @@
 
     int-to-float v2, v2
 
-    iget v3, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mRatio:F
+    iget v3, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mRatio:F
 
     mul-float/2addr v2, v3
 
@@ -286,15 +286,15 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/PopupWindow;->setWidth(I)V
 
-    iget-object v1, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mContainer:Landroid/widget/PopupWindow;
+    iget-object v1, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mContainer:Landroid/widget/PopupWindow;
 
     int-to-float v2, v0
 
-    iget v3, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mHandleNoShadowHeight:I
+    iget v3, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mHandleNoShadowHeight:I
 
     int-to-float v3, v3
 
-    iget v4, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mRatio:F
+    iget v4, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mRatio:F
 
     mul-float/2addr v3, v4
 
@@ -306,9 +306,9 @@
 
     const/4 v1, 0x0
 
-    iput v1, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mHandleTypeOffset:I
+    iput v1, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mHandleTypeOffset:I
 
-    iget-object v1, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object v1, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
@@ -316,7 +316,7 @@
 
     int-to-float v1, v1
 
-    iget v2, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mRatio:F
+    iget v2, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mRatio:F
 
     mul-float/2addr v1, v2
 
@@ -328,7 +328,7 @@
 
     add-float/2addr v1, v2
 
-    iput v1, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mTouchOffsetY:F
+    iput v1, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mTouchOffsetY:F
 
     const v1, 0x3f333333
 
@@ -336,7 +336,7 @@
 
     mul-float/2addr v1, v2
 
-    iput v1, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mIdealVerticalOffset:F
+    iput v1, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mIdealVerticalOffset:F
 
     goto :goto_0
 .end method
@@ -349,14 +349,14 @@
     .prologue
     const/4 v3, 0x0
 
-    iget-object v2, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mTextView:Landroid/widget/TextView;
+    iget-object v2, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2, p1, p2}, Landroid/widget/TextView;->getOffsetForPosition(FF)I
 
     move-result v1
 
     .local v1, offset:I
-    iget-object v2, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mTextView:Landroid/widget/TextView;
+    iget-object v2, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2}, Landroid/widget/TextView;->getSelectionEnd()I
 
@@ -372,7 +372,7 @@
     move-result v1
 
     :cond_0
-    invoke-virtual {p0, v1, v3}, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->positionAtCursorOffset(IZ)V
+    invoke-virtual {p0, v1, v3}, Landroid/widget/NubiaCursorController$NubiaHandleView;->positionAtCursorOffset(IZ)V
 
     return-void
 .end method
@@ -383,7 +383,7 @@
     .parameter "hasPositionChanged"
 
     .prologue
-    iget-object v3, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mTextView:Landroid/widget/TextView;
+    iget-object v3, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v3}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
 
@@ -403,7 +403,7 @@
 
     sub-float/2addr v3, v4
 
-    iget v4, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mHotspotX:I
+    iget v4, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mHotspotX:I
 
     int-to-float v4, v4
 
@@ -411,17 +411,17 @@
 
     float-to-int v3, v3
 
-    iput v3, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mPositionX:I
+    iput v3, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mPositionX:I
 
     invoke-virtual {v0, v1}, Landroid/text/Layout;->getLineTop(I)I
 
     move-result v3
 
-    iget v4, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mHandleNoShadowHeight:I
+    iget v4, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mHandleNoShadowHeight:I
 
     int-to-float v4, v4
 
-    iget v5, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mRatio:F
+    iget v5, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mRatio:F
 
     mul-float/2addr v4, v5
 
@@ -429,11 +429,11 @@
 
     sub-int/2addr v3, v4
 
-    iput v3, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mPositionY:I
+    iput v3, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mPositionY:I
 
-    iget v3, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mPositionX:I
+    iget v3, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mPositionX:I
 
-    iget-object v4, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mTextView:Landroid/widget/TextView;
+    iget-object v4, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v4}, Landroid/widget/TextView;->viewportToContentHorizontalOffset()I
 
@@ -441,11 +441,11 @@
 
     add-int/2addr v3, v4
 
-    iput v3, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mPositionX:I
+    iput v3, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mPositionX:I
 
-    iget v3, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mPositionY:I
+    iget v3, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mPositionY:I
 
-    iget-object v4, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mTextView:Landroid/widget/TextView;
+    iget-object v4, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v4}, Landroid/widget/TextView;->viewportToContentVerticalOffset()I
 
@@ -453,7 +453,7 @@
 
     add-int/2addr v3, v4
 
-    iput v3, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mPositionY:I
+    iput v3, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mPositionY:I
 
     if-eqz p2, :cond_0
 
@@ -462,29 +462,29 @@
     new-array v2, v3, [I
 
     .local v2, location:[I
-    iget-object v3, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mTextView:Landroid/widget/TextView;
+    iget-object v3, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v3, v2}, Landroid/widget/TextView;->getLocationOnScreen([I)V
+    invoke-virtual {v3, v2}, Landroid/view/View;->getLocationOnScreen([I)V
 
     const/4 v3, 0x0
 
     aget v3, v2, v3
 
-    iget v4, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mPositionX:I
+    iget v4, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mPositionX:I
 
     add-int/2addr v3, v4
 
-    iput v3, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mContainerX:I
+    iput v3, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mContainerX:I
 
     const/4 v3, 0x1
 
     aget v3, v2, v3
 
-    iget v4, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mPositionY:I
+    iget v4, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mPositionY:I
 
     add-int/2addr v3, v4
 
-    iput v3, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mContainerY:I
+    iput v3, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mContainerY:I
 
     .end local v2           #location:[I
     :cond_0
@@ -496,9 +496,9 @@
     .parameter "offset"
 
     .prologue
-    iget-object v0, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mEditor:Landroid/widget/Editor;
+    iget-object v0, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mEditor:Landroid/widget/Editor;
 
-    iget-object v1, p0, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->mTextView:Landroid/widget/TextView;
+    iget-object v1, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v1}, Landroid/widget/TextView;->getSelectionEnd()I
 
@@ -506,7 +506,7 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/widget/Editor;->setTextSelectionWrap(II)V
 
-    invoke-virtual {p0}, Landroid/widget/NubiaCursorController$SelectionStartHandleView;->updateDrawable()V
+    invoke-virtual {p0}, Landroid/widget/NubiaCursorController$NubiaHandleView;->updateDrawable()V
 
     return-void
 .end method

@@ -35,7 +35,7 @@
     .locals 3
 
     .prologue
-    invoke-virtual {p0}, Lcom/android/server/InputMethodManagerService$MyPackageMonitor;->getChangingUserId()I
+    invoke-virtual {p0}, Lcom/android/internal/content/PackageMonitor;->getChangingUserId()I
 
     move-result v1
 
@@ -322,7 +322,7 @@
 
     move-result-object v9
 
-    invoke-virtual {p0, v9}, Lcom/android/server/InputMethodManagerService$MyPackageMonitor;->isPackageDisappearing(Ljava/lang/String;)I
+    invoke-virtual {p0, v9}, Lcom/android/internal/content/PackageMonitor;->isPackageDisappearing(Ljava/lang/String;)I
 
     move-result v1
 
@@ -331,7 +331,7 @@
 
     move-result-object v9
 
-    invoke-virtual {p0, v9}, Lcom/android/server/InputMethodManagerService$MyPackageMonitor;->isPackageModified(Ljava/lang/String;)Z
+    invoke-virtual {p0, v9}, Lcom/android/internal/content/PackageMonitor;->isPackageModified(Ljava/lang/String;)Z
 
     move-result v9
 
@@ -426,7 +426,7 @@
 
     move-result-object v9
 
-    invoke-virtual {p0, v9}, Lcom/android/server/InputMethodManagerService$MyPackageMonitor;->isPackageDisappearing(Ljava/lang/String;)I
+    invoke-virtual {p0, v9}, Lcom/android/internal/content/PackageMonitor;->isPackageDisappearing(Ljava/lang/String;)I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 

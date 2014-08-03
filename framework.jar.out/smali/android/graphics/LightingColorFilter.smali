@@ -16,15 +16,15 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/LightingColorFilter;->native_instance:I
+    iput v0, p0, Landroid/graphics/ColorFilter;->native_instance:I
 
-    iget v0, p0, Landroid/graphics/LightingColorFilter;->native_instance:I
+    iget v0, p0, Landroid/graphics/ColorFilter;->native_instance:I
 
     invoke-static {v0, p1, p2}, Landroid/graphics/LightingColorFilter;->nCreateLightingFilter(III)I
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/LightingColorFilter;->nativeColorFilter:I
+    iput v0, p0, Landroid/graphics/ColorFilter;->nativeColorFilter:I
 
     return-void
 .end method

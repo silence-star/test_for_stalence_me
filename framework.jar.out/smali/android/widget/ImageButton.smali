@@ -45,7 +45,7 @@
 
     const/4 v0, 0x1
 
-    invoke-virtual {p0, v0}, Landroid/widget/ImageButton;->setFocusable(Z)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setFocusable(Z)V
 
     return-void
 .end method
@@ -65,7 +65,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityRecord;->setClassName(Ljava/lang/CharSequence;)V
 
     return-void
 .end method

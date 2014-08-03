@@ -3,9 +3,9 @@
 .source "AnimatedRotateDrawable.java"
 
 # interfaces
+.implements Landroid/graphics/drawable/Animatable;
 .implements Landroid/graphics/drawable/Drawable$Callback;
 .implements Ljava/lang/Runnable;
-.implements Landroid/graphics/drawable/Animatable;
 
 
 # annotations
@@ -606,13 +606,13 @@
 
     move-result v6
 
-    goto :goto_1
+    goto/16 :goto_1
 
     .restart local v6       #pivotX:F
     :cond_5
     const/4 v9, 0x0
 
-    goto :goto_2
+    goto/16 :goto_2
 
     .restart local v9       #pivotYRel:Z
     :cond_6

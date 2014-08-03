@@ -27,7 +27,7 @@
     .prologue
     invoke-direct {p0}, Landroid/animation/Keyframe;-><init>()V
 
-    iput p1, p0, Landroid/animation/Keyframe$ObjectKeyframe;->mFraction:F
+    iput p1, p0, Landroid/animation/Keyframe;->mFraction:F
 
     iput-object p2, p0, Landroid/animation/Keyframe$ObjectKeyframe;->mValue:Ljava/lang/Object;
 
@@ -36,9 +36,9 @@
     const/4 v0, 0x1
 
     :goto_0
-    iput-boolean v0, p0, Landroid/animation/Keyframe$ObjectKeyframe;->mHasValue:Z
+    iput-boolean v0, p0, Landroid/animation/Keyframe;->mHasValue:Z
 
-    iget-boolean v0, p0, Landroid/animation/Keyframe$ObjectKeyframe;->mHasValue:Z
+    iget-boolean v0, p0, Landroid/animation/Keyframe;->mHasValue:Z
 
     if-eqz v0, :cond_1
 
@@ -47,7 +47,7 @@
     move-result-object v0
 
     :goto_1
-    iput-object v0, p0, Landroid/animation/Keyframe$ObjectKeyframe;->mValueType:Ljava/lang/Class;
+    iput-object v0, p0, Landroid/animation/Keyframe;->mValueType:Ljava/lang/Class;
 
     return-void
 
@@ -70,11 +70,11 @@
     .prologue
     new-instance v0, Landroid/animation/Keyframe$ObjectKeyframe;
 
-    invoke-virtual {p0}, Landroid/animation/Keyframe$ObjectKeyframe;->getFraction()F
+    invoke-virtual {p0}, Landroid/animation/Keyframe;->getFraction()F
 
     move-result v2
 
-    iget-boolean v1, p0, Landroid/animation/Keyframe$ObjectKeyframe;->mHasValue:Z
+    iget-boolean v1, p0, Landroid/animation/Keyframe;->mHasValue:Z
 
     if-eqz v1, :cond_0
 
@@ -84,11 +84,11 @@
     invoke-direct {v0, v2, v1}, Landroid/animation/Keyframe$ObjectKeyframe;-><init>(FLjava/lang/Object;)V
 
     .local v0, kfClone:Landroid/animation/Keyframe$ObjectKeyframe;
-    invoke-virtual {p0}, Landroid/animation/Keyframe$ObjectKeyframe;->getInterpolator()Landroid/animation/TimeInterpolator;
+    invoke-virtual {p0}, Landroid/animation/Keyframe;->getInterpolator()Landroid/animation/TimeInterpolator;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Landroid/animation/Keyframe$ObjectKeyframe;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+    invoke-virtual {v0, v1}, Landroid/animation/Keyframe;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
     return-object v0
 
@@ -147,7 +147,7 @@
     const/4 v0, 0x1
 
     :goto_0
-    iput-boolean v0, p0, Landroid/animation/Keyframe$ObjectKeyframe;->mHasValue:Z
+    iput-boolean v0, p0, Landroid/animation/Keyframe;->mHasValue:Z
 
     return-void
 

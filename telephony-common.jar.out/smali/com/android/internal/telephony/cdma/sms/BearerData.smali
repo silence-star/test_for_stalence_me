@@ -1287,7 +1287,7 @@
 
     move-result v9
 
-    iput v9, v1, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->ton:I
+    iput v9, v1, Lcom/android/internal/telephony/SmsAddress;->ton:I
 
     const/4 v9, 0x4
 
@@ -1380,7 +1380,7 @@
 
     move-result-object v9
 
-    iput-object v9, v1, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->origBytes:[B
+    iput-object v9, v1, Lcom/android/internal/telephony/SmsAddress;->origBytes:[B
 
     invoke-virtual {p1, v5}, Lcom/android/internal/util/BitwiseInputStream;->skip(I)V
 
@@ -2626,7 +2626,7 @@
 
     iget-object v4, v4, Lcom/android/internal/telephony/cdma/sms/UserData;->payload:[B
 
-    iput-object v4, v0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->origBytes:[B
+    iput-object v4, v0, Lcom/android/internal/telephony/SmsAddress;->origBytes:[B
 
     int-to-byte v4, v3
 
@@ -4670,11 +4670,11 @@
     :try_start_0
     new-instance v1, Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->origBytes:[B
+    iget-object v2, p0, Lcom/android/internal/telephony/SmsAddress;->origBytes:[B
 
     const/4 v3, 0x0
 
-    iget-object v4, p0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->origBytes:[B
+    iget-object v4, p0, Lcom/android/internal/telephony/SmsAddress;->origBytes:[B
 
     array-length v4, v4
 
@@ -4682,7 +4682,7 @@
 
     invoke-direct {v1, v2, v3, v4, v5}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
 
-    iput-object v1, p0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->address:Ljava/lang/String;
+    iput-object v1, p0, Lcom/android/internal/telephony/SmsAddress;->address:Ljava/lang/String;
     :try_end_0
     .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -4703,7 +4703,7 @@
 
     .end local v0           #ex:Ljava/io/UnsupportedEncodingException;
     :cond_0
-    iget-object v1, p0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->origBytes:[B
+    iget-object v1, p0, Lcom/android/internal/telephony/SmsAddress;->origBytes:[B
 
     iget v2, p0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->numberOfDigits:I
 
@@ -4711,7 +4711,7 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->address:Ljava/lang/String;
+    iput-object v1, p0, Lcom/android/internal/telephony/SmsAddress;->address:Ljava/lang/String;
 
     goto :goto_0
 .end method
@@ -6458,7 +6458,7 @@
 
     const/4 v5, 0x3
 
-    iget v6, v0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->ton:I
+    iget v6, v0, Lcom/android/internal/telephony/SmsAddress;->ton:I
 
     invoke-virtual {p1, v5, v6}, Lcom/android/internal/util/BitwiseOutputStream;->write(II)V
 
@@ -6473,7 +6473,7 @@
 
     invoke-virtual {p1, v9, v5}, Lcom/android/internal/util/BitwiseOutputStream;->write(II)V
 
-    iget-object v5, v0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->origBytes:[B
+    iget-object v5, v0, Lcom/android/internal/telephony/SmsAddress;->origBytes:[B
 
     invoke-virtual {p1, v1, v5}, Lcom/android/internal/util/BitwiseOutputStream;->writeByteArray(I[B)V
 
@@ -6516,7 +6516,7 @@
     if-ne v1, v2, :cond_0
 
     :try_start_0
-    iget-object v1, p0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->address:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/internal/telephony/SmsAddress;->address:Ljava/lang/String;
 
     const-string v2, "US-ASCII"
 
@@ -6524,7 +6524,7 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->origBytes:[B
+    iput-object v1, p0, Lcom/android/internal/telephony/SmsAddress;->origBytes:[B
     :try_end_0
     .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -6545,13 +6545,13 @@
 
     .end local v0           #ex:Ljava/io/UnsupportedEncodingException;
     :cond_0
-    iget-object v1, p0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->address:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/internal/telephony/SmsAddress;->address:Ljava/lang/String;
 
     invoke-static {v1}, Lcom/android/internal/telephony/cdma/sms/BearerData;->encodeDtmfSmsAddress(Ljava/lang/String;)[B
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->origBytes:[B
+    iput-object v1, p0, Lcom/android/internal/telephony/SmsAddress;->origBytes:[B
 
     goto :goto_0
 .end method

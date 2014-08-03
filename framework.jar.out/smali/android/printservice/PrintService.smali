@@ -153,7 +153,7 @@
     .parameter "base"
 
     .prologue
-    invoke-super {p0, p1}, Landroid/app/Service;->attachBaseContext(Landroid/content/Context;)V
+    invoke-super {p0, p1}, Landroid/content/ContextWrapper;->attachBaseContext(Landroid/content/Context;)V
 
     new-instance v0, Landroid/printservice/PrintService$ServiceHandler;
 
@@ -179,7 +179,7 @@
 
     new-instance v1, Landroid/content/ComponentName;
 
-    invoke-virtual {p0}, Landroid/printservice/PrintService;->getPackageName()Ljava/lang/String;
+    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getPackageName()Ljava/lang/String;
 
     move-result-object v2
 

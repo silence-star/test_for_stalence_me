@@ -149,7 +149,7 @@
 
     const-string v4, "android.app.MediaRouteButton:MediaRouteChooserDialogFragment"
 
-    invoke-virtual {v0, v1, v4}, Lcom/android/internal/app/MediaRouteChooserDialogFragment;->show(Landroid/app/FragmentManager;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, v4}, Landroid/app/DialogFragment;->show(Landroid/app/FragmentManager;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -179,7 +179,7 @@
     .local v0, f:Lcom/android/internal/app/MediaRouteControllerDialogFragment;
     const-string v4, "android.app.MediaRouteButton:MediaRouteControllerDialogFragment"
 
-    invoke-virtual {v0, v1, v4}, Lcom/android/internal/app/MediaRouteControllerDialogFragment;->show(Landroid/app/FragmentManager;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, v4}, Landroid/app/DialogFragment;->show(Landroid/app/FragmentManager;Ljava/lang/String;)V
 
     goto :goto_0
 .end method

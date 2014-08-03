@@ -1027,7 +1027,7 @@
     iget-object v8, v10, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
 
     .local v8, tokens:Lcom/android/server/wm/AppTokenList;
-    invoke-virtual {v8}, Lcom/android/server/wm/AppTokenList;->size()I
+    invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
 
     move-result v10
 
@@ -1041,7 +1041,7 @@
     :goto_2
     if-ltz v7, :cond_3
 
-    invoke-virtual {v8, v7}, Lcom/android/server/wm/AppTokenList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v8, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v9
 
@@ -1158,7 +1158,7 @@
     :cond_5
     iget-object v10, p0, Lcom/android/server/wm/DisplayContent;->mExitingAppTokens:Lcom/android/server/wm/AppTokenList;
 
-    invoke-virtual {v10}, Lcom/android/server/wm/AppTokenList;->size()I
+    invoke-virtual {v10}, Ljava/util/ArrayList;->size()I
 
     move-result v10
 
@@ -1172,7 +1172,7 @@
 
     iget-object v10, p0, Lcom/android/server/wm/DisplayContent;->mExitingAppTokens:Lcom/android/server/wm/AppTokenList;
 
-    invoke-virtual {v10}, Lcom/android/server/wm/AppTokenList;->size()I
+    invoke-virtual {v10}, Ljava/util/ArrayList;->size()I
 
     move-result v10
 
@@ -1184,7 +1184,7 @@
 
     iget-object v10, p0, Lcom/android/server/wm/DisplayContent;->mExitingAppTokens:Lcom/android/server/wm/AppTokenList;
 
-    invoke-virtual {v10, v1}, Lcom/android/server/wm/AppTokenList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v10, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
@@ -1761,7 +1761,7 @@
 
     iget-object v2, v2, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
 
-    invoke-virtual {v2}, Lcom/android/server/wm/AppTokenList;->size()I
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
@@ -1994,7 +1994,7 @@
     move-result-object v3
 
     .local v3, windows:Lcom/android/server/wm/WindowList;
-    invoke-virtual {v3}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
@@ -2004,7 +2004,7 @@
     :goto_0
     if-ltz v0, :cond_1
 
-    invoke-virtual {v3, v0}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -2136,13 +2136,13 @@
 
     .local v0, i:I
     :goto_0
-    invoke-virtual {v3}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
     if-ge v0, v4, :cond_1
 
-    invoke-virtual {v3, v0}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 

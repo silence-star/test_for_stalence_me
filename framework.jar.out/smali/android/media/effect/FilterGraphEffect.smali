@@ -54,7 +54,7 @@
 
     .local v1, reader:Landroid/filterfw/io/GraphReader;
     :try_start_0
-    invoke-virtual {v1, p1}, Landroid/filterfw/io/GraphReader;->readGraphString(Ljava/lang/String;)Landroid/filterfw/core/FilterGraph;
+    invoke-virtual {v1, p1}, Landroid/filterfw/io/TextGraphReader;->readGraphString(Ljava/lang/String;)Landroid/filterfw/core/FilterGraph;
 
     move-result-object v2
 
@@ -90,7 +90,7 @@
     :cond_0
     new-instance v2, Landroid/filterfw/core/SyncRunner;
 
-    invoke-virtual {p0}, Landroid/media/effect/FilterGraphEffect;->getFilterContext()Landroid/filterfw/core/FilterContext;
+    invoke-virtual {p0}, Landroid/media/effect/FilterEffect;->getFilterContext()Landroid/filterfw/core/FilterContext;
 
     move-result-object v3
 
@@ -115,7 +115,7 @@
     .parameter "outputTexId"
 
     .prologue
-    invoke-virtual {p0}, Landroid/media/effect/FilterGraphEffect;->beginGLEffect()V
+    invoke-virtual {p0}, Landroid/media/effect/FilterEffect;->beginGLEffect()V
 
     iget-object v3, p0, Landroid/media/effect/FilterGraphEffect;->mGraph:Landroid/filterfw/core/FilterGraph;
 
@@ -178,7 +178,7 @@
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-virtual {p0}, Landroid/media/effect/FilterGraphEffect;->endGLEffect()V
+    invoke-virtual {p0}, Landroid/media/effect/FilterEffect;->endGLEffect()V
 
     return-void
 
@@ -221,7 +221,7 @@
     .prologue
     iget-object v0, p0, Landroid/media/effect/FilterGraphEffect;->mGraph:Landroid/filterfw/core/FilterGraph;
 
-    invoke-virtual {p0}, Landroid/media/effect/FilterGraphEffect;->getFilterContext()Landroid/filterfw/core/FilterContext;
+    invoke-virtual {p0}, Landroid/media/effect/FilterEffect;->getFilterContext()Landroid/filterfw/core/FilterContext;
 
     move-result-object v1
 

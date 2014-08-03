@@ -3,8 +3,8 @@
 .source "UserState.java"
 
 # interfaces
-.implements Lcom/android/server/print/RemotePrintSpooler$PrintSpoolerCallbacks;
 .implements Lcom/android/server/print/RemotePrintService$PrintServiceCallbacks;
+.implements Lcom/android/server/print/RemotePrintSpooler$PrintSpoolerCallbacks;
 
 
 # annotations
@@ -347,7 +347,7 @@
     iget-object v6, v9, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
     .local v6, serviceInfo:Landroid/content/pm/ServiceInfo;
-    iget-object v9, v6, Landroid/content/pm/ServiceInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v9, v6, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget v9, v9, Landroid/content/pm/ApplicationInfo;->flags:I
 
@@ -357,9 +357,9 @@
 
     new-instance v7, Landroid/content/ComponentName;
 
-    iget-object v9, v6, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    iget-object v9, v6, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
-    iget-object v10, v6, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
+    iget-object v10, v6, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     invoke-direct {v7, v9, v10}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -806,11 +806,11 @@
 
     iget-object v1, v8, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
-    iget-object v1, v1, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    iget-object v1, v1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     iget-object v3, v8, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
-    iget-object v3, v3, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
+    iget-object v3, v3, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     invoke-direct {v2, v1, v3}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -913,7 +913,7 @@
 
     iget-object v1, p0, Lcom/android/server/print/UserState;->mEnabledServices:Ljava/util/Set;
 
-    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/util/AbstractSet;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -1001,11 +1001,11 @@
 
     iget-object v7, v3, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
-    iget-object v7, v7, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    iget-object v7, v7, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     iget-object v8, v3, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
-    iget-object v8, v8, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
+    iget-object v8, v8, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     invoke-direct {v5, v7, v8}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -1069,7 +1069,7 @@
     :cond_1
     iget-object v7, p0, Lcom/android/server/print/UserState;->mInstalledServices:Ljava/util/List;
 
-    invoke-virtual {v6, v7}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v6, v7}, Ljava/util/AbstractSet;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
@@ -1674,11 +1674,11 @@
 
     iget-object v14, v12, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
-    iget-object v14, v14, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    iget-object v14, v14, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     iget-object v15, v12, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
-    iget-object v15, v15, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
+    iget-object v15, v15, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     invoke-direct {v4, v14, v15}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -2160,7 +2160,7 @@
 
     iget-object v6, v6, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
-    iget-object v6, v6, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    iget-object v6, v6, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {v4}, Landroid/printservice/PrintServiceInfo;->getResolveInfo()Landroid/content/pm/ResolveInfo;
 
@@ -2168,7 +2168,7 @@
 
     iget-object v8, v8, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
-    iget-object v8, v8, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
+    iget-object v8, v8, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     invoke-direct {v0, v6, v8}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -2910,7 +2910,7 @@
 
     check-cast v1, [Ljava/lang/Void;
 
-    invoke-virtual {v2, v4, v1}, Lcom/android/server/print/UserState$1;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v2, v4, v1}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 

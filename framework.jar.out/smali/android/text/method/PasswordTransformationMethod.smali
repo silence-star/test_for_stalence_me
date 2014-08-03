@@ -3,8 +3,8 @@
 .source "PasswordTransformationMethod.java"
 
 # interfaces
-.implements Landroid/text/method/TransformationMethod;
 .implements Landroid/text/TextWatcher;
+.implements Landroid/text/method/TransformationMethod;
 
 
 # annotations
@@ -294,7 +294,7 @@
 
     aget-object v5, v4, v0
 
-    invoke-virtual {v5}, Landroid/text/method/PasswordTransformationMethod$ViewReference;->get()Ljava/lang/Object;
+    invoke-virtual {v5}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     move-result-object v3
 

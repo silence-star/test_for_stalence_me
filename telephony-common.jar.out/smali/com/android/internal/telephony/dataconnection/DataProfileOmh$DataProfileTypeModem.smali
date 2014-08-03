@@ -232,7 +232,7 @@
     .prologue
     sget-object v0, Lcom/android/internal/telephony/dataconnection/DataProfileOmh$DataProfileTypeModem;->$VALUES:[Lcom/android/internal/telephony/dataconnection/DataProfileOmh$DataProfileTypeModem;
 
-    invoke-virtual {v0}, [Lcom/android/internal/telephony/dataconnection/DataProfileOmh$DataProfileTypeModem;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

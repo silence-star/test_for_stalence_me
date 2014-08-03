@@ -67,7 +67,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/widget/ListPopupWindow$DropDownListView;->getCount()I
+    invoke-virtual {v0}, Landroid/widget/AdapterView;->getCount()I
 
     move-result v0
 
@@ -78,7 +78,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/widget/ListPopupWindow$DropDownListView;->getChildCount()I
+    invoke-virtual {v1}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v1
 
@@ -91,7 +91,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/widget/ListPopupWindow$DropDownListView;->getChildCount()I
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 

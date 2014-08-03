@@ -104,7 +104,7 @@
 
     invoke-direct {v1, v2, v3}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v0, v1}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -363,7 +363,7 @@
 
     iget-object v4, p0, Landroid/database/sqlite/SQLiteConnection$Operation;->mException:Ljava/lang/Exception;
 
-    invoke-virtual {v4}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v4
 

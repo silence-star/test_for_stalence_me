@@ -64,7 +64,7 @@
     .locals 4
 
     .prologue
-    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$SynthesisToFileOutputStreamSpeechItem;->dispatchOnStart()V
+    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->dispatchOnStart()V
 
     invoke-super {p0}, Landroid/speech/tts/TextToSpeechService$SynthesisSpeechItem;->playImpl()I
 
@@ -73,7 +73,7 @@
     .local v1, status:I
     if-nez v1, :cond_0
 
-    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$SynthesisToFileOutputStreamSpeechItem;->dispatchOnDone()V
+    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->dispatchOnDone()V
 
     :goto_0
     :try_start_0
@@ -87,7 +87,7 @@
     return v1
 
     :cond_0
-    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$SynthesisToFileOutputStreamSpeechItem;->dispatchOnError()V
+    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->dispatchOnError()V
 
     goto :goto_0
 

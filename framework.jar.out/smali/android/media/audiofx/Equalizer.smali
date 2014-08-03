@@ -144,11 +144,11 @@
 
     aput v1, v3, v5
 
-    invoke-virtual {p0, v3, v4}, Landroid/media/audiofx/Equalizer;->getParameter([I[B)I
+    invoke-virtual {p0, v3, v4}, Landroid/media/audiofx/AudioEffect;->getParameter([I[B)I
 
     move-result v5
 
-    invoke-virtual {p0, v5}, Landroid/media/audiofx/Equalizer;->checkStatus(I)V
+    invoke-virtual {p0, v5}, Landroid/media/audiofx/AudioEffect;->checkStatus(I)V
 
     const/4 v2, 0x0
 
@@ -256,11 +256,11 @@
 
     aput p1, v0, v4
 
-    invoke-virtual {p0, v0, v1}, Landroid/media/audiofx/Equalizer;->getParameter([I[S)I
+    invoke-virtual {p0, v0, v1}, Landroid/media/audiofx/AudioEffect;->getParameter([I[S)I
 
     move-result v2
 
-    invoke-virtual {p0, v2}, Landroid/media/audiofx/Equalizer;->checkStatus(I)V
+    invoke-virtual {p0, v2}, Landroid/media/audiofx/AudioEffect;->checkStatus(I)V
 
     aget-short v2, v1, v3
 
@@ -297,11 +297,11 @@
 
     aput p1, v0, v2
 
-    invoke-virtual {p0, v0, v1}, Landroid/media/audiofx/Equalizer;->getParameter([I[I)I
+    invoke-virtual {p0, v0, v1}, Landroid/media/audiofx/AudioEffect;->getParameter([I[I)I
 
     move-result v2
 
-    invoke-virtual {p0, v2}, Landroid/media/audiofx/Equalizer;->checkStatus(I)V
+    invoke-virtual {p0, v2}, Landroid/media/audiofx/AudioEffect;->checkStatus(I)V
 
     return-object v1
 .end method
@@ -334,11 +334,11 @@
 
     aput p1, v0, v2
 
-    invoke-virtual {p0, v0, v1}, Landroid/media/audiofx/Equalizer;->getParameter([I[S)I
+    invoke-virtual {p0, v0, v1}, Landroid/media/audiofx/AudioEffect;->getParameter([I[S)I
 
     move-result v2
 
-    invoke-virtual {p0, v2}, Landroid/media/audiofx/Equalizer;->checkStatus(I)V
+    invoke-virtual {p0, v2}, Landroid/media/audiofx/AudioEffect;->checkStatus(I)V
 
     aget-short v2, v1, v3
 
@@ -363,11 +363,11 @@
     .local v0, result:[S
     const/4 v1, 0x1
 
-    invoke-virtual {p0, v1, v0}, Landroid/media/audiofx/Equalizer;->getParameter(I[S)I
+    invoke-virtual {p0, v1, v0}, Landroid/media/audiofx/AudioEffect;->getParameter(I[S)I
 
     move-result v1
 
-    invoke-virtual {p0, v1}, Landroid/media/audiofx/Equalizer;->checkStatus(I)V
+    invoke-virtual {p0, v1}, Landroid/media/audiofx/AudioEffect;->checkStatus(I)V
 
     return-object v0
 .end method
@@ -402,11 +402,11 @@
 
     aput p1, v0, v4
 
-    invoke-virtual {p0, v0, v1}, Landroid/media/audiofx/Equalizer;->getParameter([I[I)I
+    invoke-virtual {p0, v0, v1}, Landroid/media/audiofx/AudioEffect;->getParameter([I[I)I
 
     move-result v2
 
-    invoke-virtual {p0, v2}, Landroid/media/audiofx/Equalizer;->checkStatus(I)V
+    invoke-virtual {p0, v2}, Landroid/media/audiofx/AudioEffect;->checkStatus(I)V
 
     aget v2, v1, v3
 
@@ -431,11 +431,11 @@
     .local v0, result:[S
     const/4 v1, 0x6
 
-    invoke-virtual {p0, v1, v0}, Landroid/media/audiofx/Equalizer;->getParameter(I[S)I
+    invoke-virtual {p0, v1, v0}, Landroid/media/audiofx/AudioEffect;->getParameter(I[S)I
 
     move-result v1
 
-    invoke-virtual {p0, v1}, Landroid/media/audiofx/Equalizer;->checkStatus(I)V
+    invoke-virtual {p0, v1}, Landroid/media/audiofx/AudioEffect;->checkStatus(I)V
 
     const/4 v1, 0x0
 
@@ -477,11 +477,11 @@
     new-array v1, v4, [S
 
     .local v1, result:[S
-    invoke-virtual {p0, v0, v1}, Landroid/media/audiofx/Equalizer;->getParameter([I[S)I
+    invoke-virtual {p0, v0, v1}, Landroid/media/audiofx/AudioEffect;->getParameter([I[S)I
 
     move-result v2
 
-    invoke-virtual {p0, v2}, Landroid/media/audiofx/Equalizer;->checkStatus(I)V
+    invoke-virtual {p0, v2}, Landroid/media/audiofx/AudioEffect;->checkStatus(I)V
 
     aget-short v2, v1, v3
 
@@ -510,11 +510,11 @@
     .local v0, result:[S
     const/4 v1, 0x7
 
-    invoke-virtual {p0, v1, v0}, Landroid/media/audiofx/Equalizer;->getParameter(I[S)I
+    invoke-virtual {p0, v1, v0}, Landroid/media/audiofx/AudioEffect;->getParameter(I[S)I
 
     move-result v1
 
-    invoke-virtual {p0, v1}, Landroid/media/audiofx/Equalizer;->checkStatus(I)V
+    invoke-virtual {p0, v1}, Landroid/media/audiofx/AudioEffect;->checkStatus(I)V
 
     const/4 v1, 0x0
 
@@ -569,11 +569,11 @@
     .local v1, param:[B
     const/16 v3, 0x9
 
-    invoke-virtual {p0, v3, v1}, Landroid/media/audiofx/Equalizer;->getParameter(I[B)I
+    invoke-virtual {p0, v3, v1}, Landroid/media/audiofx/AudioEffect;->getParameter(I[B)I
 
     move-result v3
 
-    invoke-virtual {p0, v3}, Landroid/media/audiofx/Equalizer;->checkStatus(I)V
+    invoke-virtual {p0, v3}, Landroid/media/audiofx/AudioEffect;->checkStatus(I)V
 
     new-instance v2, Landroid/media/audiofx/Equalizer$Settings;
 
@@ -582,7 +582,7 @@
     .local v2, settings:Landroid/media/audiofx/Equalizer$Settings;
     const/4 v3, 0x0
 
-    invoke-virtual {p0, v1, v3}, Landroid/media/audiofx/Equalizer;->byteArrayToShort([BI)S
+    invoke-virtual {p0, v1, v3}, Landroid/media/audiofx/AudioEffect;->byteArrayToShort([BI)S
 
     move-result v3
 
@@ -590,7 +590,7 @@
 
     const/4 v3, 0x2
 
-    invoke-virtual {p0, v1, v3}, Landroid/media/audiofx/Equalizer;->byteArrayToShort([BI)S
+    invoke-virtual {p0, v1, v3}, Landroid/media/audiofx/AudioEffect;->byteArrayToShort([BI)S
 
     move-result v3
 
@@ -616,7 +616,7 @@
 
     add-int/lit8 v4, v4, 0x4
 
-    invoke-virtual {p0, v1, v4}, Landroid/media/audiofx/Equalizer;->byteArrayToShort([BI)S
+    invoke-virtual {p0, v1, v4}, Landroid/media/audiofx/AudioEffect;->byteArrayToShort([BI)S
 
     move-result v4
 
@@ -661,11 +661,11 @@
 
     aput-short p2, v1, v2
 
-    invoke-virtual {p0, v0, v1}, Landroid/media/audiofx/Equalizer;->setParameter([I[S)I
+    invoke-virtual {p0, v0, v1}, Landroid/media/audiofx/AudioEffect;->setParameter([I[S)I
 
     move-result v2
 
-    invoke-virtual {p0, v2}, Landroid/media/audiofx/Equalizer;->checkStatus(I)V
+    invoke-virtual {p0, v2}, Landroid/media/audiofx/AudioEffect;->checkStatus(I)V
 
     return-void
 .end method
@@ -777,7 +777,7 @@
 
     iget-short v3, p1, Landroid/media/audiofx/Equalizer$Settings;->curPreset:S
 
-    invoke-virtual {p0, v3}, Landroid/media/audiofx/Equalizer;->shortToByteArray(S)[B
+    invoke-virtual {p0, v3}, Landroid/media/audiofx/AudioEffect;->shortToByteArray(S)[B
 
     move-result-object v3
 
@@ -785,13 +785,13 @@
 
     iget-short v3, p0, Landroid/media/audiofx/Equalizer;->mNumBands:S
 
-    invoke-virtual {p0, v3}, Landroid/media/audiofx/Equalizer;->shortToByteArray(S)[B
+    invoke-virtual {p0, v3}, Landroid/media/audiofx/AudioEffect;->shortToByteArray(S)[B
 
     move-result-object v3
 
     aput-object v3, v2, v5
 
-    invoke-virtual {p0, v2}, Landroid/media/audiofx/Equalizer;->concatArrays([[B)[B
+    invoke-virtual {p0, v2}, Landroid/media/audiofx/AudioEffect;->concatArrays([[B)[B
 
     move-result-object v1
 
@@ -812,13 +812,13 @@
 
     aget-short v3, v3, v0
 
-    invoke-virtual {p0, v3}, Landroid/media/audiofx/Equalizer;->shortToByteArray(S)[B
+    invoke-virtual {p0, v3}, Landroid/media/audiofx/AudioEffect;->shortToByteArray(S)[B
 
     move-result-object v3
 
     aput-object v3, v2, v5
 
-    invoke-virtual {p0, v2}, Landroid/media/audiofx/Equalizer;->concatArrays([[B)[B
+    invoke-virtual {p0, v2}, Landroid/media/audiofx/AudioEffect;->concatArrays([[B)[B
 
     move-result-object v1
 
@@ -829,11 +829,11 @@
     :cond_2
     const/16 v2, 0x9
 
-    invoke-virtual {p0, v2, v1}, Landroid/media/audiofx/Equalizer;->setParameter(I[B)I
+    invoke-virtual {p0, v2, v1}, Landroid/media/audiofx/AudioEffect;->setParameter(I[B)I
 
     move-result v2
 
-    invoke-virtual {p0, v2}, Landroid/media/audiofx/Equalizer;->checkStatus(I)V
+    invoke-virtual {p0, v2}, Landroid/media/audiofx/AudioEffect;->checkStatus(I)V
 
     return-void
 .end method
@@ -852,11 +852,11 @@
     .prologue
     const/4 v0, 0x6
 
-    invoke-virtual {p0, v0, p1}, Landroid/media/audiofx/Equalizer;->setParameter(IS)I
+    invoke-virtual {p0, v0, p1}, Landroid/media/audiofx/AudioEffect;->setParameter(IS)I
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Landroid/media/audiofx/Equalizer;->checkStatus(I)V
+    invoke-virtual {p0, v0}, Landroid/media/audiofx/AudioEffect;->checkStatus(I)V
 
     return-void
 .end method

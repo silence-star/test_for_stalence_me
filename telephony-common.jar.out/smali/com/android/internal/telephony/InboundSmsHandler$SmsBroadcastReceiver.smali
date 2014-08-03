@@ -167,7 +167,7 @@
     invoke-virtual {v3, v4}, Lcom/android/internal/telephony/InboundSmsHandler;->loge(Ljava/lang/String;)V
 
     :cond_2
-    invoke-virtual {p0}, Lcom/android/internal/telephony/InboundSmsHandler$SmsBroadcastReceiver;->getResultCode()I
+    invoke-virtual {p0}, Landroid/content/BroadcastReceiver;->getResultCode()I
 
     move-result v2
 
@@ -221,7 +221,7 @@
 
     const/4 v4, 0x3
 
-    invoke-virtual {v3, v4}, Lcom/android/internal/telephony/InboundSmsHandler;->sendMessage(I)V
+    invoke-virtual {v3, v4}, Lcom/android/internal/util/StateMachine;->sendMessage(I)V
 
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 

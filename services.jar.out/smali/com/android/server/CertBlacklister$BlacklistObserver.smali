@@ -92,7 +92,7 @@
 
     invoke-direct {v0, p0, v1}, Lcom/android/server/CertBlacklister$BlacklistObserver$1;-><init>(Lcom/android/server/CertBlacklister$BlacklistObserver;Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Lcom/android/server/CertBlacklister$BlacklistObserver$1;->start()V
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
     return-void
 .end method

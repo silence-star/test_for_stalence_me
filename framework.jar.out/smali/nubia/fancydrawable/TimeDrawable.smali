@@ -64,7 +64,7 @@
 
     const-string v1, "CalDrawable"
 
-    iput-object v1, p0, Lnubia/fancydrawable/TimeDrawable;->mID:Ljava/lang/String;
+    iput-object v1, p0, Lnubia/fancydrawable/FancyDrawable;->mID:Ljava/lang/String;
 
     new-instance v1, Landroid/text/format/Time;
 
@@ -163,7 +163,7 @@
 
     iget v2, p0, Lnubia/fancydrawable/TimeDrawable;->mDialHeight:I
 
-    invoke-virtual {p0, v1, v2}, Lnubia/fancydrawable/TimeDrawable;->setIntrinsicSize(II)V
+    invoke-virtual {p0, v1, v2}, Lnubia/fancydrawable/FancyDrawable;->setIntrinsicSize(II)V
 
     return-void
 .end method
@@ -308,34 +308,34 @@
     .parameter "canvas"
 
     .prologue
-    iget v10, p0, Lnubia/fancydrawable/TimeDrawable;->mAvailableWidth:I
+    iget v10, p0, Lnubia/fancydrawable/FancyDrawable;->mAvailableWidth:I
 
     if-eqz v10, :cond_0
 
-    iget v10, p0, Lnubia/fancydrawable/TimeDrawable;->mAvailableHeight:I
+    iget v10, p0, Lnubia/fancydrawable/FancyDrawable;->mAvailableHeight:I
 
     if-nez v10, :cond_1
 
     :cond_0
-    invoke-virtual {p0}, Lnubia/fancydrawable/TimeDrawable;->getIntrinsicWidth()I
+    invoke-virtual {p0}, Lnubia/fancydrawable/FancyDrawable;->getIntrinsicWidth()I
 
     move-result v10
 
-    iput v10, p0, Lnubia/fancydrawable/TimeDrawable;->mAvailableWidth:I
+    iput v10, p0, Lnubia/fancydrawable/FancyDrawable;->mAvailableWidth:I
 
-    invoke-virtual {p0}, Lnubia/fancydrawable/TimeDrawable;->getIntrinsicHeight()I
+    invoke-virtual {p0}, Lnubia/fancydrawable/FancyDrawable;->getIntrinsicHeight()I
 
     move-result v10
 
-    iput v10, p0, Lnubia/fancydrawable/TimeDrawable;->mAvailableHeight:I
+    iput v10, p0, Lnubia/fancydrawable/FancyDrawable;->mAvailableHeight:I
 
     :cond_1
     invoke-direct {p0}, Lnubia/fancydrawable/TimeDrawable;->onTimeChanged()V
 
-    iget v1, p0, Lnubia/fancydrawable/TimeDrawable;->mAvailableWidth:I
+    iget v1, p0, Lnubia/fancydrawable/FancyDrawable;->mAvailableWidth:I
 
     .local v1, availableWidth:I
-    iget v0, p0, Lnubia/fancydrawable/TimeDrawable;->mAvailableHeight:I
+    iget v0, p0, Lnubia/fancydrawable/FancyDrawable;->mAvailableHeight:I
 
     .local v0, availableHeight:I
     div-int/lit8 v8, v1, 0x2
@@ -409,7 +409,7 @@
 
     invoke-virtual {v2, v10, v11, v12, v13}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    invoke-virtual {v2, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+    invoke-virtual {v2, p1}, Landroid/graphics/drawable/BitmapDrawable;->draw(Landroid/graphics/Canvas;)V
 
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
@@ -450,7 +450,7 @@
 
     invoke-virtual {v4, v10, v11, v12, v13}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    invoke-virtual {v4, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+    invoke-virtual {v4, p1}, Landroid/graphics/drawable/BitmapDrawable;->draw(Landroid/graphics/Canvas;)V
 
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
@@ -493,7 +493,7 @@
 
     invoke-virtual {v5, v10, v11, v12, v13}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    invoke-virtual {v5, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+    invoke-virtual {v5, p1}, Landroid/graphics/drawable/BitmapDrawable;->draw(Landroid/graphics/Canvas;)V
 
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
@@ -520,7 +520,7 @@
     .locals 2
 
     .prologue
-    iget-object v0, p0, Lnubia/fancydrawable/TimeDrawable;->mHandler:Landroid/os/Handler;
+    iget-object v0, p0, Lnubia/fancydrawable/FancyDrawable;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lnubia/fancydrawable/TimeDrawable;->tickRunnable:Ljava/lang/Runnable;
 
@@ -559,17 +559,17 @@
     .locals 2
 
     .prologue
-    iget-object v0, p0, Lnubia/fancydrawable/TimeDrawable;->mHandler:Landroid/os/Handler;
+    iget-object v0, p0, Lnubia/fancydrawable/FancyDrawable;->mHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lnubia/fancydrawable/TimeDrawable;->mHandler:Landroid/os/Handler;
+    iget-object v0, p0, Lnubia/fancydrawable/FancyDrawable;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lnubia/fancydrawable/TimeDrawable;->tickRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    iget-object v0, p0, Lnubia/fancydrawable/TimeDrawable;->mHandler:Landroid/os/Handler;
+    iget-object v0, p0, Lnubia/fancydrawable/FancyDrawable;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lnubia/fancydrawable/TimeDrawable;->tickRunnable:Ljava/lang/Runnable;
 
@@ -583,17 +583,17 @@
     .locals 2
 
     .prologue
-    iget-object v0, p0, Lnubia/fancydrawable/TimeDrawable;->mHandler:Landroid/os/Handler;
+    iget-object v0, p0, Lnubia/fancydrawable/FancyDrawable;->mHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lnubia/fancydrawable/TimeDrawable;->mHandler:Landroid/os/Handler;
+    iget-object v0, p0, Lnubia/fancydrawable/FancyDrawable;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lnubia/fancydrawable/TimeDrawable;->tickRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    iget-object v0, p0, Lnubia/fancydrawable/TimeDrawable;->mHandler:Landroid/os/Handler;
+    iget-object v0, p0, Lnubia/fancydrawable/FancyDrawable;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lnubia/fancydrawable/TimeDrawable;->tickRunnable:Ljava/lang/Runnable;
 

@@ -190,7 +190,7 @@
     .local v1, cookieType:I
     if-nez v1, :cond_0
 
-    iget-object v2, p0, Landroid/content/res/NubiaResources;->mAssets:Landroid/content/res/AssetManager;
+    iget-object v2, p0, Landroid/content/res/Resources;->mAssets:Landroid/content/res/AssetManager;
 
     invoke-virtual {v2, p1}, Landroid/content/res/AssetManager;->getCookieName(I)Ljava/lang/String;
 
@@ -629,7 +629,7 @@
     move-exception v1
 
     .local v1, e:Ljava/io/IOException;
-    invoke-virtual {v1}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_0
 
@@ -668,7 +668,7 @@
     move-exception v1
 
     .local v1, e:Ljava/io/IOException;
-    invoke-virtual {v1}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_0
 
@@ -690,7 +690,7 @@
     move-exception v1
 
     .restart local v1       #e:Ljava/io/IOException;
-    invoke-virtual {v1}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_3
 
@@ -920,7 +920,7 @@
     .parameter "compat"
 
     .prologue
-    invoke-virtual {p0}, Landroid/content/res/NubiaResources;->getConfiguration()Landroid/content/res/Configuration;
+    invoke-virtual {p0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
     move-result-object v1
 

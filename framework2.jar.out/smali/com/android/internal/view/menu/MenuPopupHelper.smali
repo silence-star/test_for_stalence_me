@@ -3,11 +3,11 @@
 .source "MenuPopupHelper.java"
 
 # interfaces
-.implements Landroid/widget/AdapterView$OnItemClickListener;
+.implements Landroid/view/View$OnAttachStateChangeListener;
 .implements Landroid/view/View$OnKeyListener;
 .implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+.implements Landroid/widget/AdapterView$OnItemClickListener;
 .implements Landroid/widget/PopupWindow$OnDismissListener;
-.implements Landroid/view/View$OnAttachStateChangeListener;
 .implements Lcom/android/internal/view/menu/MenuPresenter;
 
 
@@ -615,7 +615,7 @@
     .prologue
     const/4 v5, 0x0
 
-    invoke-virtual {p1}, Lcom/android/internal/view/menu/SubMenuBuilder;->hasVisibleItems()Z
+    invoke-virtual {p1}, Lcom/android/internal/view/menu/MenuBuilder;->hasVisibleItems()Z
 
     move-result v6
 
@@ -637,7 +637,7 @@
     const/4 v3, 0x0
 
     .local v3, preserveIconSpacing:Z
-    invoke-virtual {p1}, Lcom/android/internal/view/menu/SubMenuBuilder;->size()I
+    invoke-virtual {p1}, Lcom/android/internal/view/menu/MenuBuilder;->size()I
 
     move-result v1
 
@@ -648,7 +648,7 @@
     :goto_0
     if-ge v2, v1, :cond_0
 
-    invoke-virtual {p1, v2}, Lcom/android/internal/view/menu/SubMenuBuilder;->getItem(I)Landroid/view/MenuItem;
+    invoke-virtual {p1, v2}, Lcom/android/internal/view/menu/MenuBuilder;->getItem(I)Landroid/view/MenuItem;
 
     move-result-object v0
 
@@ -930,7 +930,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v3, p0}, Landroid/widget/ListView;->setOnKeyListener(Landroid/view/View$OnKeyListener;)V
+    invoke-virtual {v3, p0}, Landroid/view/View;->setOnKeyListener(Landroid/view/View$OnKeyListener;)V
 
     :goto_0
     return v2

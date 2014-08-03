@@ -3,8 +3,8 @@
 .source "PreferenceScreen.java"
 
 # interfaces
-.implements Landroid/widget/AdapterView$OnItemClickListener;
 .implements Landroid/content/DialogInterface$OnDismissListener;
+.implements Landroid/widget/AdapterView$OnItemClickListener;
 
 
 # annotations
@@ -44,7 +44,7 @@
     .prologue
     const/4 v6, 0x0
 
-    invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/preference/Preference;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -88,7 +88,7 @@
 
     invoke-virtual {p0, v5}, Landroid/preference/PreferenceScreen;->bind(Landroid/widget/ListView;)V
 
-    invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->getTitle()Ljava/lang/CharSequence;
+    invoke-virtual {p0}, Landroid/preference/Preference;->getTitle()Ljava/lang/CharSequence;
 
     move-result-object v4
 
@@ -128,7 +128,7 @@
     invoke-virtual {v2, p1}, Landroid/app/Dialog;->onRestoreInstanceState(Landroid/os/Bundle;)V
 
     :cond_1
-    invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->getPreferenceManager()Landroid/preference/PreferenceManager;
+    invoke-virtual {p0}, Landroid/preference/Preference;->getPreferenceManager()Landroid/preference/PreferenceManager;
 
     move-result-object v5
 
@@ -151,7 +151,7 @@
     .parameter "listView"
 
     .prologue
-    invoke-virtual {p1, p0}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
+    invoke-virtual {p1, p0}, Landroid/widget/AdapterView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
     invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->getRootAdapter()Landroid/widget/ListAdapter;
 
@@ -167,7 +167,7 @@
 
     invoke-static {p1}, Landroid/preference/Injector$PreferenceScreenHook;->bind(Landroid/widget/ListView;)V
 
-    invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->onAttachedToActivity()V
+    invoke-virtual {p0}, Landroid/preference/PreferenceGroup;->onAttachedToActivity()V
 
     return-void
 .end method
@@ -214,19 +214,19 @@
     .locals 1
 
     .prologue
-    invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->getIntent()Landroid/content/Intent;
+    invoke-virtual {p0}, Landroid/preference/Preference;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
-    invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->getFragment()Ljava/lang/String;
+    invoke-virtual {p0}, Landroid/preference/Preference;->getFragment()Ljava/lang/String;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
-    invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->getPreferenceCount()I
+    invoke-virtual {p0}, Landroid/preference/PreferenceGroup;->getPreferenceCount()I
 
     move-result v0
 
@@ -264,7 +264,7 @@
 
     iput-object v0, p0, Landroid/preference/PreferenceScreen;->mDialog:Landroid/app/Dialog;
 
-    invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->getPreferenceManager()Landroid/preference/PreferenceManager;
+    invoke-virtual {p0}, Landroid/preference/Preference;->getPreferenceManager()Landroid/preference/PreferenceManager;
 
     move-result-object v0
 
@@ -342,7 +342,7 @@
     if-nez v1, :cond_2
 
     :cond_0
-    invoke-super {p0, p1}, Landroid/preference/PreferenceGroup;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-super {p0, p1}, Landroid/preference/Preference;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     :cond_1
     :goto_0
@@ -354,11 +354,11 @@
     check-cast v0, Landroid/preference/PreferenceScreen$SavedState;
 
     .local v0, myState:Landroid/preference/PreferenceScreen$SavedState;
-    invoke-virtual {v0}, Landroid/preference/PreferenceScreen$SavedState;->getSuperState()Landroid/os/Parcelable;
+    invoke-virtual {v0}, Landroid/view/AbsSavedState;->getSuperState()Landroid/os/Parcelable;
 
     move-result-object v1
 
-    invoke-super {p0, v1}, Landroid/preference/PreferenceGroup;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-super {p0, v1}, Landroid/preference/Preference;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     iget-boolean v1, v0, Landroid/preference/PreferenceScreen$SavedState;->isDialogShowing:Z
 
@@ -375,7 +375,7 @@
     .locals 4
 
     .prologue
-    invoke-super {p0}, Landroid/preference/PreferenceGroup;->onSaveInstanceState()Landroid/os/Parcelable;
+    invoke-super {p0}, Landroid/preference/Preference;->onSaveInstanceState()Landroid/os/Parcelable;
 
     move-result-object v2
 

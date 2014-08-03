@@ -3,8 +3,8 @@
 .source "StrikethroughSpan.java"
 
 # interfaces
-.implements Landroid/text/style/UpdateAppearance;
 .implements Landroid/text/ParcelableSpan;
+.implements Landroid/text/style/UpdateAppearance;
 
 
 # direct methods
@@ -54,7 +54,7 @@
     .prologue
     const/4 v0, 0x1
 
-    invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setStrikeThruText(Z)V
+    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStrikeThruText(Z)V
 
     return-void
 .end method

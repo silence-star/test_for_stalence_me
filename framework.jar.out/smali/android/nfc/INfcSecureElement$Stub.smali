@@ -46,7 +46,7 @@
 
     const-string v0, "android.nfc.INfcSecureElement"
 
-    invoke-virtual {p0, p0, v0}, Landroid/nfc/INfcSecureElement$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     return-void
 .end method

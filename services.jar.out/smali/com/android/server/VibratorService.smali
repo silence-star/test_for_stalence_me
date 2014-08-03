@@ -844,7 +844,7 @@
 
     iget-object v1, p0, Lcom/android/server/VibratorService;->mThread:Lcom/android/server/VibratorService$VibrateThread;
 
-    invoke-virtual {v1}, Lcom/android/server/VibratorService$VibrateThread;->start()V
+    invoke-virtual {v1}, Ljava/lang/Thread;->start()V
 
     goto :goto_0
 .end method
@@ -1305,11 +1305,11 @@
 
     cmp-long v1, p3, v1
 
-    if-lez v1, :cond_miui
+    if-lez v1, :cond_0
 
     const-wide/16 p3, 0x3e8
 
-    :cond_miui
+    :cond_0
     iget-object v1, p0, Lcom/android/server/VibratorService;->mContext:Landroid/content/Context;
 
     const-string v2, "android.permission.VIBRATE"
@@ -1318,7 +1318,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
     new-instance v1, Ljava/lang/SecurityException;
 
@@ -1328,18 +1328,18 @@
 
     throw v1
 
-    :cond_0
+    :cond_1
     invoke-direct {p0, p1}, Lcom/android/server/VibratorService;->verifyIncomingUid(I)V
 
     const-wide/16 v1, 0x0
 
     cmp-long v1, p3, v1
 
-    if-lez v1, :cond_1
+    if-lez v1, :cond_2
 
     iget-object v1, p0, Lcom/android/server/VibratorService;->mCurrentVibration:Lcom/android/server/VibratorService$Vibration;
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
     iget-object v1, p0, Lcom/android/server/VibratorService;->mCurrentVibration:Lcom/android/server/VibratorService$Vibration;
 
@@ -1347,13 +1347,13 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
-    :cond_1
+    :cond_2
     :goto_0
     return-void
 
-    :cond_2
+    :cond_3
     new-instance v0, Lcom/android/server/VibratorService$Vibration;
 
     move-object v1, p0

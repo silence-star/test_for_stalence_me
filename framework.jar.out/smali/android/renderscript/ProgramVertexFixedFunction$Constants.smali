@@ -163,7 +163,7 @@
     .prologue
     iget-object v0, p0, Landroid/renderscript/ProgramVertexFixedFunction$Constants;->mAlloc:Landroid/renderscript/Allocation;
 
-    invoke-virtual {v0}, Landroid/renderscript/Allocation;->destroy()V
+    invoke-virtual {v0}, Landroid/renderscript/BaseObj;->destroy()V
 
     const/4 v0, 0x0
 

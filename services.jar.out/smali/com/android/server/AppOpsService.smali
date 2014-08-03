@@ -400,13 +400,13 @@
 
     .local v9, j:I
     :goto_0
-    invoke-virtual {p1}, Lcom/android/server/AppOpsService$Ops;->size()I
+    invoke-virtual {p1}, Landroid/util/SparseArray;->size()I
 
     move-result v0
 
     if-ge v9, v0, :cond_3
 
-    invoke-virtual {p1, v9}, Lcom/android/server/AppOpsService$Ops;->valueAt(I)Ljava/lang/Object;
+    invoke-virtual {p1, v9}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v8
 
@@ -446,7 +446,7 @@
 
     aget v0, p2, v9
 
-    invoke-virtual {p1, v0}, Lcom/android/server/AppOpsService$Ops;->get(I)Ljava/lang/Object;
+    invoke-virtual {p1, v0}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
@@ -543,14 +543,14 @@
     .parameter "edit"
 
     .prologue
-    invoke-virtual {p1, p2}, Lcom/android/server/AppOpsService$Ops;->get(I)Ljava/lang/Object;
+    invoke-virtual {p1, p2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/android/server/AppOpsService$Op;
 
     .local v1, op:Lcom/android/server/AppOpsService$Op;
-    if-nez v1, :cond_1
+    if-nez v1, :cond_2
 
     if-nez p3, :cond_0
 
@@ -568,7 +568,22 @@
 
     move-result v0
 
+    const/16 v2, 0x18
+
+    if-ne p2, v2, :cond_1
+
+    iget v2, p1, Lcom/android/server/AppOpsService$Ops;->uid:I
+
+    invoke-static {v2}, Lcom/android/server/Injector$AppOpsServiceHook;->isFloatingWindowAllowed(I)Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    const/4 v0, 0x1
+
     .local v0, mode:I
+    :cond_1
     new-instance v1, Lcom/android/server/AppOpsService$Op;
 
     .end local v1           #op:Lcom/android/server/AppOpsService$Op;
@@ -579,15 +594,15 @@
     invoke-direct {v1, v2, v3, p2, v0}, Lcom/android/server/AppOpsService$Op;-><init>(ILjava/lang/String;II)V
 
     .restart local v1       #op:Lcom/android/server/AppOpsService$Op;
-    invoke-virtual {p1, p2, v1}, Lcom/android/server/AppOpsService$Ops;->put(ILjava/lang/Object;)V
+    invoke-virtual {p1, p2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .end local v0           #mode:I
-    :cond_1
-    if-eqz p3, :cond_2
+    :cond_2
+    if-eqz p3, :cond_3
 
     invoke-direct {p0}, Lcom/android/server/AppOpsService;->scheduleWriteLocked()V
 
-    :cond_2
+    :cond_3
     move-object v2, v1
 
     goto :goto_0
@@ -917,9 +932,9 @@
 
     iget v2, p1, Lcom/android/server/AppOpsService$Op;->op:I
 
-    invoke-virtual {v0, v2}, Lcom/android/server/AppOpsService$Ops;->remove(I)V
+    invoke-virtual {v0, v2}, Landroid/util/SparseArray;->remove(I)V
 
-    invoke-virtual {v0}, Lcom/android/server/AppOpsService$Ops;->size()I
+    invoke-virtual {v0}, Landroid/util/SparseArray;->size()I
 
     move-result v2
 
@@ -2006,13 +2021,13 @@
 
     .restart local v5       #j:I
     :goto_9
-    invoke-virtual {v10}, Lcom/android/server/AppOpsService$Ops;->size()I
+    invoke-virtual {v10}, Landroid/util/SparseArray;->size()I
 
     move-result v12
 
     if-ge v5, v12, :cond_9
 
-    invoke-virtual {v10, v5}, Lcom/android/server/AppOpsService$Ops;->valueAt(I)Ljava/lang/Object;
+    invoke-virtual {v10, v5}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v9
 
@@ -3288,7 +3303,7 @@
 
     const-string v0, "appops"
 
-    invoke-virtual {p0}, Lcom/android/server/AppOpsService;->asBinder()Landroid/os/IBinder;
+    invoke-virtual {p0}, Lcom/android/internal/app/IAppOpsService$Stub;->asBinder()Landroid/os/IBinder;
 
     move-result-object v1
 
@@ -4296,7 +4311,7 @@
     :cond_7
     iget v14, v6, Lcom/android/server/AppOpsService$Op;->op:I
 
-    invoke-virtual {v7, v14, v6}, Lcom/android/server/AppOpsService$Ops;->put(ILjava/lang/Object;)V
+    invoke-virtual {v7, v14, v6}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     goto/16 :goto_0
 
@@ -5139,7 +5154,7 @@
     check-cast v16, Lcom/android/server/AppOpsService$Ops;
 
     .local v16, pkgOps:Lcom/android/server/AppOpsService$Ops;
-    invoke-virtual/range {v16 .. v16}, Lcom/android/server/AppOpsService$Ops;->size()I
+    invoke-virtual/range {v16 .. v16}, Landroid/util/SparseArray;->size()I
 
     move-result v19
 
@@ -5151,7 +5166,7 @@
 
     move-object/from16 v0, v16
 
-    invoke-virtual {v0, v13}, Lcom/android/server/AppOpsService$Ops;->valueAt(I)Ljava/lang/Object;
+    invoke-virtual {v0, v13}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v7
 
@@ -5312,7 +5327,7 @@
 
     move-object/from16 v0, v16
 
-    invoke-virtual {v0, v13}, Lcom/android/server/AppOpsService$Ops;->removeAt(I)V
+    invoke-virtual {v0, v13}, Landroid/util/SparseArray;->removeAt(I)V
 
     :cond_1
     add-int/lit8 v13, v13, -0x1
@@ -5321,7 +5336,7 @@
 
     .end local v7           #curOp:Lcom/android/server/AppOpsService$Op;
     :cond_2
-    invoke-virtual/range {v16 .. v16}, Lcom/android/server/AppOpsService$Ops;->size()I
+    invoke-virtual/range {v16 .. v16}, Landroid/util/SparseArray;->size()I
 
     move-result v19
 

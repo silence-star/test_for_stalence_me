@@ -68,7 +68,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v3}, Landroid/widget/SearchView$SearchAutoComplete;->isPopupShowing()Z
+    invoke-virtual {v3}, Landroid/widget/AutoCompleteTextView;->isPopupShowing()Z
 
     move-result v3
 
@@ -81,7 +81,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v3}, Landroid/widget/SearchView$SearchAutoComplete;->getListSelection()I
+    invoke-virtual {v3}, Landroid/widget/AutoCompleteTextView;->getListSelection()I
 
     move-result v3
 
@@ -142,7 +142,7 @@
 
     move-result-object v5
 
-    invoke-virtual {v5}, Landroid/widget/SearchView$SearchAutoComplete;->getText()Landroid/text/Editable;
+    invoke-virtual {v5}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v5
 
@@ -197,7 +197,7 @@
 
     move-result-object v4
 
-    invoke-virtual {v4}, Landroid/widget/SearchView$SearchAutoComplete;->getText()Landroid/text/Editable;
+    invoke-virtual {v4}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v4
 

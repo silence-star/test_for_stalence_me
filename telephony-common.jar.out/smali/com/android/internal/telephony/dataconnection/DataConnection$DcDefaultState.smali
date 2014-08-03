@@ -67,7 +67,7 @@
 
     iget-object v1, p0, Lcom/android/internal/telephony/dataconnection/DataConnection$DcDefaultState;->this$0:Lcom/android/internal/telephony/dataconnection/DataConnection;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/dataconnection/DataConnection;->getHandler()Landroid/os/Handler;
+    invoke-virtual {v1}, Lcom/android/internal/util/StateMachine;->getHandler()Landroid/os/Handler;
 
     move-result-object v1
 
@@ -116,7 +116,7 @@
 
     iget-object v1, p0, Lcom/android/internal/telephony/dataconnection/DataConnection$DcDefaultState;->this$0:Lcom/android/internal/telephony/dataconnection/DataConnection;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/dataconnection/DataConnection;->getHandler()Landroid/os/Handler;
+    invoke-virtual {v1}, Lcom/android/internal/util/StateMachine;->getHandler()Landroid/os/Handler;
 
     move-result-object v1
 
@@ -427,7 +427,7 @@
 
     iget-object v3, v0, Lcom/android/internal/telephony/dataconnection/DataConnection$DcDefaultState;->this$0:Lcom/android/internal/telephony/dataconnection/DataConnection;
 
-    invoke-virtual {v3}, Lcom/android/internal/telephony/dataconnection/DataConnection;->getHandler()Landroid/os/Handler;
+    invoke-virtual {v3}, Lcom/android/internal/util/StateMachine;->getHandler()Landroid/os/Handler;
 
     move-result-object v3
 
@@ -488,7 +488,7 @@
 
     iget-object v1, v0, Lcom/android/internal/telephony/dataconnection/DataConnection$DcDefaultState;->this$0:Lcom/android/internal/telephony/dataconnection/DataConnection;
 
-    #calls: Lcom/android/internal/telephony/dataconnection/DataConnection;->quit()V
+    #calls: Lcom/android/internal/util/StateMachine;->quit()V
     invoke-static {v1}, Lcom/android/internal/telephony/dataconnection/DataConnection;->access$1300(Lcom/android/internal/telephony/dataconnection/DataConnection;)V
 
     goto/16 :goto_0
@@ -843,7 +843,7 @@
 
     move-result-object v2
 
-    #calls: Lcom/android/internal/telephony/dataconnection/DataConnection;->transitionTo(Lcom/android/internal/util/IState;)V
+    #calls: Lcom/android/internal/util/StateMachine;->transitionTo(Lcom/android/internal/util/IState;)V
     invoke-static {v1, v2}, Lcom/android/internal/telephony/dataconnection/DataConnection;->access$1500(Lcom/android/internal/telephony/dataconnection/DataConnection;Lcom/android/internal/util/IState;)V
 
     goto/16 :goto_0
@@ -919,7 +919,7 @@
 
     move-object/from16 v0, p1
 
-    #calls: Lcom/android/internal/telephony/dataconnection/DataConnection;->deferMessage(Landroid/os/Message;)V
+    #calls: Lcom/android/internal/util/StateMachine;->deferMessage(Landroid/os/Message;)V
     invoke-static {v1, v0}, Lcom/android/internal/telephony/dataconnection/DataConnection;->access$1700(Lcom/android/internal/telephony/dataconnection/DataConnection;Landroid/os/Message;)V
 
     goto/16 :goto_0
@@ -965,7 +965,7 @@
 
     move-object/from16 v0, p1
 
-    #calls: Lcom/android/internal/telephony/dataconnection/DataConnection;->deferMessage(Landroid/os/Message;)V
+    #calls: Lcom/android/internal/util/StateMachine;->deferMessage(Landroid/os/Message;)V
     invoke-static {v1, v0}, Lcom/android/internal/telephony/dataconnection/DataConnection;->access$1800(Lcom/android/internal/telephony/dataconnection/DataConnection;Landroid/os/Message;)V
 
     goto/16 :goto_0
@@ -1050,7 +1050,7 @@
 
     move-object/from16 v0, v16
 
-    #calls: Lcom/android/internal/telephony/dataconnection/DataConnection;->logAndAddLogRec(Ljava/lang/String;)V
+    #calls: Lcom/android/internal/util/StateMachine;->logAndAddLogRec(Ljava/lang/String;)V
     invoke-static {v1, v0}, Lcom/android/internal/telephony/dataconnection/DataConnection;->access$1900(Lcom/android/internal/telephony/dataconnection/DataConnection;Ljava/lang/String;)V
 
     goto/16 :goto_0
@@ -1102,7 +1102,7 @@
 
     move-object/from16 v0, v16
 
-    #calls: Lcom/android/internal/telephony/dataconnection/DataConnection;->logAndAddLogRec(Ljava/lang/String;)V
+    #calls: Lcom/android/internal/util/StateMachine;->logAndAddLogRec(Ljava/lang/String;)V
     invoke-static {v1, v0}, Lcom/android/internal/telephony/dataconnection/DataConnection;->access$2000(Lcom/android/internal/telephony/dataconnection/DataConnection;Ljava/lang/String;)V
 
     goto/16 :goto_0

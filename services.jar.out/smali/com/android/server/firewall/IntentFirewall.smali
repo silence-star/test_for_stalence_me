@@ -281,7 +281,7 @@
 
     iget-object v1, p0, Lcom/android/server/firewall/IntentFirewall;->mObserver:Lcom/android/server/firewall/IntentFirewall$RuleObserver;
 
-    invoke-virtual {v1}, Lcom/android/server/firewall/IntentFirewall$RuleObserver;->startWatching()V
+    invoke-virtual {v1}, Landroid/os/FileObserver;->startWatching()V
 
     return-void
 .end method
@@ -982,7 +982,7 @@
 
     move-result-object v13
 
-    invoke-virtual {v6, v13}, Lcom/android/server/firewall/IntentFirewall$FirewallIntentResolver;->addFilter(Landroid/content/IntentFilter;)V
+    invoke-virtual {v6, v13}, Lcom/android/server/IntentResolver;->addFilter(Landroid/content/IntentFilter;)V
 
     add-int/lit8 v3, v3, 0x1
 
@@ -1205,7 +1205,7 @@
 
     aget-object v6, v3, v7
 
-    invoke-virtual {v6}, Lcom/android/server/firewall/IntentFirewall$FirewallIntentResolver;->filterSet()Ljava/util/Set;
+    invoke-virtual {v6}, Lcom/android/server/IntentResolver;->filterSet()Ljava/util/Set;
 
     move-result-object v6
 
@@ -1225,7 +1225,7 @@
 
     aget-object v6, v3, v8
 
-    invoke-virtual {v6}, Lcom/android/server/firewall/IntentFirewall$FirewallIntentResolver;->filterSet()Ljava/util/Set;
+    invoke-virtual {v6}, Lcom/android/server/IntentResolver;->filterSet()Ljava/util/Set;
 
     move-result-object v6
 
@@ -1245,7 +1245,7 @@
 
     aget-object v6, v3, v9
 
-    invoke-virtual {v6}, Lcom/android/server/firewall/IntentFirewall$FirewallIntentResolver;->filterSet()Ljava/util/Set;
+    invoke-virtual {v6}, Lcom/android/server/IntentResolver;->filterSet()Ljava/util/Set;
 
     move-result-object v6
 
@@ -1414,7 +1414,7 @@
 
     move-object/from16 v2, p7
 
-    invoke-virtual {v0, v1, v2, v5, v6}, Lcom/android/server/firewall/IntentFirewall$FirewallIntentResolver;->queryIntent(Landroid/content/Intent;Ljava/lang/String;ZI)Ljava/util/List;
+    invoke-virtual {v0, v1, v2, v5, v6}, Lcom/android/server/IntentResolver;->queryIntent(Landroid/content/Intent;Ljava/lang/String;ZI)Ljava/util/List;
 
     move-result-object v13
 
@@ -1465,7 +1465,7 @@
 
     move/from16 v11, p8
 
-    invoke-virtual/range {v4 .. v11}, Lcom/android/server/firewall/IntentFirewall$Rule;->matches(Lcom/android/server/firewall/IntentFirewall;Landroid/content/ComponentName;Landroid/content/Intent;IILjava/lang/String;I)Z
+    invoke-virtual/range {v4 .. v11}, Lcom/android/server/firewall/AndFilter;->matches(Lcom/android/server/firewall/IntentFirewall;Landroid/content/ComponentName;Landroid/content/Intent;IILjava/lang/String;I)Z
 
     move-result v5
 

@@ -31,7 +31,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Landroid/sax/BadXmlException;->getLineNumber()I
+    invoke-virtual {p0}, Lorg/xml/sax/SAXParseException;->getLineNumber()I
 
     move-result v1
 
@@ -45,7 +45,7 @@
 
     move-result-object v0
 
-    invoke-super {p0}, Lorg/xml/sax/SAXParseException;->getMessage()Ljava/lang/String;
+    invoke-super {p0}, Lorg/xml/sax/SAXException;->getMessage()Ljava/lang/String;
 
     move-result-object v1
 

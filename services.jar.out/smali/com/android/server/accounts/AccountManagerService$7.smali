@@ -67,9 +67,9 @@
     .end annotation
 
     .prologue
-    iget-object v0, p0, Lcom/android/server/accounts/AccountManagerService$7;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
+    iget-object v0, p0, Lcom/android/server/accounts/AccountManagerService$Session;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
 
-    iget-object v2, p0, Lcom/android/server/accounts/AccountManagerService$7;->mAccountType:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/server/accounts/AccountManagerService$Session;->mAccountType:Ljava/lang/String;
 
     iget-object v3, p0, Lcom/android/server/accounts/AccountManagerService$7;->val$authTokenType:Ljava/lang/String;
 

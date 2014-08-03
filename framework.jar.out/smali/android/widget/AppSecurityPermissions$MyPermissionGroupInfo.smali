@@ -128,13 +128,13 @@
 
     iput-object v0, p0, Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;->mAllPermissions:Ljava/util/ArrayList;
 
-    iget-object v0, p1, Landroid/content/pm/PermissionInfo;->packageName:Ljava/lang/String;
+    iget-object v0, p1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
-    iput-object v0, p0, Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;->name:Ljava/lang/String;
+    iput-object v0, p0, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
-    iget-object v0, p1, Landroid/content/pm/PermissionInfo;->packageName:Ljava/lang/String;
+    iget-object v0, p1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
-    iput-object v0, p0, Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;->packageName:Ljava/lang/String;
+    iput-object v0, p0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     return-void
 .end method
@@ -146,11 +146,11 @@
     .parameter "pm"
 
     .prologue
-    iget v1, p0, Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;->icon:I
+    iget v1, p0, Landroid/content/pm/PackageItemInfo;->icon:I
 
     if-eqz v1, :cond_0
 
-    invoke-virtual {p0, p1}, Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p0, p1}, Landroid/content/pm/PackageItemInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
@@ -159,7 +159,7 @@
 
     :cond_0
     :try_start_0
-    iget-object v1, p0, Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;->packageName:Ljava/lang/String;
+    iget-object v1, p0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     const/4 v2, 0x0
 
@@ -168,7 +168,7 @@
     move-result-object v0
 
     .local v0, appInfo:Landroid/content/pm/ApplicationInfo;
-    invoke-virtual {v0, p1}, Landroid/content/pm/ApplicationInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0, p1}, Landroid/content/pm/PackageItemInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 

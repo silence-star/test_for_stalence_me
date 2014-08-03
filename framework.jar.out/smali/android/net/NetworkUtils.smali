@@ -179,7 +179,7 @@
 
     move-result-object v7
 
-    invoke-virtual {v1}, Ljava/net/UnknownHostException;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v8
 
@@ -376,7 +376,7 @@
     .end annotation
 
     .prologue
-    invoke-virtual {p0}, Ljava/net/Inet4Address;->getAddress()[B
+    invoke-virtual {p0}, Ljava/net/InetAddress;->getAddress()[B
 
     move-result-object v0
 

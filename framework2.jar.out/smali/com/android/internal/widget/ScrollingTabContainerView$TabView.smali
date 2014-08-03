@@ -52,7 +52,7 @@
 
     const v0, 0x800013
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/widget/ScrollingTabContainerView$TabView;->setGravity(I)V
+    invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->setGravity(I)V
 
     :cond_0
     invoke-virtual {p0}, Lcom/android/internal/widget/ScrollingTabContainerView$TabView;->update()V
@@ -96,7 +96,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityRecord;->setClassName(Ljava/lang/CharSequence;)V
 
     return-void
 .end method
@@ -131,19 +131,19 @@
     new-array v3, v6, [I
 
     .local v3, screenPos:[I
-    invoke-virtual {p0, v3}, Lcom/android/internal/widget/ScrollingTabContainerView$TabView;->getLocationOnScreen([I)V
+    invoke-virtual {p0, v3}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/ScrollingTabContainerView$TabView;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
     .local v1, context:Landroid/content/Context;
-    invoke-virtual {p0}, Lcom/android/internal/widget/ScrollingTabContainerView$TabView;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v5
 
     .local v5, width:I
-    invoke-virtual {p0}, Lcom/android/internal/widget/ScrollingTabContainerView$TabView;->getHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v2
 
@@ -205,7 +205,7 @@
 
     if-lez v0, :cond_0
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/ScrollingTabContainerView$TabView;->getMeasuredWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
 
@@ -236,7 +236,7 @@
     .parameter "selected"
 
     .prologue
-    invoke-virtual {p0}, Lcom/android/internal/widget/ScrollingTabContainerView$TabView;->isSelected()Z
+    invoke-virtual {p0}, Landroid/view/View;->isSelected()Z
 
     move-result v1
 
@@ -246,7 +246,7 @@
 
     .local v0, changed:Z
     :goto_0
-    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->setSelected(Z)V
+    invoke-super {p0, p1}, Landroid/view/View;->setSelected(Z)V
 
     if-eqz v0, :cond_0
 
@@ -254,7 +254,7 @@
 
     const/4 v1, 0x4
 
-    invoke-virtual {p0, v1}, Lcom/android/internal/widget/ScrollingTabContainerView$TabView;->sendAccessibilityEvent(I)V
+    invoke-virtual {p0, v1}, Landroid/view/View;->sendAccessibilityEvent(I)V
 
     :cond_0
     return-void
@@ -305,7 +305,7 @@
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
     :cond_0
-    invoke-virtual {p0, v0}, Lcom/android/internal/widget/ScrollingTabContainerView$TabView;->addView(Landroid/view/View;)V
+    invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     :cond_1
     iput-object v0, p0, Lcom/android/internal/widget/ScrollingTabContainerView$TabView;->mCustomView:Landroid/view/View;
@@ -316,7 +316,7 @@
 
     iget-object v9, p0, Lcom/android/internal/widget/ScrollingTabContainerView$TabView;->mTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v9, v11}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v9, v11}, Landroid/view/View;->setVisibility(I)V
 
     :cond_2
     iget-object v9, p0, Lcom/android/internal/widget/ScrollingTabContainerView$TabView;->mIconView:Landroid/widget/ImageView;
@@ -342,7 +342,7 @@
 
     iget-object v10, p0, Lcom/android/internal/widget/ScrollingTabContainerView$TabView;->mCustomView:Landroid/view/View;
 
-    invoke-virtual {p0, v10}, Lcom/android/internal/widget/ScrollingTabContainerView$TabView;->removeView(Landroid/view/View;)V
+    invoke-virtual {p0, v10}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
     iput-object v12, p0, Lcom/android/internal/widget/ScrollingTabContainerView$TabView;->mCustomView:Landroid/view/View;
 
@@ -365,7 +365,7 @@
 
     new-instance v4, Landroid/widget/ImageView;
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/ScrollingTabContainerView$TabView;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v10
 
@@ -379,9 +379,9 @@
     .local v5, lp:Landroid/widget/LinearLayout$LayoutParams;
     iput v14, v5, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
 
-    invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v4, v5}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    invoke-virtual {p0, v4, v9}, Lcom/android/internal/widget/ScrollingTabContainerView$TabView;->addView(Landroid/view/View;I)V
+    invoke-virtual {p0, v4, v9}, Landroid/view/ViewGroup;->addView(Landroid/view/View;I)V
 
     iput-object v4, p0, Lcom/android/internal/widget/ScrollingTabContainerView$TabView;->mIconView:Landroid/widget/ImageView;
 
@@ -416,7 +416,7 @@
 
     new-instance v8, Landroid/widget/TextView;
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/ScrollingTabContainerView$TabView;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v10
 
@@ -436,9 +436,9 @@
     .restart local v5       #lp:Landroid/widget/LinearLayout$LayoutParams;
     iput v14, v5, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
 
-    invoke-virtual {v8, v5}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v8, v5}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    invoke-virtual {p0, v8}, Lcom/android/internal/widget/ScrollingTabContainerView$TabView;->addView(Landroid/view/View;)V
+    invoke-virtual {p0, v8}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     iput-object v8, p0, Lcom/android/internal/widget/ScrollingTabContainerView$TabView;->mTextView:Landroid/widget/TextView;
 
@@ -451,7 +451,7 @@
 
     iget-object v10, p0, Lcom/android/internal/widget/ScrollingTabContainerView$TabView;->mTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v10, v9}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v10, v9}, Landroid/view/View;->setVisibility(I)V
 
     :cond_9
     :goto_3
@@ -465,7 +465,7 @@
 
     move-result-object v11
 
-    invoke-virtual {v10, v11}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {v10, v11}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
 
     :cond_a
     if-nez v2, :cond_e
@@ -480,7 +480,7 @@
 
     if-nez v10, :cond_e
 
-    invoke-virtual {p0, p0}, Lcom/android/internal/widget/ScrollingTabContainerView$TabView;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
+    invoke-virtual {p0, p0}, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
     goto/16 :goto_0
 
@@ -513,7 +513,7 @@
 
     iget-object v10, p0, Lcom/android/internal/widget/ScrollingTabContainerView$TabView;->mTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v10, v11}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v10, v11}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v10, p0, Lcom/android/internal/widget/ScrollingTabContainerView$TabView;->mTextView:Landroid/widget/TextView;
 
@@ -522,9 +522,9 @@
     goto :goto_3
 
     :cond_e
-    invoke-virtual {p0, v12}, Lcom/android/internal/widget/ScrollingTabContainerView$TabView;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
+    invoke-virtual {p0, v12}, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    invoke-virtual {p0, v9}, Lcom/android/internal/widget/ScrollingTabContainerView$TabView;->setLongClickable(Z)V
+    invoke-virtual {p0, v9}, Landroid/view/View;->setLongClickable(Z)V
 
     goto/16 :goto_0
 .end method

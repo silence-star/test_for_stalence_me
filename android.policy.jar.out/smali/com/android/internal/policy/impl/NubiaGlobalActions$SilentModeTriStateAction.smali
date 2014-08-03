@@ -3,8 +3,8 @@
 .source "NubiaGlobalActions.java"
 
 # interfaces
-.implements Lcom/android/internal/policy/impl/NubiaGlobalActions$Action;
 .implements Landroid/view/View$OnClickListener;
+.implements Lcom/android/internal/policy/impl/NubiaGlobalActions$Action;
 
 
 # annotations

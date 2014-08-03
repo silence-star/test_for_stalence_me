@@ -61,7 +61,7 @@
 
     const/4 v2, 0x3
 
-    invoke-virtual {v1, v2}, Lcom/android/server/wm/KeyguardDisableHandler;->sendEmptyMessage(I)Z
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     :cond_0
     return-void

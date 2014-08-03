@@ -40,9 +40,9 @@
     .prologue
     iget-object v3, p0, Lcom/android/server/am/AppErrorDialog$1;->this$0:Lcom/android/server/am/AppErrorDialog;
 
-    invoke-virtual {v0, p1}, Lcom/android/server/am/AppErrorDialog;->sendFcReport(Landroid/os/Message;)V
+    invoke-virtual {v3, p1}, Lcom/android/server/am/AppErrorDialog;->sendFcReport(Landroid/os/Message;)V
 
-    iget-object v0, p0, Lcom/android/server/am/AppErrorDialog$1;->this$0:Lcom/android/server/am/AppErrorDialog;
+    iget-object v3, p0, Lcom/android/server/am/AppErrorDialog$1;->this$0:Lcom/android/server/am/AppErrorDialog;
 
     #getter for: Lcom/android/server/am/AppErrorDialog;->mService:Lcom/android/server/am/ActivityManagerService;
     invoke-static {v3}, Lcom/android/server/am/AppErrorDialog;->access$000(Lcom/android/server/am/AppErrorDialog;)Lcom/android/server/am/ActivityManagerService;
@@ -171,8 +171,6 @@
     invoke-static {v3}, Lcom/android/server/am/AppErrorDialog;->access$600(Lcom/android/server/am/AppErrorDialog;)Landroid/content/Context;
 
     move-result-object v3
-
-    invoke-virtual {v3, v2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
     :try_end_1
     .catch Landroid/content/ActivityNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
 
@@ -198,7 +196,7 @@
     :cond_2
     iget-object v3, p0, Lcom/android/server/am/AppErrorDialog$1;->this$0:Lcom/android/server/am/AppErrorDialog;
 
-    invoke-virtual {v3}, Lcom/android/server/am/AppErrorDialog;->dismiss()V
+    invoke-virtual {v3}, Landroid/app/Dialog;->dismiss()V
 
     return-void
 
@@ -218,7 +216,7 @@
     move-exception v1
 
     .local v1, e:Landroid/content/ActivityNotFoundException;
-    invoke-virtual {v1}, Landroid/content/ActivityNotFoundException;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_0
 .end method

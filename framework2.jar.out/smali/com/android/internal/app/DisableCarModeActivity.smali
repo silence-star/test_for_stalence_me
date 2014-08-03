@@ -46,7 +46,7 @@
 
     .end local v1           #uiModeManager:Landroid/app/IUiModeManager;
     :goto_0
-    invoke-virtual {p0}, Lcom/android/internal/app/DisableCarModeActivity;->finish()V
+    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
 
     return-void
 

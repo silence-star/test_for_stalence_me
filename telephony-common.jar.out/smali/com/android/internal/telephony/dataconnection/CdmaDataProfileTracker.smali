@@ -234,11 +234,11 @@
 
     iput-object p1, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mPhone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
-    invoke-virtual {p1}, Lcom/android/internal/telephony/cdma/CDMAPhone;->getContext()Landroid/content/Context;
+    invoke-virtual {p1}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    iget-object v1, p1, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCi:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v1, p1, Lcom/android/internal/telephony/PhoneBase;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     const/4 v2, 0x0
 
@@ -254,11 +254,11 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mOmhServicePriorityMap:Ljava/util/HashMap;
 
-    invoke-virtual {p0, v3}, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {p0, v3}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -897,7 +897,7 @@
 
     iget-object v4, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mPhone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
-    iget-object v4, v4, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCi:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v4, v4, Lcom/android/internal/telephony/PhoneBase;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/dataconnection/DataProfileOmh$DataProfileTypeModem;->getid()I
 
@@ -907,7 +907,7 @@
 
     iget v7, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mOmhReadProfileContext:I
 
-    invoke-virtual {p0, v6, v7, v8, v3}, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {p0, v6, v7, v8, v3}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v6
 
@@ -974,11 +974,11 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     :goto_0
     return-void
@@ -1199,7 +1199,7 @@
     .prologue
     iget-object v0, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mPhone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
-    iget-boolean v0, v0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mIsTheCurrentActivePhone:Z
+    iget-boolean v0, v0, Lcom/android/internal/telephony/PhoneBase;->mIsTheCurrentActivePhone:Z
 
     if-nez v0, :cond_0
 

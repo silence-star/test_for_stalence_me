@@ -296,7 +296,7 @@
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     :try_start_4
-    invoke-virtual {v4}, Ljava/io/DataInputStream;->close()V
+    invoke-virtual {v4}, Ljava/io/FilterInputStream;->close()V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
@@ -322,7 +322,7 @@
     move-exception v11
 
     :try_start_6
-    invoke-virtual {v4}, Ljava/io/DataInputStream;->close()V
+    invoke-virtual {v4}, Ljava/io/FilterInputStream;->close()V
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_1
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_1

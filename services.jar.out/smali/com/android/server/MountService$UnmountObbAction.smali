@@ -45,7 +45,7 @@
     .prologue
     const/16 v0, 0x14
 
-    invoke-virtual {p0, v0}, Lcom/android/server/MountService$UnmountObbAction;->sendNewStatusOrIgnore(I)V
+    invoke-virtual {p0, v0}, Lcom/android/server/MountService$ObbAction;->sendNewStatusOrIgnore(I)V
 
     return-void
 .end method
@@ -71,7 +71,7 @@
     #calls: Lcom/android/server/MountService;->warnOnNotMounted()V
     invoke-static {v6}, Lcom/android/server/MountService;->access$2800(Lcom/android/server/MountService;)V
 
-    invoke-virtual {p0}, Lcom/android/server/MountService$UnmountObbAction;->getObbInfo()Landroid/content/res/ObbInfo;
+    invoke-virtual {p0}, Lcom/android/server/MountService$ObbAction;->getObbInfo()Landroid/content/res/ObbInfo;
 
     move-result-object v4
 
@@ -93,7 +93,7 @@
 
     move-result-object v6
 
-    iget-object v8, p0, Lcom/android/server/MountService$UnmountObbAction;->mObbState:Lcom/android/server/MountService$ObbState;
+    iget-object v8, p0, Lcom/android/server/MountService$ObbAction;->mObbState:Lcom/android/server/MountService$ObbState;
 
     iget-object v8, v8, Lcom/android/server/MountService$ObbState;->rawPath:Ljava/lang/String;
 
@@ -112,7 +112,7 @@
 
     const/16 v6, 0x17
 
-    invoke-virtual {p0, v6}, Lcom/android/server/MountService$UnmountObbAction;->sendNewStatusOrIgnore(I)V
+    invoke-virtual {p0, v6}, Lcom/android/server/MountService$ObbAction;->sendNewStatusOrIgnore(I)V
 
     :goto_0
     return-void
@@ -132,7 +132,7 @@
     :cond_0
     iget v6, v3, Lcom/android/server/MountService$ObbState;->ownerGid:I
 
-    iget-object v7, p0, Lcom/android/server/MountService$UnmountObbAction;->mObbState:Lcom/android/server/MountService$ObbState;
+    iget-object v7, p0, Lcom/android/server/MountService$ObbAction;->mObbState:Lcom/android/server/MountService$ObbState;
 
     iget v7, v7, Lcom/android/server/MountService$ObbState;->ownerGid:I
 
@@ -182,7 +182,7 @@
 
     const/16 v6, 0x19
 
-    invoke-virtual {p0, v6}, Lcom/android/server/MountService$UnmountObbAction;->sendNewStatusOrIgnore(I)V
+    invoke-virtual {p0, v6}, Lcom/android/server/MountService$ObbAction;->sendNewStatusOrIgnore(I)V
 
     goto :goto_0
 
@@ -207,7 +207,7 @@
 
     const/4 v8, 0x1
 
-    iget-object v9, p0, Lcom/android/server/MountService$UnmountObbAction;->mObbState:Lcom/android/server/MountService$ObbState;
+    iget-object v9, p0, Lcom/android/server/MountService$ObbAction;->mObbState:Lcom/android/server/MountService$ObbState;
 
     iget-object v9, v9, Lcom/android/server/MountService$ObbState;->voldPath:Ljava/lang/String;
 
@@ -259,7 +259,7 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    invoke-virtual {p0, v10}, Lcom/android/server/MountService$UnmountObbAction;->sendNewStatusOrIgnore(I)V
+    invoke-virtual {p0, v10}, Lcom/android/server/MountService$ObbAction;->sendNewStatusOrIgnore(I)V
 
     goto :goto_0
 
@@ -331,7 +331,7 @@
 
     const/16 v6, 0x16
 
-    invoke-virtual {p0, v6}, Lcom/android/server/MountService$UnmountObbAction;->sendNewStatusOrIgnore(I)V
+    invoke-virtual {p0, v6}, Lcom/android/server/MountService$ObbAction;->sendNewStatusOrIgnore(I)V
 
     goto/16 :goto_0
 .end method
@@ -349,7 +349,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/android/server/MountService$UnmountObbAction;->mObbState:Lcom/android/server/MountService$ObbState;
+    iget-object v1, p0, Lcom/android/server/MountService$ObbAction;->mObbState:Lcom/android/server/MountService$ObbState;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

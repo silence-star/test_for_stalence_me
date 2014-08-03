@@ -159,7 +159,7 @@
     .prologue
     sget-object v0, Landroid/graphics/Path$Op;->$VALUES:[Landroid/graphics/Path$Op;
 
-    invoke-virtual {v0}, [Landroid/graphics/Path$Op;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

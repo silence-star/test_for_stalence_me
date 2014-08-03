@@ -999,7 +999,7 @@
 
     invoke-virtual {v14, v0}, Ljava/io/DataOutputStream;->writeByte(I)V
 
-    invoke-virtual {v14, v3}, Ljava/io/DataOutputStream;->write([B)V
+    invoke-virtual {v14, v3}, Ljava/io/OutputStream;->write([B)V
 
     array-length v0, v12
 
@@ -1009,7 +1009,7 @@
 
     invoke-virtual {v14, v0}, Ljava/io/DataOutputStream;->writeByte(I)V
 
-    invoke-virtual {v14, v12}, Ljava/io/DataOutputStream;->write([B)V
+    invoke-virtual {v14, v12}, Ljava/io/OutputStream;->write([B)V
 
     array-length v0, v6
 
@@ -1019,7 +1019,7 @@
 
     invoke-virtual {v14, v0}, Ljava/io/DataOutputStream;->writeByte(I)V
 
-    invoke-virtual {v14, v6}, Ljava/io/DataOutputStream;->write([B)V
+    invoke-virtual {v14, v6}, Ljava/io/OutputStream;->write([B)V
 
     invoke-virtual {v14}, Ljava/io/DataOutputStream;->flush()V
 
@@ -1382,7 +1382,7 @@
 
     move-result-object v8
 
-    invoke-virtual {v5, v8}, Ljava/io/FileOutputStream;->write([B)V
+    invoke-virtual {v5, v8}, Ljava/io/OutputStream;->write([B)V
 
     invoke-virtual {v5}, Ljava/io/FileOutputStream;->close()V
 
@@ -1923,7 +1923,7 @@
     if-eqz v19, :cond_9
 
     :try_start_4
-    invoke-virtual/range {v19 .. v19}, Ljava/io/OutputStream;->close()V
+    throw v19
 
     :cond_9
     move-object/from16 v0, p0
@@ -2112,7 +2112,7 @@
     .local v11, header:[B
     move-object/from16 v0, v18
 
-    invoke-virtual {v0, v11}, Ljava/io/FileOutputStream;->write([B)V
+    invoke-virtual {v0, v11}, Ljava/io/OutputStream;->write([B)V
 
     if-eqz v5, :cond_17
 
@@ -2613,7 +2613,7 @@
     if-eqz v19, :cond_12
 
     :try_start_19
-    invoke-virtual/range {v19 .. v19}, Ljava/io/OutputStream;->close()V
+    throw v19
 
     :cond_12
     move-object/from16 v0, p0

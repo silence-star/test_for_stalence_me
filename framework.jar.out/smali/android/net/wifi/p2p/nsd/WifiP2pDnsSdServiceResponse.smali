@@ -168,7 +168,7 @@
     move-exception v0
 
     .local v0, e:Ljava/lang/IllegalArgumentException;
-    invoke-virtual {v0}, Ljava/lang/IllegalArgumentException;->printStackTrace()V
+    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
     move-object v1, v2
 
@@ -183,7 +183,7 @@
 
     const/4 v4, 0x0
 
-    iget-object v5, p0, Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceResponse;->mData:[B
+    iget-object v5, p0, Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse;->mData:[B
 
     if-nez v5, :cond_0
 
@@ -195,7 +195,7 @@
 
     new-instance v5, Ljava/io/ByteArrayInputStream;
 
-    iget-object v6, p0, Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceResponse;->mData:[B
+    iget-object v6, p0, Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse;->mData:[B
 
     invoke-direct {v5, v6}, Ljava/io/ByteArrayInputStream;-><init>([B)V
 
@@ -254,7 +254,7 @@
     move-exception v1
 
     .local v1, e:Ljava/io/IOException;
-    invoke-virtual {v1}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     move v3, v4
 
@@ -432,7 +432,7 @@
     move-exception v1
 
     .local v1, e:Ljava/io/IOException;
-    invoke-virtual {v1}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_1
 .end method
@@ -448,7 +448,7 @@
 
     :goto_0
     :try_start_0
-    invoke-virtual {p1}, Ljava/io/DataInputStream;->available()I
+    invoke-virtual {p1}, Ljava/io/FilterInputStream;->available()I
 
     move-result v6
 
@@ -516,7 +516,7 @@
     move-exception v1
 
     .local v1, e:Ljava/io/IOException;
-    invoke-virtual {v1}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_1
 .end method
@@ -593,7 +593,7 @@
 
     move-result-object v3
 
-    iget v4, p0, Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceResponse;->mServiceType:I
+    iget v4, p0, Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse;->mServiceType:I
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuffer;->append(I)Ljava/lang/StringBuffer;
 
@@ -609,7 +609,7 @@
 
     move-result-object v3
 
-    iget v4, p0, Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceResponse;->mStatus:I
+    iget v4, p0, Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse;->mStatus:I
 
     invoke-static {v4}, Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse$Status;->toString(I)Ljava/lang/String;
 
@@ -623,7 +623,7 @@
 
     move-result-object v3
 
-    iget-object v4, p0, Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceResponse;->mDevice:Landroid/net/wifi/p2p/WifiP2pDevice;
+    iget-object v4, p0, Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse;->mDevice:Landroid/net/wifi/p2p/WifiP2pDevice;
 
     iget-object v4, v4, Landroid/net/wifi/p2p/WifiP2pDevice;->deviceAddress:Ljava/lang/String;
 

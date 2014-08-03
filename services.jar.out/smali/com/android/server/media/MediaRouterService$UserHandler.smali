@@ -3,8 +3,8 @@
 .source "MediaRouterService.java"
 
 # interfaces
-.implements Lcom/android/server/media/RemoteDisplayProviderWatcher$Callback;
 .implements Lcom/android/server/media/RemoteDisplayProviderProxy$Callback;
+.implements Lcom/android/server/media/RemoteDisplayProviderWatcher$Callback;
 
 
 # annotations
@@ -744,7 +744,7 @@
 
     const/16 v0, 0x8
 
-    invoke-virtual {p0, v0}, Lcom/android/server/media/MediaRouterService$UserHandler;->sendEmptyMessage(I)Z
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     :cond_0
     return-void
@@ -1180,7 +1180,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0, v2}, Lcom/android/server/media/MediaRouterService$UserHandler;->removeMessages(I)V
+    invoke-virtual {p0, v2}, Landroid/os/Handler;->removeMessages(I)V
 
     :cond_0
     iput p1, p0, Lcom/android/server/media/MediaRouterService$UserHandler;->mConnectionTimeoutReason:I
@@ -1198,21 +1198,21 @@
     return-void
 
     :pswitch_0
-    invoke-virtual {p0, v2}, Lcom/android/server/media/MediaRouterService$UserHandler;->sendEmptyMessage(I)Z
+    invoke-virtual {p0, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     goto :goto_0
 
     :pswitch_1
     const-wide/16 v0, 0x1388
 
-    invoke-virtual {p0, v2, v0, v1}, Lcom/android/server/media/MediaRouterService$UserHandler;->sendEmptyMessageDelayed(IJ)Z
+    invoke-virtual {p0, v2, v0, v1}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
     goto :goto_0
 
     :pswitch_2
     const-wide/32 v0, 0xea60
 
-    invoke-virtual {p0, v2, v0, v1}, Lcom/android/server/media/MediaRouterService$UserHandler;->sendEmptyMessageDelayed(IJ)Z
+    invoke-virtual {p0, v2, v0, v1}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
     goto :goto_0
 

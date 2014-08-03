@@ -39,13 +39,13 @@
 
     sget-object v0, Lcom/android/server/UiThread;->sInstance:Lcom/android/server/UiThread;
 
-    invoke-virtual {v0}, Lcom/android/server/UiThread;->start()V
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
     new-instance v0, Landroid/os/Handler;
 
     sget-object v1, Lcom/android/server/UiThread;->sInstance:Lcom/android/server/UiThread;
 
-    invoke-virtual {v1}, Lcom/android/server/UiThread;->getLooper()Landroid/os/Looper;
+    invoke-virtual {v1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
 
     move-result-object v1
 

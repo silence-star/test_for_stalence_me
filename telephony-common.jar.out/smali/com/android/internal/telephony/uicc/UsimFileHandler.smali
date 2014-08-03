@@ -32,7 +32,7 @@
     .prologue
     sparse-switch p1, :sswitch_data_0
 
-    invoke-virtual {p0, p1}, Lcom/android/internal/telephony/uicc/UsimFileHandler;->getCommonIccEFPath(I)Ljava/lang/String;
+    invoke-virtual {p0, p1}, Lcom/android/internal/telephony/uicc/IccFileHandler;->getCommonIccEFPath(I)Ljava/lang/String;
 
     move-result-object v0
 

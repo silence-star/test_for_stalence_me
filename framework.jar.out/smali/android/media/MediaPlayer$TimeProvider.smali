@@ -141,7 +141,7 @@
 
     iget-object v2, p0, Landroid/media/MediaPlayer$TimeProvider;->mHandlerThread:Landroid/os/HandlerThread;
 
-    invoke-virtual {v2}, Landroid/os/HandlerThread;->start()V
+    invoke-virtual {v2}, Ljava/lang/Thread;->start()V
 
     iget-object v2, p0, Landroid/media/MediaPlayer$TimeProvider;->mHandlerThread:Landroid/os/HandlerThread;
 
@@ -793,7 +793,7 @@
     invoke-direct {v0, v1, v2, v3}, Landroid/media/MediaPlayer$TimeProvider;->scheduleNotification(IJ)V
 
     :goto_4
-    invoke-virtual {v4}, Ljava/util/Vector;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v4}, Ljava/util/AbstractList;->iterator()Ljava/util/Iterator;
 
     move-result-object v8
 

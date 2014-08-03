@@ -57,7 +57,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/widget/EditText;->clearFocus()V
+    invoke-virtual {v0}, Landroid/view/View;->clearFocus()V
 
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 

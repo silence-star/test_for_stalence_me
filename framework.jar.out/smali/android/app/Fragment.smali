@@ -1165,7 +1165,7 @@
     :cond_0
     iget-object v0, p0, Landroid/app/Fragment;->mActivity:Landroid/app/Activity;
 
-    invoke-virtual {v0}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v0}, Landroid/view/ContextThemeWrapper;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 

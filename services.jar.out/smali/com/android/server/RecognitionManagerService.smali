@@ -57,7 +57,7 @@
 
     const/4 v2, 0x1
 
-    invoke-virtual {v0, p1, v4, v1, v2}, Lcom/android/server/RecognitionManagerService$MyPackageMonitor;->register(Landroid/content/Context;Landroid/os/Looper;Landroid/os/UserHandle;Z)V
+    invoke-virtual {v0, p1, v4, v1, v2}, Lcom/android/internal/content/PackageMonitor;->register(Landroid/content/Context;Landroid/os/Looper;Landroid/os/UserHandle;Z)V
 
     invoke-static {}, Landroid/app/AppGlobals;->getPackageManager()Landroid/content/pm/IPackageManager;
 
@@ -223,7 +223,7 @@
     iget-object v3, v4, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
     .local v3, serviceInfo:Landroid/content/pm/ServiceInfo;
-    iget-object v4, v3, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    iget-object v4, v3, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {p1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -233,9 +233,9 @@
 
     new-instance v4, Landroid/content/ComponentName;
 
-    iget-object v5, v3, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    iget-object v5, v3, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
-    iget-object v6, v3, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
+    iget-object v6, v3, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     invoke-direct {v4, v5, v6}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -271,9 +271,9 @@
     .restart local v3       #serviceInfo:Landroid/content/pm/ServiceInfo;
     new-instance v4, Landroid/content/ComponentName;
 
-    iget-object v5, v3, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    iget-object v5, v3, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
-    iget-object v6, v3, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
+    iget-object v6, v3, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     invoke-direct {v4, v5, v6}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 

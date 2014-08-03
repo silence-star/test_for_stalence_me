@@ -143,7 +143,7 @@
 
     invoke-virtual {v1, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    #getter for: Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    #getter for: Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
     invoke-static {p1}, Lcom/android/server/connectivity/Vpn;->access$1900(Lcom/android/server/connectivity/Vpn;)Landroid/content/Context;
 
     move-result-object v2
@@ -1720,7 +1720,7 @@
 
     move-object/from16 v26, v0
 
-    #getter for: Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    #getter for: Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
     invoke-static/range {v26 .. v26}, Lcom/android/server/connectivity/Vpn;->access$2300(Lcom/android/server/connectivity/Vpn;)Landroid/content/Context;
 
     move-result-object v26
@@ -1946,7 +1946,7 @@
 
     move-object/from16 v27, v0
 
-    #getter for: Lcom/android/server/connectivity/Vpn;->mNetworkInfo:Landroid/net/NetworkInfo;
+    #getter for: Landroid/net/BaseNetworkStateTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
     invoke-static/range {v27 .. v27}, Lcom/android/server/connectivity/Vpn;->access$2400(Lcom/android/server/connectivity/Vpn;)Landroid/net/NetworkInfo;
 
     move-result-object v27
@@ -2017,7 +2017,7 @@
 
     move-object/from16 v26, v0
 
-    #getter for: Lcom/android/server/connectivity/Vpn;->mNetworkInfo:Landroid/net/NetworkInfo;
+    #getter for: Landroid/net/BaseNetworkStateTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
     invoke-static/range {v26 .. v26}, Lcom/android/server/connectivity/Vpn;->access$2400(Lcom/android/server/connectivity/Vpn;)Landroid/net/NetworkInfo;
 
     move-result-object v26
@@ -2066,7 +2066,7 @@
 
     move-object/from16 v26, v0
 
-    #getter for: Lcom/android/server/connectivity/Vpn;->mNetworkInfo:Landroid/net/NetworkInfo;
+    #getter for: Landroid/net/BaseNetworkStateTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
     invoke-static/range {v26 .. v26}, Lcom/android/server/connectivity/Vpn;->access$2400(Lcom/android/server/connectivity/Vpn;)Landroid/net/NetworkInfo;
 
     move-result-object v26
@@ -2110,7 +2110,7 @@
 
     move-object/from16 v26, v0
 
-    #getter for: Lcom/android/server/connectivity/Vpn;->mNetworkInfo:Landroid/net/NetworkInfo;
+    #getter for: Landroid/net/BaseNetworkStateTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
     invoke-static/range {v26 .. v26}, Lcom/android/server/connectivity/Vpn;->access$2400(Lcom/android/server/connectivity/Vpn;)Landroid/net/NetworkInfo;
 
     move-result-object v26
@@ -2160,7 +2160,7 @@
     .prologue
     iget-object v6, p0, Lcom/android/server/connectivity/Vpn$LegacyVpnRunner;->this$0:Lcom/android/server/connectivity/Vpn;
 
-    #getter for: Lcom/android/server/connectivity/Vpn;->mNetworkInfo:Landroid/net/NetworkInfo;
+    #getter for: Landroid/net/BaseNetworkStateTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
     invoke-static {v6}, Lcom/android/server/connectivity/Vpn;->access$2500(Lcom/android/server/connectivity/Vpn;)Landroid/net/NetworkInfo;
 
     move-result-object v6
@@ -2389,7 +2389,7 @@
     .locals 7
 
     .prologue
-    invoke-virtual {p0}, Lcom/android/server/connectivity/Vpn$LegacyVpnRunner;->interrupt()V
+    invoke-virtual {p0}, Ljava/lang/Thread;->interrupt()V
 
     iget-object v0, p0, Lcom/android/server/connectivity/Vpn$LegacyVpnRunner;->mSockets:[Landroid/net/LocalSocket;
 
@@ -2426,7 +2426,7 @@
     :try_start_0
     iget-object v4, p0, Lcom/android/server/connectivity/Vpn$LegacyVpnRunner;->this$0:Lcom/android/server/connectivity/Vpn;
 
-    #getter for: Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    #getter for: Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
     invoke-static {v4}, Lcom/android/server/connectivity/Vpn;->access$2000(Lcom/android/server/connectivity/Vpn;)Landroid/content/Context;
 
     move-result-object v4

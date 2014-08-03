@@ -258,7 +258,7 @@
 
     aput-byte v3, v0, v2
 
-    invoke-virtual {v1, v0}, Ljava/io/FileOutputStream;->write([B)V
+    invoke-virtual {v1, v0}, Ljava/io/OutputStream;->write([B)V
 
     invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
     :try_end_0

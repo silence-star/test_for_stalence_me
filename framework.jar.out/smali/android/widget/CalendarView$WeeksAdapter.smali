@@ -174,7 +174,7 @@
     iput v0, p0, Landroid/widget/CalendarView$WeeksAdapter;->mTotalWeekCount:I
 
     :cond_1
-    invoke-virtual {p0}, Landroid/widget/CalendarView$WeeksAdapter;->notifyDataSetChanged()V
+    invoke-virtual {p0}, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
 
     return-void
 .end method
@@ -295,13 +295,13 @@
     invoke-direct {v0, v5, v5}, Landroid/widget/AbsListView$LayoutParams;-><init>(II)V
 
     .local v0, params:Landroid/widget/AbsListView$LayoutParams;
-    invoke-virtual {v2, v0}, Landroid/widget/CalendarView$WeekView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v2, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     const/4 v3, 0x1
 
-    invoke-virtual {v2, v3}, Landroid/widget/CalendarView$WeekView;->setClickable(Z)V
+    invoke-virtual {v2, v3}, Landroid/view/View;->setClickable(Z)V
 
-    invoke-virtual {v2, p0}, Landroid/widget/CalendarView$WeekView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+    invoke-virtual {v2, p0}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     goto :goto_0
 
@@ -327,7 +327,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2}, Landroid/widget/ListView;->isEnabled()Z
+    invoke-virtual {v2}, Landroid/view/View;->isEnabled()Z
 
     move-result v2
 
@@ -443,7 +443,7 @@
     :cond_0
     iput p1, p0, Landroid/widget/CalendarView$WeeksAdapter;->mFocusedMonth:I
 
-    invoke-virtual {p0}, Landroid/widget/CalendarView$WeeksAdapter;->notifyDataSetChanged()V
+    invoke-virtual {p0}, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
 
     goto :goto_0
 .end method
@@ -514,7 +514,7 @@
 
     iput v0, p0, Landroid/widget/CalendarView$WeeksAdapter;->mFocusedMonth:I
 
-    invoke-virtual {p0}, Landroid/widget/CalendarView$WeeksAdapter;->notifyDataSetChanged()V
+    invoke-virtual {p0}, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
 
     goto :goto_0
 .end method

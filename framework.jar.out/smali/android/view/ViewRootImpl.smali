@@ -3,9 +3,9 @@
 .source "ViewRootImpl.java"
 
 # interfaces
-.implements Landroid/view/ViewParent;
-.implements Landroid/view/View$AttachInfo$Callbacks;
 .implements Landroid/view/HardwareRenderer$HardwareDrawCallbacks;
+.implements Landroid/view/View$AttachInfo$Callbacks;
+.implements Landroid/view/ViewParent;
 
 
 # annotations
@@ -403,9 +403,9 @@
 
 .field mSeq:I
 
-.field private mSmartShowContext:Landroid/content/ISmartShowContext;
-
 .field mSkipResizedMsg:Z
+
+.field private mSmartShowContext:Landroid/content/ISmartShowContext;
 
 .field mSoftInputMode:I
 

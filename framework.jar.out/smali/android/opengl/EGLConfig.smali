@@ -46,11 +46,11 @@
     check-cast v0, Landroid/opengl/EGLConfig;
 
     .local v0, that:Landroid/opengl/EGLConfig;
-    invoke-virtual {p0}, Landroid/opengl/EGLConfig;->getHandle()I
+    invoke-virtual {p0}, Landroid/opengl/EGLObjectHandle;->getHandle()I
 
     move-result v3
 
-    invoke-virtual {v0}, Landroid/opengl/EGLConfig;->getHandle()I
+    invoke-virtual {v0}, Landroid/opengl/EGLObjectHandle;->getHandle()I
 
     move-result v4
 

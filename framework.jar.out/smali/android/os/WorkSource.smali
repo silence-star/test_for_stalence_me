@@ -207,7 +207,7 @@
 
     iget-object v0, p1, Landroid/os/WorkSource;->mUids:[I
 
-    invoke-virtual {v0}, [I->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -221,7 +221,7 @@
 
     iget-object v0, p1, Landroid/os/WorkSource;->mNames:[Ljava/lang/String;
 
-    invoke-virtual {v0}, [Ljava/lang/String;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -2219,7 +2219,7 @@
     :cond_1
     iget-object v0, p1, Landroid/os/WorkSource;->mUids:[I
 
-    invoke-virtual {v0}, [I->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -2232,7 +2232,7 @@
     :cond_2
     iget-object v0, p1, Landroid/os/WorkSource;->mNames:[Ljava/lang/String;
 
-    invoke-virtual {v0}, [Ljava/lang/String;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

@@ -1152,6 +1152,8 @@
 
     goto :goto_0
 
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x3041 -> :sswitch_0
@@ -1896,7 +1898,7 @@
 
     move/from16 v1, p3
 
-    if-gt v0, v1, :cond_2c
+    if-gt v0, v1, :cond_2e
 
     const/16 v5, 0xa
 
@@ -2276,9 +2278,9 @@
 
     move/from16 v1, v38
 
-    if-ge v0, v1, :cond_29
+    if-ge v0, v1, :cond_2b
 
-    if-nez v126, :cond_17
+    if-nez v126, :cond_18
 
     move/from16 v123, v38
 
@@ -2333,7 +2335,7 @@
 
     move/from16 v1, v123
 
-    if-ge v0, v1, :cond_24
+    if-ge v0, v1, :cond_26
 
     sub-int v5, v109, v29
 
@@ -2344,7 +2346,7 @@
 
     move/from16 v0, v95
 
-    if-ne v0, v5, :cond_18
+    if-ne v0, v5, :cond_19
 
     :goto_9
     const/16 v5, 0x20
@@ -2363,7 +2365,7 @@
 
     move/from16 v0, v95
 
-    if-ne v0, v5, :cond_20
+    if-ne v0, v5, :cond_21
 
     :cond_a
     const/16 v108, 0x1
@@ -2378,7 +2380,7 @@
 
     if-lez v5, :cond_b
 
-    if-eqz v108, :cond_22
+    if-eqz v108, :cond_24
 
     :cond_b
     move/from16 v100, v62
@@ -2435,38 +2437,38 @@
 
     move-result v95
 
-    if-nez v108, :cond_miui_0
+    if-nez v108, :cond_10
 
     const/16 v5, 0x20
 
     move/from16 v0, v95
 
-    if-ne v0, v5, :cond_miui_1
+    if-ne v0, v5, :cond_22
 
-    :cond_miui_0
+    :cond_10
     const/16 v108, 0x1
 
-    :goto_miui
-    if-nez v108, :cond_12
+    :goto_b
+    if-nez v108, :cond_13
 
     const/16 v5, 0x2f
 
     move/from16 v0, v95
 
-    if-eq v0, v5, :cond_10
+    if-eq v0, v5, :cond_11
 
     const/16 v5, 0x2d
 
     move/from16 v0, v95
 
-    if-ne v0, v5, :cond_11
+    if-ne v0, v5, :cond_12
 
-    :cond_10
+    :cond_11
     add-int/lit8 v5, v109, 0x1
 
     move/from16 v0, v123
 
-    if-ge v5, v0, :cond_12
+    if-ge v5, v0, :cond_13
 
     add-int/lit8 v5, v109, 0x1
 
@@ -2478,14 +2480,14 @@
 
     move-result v5
 
-    if-eqz v5, :cond_12
+    if-eqz v5, :cond_13
 
-    :cond_11
+    :cond_12
     const/16 v5, 0x2e80
 
     move/from16 v0, v95
 
-    if-lt v0, v5, :cond_21
+    if-lt v0, v5, :cond_23
 
     const/4 v5, 0x1
 
@@ -2495,13 +2497,13 @@
 
     move-result v5
 
-    if-eqz v5, :cond_21
+    if-eqz v5, :cond_23
 
     add-int/lit8 v5, v109, 0x1
 
     move/from16 v0, v123
 
-    if-ge v5, v0, :cond_21
+    if-ge v5, v0, :cond_23
 
     add-int/lit8 v5, v109, 0x1
 
@@ -2515,14 +2517,14 @@
 
     move-result v5
 
-    if-eqz v5, :cond_21
+    if-eqz v5, :cond_23
 
-    :cond_12
+    :cond_13
     const/16 v107, 0x1
 
     .local v107, isLineBreak:Z
-    :goto_b
-    if-eqz v107, :cond_16
+    :goto_c
+    if-eqz v107, :cond_17
 
     move/from16 v120, v62
 
@@ -2532,39 +2534,39 @@
 
     move/from16 v1, v119
 
-    if-ge v0, v1, :cond_13
+    if-ge v0, v1, :cond_14
 
     move/from16 v119, v41
 
-    :cond_13
+    :cond_14
     move/from16 v0, v39
 
     move/from16 v1, v116
 
-    if-ge v0, v1, :cond_14
+    if-ge v0, v1, :cond_15
 
     move/from16 v116, v39
 
-    :cond_14
+    :cond_15
     move/from16 v0, v40
 
     move/from16 v1, v118
 
-    if-le v0, v1, :cond_15
+    if-le v0, v1, :cond_16
 
     move/from16 v118, v40
 
-    :cond_15
+    :cond_16
     move/from16 v0, v42
 
     move/from16 v1, v117
 
-    if-le v0, v1, :cond_16
+    if-le v0, v1, :cond_17
 
     move/from16 v117, v42
 
     .end local v107           #isLineBreak:Z
-    :cond_16
+    :cond_17
     add-int/lit8 v109, v109, 0x1
 
     goto/16 :goto_8
@@ -2578,7 +2580,7 @@
     .end local v109           #j:I
     .end local v123           #spanEnd:I
     .end local v124           #spanLen:I
-    :cond_17
+    :cond_18
     const-class v5, Landroid/text/style/MetricAffectingSpan;
 
     move-object/from16 v0, v126
@@ -2645,20 +2647,20 @@
     .restart local v103       #fmDescent:I
     .restart local v104       #fmTop:I
     .restart local v109       #j:I
-    :cond_18
+    :cond_19
     const/16 v5, 0x9
 
     move/from16 v0, v95
 
-    if-ne v0, v5, :cond_1b
+    if-ne v0, v5, :cond_1c
 
-    if-nez v105, :cond_19
+    if-nez v105, :cond_1a
 
     const/16 v105, 0x1
 
     const/16 v19, 0x1
 
-    if-eqz v126, :cond_19
+    if-eqz v126, :cond_1a
 
     const-class v5, Landroid/text/style/TabStopSpan;
 
@@ -2679,7 +2681,7 @@
 
     array-length v5, v0
 
-    if-lez v5, :cond_19
+    if-lez v5, :cond_1a
 
     new-instance v128, Landroid/text/Layout$TabStops;
 
@@ -2694,8 +2696,8 @@
 
     .end local v127           #spans:[Landroid/text/style/TabStopSpan;
     .restart local v128       #tabStops:Landroid/text/Layout$TabStops;
-    :cond_19
-    if-eqz v128, :cond_1a
+    :cond_1a
+    if-eqz v128, :cond_1b
 
     move-object/from16 v0, v128
 
@@ -2707,7 +2709,7 @@
 
     goto/16 :goto_9
 
-    :cond_1a
+    :cond_1b
     const/16 v5, 0x14
 
     move/from16 v0, v62
@@ -2718,24 +2720,24 @@
 
     goto/16 :goto_9
 
-    :cond_1b
+    :cond_1c
     const v5, 0xd800
 
     move/from16 v0, v95
 
-    if-lt v0, v5, :cond_1f
+    if-lt v0, v5, :cond_20
 
     const v5, 0xdfff
 
     move/from16 v0, v95
 
-    if-gt v0, v5, :cond_1f
+    if-gt v0, v5, :cond_20
 
     add-int/lit8 v5, v109, 0x1
 
     move/from16 v0, v123
 
-    if-ge v5, v0, :cond_1f
+    if-ge v5, v0, :cond_20
 
     sub-int v5, v109, v29
 
@@ -2750,13 +2752,13 @@
 
     move/from16 v0, v96
 
-    if-lt v0, v5, :cond_1e
+    if-lt v0, v5, :cond_1f
 
     sget v5, Landroid/text/StaticLayout;->MAX_EMOJI:I
 
     move/from16 v0, v96
 
-    if-gt v0, v5, :cond_1e
+    if-gt v0, v5, :cond_1f
 
     sget-object v5, Landroid/text/StaticLayout;->EMOJI_FACTORY:Landroid/emoji/EmojiFactory;
 
@@ -2767,14 +2769,14 @@
     move-result-object v94
 
     .local v94, bm:Landroid/graphics/Bitmap;
-    if-eqz v94, :cond_1d
+    if-eqz v94, :cond_1e
 
-    if-nez v126, :cond_1c
+    if-nez v126, :cond_1d
 
     move-object/from16 v129, p4
 
     .local v129, whichPaint:Landroid/graphics/Paint;
-    :goto_c
+    :goto_d
     invoke-virtual/range {v94 .. v94}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v5
@@ -2808,7 +2810,7 @@
 
     .end local v129           #whichPaint:Landroid/graphics/Paint;
     .end local v130           #wid:F
-    :cond_1c
+    :cond_1d
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/text/StaticLayout;->mWorkPaint:Landroid/text/TextPaint;
@@ -2816,19 +2818,9 @@
     move-object/from16 v129, v0
 
     .restart local v129       #whichPaint:Landroid/graphics/Paint;
-    goto :goto_c
+    goto :goto_d
 
     .end local v129           #whichPaint:Landroid/graphics/Paint;
-    :cond_1d
-    sub-int v5, v109, v29
-
-    aget v5, v28, v5
-
-    add-float v62, v62, v5
-
-    goto/16 :goto_9
-
-    .end local v94           #bm:Landroid/graphics/Bitmap;
     :cond_1e
     sub-int v5, v109, v29
 
@@ -2838,7 +2830,7 @@
 
     goto/16 :goto_9
 
-    .end local v96           #emoji:I
+    .end local v94           #bm:Landroid/graphics/Bitmap;
     :cond_1f
     sub-int v5, v109, v29
 
@@ -2848,36 +2840,46 @@
 
     goto/16 :goto_9
 
+    .end local v96           #emoji:I
     :cond_20
+    sub-int v5, v109, v29
+
+    aget v5, v28, v5
+
+    add-float v62, v62, v5
+
+    goto/16 :goto_9
+
+    :cond_21
     const/16 v108, 0x0
 
     goto/16 :goto_a
 
     .restart local v108       #isSpaceOrTab:Z
-    :cond_miui_1
+    :cond_22
     const/16 v108, 0x0
-
-    goto/16 :goto_miui
-
-    :cond_21
-    const/16 v107, 0x0
 
     goto/16 :goto_b
 
-    :cond_22
+    :cond_23
+    const/16 v107, 0x0
+
+    goto/16 :goto_c
+
+    :cond_24
     add-int/lit8 v5, v109, 0x1
 
     move/from16 v0, v123
 
-    if-ge v5, v0, :cond_25
+    if-ge v5, v0, :cond_27
 
     const/16 v34, 0x1
 
     .local v34, moreChars:Z
-    :goto_d
+    :goto_e
     move/from16 v0, v115
 
-    if-eq v0, v7, :cond_26
+    if-eq v0, v7, :cond_28
 
     move/from16 v8, v115
 
@@ -2897,7 +2899,7 @@
     move/from16 v32, v120
 
     .local v32, currentTextWidth:F
-    :goto_e
+    :goto_f
     move-object/from16 v5, p0
 
     move-object/from16 v6, p1
@@ -2950,14 +2952,14 @@
 
     add-int/lit8 v98, v98, -0x1
 
-    if-gtz v98, :cond_23
+    if-gtz v98, :cond_25
 
     move/from16 v131, v121
 
-    :cond_23
+    :cond_25
     move/from16 v0, v125
 
-    if-ge v7, v0, :cond_28
+    if-ge v7, v0, :cond_2a
 
     move-object/from16 v0, v113
 
@@ -2974,24 +2976,24 @@
     .end local v34           #moreChars:Z
     .end local v95           #c:C
     .end local v108           #isSpaceOrTab:Z
-    :cond_24
-    :goto_f
+    :cond_26
+    :goto_10
     move/from16 v125, v123
 
     goto/16 :goto_6
 
     .restart local v95       #c:C
     .restart local v108       #isSpaceOrTab:Z
-    :cond_25
+    :cond_27
     const/16 v34, 0x0
 
-    goto :goto_d
+    goto :goto_e
 
     .restart local v34       #moreChars:Z
-    :cond_26
+    :cond_28
     move/from16 v0, v99
 
-    if-eq v0, v7, :cond_27
+    if-eq v0, v7, :cond_29
 
     move/from16 v8, v99
 
@@ -3011,7 +3013,7 @@
     move/from16 v32, v100
 
     .restart local v32       #currentTextWidth:F
-    goto :goto_e
+    goto :goto_f
 
     .end local v8           #endPos:I
     .end local v9           #above:I
@@ -3019,7 +3021,7 @@
     .end local v11           #top:I
     .end local v12           #bottom:I
     .end local v32           #currentTextWidth:F
-    :cond_27
+    :cond_29
     add-int/lit8 v8, v7, 0x1
 
     .restart local v8       #endPos:I
@@ -3048,9 +3050,9 @@
     aget v32, v28, v5
 
     .restart local v32       #currentTextWidth:F
-    goto :goto_e
+    goto :goto_f
 
-    :cond_28
+    :cond_2a
     move-object/from16 v0, p0
 
     iget v5, v0, Landroid/text/StaticLayout;->mLineCount:I
@@ -3059,9 +3061,9 @@
 
     iget v6, v0, Landroid/text/StaticLayout;->mMaximumVisibleLineCount:I
 
-    if-lt v5, v6, :cond_16
+    if-lt v5, v6, :cond_17
 
-    goto :goto_f
+    goto :goto_10
 
     .end local v8           #endPos:I
     .end local v9           #above:I
@@ -3079,10 +3081,10 @@
     .end local v109           #j:I
     .end local v123           #spanEnd:I
     .end local v124           #spanLen:I
-    :cond_29
+    :cond_2b
     move/from16 v0, v38
 
-    if-eq v0, v7, :cond_2b
+    if-eq v0, v7, :cond_2d
 
     move-object/from16 v0, p0
 
@@ -3092,7 +3094,7 @@
 
     iget v6, v0, Landroid/text/StaticLayout;->mMaximumVisibleLineCount:I
 
-    if-ge v5, v6, :cond_2b
+    if-ge v5, v6, :cond_2d
 
     or-int v5, v41, v42
 
@@ -3100,7 +3102,7 @@
 
     or-int v5, v5, v39
 
-    if-nez v5, :cond_2a
+    if-nez v5, :cond_2c
 
     move-object/from16 v0, p4
 
@@ -3132,16 +3134,16 @@
 
     move/from16 v40, v0
 
-    :cond_2a
+    :cond_2c
     move/from16 v0, v38
 
     move/from16 v1, p3
 
-    if-eq v0, v1, :cond_2f
+    if-eq v0, v1, :cond_31
 
     const/16 v64, 0x1
 
-    :goto_10
+    :goto_11
     move-object/from16 v35, p0
 
     move-object/from16 v36, p1
@@ -3192,14 +3194,14 @@
 
     move-result v13
 
-    :cond_2b
+    :cond_2d
     move/from16 v29, v38
 
     move/from16 v0, v38
 
     move/from16 v1, p3
 
-    if-ne v0, v1, :cond_30
+    if-ne v0, v1, :cond_32
 
     .end local v7           #here:I
     .end local v16           #chooseHt:[Landroid/text/style/LineHeightSpan;
@@ -3230,12 +3232,12 @@
     .end local v125           #spanStart:I
     .end local v128           #tabStops:Landroid/text/Layout$TabStops;
     .end local v131           #width:I
-    :cond_2c
+    :cond_2e
     move/from16 v0, p3
 
     move/from16 v1, p2
 
-    if-eq v0, v1, :cond_2d
+    if-eq v0, v1, :cond_2f
 
     add-int/lit8 v5, p3, -0x1
 
@@ -3247,9 +3249,9 @@
 
     const/16 v6, 0xa
 
-    if-ne v5, v6, :cond_2e
+    if-ne v5, v6, :cond_30
 
-    :cond_2d
+    :cond_2f
     move-object/from16 v0, p0
 
     iget v5, v0, Landroid/text/StaticLayout;->mLineCount:I
@@ -3258,7 +3260,7 @@
 
     iget v6, v0, Landroid/text/StaticLayout;->mMaximumVisibleLineCount:I
 
-    if-ge v5, v6, :cond_2e
+    if-ge v5, v6, :cond_30
 
     move-object/from16 v0, v113
 
@@ -3370,7 +3372,7 @@
 
     move-result v13
 
-    :cond_2e
+    :cond_30
     return-void
 
     .restart local v7       #here:I
@@ -3402,12 +3404,12 @@
     .restart local v125       #spanStart:I
     .restart local v128       #tabStops:Landroid/text/Layout$TabStops;
     .restart local v131       #width:I
-    :cond_2f
+    :cond_31
     const/16 v64, 0x0
 
-    goto/16 :goto_10
+    goto/16 :goto_11
 
-    :cond_30
+    :cond_32
     move/from16 v29, v38
 
     goto/16 :goto_1

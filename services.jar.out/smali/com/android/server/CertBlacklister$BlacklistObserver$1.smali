@@ -105,7 +105,7 @@
 
     move-result-object v5
 
-    invoke-virtual {v3, v5}, Ljava/io/FileOutputStream;->write([B)V
+    invoke-virtual {v3, v5}, Ljava/io/OutputStream;->write([B)V
 
     invoke-static {v3}, Landroid/os/FileUtils;->sync(Ljava/io/FileOutputStream;)Z
 

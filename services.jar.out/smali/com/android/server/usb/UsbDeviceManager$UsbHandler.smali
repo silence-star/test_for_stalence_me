@@ -1419,9 +1419,9 @@
 
     new-instance v0, Landroid/content/ComponentName;
 
-    const-string v1, "com.android.systemui"
+    const-string v1, "com.android.systemui_ex"
 
-    const-string v3, "com.android.systemui.usb.UsbConnectOptionsActivity"
+    const-string v3, "com.android.systemui_ex.usb.UsbConnectOptionsActivity"
 
     invoke-direct {v0, v1, v3}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -2274,7 +2274,7 @@
     .parameter "arg"
 
     .prologue
-    invoke-virtual {p0, p1}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->removeMessages(I)V
+    invoke-virtual {p0, p1}, Landroid/os/Handler;->removeMessages(I)V
 
     invoke-static {p0, p1}, Landroid/os/Message;->obtain(Landroid/os/Handler;I)Landroid/os/Message;
 
@@ -2283,7 +2283,7 @@
     .local v0, m:Landroid/os/Message;
     iput-object p2, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    invoke-virtual {p0, v0}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     return-void
 .end method
@@ -2295,7 +2295,7 @@
     .parameter "arg1"
 
     .prologue
-    invoke-virtual {p0, p1}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->removeMessages(I)V
+    invoke-virtual {p0, p1}, Landroid/os/Handler;->removeMessages(I)V
 
     invoke-static {p0, p1}, Landroid/os/Message;->obtain(Landroid/os/Handler;I)Landroid/os/Message;
 
@@ -2311,7 +2311,7 @@
     :goto_0
     iput v1, v0, Landroid/os/Message;->arg1:I
 
-    invoke-virtual {p0, v0}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     return-void
 
@@ -2327,7 +2327,7 @@
     .parameter "arg"
 
     .prologue
-    invoke-virtual {p0, p1}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->removeMessages(I)V
+    invoke-virtual {p0, p1}, Landroid/os/Handler;->removeMessages(I)V
 
     invoke-static {p0, p1}, Landroid/os/Message;->obtain(Landroid/os/Handler;I)Landroid/os/Message;
 
@@ -2341,7 +2341,7 @@
     :goto_0
     iput v1, v0, Landroid/os/Message;->arg1:I
 
-    invoke-virtual {p0, v0}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     return-void
 
@@ -2373,7 +2373,7 @@
 
     .local v0, configured:I
     :goto_0
-    invoke-virtual {p0, v4}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->removeMessages(I)V
+    invoke-virtual {p0, v4}, Landroid/os/Handler;->removeMessages(I)V
 
     invoke-static {p0, v4}, Landroid/os/Message;->obtain(Landroid/os/Handler;I)Landroid/os/Message;
 
@@ -2389,7 +2389,7 @@
     const-wide/16 v3, 0x3e8
 
     :goto_1
-    invoke-virtual {p0, v2, v3, v4}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {p0, v2, v3, v4}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     .end local v0           #configured:I
     .end local v1           #connected:I

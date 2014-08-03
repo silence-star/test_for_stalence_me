@@ -134,7 +134,7 @@
     move-result-object v0
 
     .local v0, event:Landroid/view/accessibility/AccessibilityEvent;
-    invoke-virtual {v0}, Landroid/view/accessibility/AccessibilityEvent;->getText()Ljava/util/List;
+    invoke-virtual {v0}, Landroid/view/accessibility/AccessibilityRecord;->getText()Ljava/util/List;
 
     move-result-object v4
 
@@ -151,7 +151,7 @@
 
     move-result v4
 
-    invoke-virtual {v0, v4}, Landroid/view/accessibility/AccessibilityEvent;->setWindowId(I)V
+    invoke-virtual {v0, v4}, Landroid/view/accessibility/AccessibilityRecord;->setWindowId(I)V
 
     iget-object v4, p0, Lcom/android/server/accessibility/AccessibilityManagerService$MainHandler;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
@@ -423,7 +423,7 @@
 
     move-result-object v9
 
-    invoke-virtual {v9, v1, v3}, Lcom/android/server/accessibility/AccessibilityInputFilter;->sendInputEvent(Landroid/view/InputEvent;I)V
+    invoke-virtual {v9, v1, v3}, Landroid/view/InputFilter;->sendInputEvent(Landroid/view/InputEvent;I)V
 
     :cond_1
     monitor-exit v10

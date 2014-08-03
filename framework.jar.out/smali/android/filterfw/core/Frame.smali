@@ -446,7 +446,7 @@
     .prologue
     const/4 v0, 0x0
 
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->limit()I
+    invoke-virtual {p1}, Ljava/nio/Buffer;->limit()I
 
     move-result v1
 

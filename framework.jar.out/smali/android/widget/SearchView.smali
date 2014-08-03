@@ -1490,29 +1490,29 @@
 
     move-result v3
 
-    if-eqz v3, :cond_miui
+    if-eqz v3, :cond_0
 
     return-object p1
 
-    :cond_miui
+    :cond_0
     iget-boolean v3, p0, Landroid/widget/SearchView;->mIconifiedByDefault:Z
 
-    if-nez v3, :cond_1
+    if-nez v3, :cond_2
 
     .end local p1
-    :cond_0
+    :cond_1
     :goto_0
     return-object p1
 
     .restart local p1
-    :cond_1
+    :cond_2
     iget-object v3, p0, Landroid/widget/SearchView;->mNubiaSearchView:Lnubia/ui/ISearchView;
 
     invoke-interface {v3}, Lnubia/ui/ISearchView;->getDecoratedHint()Z
 
     move-result v3
 
-    if-nez v3, :cond_0
+    if-nez v3, :cond_1
 
     new-instance v1, Landroid/text/SpannableStringBuilder;
 
@@ -2690,11 +2690,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_miui
+    if-eqz v1, :cond_0
 
     return-void
 
-    :cond_miui
+    :cond_0
     iget-object v1, p0, Landroid/widget/SearchView;->mQueryTextView:Landroid/widget/SearchView$SearchAutoComplete;
 
     invoke-virtual {v1}, Landroid/widget/SearchView$SearchAutoComplete;->hasFocus()Z
@@ -2708,7 +2708,7 @@
 
     move-result-object v2
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     sget-object v1, Landroid/widget/SearchView;->FOCUSED_STATE_SET:[I
 
@@ -2721,7 +2721,7 @@
 
     move-result-object v2
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     sget-object v1, Landroid/widget/SearchView;->FOCUSED_STATE_SET:[I
 
@@ -2732,12 +2732,12 @@
 
     return-void
 
-    :cond_0
+    :cond_1
     sget-object v1, Landroid/widget/SearchView;->EMPTY_STATE_SET:[I
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
     sget-object v1, Landroid/widget/SearchView;->EMPTY_STATE_SET:[I
 
     goto :goto_1

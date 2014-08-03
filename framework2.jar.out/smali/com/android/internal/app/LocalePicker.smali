@@ -581,6 +581,20 @@
     goto :goto_1
 .end method
 
+.method private static getMiuiSupportLocale(Landroid/content/res/Resources;)[Ljava/lang/String;
+    .locals 1
+    .parameter "resources"
+
+    .prologue
+    sget v0, Lcom/miui/internal/R$array;->supported_locale:I
+
+    invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method private static toTitleCase(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
     .parameter "s"
@@ -686,9 +700,9 @@
     .parameter "savedInstanceState"
 
     .prologue
-    invoke-super {p0, p1}, Landroid/app/ListFragment;->onActivityCreated(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Landroid/app/Fragment;->onActivityCreated(Landroid/os/Bundle;)V
 
-    invoke-virtual {p0}, Lcom/android/internal/app/LocalePicker;->getActivity()Landroid/app/Activity;
+    invoke-virtual {p0}, Landroid/app/Fragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
 
@@ -701,7 +715,7 @@
     move-result-object v0
 
     .local v0, adapter:Landroid/widget/ArrayAdapter;,"Landroid/widget/ArrayAdapter<Lcom/android/internal/app/LocalePicker$LocaleInfo;>;"
-    invoke-virtual {p0, v0}, Lcom/android/internal/app/LocalePicker;->setListAdapter(Landroid/widget/ListAdapter;)V
+    invoke-virtual {p0, v0}, Landroid/app/ListFragment;->setListAdapter(Landroid/widget/ListAdapter;)V
 
     return-void
 .end method
@@ -718,7 +732,7 @@
 
     if-eqz v1, :cond_0
 
-    invoke-virtual {p0}, Lcom/android/internal/app/LocalePicker;->getListAdapter()Landroid/widget/ListAdapter;
+    invoke-virtual {p0}, Landroid/app/ListFragment;->getListAdapter()Landroid/widget/ListAdapter;
 
     move-result-object v1
 
@@ -744,13 +758,13 @@
     .locals 1
 
     .prologue
-    invoke-super {p0}, Landroid/app/ListFragment;->onResume()V
+    invoke-super {p0}, Landroid/app/Fragment;->onResume()V
 
-    invoke-virtual {p0}, Lcom/android/internal/app/LocalePicker;->getListView()Landroid/widget/ListView;
+    invoke-virtual {p0}, Landroid/app/ListFragment;->getListView()Landroid/widget/ListView;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/widget/ListView;->requestFocus()Z
+    invoke-virtual {v0}, Landroid/view/View;->requestFocus()Z
 
     return-void
 .end method
@@ -763,18 +777,4 @@
     iput-object p1, p0, Lcom/android/internal/app/LocalePicker;->mListener:Lcom/android/internal/app/LocalePicker$LocaleSelectionListener;
 
     return-void
-.end method
-
-.method private static getMiuiSupportLocale(Landroid/content/res/Resources;)[Ljava/lang/String;
-    .locals 1
-    .parameter "resources"
-
-    .prologue
-    sget v0, Lcom/miui/internal/R$array;->supported_locale:I
-
-    invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
 .end method

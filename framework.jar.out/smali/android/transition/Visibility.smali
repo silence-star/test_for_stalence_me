@@ -330,7 +330,7 @@
     const/4 v8, 0x0
 
     .local v8, isTarget:Z
-    iget-object v1, p0, Landroid/transition/Visibility;->mTargets:Ljava/util/ArrayList;
+    iget-object v1, p0, Landroid/transition/Transition;->mTargets:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -338,7 +338,7 @@
 
     if-gtz v1, :cond_0
 
-    iget-object v1, p0, Landroid/transition/Visibility;->mTargetIds:Ljava/util/ArrayList;
+    iget-object v1, p0, Landroid/transition/Transition;->mTargetIds:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -377,7 +377,7 @@
     :cond_1
     int-to-long v1, v9
 
-    invoke-virtual {p0, v10, v1, v2}, Landroid/transition/Visibility;->isValidTarget(Landroid/view/View;J)Z
+    invoke-virtual {p0, v10, v1, v2}, Landroid/transition/Transition;->isValidTarget(Landroid/view/View;J)Z
 
     move-result v1
 
@@ -385,7 +385,7 @@
 
     int-to-long v1, v6
 
-    invoke-virtual {p0, v7, v1, v2}, Landroid/transition/Visibility;->isValidTarget(Landroid/view/View;J)Z
+    invoke-virtual {p0, v7, v1, v2}, Landroid/transition/Transition;->isValidTarget(Landroid/view/View;J)Z
 
     move-result v1
 

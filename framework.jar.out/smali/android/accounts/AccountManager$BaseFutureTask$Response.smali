@@ -49,7 +49,7 @@
 
     const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Landroid/accounts/AccountManager$BaseFutureTask;->cancel(Z)Z
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/FutureTask;->cancel(Z)Z
 
     :goto_0
     return-void
@@ -66,7 +66,7 @@
 
     move-result-object v1
 
-    #calls: Landroid/accounts/AccountManager$BaseFutureTask;->setException(Ljava/lang/Throwable;)V
+    #calls: Ljava/util/concurrent/FutureTask;->setException(Ljava/lang/Throwable;)V
     invoke-static {v0, v1}, Landroid/accounts/AccountManager$BaseFutureTask;->access$800(Landroid/accounts/AccountManager$BaseFutureTask;Ljava/lang/Throwable;)V
 
     goto :goto_0
@@ -96,7 +96,7 @@
     :cond_0
     iget-object v1, p0, Landroid/accounts/AccountManager$BaseFutureTask$Response;->this$1:Landroid/accounts/AccountManager$BaseFutureTask;
 
-    #calls: Landroid/accounts/AccountManager$BaseFutureTask;->set(Ljava/lang/Object;)V
+    #calls: Ljava/util/concurrent/FutureTask;->set(Ljava/lang/Object;)V
     invoke-static {v1, v0}, Landroid/accounts/AccountManager$BaseFutureTask;->access$700(Landroid/accounts/AccountManager$BaseFutureTask;Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0

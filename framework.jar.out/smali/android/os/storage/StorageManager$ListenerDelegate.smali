@@ -74,7 +74,7 @@
     .local v0, e:Landroid/os/storage/StorageManager$UmsConnectionChangedStorageEvent;
     iget-object v1, p0, Landroid/os/storage/StorageManager$ListenerDelegate;->mHandler:Landroid/os/Handler;
 
-    invoke-virtual {v0}, Landroid/os/storage/StorageManager$UmsConnectionChangedStorageEvent;->getMessage()Landroid/os/Message;
+    invoke-virtual {v0}, Landroid/os/storage/StorageManager$StorageEvent;->getMessage()Landroid/os/Message;
 
     move-result-object v2
 
@@ -99,7 +99,7 @@
     .local v0, e:Landroid/os/storage/StorageManager$StorageStateChangedStorageEvent;
     iget-object v1, p0, Landroid/os/storage/StorageManager$ListenerDelegate;->mHandler:Landroid/os/Handler;
 
-    invoke-virtual {v0}, Landroid/os/storage/StorageManager$StorageStateChangedStorageEvent;->getMessage()Landroid/os/Message;
+    invoke-virtual {v0}, Landroid/os/storage/StorageManager$StorageEvent;->getMessage()Landroid/os/Message;
 
     move-result-object v2
 

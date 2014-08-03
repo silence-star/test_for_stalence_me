@@ -150,7 +150,7 @@
     .prologue
     const/4 v2, 0x0
 
-    invoke-virtual {p0, v2}, Landroid/widget/HorizontalScrollView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -162,15 +162,15 @@
     move-result v1
 
     .local v1, childWidth:I
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v3
 
-    iget v4, p0, Landroid/widget/HorizontalScrollView;->mPaddingLeft:I
+    iget v4, p0, Landroid/view/View;->mPaddingLeft:I
 
     add-int/2addr v4, v1
 
-    iget v5, p0, Landroid/widget/HorizontalScrollView;->mPaddingRight:I
+    iget v5, p0, Landroid/view/View;->mPaddingRight:I
 
     add-int/2addr v4, v5
 
@@ -233,7 +233,7 @@
     return-void
 
     :cond_1
-    invoke-virtual {p0, p1, v1}, Landroid/widget/HorizontalScrollView;->scrollBy(II)V
+    invoke-virtual {p0, p1, v1}, Landroid/view/View;->scrollBy(II)V
 
     goto :goto_0
 .end method
@@ -247,7 +247,7 @@
     .prologue
     const/4 v10, 0x2
 
-    invoke-virtual {p0, v10}, Landroid/widget/HorizontalScrollView;->getFocusables(I)Ljava/util/ArrayList;
+    invoke-virtual {p0, v10}, Landroid/view/View;->getFocusables(I)Ljava/util/ArrayList;
 
     move-result-object v2
 
@@ -389,7 +389,7 @@
     .parameter "preferredFocusable"
 
     .prologue
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getHorizontalFadingEdgeLength()I
+    invoke-virtual {p0}, Landroid/view/View;->getHorizontalFadingEdgeLength()I
 
     move-result v3
 
@@ -399,7 +399,7 @@
     add-int v1, p2, v0
 
     .local v1, leftWithoutFadingEdge:I
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v3
 
@@ -444,13 +444,13 @@
     const/4 v1, 0x0
 
     .local v1, scrollRange:I
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v2
 
     if-lez v2, :cond_0
 
-    invoke-virtual {p0, v5}, Landroid/widget/HorizontalScrollView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v5}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -459,15 +459,15 @@
 
     move-result v2
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v3
 
-    iget v4, p0, Landroid/widget/HorizontalScrollView;->mPaddingLeft:I
+    iget v4, p0, Landroid/view/View;->mPaddingLeft:I
 
     sub-int/2addr v3, v4
 
-    iget v4, p0, Landroid/widget/HorizontalScrollView;->mPaddingRight:I
+    iget v4, p0, Landroid/view/View;->mPaddingRight:I
 
     sub-int/2addr v3, v4
 
@@ -490,16 +490,16 @@
     .prologue
     const/4 v2, 0x0
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v3
 
     if-lez v3, :cond_0
 
-    iget v1, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v1, p0, Landroid/view/View;->mScrollX:I
 
     .local v1, scrollX:I
-    invoke-virtual {p0, v2}, Landroid/widget/HorizontalScrollView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -571,7 +571,7 @@
     .prologue
     new-instance v1, Landroid/widget/OverScroller;
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
@@ -581,17 +581,17 @@
 
     const/4 v1, 0x1
 
-    invoke-virtual {p0, v1}, Landroid/widget/HorizontalScrollView;->setFocusable(Z)V
+    invoke-virtual {p0, v1}, Landroid/view/View;->setFocusable(Z)V
 
     const/high16 v1, 0x4
 
-    invoke-virtual {p0, v1}, Landroid/widget/HorizontalScrollView;->setDescendantFocusability(I)V
+    invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->setDescendantFocusability(I)V
 
     const/4 v1, 0x0
 
-    invoke-virtual {p0, v1}, Landroid/widget/HorizontalScrollView;->setWillNotDraw(Z)V
+    invoke-virtual {p0, v1}, Landroid/view/View;->setWillNotDraw(Z)V
 
-    iget-object v1, p0, Landroid/widget/HorizontalScrollView;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
@@ -719,7 +719,7 @@
 
     iget-object v0, p0, Landroid/widget/HorizontalScrollView;->mTempRect:Landroid/graphics/Rect;
 
-    invoke-virtual {p0, p1, v0}, Landroid/widget/HorizontalScrollView;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
+    invoke-virtual {p0, p1, v0}, Landroid/view/ViewGroup;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
 
     iget-object v0, p0, Landroid/widget/HorizontalScrollView;->mTempRect:Landroid/graphics/Rect;
 
@@ -727,7 +727,7 @@
 
     add-int/2addr v0, p2
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getScrollX()I
+    invoke-virtual {p0}, Landroid/view/View;->getScrollX()I
 
     move-result v1
 
@@ -739,11 +739,11 @@
 
     sub-int/2addr v0, p2
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getScrollX()I
+    invoke-virtual {p0}, Landroid/view/View;->getScrollX()I
 
     move-result v1
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v2
 
@@ -855,12 +855,12 @@
     const/4 v4, 0x1
 
     .local v4, handled:Z
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v6
 
     .local v6, width:I
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getScrollX()I
+    invoke-virtual {p0}, Landroid/view/View;->getScrollX()I
 
     move-result v0
 
@@ -893,7 +893,7 @@
     const/4 v4, 0x0
 
     :goto_1
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->findFocus()Landroid/view/View;
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->findFocus()Landroid/view/View;
 
     move-result-object v7
 
@@ -942,7 +942,7 @@
 
     iget-object v1, p0, Landroid/widget/HorizontalScrollView;->mTempRect:Landroid/graphics/Rect;
 
-    invoke-virtual {p0, p1, v1}, Landroid/widget/HorizontalScrollView;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
+    invoke-virtual {p0, p1, v1}, Landroid/view/ViewGroup;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
 
     iget-object v1, p0, Landroid/widget/HorizontalScrollView;->mTempRect:Landroid/graphics/Rect;
 
@@ -955,7 +955,7 @@
 
     const/4 v1, 0x0
 
-    invoke-virtual {p0, v0, v1}, Landroid/widget/HorizontalScrollView;->scrollBy(II)V
+    invoke-virtual {p0, v0, v1}, Landroid/view/View;->scrollBy(II)V
 
     :cond_0
     return-void
@@ -984,7 +984,7 @@
 
     if-eqz p2, :cond_2
 
-    invoke-virtual {p0, v0, v2}, Landroid/widget/HorizontalScrollView;->scrollBy(II)V
+    invoke-virtual {p0, v0, v2}, Landroid/view/View;->scrollBy(II)V
 
     :cond_0
     :goto_1
@@ -1010,7 +1010,7 @@
     .parameter "child"
 
     .prologue
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
@@ -1025,7 +1025,7 @@
     throw v0
 
     :cond_0
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     return-void
 .end method
@@ -1036,7 +1036,7 @@
     .parameter "index"
 
     .prologue
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
@@ -1051,7 +1051,7 @@
     throw v0
 
     :cond_0
-    invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;I)V
+    invoke-super {p0, p1, p2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;I)V
 
     return-void
 .end method
@@ -1063,7 +1063,7 @@
     .parameter "params"
 
     .prologue
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
@@ -1078,7 +1078,7 @@
     throw v0
 
     :cond_0
-    invoke-super {p0, p1, p2, p3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
+    invoke-super {p0, p1, p2, p3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
     return-void
 .end method
@@ -1089,7 +1089,7 @@
     .parameter "params"
 
     .prologue
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
@@ -1104,7 +1104,7 @@
     throw v0
 
     :cond_0
-    invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-super {p0, p1, p2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     return-void
 .end method
@@ -1118,7 +1118,7 @@
 
     const/4 v7, 0x0
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->findFocus()Landroid/view/View;
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->findFocus()Landroid/view/View;
 
     move-result-object v0
 
@@ -1156,7 +1156,7 @@
 
     iget-object v7, p0, Landroid/widget/HorizontalScrollView;->mTempRect:Landroid/graphics/Rect;
 
-    invoke-virtual {p0, v4, v7}, Landroid/widget/HorizontalScrollView;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
+    invoke-virtual {p0, v4, v7}, Landroid/view/ViewGroup;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
 
     iget-object v7, p0, Landroid/widget/HorizontalScrollView;->mTempRect:Landroid/graphics/Rect;
 
@@ -1184,18 +1184,18 @@
 
     if-eqz v7, :cond_1
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getDescendantFocusability()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getDescendantFocusability()I
 
     move-result v2
 
     .local v2, descendantFocusability:I
     const/high16 v7, 0x2
 
-    invoke-virtual {p0, v7}, Landroid/widget/HorizontalScrollView;->setDescendantFocusability(I)V
+    invoke-virtual {p0, v7}, Landroid/view/ViewGroup;->setDescendantFocusability(I)V
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->requestFocus()Z
+    invoke-virtual {p0}, Landroid/view/View;->requestFocus()Z
 
-    invoke-virtual {p0, v2}, Landroid/widget/HorizontalScrollView;->setDescendantFocusability(I)V
+    invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->setDescendantFocusability(I)V
 
     .end local v2           #descendantFocusability:I
     :cond_1
@@ -1213,13 +1213,13 @@
 
     if-ne p1, v8, :cond_5
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getScrollX()I
+    invoke-virtual {p0}, Landroid/view/View;->getScrollX()I
 
     move-result v8
 
     if-ge v8, v6, :cond_5
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getScrollX()I
+    invoke-virtual {p0}, Landroid/view/View;->getScrollX()I
 
     move-result v6
 
@@ -1239,13 +1239,13 @@
     :cond_5
     if-ne p1, v10, :cond_4
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v8
 
     if-lez v8, :cond_4
 
-    invoke-virtual {p0, v7}, Landroid/widget/HorizontalScrollView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v7}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v8
 
@@ -1254,11 +1254,11 @@
     move-result v1
 
     .local v1, daRight:I
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getScrollX()I
+    invoke-virtual {p0}, Landroid/view/View;->getScrollX()I
 
     move-result v8
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v9
 
@@ -1287,7 +1287,7 @@
     .prologue
     const/4 v0, 0x0
 
-    invoke-super {p0}, Landroid/widget/FrameLayout;->computeHorizontalScrollOffset()I
+    invoke-super {p0}, Landroid/view/View;->computeHorizontalScrollOffset()I
 
     move-result v1
 
@@ -1304,20 +1304,20 @@
     .prologue
     const/4 v7, 0x0
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v1
 
     .local v1, count:I
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v5
 
-    iget v6, p0, Landroid/widget/HorizontalScrollView;->mPaddingLeft:I
+    iget v6, p0, Landroid/view/View;->mPaddingLeft:I
 
     sub-int/2addr v5, v6
 
-    iget v6, p0, Landroid/widget/HorizontalScrollView;->mPaddingRight:I
+    iget v6, p0, Landroid/view/View;->mPaddingRight:I
 
     sub-int v0, v5, v6
 
@@ -1330,7 +1330,7 @@
 
     .restart local v0       #contentWidth:I
     :cond_0
-    invoke-virtual {p0, v7}, Landroid/widget/HorizontalScrollView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v7}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
 
@@ -1339,7 +1339,7 @@
     move-result v3
 
     .local v3, scrollRange:I
-    iget v4, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v4, p0, Landroid/view/View;->mScrollX:I
 
     .local v4, scrollX:I
     sub-int v5, v3, v0
@@ -1385,10 +1385,10 @@
 
     if-eqz v0, :cond_3
 
-    iget v3, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v3, p0, Landroid/view/View;->mScrollX:I
 
     .local v3, oldX:I
-    iget v4, p0, Landroid/widget/HorizontalScrollView;->mScrollY:I
+    iget v4, p0, Landroid/view/View;->mScrollY:I
 
     .local v4, oldY:I
     iget-object v0, p0, Landroid/widget/HorizontalScrollView;->mScroller:Landroid/widget/OverScroller;
@@ -1415,7 +1415,7 @@
     move-result v5
 
     .local v5, range:I
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getOverScrollMode()I
+    invoke-virtual {p0}, Landroid/view/View;->getOverScrollMode()I
 
     move-result v11
 
@@ -1441,13 +1441,13 @@
 
     move v9, v6
 
-    invoke-virtual/range {v0 .. v9}, Landroid/widget/HorizontalScrollView;->overScrollBy(IIIIIIIIZ)Z
+    invoke-virtual/range {v0 .. v9}, Landroid/view/View;->overScrollBy(IIIIIIIIZ)Z
 
-    iget v0, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v0, p0, Landroid/view/View;->mScrollX:I
 
-    iget v1, p0, Landroid/widget/HorizontalScrollView;->mScrollY:I
+    iget v1, p0, Landroid/view/View;->mScrollY:I
 
-    invoke-virtual {p0, v0, v1, v3, v4}, Landroid/widget/HorizontalScrollView;->onScrollChanged(IIII)V
+    invoke-virtual {p0, v0, v1, v3, v4}, Landroid/view/View;->onScrollChanged(IIII)V
 
     if-eqz v10, :cond_2
 
@@ -1472,13 +1472,13 @@
     .end local v11           #overscrollMode:I
     :cond_2
     :goto_1
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->awakenScrollBars()Z
+    invoke-virtual {p0}, Landroid/view/View;->awakenScrollBars()Z
 
     move-result v0
 
     if-nez v0, :cond_3
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->postInvalidateOnAnimation()V
+    invoke-virtual {p0}, Landroid/view/View;->postInvalidateOnAnimation()V
 
     .end local v3           #oldX:I
     .end local v4           #oldY:I
@@ -1526,7 +1526,7 @@
     .prologue
     const/4 v7, 0x0
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v8
 
@@ -1539,12 +1539,12 @@
     return v5
 
     :cond_1
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v6
 
     .local v6, width:I
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getScrollX()I
+    invoke-virtual {p0}, Landroid/view/View;->getScrollX()I
 
     move-result v3
 
@@ -1552,7 +1552,7 @@
     add-int v4, v3, v6
 
     .local v4, screenRight:I
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getHorizontalFadingEdgeLength()I
+    invoke-virtual {p0}, Landroid/view/View;->getHorizontalFadingEdgeLength()I
 
     move-result v1
 
@@ -1566,7 +1566,7 @@
     :cond_2
     iget v8, p1, Landroid/graphics/Rect;->right:I
 
-    invoke-virtual {p0, v7}, Landroid/widget/HorizontalScrollView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v7}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v9
 
@@ -1603,7 +1603,7 @@
     add-int/2addr v5, v8
 
     :goto_1
-    invoke-virtual {p0, v7}, Landroid/widget/HorizontalScrollView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v7}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v7
 
@@ -1654,7 +1654,7 @@
     sub-int/2addr v5, v7
 
     :goto_2
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getScrollX()I
+    invoke-virtual {p0}, Landroid/view/View;->getScrollX()I
 
     move-result v7
 
@@ -1681,7 +1681,7 @@
     .parameter "event"
 
     .prologue
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
     move-result v0
 
@@ -1716,7 +1716,7 @@
 
     if-eqz v4, :cond_3
 
-    iget v2, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v2, p0, Landroid/view/View;->mScrollX:I
 
     .local v2, scrollX:I
     iget-object v4, p0, Landroid/widget/HorizontalScrollView;->mEdgeGlowLeft:Landroid/widget/EdgeEffect;
@@ -1732,15 +1732,15 @@
     move-result v1
 
     .local v1, restoreCount:I
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v4
 
-    iget v5, p0, Landroid/widget/HorizontalScrollView;->mPaddingTop:I
+    iget v5, p0, Landroid/view/View;->mPaddingTop:I
 
     sub-int/2addr v4, v5
 
-    iget v5, p0, Landroid/widget/HorizontalScrollView;->mPaddingBottom:I
+    iget v5, p0, Landroid/view/View;->mPaddingBottom:I
 
     sub-int v0, v4, v5
 
@@ -1751,7 +1751,7 @@
 
     neg-int v4, v0
 
-    iget v5, p0, Landroid/widget/HorizontalScrollView;->mPaddingTop:I
+    iget v5, p0, Landroid/view/View;->mPaddingTop:I
 
     add-int/2addr v4, v5
 
@@ -1769,7 +1769,7 @@
 
     iget-object v4, p0, Landroid/widget/HorizontalScrollView;->mEdgeGlowLeft:Landroid/widget/EdgeEffect;
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v5
 
@@ -1783,7 +1783,7 @@
 
     if-eqz v4, :cond_0
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->postInvalidateOnAnimation()V
+    invoke-virtual {p0}, Landroid/view/View;->postInvalidateOnAnimation()V
 
     :cond_0
     invoke-virtual {p1, v1}, Landroid/graphics/Canvas;->restoreToCount(I)V
@@ -1804,20 +1804,20 @@
     move-result v1
 
     .restart local v1       #restoreCount:I
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v3
 
     .local v3, width:I
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v4
 
-    iget v5, p0, Landroid/widget/HorizontalScrollView;->mPaddingTop:I
+    iget v5, p0, Landroid/view/View;->mPaddingTop:I
 
     sub-int/2addr v4, v5
 
-    iget v5, p0, Landroid/widget/HorizontalScrollView;->mPaddingBottom:I
+    iget v5, p0, Landroid/view/View;->mPaddingBottom:I
 
     sub-int v0, v4, v5
 
@@ -1826,7 +1826,7 @@
 
     invoke-virtual {p1, v4}, Landroid/graphics/Canvas;->rotate(F)V
 
-    iget v4, p0, Landroid/widget/HorizontalScrollView;->mPaddingTop:I
+    iget v4, p0, Landroid/view/View;->mPaddingTop:I
 
     neg-int v4, v4
 
@@ -1860,7 +1860,7 @@
 
     if-eqz v4, :cond_2
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->postInvalidateOnAnimation()V
+    invoke-virtual {p0}, Landroid/view/View;->postInvalidateOnAnimation()V
 
     :cond_2
     invoke-virtual {p1, v1}, Landroid/graphics/Canvas;->restoreToCount(I)V
@@ -1894,13 +1894,13 @@
 
     if-nez v6, :cond_2
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->isFocused()Z
+    invoke-virtual {p0}, Landroid/view/View;->isFocused()Z
 
     move-result v4
 
     if-eqz v4, :cond_1
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->findFocus()Landroid/view/View;
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->findFocus()Landroid/view/View;
 
     move-result-object v0
 
@@ -2031,25 +2031,25 @@
     .parameter "velocityX"
 
     .prologue
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/HorizontalScrollView;->getChildCount()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v1
 
     if-lez v1, :cond_2
 
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/HorizontalScrollView;->getWidth()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getWidth()I
 
     move-result v1
 
     move-object/from16 v0, p0
 
-    iget v2, v0, Landroid/widget/HorizontalScrollView;->mPaddingRight:I
+    iget v2, v0, Landroid/view/View;->mPaddingRight:I
 
     sub-int/2addr v1, v2
 
     move-object/from16 v0, p0
 
-    iget v2, v0, Landroid/widget/HorizontalScrollView;->mPaddingLeft:I
+    iget v2, v0, Landroid/view/View;->mPaddingLeft:I
 
     sub-int v16, v1, v2
 
@@ -2058,7 +2058,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v1}, Landroid/widget/HorizontalScrollView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -2073,11 +2073,11 @@
 
     move-object/from16 v0, p0
 
-    iget v2, v0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v2, v0, Landroid/view/View;->mScrollX:I
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Landroid/widget/HorizontalScrollView;->mScrollY:I
+    iget v3, v0, Landroid/view/View;->mScrollY:I
 
     const/4 v5, 0x0
 
@@ -2109,7 +2109,7 @@
 
     .local v13, movingRight:Z
     :goto_0
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/HorizontalScrollView;->findFocus()Landroid/view/View;
+    invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->findFocus()Landroid/view/View;
 
     move-result-object v12
 
@@ -2144,7 +2144,7 @@
     invoke-virtual {v14, v1}, Landroid/view/View;->requestFocus(I)Z
 
     :cond_1
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/HorizontalScrollView;->postInvalidateOnAnimation()V
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->postInvalidateOnAnimation()V
 
     .end local v12           #currentFocused:Landroid/view/View;
     .end local v13           #movingRight:Z
@@ -2185,7 +2185,7 @@
 
     .local v1, right:Z
     :goto_0
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v3
 
@@ -2200,14 +2200,14 @@
 
     if-eqz v1, :cond_0
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
     .local v0, count:I
     if-lez v0, :cond_0
 
-    invoke-virtual {p0, v4}, Landroid/widget/HorizontalScrollView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v4}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
@@ -2259,7 +2259,7 @@
     .locals 3
 
     .prologue
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v1
 
@@ -2271,16 +2271,16 @@
     return v1
 
     :cond_0
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getHorizontalFadingEdgeLength()I
+    invoke-virtual {p0}, Landroid/view/View;->getHorizontalFadingEdgeLength()I
 
     move-result v0
 
     .local v0, length:I
-    iget v1, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v1, p0, Landroid/view/View;->mScrollX:I
 
     if-ge v1, v0, :cond_1
 
-    iget v1, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v1, p0, Landroid/view/View;->mScrollX:I
 
     int-to-float v1, v1
 
@@ -2302,9 +2302,9 @@
     .prologue
     const/high16 v0, 0x3f00
 
-    iget v1, p0, Landroid/widget/HorizontalScrollView;->mRight:I
+    iget v1, p0, Landroid/view/View;->mRight:I
 
-    iget v2, p0, Landroid/widget/HorizontalScrollView;->mLeft:I
+    iget v2, p0, Landroid/view/View;->mLeft:I
 
     sub-int/2addr v1, v2
 
@@ -2321,7 +2321,7 @@
     .locals 5
 
     .prologue
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v3
 
@@ -2333,23 +2333,23 @@
     return v3
 
     :cond_0
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getHorizontalFadingEdgeLength()I
+    invoke-virtual {p0}, Landroid/view/View;->getHorizontalFadingEdgeLength()I
 
     move-result v0
 
     .local v0, length:I
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v3
 
-    iget v4, p0, Landroid/widget/HorizontalScrollView;->mPaddingRight:I
+    iget v4, p0, Landroid/view/View;->mPaddingRight:I
 
     sub-int v1, v3, v4
 
     .local v1, rightEdge:I
     const/4 v3, 0x0
 
-    invoke-virtual {p0, v3}, Landroid/widget/HorizontalScrollView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
@@ -2357,7 +2357,7 @@
 
     move-result v3
 
-    iget v4, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v4, p0, Landroid/view/View;->mScrollX:I
 
     sub-int/2addr v3, v4
 
@@ -2412,9 +2412,9 @@
     move-result-object v2
 
     .local v2, lp:Landroid/view/ViewGroup$LayoutParams;
-    iget v3, p0, Landroid/widget/HorizontalScrollView;->mPaddingTop:I
+    iget v3, p0, Landroid/view/View;->mPaddingTop:I
 
-    iget v4, p0, Landroid/widget/HorizontalScrollView;->mPaddingBottom:I
+    iget v4, p0, Landroid/view/View;->mPaddingBottom:I
 
     add-int/2addr v3, v4
 
@@ -2451,9 +2451,9 @@
     check-cast v2, Landroid/view/ViewGroup$MarginLayoutParams;
 
     .local v2, lp:Landroid/view/ViewGroup$MarginLayoutParams;
-    iget v3, p0, Landroid/widget/HorizontalScrollView;->mPaddingTop:I
+    iget v3, p0, Landroid/view/View;->mPaddingTop:I
 
-    iget v4, p0, Landroid/widget/HorizontalScrollView;->mPaddingBottom:I
+    iget v4, p0, Landroid/view/View;->mPaddingBottom:I
 
     add-int/2addr v3, v4
 
@@ -2467,7 +2467,7 @@
 
     add-int/2addr v3, p5
 
-    iget v4, v2, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
+    iget v4, v2, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     invoke-static {p4, v3, v4}, Landroid/widget/HorizontalScrollView;->getChildMeasureSpec(III)I
 
@@ -2512,7 +2512,7 @@
     packed-switch v5, :pswitch_data_0
 
     :cond_0
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onGenericMotionEvent(Landroid/view/MotionEvent;)Z
+    invoke-super {p0, p1}, Landroid/view/View;->onGenericMotionEvent(Landroid/view/MotionEvent;)Z
 
     move-result v5
 
@@ -2548,7 +2548,7 @@
 
     if-eqz v5, :cond_0
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getHorizontalScrollFactor()F
+    invoke-virtual {p0}, Landroid/view/View;->getHorizontalScrollFactor()F
 
     move-result v5
 
@@ -2562,7 +2562,7 @@
     move-result v4
 
     .local v4, range:I
-    iget v3, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v3, p0, Landroid/view/View;->mScrollX:I
 
     .local v3, oldScrollX:I
     add-int v2, v3, v0
@@ -2576,9 +2576,9 @@
     :goto_2
     if-eq v2, v3, :cond_0
 
-    iget v5, p0, Landroid/widget/HorizontalScrollView;->mScrollY:I
+    iget v5, p0, Landroid/view/View;->mScrollY:I
 
-    invoke-super {p0, v2, v5}, Landroid/widget/FrameLayout;->scrollTo(II)V
+    invoke-super {p0, v2, v5}, Landroid/view/View;->scrollTo(II)V
 
     const/4 v5, 0x1
 
@@ -2631,7 +2631,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityRecord;->setClassName(Ljava/lang/CharSequence;)V
 
     invoke-direct {p0}, Landroid/widget/HorizontalScrollView;->getScrollRange()I
 
@@ -2642,25 +2642,25 @@
     const/4 v0, 0x1
 
     :goto_0
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setScrollable(Z)V
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityRecord;->setScrollable(Z)V
 
-    iget v0, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v0, p0, Landroid/view/View;->mScrollX:I
 
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setScrollX(I)V
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityRecord;->setScrollX(I)V
 
-    iget v0, p0, Landroid/widget/HorizontalScrollView;->mScrollY:I
+    iget v0, p0, Landroid/view/View;->mScrollY:I
 
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setScrollY(I)V
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityRecord;->setScrollY(I)V
 
     invoke-direct {p0}, Landroid/widget/HorizontalScrollView;->getScrollRange()I
 
     move-result v0
 
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setMaxScrollX(I)V
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityRecord;->setMaxScrollX(I)V
 
-    iget v0, p0, Landroid/widget/HorizontalScrollView;->mScrollY:I
+    iget v0, p0, Landroid/view/View;->mScrollY:I
 
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setMaxScrollY(I)V
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityRecord;->setMaxScrollY(I)V
 
     return-void
 
@@ -2696,13 +2696,13 @@
 
     invoke-virtual {p1, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setScrollable(Z)V
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->isEnabled()Z
+    invoke-virtual {p0}, Landroid/view/View;->isEnabled()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    iget v1, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v1, p0, Landroid/view/View;->mScrollX:I
 
     if-lez v1, :cond_0
 
@@ -2711,13 +2711,13 @@
     invoke-virtual {p1, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
     :cond_0
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->isEnabled()Z
+    invoke-virtual {p0}, Landroid/view/View;->isEnabled()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    iget v1, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v1, p0, Landroid/view/View;->mScrollX:I
 
     if-ge v1, v0, :cond_1
 
@@ -2842,11 +2842,11 @@
 
     invoke-virtual {v1, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    iget-object v1, p0, Landroid/widget/HorizontalScrollView;->mParent:Landroid/view/ViewParent;
+    iget-object v1, p0, Landroid/view/View;->mParent:Landroid/view/ViewParent;
 
     if-eqz v1, :cond_1
 
-    iget-object v1, p0, Landroid/widget/HorizontalScrollView;->mParent:Landroid/view/ViewParent;
+    iget-object v1, p0, Landroid/view/View;->mParent:Landroid/view/ViewParent;
 
     invoke-interface {v1, v0}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
@@ -2920,9 +2920,9 @@
 
     iget-object v0, p0, Landroid/widget/HorizontalScrollView;->mScroller:Landroid/widget/OverScroller;
 
-    iget v1, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v1, p0, Landroid/view/View;->mScrollX:I
 
-    iget v2, p0, Landroid/widget/HorizontalScrollView;->mScrollY:I
+    iget v2, p0, Landroid/view/View;->mScrollY:I
 
     invoke-direct {p0}, Landroid/widget/HorizontalScrollView;->getScrollRange()I
 
@@ -2938,7 +2938,7 @@
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->postInvalidateOnAnimation()V
+    invoke-virtual {p0}, Landroid/view/View;->postInvalidateOnAnimation()V
 
     goto/16 :goto_1
 
@@ -3011,7 +3011,7 @@
     const/4 v7, 0x0
 
     .local v7, childMargins:I
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
@@ -3019,7 +3019,7 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Landroid/widget/HorizontalScrollView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -3029,7 +3029,7 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Landroid/widget/HorizontalScrollView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -3040,9 +3040,9 @@
     check-cast v8, Landroid/widget/FrameLayout$LayoutParams;
 
     .local v8, childParams:Landroid/widget/FrameLayout$LayoutParams;
-    iget v0, v8, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
+    iget v0, v8, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    iget v1, v8, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
+    iget v1, v8, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     add-int v7, v0, v1
 
@@ -3050,13 +3050,13 @@
     :cond_0
     sub-int v0, p4, p2
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getPaddingLeftWithForeground()I
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingLeftWithForeground()I
 
     move-result v1
 
     sub-int/2addr v0, v1
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getPaddingRightWithForeground()I
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingRightWithForeground()I
 
     move-result v1
 
@@ -3081,7 +3081,7 @@
 
     move/from16 v4, p5
 
-    invoke-virtual/range {v0 .. v5}, Landroid/widget/HorizontalScrollView;->layoutChildren(IIIIZ)V
+    invoke-virtual/range {v0 .. v5}, Landroid/widget/FrameLayout;->layoutChildren(IIIIZ)V
 
     const/4 v0, 0x0
 
@@ -3108,7 +3108,7 @@
 
     iput-object v0, p0, Landroid/widget/HorizontalScrollView;->mChildToScrollTo:Landroid/view/View;
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->isLaidOut()Z
+    invoke-virtual {p0}, Landroid/view/View;->isLaidOut()Z
 
     move-result v0
 
@@ -3118,11 +3118,11 @@
 
     sub-int v1, p4, p2
 
-    iget v2, p0, Landroid/widget/HorizontalScrollView;->mPaddingLeft:I
+    iget v2, p0, Landroid/view/View;->mPaddingLeft:I
 
     sub-int/2addr v1, v2
 
-    iget v2, p0, Landroid/widget/HorizontalScrollView;->mPaddingRight:I
+    iget v2, p0, Landroid/view/View;->mPaddingRight:I
 
     sub-int/2addr v1, v2
 
@@ -3137,7 +3137,7 @@
 
     if-eqz v0, :cond_6
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->isLayoutRtl()Z
+    invoke-virtual {p0}, Landroid/view/View;->isLayoutRtl()Z
 
     move-result v0
 
@@ -3151,7 +3151,7 @@
 
     iget v0, v0, Landroid/widget/HorizontalScrollView$SavedState;->scrollPosition:I
 
-    iput v0, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iput v0, p0, Landroid/view/View;->mScrollX:I
 
     :goto_1
     const/4 v0, 0x0
@@ -3160,18 +3160,18 @@
 
     :cond_2
     :goto_2
-    iget v0, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v0, p0, Landroid/view/View;->mScrollX:I
 
     if-le v0, v10, :cond_7
 
-    iput v10, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iput v10, p0, Landroid/view/View;->mScrollX:I
 
     .end local v10           #scrollRange:I
     :cond_3
     :goto_3
-    iget v0, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v0, p0, Landroid/view/View;->mScrollX:I
 
-    iget v1, p0, Landroid/widget/HorizontalScrollView;->mScrollY:I
+    iget v1, p0, Landroid/view/View;->mScrollY:I
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/HorizontalScrollView;->scrollTo(II)V
 
@@ -3192,33 +3192,33 @@
 
     sub-int v0, v10, v0
 
-    iput v0, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iput v0, p0, Landroid/view/View;->mScrollX:I
 
     goto :goto_1
 
     :cond_6
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->isLayoutRtl()Z
+    invoke-virtual {p0}, Landroid/view/View;->isLayoutRtl()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    iget v0, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v0, p0, Landroid/view/View;->mScrollX:I
 
     sub-int v0, v10, v0
 
-    iput v0, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iput v0, p0, Landroid/view/View;->mScrollX:I
 
     goto :goto_2
 
     :cond_7
-    iget v0, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v0, p0, Landroid/view/View;->mScrollX:I
 
     if-gez v0, :cond_3
 
     const/4 v0, 0x0
 
-    iput v0, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iput v0, p0, Landroid/view/View;->mScrollX:I
 
     goto :goto_3
 .end method
@@ -3247,7 +3247,7 @@
     .local v5, widthMode:I
     if-eqz v5, :cond_0
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v6
 
@@ -3255,12 +3255,12 @@
 
     const/4 v6, 0x0
 
-    invoke-virtual {p0, v6}, Landroid/widget/HorizontalScrollView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v6}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
     .local v0, child:Landroid/view/View;
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getMeasuredWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v4
 
@@ -3278,24 +3278,24 @@
     check-cast v3, Landroid/widget/FrameLayout$LayoutParams;
 
     .local v3, lp:Landroid/widget/FrameLayout$LayoutParams;
-    iget v6, p0, Landroid/widget/HorizontalScrollView;->mPaddingTop:I
+    iget v6, p0, Landroid/view/View;->mPaddingTop:I
 
-    iget v7, p0, Landroid/widget/HorizontalScrollView;->mPaddingBottom:I
+    iget v7, p0, Landroid/view/View;->mPaddingBottom:I
 
     add-int/2addr v6, v7
 
-    iget v7, v3, Landroid/widget/FrameLayout$LayoutParams;->height:I
+    iget v7, v3, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     invoke-static {p2, v6, v7}, Landroid/widget/HorizontalScrollView;->getChildMeasureSpec(III)I
 
     move-result v1
 
     .local v1, childHeightMeasureSpec:I
-    iget v6, p0, Landroid/widget/HorizontalScrollView;->mPaddingLeft:I
+    iget v6, p0, Landroid/view/View;->mPaddingLeft:I
 
     sub-int/2addr v4, v6
 
-    iget v6, p0, Landroid/widget/HorizontalScrollView;->mPaddingRight:I
+    iget v6, p0, Landroid/view/View;->mPaddingRight:I
 
     sub-int/2addr v4, v6
 
@@ -3329,31 +3329,31 @@
 
     if-nez v0, :cond_1
 
-    iget v7, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v7, p0, Landroid/view/View;->mScrollX:I
 
     .local v7, oldX:I
-    iget v8, p0, Landroid/widget/HorizontalScrollView;->mScrollY:I
+    iget v8, p0, Landroid/view/View;->mScrollY:I
 
     .local v8, oldY:I
-    iput p1, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iput p1, p0, Landroid/view/View;->mScrollX:I
 
-    iput p2, p0, Landroid/widget/HorizontalScrollView;->mScrollY:I
+    iput p2, p0, Landroid/view/View;->mScrollY:I
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->invalidateParentIfNeeded()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidateParentIfNeeded()V
 
-    iget v0, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v0, p0, Landroid/view/View;->mScrollX:I
 
-    iget v1, p0, Landroid/widget/HorizontalScrollView;->mScrollY:I
+    iget v1, p0, Landroid/view/View;->mScrollY:I
 
-    invoke-virtual {p0, v0, v1, v7, v8}, Landroid/widget/HorizontalScrollView;->onScrollChanged(IIII)V
+    invoke-virtual {p0, v0, v1, v7, v8}, Landroid/view/View;->onScrollChanged(IIII)V
 
     if-eqz p3, :cond_0
 
     iget-object v0, p0, Landroid/widget/HorizontalScrollView;->mScroller:Landroid/widget/OverScroller;
 
-    iget v1, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v1, p0, Landroid/view/View;->mScrollX:I
 
-    iget v2, p0, Landroid/widget/HorizontalScrollView;->mScrollY:I
+    iget v2, p0, Landroid/view/View;->mScrollY:I
 
     invoke-direct {p0}, Landroid/widget/HorizontalScrollView;->getScrollRange()I
 
@@ -3369,12 +3369,12 @@
     .end local v8           #oldY:I
     :cond_0
     :goto_0
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->awakenScrollBars()Z
+    invoke-virtual {p0}, Landroid/view/View;->awakenScrollBars()Z
 
     return-void
 
     :cond_1
-    invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->scrollTo(II)V
+    invoke-super {p0, p1, p2}, Landroid/view/View;->scrollTo(II)V
 
     goto :goto_0
 .end method
@@ -3456,7 +3456,7 @@
     .parameter "state"
 
     .prologue
-    iget-object v1, p0, Landroid/widget/HorizontalScrollView;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
@@ -3468,7 +3468,7 @@
 
     if-gt v1, v2, :cond_0
 
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-super {p0, p1}, Landroid/view/View;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     :goto_0
     return-void
@@ -3479,11 +3479,11 @@
     check-cast v0, Landroid/widget/HorizontalScrollView$SavedState;
 
     .local v0, ss:Landroid/widget/HorizontalScrollView$SavedState;
-    invoke-virtual {v0}, Landroid/widget/HorizontalScrollView$SavedState;->getSuperState()Landroid/os/Parcelable;
+    invoke-virtual {v0}, Landroid/view/AbsSavedState;->getSuperState()Landroid/os/Parcelable;
 
     move-result-object v1
 
-    invoke-super {p0, v1}, Landroid/widget/FrameLayout;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-super {p0, v1}, Landroid/view/View;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     iput-object v0, p0, Landroid/widget/HorizontalScrollView;->mSavedState:Landroid/widget/HorizontalScrollView$SavedState;
 
@@ -3496,7 +3496,7 @@
     .locals 4
 
     .prologue
-    iget-object v2, p0, Landroid/widget/HorizontalScrollView;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
@@ -3508,7 +3508,7 @@
 
     if-gt v2, v3, :cond_0
 
-    invoke-super {p0}, Landroid/widget/FrameLayout;->onSaveInstanceState()Landroid/os/Parcelable;
+    invoke-super {p0}, Landroid/view/View;->onSaveInstanceState()Landroid/os/Parcelable;
 
     move-result-object v0
 
@@ -3516,7 +3516,7 @@
     return-object v0
 
     :cond_0
-    invoke-super {p0}, Landroid/widget/FrameLayout;->onSaveInstanceState()Landroid/os/Parcelable;
+    invoke-super {p0}, Landroid/view/View;->onSaveInstanceState()Landroid/os/Parcelable;
 
     move-result-object v1
 
@@ -3526,11 +3526,11 @@
     invoke-direct {v0, v1}, Landroid/widget/HorizontalScrollView$SavedState;-><init>(Landroid/os/Parcelable;)V
 
     .local v0, ss:Landroid/widget/HorizontalScrollView$SavedState;
-    iget v2, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v2, p0, Landroid/view/View;->mScrollX:I
 
     iput v2, v0, Landroid/widget/HorizontalScrollView$SavedState;->scrollPosition:I
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->isLayoutRtl()Z
+    invoke-virtual {p0}, Landroid/view/View;->isLayoutRtl()Z
 
     move-result v2
 
@@ -3549,7 +3549,7 @@
     .prologue
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->onSizeChanged(IIII)V
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->findFocus()Landroid/view/View;
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->findFocus()Landroid/view/View;
 
     move-result-object v0
 
@@ -3563,9 +3563,9 @@
     return-void
 
     :cond_1
-    iget v3, p0, Landroid/widget/HorizontalScrollView;->mRight:I
+    iget v3, p0, Landroid/view/View;->mRight:I
 
-    iget v4, p0, Landroid/widget/HorizontalScrollView;->mLeft:I
+    iget v4, p0, Landroid/view/View;->mLeft:I
 
     sub-int v1, v3, v4
 
@@ -3582,7 +3582,7 @@
 
     iget-object v3, p0, Landroid/widget/HorizontalScrollView;->mTempRect:Landroid/graphics/Rect;
 
-    invoke-virtual {p0, v0, v3}, Landroid/widget/HorizontalScrollView;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
+    invoke-virtual {p0, v0, v3}, Landroid/view/ViewGroup;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
 
     iget-object v3, p0, Landroid/widget/HorizontalScrollView;->mTempRect:Landroid/graphics/Rect;
 
@@ -3629,7 +3629,7 @@
     return v2
 
     :pswitch_1
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/HorizontalScrollView;->getChildCount()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v2
 
@@ -3659,7 +3659,7 @@
 
     if-eqz v2, :cond_2
 
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/HorizontalScrollView;->getParent()Landroid/view/ViewParent;
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v22
 
@@ -3809,7 +3809,7 @@
 
     if-le v2, v4, :cond_7
 
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/HorizontalScrollView;->getParent()Landroid/view/ViewParent;
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v22
 
@@ -3854,14 +3854,14 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v0, v0, Landroid/view/View;->mScrollX:I
 
     move/from16 v19, v0
 
     .local v19, oldX:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/HorizontalScrollView;->mScrollY:I
+    iget v0, v0, Landroid/view/View;->mScrollY:I
 
     move/from16 v20, v0
 
@@ -3871,7 +3871,7 @@
     move-result v7
 
     .local v7, range:I
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/HorizontalScrollView;->getOverScrollMode()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getOverScrollMode()I
 
     move-result v21
 
@@ -3895,7 +3895,7 @@
 
     move-object/from16 v0, p0
 
-    iget v5, v0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v5, v0, Landroid/view/View;->mScrollX:I
 
     const/4 v6, 0x0
 
@@ -3911,7 +3911,7 @@
 
     move-object/from16 v2, p0
 
-    invoke-virtual/range {v2 .. v11}, Landroid/widget/HorizontalScrollView;->overScrollBy(IIIIIIIIZ)Z
+    invoke-virtual/range {v2 .. v11}, Landroid/view/View;->overScrollBy(IIIIIIIIZ)Z
 
     move-result v2
 
@@ -3937,7 +3937,7 @@
 
     int-to-float v4, v3
 
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/HorizontalScrollView;->getWidth()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getWidth()I
 
     move-result v5
 
@@ -3992,7 +3992,7 @@
     if-nez v2, :cond_0
 
     :cond_b
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/HorizontalScrollView;->postInvalidateOnAnimation()V
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->postInvalidateOnAnimation()V
 
     goto/16 :goto_0
 
@@ -4035,7 +4035,7 @@
 
     int-to-float v4, v3
 
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/HorizontalScrollView;->getWidth()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getWidth()I
 
     move-result v5
 
@@ -4113,7 +4113,7 @@
     move/from16 v18, v0
 
     .local v18, initialVelocity:I
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/HorizontalScrollView;->getChildCount()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v2
 
@@ -4180,11 +4180,11 @@
 
     move-object/from16 v0, p0
 
-    iget v9, v0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v9, v0, Landroid/view/View;->mScrollX:I
 
     move-object/from16 v0, p0
 
-    iget v10, v0, Landroid/widget/HorizontalScrollView;->mScrollY:I
+    iget v10, v0, Landroid/view/View;->mScrollY:I
 
     const/4 v11, 0x0
 
@@ -4202,7 +4202,7 @@
 
     if-eqz v2, :cond_f
 
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/HorizontalScrollView;->postInvalidateOnAnimation()V
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->postInvalidateOnAnimation()V
 
     goto :goto_6
 
@@ -4215,7 +4215,7 @@
 
     if-eqz v2, :cond_0
 
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/HorizontalScrollView;->getChildCount()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v2
 
@@ -4227,11 +4227,11 @@
 
     move-object/from16 v0, p0
 
-    iget v9, v0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v9, v0, Landroid/view/View;->mScrollX:I
 
     move-object/from16 v0, p0
 
-    iget v10, v0, Landroid/widget/HorizontalScrollView;->mScrollY:I
+    iget v10, v0, Landroid/view/View;->mScrollY:I
 
     const/4 v11, 0x0
 
@@ -4249,7 +4249,7 @@
 
     if-eqz v2, :cond_11
 
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/HorizontalScrollView;->postInvalidateOnAnimation()V
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->postInvalidateOnAnimation()V
 
     :cond_11
     const/4 v2, -0x1
@@ -4320,7 +4320,7 @@
 
     .local v1, right:Z
     :goto_0
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v3
 
@@ -4329,7 +4329,7 @@
 
     iget-object v5, p0, Landroid/widget/HorizontalScrollView;->mTempRect:Landroid/graphics/Rect;
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getScrollX()I
+    invoke-virtual {p0}, Landroid/view/View;->getScrollX()I
 
     move-result v6
 
@@ -4337,14 +4337,14 @@
 
     iput v6, v5, Landroid/graphics/Rect;->left:I
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
     .local v0, count:I
     if-lez v0, :cond_0
 
-    invoke-virtual {p0, v4}, Landroid/widget/HorizontalScrollView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v4}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
@@ -4411,7 +4411,7 @@
     :cond_2
     iget-object v5, p0, Landroid/widget/HorizontalScrollView;->mTempRect:Landroid/graphics/Rect;
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getScrollX()I
+    invoke-virtual {p0}, Landroid/view/View;->getScrollX()I
 
     move-result v6
 
@@ -4442,7 +4442,7 @@
 
     const/4 v3, 0x0
 
-    invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->performAccessibilityAction(ILandroid/os/Bundle;)Z
+    invoke-super {p0, p1, p2}, Landroid/view/View;->performAccessibilityAction(ILandroid/os/Bundle;)Z
 
     move-result v4
 
@@ -4459,7 +4459,7 @@
     goto :goto_0
 
     :sswitch_0
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->isEnabled()Z
+    invoke-virtual {p0}, Landroid/view/View;->isEnabled()Z
 
     move-result v4
 
@@ -4470,20 +4470,20 @@
     goto :goto_0
 
     :cond_1
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v4
 
-    iget v5, p0, Landroid/widget/HorizontalScrollView;->mPaddingLeft:I
+    iget v5, p0, Landroid/view/View;->mPaddingLeft:I
 
     sub-int/2addr v4, v5
 
-    iget v5, p0, Landroid/widget/HorizontalScrollView;->mPaddingRight:I
+    iget v5, p0, Landroid/view/View;->mPaddingRight:I
 
     sub-int v1, v4, v5
 
     .local v1, viewportWidth:I
-    iget v4, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v4, p0, Landroid/view/View;->mScrollX:I
 
     add-int/2addr v4, v1
 
@@ -4496,7 +4496,7 @@
     move-result v0
 
     .local v0, targetScrollX:I
-    iget v4, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v4, p0, Landroid/view/View;->mScrollX:I
 
     if-eq v0, v4, :cond_2
 
@@ -4512,7 +4512,7 @@
     .end local v0           #targetScrollX:I
     .end local v1           #viewportWidth:I
     :sswitch_1
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->isEnabled()Z
+    invoke-virtual {p0}, Landroid/view/View;->isEnabled()Z
 
     move-result v4
 
@@ -4523,20 +4523,20 @@
     goto :goto_0
 
     :cond_3
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v4
 
-    iget v5, p0, Landroid/widget/HorizontalScrollView;->mPaddingLeft:I
+    iget v5, p0, Landroid/view/View;->mPaddingLeft:I
 
     sub-int/2addr v4, v5
 
-    iget v5, p0, Landroid/widget/HorizontalScrollView;->mPaddingRight:I
+    iget v5, p0, Landroid/view/View;->mPaddingRight:I
 
     sub-int v1, v4, v5
 
     .restart local v1       #viewportWidth:I
-    iget v4, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v4, p0, Landroid/view/View;->mScrollX:I
 
     sub-int/2addr v4, v1
 
@@ -4545,7 +4545,7 @@
     move-result v0
 
     .restart local v0       #targetScrollX:I
-    iget v4, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v4, p0, Landroid/view/View;->mScrollX:I
 
     if-eq v0, v4, :cond_4
 
@@ -4578,7 +4578,7 @@
     invoke-direct {p0, p2}, Landroid/widget/HorizontalScrollView;->scrollToChild(Landroid/view/View;)V
 
     :goto_0
-    invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->requestChildFocus(Landroid/view/View;Landroid/view/View;)V
+    invoke-super {p0, p1, p2}, Landroid/view/ViewGroup;->requestChildFocus(Landroid/view/View;Landroid/view/View;)V
 
     return-void
 
@@ -4634,7 +4634,7 @@
     invoke-direct {p0}, Landroid/widget/HorizontalScrollView;->recycleVelocityTracker()V
 
     :cond_0
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->requestDisallowInterceptTouchEvent(Z)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->requestDisallowInterceptTouchEvent(Z)V
 
     return-void
 .end method
@@ -4647,7 +4647,7 @@
 
     iput-boolean v0, p0, Landroid/widget/HorizontalScrollView;->mIsLayoutDirty:Z
 
-    invoke-super {p0}, Landroid/widget/FrameLayout;->requestLayout()V
+    invoke-super {p0}, Landroid/view/View;->requestLayout()V
 
     return-void
 .end method
@@ -4658,7 +4658,7 @@
     .parameter "y"
 
     .prologue
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v1
 
@@ -4666,20 +4666,20 @@
 
     const/4 v1, 0x0
 
-    invoke-virtual {p0, v1}, Landroid/widget/HorizontalScrollView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
     .local v0, child:Landroid/view/View;
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v1
 
-    iget v2, p0, Landroid/widget/HorizontalScrollView;->mPaddingRight:I
+    iget v2, p0, Landroid/view/View;->mPaddingRight:I
 
     sub-int/2addr v1, v2
 
-    iget v2, p0, Landroid/widget/HorizontalScrollView;->mPaddingLeft:I
+    iget v2, p0, Landroid/view/View;->mPaddingLeft:I
 
     sub-int/2addr v1, v2
 
@@ -4691,15 +4691,15 @@
 
     move-result p1
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v1
 
-    iget v2, p0, Landroid/widget/HorizontalScrollView;->mPaddingBottom:I
+    iget v2, p0, Landroid/view/View;->mPaddingBottom:I
 
     sub-int/2addr v1, v2
 
-    iget v2, p0, Landroid/widget/HorizontalScrollView;->mPaddingTop:I
+    iget v2, p0, Landroid/view/View;->mPaddingTop:I
 
     sub-int/2addr v1, v2
 
@@ -4711,16 +4711,16 @@
 
     move-result p2
 
-    iget v1, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v1, p0, Landroid/view/View;->mScrollX:I
 
     if-ne p1, v1, :cond_0
 
-    iget v1, p0, Landroid/widget/HorizontalScrollView;->mScrollY:I
+    iget v1, p0, Landroid/view/View;->mScrollY:I
 
     if-eq p2, v1, :cond_1
 
     :cond_0
-    invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->scrollTo(II)V
+    invoke-super {p0, p1, p2}, Landroid/view/View;->scrollTo(II)V
 
     .end local v0           #child:Landroid/view/View;
     :cond_1
@@ -4759,7 +4759,7 @@
 
     if-nez v1, :cond_0
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -4779,7 +4779,7 @@
     .end local v0           #context:Landroid/content/Context;
     :cond_0
     :goto_0
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setOverScrollMode(I)V
+    invoke-super {p0, p1}, Landroid/view/View;->setOverScrollMode(I)V
 
     return-void
 
@@ -4818,7 +4818,7 @@
     .prologue
     const/4 v10, 0x0
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v6
 
@@ -4843,20 +4843,20 @@
 
     if-lez v6, :cond_1
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v6
 
-    iget v7, p0, Landroid/widget/HorizontalScrollView;->mPaddingRight:I
+    iget v7, p0, Landroid/view/View;->mPaddingRight:I
 
     sub-int/2addr v6, v7
 
-    iget v7, p0, Landroid/widget/HorizontalScrollView;->mPaddingLeft:I
+    iget v7, p0, Landroid/view/View;->mPaddingLeft:I
 
     sub-int v5, v6, v7
 
     .local v5, width:I
-    invoke-virtual {p0, v10}, Landroid/widget/HorizontalScrollView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v10}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v6
 
@@ -4872,7 +4872,7 @@
     move-result v2
 
     .local v2, maxX:I
-    iget v4, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v4, p0, Landroid/view/View;->mScrollX:I
 
     .local v4, scrollX:I
     add-int v6, v4, p1
@@ -4889,11 +4889,11 @@
 
     iget-object v6, p0, Landroid/widget/HorizontalScrollView;->mScroller:Landroid/widget/OverScroller;
 
-    iget v7, p0, Landroid/widget/HorizontalScrollView;->mScrollY:I
+    iget v7, p0, Landroid/view/View;->mScrollY:I
 
     invoke-virtual {v6, v4, v7, p1, v10}, Landroid/widget/OverScroller;->startScroll(IIII)V
 
-    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->postInvalidateOnAnimation()V
+    invoke-virtual {p0}, Landroid/view/View;->postInvalidateOnAnimation()V
 
     .end local v2           #maxX:I
     .end local v3           #right:I
@@ -4922,7 +4922,7 @@
     invoke-virtual {v6}, Landroid/widget/OverScroller;->abortAnimation()V
 
     :cond_2
-    invoke-virtual {p0, p1, p2}, Landroid/widget/HorizontalScrollView;->scrollBy(II)V
+    invoke-virtual {p0, p1, p2}, Landroid/view/View;->scrollBy(II)V
 
     goto :goto_1
 .end method
@@ -4933,11 +4933,11 @@
     .parameter "y"
 
     .prologue
-    iget v0, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v0, p0, Landroid/view/View;->mScrollX:I
 
     sub-int v0, p1, v0
 
-    iget v1, p0, Landroid/widget/HorizontalScrollView;->mScrollY:I
+    iget v1, p0, Landroid/view/View;->mScrollY:I
 
     sub-int v1, p2, v1
 

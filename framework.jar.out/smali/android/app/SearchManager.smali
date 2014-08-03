@@ -3,8 +3,8 @@
 .source "SearchManager.java"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnDismissListener;
 .implements Landroid/content/DialogInterface$OnCancelListener;
+.implements Landroid/content/DialogInterface$OnDismissListener;
 
 
 # annotations
@@ -176,11 +176,11 @@
 
     iget-object v0, p0, Landroid/app/SearchManager;->mSearchDialog:Landroid/app/SearchDialog;
 
-    invoke-virtual {v0, p0}, Landroid/app/SearchDialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
+    invoke-virtual {v0, p0}, Landroid/app/Dialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
 
     iget-object v0, p0, Landroid/app/SearchManager;->mSearchDialog:Landroid/app/SearchDialog;
 
-    invoke-virtual {v0, p0}, Landroid/app/SearchDialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
+    invoke-virtual {v0, p0}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
     :cond_0
     return-void
@@ -713,7 +713,7 @@
     :cond_0
     iget-object v0, p0, Landroid/app/SearchManager;->mSearchDialog:Landroid/app/SearchDialog;
 
-    invoke-virtual {v0}, Landroid/app/SearchDialog;->isShowing()Z
+    invoke-virtual {v0}, Landroid/app/Dialog;->isShowing()Z
 
     move-result v0
 
@@ -985,7 +985,7 @@
 
     iget-object v0, p0, Landroid/app/SearchManager;->mSearchDialog:Landroid/app/SearchDialog;
 
-    invoke-virtual {v0}, Landroid/app/SearchDialog;->cancel()V
+    invoke-virtual {v0}, Landroid/app/Dialog;->cancel()V
 
     :cond_0
     return-void

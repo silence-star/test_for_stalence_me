@@ -224,7 +224,7 @@
     .parameter "exclusive"
 
     .prologue
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->acquireReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->acquireReference()V
 
     :try_start_0
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->getThreadSession()Landroid/database/sqlite/SQLiteSession;
@@ -248,7 +248,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     return-void
 
@@ -260,7 +260,7 @@
     :catchall_0
     move-exception v0
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     throw v0
 .end method
@@ -686,7 +686,7 @@
     .end annotation
 
     .prologue
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->acquireReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->acquireReference()V
 
     :try_start_0
     invoke-static {p1}, Landroid/database/DatabaseUtils;->getSqlStatementType(Ljava/lang/String;)I
@@ -744,11 +744,11 @@
     move-result v2
 
     :try_start_4
-    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
+    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteClosable;->close()V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     return v2
 
@@ -771,7 +771,7 @@
     :catchall_1
     move-exception v2
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     throw v2
 
@@ -780,7 +780,7 @@
     move-exception v2
 
     :try_start_7
-    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
+    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteClosable;->close()V
 
     throw v2
     :try_end_7
@@ -1066,7 +1066,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->close()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->close()V
 
     throw v0
 .end method
@@ -1295,7 +1295,7 @@
     .parameter "sleepAfterYieldDelay"
 
     .prologue
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->acquireReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->acquireReference()V
 
     :try_start_0
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->getThreadSession()Landroid/database/sqlite/SQLiteSession;
@@ -1310,14 +1310,14 @@
 
     move-result v0
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     return v0
 
     :catchall_0
     move-exception v0
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     throw v0
 .end method
@@ -1449,7 +1449,7 @@
     .end annotation
 
     .prologue
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->acquireReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->acquireReference()V
 
     :try_start_0
     new-instance v0, Landroid/database/sqlite/SQLiteStatement;
@@ -1460,14 +1460,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     return-object v0
 
     :catchall_0
     move-exception v0
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     throw v0
 .end method
@@ -1515,7 +1515,7 @@
     .parameter "whereArgs"
 
     .prologue
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->acquireReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->acquireReference()V
 
     :try_start_0
     new-instance v0, Landroid/database/sqlite/SQLiteStatement;
@@ -1580,11 +1580,11 @@
     move-result v1
 
     :try_start_2
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteStatement;->close()V
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteClosable;->close()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     return v1
 
@@ -1599,7 +1599,7 @@
     :catchall_0
     move-exception v1
 
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteStatement;->close()V
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteClosable;->close()V
 
     throw v1
     :try_end_3
@@ -1609,7 +1609,7 @@
     :catchall_1
     move-exception v1
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     throw v1
 .end method
@@ -1872,7 +1872,7 @@
     .locals 2
 
     .prologue
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->acquireReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->acquireReference()V
 
     :try_start_0
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->getThreadSession()Landroid/database/sqlite/SQLiteSession;
@@ -1885,14 +1885,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     return-void
 
     :catchall_0
     move-exception v0
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     throw v0
 .end method
@@ -2042,7 +2042,7 @@
 
     :cond_1
     :try_start_1
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->acquireReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->acquireReference()V
 
     monitor-exit v3
     :try_end_1
@@ -2105,7 +2105,7 @@
     :catchall_2
     move-exception v2
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     throw v2
 
@@ -2118,7 +2118,7 @@
     .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
     :cond_4
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     goto :goto_0
 .end method
@@ -2311,7 +2311,7 @@
     .locals 1
 
     .prologue
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->acquireReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->acquireReference()V
 
     :try_start_0
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->getThreadSession()Landroid/database/sqlite/SQLiteSession;
@@ -2324,14 +2324,14 @@
 
     move-result v0
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     return v0
 
     :catchall_0
     move-exception v0
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     throw v0
 .end method
@@ -2415,7 +2415,7 @@
     .parameter "conflictAlgorithm"
 
     .prologue
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->acquireReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->acquireReference()V
 
     :try_start_0
     new-instance v6, Ljava/lang/StringBuilder;
@@ -2617,11 +2617,11 @@
     move-result-wide v8
 
     :try_start_2
-    invoke-virtual {v7}, Landroid/database/sqlite/SQLiteStatement;->close()V
+    invoke-virtual {v7}, Landroid/database/sqlite/SQLiteClosable;->close()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     return-wide v8
 
@@ -2629,7 +2629,7 @@
     move-exception v8
 
     :try_start_3
-    invoke-virtual {v7}, Landroid/database/sqlite/SQLiteStatement;->close()V
+    invoke-virtual {v7}, Landroid/database/sqlite/SQLiteClosable;->close()V
 
     throw v8
     :try_end_3
@@ -2642,7 +2642,7 @@
     :catchall_1
     move-exception v8
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     throw v8
 .end method
@@ -2651,7 +2651,7 @@
     .locals 10
 
     .prologue
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->acquireReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->acquireReference()V
 
     const/4 v0, 0x0
 
@@ -2849,12 +2849,12 @@
     if-eqz v5, :cond_1
 
     :try_start_4
-    invoke-virtual {v5}, Landroid/database/sqlite/SQLiteStatement;->close()V
+    invoke-virtual {v5}, Landroid/database/sqlite/SQLiteClosable;->close()V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     :cond_1
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     .end local v4           #p:Landroid/util/Pair;,"Landroid/util/Pair<Ljava/lang/String;Ljava/lang/String;>;"
     .end local v5           #prog:Landroid/database/sqlite/SQLiteStatement;
@@ -2869,7 +2869,7 @@
     if-eqz v5, :cond_3
 
     :try_start_5
-    invoke-virtual {v5}, Landroid/database/sqlite/SQLiteStatement;->close()V
+    invoke-virtual {v5}, Landroid/database/sqlite/SQLiteClosable;->close()V
 
     :cond_3
     add-int/lit8 v3, v3, 0x1
@@ -2882,7 +2882,7 @@
 
     if-eqz v5, :cond_4
 
-    invoke-virtual {v5}, Landroid/database/sqlite/SQLiteStatement;->close()V
+    invoke-virtual {v5}, Landroid/database/sqlite/SQLiteClosable;->close()V
 
     :cond_4
     throw v7
@@ -2896,13 +2896,13 @@
     move-exception v7
 
     :goto_2
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     throw v7
 
     .restart local v3       #i:I
     :cond_5
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     const/4 v7, 0x1
 
@@ -2926,7 +2926,7 @@
     .locals 1
 
     .prologue
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->acquireReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->acquireReference()V
 
     :try_start_0
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->getThreadSession()Landroid/database/sqlite/SQLiteSession;
@@ -2939,14 +2939,14 @@
 
     move-result v0
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     return v0
 
     :catchall_0
     move-exception v0
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     throw v0
 .end method
@@ -3397,7 +3397,7 @@
     .parameter "cancellationSignal"
 
     .prologue
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->acquireReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->acquireReference()V
 
     move v0, p2
 
@@ -3439,7 +3439,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     return-object v0
 
@@ -3447,7 +3447,7 @@
     :catchall_0
     move-exception v0
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     throw v0
 .end method
@@ -3539,7 +3539,7 @@
     .parameter "cancellationSignal"
 
     .prologue
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->acquireReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->acquireReference()V
 
     :try_start_0
     new-instance v0, Landroid/database/sqlite/SQLiteDirectCursorDriver;
@@ -3557,7 +3557,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     return-object v1
 
@@ -3575,7 +3575,7 @@
     :catchall_0
     move-exception v1
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     throw v1
 .end method
@@ -4056,7 +4056,7 @@
     .locals 1
 
     .prologue
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->acquireReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->acquireReference()V
 
     :try_start_0
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->getThreadSession()Landroid/database/sqlite/SQLiteSession;
@@ -4067,14 +4067,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     return-void
 
     :catchall_0
     move-exception v0
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     throw v0
 .end method
@@ -4190,7 +4190,7 @@
     throw v9
 
     :cond_1
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->acquireReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->acquireReference()V
 
     :try_start_0
     new-instance v7, Ljava/lang/StringBuilder;
@@ -4372,11 +4372,11 @@
     move-result v9
 
     :try_start_2
-    invoke-virtual {v8}, Landroid/database/sqlite/SQLiteStatement;->close()V
+    invoke-virtual {v8}, Landroid/database/sqlite/SQLiteClosable;->close()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     return v9
 
@@ -4384,7 +4384,7 @@
     move-exception v9
 
     :try_start_3
-    invoke-virtual {v8}, Landroid/database/sqlite/SQLiteStatement;->close()V
+    invoke-virtual {v8}, Landroid/database/sqlite/SQLiteClosable;->close()V
 
     throw v9
     :try_end_3
@@ -4400,7 +4400,7 @@
     :catchall_1
     move-exception v9
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->releaseReference()V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
     throw v9
 .end method

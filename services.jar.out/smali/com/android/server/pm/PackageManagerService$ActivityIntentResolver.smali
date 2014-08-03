@@ -81,7 +81,7 @@
     .prologue
     iget-object v4, p1, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
 
-    iget-object v4, v4, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v4, v4, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     #calls: Lcom/android/server/pm/PackageManagerService;->isSystemApp(Landroid/content/pm/ApplicationInfo;)Z
     invoke-static {v4}, Lcom/android/server/pm/PackageManagerService;->access$1700(Landroid/content/pm/ApplicationInfo;)Z
@@ -91,13 +91,13 @@
     .local v3, systemApp:Z
     iget-object v4, p0, Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver;->mActivities:Ljava/util/HashMap;
 
-    invoke-virtual {p1}, Landroid/content/pm/PackageParser$Activity;->getComponentName()Landroid/content/ComponentName;
+    invoke-virtual {p1}, Landroid/content/pm/PackageParser$Component;->getComponentName()Landroid/content/ComponentName;
 
     move-result-object v5
 
     invoke-virtual {v4, v5, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v4, p1, Landroid/content/pm/PackageParser$Activity;->intents:Ljava/util/ArrayList;
+    iget-object v4, p1, Landroid/content/pm/PackageParser$Component;->intents:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
@@ -110,7 +110,7 @@
     :goto_0
     if-ge v2, v0, :cond_2
 
-    iget-object v4, p1, Landroid/content/pm/PackageParser$Activity;->intents:Ljava/util/ArrayList;
+    iget-object v4, p1, Landroid/content/pm/PackageParser$Component;->intents:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -121,7 +121,7 @@
     .local v1, intent:Landroid/content/pm/PackageParser$ActivityIntentInfo;
     if-nez v3, :cond_0
 
-    invoke-virtual {v1}, Landroid/content/pm/PackageParser$ActivityIntentInfo;->getPriority()I
+    invoke-virtual {v1}, Landroid/content/IntentFilter;->getPriority()I
 
     move-result v4
 
@@ -137,7 +137,7 @@
 
     const/4 v4, 0x0
 
-    invoke-virtual {v1, v4}, Landroid/content/pm/PackageParser$ActivityIntentInfo;->setPriority(I)V
+    invoke-virtual {v1, v4}, Landroid/content/IntentFilter;->setPriority(I)V
 
     const-string v4, "PackageManager"
 
@@ -153,9 +153,9 @@
 
     iget-object v6, p1, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
 
-    iget-object v6, v6, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v6, v6, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    iget-object v6, v6, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+    iget-object v6, v6, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -167,7 +167,7 @@
 
     move-result-object v5
 
-    iget-object v6, p1, Landroid/content/pm/PackageParser$Activity;->className:Ljava/lang/String;
+    iget-object v6, p1, Landroid/content/pm/PackageParser$Component;->className:Ljava/lang/String;
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -186,7 +186,7 @@
     invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
-    invoke-virtual {v1}, Landroid/content/pm/PackageParser$ActivityIntentInfo;->debugCheck()Z
+    invoke-virtual {v1}, Landroid/content/IntentFilter;->debugCheck()Z
 
     move-result v4
 
@@ -206,7 +206,7 @@
 
     iget-object v6, p1, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
 
-    iget-object v6, v6, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v6, v6, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -219,7 +219,7 @@
     invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_1
-    invoke-virtual {p0, v1}, Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver;->addFilter(Landroid/content/IntentFilter;)V
+    invoke-virtual {p0, v1}, Lcom/android/server/IntentResolver;->addFilter(Landroid/content/IntentFilter;)V
 
     add-int/lit8 v2, v2, 0x1
 
@@ -287,15 +287,15 @@
     iget-object v0, v3, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     .local v0, destAi:Landroid/content/pm/ActivityInfo;
-    iget-object v3, v0, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v3, v0, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
-    iget-object v4, v1, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v4, v1, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     if-ne v3, v4, :cond_0
 
-    iget-object v3, v0, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v3, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
-    iget-object v4, v1, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v4, v1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     if-ne v3, v4, :cond_0
 
@@ -360,7 +360,7 @@
 
     iget-object v0, p3, Landroid/content/pm/PackageParser$ActivityIntentInfo;->activity:Landroid/content/pm/PackageParser$Activity;
 
-    invoke-virtual {v0, p1}, Landroid/content/pm/PackageParser$Activity;->printComponentShortName(Ljava/io/PrintWriter;)V
+    invoke-virtual {v0, p1}, Landroid/content/pm/PackageParser$Component;->printComponentShortName(Ljava/io/PrintWriter;)V
 
     const-string v0, " filter "
 
@@ -420,7 +420,7 @@
     :cond_1
     iget-object v4, p1, Landroid/content/pm/PackageParser$ActivityIntentInfo;->activity:Landroid/content/pm/PackageParser$Activity;
 
-    iget-object v0, v4, Landroid/content/pm/PackageParser$Activity;->owner:Landroid/content/pm/PackageParser$Package;
+    iget-object v0, v4, Landroid/content/pm/PackageParser$Component;->owner:Landroid/content/pm/PackageParser$Package;
 
     .local v0, p:Landroid/content/pm/PackageParser$Package;
     if-eqz v0, :cond_3
@@ -432,13 +432,13 @@
     .local v1, ps:Lcom/android/server/pm/PackageSetting;
     if-eqz v1, :cond_3
 
-    iget v4, v1, Lcom/android/server/pm/PackageSetting;->pkgFlags:I
+    iget v4, v1, Lcom/android/server/pm/GrantedPermissions;->pkgFlags:I
 
     and-int/lit8 v4, v4, 0x1
 
     if-nez v4, :cond_2
 
-    invoke-virtual {v1, p2}, Lcom/android/server/pm/PackageSetting;->getStopped(I)Z
+    invoke-virtual {v1, p2}, Lcom/android/server/pm/PackageSettingBase;->getStopped(I)Z
 
     move-result v4
 
@@ -480,7 +480,7 @@
     .prologue
     iget-object v0, p2, Landroid/content/pm/PackageParser$ActivityIntentInfo;->activity:Landroid/content/pm/PackageParser$Activity;
 
-    iget-object v0, v0, Landroid/content/pm/PackageParser$Activity;->owner:Landroid/content/pm/PackageParser$Package;
+    iget-object v0, v0, Landroid/content/pm/PackageParser$Component;->owner:Landroid/content/pm/PackageParser$Package;
 
     iget-object v0, v0, Landroid/content/pm/PackageParser$Package;->packageName:Ljava/lang/String;
 
@@ -562,7 +562,7 @@
 
     iget-object v4, v0, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
 
-    iget-object v4, v4, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v4, v4, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget v4, v4, Landroid/content/pm/ApplicationInfo;->flags:I
 
@@ -571,7 +571,7 @@
     if-eqz v4, :cond_0
 
     :cond_2
-    iget-object v4, v0, Landroid/content/pm/PackageParser$Activity;->owner:Landroid/content/pm/PackageParser$Package;
+    iget-object v4, v0, Landroid/content/pm/PackageParser$Component;->owner:Landroid/content/pm/PackageParser$Package;
 
     iget-object v2, v4, Landroid/content/pm/PackageParser$Package;->mExtras:Ljava/lang/Object;
 
@@ -582,7 +582,7 @@
 
     iget v4, p0, Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver;->mFlags:I
 
-    invoke-virtual {v2, p3}, Lcom/android/server/pm/PackageSetting;->readUserState(I)Landroid/content/pm/PackageUserState;
+    invoke-virtual {v2, p3}, Lcom/android/server/pm/PackageSettingBase;->readUserState(I)Landroid/content/pm/PackageUserState;
 
     move-result-object v5
 
@@ -609,13 +609,13 @@
     iput-object p1, v3, Landroid/content/pm/ResolveInfo;->filter:Landroid/content/IntentFilter;
 
     :cond_3
-    invoke-virtual {p1}, Landroid/content/pm/PackageParser$ActivityIntentInfo;->getPriority()I
+    invoke-virtual {p1}, Landroid/content/IntentFilter;->getPriority()I
 
     move-result v4
 
     iput v4, v3, Landroid/content/pm/ResolveInfo;->priority:I
 
-    iget-object v4, v0, Landroid/content/pm/PackageParser$Activity;->owner:Landroid/content/pm/PackageParser$Package;
+    iget-object v4, v0, Landroid/content/pm/PackageParser$Component;->owner:Landroid/content/pm/PackageParser$Package;
 
     iget v4, v4, Landroid/content/pm/PackageParser$Package;->mPreferredOrder:I
 
@@ -623,25 +623,25 @@
 
     iput p2, v3, Landroid/content/pm/ResolveInfo;->match:I
 
-    iget-boolean v4, p1, Landroid/content/pm/PackageParser$ActivityIntentInfo;->hasDefault:Z
+    iget-boolean v4, p1, Landroid/content/pm/PackageParser$IntentInfo;->hasDefault:Z
 
     iput-boolean v4, v3, Landroid/content/pm/ResolveInfo;->isDefault:Z
 
-    iget v4, p1, Landroid/content/pm/PackageParser$ActivityIntentInfo;->labelRes:I
+    iget v4, p1, Landroid/content/pm/PackageParser$IntentInfo;->labelRes:I
 
     iput v4, v3, Landroid/content/pm/ResolveInfo;->labelRes:I
 
-    iget-object v4, p1, Landroid/content/pm/PackageParser$ActivityIntentInfo;->nonLocalizedLabel:Ljava/lang/CharSequence;
+    iget-object v4, p1, Landroid/content/pm/PackageParser$IntentInfo;->nonLocalizedLabel:Ljava/lang/CharSequence;
 
     iput-object v4, v3, Landroid/content/pm/ResolveInfo;->nonLocalizedLabel:Ljava/lang/CharSequence;
 
-    iget v4, p1, Landroid/content/pm/PackageParser$ActivityIntentInfo;->icon:I
+    iget v4, p1, Landroid/content/pm/PackageParser$IntentInfo;->icon:I
 
     iput v4, v3, Landroid/content/pm/ResolveInfo;->icon:I
 
     iget-object v4, v3, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v4, v4, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v4, v4, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     #calls: Lcom/android/server/pm/PackageManagerService;->isSystemApp(Landroid/content/pm/ApplicationInfo;)Z
     invoke-static {v4}, Lcom/android/server/pm/PackageManagerService;->access$1700(Landroid/content/pm/ApplicationInfo;)Z
@@ -857,7 +857,7 @@
 
     check-cast v0, Landroid/content/pm/PackageParser$Activity;
 
-    iget-object v9, v0, Landroid/content/pm/PackageParser$Activity;->intents:Ljava/util/ArrayList;
+    iget-object v9, v0, Landroid/content/pm/PackageParser$Component;->intents:Ljava/util/ArrayList;
 
     .local v9, intentFilters:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/pm/PackageParser$ActivityIntentInfo;>;"
     if-eqz v9, :cond_2
@@ -923,13 +923,13 @@
     .prologue
     iget-object v3, p0, Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver;->mActivities:Ljava/util/HashMap;
 
-    invoke-virtual {p1}, Landroid/content/pm/PackageParser$Activity;->getComponentName()Landroid/content/ComponentName;
+    invoke-virtual {p1}, Landroid/content/pm/PackageParser$Component;->getComponentName()Landroid/content/ComponentName;
 
     move-result-object v4
 
     invoke-virtual {v3, v4}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v3, p1, Landroid/content/pm/PackageParser$Activity;->intents:Ljava/util/ArrayList;
+    iget-object v3, p1, Landroid/content/pm/PackageParser$Component;->intents:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
@@ -942,7 +942,7 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    iget-object v3, p1, Landroid/content/pm/PackageParser$Activity;->intents:Ljava/util/ArrayList;
+    iget-object v3, p1, Landroid/content/pm/PackageParser$Component;->intents:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -951,7 +951,7 @@
     check-cast v1, Landroid/content/pm/PackageParser$ActivityIntentInfo;
 
     .local v1, intent:Landroid/content/pm/PackageParser$ActivityIntentInfo;
-    invoke-virtual {p0, v1}, Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver;->removeFilter(Landroid/content/IntentFilter;)V
+    invoke-virtual {p0, v1}, Lcom/android/server/IntentResolver;->removeFilter(Landroid/content/IntentFilter;)V
 
     add-int/lit8 v2, v2, 0x1
 

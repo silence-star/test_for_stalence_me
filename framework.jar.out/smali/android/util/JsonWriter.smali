@@ -156,7 +156,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/util/JsonScope;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 

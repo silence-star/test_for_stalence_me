@@ -256,7 +256,7 @@
 
 .field mForcingShowNavBarLayer:I
 
-.field mGlobalActions:Lcom/android/internal/policy/impl/NubiaGlobalActions;
+.field mGlobalActions:Lcom/android/internal/policy/impl/MiuiGlobalActions;
 
 .field private mGlobalKeyManager:Lcom/android/internal/policy/impl/GlobalKeyManager;
 
@@ -6151,6 +6151,8 @@
 
     goto/16 :goto_d
 
+    nop
+
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -8134,7 +8136,7 @@
     .local v2, topIsFullscreen:Z
     iget-object v6, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mTopFullscreenOpaqueWindowState:Landroid/view/WindowManagerPolicy$WindowState;
 
-    if-eqz v6, :cond_9
+    if-eqz v6, :cond_a
 
     iget-object v6, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mTopFullscreenOpaqueWindowState:Landroid/view/WindowManagerPolicy$WindowState;
 
@@ -8163,7 +8165,7 @@
 
     iget-boolean v6, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mForceStatusBarFromKeyguard:Z
 
-    if-eqz v6, :cond_b
+    if-eqz v6, :cond_c
 
     :cond_1
     iget-object v6, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mStatusBarController:Lcom/android/internal/policy/impl/BarController;
@@ -8179,7 +8181,7 @@
     :cond_2
     iget-boolean v6, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mTopIsFullscreen:Z
 
-    if-eqz v6, :cond_a
+    if-eqz v6, :cond_b
 
     iget-object v6, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mStatusBar:Landroid/view/WindowManagerPolicy$WindowState;
 
@@ -8187,7 +8189,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_a
+    if-eqz v6, :cond_b
 
     move v2, v4
 
@@ -8215,27 +8217,27 @@
     :cond_3
     invoke-virtual {p0, v4}, Lcom/android/internal/policy/impl/PhoneWindowManager;->notifyStatusBarShowingOrHiding(Z)V
 
-    :cond_miui_2
+    :cond_4
     :goto_2
     iget-boolean v6, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mTopIsFullscreen:Z
 
-    if-eq v6, v2, :cond_5
+    if-eq v6, v2, :cond_6
 
-    if-nez v2, :cond_4
+    if-nez v2, :cond_5
 
     or-int/lit8 v0, v0, 0x1
 
-    :cond_4
+    :cond_5
     iput-boolean v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mTopIsFullscreen:Z
 
-    :cond_5
+    :cond_6
     iget-object v6, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguard:Landroid/view/WindowManagerPolicy$WindowState;
 
-    if-eqz v6, :cond_7
+    if-eqz v6, :cond_8
 
     iget v6, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mDismissKeyguard:I
 
-    if-eqz v6, :cond_11
+    if-eqz v6, :cond_14
 
     iget-object v6, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardDelegate:Lcom/android/internal/policy/impl/keyguard/KeyguardServiceDelegate;
 
@@ -8243,7 +8245,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_11
+    if-nez v6, :cond_14
 
     iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguard:Landroid/view/WindowManagerPolicy$WindowState;
 
@@ -8251,18 +8253,18 @@
 
     move-result v3
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_7
 
     or-int/lit8 v0, v0, 0x7
 
-    :cond_6
+    :cond_7
     iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardDelegate:Lcom/android/internal/policy/impl/keyguard/KeyguardServiceDelegate;
 
     invoke-virtual {v3}, Lcom/android/internal/policy/impl/keyguard/KeyguardServiceDelegate;->isShowing()Z
 
     move-result v3
 
-    if-eqz v3, :cond_7
+    if-eqz v3, :cond_8
 
     iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHandler:Landroid/os/Handler;
 
@@ -8272,7 +8274,7 @@
 
     invoke-virtual {v3, v4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_7
+    :cond_8
     :goto_3
     invoke-direct {p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->updateSystemUiVisibilityLw()I
 
@@ -8282,51 +8284,51 @@
 
     and-int/2addr v3, v4
 
-    if-eqz v3, :cond_8
+    if-eqz v3, :cond_9
 
     or-int/lit8 v0, v0, 0x1
 
-    :cond_8
+    :cond_9
     invoke-direct {p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->updateLockScreenTimeout()V
 
     return v0
 
     .end local v1           #lp:Landroid/view/WindowManager$LayoutParams;
-    :cond_9
+    :cond_a
     move-object v1, v3
 
     goto/16 :goto_0
 
     .restart local v1       #lp:Landroid/view/WindowManager$LayoutParams;
-    :cond_a
+    :cond_b
     move v2, v5
 
     goto :goto_1
 
-    :cond_b
+    :cond_c
     iget-object v6, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mTopFullscreenOpaqueWindowState:Landroid/view/WindowManagerPolicy$WindowState;
 
-    if-eqz v6, :cond_miui_2
+    if-eqz v6, :cond_4
 
     iget v6, v1, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     and-int/lit16 v6, v6, 0x400
 
-    if-nez v6, :cond_c
+    if-nez v6, :cond_d
 
     iget v6, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mLastSystemUiFlags:I
 
     and-int/lit8 v6, v6, 0x4
 
-    if-eqz v6, :cond_e
+    if-eqz v6, :cond_f
 
-    :cond_c
+    :cond_d
     move v2, v4
 
     :goto_4
     sget-boolean v6, Landroid/util/PowerMoConfig;->WITHOUT_ALL:Z
 
-    if-nez v6, :cond_d
+    if-nez v6, :cond_e
 
     iget-object v6, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mPolicyFuncs:Lcom/android/internal/policy/impl/IPolicySmartShowFuncs;
 
@@ -8336,18 +8338,18 @@
 
     move-result v6
 
-    if-nez v6, :cond_d
+    if-nez v6, :cond_e
 
     const/4 v2, 0x0
 
-    :cond_d
+    :cond_e
     iget-object v6, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mStatusBarController:Lcom/android/internal/policy/impl/BarController;
 
     invoke-virtual {v6}, Lcom/android/internal/policy/impl/BarController;->isTransientShowing()Z
 
     move-result v6
 
-    if-eqz v6, :cond_f
+    if-eqz v6, :cond_10
 
     iget-object v6, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mStatusBarController:Lcom/android/internal/policy/impl/BarController;
 
@@ -8355,19 +8357,19 @@
 
     move-result v6
 
-    if-eqz v6, :cond_miui_2
+    if-eqz v6, :cond_4
 
     or-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
-    :cond_e
+    :cond_f
     move v2, v5
 
     goto :goto_4
 
-    :cond_f
-    if-eqz v2, :cond_10
+    :cond_10
+    if-eqz v2, :cond_12
 
     iget-object v6, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mStatusBarController:Lcom/android/internal/policy/impl/BarController;
 
@@ -8375,32 +8377,35 @@
 
     move-result v6
 
-    if-eqz v6, :cond_miui_1
+    if-eqz v6, :cond_11
 
     or-int/lit8 v0, v0, 0x1
 
-    :cond_miui_1
+    :cond_11
     invoke-virtual {p0, v4}, Lcom/android/internal/policy/impl/PhoneWindowManager;->notifyStatusBarShowingOrHiding(Z)V
 
     goto/16 :goto_2
 
-    :cond_10
+    :cond_12
     iget-object v6, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mStatusBarController:Lcom/android/internal/policy/impl/BarController;
 
     invoke-virtual {v6, v4}, Lcom/android/internal/policy/impl/BarController;->setBarShowingLw(Z)Z
 
     move-result v6
 
-    if-eqz v6, :cond_3
+    if-eqz v6, :cond_13
 
     or-int/lit8 v0, v0, 0x1
 
+    :cond_13
+    invoke-virtual {p0, v4}, Lcom/android/internal/policy/impl/PhoneWindowManager;->notifyStatusBarShowingOrHiding(Z)V
+
     goto/16 :goto_2
 
-    :cond_11
+    :cond_14
     iget-boolean v6, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHideLockScreen:Z
 
-    if-eqz v6, :cond_13
+    if-eqz v6, :cond_16
 
     iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguard:Landroid/view/WindowManagerPolicy$WindowState;
 
@@ -8408,29 +8413,29 @@
 
     move-result v3
 
-    if-eqz v3, :cond_12
+    if-eqz v3, :cond_15
 
     or-int/lit8 v0, v0, 0x7
 
-    :cond_12
+    :cond_15
     iget-boolean v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mShowingDream:Z
 
-    if-nez v3, :cond_7
+    if-nez v3, :cond_8
 
     iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardDelegate:Lcom/android/internal/policy/impl/keyguard/KeyguardServiceDelegate;
 
     invoke-virtual {v3, v4}, Lcom/android/internal/policy/impl/keyguard/KeyguardServiceDelegate;->setHidden(Z)V
 
-    goto :goto_3
+    goto/16 :goto_3
 
-    :cond_13
+    :cond_16
     iget v6, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mDismissKeyguard:I
 
-    if-eqz v6, :cond_15
+    if-eqz v6, :cond_18
 
     iget v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mDismissKeyguard:I
 
-    if-ne v3, v4, :cond_7
+    if-ne v3, v4, :cond_8
 
     iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguard:Landroid/view/WindowManagerPolicy$WindowState;
 
@@ -8438,11 +8443,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_14
+    if-eqz v3, :cond_17
 
     or-int/lit8 v0, v0, 0x7
 
-    :cond_14
+    :cond_17
     iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardDelegate:Lcom/android/internal/policy/impl/keyguard/KeyguardServiceDelegate;
 
     invoke-virtual {v3, v5}, Lcom/android/internal/policy/impl/keyguard/KeyguardServiceDelegate;->setHidden(Z)V
@@ -8457,7 +8462,7 @@
 
     goto/16 :goto_3
 
-    :cond_15
+    :cond_18
     iput-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mWinDismissingKeyguard:Landroid/view/WindowManagerPolicy$WindowState;
 
     iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguard:Landroid/view/WindowManagerPolicy$WindowState;
@@ -8466,11 +8471,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_16
+    if-eqz v3, :cond_19
 
     or-int/lit8 v0, v0, 0x7
 
-    :cond_16
+    :cond_19
     iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardDelegate:Lcom/android/internal/policy/impl/keyguard/KeyguardServiceDelegate;
 
     invoke-virtual {v3, v5}, Lcom/android/internal/policy/impl/keyguard/KeyguardServiceDelegate;->setHidden(Z)V
@@ -10306,6 +10311,8 @@
     .parameter "policyFlags"
 
     .prologue
+    goto :goto_1
+
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mNubiaPhoneWindowManager:Lcom/android/internal/policy/impl/NubiaPhoneWindowManager;
@@ -10333,6 +10340,7 @@
 
     .restart local v32       #preResult:J
     :cond_0
+    :goto_1
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->keyguardOn()Z
 
     move-result v26
@@ -10367,7 +10375,7 @@
     const/16 v19, 0x1
 
     .local v19, down:Z
-    :goto_1
+    :goto_2
     invoke-virtual/range {p2 .. p2}, Landroid/view/KeyEvent;->isCanceled()Z
 
     move-result v15
@@ -10420,7 +10428,7 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     :cond_2
-    :goto_2
+    :goto_3
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mNubiaPhoneWindowManager:Lcom/android/internal/policy/impl/NubiaPhoneWindowManager;
@@ -10486,7 +10494,7 @@
     :cond_3
     const/16 v19, 0x0
 
-    goto :goto_1
+    goto :goto_2
 
     .restart local v15       #canceled:Z
     .restart local v19       #down:Z
@@ -10500,7 +10508,7 @@
 
     invoke-static {v3, v5}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_2
+    goto :goto_3
 
     .end local v20           #e:Landroid/os/RemoteException;
     :cond_4
@@ -10628,16 +10636,6 @@
     :cond_a
     if-eqz v15, :cond_b
 
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
-
-    invoke-static {v3}, Lcom/android/internal/policy/impl/PhoneWindowManager$Injector;->isInCallScreenShowing(Landroid/content/Context;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_6
-
     const-string v3, "WindowManager"
 
     const-string v5, "Ignoring HOME; event canceled."
@@ -10658,6 +10656,16 @@
     if-eqz v38, :cond_c
 
     invoke-interface/range {v38 .. v38}, Lcom/android/internal/telephony/ITelephony;->isRinging()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_c
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    invoke-static {v3}, Lcom/android/internal/policy/impl/PhoneWindowManager$Injector;->isInCallScreenShowing(Landroid/content/Context;)Z
 
     move-result v3
 
@@ -10747,7 +10755,7 @@
     move-result-object v12
 
     .local v12, attrs:Landroid/view/WindowManager$LayoutParams;
-    :goto_3
+    :goto_4
     if-eqz v12, :cond_13
 
     iget v0, v12, Landroid/view/WindowManager$LayoutParams;->type:I
@@ -10783,7 +10791,7 @@
     :cond_10
     const/4 v12, 0x0
 
-    goto :goto_3
+    goto :goto_4
 
     .restart local v12       #attrs:Landroid/view/WindowManager$LayoutParams;
     .restart local v41       #type:I
@@ -10798,7 +10806,7 @@
     const/16 v23, 0x0
 
     .local v23, i:I
-    :goto_4
+    :goto_5
     move/from16 v0, v23
 
     move/from16 v1, v42
@@ -10820,7 +10828,7 @@
     :cond_12
     add-int/lit8 v23, v23, 0x1
 
-    goto :goto_4
+    goto :goto_5
 
     .end local v23           #i:I
     .end local v41           #type:I
@@ -10859,7 +10867,7 @@
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->handleDoubleTapOnHome()V
 
     :cond_14
-    :goto_5
+    :goto_6
     const-wide/16 v32, -0x1
 
     goto/16 :goto_0
@@ -10884,7 +10892,7 @@
     :cond_16
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->preloadRecentApps()V
 
-    goto :goto_5
+    goto :goto_6
 
     :cond_17
     invoke-virtual/range {p2 .. p2}, Landroid/view/KeyEvent;->getFlags()I
@@ -10899,7 +10907,7 @@
 
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->handleLongPressOnHome()V
 
-    goto :goto_5
+    goto :goto_6
 
     .end local v12           #attrs:Landroid/view/WindowManager$LayoutParams;
     :cond_18
@@ -11028,7 +11036,7 @@
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->preloadRecentApps()V
 
     :cond_1d
-    :goto_6
+    :goto_7
     const-wide/16 v32, -0x1
 
     goto/16 :goto_0
@@ -11038,7 +11046,7 @@
 
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->toggleRecentApps()V
 
-    goto :goto_6
+    goto :goto_7
 
     :cond_1f
     const/16 v3, 0xdb
@@ -11058,7 +11066,7 @@
     iput-boolean v3, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mAssistKeyLongPressed:Z
 
     :cond_20
-    :goto_7
+    :goto_8
     const-wide/16 v32, -0x1
 
     goto/16 :goto_0
@@ -11080,7 +11088,7 @@
 
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->launchAssistLongPressAction()V
 
-    goto :goto_7
+    goto :goto_8
 
     :cond_22
     move-object/from16 v0, p0
@@ -11095,14 +11103,14 @@
 
     iput-boolean v3, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mAssistKeyLongPressed:Z
 
-    goto :goto_7
+    goto :goto_8
 
     :cond_23
     if-nez v26, :cond_20
 
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->launchAssistAction()V
 
-    goto :goto_7
+    goto :goto_8
 
     :cond_24
     const/16 v3, 0x78
@@ -11155,7 +11163,7 @@
     const/16 v18, 0x1
 
     .local v18, direction:I
-    :goto_8
+    :goto_9
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
@@ -11306,7 +11314,7 @@
     :cond_2a
     const/16 v18, -0x1
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
     :cond_2b
     move-object/from16 v0, p0
@@ -11382,7 +11390,7 @@
 
     .end local v36           #shortcutIntent:Landroid/content/Intent;
     :cond_2c
-    :goto_9
+    :goto_a
     const-wide/16 v32, -0x1
 
     goto/16 :goto_0
@@ -11420,7 +11428,7 @@
 
     invoke-static {v3, v5, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_9
+    goto :goto_a
 
     .end local v21           #ex:Landroid/content/ActivityNotFoundException;
     :cond_2d
@@ -11450,7 +11458,7 @@
 
     invoke-static {v3, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_9
+    goto :goto_a
 
     .end local v24           #kcm:Landroid/view/KeyCharacterMap;
     .end local v36           #shortcutIntent:Landroid/content/Intent;
@@ -11516,7 +11524,7 @@
     :try_end_3
     .catch Landroid/content/ActivityNotFoundException; {:try_start_3 .. :try_end_3} :catch_3
 
-    :goto_a
+    :goto_b
     const-wide/16 v32, -0x1
 
     goto/16 :goto_0
@@ -11553,7 +11561,7 @@
 
     invoke-static {v3, v5, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_a
+    goto :goto_b
 
     .end local v21           #ex:Landroid/content/ActivityNotFoundException;
     .end local v24           #kcm:Landroid/view/KeyCharacterMap;
@@ -11602,7 +11610,7 @@
     :try_end_4
     .catch Landroid/content/ActivityNotFoundException; {:try_start_4 .. :try_end_4} :catch_4
 
-    :goto_b
+    :goto_c
     const-wide/16 v32, -0x1
 
     goto/16 :goto_0
@@ -11649,7 +11657,7 @@
 
     invoke-static {v3, v5, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_b
+    goto :goto_c
 
     .end local v4           #intent:Landroid/content/Intent;
     .end local v16           #category:Ljava/lang/String;
@@ -11747,7 +11755,7 @@
 
     const/4 v3, 0x2
 
-    :goto_c
+    :goto_d
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v3}, Lcom/android/internal/policy/impl/PhoneWindowManager;->showOrHideRecentAppsDialog(I)V
@@ -11785,7 +11793,7 @@
     const/16 v18, -0x1
 
     .restart local v18       #direction:I
-    :goto_d
+    :goto_e
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
@@ -11806,12 +11814,12 @@
     :cond_35
     const/4 v3, 0x3
 
-    goto :goto_c
+    goto :goto_d
 
     :cond_36
     const/16 v18, 0x1
 
-    goto :goto_d
+    goto :goto_e
 
     :cond_37
     move-object/from16 v0, p0
@@ -11895,6 +11903,8 @@
     :goto_0
     return v16
 
+    goto :goto_1
+
     :cond_1
     move-object/from16 v0, p0
 
@@ -11926,6 +11936,7 @@
     goto :goto_0
 
     :cond_2
+    :goto_1
     invoke-virtual/range {p1 .. p1}, Landroid/view/KeyEvent;->getAction()I
 
     move-result v18
@@ -11935,7 +11946,7 @@
     const/4 v6, 0x1
 
     .local v6, down:Z
-    :goto_1
+    :goto_2
     invoke-virtual/range {p1 .. p1}, Landroid/view/KeyEvent;->isCanceled()Z
 
     move-result v5
@@ -12001,7 +12012,7 @@
     invoke-virtual/range {v18 .. v21}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     :cond_3
-    :goto_2
+    :goto_3
     const/16 v16, 0x0
 
     goto :goto_0
@@ -12012,7 +12023,7 @@
     :cond_4
     const/4 v6, 0x0
 
-    goto :goto_1
+    goto :goto_2
 
     .restart local v5       #canceled:Z
     .restart local v6       #down:Z
@@ -12034,31 +12045,31 @@
 
     invoke-virtual/range {v18 .. v19}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_6
     const/high16 v18, 0x100
 
     and-int v18, v18, p2
 
-    if-eqz v18, :cond_c
+    if-eqz v18, :cond_d
 
     const/4 v10, 0x1
 
     .local v10, isInjected:Z
-    :goto_3
+    :goto_4
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardDelegate:Lcom/android/internal/policy/impl/keyguard/KeyguardServiceDelegate;
 
     move-object/from16 v18, v0
 
-    if-nez v18, :cond_d
+    if-nez v18, :cond_e
 
     const/4 v13, 0x0
 
     .local v13, keyguardActive:Z
-    :goto_4
+    :goto_5
     const/16 v18, 0x1a
 
     move/from16 v0, v18
@@ -12070,13 +12081,13 @@
     :cond_7
     and-int/lit8 v18, p2, 0x3
 
-    if-eqz v18, :cond_f
+    if-eqz v18, :cond_10
 
     const/4 v11, 0x1
 
     .local v11, isWakeKey:Z
-    :goto_5
-    if-eqz v6, :cond_8
+    :goto_6
+    invoke-static/range {p0 .. p2}, Lcom/android/internal/policy/impl/PhoneWindowManager$Injector;->performReleaseHapticFeedback(Lcom/android/internal/policy/impl/PhoneWindowManager;Landroid/view/KeyEvent;I)V
 
     move/from16 v0, p2
 
@@ -12084,18 +12095,23 @@
 
     move/from16 v18, v0
 
-    if-eqz v18, :cond_8
+    if-eqz v18, :cond_9
 
     invoke-virtual/range {p1 .. p1}, Landroid/view/KeyEvent;->getRepeatCount()I
 
     move-result v18
 
-    if-nez v18, :cond_8
+    if-nez v18, :cond_9
 
     const/16 v18, 0x0
 
+    const/16 v19, 0x2
+
+    if-eqz v2, :cond_8
+
     const/16 v19, 0x1
 
+    :cond_8
     const/16 v20, 0x0
 
     move-object/from16 v0, p0
@@ -12108,8 +12124,8 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/internal/policy/impl/PhoneWindowManager;->performNubiaHapticFeedbackLw(Ljava/lang/String;IZ)Z
 
-    :cond_8
-    if-eqz p3, :cond_9
+    :cond_9
+    if-eqz p3, :cond_a
 
     move-object/from16 v0, p0
 
@@ -12117,19 +12133,19 @@
 
     move/from16 v18, v0
 
-    if-eqz v18, :cond_a
-
-    :cond_9
-    if-eqz v10, :cond_10
-
-    if-nez v11, :cond_10
+    if-eqz v18, :cond_b
 
     :cond_a
+    if-eqz v10, :cond_11
+
+    if-nez v11, :cond_11
+
+    :cond_b
     const/16 v16, 0x1
 
     .local v16, result:I
-    :cond_b
-    :goto_6
+    :cond_c
+    :goto_7
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mGlobalKeyManager:Lcom/android/internal/policy/impl/GlobalKeyManager;
@@ -12186,14 +12202,14 @@
     .end local v13           #keyguardActive:Z
     .end local v16           #result:I
     .end local v17           #telephonyService:Lcom/android/internal/telephony/ITelephony;
-    :cond_c
+    :cond_d
     const/4 v10, 0x0
 
-    goto :goto_3
+    goto :goto_4
 
     .restart local v10       #isInjected:Z
-    :cond_d
-    if-eqz p3, :cond_e
+    :cond_e
+    if-eqz p3, :cond_f
 
     move-object/from16 v0, p0
 
@@ -12205,9 +12221,9 @@
 
     move-result v13
 
-    goto :goto_4
+    goto/16 :goto_5
 
-    :cond_e
+    :cond_f
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardDelegate:Lcom/android/internal/policy/impl/keyguard/KeyguardServiceDelegate;
@@ -12218,22 +12234,22 @@
 
     move-result v13
 
-    goto/16 :goto_4
+    goto/16 :goto_5
 
     .restart local v13       #keyguardActive:Z
-    :cond_f
+    :cond_10
     const/4 v11, 0x0
 
-    goto :goto_5
+    goto/16 :goto_6
 
     .restart local v11       #isWakeKey:Z
-    :cond_10
+    :cond_11
     const/16 v16, 0x0
 
     .restart local v16       #result:I
-    if-eqz v6, :cond_b
+    if-eqz v6, :cond_c
 
-    if-eqz v11, :cond_b
+    if-eqz v11, :cond_c
 
     move-object/from16 v0, p0
 
@@ -12241,22 +12257,22 @@
 
     move-result v18
 
-    if-eqz v18, :cond_b
+    if-eqz v18, :cond_c
 
     or-int/lit8 v16, v16, 0x2
 
-    goto :goto_6
+    goto :goto_7
 
     :sswitch_1
     const/16 v18, 0x19
 
     move/from16 v0, v18
 
-    if-ne v12, v0, :cond_13
+    if-ne v12, v0, :cond_14
 
-    if-eqz v6, :cond_12
+    if-eqz v6, :cond_13
 
-    if-eqz p3, :cond_11
+    if-eqz p3, :cond_12
 
     move-object/from16 v0, p0
 
@@ -12264,7 +12280,7 @@
 
     move/from16 v18, v0
 
-    if-nez v18, :cond_11
+    if-nez v18, :cond_12
 
     invoke-virtual/range {p1 .. p1}, Landroid/view/KeyEvent;->getFlags()I
 
@@ -12276,7 +12292,7 @@
 
     move/from16 v18, v0
 
-    if-nez v18, :cond_11
+    if-nez v18, :cond_12
 
     const/16 v18, 0x1
 
@@ -12308,8 +12324,8 @@
 
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->interceptScreenshotChord()V
 
-    :cond_11
-    :goto_7
+    :cond_12
+    :goto_8
     if-eqz v6, :cond_0
 
     invoke-static {}, Lcom/android/internal/policy/impl/PhoneWindowManager;->getTelephonyService()Lcom/android/internal/telephony/ITelephony;
@@ -12317,14 +12333,14 @@
     move-result-object v17
 
     .restart local v17       #telephonyService:Lcom/android/internal/telephony/ITelephony;
-    if-eqz v17, :cond_16
+    if-eqz v17, :cond_17
 
     :try_start_1
     invoke-interface/range {v17 .. v17}, Lcom/android/internal/telephony/ITelephony;->isRinging()Z
 
     move-result v18
 
-    if-eqz v18, :cond_15
+    if-eqz v18, :cond_16
 
     const-string v18, "WindowManager"
 
@@ -12341,7 +12357,7 @@
     goto/16 :goto_0
 
     .end local v17           #telephonyService:Lcom/android/internal/telephony/ITelephony;
-    :cond_12
+    :cond_13
     const/16 v18, 0x0
 
     move/from16 v0, v18
@@ -12352,18 +12368,18 @@
 
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->cancelPendingScreenshotChordAction()V
 
-    goto :goto_7
+    goto :goto_8
 
-    :cond_13
+    :cond_14
     const/16 v18, 0x18
 
     move/from16 v0, v18
 
-    if-ne v12, v0, :cond_11
+    if-ne v12, v0, :cond_12
 
-    if-eqz v6, :cond_14
+    if-eqz v6, :cond_15
 
-    if-eqz p3, :cond_11
+    if-eqz p3, :cond_12
 
     move-object/from16 v0, p0
 
@@ -12371,7 +12387,7 @@
 
     move/from16 v18, v0
 
-    if-nez v18, :cond_11
+    if-nez v18, :cond_12
 
     invoke-virtual/range {p1 .. p1}, Landroid/view/KeyEvent;->getFlags()I
 
@@ -12383,7 +12399,7 @@
 
     move/from16 v18, v0
 
-    if-nez v18, :cond_11
+    if-nez v18, :cond_12
 
     const/16 v18, 0x1
 
@@ -12415,9 +12431,9 @@
 
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->interceptScreenshotLog()V
 
-    goto :goto_7
+    goto :goto_8
 
-    :cond_14
+    :cond_15
     const/16 v18, 0x0
 
     move/from16 v0, v18
@@ -12428,20 +12444,20 @@
 
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->cancelPendingScreenshotChordAction()V
 
-    goto :goto_7
+    goto :goto_8
 
     .restart local v17       #telephonyService:Lcom/android/internal/telephony/ITelephony;
-    :cond_15
+    :cond_16
     :try_start_2
     invoke-interface/range {v17 .. v17}, Lcom/android/internal/telephony/ITelephony;->isOffhook()Z
 
     move-result v18
 
-    if-eqz v18, :cond_16
+    if-eqz v18, :cond_17
 
     and-int/lit8 v18, v16, 0x1
 
-    if-nez v18, :cond_16
+    if-nez v18, :cond_17
 
     const/16 v18, 0x0
 
@@ -12470,7 +12486,7 @@
     invoke-static {v0, v1, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     .end local v8           #ex:Landroid/os/RemoteException;
-    :cond_16
+    :cond_17
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->isMusicActive()Z
 
     move-result v18
@@ -12495,7 +12511,7 @@
     :sswitch_2
     and-int/lit8 v16, v16, -0x2
 
-    if-eqz v6, :cond_1a
+    if-eqz v6, :cond_1b
 
     invoke-static {}, Lcom/android/internal/policy/impl/PhoneWindowManager;->getTelephonyService()Lcom/android/internal/telephony/ITelephony;
 
@@ -12505,7 +12521,7 @@
     const/4 v9, 0x0
 
     .local v9, hungUp:Z
-    if-eqz v17, :cond_17
+    if-eqz v17, :cond_18
 
     :try_start_3
     invoke-interface/range {v17 .. v17}, Lcom/android/internal/telephony/ITelephony;->endCall()Z
@@ -12514,16 +12530,16 @@
 
     move-result v9
 
-    :cond_17
-    :goto_8
-    if-eqz p3, :cond_18
-
-    if-eqz v9, :cond_19
-
     :cond_18
+    :goto_9
+    if-eqz p3, :cond_19
+
+    if-eqz v9, :cond_1a
+
+    :cond_19
     const/16 v18, 0x1
 
-    :goto_9
+    :goto_a
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -12546,17 +12562,17 @@
 
     invoke-static {v0, v1, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_8
+    goto :goto_9
 
     .end local v8           #ex:Landroid/os/RemoteException;
-    :cond_19
+    :cond_1a
     const/16 v18, 0x0
 
-    goto :goto_9
+    goto :goto_a
 
     .end local v9           #hungUp:Z
     .end local v17           #telephonyService:Lcom/android/internal/telephony/ITelephony;
-    :cond_1a
+    :cond_1b
     move-object/from16 v0, p0
 
     invoke-direct {v0, v5}, Lcom/android/internal/policy/impl/PhoneWindowManager;->interceptPowerKeyUp(Z)Z
@@ -12573,7 +12589,7 @@
 
     and-int/lit8 v18, v18, 0x1
 
-    if-eqz v18, :cond_1b
+    if-eqz v18, :cond_1c
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->goHome()Z
 
@@ -12581,7 +12597,7 @@
 
     if-nez v18, :cond_0
 
-    :cond_1b
+    :cond_1c
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mEndcallBehavior:I
@@ -12596,14 +12612,12 @@
 
     or-int/lit8 v16, v18, 0x4
 
-    invoke-static/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindowManager$Injector;->sendPowerUpBroadcast(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
-
     goto/16 :goto_0
 
     :sswitch_3
     and-int/lit8 v16, v16, -0x2
 
-    if-eqz v6, :cond_23
+    if-eqz v6, :cond_24
 
     move-object/from16 v0, p0
 
@@ -12639,7 +12653,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/internal/policy/impl/ImmersiveModeConfirmation;->onPowerKeyDown(ZJZ)V
 
-    if-eqz p3, :cond_1c
+    if-eqz p3, :cond_1d
 
     move-object/from16 v0, p0
 
@@ -12647,7 +12661,7 @@
 
     move/from16 v18, v0
 
-    if-nez v18, :cond_1c
+    if-nez v18, :cond_1d
 
     invoke-virtual/range {p1 .. p1}, Landroid/view/KeyEvent;->getFlags()I
 
@@ -12659,7 +12673,7 @@
 
     move/from16 v18, v0
 
-    if-nez v18, :cond_1c
+    if-nez v18, :cond_1d
 
     const/16 v18, 0x1
 
@@ -12689,7 +12703,7 @@
 
     move/from16 v18, v0
 
-    if-eqz v18, :cond_1c
+    if-eqz v18, :cond_1d
 
     :try_start_4
     move-object/from16 v0, p0
@@ -12704,8 +12718,8 @@
     :try_end_4
     .catch Landroid/os/RemoteException; {:try_start_4 .. :try_end_4} :catch_2
 
-    :cond_1c
-    :goto_a
+    :cond_1d
+    :goto_b
     invoke-static {}, Lcom/android/internal/policy/impl/PhoneWindowManager;->getTelephonyService()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v17
@@ -12714,14 +12728,14 @@
     const/4 v9, 0x0
 
     .restart local v9       #hungUp:Z
-    if-eqz v17, :cond_1d
+    if-eqz v17, :cond_1e
 
     :try_start_5
     invoke-interface/range {v17 .. v17}, Lcom/android/internal/telephony/ITelephony;->isRinging()Z
 
     move-result v18
 
-    if-eqz v18, :cond_21
+    if-eqz v18, :cond_22
 
     invoke-static {}, Lcn/nubia/config/ConfigFactory;->getInstance()Lcn/nubia/config/ConfigFactory;
 
@@ -12735,7 +12749,7 @@
 
     move-result v18
 
-    if-eqz v18, :cond_20
+    if-eqz v18, :cond_21
 
     move-object/from16 v0, p0
 
@@ -12745,7 +12759,7 @@
 
     and-int/lit8 v18, v18, 0x2
 
-    if-eqz v18, :cond_1f
+    if-eqz v18, :cond_20
 
     invoke-interface/range {v17 .. v17}, Lcom/android/internal/telephony/ITelephony;->endCall()Z
     :try_end_5
@@ -12753,11 +12767,11 @@
 
     move-result v9
 
-    :cond_1d
-    :goto_b
-    if-eqz p3, :cond_1e
+    :cond_1e
+    :goto_c
+    if-eqz p3, :cond_1f
 
-    if-nez v9, :cond_1e
+    if-nez v9, :cond_1f
 
     move-object/from16 v0, p0
 
@@ -12765,7 +12779,7 @@
 
     move/from16 v18, v0
 
-    if-nez v18, :cond_1e
+    if-nez v18, :cond_1f
 
     move-object/from16 v0, p0
 
@@ -12773,12 +12787,12 @@
 
     move/from16 v18, v0
 
-    if-eqz v18, :cond_22
+    if-eqz v18, :cond_23
 
-    :cond_1e
+    :cond_1f
     const/16 v18, 0x1
 
-    :goto_c
+    :goto_d
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -12799,18 +12813,18 @@
 
     invoke-static/range {v18 .. v19}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_a
+    goto :goto_b
 
     .end local v7           #e:Landroid/os/RemoteException;
     .restart local v9       #hungUp:Z
     .restart local v17       #telephonyService:Lcom/android/internal/telephony/ITelephony;
-    :cond_1f
+    :cond_20
     :try_start_6
     invoke-interface/range {v17 .. v17}, Lcom/android/internal/telephony/ITelephony;->silenceRinger()V
     :try_end_6
     .catch Landroid/os/RemoteException; {:try_start_6 .. :try_end_6} :catch_3
 
-    goto :goto_b
+    goto :goto_c
 
     :catch_3
     move-exception v8
@@ -12826,16 +12840,16 @@
 
     invoke-static {v0, v1, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_b
+    goto :goto_c
 
     .end local v8           #ex:Landroid/os/RemoteException;
-    :cond_20
+    :cond_21
     :try_start_7
     invoke-interface/range {v17 .. v17}, Lcom/android/internal/telephony/ITelephony;->silenceRinger()V
 
-    goto :goto_b
+    goto :goto_c
 
-    :cond_21
+    :cond_22
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mIncallPowerBehavior:I
@@ -12844,13 +12858,13 @@
 
     and-int/lit8 v18, v18, 0x2
 
-    if-eqz v18, :cond_1d
+    if-eqz v18, :cond_1e
 
     invoke-interface/range {v17 .. v17}, Lcom/android/internal/telephony/ITelephony;->isOffhook()Z
 
     move-result v18
 
-    if-eqz v18, :cond_1d
+    if-eqz v18, :cond_1e
 
     invoke-interface/range {v17 .. v17}, Lcom/android/internal/telephony/ITelephony;->endCall()Z
     :try_end_7
@@ -12858,16 +12872,16 @@
 
     move-result v9
 
-    goto :goto_b
+    goto :goto_c
 
-    :cond_22
+    :cond_23
     const/16 v18, 0x0
 
-    goto :goto_c
+    goto :goto_d
 
     .end local v9           #hungUp:Z
     .end local v17           #telephonyService:Lcom/android/internal/telephony/ITelephony;
-    :cond_23
+    :cond_24
     const/16 v18, 0x0
 
     move/from16 v0, v18
@@ -12878,7 +12892,7 @@
 
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->cancelPendingScreenshotChordAction()V
 
-    if-nez v5, :cond_24
+    if-nez v5, :cond_25
 
     move-object/from16 v0, p0
 
@@ -12886,12 +12900,12 @@
 
     move/from16 v18, v0
 
-    if-eqz v18, :cond_26
+    if-eqz v18, :cond_27
 
-    :cond_24
+    :cond_25
     const/16 v18, 0x1
 
-    :goto_d
+    :goto_e
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -12900,13 +12914,13 @@
 
     move-result v18
 
-    if-eqz v18, :cond_25
+    if-eqz v18, :cond_26
 
     and-int/lit8 v18, v16, -0x3
 
     or-int/lit8 v16, v18, 0x4
 
-    :cond_25
+    :cond_26
     const/16 v18, 0x0
 
     move/from16 v0, v18
@@ -12915,22 +12929,24 @@
 
     iput-boolean v0, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mPendingPowerKeyUpCanceled:Z
 
+    invoke-static/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindowManager$Injector;->sendPowerUpBroadcast(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
+
     goto/16 :goto_0
 
-    :cond_26
+    :cond_27
     const/16 v18, 0x0
 
-    goto :goto_d
+    goto :goto_e
 
     :sswitch_4
-    if-eqz v6, :cond_27
+    if-eqz v6, :cond_28
 
     invoke-static {}, Lcom/android/internal/policy/impl/PhoneWindowManager;->getTelephonyService()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v17
 
     .restart local v17       #telephonyService:Lcom/android/internal/telephony/ITelephony;
-    if-eqz v17, :cond_27
+    if-eqz v17, :cond_28
 
     :try_start_8
     invoke-interface/range {v17 .. v17}, Lcom/android/internal/telephony/ITelephony;->isIdle()Z
@@ -12942,8 +12958,8 @@
     if-eqz v18, :cond_0
 
     .end local v17           #telephonyService:Lcom/android/internal/telephony/ITelephony;
-    :cond_27
-    :goto_e
+    :cond_28
+    :goto_f
     :sswitch_5
     and-int/lit8 v18, v16, 0x1
 
@@ -13004,7 +13020,7 @@
 
     invoke-static {v0, v1, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_e
+    goto :goto_f
 
     .end local v8           #ex:Landroid/os/RemoteException;
     :catch_5
@@ -13022,6 +13038,8 @@
     invoke-static {v0, v1, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto/16 :goto_0
+
+    nop
 
     nop
 
@@ -18235,19 +18253,19 @@
     .locals 5
 
     .prologue
-    iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mGlobalActions:Lcom/android/internal/policy/impl/NubiaGlobalActions;
+    iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mGlobalActions:Lcom/android/internal/policy/impl/MiuiGlobalActions;
 
     if-nez v1, :cond_0
 
-    new-instance v1, Lcom/android/internal/policy/impl/NubiaGlobalActions;
+    new-instance v1, Lcom/android/internal/policy/impl/MiuiGlobalActions;
 
     iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
 
     iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
 
-    invoke-direct {v1, v2, v3}, Lcom/android/internal/policy/impl/NubiaGlobalActions;-><init>(Landroid/content/Context;Landroid/view/WindowManagerPolicy$WindowManagerFuncs;)V
+    invoke-direct {v1, v2, v3}, Lcom/android/internal/policy/impl/MiuiGlobalActions;-><init>(Landroid/content/Context;Landroid/view/WindowManagerPolicy$WindowManagerFuncs;)V
 
-    iput-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mGlobalActions:Lcom/android/internal/policy/impl/NubiaGlobalActions;
+    iput-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mGlobalActions:Lcom/android/internal/policy/impl/MiuiGlobalActions;
 
     :cond_0
     invoke-direct {p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->keyguardIsShowingTq()Z
@@ -18255,13 +18273,13 @@
     move-result v0
 
     .local v0, keyguardShowing:Z
-    iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mGlobalActions:Lcom/android/internal/policy/impl/NubiaGlobalActions;
+    iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mGlobalActions:Lcom/android/internal/policy/impl/MiuiGlobalActions;
 
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->isDeviceProvisioned()Z
 
     move-result v2
 
-    invoke-virtual {v1, v0, v2}, Lcom/android/internal/policy/impl/NubiaGlobalActions;->showDialog(ZZ)V
+    invoke-virtual {v1, v0, v2}, Lcom/android/internal/policy/impl/MiuiGlobalActions;->showDialog(ZZ)V
 
     if-eqz v0, :cond_1
 

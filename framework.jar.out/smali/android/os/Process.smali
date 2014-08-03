@@ -1228,7 +1228,7 @@
 
     move-result-object v7
 
-    invoke-virtual {v6, v7}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v6, v7}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     sget-object v6, Landroid/os/Process;->sZygoteWriter:Ljava/io/BufferedWriter;
 
@@ -1308,7 +1308,7 @@
     :try_start_2
     sget-object v6, Landroid/os/Process;->sZygoteWriter:Ljava/io/BufferedWriter;
 
-    invoke-virtual {v6, v0}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v6, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     sget-object v6, Landroid/os/Process;->sZygoteWriter:Ljava/io/BufferedWriter;
 

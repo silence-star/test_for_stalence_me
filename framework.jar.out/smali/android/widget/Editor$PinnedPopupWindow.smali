@@ -43,17 +43,12 @@
 
     invoke-virtual {p0}, Landroid/widget/Editor$PinnedPopupWindow;->createPopupWindow()V
 
-    sget-boolean v1, Landroid/util/PowerMoConfig;->WITHOUT_ALL:Z
-
-    if-eqz v1, :cond_0
-
     iget-object v1, p0, Landroid/widget/Editor$PinnedPopupWindow;->mPopupWindow:Landroid/widget/PopupWindow;
 
     const/16 v2, 0x3ea
 
     invoke-virtual {v1, v2}, Landroid/widget/PopupWindow;->setWindowLayoutType(I)V
 
-    :goto_0
     iget-object v1, p0, Landroid/widget/Editor$PinnedPopupWindow;->mPopupWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {v1, v3}, Landroid/widget/PopupWindow;->setWidth(I)V
@@ -80,16 +75,6 @@
     invoke-virtual {v1, v2}, Landroid/widget/PopupWindow;->setContentView(Landroid/view/View;)V
 
     return-void
-
-    .end local v0           #wrapContent:Landroid/view/ViewGroup$LayoutParams;
-    :cond_0
-    iget-object v1, p0, Landroid/widget/Editor$PinnedPopupWindow;->mPopupWindow:Landroid/widget/PopupWindow;
-
-    const/16 v2, 0x514
-
-    invoke-virtual {v1, v2}, Landroid/widget/PopupWindow;->setWindowLayoutType(I)V
-
-    goto :goto_0
 .end method
 
 .method private computeLocalPosition()V

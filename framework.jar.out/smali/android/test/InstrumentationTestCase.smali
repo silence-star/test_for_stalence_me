@@ -125,7 +125,7 @@
 
     .local v0, e:Ljava/lang/reflect/InvocationTargetException;
     :try_start_1
-    invoke-virtual {v0}, Ljava/lang/reflect/InvocationTargetException;->fillInStackTrace()Ljava/lang/Throwable;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->fillInStackTrace()Ljava/lang/Throwable;
 
     invoke-virtual {v0}, Ljava/lang/reflect/InvocationTargetException;->getTargetException()Ljava/lang/Throwable;
     :try_end_1
@@ -161,7 +161,7 @@
 
     .local v0, e:Ljava/lang/IllegalAccessException;
     :try_start_2
-    invoke-virtual {v0}, Ljava/lang/IllegalAccessException;->fillInStackTrace()Ljava/lang/Throwable;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->fillInStackTrace()Ljava/lang/Throwable;
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
@@ -351,7 +351,7 @@
     .prologue
     const/4 v12, 0x0
 
-    invoke-virtual {p0}, Landroid/test/InstrumentationTestCase;->getName()Ljava/lang/String;
+    invoke-virtual {p0}, Ljunit/framework/TestCase;->getName()Ljava/lang/String;
 
     move-result-object v7
 

@@ -21,7 +21,7 @@
     .parameter "base"
 
     .prologue
-    iput-object p1, p0, Landroid/content/MutableContextWrapper;->mBase:Landroid/content/Context;
+    iput-object p1, p0, Landroid/content/ContextWrapper;->mBase:Landroid/content/Context;
 
     return-void
 .end method

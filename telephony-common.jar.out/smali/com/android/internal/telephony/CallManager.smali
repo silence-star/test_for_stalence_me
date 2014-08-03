@@ -1503,9 +1503,9 @@
     move-result-object v1
 
     :cond_1
-    if-eqz v0, :cond_miui
+    if-eqz v0, :cond_2
 
-    if-eqz v1, :cond_miui
+    if-eqz v1, :cond_2
 
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -1519,13 +1519,13 @@
 
     move-result v2
 
-    :goto_miui
+    :goto_0
     return v2
 
-    :cond_miui
+    :cond_2
     const/4 v2, 0x0
 
-    goto :goto_miui
+    goto :goto_0
 .end method
 
 .method public canConference(Lcom/android/internal/telephony/Call;I)Z
@@ -3922,7 +3922,7 @@
 
     move-result-object v7
 
-    invoke-virtual {v7}, Lcom/android/internal/telephony/PhoneConstants$State;->ordinal()I
+    invoke-virtual {v7}, Ljava/lang/Enum;->ordinal()I
 
     move-result v7
 

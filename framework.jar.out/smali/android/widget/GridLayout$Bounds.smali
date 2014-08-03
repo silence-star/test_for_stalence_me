@@ -57,7 +57,7 @@
     .prologue
     iget v0, p0, Landroid/widget/GridLayout$Bounds;->before:I
 
-    invoke-virtual {p1}, Landroid/widget/GridLayout;->getLayoutMode()I
+    invoke-virtual {p1}, Landroid/view/ViewGroup;->getLayoutMode()I
 
     move-result v1
 
@@ -128,7 +128,7 @@
     move-result-object v0
 
     .local v0, alignment:Landroid/widget/GridLayout$Alignment;
-    invoke-virtual {p1}, Landroid/widget/GridLayout;->getLayoutMode()I
+    invoke-virtual {p1}, Landroid/view/ViewGroup;->getLayoutMode()I
 
     move-result v4
 

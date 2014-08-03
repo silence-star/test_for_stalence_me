@@ -331,19 +331,19 @@
 
     aput-object v13, v11, v12
 
-    invoke-virtual {v0, v11}, Landroid/filterpacks/base/FrameBranch;->initWithAssignmentList([Ljava/lang/Object;)V
+    invoke-virtual {v0, v11}, Landroid/filterfw/core/Filter;->initWithAssignmentList([Ljava/lang/Object;)V
 
     invoke-virtual {p0, v0}, Landroid/filterfw/core/FilterGraph;->addFilter(Landroid/filterfw/core/Filter;)Z
 
     const-string v11, "in"
 
-    invoke-virtual {v0, v11}, Landroid/filterpacks/base/FrameBranch;->getInputPort(Ljava/lang/String;)Landroid/filterfw/core/InputPort;
+    invoke-virtual {v0, v11}, Landroid/filterfw/core/Filter;->getInputPort(Ljava/lang/String;)Landroid/filterfw/core/InputPort;
 
     move-result-object v11
 
     invoke-virtual {v10, v11}, Landroid/filterfw/core/OutputPort;->connectTo(Landroid/filterfw/core/InputPort;)V
 
-    invoke-virtual {v9}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v9}, Ljava/util/AbstractSequentialList;->iterator()Ljava/util/Iterator;
 
     move-result-object v8
 
@@ -550,13 +550,13 @@
     invoke-direct {v5, v7}, Landroid/filterpacks/base/NullFilter;-><init>(Ljava/lang/String;)V
 
     .local v5, nullFilter:Landroid/filterpacks/base/NullFilter;
-    invoke-virtual {v5}, Landroid/filterpacks/base/NullFilter;->init()V
+    invoke-virtual {v5}, Landroid/filterfw/core/Filter;->init()V
 
     invoke-virtual {v0, v5}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
     const-string v7, "frame"
 
-    invoke-virtual {v5, v7}, Landroid/filterpacks/base/NullFilter;->getInputPort(Ljava/lang/String;)Landroid/filterfw/core/InputPort;
+    invoke-virtual {v5, v7}, Landroid/filterfw/core/Filter;->getInputPort(Ljava/lang/String;)Landroid/filterfw/core/InputPort;
 
     move-result-object v7
 
@@ -572,7 +572,7 @@
     .end local v5           #nullFilter:Landroid/filterpacks/base/NullFilter;
     .end local v6           #port:Landroid/filterfw/core/OutputPort;
     :cond_3
-    invoke-virtual {v0}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0}, Ljava/util/AbstractSequentialList;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
@@ -830,7 +830,7 @@
 
     move-result-object v6
 
-    invoke-virtual {v1, v6}, Ljava/util/Stack;->addAll(Ljava/util/Collection;)Z
+    invoke-virtual {v1, v6}, Ljava/util/Vector;->addAll(Ljava/util/Collection;)Z
 
     :cond_0
     invoke-virtual {v1}, Ljava/util/Stack;->empty()Z
@@ -1019,7 +1019,7 @@
     move-result-object v3
 
     .local v3, sourceFormat:Landroid/filterfw/core/FrameFormat;
-    invoke-virtual {v2}, Landroid/filterfw/core/InputPort;->getPortFormat()Landroid/filterfw/core/FrameFormat;
+    invoke-virtual {v2}, Landroid/filterfw/core/FilterPort;->getPortFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v4
 
@@ -1138,7 +1138,7 @@
     throw v5
 
     :pswitch_0
-    invoke-virtual {v2, v8}, Landroid/filterfw/core/InputPort;->setChecksType(Z)V
+    invoke-virtual {v2, v8}, Landroid/filterfw/core/FilterPort;->setChecksType(Z)V
 
     goto :goto_0
 
@@ -1149,7 +1149,7 @@
 
     const/4 v5, 0x1
 
-    invoke-virtual {v2, v5}, Landroid/filterfw/core/InputPort;->setChecksType(Z)V
+    invoke-virtual {v2, v5}, Landroid/filterfw/core/FilterPort;->setChecksType(Z)V
 
     goto :goto_0
 
@@ -1158,7 +1158,7 @@
 
     move-result v0
 
-    invoke-virtual {v2, v8}, Landroid/filterfw/core/InputPort;->setChecksType(Z)V
+    invoke-virtual {v2, v8}, Landroid/filterfw/core/FilterPort;->setChecksType(Z)V
 
     goto :goto_0
 
@@ -1218,7 +1218,7 @@
     move-result-object v1
 
     .local v1, inputFormat:Landroid/filterfw/core/FrameFormat;
-    invoke-virtual {v4}, Landroid/filterfw/core/OutputPort;->getName()Ljava/lang/String;
+    invoke-virtual {v4}, Landroid/filterfw/core/FilterPort;->getName()Ljava/lang/String;
 
     move-result-object v5
 
@@ -1260,7 +1260,7 @@
     throw v5
 
     :cond_1
-    invoke-virtual {v4, v3}, Landroid/filterfw/core/OutputPort;->setPortFormat(Landroid/filterfw/core/FrameFormat;)V
+    invoke-virtual {v4, v3}, Landroid/filterfw/core/FilterPort;->setPortFormat(Landroid/filterfw/core/FrameFormat;)V
 
     goto :goto_0
 

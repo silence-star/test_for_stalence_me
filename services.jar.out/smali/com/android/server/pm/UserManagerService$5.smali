@@ -39,12 +39,12 @@
     .parameter "uid"
 
     .prologue
-    invoke-virtual {p0}, Lcom/android/server/pm/UserManagerService$5;->getChangingUserId()I
+    invoke-virtual {p0}, Lcom/android/internal/content/PackageMonitor;->getChangingUserId()I
 
     move-result v1
 
     .local v1, userId:I
-    invoke-virtual {p0, p1}, Lcom/android/server/pm/UserManagerService$5;->isPackageDisappearing(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lcom/android/internal/content/PackageMonitor;->isPackageDisappearing(Ljava/lang/String;)I
 
     move-result v2
 

@@ -19,13 +19,13 @@
     .locals 2
 
     .prologue
-    invoke-super {p0}, Lcom/android/internal/app/ResolverActivity;->finish()V
+    invoke-super {p0}, Landroid/app/Activity;->finish()V
 
     const/4 v0, 0x0
 
     const v1, 0x10a0031
 
-    invoke-virtual {p0, v0, v1}, Lcom/android/internal/app/ChooserActivity;->overridePendingTransition(II)V
+    invoke-virtual {p0, v0, v1}, Landroid/app/Activity;->overridePendingTransition(II)V
 
     return-void
 .end method
@@ -35,7 +35,7 @@
     .parameter "savedInstanceState"
 
     .prologue
-    invoke-virtual {p0}, Lcom/android/internal/app/ChooserActivity;->getIntent()Landroid/content/Intent;
+    invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
     move-result-object v8
 
@@ -93,7 +93,7 @@
     .local v3, title:Ljava/lang/CharSequence;
     if-nez v3, :cond_1
 
-    invoke-virtual {p0}, Lcom/android/internal/app/ChooserActivity;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/ContextThemeWrapper;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 

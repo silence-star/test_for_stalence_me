@@ -358,7 +358,7 @@
     add-long v12, v2, v4
 
     .local v12, timeout:J
-    invoke-virtual {v6}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
+    invoke-virtual {v6}, Ljava/nio/Buffer;->clear()Ljava/nio/Buffer;
 
     sget-object v0, Ljava/nio/ByteOrder;->BIG_ENDIAN:Ljava/nio/ByteOrder;
 
@@ -404,7 +404,7 @@
 
     invoke-virtual {v6, v7}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
 
-    invoke-virtual {v6}, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
+    invoke-virtual {v6}, Ljava/nio/Buffer;->flip()Ljava/nio/Buffer;
 
     iget-object v0, p0, Landroid/net/arp/ArpPeer;->mSocket:Llibcore/net/RawSocket;
 
@@ -416,7 +416,7 @@
 
     const/4 v4, 0x0
 
-    invoke-virtual {v6}, Ljava/nio/ByteBuffer;->limit()I
+    invoke-virtual {v6}, Ljava/nio/Buffer;->limit()I
 
     move-result v5
 

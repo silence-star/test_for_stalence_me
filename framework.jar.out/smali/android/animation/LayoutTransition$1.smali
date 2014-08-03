@@ -47,7 +47,7 @@
     .prologue
     iget-object v5, p0, Landroid/animation/LayoutTransition$1;->val$parent:Landroid/view/ViewGroup;
 
-    invoke-virtual {v5}, Landroid/view/ViewGroup;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+    invoke-virtual {v5}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v5
 

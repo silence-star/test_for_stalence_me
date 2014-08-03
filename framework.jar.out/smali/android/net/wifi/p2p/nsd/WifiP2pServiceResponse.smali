@@ -171,7 +171,7 @@
     move-exception v1
 
     .local v1, e:Ljava/lang/Exception;
-    invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     const/4 v0, 0x0
 
@@ -264,7 +264,7 @@
     :cond_3
     :goto_1
     :try_start_0
-    invoke-virtual {v8}, Ljava/io/DataInputStream;->available()I
+    invoke-virtual {v8}, Ljava/io/FilterInputStream;->available()I
 
     move-result v13
 
@@ -331,7 +331,7 @@
     move-exception v9
 
     .local v9, e:Ljava/io/IOException;
-    invoke-virtual {v9}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {v9}, Ljava/lang/Throwable;->printStackTrace()V
 
     invoke-interface {v11}, Ljava/util/List;->size()I
 
@@ -356,7 +356,7 @@
 
     int-to-long v13, v10
 
-    invoke-virtual {v8, v13, v14}, Ljava/io/DataInputStream;->skip(J)J
+    invoke-virtual {v8, v13, v14}, Ljava/io/FilterInputStream;->skip(J)J
 
     goto :goto_1
 

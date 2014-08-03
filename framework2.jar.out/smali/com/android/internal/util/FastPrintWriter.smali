@@ -459,7 +459,7 @@
     .prologue
     iget-object v1, p0, Lcom/android/internal/util/FastPrintWriter;->mBytes:Ljava/nio/ByteBuffer;
 
-    invoke-virtual {v1}, Ljava/nio/ByteBuffer;->position()I
+    invoke-virtual {v1}, Ljava/nio/Buffer;->position()I
 
     move-result v0
 
@@ -468,7 +468,7 @@
 
     iget-object v1, p0, Lcom/android/internal/util/FastPrintWriter;->mBytes:Ljava/nio/ByteBuffer;
 
-    invoke-virtual {v1}, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
+    invoke-virtual {v1}, Ljava/nio/Buffer;->flip()Ljava/nio/Buffer;
 
     iget-object v1, p0, Lcom/android/internal/util/FastPrintWriter;->mOutputStream:Ljava/io/OutputStream;
 
@@ -484,7 +484,7 @@
 
     iget-object v1, p0, Lcom/android/internal/util/FastPrintWriter;->mBytes:Ljava/nio/ByteBuffer;
 
-    invoke-virtual {v1}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
+    invoke-virtual {v1}, Ljava/nio/Buffer;->clear()Ljava/nio/Buffer;
 
     :cond_0
     return-void
@@ -845,7 +845,7 @@
     .prologue
     invoke-virtual {p0}, Lcom/android/internal/util/FastPrintWriter;->flush()V
 
-    iget-object v1, p0, Lcom/android/internal/util/FastPrintWriter;->lock:Ljava/lang/Object;
+    iget-object v1, p0, Ljava/io/Writer;->lock:Ljava/lang/Object;
 
     monitor-enter v1
 
@@ -870,7 +870,7 @@
     .locals 2
 
     .prologue
-    iget-object v1, p0, Lcom/android/internal/util/FastPrintWriter;->lock:Ljava/lang/Object;
+    iget-object v1, p0, Ljava/io/Writer;->lock:Ljava/lang/Object;
 
     monitor-enter v1
 
@@ -897,7 +897,7 @@
     .locals 3
 
     .prologue
-    iget-object v2, p0, Lcom/android/internal/util/FastPrintWriter;->lock:Ljava/lang/Object;
+    iget-object v2, p0, Ljava/io/Writer;->lock:Ljava/lang/Object;
 
     monitor-enter v2
 
@@ -963,7 +963,7 @@
     .locals 3
 
     .prologue
-    iget-object v2, p0, Lcom/android/internal/util/FastPrintWriter;->lock:Ljava/lang/Object;
+    iget-object v2, p0, Ljava/io/Writer;->lock:Ljava/lang/Object;
 
     monitor-enter v2
 
@@ -1030,7 +1030,7 @@
     .parameter "ch"
 
     .prologue
-    iget-object v1, p0, Lcom/android/internal/util/FastPrintWriter;->lock:Ljava/lang/Object;
+    iget-object v1, p0, Ljava/io/Writer;->lock:Ljava/lang/Object;
 
     monitor-enter v1
 
@@ -1121,7 +1121,7 @@
     move-result-object p1
 
     :cond_0
-    iget-object v2, p0, Lcom/android/internal/util/FastPrintWriter;->lock:Ljava/lang/Object;
+    iget-object v2, p0, Ljava/io/Writer;->lock:Ljava/lang/Object;
 
     monitor-enter v2
 
@@ -1167,7 +1167,7 @@
     .parameter "charArray"
 
     .prologue
-    iget-object v1, p0, Lcom/android/internal/util/FastPrintWriter;->lock:Ljava/lang/Object;
+    iget-object v1, p0, Ljava/io/Writer;->lock:Ljava/lang/Object;
 
     monitor-enter v1
 
@@ -1206,7 +1206,7 @@
     .locals 5
 
     .prologue
-    iget-object v2, p0, Lcom/android/internal/util/FastPrintWriter;->lock:Ljava/lang/Object;
+    iget-object v2, p0, Ljava/io/Writer;->lock:Ljava/lang/Object;
 
     monitor-enter v2
 
@@ -1279,7 +1279,7 @@
 
     const-string v0, "0"
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/util/FastPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     :goto_0
     return-void
@@ -1303,7 +1303,7 @@
 
     const-string v0, "0"
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/util/FastPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     :goto_0
     return-void
@@ -1330,7 +1330,7 @@
     .locals 2
 
     .prologue
-    iget-object v1, p0, Lcom/android/internal/util/FastPrintWriter;->lock:Ljava/lang/Object;
+    iget-object v1, p0, Ljava/io/Writer;->lock:Ljava/lang/Object;
 
     monitor-enter v1
 
@@ -1358,7 +1358,7 @@
     .parameter "oneChar"
 
     .prologue
-    iget-object v1, p0, Lcom/android/internal/util/FastPrintWriter;->lock:Ljava/lang/Object;
+    iget-object v1, p0, Ljava/io/Writer;->lock:Ljava/lang/Object;
 
     monitor-enter v1
 
@@ -1396,7 +1396,7 @@
     .parameter "str"
 
     .prologue
-    iget-object v1, p0, Lcom/android/internal/util/FastPrintWriter;->lock:Ljava/lang/Object;
+    iget-object v1, p0, Ljava/io/Writer;->lock:Ljava/lang/Object;
 
     monitor-enter v1
 
@@ -1440,7 +1440,7 @@
     .parameter "count"
 
     .prologue
-    iget-object v1, p0, Lcom/android/internal/util/FastPrintWriter;->lock:Ljava/lang/Object;
+    iget-object v1, p0, Ljava/io/Writer;->lock:Ljava/lang/Object;
 
     monitor-enter v1
 
@@ -1478,7 +1478,7 @@
     .parameter "count"
 
     .prologue
-    iget-object v1, p0, Lcom/android/internal/util/FastPrintWriter;->lock:Ljava/lang/Object;
+    iget-object v1, p0, Ljava/io/Writer;->lock:Ljava/lang/Object;
 
     monitor-enter v1
 

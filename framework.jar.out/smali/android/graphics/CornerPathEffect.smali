@@ -15,7 +15,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/CornerPathEffect;->native_instance:I
+    iput v0, p0, Landroid/graphics/PathEffect;->native_instance:I
 
     return-void
 .end method

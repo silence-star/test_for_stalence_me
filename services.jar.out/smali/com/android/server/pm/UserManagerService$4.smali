@@ -114,7 +114,7 @@
 
     move-result-object v5
 
-    iget-object v6, v0, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+    iget-object v6, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     const/4 v7, 0x0
 

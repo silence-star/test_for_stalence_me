@@ -37,7 +37,7 @@
     .prologue
     const v1, 0x1020272
 
-    invoke-virtual {p0, v1}, Landroid/app/LauncherActivity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -46,7 +46,7 @@
     .local v0, alertTitle:Landroid/widget/TextView;
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Landroid/app/LauncherActivity;->getTitle()Ljava/lang/CharSequence;
+    invoke-virtual {p0}, Landroid/app/Activity;->getTitle()Ljava/lang/CharSequence;
 
     move-result-object v1
 
@@ -62,7 +62,7 @@
     .prologue
     const v1, 0x1020019
 
-    invoke-virtual {p0, v1}, Landroid/app/LauncherActivity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -75,7 +75,7 @@
 
     invoke-direct {v1, p0}, Landroid/app/LauncherActivity$1;-><init>(Landroid/app/LauncherActivity;)V
 
-    invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     :cond_0
     return-void
@@ -99,7 +99,7 @@
     .parameter "position"
 
     .prologue
-    iget-object v0, p0, Landroid/app/LauncherActivity;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v0, p0, Landroid/app/ListActivity;->mAdapter:Landroid/widget/ListAdapter;
 
     check-cast v0, Landroid/app/LauncherActivity$ActivityAdapter;
 
@@ -116,7 +116,7 @@
     .parameter "position"
 
     .prologue
-    iget-object v0, p0, Landroid/app/LauncherActivity;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v0, p0, Landroid/app/ListActivity;->mAdapter:Landroid/widget/ListAdapter;
 
     check-cast v0, Landroid/app/LauncherActivity$ActivityAdapter;
 
@@ -203,9 +203,9 @@
     .prologue
     const/4 v2, 0x1
 
-    invoke-super {p0, p1}, Landroid/app/ListActivity;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    invoke-virtual {p0}, Landroid/app/LauncherActivity;->getPackageManager()Landroid/content/pm/PackageManager;
+    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
@@ -213,9 +213,9 @@
 
     const/4 v0, 0x5
 
-    invoke-virtual {p0, v0}, Landroid/app/LauncherActivity;->requestWindowFeature(I)Z
+    invoke-virtual {p0, v0}, Landroid/app/Activity;->requestWindowFeature(I)Z
 
-    invoke-virtual {p0, v2}, Landroid/app/LauncherActivity;->setProgressBarIndeterminateVisibility(Z)V
+    invoke-virtual {p0, v2}, Landroid/app/Activity;->setProgressBarIndeterminateVisibility(Z)V
 
     invoke-virtual {p0}, Landroid/app/LauncherActivity;->onSetContentView()V
 
@@ -247,17 +247,17 @@
 
     invoke-direct {v0, p0, v1}, Landroid/app/LauncherActivity$ActivityAdapter;-><init>(Landroid/app/LauncherActivity;Landroid/app/LauncherActivity$IconResizer;)V
 
-    iput-object v0, p0, Landroid/app/LauncherActivity;->mAdapter:Landroid/widget/ListAdapter;
+    iput-object v0, p0, Landroid/app/ListActivity;->mAdapter:Landroid/widget/ListAdapter;
 
-    iget-object v0, p0, Landroid/app/LauncherActivity;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v0, p0, Landroid/app/ListActivity;->mAdapter:Landroid/widget/ListAdapter;
 
-    invoke-virtual {p0, v0}, Landroid/app/LauncherActivity;->setListAdapter(Landroid/widget/ListAdapter;)V
+    invoke-virtual {p0, v0}, Landroid/app/ListActivity;->setListAdapter(Landroid/widget/ListAdapter;)V
 
-    invoke-virtual {p0}, Landroid/app/LauncherActivity;->getListView()Landroid/widget/ListView;
+    invoke-virtual {p0}, Landroid/app/ListActivity;->getListView()Landroid/widget/ListView;
 
     move-result-object v0
 
-    invoke-virtual {v0, v2}, Landroid/widget/ListView;->setTextFilterEnabled(Z)V
+    invoke-virtual {v0, v2}, Landroid/widget/AbsListView;->setTextFilterEnabled(Z)V
 
     invoke-direct {p0}, Landroid/app/LauncherActivity;->updateAlertTitle()V
 
@@ -265,7 +265,7 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Landroid/app/LauncherActivity;->setProgressBarIndeterminateVisibility(Z)V
+    invoke-virtual {p0, v0}, Landroid/app/Activity;->setProgressBarIndeterminateVisibility(Z)V
 
     return-void
 .end method
@@ -292,7 +292,7 @@
     move-result-object v0
 
     .local v0, intent:Landroid/content/Intent;
-    invoke-virtual {p0, v0}, Landroid/app/LauncherActivity;->startActivity(Landroid/content/Intent;)V
+    invoke-virtual {p0, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
     return-void
 .end method
@@ -330,7 +330,7 @@
     .prologue
     const v0, 0x1090021
 
-    invoke-virtual {p0, v0}, Landroid/app/LauncherActivity;->setContentView(I)V
+    invoke-virtual {p0, v0}, Landroid/app/Activity;->setContentView(I)V
 
     return-void
 .end method
@@ -366,7 +366,7 @@
     .parameter "titleId"
 
     .prologue
-    invoke-super {p0, p1}, Landroid/app/ListActivity;->setTitle(I)V
+    invoke-super {p0, p1}, Landroid/app/Activity;->setTitle(I)V
 
     invoke-direct {p0}, Landroid/app/LauncherActivity;->updateAlertTitle()V
 
@@ -378,7 +378,7 @@
     .parameter "title"
 
     .prologue
-    invoke-super {p0, p1}, Landroid/app/ListActivity;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-super {p0, p1}, Landroid/app/Activity;->setTitle(Ljava/lang/CharSequence;)V
 
     invoke-direct {p0}, Landroid/app/LauncherActivity;->updateAlertTitle()V
 

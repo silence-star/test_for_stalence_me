@@ -85,7 +85,7 @@
     .prologue
     new-instance v0, Landroid/widget/AbsoluteLayout$LayoutParams;
 
-    invoke-virtual {p0}, Landroid/widget/AbsoluteLayout;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -115,7 +115,7 @@
     .parameter "b"
 
     .prologue
-    invoke-virtual {p0}, Landroid/widget/AbsoluteLayout;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v3
 
@@ -126,7 +126,7 @@
     :goto_0
     if-ge v4, v3, :cond_1
 
-    invoke-virtual {p0, v4}, Landroid/widget/AbsoluteLayout;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v4}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -146,14 +146,14 @@
     check-cast v5, Landroid/widget/AbsoluteLayout$LayoutParams;
 
     .local v5, lp:Landroid/widget/AbsoluteLayout$LayoutParams;
-    iget v6, p0, Landroid/widget/AbsoluteLayout;->mPaddingLeft:I
+    iget v6, p0, Landroid/view/View;->mPaddingLeft:I
 
     iget v7, v5, Landroid/widget/AbsoluteLayout$LayoutParams;->x:I
 
     add-int v1, v6, v7
 
     .local v1, childLeft:I
-    iget v6, p0, Landroid/widget/AbsoluteLayout;->mPaddingTop:I
+    iget v6, p0, Landroid/view/View;->mPaddingTop:I
 
     iget v7, v5, Landroid/widget/AbsoluteLayout$LayoutParams;->y:I
 
@@ -195,7 +195,7 @@
     .prologue
     const/4 v10, 0x0
 
-    invoke-virtual {p0}, Landroid/widget/AbsoluteLayout;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v3
 
@@ -206,7 +206,7 @@
     const/4 v7, 0x0
 
     .local v7, maxWidth:I
-    invoke-virtual {p0, p1, p2}, Landroid/widget/AbsoluteLayout;->measureChildren(II)V
+    invoke-virtual {p0, p1, p2}, Landroid/view/ViewGroup;->measureChildren(II)V
 
     const/4 v4, 0x0
 
@@ -214,7 +214,7 @@
     :goto_0
     if-ge v4, v3, :cond_1
 
-    invoke-virtual {p0, v4}, Landroid/widget/AbsoluteLayout;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v4}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -270,23 +270,23 @@
 
     .end local v0           #child:Landroid/view/View;
     :cond_1
-    iget v8, p0, Landroid/widget/AbsoluteLayout;->mPaddingLeft:I
+    iget v8, p0, Landroid/view/View;->mPaddingLeft:I
 
-    iget v9, p0, Landroid/widget/AbsoluteLayout;->mPaddingRight:I
+    iget v9, p0, Landroid/view/View;->mPaddingRight:I
 
     add-int/2addr v8, v9
 
     add-int/2addr v7, v8
 
-    iget v8, p0, Landroid/widget/AbsoluteLayout;->mPaddingTop:I
+    iget v8, p0, Landroid/view/View;->mPaddingTop:I
 
-    iget v9, p0, Landroid/widget/AbsoluteLayout;->mPaddingBottom:I
+    iget v9, p0, Landroid/view/View;->mPaddingBottom:I
 
     add-int/2addr v8, v9
 
     add-int/2addr v6, v8
 
-    invoke-virtual {p0}, Landroid/widget/AbsoluteLayout;->getSuggestedMinimumHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getSuggestedMinimumHeight()I
 
     move-result v8
 
@@ -294,7 +294,7 @@
 
     move-result v6
 
-    invoke-virtual {p0}, Landroid/widget/AbsoluteLayout;->getSuggestedMinimumWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getSuggestedMinimumWidth()I
 
     move-result v8
 
@@ -310,7 +310,7 @@
 
     move-result v9
 
-    invoke-virtual {p0, v8, v9}, Landroid/widget/AbsoluteLayout;->setMeasuredDimension(II)V
+    invoke-virtual {p0, v8, v9}, Landroid/view/View;->setMeasuredDimension(II)V
 
     return-void
 .end method

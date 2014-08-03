@@ -3066,7 +3066,7 @@
     :cond_0
     if-eqz v0, :cond_1
 
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->close()V
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteClosable;->close()V
 
     .end local v11           #e:Ljava/lang/Exception;
     :cond_1
@@ -3099,7 +3099,7 @@
     :cond_5
     if-eqz v0, :cond_1
 
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->close()V
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteClosable;->close()V
 
     goto :goto_1
 
@@ -3113,7 +3113,7 @@
     :cond_6
     if-eqz v0, :cond_7
 
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->close()V
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteClosable;->close()V
 
     :cond_7
     throw v1

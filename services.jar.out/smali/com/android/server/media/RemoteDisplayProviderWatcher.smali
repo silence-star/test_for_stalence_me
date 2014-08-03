@@ -282,9 +282,9 @@
 
     if-eqz v9, :cond_2
 
-    iget-object v9, v5, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    iget-object v9, v5, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
-    iget-object v10, v5, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
+    iget-object v10, v5, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     invoke-direct {p0, v9, v10}, Lcom/android/server/media/RemoteDisplayProviderWatcher;->findProvider(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -299,9 +299,9 @@
 
     new-instance v10, Landroid/content/ComponentName;
 
-    iget-object v11, v5, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    iget-object v11, v5, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
-    iget-object v12, v5, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
+    iget-object v12, v5, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     invoke-direct {v10, v11, v12}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -444,7 +444,7 @@
 
     move-result-object v2
 
-    iget-object v3, p1, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    iget-object v3, p1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -456,7 +456,7 @@
 
     move-result-object v2
 
-    iget-object v3, p1, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
+    iget-object v3, p1, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -472,7 +472,7 @@
     return v0
 
     :cond_1
-    iget-object v1, p1, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    iget-object v1, p1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     invoke-direct {p0, v1}, Lcom/android/server/media/RemoteDisplayProviderWatcher;->hasCaptureVideoPermission(Ljava/lang/String;)Z
 
@@ -492,7 +492,7 @@
 
     move-result-object v2
 
-    iget-object v3, p1, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    iget-object v3, p1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -504,7 +504,7 @@
 
     move-result-object v2
 
-    iget-object v3, p1, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
+    iget-object v3, p1, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

@@ -28,7 +28,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0, v0, v1}, Landroid/security/AndroidKeyStoreProvider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, v0, v1}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "KeyPairGenerator.RSA"
 
@@ -38,7 +38,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0, v0, v1}, Landroid/security/AndroidKeyStoreProvider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, v0, v1}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method

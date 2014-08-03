@@ -2715,11 +2715,11 @@
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/io/FileOutputStream;->write([B)V
+    invoke-virtual {v1, v2}, Ljava/io/OutputStream;->write([B)V
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    invoke-virtual {v1}, Ljava/io/FileOutputStream;->flush()V
+    invoke-virtual {v1}, Ljava/io/OutputStream;->flush()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -2851,7 +2851,7 @@
 
     invoke-direct {v6, p0, v7}, Lcom/android/server/am/UsageStatsService$1;-><init>(Lcom/android/server/am/UsageStatsService;Ljava/lang/String;)V
 
-    invoke-virtual {v6}, Lcom/android/server/am/UsageStatsService$1;->start()V
+    invoke-virtual {v6}, Ljava/lang/Thread;->start()V
 
     goto :goto_1
 
@@ -4135,7 +4135,7 @@
 
     const-string v0, "usagestats"
 
-    invoke-virtual {p0}, Lcom/android/server/am/UsageStatsService;->asBinder()Landroid/os/IBinder;
+    invoke-virtual {p0}, Lcom/android/internal/app/IUsageStats$Stub;->asBinder()Landroid/os/IBinder;
 
     move-result-object v1
 

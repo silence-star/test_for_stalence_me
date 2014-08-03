@@ -50,7 +50,7 @@
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mContext:Landroid/content/Context;
 
-    invoke-virtual {p0}, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v2
 
@@ -122,7 +122,7 @@
     .local v8, action:I
     if-nez v8, :cond_1
 
-    invoke-virtual {p0}, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v2
 
@@ -238,7 +238,7 @@
 
     if-eqz v2, :cond_3
 
-    invoke-virtual {p0}, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->cancel()V
+    invoke-virtual {p0}, Landroid/app/Dialog;->cancel()V
 
     :cond_3
     iput-boolean v12, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mCancelOnUp:Z
@@ -272,7 +272,7 @@
 
     if-eqz v3, :cond_7
 
-    invoke-virtual {p0}, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->cancel()V
+    invoke-virtual {p0}, Landroid/app/Dialog;->cancel()V
 
     :cond_7
     iput-boolean v12, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mCancelOnUp:Z
@@ -290,7 +290,7 @@
 
     if-eqz v3, :cond_8
 
-    invoke-virtual {p0}, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->cancel()V
+    invoke-virtual {p0}, Landroid/app/Dialog;->cancel()V
 
     :cond_8
     iput-boolean v12, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mCancelOnUp:Z

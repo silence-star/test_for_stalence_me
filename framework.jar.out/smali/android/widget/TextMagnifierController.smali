@@ -62,7 +62,7 @@
 
     float-to-int v0, v0
 
-    iput v0, p0, Landroid/widget/TextMagnifierController;->mLongClickX:I
+    iput v0, p0, Lnubia/ui/widget/MagnifierController;->mLongClickX:I
 
     iget-object v0, p0, Landroid/widget/TextMagnifierController;->mEditor:Landroid/widget/Editor;
 
@@ -70,7 +70,7 @@
 
     float-to-int v0, v0
 
-    iput v0, p0, Landroid/widget/TextMagnifierController;->mLongClickY:I
+    iput v0, p0, Lnubia/ui/widget/MagnifierController;->mLongClickY:I
 
     return-void
 .end method

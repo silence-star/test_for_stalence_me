@@ -136,7 +136,7 @@
     invoke-virtual {v3, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
     :goto_0
-    invoke-virtual {p0, p1}, Landroid/preference/PreferenceActivity$HeaderAdapter;->getItem(I)Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Landroid/widget/ArrayAdapter;->getItem(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -157,7 +157,7 @@
 
     iget-object v4, v1, Landroid/preference/PreferenceActivity$HeaderAdapter$HeaderViewHolder;->title:Landroid/widget/TextView;
 
-    invoke-virtual {p0}, Landroid/preference/PreferenceActivity$HeaderAdapter;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/widget/ArrayAdapter;->getContext()Landroid/content/Context;
 
     move-result-object v5
 
@@ -171,7 +171,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {p0}, Landroid/preference/PreferenceActivity$HeaderAdapter;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/widget/ArrayAdapter;->getContext()Landroid/content/Context;
 
     move-result-object v4
 
@@ -192,7 +192,7 @@
 
     iget-object v4, v1, Landroid/preference/PreferenceActivity$HeaderAdapter$HeaderViewHolder;->summary:Landroid/widget/TextView;
 
-    invoke-virtual {v4, v6}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v4, v6}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v4, v1, Landroid/preference/PreferenceActivity$HeaderAdapter$HeaderViewHolder;->summary:Landroid/widget/TextView;
 
@@ -225,7 +225,7 @@
 
     const/16 v5, 0x8
 
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v4, v5}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_1
 .end method

@@ -124,7 +124,7 @@
 
     iget-object v0, p0, Lcom/android/internal/telephony/cat/Duration;->timeUnit:Lcom/android/internal/telephony/cat/Duration$TimeUnit;
 
-    invoke-virtual {v0}, Lcom/android/internal/telephony/cat/Duration$TimeUnit;->ordinal()I
+    invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
 
     move-result v0
 

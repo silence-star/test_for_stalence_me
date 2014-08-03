@@ -53,17 +53,17 @@
     iget-object v6, p0, Lcom/android/internal/widget/AutoScrollHelper$AbsListViewAutoScroller;->mTarget:Landroid/widget/AbsListView;
 
     .local v6, target:Landroid/widget/AbsListView;
-    invoke-virtual {v6}, Landroid/widget/AbsListView;->getCount()I
+    invoke-virtual {v6}, Landroid/widget/AdapterView;->getCount()I
 
     move-result v3
 
     .local v3, itemCount:I
-    invoke-virtual {v6}, Landroid/widget/AbsListView;->getChildCount()I
+    invoke-virtual {v6}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
     .local v0, childCount:I
-    invoke-virtual {v6}, Landroid/widget/AbsListView;->getFirstVisiblePosition()I
+    invoke-virtual {v6}, Landroid/widget/AdapterView;->getFirstVisiblePosition()I
 
     move-result v1
 
@@ -77,7 +77,7 @@
 
     add-int/lit8 v8, v0, -0x1
 
-    invoke-virtual {v6, v8}, Landroid/widget/AbsListView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v6, v8}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
 
@@ -86,7 +86,7 @@
 
     move-result v8
 
-    invoke-virtual {v6}, Landroid/widget/AbsListView;->getHeight()I
+    invoke-virtual {v6}, Landroid/view/View;->getHeight()I
 
     move-result v9
 
@@ -102,7 +102,7 @@
 
     if-gtz v1, :cond_2
 
-    invoke-virtual {v6, v7}, Landroid/widget/AbsListView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v6, v7}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 

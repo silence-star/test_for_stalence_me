@@ -3,8 +3,8 @@
 .source "AndroidHttpClientConnection.java"
 
 # interfaces
-.implements Lorg/apache/http/HttpInetConnection;
 .implements Lorg/apache/http/HttpConnection;
+.implements Lorg/apache/http/HttpInetConnection;
 
 
 # instance fields
@@ -850,7 +850,7 @@
 
     const/4 v5, 0x1
 
-    invoke-virtual {v2, v5}, Lorg/apache/http/entity/BasicHttpEntity;->setChunked(Z)V
+    invoke-virtual {v2, v5}, Lorg/apache/http/entity/AbstractHttpEntity;->setChunked(Z)V
 
     invoke-virtual {v2, v7, v8}, Lorg/apache/http/entity/BasicHttpEntity;->setContentLength(J)V
 
@@ -870,7 +870,7 @@
     .local v1, contentTypeHeader:Ljava/lang/String;
     if-eqz v1, :cond_0
 
-    invoke-virtual {v2, v1}, Lorg/apache/http/entity/BasicHttpEntity;->setContentType(Ljava/lang/String;)V
+    invoke-virtual {v2, v1}, Lorg/apache/http/entity/AbstractHttpEntity;->setContentType(Ljava/lang/String;)V
 
     :cond_0
     invoke-virtual {p1}, Landroid/net/http/Headers;->getContentEncoding()Ljava/lang/String;
@@ -880,7 +880,7 @@
     .local v0, contentEncodingHeader:Ljava/lang/String;
     if-eqz v0, :cond_1
 
-    invoke-virtual {v2, v0}, Lorg/apache/http/entity/BasicHttpEntity;->setContentEncoding(Ljava/lang/String;)V
+    invoke-virtual {v2, v0}, Lorg/apache/http/entity/AbstractHttpEntity;->setContentEncoding(Ljava/lang/String;)V
 
     :cond_1
     return-object v2
@@ -892,7 +892,7 @@
 
     if-nez v5, :cond_3
 
-    invoke-virtual {v2, v9}, Lorg/apache/http/entity/BasicHttpEntity;->setChunked(Z)V
+    invoke-virtual {v2, v9}, Lorg/apache/http/entity/AbstractHttpEntity;->setChunked(Z)V
 
     invoke-virtual {v2, v7, v8}, Lorg/apache/http/entity/BasicHttpEntity;->setContentLength(J)V
 
@@ -907,7 +907,7 @@
     goto :goto_0
 
     :cond_3
-    invoke-virtual {v2, v9}, Lorg/apache/http/entity/BasicHttpEntity;->setChunked(Z)V
+    invoke-virtual {v2, v9}, Lorg/apache/http/entity/AbstractHttpEntity;->setChunked(Z)V
 
     invoke-virtual {v2, v3, v4}, Lorg/apache/http/entity/BasicHttpEntity;->setContentLength(J)V
 

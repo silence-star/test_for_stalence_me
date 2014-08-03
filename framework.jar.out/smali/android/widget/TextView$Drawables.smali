@@ -472,7 +472,7 @@
     iget-object v0, p0, Landroid/widget/TextView$Drawables;->mCompoundRect:Landroid/graphics/Rect;
 
     .local v0, compoundRect:Landroid/graphics/Rect;
-    invoke-virtual {p2}, Landroid/widget/TextView;->getDrawableState()[I
+    invoke-virtual {p2}, Landroid/view/View;->getDrawableState()[I
 
     move-result-object v1
 

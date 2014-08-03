@@ -97,7 +97,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v3
 
@@ -177,7 +177,7 @@
 
     :goto_1
     :try_start_1
-    invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->close()V
+    invoke-virtual {p1}, Landroid/database/sqlite/SQLiteClosable;->close()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Landroid/database/sqlite/SQLiteException; {:try_start_1 .. :try_end_1} :catch_1

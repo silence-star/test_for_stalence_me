@@ -153,7 +153,7 @@
     .end local v1           #i:I
     .end local v3           #service:Lcom/android/server/AppWidgetServiceImpl;
     :cond_3
-    invoke-virtual {p0}, Lcom/android/server/AppWidgetService$2;->getSendingUserId()I
+    invoke-virtual {p0}, Landroid/content/BroadcastReceiver;->getSendingUserId()I
 
     move-result v2
 

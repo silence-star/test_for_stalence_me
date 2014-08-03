@@ -63,7 +63,7 @@
 
     const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Landroid/accounts/AccountManager$AmsTask;->cancel(Z)Z
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/FutureTask;->cancel(Z)Z
 
     :goto_0
     return-void
@@ -80,7 +80,7 @@
 
     move-result-object v1
 
-    #calls: Landroid/accounts/AccountManager$AmsTask;->setException(Ljava/lang/Throwable;)V
+    #calls: Ljava/util/concurrent/FutureTask;->setException(Ljava/lang/Throwable;)V
     invoke-static {v0, v1}, Landroid/accounts/AccountManager$AmsTask;->access$500(Landroid/accounts/AccountManager$AmsTask;Ljava/lang/Throwable;)V
 
     goto :goto_0

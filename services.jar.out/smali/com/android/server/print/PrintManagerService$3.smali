@@ -136,7 +136,7 @@
     :try_start_0
     iget-object v9, p0, Lcom/android/server/print/PrintManagerService$3;->this$0:Lcom/android/server/print/PrintManagerService;
 
-    invoke-virtual {p0}, Lcom/android/server/print/PrintManagerService$3;->getChangingUserId()I
+    invoke-virtual {p0}, Lcom/android/internal/content/PackageMonitor;->getChangingUserId()I
 
     move-result v11
 
@@ -289,7 +289,7 @@
 
     const/4 v8, 0x4
 
-    invoke-virtual {p0}, Lcom/android/server/print/PrintManagerService$3;->getChangingUserId()I
+    invoke-virtual {p0}, Lcom/android/internal/content/PackageMonitor;->getChangingUserId()I
 
     move-result v9
 
@@ -326,9 +326,9 @@
     .local v6, serviceInfo:Landroid/content/pm/ServiceInfo;
     new-instance v0, Landroid/content/ComponentName;
 
-    iget-object v7, v6, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    iget-object v7, v6, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
-    iget-object v8, v6, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
+    iget-object v8, v6, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     invoke-direct {v0, v7, v8}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -344,7 +344,7 @@
 
     move-result-object v7
 
-    invoke-virtual {v6, v7}, Landroid/content/pm/ServiceInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
+    invoke-virtual {v6, v7}, Landroid/content/pm/ComponentInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
     move-result-object v7
 
@@ -355,7 +355,7 @@
     .local v5, label:Ljava/lang/String;
     iget-object v7, p0, Lcom/android/server/print/PrintManagerService$3;->this$0:Lcom/android/server/print/PrintManagerService;
 
-    invoke-virtual {p0}, Lcom/android/server/print/PrintManagerService$3;->getChangingUserId()I
+    invoke-virtual {p0}, Lcom/android/internal/content/PackageMonitor;->getChangingUserId()I
 
     move-result v8
 
@@ -386,7 +386,7 @@
     :try_start_0
     iget-object v3, p0, Lcom/android/server/print/PrintManagerService$3;->this$0:Lcom/android/server/print/PrintManagerService;
 
-    invoke-virtual {p0}, Lcom/android/server/print/PrintManagerService$3;->getChangingUserId()I
+    invoke-virtual {p0}, Lcom/android/internal/content/PackageMonitor;->getChangingUserId()I
 
     move-result v5
 
@@ -476,7 +476,7 @@
     :try_start_0
     iget-object v3, p0, Lcom/android/server/print/PrintManagerService$3;->this$0:Lcom/android/server/print/PrintManagerService;
 
-    invoke-virtual {p0}, Lcom/android/server/print/PrintManagerService$3;->getChangingUserId()I
+    invoke-virtual {p0}, Lcom/android/internal/content/PackageMonitor;->getChangingUserId()I
 
     move-result v5
 
@@ -527,7 +527,7 @@
 
     move-result-object v5
 
-    invoke-virtual {p0}, Lcom/android/server/print/PrintManagerService$3;->getChangingUserId()I
+    invoke-virtual {p0}, Lcom/android/internal/content/PackageMonitor;->getChangingUserId()I
 
     move-result v6
 

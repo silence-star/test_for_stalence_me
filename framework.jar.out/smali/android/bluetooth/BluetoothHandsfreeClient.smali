@@ -517,7 +517,7 @@
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "BluetoothHandsfreeClient"
 
-    invoke-virtual {v0}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -775,7 +775,7 @@
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "BluetoothHandsfreeClient"
 
-    invoke-virtual {v0}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -1080,7 +1080,7 @@
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "BluetoothHandsfreeClient"
 
-    invoke-virtual {v0}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -1290,7 +1290,7 @@
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "BluetoothHandsfreeClient"
 
-    invoke-virtual {v0}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -1574,7 +1574,7 @@
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "BluetoothHandsfreeClient"
 
-    invoke-virtual {v0}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -2152,7 +2152,7 @@
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "BluetoothHandsfreeClient"
 
-    invoke-virtual {v0}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v2
 

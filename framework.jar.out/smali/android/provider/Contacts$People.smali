@@ -4,10 +4,10 @@
 
 # interfaces
 .implements Landroid/provider/BaseColumns;
-.implements Landroid/provider/SyncConstValue;
 .implements Landroid/provider/Contacts$PeopleColumns;
 .implements Landroid/provider/Contacts$PhonesColumns;
 .implements Landroid/provider/Contacts$PresenceColumns;
+.implements Landroid/provider/SyncConstValue;
 
 
 # annotations

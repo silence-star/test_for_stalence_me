@@ -111,7 +111,7 @@
 
     iget-object v0, p0, Lcom/android/internal/policy/impl/BreathingLightCtrl;->mBreathLightThread:Landroid/os/HandlerThread;
 
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
     new-instance v0, Lcom/android/internal/policy/impl/BreathingLightCtrl$BreathLightHandler;
 
@@ -151,7 +151,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/BreathingLightCtrl;->mBreathLightHandler:Lcom/android/internal/policy/impl/BreathingLightCtrl$BreathLightHandler;
 
-    invoke-virtual {v1}, Lcom/android/internal/policy/impl/BreathingLightCtrl$BreathLightHandler;->obtainMessage()Landroid/os/Message;
+    invoke-virtual {v1}, Landroid/os/Handler;->obtainMessage()Landroid/os/Message;
 
     move-result-object v0
 
@@ -168,7 +168,7 @@
 
     const-wide/16 v2, 0x5dc
 
-    invoke-virtual {v1, v0, v2, v3}, Lcom/android/internal/policy/impl/BreathingLightCtrl$BreathLightHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v1, v0, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     return-void
 .end method

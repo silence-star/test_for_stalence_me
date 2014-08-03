@@ -138,7 +138,7 @@
 
     iget-object v1, v1, Landroid/view/ViewRootImpl;->mHandler:Landroid/view/ViewRootImpl$ViewRootHandler;
 
-    invoke-virtual {v1, v4}, Landroid/view/ViewRootImpl$ViewRootHandler;->hasMessages(I)Z
+    invoke-virtual {v1, v4}, Landroid/os/Handler;->hasMessages(I)Z
 
     move-result v1
 
@@ -150,7 +150,7 @@
 
     const-wide/16 v2, 0xc8
 
-    invoke-virtual {v1, v4, v2, v3}, Landroid/view/ViewRootImpl$ViewRootHandler;->sendEmptyMessageDelayed(IJ)Z
+    invoke-virtual {v1, v4, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
     :cond_1
     return-void

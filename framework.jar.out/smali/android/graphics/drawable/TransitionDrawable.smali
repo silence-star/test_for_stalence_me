@@ -173,7 +173,7 @@
     iget-boolean v2, p0, Landroid/graphics/drawable/TransitionDrawable;->mCrossFade:Z
 
     .local v2, crossFade:Z
-    iget-object v8, p0, Landroid/graphics/drawable/TransitionDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
+    iget-object v8, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v1, v8, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
@@ -323,7 +323,7 @@
     :cond_8
     if-nez v4, :cond_3
 
-    invoke-virtual {p0}, Landroid/graphics/drawable/TransitionDrawable;->invalidateSelf()V
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
     goto :goto_1
 
@@ -355,7 +355,7 @@
 
     iput v0, p0, Landroid/graphics/drawable/TransitionDrawable;->mTransitionState:I
 
-    invoke-virtual {p0}, Landroid/graphics/drawable/TransitionDrawable;->invalidateSelf()V
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
     return-void
 .end method
@@ -407,7 +407,7 @@
 
     iput v3, p0, Landroid/graphics/drawable/TransitionDrawable;->mTransitionState:I
 
-    invoke-virtual {p0}, Landroid/graphics/drawable/TransitionDrawable;->invalidateSelf()V
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
     :goto_1
     return-void
@@ -518,7 +518,7 @@
 
     iput v1, p0, Landroid/graphics/drawable/TransitionDrawable;->mTransitionState:I
 
-    invoke-virtual {p0}, Landroid/graphics/drawable/TransitionDrawable;->invalidateSelf()V
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
     return-void
 .end method

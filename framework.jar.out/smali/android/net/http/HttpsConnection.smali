@@ -149,9 +149,9 @@
 
     const/4 v5, 0x0
 
-    invoke-virtual {v2, v4, v3, v5}, Lcom/android/org/conscrypt/OpenSSLContextImpl;->engineInit([Ljavax/net/ssl/KeyManager;[Ljavax/net/ssl/TrustManager;Ljava/security/SecureRandom;)V
+    invoke-virtual {v2, v4, v3, v5}, Lcom/android/org/conscrypt/SSLContextImpl;->engineInit([Ljavax/net/ssl/KeyManager;[Ljavax/net/ssl/TrustManager;Ljava/security/SecureRandom;)V
 
-    invoke-virtual {v2}, Lcom/android/org/conscrypt/OpenSSLContextImpl;->engineGetClientSessionContext()Lcom/android/org/conscrypt/ClientSessionContext;
+    invoke-virtual {v2}, Lcom/android/org/conscrypt/SSLContextImpl;->engineGetClientSessionContext()Lcom/android/org/conscrypt/ClientSessionContext;
 
     move-result-object v4
 
@@ -228,11 +228,11 @@
 
     :cond_0
     :try_start_0
-    iget-object v1, p0, Landroid/net/http/HttpsConnection;->mHttpClientConnection:Landroid/net/http/AndroidHttpClientConnection;
+    iget-object v1, p0, Landroid/net/http/Connection;->mHttpClientConnection:Landroid/net/http/AndroidHttpClientConnection;
 
     if-eqz v1, :cond_1
 
-    iget-object v1, p0, Landroid/net/http/HttpsConnection;->mHttpClientConnection:Landroid/net/http/AndroidHttpClientConnection;
+    iget-object v1, p0, Landroid/net/http/Connection;->mHttpClientConnection:Landroid/net/http/AndroidHttpClientConnection;
 
     invoke-virtual {v1}, Landroid/net/http/AndroidHttpClientConnection;->isOpen()Z
 
@@ -240,7 +240,7 @@
 
     if-eqz v1, :cond_1
 
-    iget-object v1, p0, Landroid/net/http/HttpsConnection;->mHttpClientConnection:Landroid/net/http/AndroidHttpClientConnection;
+    iget-object v1, p0, Landroid/net/http/Connection;->mHttpClientConnection:Landroid/net/http/AndroidHttpClientConnection;
 
     invoke-virtual {v1}, Landroid/net/http/AndroidHttpClientConnection;->close()V
     :try_end_0
@@ -254,7 +254,7 @@
     move-exception v0
 
     .local v0, e:Ljava/io/IOException;
-    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_0
 .end method
@@ -389,7 +389,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Landroid/net/http/HttpsConnection;->mHost:Lorg/apache/http/HttpHost;
+    iget-object v0, v0, Landroid/net/http/Connection;->mHost:Lorg/apache/http/HttpHost;
 
     move-object/from16 v27, v0
 
@@ -412,7 +412,7 @@
 
     move-object/from16 v26, v0
 
-    invoke-virtual/range {v26 .. v26}, Lorg/apache/http/message/BasicHttpRequest;->getAllHeaders()[Lorg/apache/http/Header;
+    invoke-virtual/range {v26 .. v26}, Lorg/apache/http/message/AbstractHttpMessage;->getAllHeaders()[Lorg/apache/http/Header;
 
     move-result-object v5
 
@@ -473,7 +473,7 @@
     :cond_0
     move-object/from16 v0, v19
 
-    invoke-virtual {v0, v11}, Lorg/apache/http/message/BasicHttpRequest;->addHeader(Lorg/apache/http/Header;)V
+    invoke-virtual {v0, v11}, Lorg/apache/http/message/AbstractHttpMessage;->addHeader(Lorg/apache/http/Header;)V
     :try_end_3
     .catch Lorg/apache/http/ParseException; {:try_start_3 .. :try_end_3} :catch_1
     .catch Lorg/apache/http/HttpException; {:try_start_3 .. :try_end_3} :catch_2
@@ -508,7 +508,7 @@
     invoke-virtual/range {v17 .. v17}, Landroid/net/http/AndroidHttpClientConnection;->close()V
 
     :cond_2
-    invoke-virtual {v8}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v10
 
@@ -584,7 +584,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Landroid/net/http/HttpsConnection;->mHost:Lorg/apache/http/HttpHost;
+    iget-object v0, v0, Landroid/net/http/Connection;->mHost:Lorg/apache/http/HttpHost;
 
     move-object/from16 v27, v0
 
@@ -594,7 +594,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Landroid/net/http/HttpsConnection;->mHost:Lorg/apache/http/HttpHost;
+    iget-object v0, v0, Landroid/net/http/Connection;->mHost:Lorg/apache/http/HttpHost;
 
     move-object/from16 v28, v0
 
@@ -643,7 +643,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Landroid/net/http/HttpsConnection;->mHost:Lorg/apache/http/HttpHost;
+    iget-object v0, v0, Landroid/net/http/Connection;->mHost:Lorg/apache/http/HttpHost;
 
     move-object/from16 v27, v0
 
@@ -738,7 +738,7 @@
     move-exception v8
 
     .local v8, e:Lorg/apache/http/ParseException;
-    invoke-virtual {v8}, Lorg/apache/http/ParseException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v10
 
@@ -762,7 +762,7 @@
     move-exception v8
 
     .local v8, e:Lorg/apache/http/HttpException;
-    invoke-virtual {v8}, Lorg/apache/http/HttpException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v10
 
@@ -786,7 +786,7 @@
     move-exception v8
 
     .local v8, e:Ljava/io/IOException;
-    invoke-virtual {v8}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v10
 
@@ -816,10 +816,10 @@
     .restart local v8       #e:Ljava/io/IOException;
     if-eqz v22, :cond_9
 
-    invoke-virtual/range {v22 .. v22}, Ljavax/net/ssl/SSLSocket;->close()V
+    throw v22
 
     :cond_9
-    invoke-virtual {v8}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v10
 
@@ -919,7 +919,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Landroid/net/http/HttpsConnection;->mHost:Lorg/apache/http/HttpHost;
+    iget-object v0, v0, Landroid/net/http/Connection;->mHost:Lorg/apache/http/HttpHost;
 
     move-object/from16 v27, v0
 
@@ -929,7 +929,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Landroid/net/http/HttpsConnection;->mHost:Lorg/apache/http/HttpHost;
+    iget-object v0, v0, Landroid/net/http/Connection;->mHost:Lorg/apache/http/HttpHost;
 
     move-object/from16 v28, v0
 
@@ -937,7 +937,7 @@
 
     move-result v28
 
-    invoke-virtual/range {v26 .. v28}, Ljavax/net/ssl/SSLSocketFactory;->createSocket(Ljava/lang/String;I)Ljava/net/Socket;
+    invoke-virtual/range {v26 .. v28}, Ljavax/net/SocketFactory;->createSocket(Ljava/lang/String;I)Ljava/net/Socket;
 
     move-result-object v26
 
@@ -953,7 +953,7 @@
 
     move/from16 v1, v26
 
-    invoke-virtual {v0, v1}, Ljavax/net/ssl/SSLSocket;->setSoTimeout(I)V
+    invoke-virtual {v0, v1}, Ljava/net/Socket;->setSoTimeout(I)V
     :try_end_7
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_5
 
@@ -965,10 +965,10 @@
     .restart local v8       #e:Ljava/io/IOException;
     if-eqz v22, :cond_d
 
-    invoke-virtual/range {v22 .. v22}, Ljavax/net/ssl/SSLSocket;->close()V
+    invoke-virtual/range {v22 .. v22}, Ljava/net/Socket;->close()V
 
     :cond_d
-    invoke-virtual {v8}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v10
 
@@ -1073,7 +1073,7 @@
 
     if-eqz v26, :cond_11
 
-    invoke-virtual/range {v22 .. v22}, Ljavax/net/ssl/SSLSocket;->close()V
+    invoke-virtual/range {v22 .. v22}, Ljava/net/Socket;->close()V
 
     new-instance v26, Landroid/net/http/SSLConnectionClosedByUserException;
 
@@ -1124,7 +1124,7 @@
 
     move/from16 v2, v27
 
-    invoke-virtual {v0, v1, v2}, Lorg/apache/http/params/BasicHttpParams;->setIntParameter(Ljava/lang/String;I)Lorg/apache/http/params/HttpParams;
+    invoke-virtual {v0, v1, v2}, Lorg/apache/http/params/AbstractHttpParams;->setIntParameter(Ljava/lang/String;I)Lorg/apache/http/params/HttpParams;
 
     move-object/from16 v0, v22
 
@@ -1224,7 +1224,7 @@
     .parameter "certificate"
 
     .prologue
-    iput-object p1, p0, Landroid/net/http/HttpsConnection;->mCertificate:Landroid/net/http/SslCertificate;
+    iput-object p1, p0, Landroid/net/http/Connection;->mCertificate:Landroid/net/http/SslCertificate;
 
     return-void
 .end method

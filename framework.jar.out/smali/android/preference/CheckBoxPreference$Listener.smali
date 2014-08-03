@@ -52,7 +52,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Landroid/preference/CheckBoxPreference;->callChangeListener(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Landroid/preference/Preference;->callChangeListener(Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -77,11 +77,11 @@
     :cond_2
     iget-object v1, p0, Landroid/preference/CheckBoxPreference$Listener;->this$0:Landroid/preference/CheckBoxPreference;
 
-    invoke-virtual {v1, p2}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
+    invoke-virtual {v1, p2}, Landroid/preference/TwoStatePreference;->setChecked(Z)V
 
     iget-object v1, p0, Landroid/preference/CheckBoxPreference$Listener;->this$0:Landroid/preference/CheckBoxPreference;
 
-    invoke-virtual {v1}, Landroid/preference/CheckBoxPreference;->getPreferenceManager()Landroid/preference/PreferenceManager;
+    invoke-virtual {v1}, Landroid/preference/Preference;->getPreferenceManager()Landroid/preference/PreferenceManager;
 
     move-result-object v1
 
@@ -93,7 +93,7 @@
 
     iget-object v1, p0, Landroid/preference/CheckBoxPreference$Listener;->this$0:Landroid/preference/CheckBoxPreference;
 
-    invoke-virtual {v1}, Landroid/preference/CheckBoxPreference;->getOnPreferenceClickListener()Landroid/preference/Preference$OnPreferenceClickListener;
+    invoke-virtual {v1}, Landroid/preference/Preference;->getOnPreferenceClickListener()Landroid/preference/Preference$OnPreferenceClickListener;
 
     move-result-object v1
 
@@ -101,7 +101,7 @@
 
     iget-object v1, p0, Landroid/preference/CheckBoxPreference$Listener;->this$0:Landroid/preference/CheckBoxPreference;
 
-    invoke-virtual {v1}, Landroid/preference/CheckBoxPreference;->getOnPreferenceClickListener()Landroid/preference/Preference$OnPreferenceClickListener;
+    invoke-virtual {v1}, Landroid/preference/Preference;->getOnPreferenceClickListener()Landroid/preference/Preference$OnPreferenceClickListener;
 
     move-result-object v1
 

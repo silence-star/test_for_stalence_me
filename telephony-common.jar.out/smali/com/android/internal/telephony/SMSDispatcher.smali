@@ -404,7 +404,7 @@
     move-result-object v0
 
     .local v0, appInfo:Landroid/content/pm/ApplicationInfo;
-    invoke-virtual {v0, v2}, Landroid/content/pm/ApplicationInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
+    invoke-virtual {v0, v2}, Landroid/content/pm/PackageItemInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -788,11 +788,11 @@
 
     .local v0, event:I
     :goto_1
-    invoke-virtual {p0, v0, p1}, Lcom/android/internal/telephony/SMSDispatcher;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {p0, v0, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v6
 
-    invoke-virtual {p0, v6}, Lcom/android/internal/telephony/SMSDispatcher;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {p0, v6}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     move v6, v7
 
@@ -817,11 +817,11 @@
 
     const/4 v6, 0x7
 
-    invoke-virtual {p0, v6, p1}, Lcom/android/internal/telephony/SMSDispatcher;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {p0, v6, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v6
 
-    invoke-virtual {p0, v6}, Lcom/android/internal/telephony/SMSDispatcher;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {p0, v6}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     move v6, v7
 
@@ -1322,7 +1322,7 @@
     .local v5, detailsLayout:Landroid/view/ViewGroup;
     const v14, 0x102035b
 
-    invoke-virtual {v5, v14}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v5, v14}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v6
 
@@ -1340,7 +1340,7 @@
     check-cast v13, Landroid/widget/CheckBox;
 
     .local v13, rememberChoice:Landroid/widget/CheckBox;
-    invoke-virtual {v13, v9}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
+    invoke-virtual {v13, v9}, Landroid/widget/CompoundButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
     new-instance v14, Landroid/app/AlertDialog$Builder;
 
@@ -1383,7 +1383,7 @@
     move-result-object v3
 
     .local v3, d:Landroid/app/AlertDialog;
-    invoke-virtual {v3}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {v3}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v14
 
@@ -1729,7 +1729,7 @@
     move-result-object v1
 
     .local v1, d:Landroid/app/AlertDialog;
-    invoke-virtual {v1}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {v1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v5
 
@@ -1765,7 +1765,7 @@
     .local v4, sentIntent:Landroid/app/PendingIntent;
     iget-object v7, p1, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
-    if-eqz v7, :cond_4
+    if-eqz v7, :cond_5
 
     iget-object v7, p1, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
@@ -1778,13 +1778,13 @@
     :goto_0
     iget-object v7, p1, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
-    if-nez v7, :cond_6
+    if-nez v7, :cond_7
 
     iget-object v7, v6, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;->mAppInfo:Landroid/content/pm/PackageInfo;
 
     iget-object v7, v7, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    iget-object v7, v7, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+    iget-object v7, v7, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     iget-object v8, p0, Lcom/android/internal/telephony/SMSDispatcher;->mContext:Landroid/content/Context;
 
@@ -1824,7 +1824,7 @@
     :cond_2
     iget v7, p0, Lcom/android/internal/telephony/SMSDispatcher;->mRemainingMessages:I
 
-    if-nez v7, :cond_5
+    if-nez v7, :cond_6
 
     new-instance v3, Landroid/content/Intent;
 
@@ -1850,10 +1850,10 @@
     :goto_1
     invoke-static {p0}, Lcom/android/internal/telephony/Injector$SMSDispatcherHook;->processNextPendingMessageIfSynchronous(Lcom/android/internal/telephony/SMSDispatcher;)V
 
-    :cond_miui
+    :cond_4
     return-void
 
-    :cond_4
+    :cond_5
     const-string v7, "SMSDispatcher"
 
     const-string v8, "SmsResponse was null"
@@ -1862,7 +1862,7 @@
 
     goto :goto_0
 
-    :cond_5
+    :cond_6
     const/4 v7, -0x1
 
     :try_start_1
@@ -1877,7 +1877,7 @@
 
     goto :goto_1
 
-    :cond_6
+    :cond_7
     iget-object v7, p0, Lcom/android/internal/telephony/SMSDispatcher;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v7}, Lcom/android/internal/telephony/PhoneBase;->getServiceState()Landroid/telephony/ServiceState;
@@ -1891,9 +1891,9 @@
     .local v5, ss:I
     iget v7, v6, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;->mImsRetry:I
 
-    if-lez v7, :cond_7
+    if-lez v7, :cond_8
 
-    if-eqz v5, :cond_7
+    if-eqz v5, :cond_8
 
     iput v11, v6, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;->mRetryCount:I
 
@@ -1979,14 +1979,14 @@
 
     invoke-static {v7, v8}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_7
+    :cond_8
     invoke-virtual {p0}, Lcom/android/internal/telephony/SMSDispatcher;->isIms()Z
 
     move-result v7
 
-    if-nez v7, :cond_8
+    if-nez v7, :cond_9
 
-    if-eqz v5, :cond_8
+    if-eqz v5, :cond_9
 
     iget-object v7, v6, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;->mSentIntent:Landroid/app/PendingIntent;
 
@@ -1994,7 +1994,7 @@
 
     goto/16 :goto_1
 
-    :cond_8
+    :cond_9
     iget-object v7, p1, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     check-cast v7, Lcom/android/internal/telephony/CommandException;
@@ -2007,11 +2007,11 @@
 
     sget-object v8, Lcom/android/internal/telephony/CommandException$Error;->SMS_FAIL_RETRY:Lcom/android/internal/telephony/CommandException$Error;
 
-    if-ne v7, v8, :cond_9
+    if-ne v7, v8, :cond_a
 
     iget v7, v6, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;->mRetryCount:I
 
-    if-ge v7, v11, :cond_9
+    if-ge v7, v11, :cond_a
 
     iget v7, v6, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;->mRetryCount:I
 
@@ -2019,22 +2019,22 @@
 
     iput v7, v6, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;->mRetryCount:I
 
-    invoke-virtual {p0, v11, v6}, Lcom/android/internal/telephony/SMSDispatcher;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {p0, v11, v6}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v2
 
     .local v2, retryMsg:Landroid/os/Message;
     const-wide/16 v7, 0x7d0
 
-    invoke-virtual {p0, v2, v7, v8}, Lcom/android/internal/telephony/SMSDispatcher;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {p0, v2, v7, v8}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     goto/16 :goto_1
 
     .end local v2           #retryMsg:Landroid/os/Message;
-    :cond_9
+    :cond_a
     iget-object v7, v6, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;->mSentIntent:Landroid/app/PendingIntent;
 
-    if-eqz v7, :cond_miui
+    if-eqz v7, :cond_4
 
     const/4 v0, 0x1
 
@@ -2051,11 +2051,11 @@
 
     sget-object v8, Lcom/android/internal/telephony/CommandException$Error;->FDN_CHECK_FAILURE:Lcom/android/internal/telephony/CommandException$Error;
 
-    if-ne v7, v8, :cond_a
+    if-ne v7, v8, :cond_b
 
     const/4 v0, 0x6
 
-    :cond_a
+    :cond_b
     :try_start_2
     new-instance v1, Landroid/content/Intent;
 
@@ -2064,7 +2064,7 @@
     .local v1, fillIn:Landroid/content/Intent;
     iget-object v7, p1, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
-    if-eqz v7, :cond_b
+    if-eqz v7, :cond_c
 
     const-string v8, "errorCode"
 
@@ -2076,10 +2076,10 @@
 
     invoke-virtual {v1, v8, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    :cond_b
+    :cond_c
     iget v7, p0, Lcom/android/internal/telephony/SMSDispatcher;->mRemainingMessages:I
 
-    if-le v7, v10, :cond_c
+    if-le v7, v10, :cond_d
 
     iget v7, p0, Lcom/android/internal/telephony/SMSDispatcher;->mRemainingMessages:I
 
@@ -2087,10 +2087,10 @@
 
     iput v7, p0, Lcom/android/internal/telephony/SMSDispatcher;->mRemainingMessages:I
 
-    :cond_c
+    :cond_d
     iget v7, p0, Lcom/android/internal/telephony/SMSDispatcher;->mRemainingMessages:I
 
-    if-nez v7, :cond_d
+    if-nez v7, :cond_e
 
     const-string v7, "SendNextMsg"
 
@@ -2098,7 +2098,7 @@
 
     invoke-virtual {v1, v7, v8}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    :cond_d
+    :cond_e
     iget-object v7, v6, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;->mSentIntent:Landroid/app/PendingIntent;
 
     iget-object v8, p0, Lcom/android/internal/telephony/SMSDispatcher;->mContext:Landroid/content/Context;
@@ -2662,7 +2662,7 @@
     .restart local v0       #appInfo:Landroid/content/pm/PackageInfo;
     .restart local v8       #ss:I
     :cond_6
-    invoke-virtual {p0, p1}, Lcom/android/internal/telephony/SMSDispatcher;->sendSms(Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;)V
+    invoke-static {p0, p1}, Lcom/android/internal/telephony/Injector$SMSDispatcherHook;->enqueueOrSendSms(Lcom/android/internal/telephony/SMSDispatcher;Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;)V
 
     goto :goto_1
 

@@ -90,7 +90,7 @@
     .local v9, deltaY:F
     iget-object v0, p0, Landroid/inputmethodservice/KeyboardView$2;->this$0:Landroid/inputmethodservice/KeyboardView;
 
-    invoke-virtual {v0}, Landroid/inputmethodservice/KeyboardView;->getWidth()I
+    invoke-virtual {v0}, Landroid/view/View;->getWidth()I
 
     move-result v0
 
@@ -99,7 +99,7 @@
     .local v13, travelX:I
     iget-object v0, p0, Landroid/inputmethodservice/KeyboardView$2;->this$0:Landroid/inputmethodservice/KeyboardView;
 
-    invoke-virtual {v0}, Landroid/inputmethodservice/KeyboardView;->getHeight()I
+    invoke-virtual {v0}, Landroid/view/View;->getHeight()I
 
     move-result v0
 

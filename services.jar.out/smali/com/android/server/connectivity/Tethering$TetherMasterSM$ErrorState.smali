@@ -73,7 +73,7 @@
     check-cast v2, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     .local v2, sm:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
-    invoke-virtual {v2, p1}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->sendMessage(I)V
+    invoke-virtual {v2, p1}, Lcom/android/internal/util/StateMachine;->sendMessage(I)V
 
     goto :goto_0
 
@@ -108,7 +108,7 @@
     .local v1, who:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
     iget v2, p0, Lcom/android/server/connectivity/Tethering$TetherMasterSM$ErrorState;->mErrorNotification:I
 
-    invoke-virtual {v1, v2}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->sendMessage(I)V
+    invoke-virtual {v1, v2}, Lcom/android/internal/util/StateMachine;->sendMessage(I)V
 
     goto :goto_0
 

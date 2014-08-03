@@ -14123,11 +14123,11 @@
 
     move-result v6
 
-    if-eqz v6, :cond_miui
+    if-eqz v6, :cond_0
 
     return-object v5
 
-    :cond_miui
+    :cond_0
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -14143,7 +14143,7 @@
 
     .local v4, i:I
     :goto_0
-    if-ge v4, v0, :cond_7
+    if-ge v4, v0, :cond_8
 
     invoke-virtual {p0, v4}, Ljava/lang/String;->charAt(I)C
 
@@ -14152,50 +14152,50 @@
     .local v1, c:C
     const/16 v5, 0x61
 
-    if-lt v1, v5, :cond_0
+    if-lt v1, v5, :cond_1
 
     const/16 v5, 0x7a
 
-    if-le v1, v5, :cond_1
+    if-le v1, v5, :cond_2
 
-    :cond_0
+    :cond_1
     const/16 v5, 0x41
 
-    if-lt v1, v5, :cond_3
+    if-lt v1, v5, :cond_4
 
     const/16 v5, 0x5a
 
-    if-gt v1, v5, :cond_3
-
-    :cond_1
-    const/4 v2, 0x0
+    if-gt v1, v5, :cond_4
 
     :cond_2
+    const/4 v2, 0x0
+
+    :cond_3
     :goto_1
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    :cond_3
-    if-nez v2, :cond_5
+    :cond_4
+    if-nez v2, :cond_6
 
     const/16 v5, 0x30
 
-    if-lt v1, v5, :cond_4
+    if-lt v1, v5, :cond_5
 
     const/16 v5, 0x39
 
-    if-le v1, v5, :cond_2
-
-    :cond_4
-    const/16 v5, 0x5f
-
-    if-eq v1, v5, :cond_2
+    if-le v1, v5, :cond_3
 
     :cond_5
+    const/16 v5, 0x5f
+
+    if-eq v1, v5, :cond_3
+
+    :cond_6
     const/16 v5, 0x2e
 
-    if-ne v1, v5, :cond_6
+    if-ne v1, v5, :cond_7
 
     const/4 v3, 0x1
 
@@ -14203,7 +14203,7 @@
 
     goto :goto_1
 
-    :cond_6
+    :cond_7
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -14232,17 +14232,17 @@
     :goto_2
     return-object v5
 
-    :cond_7
-    if-nez v3, :cond_8
-
-    if-nez p1, :cond_9
-
     :cond_8
+    if-nez v3, :cond_9
+
+    if-nez p1, :cond_a
+
+    :cond_9
     const/4 v5, 0x0
 
     goto :goto_2
 
-    :cond_9
+    :cond_a
     const-string v5, "must have at least one \'.\' separator"
 
     goto :goto_2
@@ -14519,6 +14519,16 @@
 
     .local v13, localCerts:[Ljava/security/cert/Certificate;
     if-nez v13, :cond_5
+
+    move-object/from16 v0, p1
+
+    iget-object v0, v0, Landroid/content/pm/PackageParser$Package;->packageName:Ljava/lang/String;
+
+    invoke-static {v12, v0}, Landroid/content/pm/Injector$PackageParserHook;->acceptNoCertificatesPackage(Ljava/util/jar/JarEntry;Ljava/lang/String;)Z
+
+    move-result v17
+
+    if-nez v17, :cond_3
 
     const-string v17, "PackageParser"
 
@@ -15326,7 +15336,7 @@
 
     move-object/from16 v0, p3
 
-    invoke-static {v5, v0, v6}, Landroid/content/res/NubiaClassFactory;->newResources(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;)Landroid/content/res/Resources;
+    invoke-static {v5, v0, v6}, Landroid/content/pm/Injector$PackageParserHook;->createResources(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;)Landroid/content/res/Resources;
 
     move-result-object v31
 

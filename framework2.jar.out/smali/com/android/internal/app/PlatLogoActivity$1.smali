@@ -64,7 +64,7 @@
 
     iget-object v1, v1, Lcom/android/internal/app/PlatLogoActivity;->mContent:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v1}, Landroid/widget/FrameLayout;->performLongClick()Z
+    invoke-virtual {v1}, Landroid/view/View;->performLongClick()Z
 
     :goto_0
     return-void
@@ -72,7 +72,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/internal/app/PlatLogoActivity$1;->val$letter:Landroid/widget/TextView;
 
-    invoke-virtual {v1}, Landroid/widget/TextView;->animate()Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v1
 
@@ -80,7 +80,7 @@
 
     iget-object v1, p0, Lcom/android/internal/app/PlatLogoActivity$1;->val$letter:Landroid/widget/TextView;
 
-    invoke-virtual {v1}, Landroid/widget/TextView;->getRotation()F
+    invoke-virtual {v1}, Landroid/view/View;->getRotation()F
 
     move-result v1
 
@@ -93,7 +93,7 @@
     .local v0, offset:F
     iget-object v1, p0, Lcom/android/internal/app/PlatLogoActivity$1;->val$letter:Landroid/widget/TextView;
 
-    invoke-virtual {v1}, Landroid/widget/TextView;->animate()Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v2
 

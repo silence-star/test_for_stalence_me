@@ -3,8 +3,8 @@
 .source "CursorJoiner.java"
 
 # interfaces
-.implements Ljava/util/Iterator;
 .implements Ljava/lang/Iterable;
+.implements Ljava/util/Iterator;
 
 
 # annotations
@@ -306,7 +306,7 @@
 
     iget-object v1, p0, Landroid/database/CursorJoiner;->mCompareResult:Landroid/database/CursorJoiner$Result;
 
-    invoke-virtual {v1}, Landroid/database/CursorJoiner$Result;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
@@ -426,7 +426,7 @@
 
     iget-object v3, p0, Landroid/database/CursorJoiner;->mCompareResult:Landroid/database/CursorJoiner$Result;
 
-    invoke-virtual {v3}, Landroid/database/CursorJoiner$Result;->ordinal()I
+    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
 
     move-result v3
 

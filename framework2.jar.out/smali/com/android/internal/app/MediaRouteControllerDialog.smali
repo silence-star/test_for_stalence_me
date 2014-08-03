@@ -174,7 +174,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-virtual {p0}, Lcom/android/internal/app/MediaRouteControllerDialog;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -201,7 +201,7 @@
 
     if-nez v0, :cond_2
 
-    invoke-virtual {p0}, Lcom/android/internal/app/MediaRouteControllerDialog;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -271,7 +271,7 @@
     if-eqz v1, :cond_1
 
     :cond_0
-    invoke-virtual {p0}, Lcom/android/internal/app/MediaRouteControllerDialog;->dismiss()V
+    invoke-virtual {p0}, Landroid/app/Dialog;->dismiss()V
 
     const/4 v1, 0x0
 
@@ -285,7 +285,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0, v1}, Lcom/android/internal/app/MediaRouteControllerDialog;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v1}, Landroid/app/Dialog;->setTitle(Ljava/lang/CharSequence;)V
 
     invoke-direct {p0}, Lcom/android/internal/app/MediaRouteControllerDialog;->updateVolume()V
 
@@ -300,7 +300,7 @@
 
     iput-object v0, p0, Lcom/android/internal/app/MediaRouteControllerDialog;->mCurrentIconDrawable:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {p0}, Lcom/android/internal/app/MediaRouteControllerDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
@@ -332,7 +332,7 @@
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v0, p0, Lcom/android/internal/app/MediaRouteControllerDialog;->mVolumeSlider:Landroid/widget/SeekBar;
 
@@ -342,7 +342,7 @@
 
     move-result v1
 
-    invoke-virtual {v0, v1}, Landroid/widget/SeekBar;->setMax(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/AbsSeekBar;->setMax(I)V
 
     iget-object v0, p0, Lcom/android/internal/app/MediaRouteControllerDialog;->mVolumeSlider:Landroid/widget/SeekBar;
 
@@ -352,7 +352,7 @@
 
     move-result v1
 
-    invoke-virtual {v0, v1}, Landroid/widget/SeekBar;->setProgress(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setProgress(I)V
 
     :cond_0
     :goto_0
@@ -363,7 +363,7 @@
 
     const/16 v1, 0x8
 
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_0
 .end method
@@ -425,7 +425,7 @@
     .prologue
     invoke-super {p0, p1}, Landroid/app/Dialog;->onCreate(Landroid/os/Bundle;)V
 
-    invoke-virtual {p0}, Lcom/android/internal/app/MediaRouteControllerDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
@@ -435,11 +435,11 @@
 
     const v1, 0x109005e
 
-    invoke-virtual {p0, v1}, Lcom/android/internal/app/MediaRouteControllerDialog;->setContentView(I)V
+    invoke-virtual {p0, v1}, Landroid/app/Dialog;->setContentView(I)V
 
     const v1, 0x10202e1
 
-    invoke-virtual {p0, v1}, Lcom/android/internal/app/MediaRouteControllerDialog;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -449,7 +449,7 @@
 
     const v1, 0x10202e2
 
-    invoke-virtual {p0, v1}, Lcom/android/internal/app/MediaRouteControllerDialog;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -467,7 +467,7 @@
 
     const v1, 0x10202e4
 
-    invoke-virtual {p0, v1}, Lcom/android/internal/app/MediaRouteControllerDialog;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -481,7 +481,7 @@
 
     invoke-direct {v2, p0}, Lcom/android/internal/app/MediaRouteControllerDialog$2;-><init>(Lcom/android/internal/app/MediaRouteControllerDialog;)V
 
-    invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     const/4 v1, 0x1
 
@@ -501,7 +501,7 @@
 
     const v1, 0x10202e3
 
-    invoke-virtual {p0, v1}, Lcom/android/internal/app/MediaRouteControllerDialog;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -514,11 +514,11 @@
 
     iget-object v1, p0, Lcom/android/internal/app/MediaRouteControllerDialog;->mControlView:Landroid/view/View;
 
-    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     .end local v0           #controlFrame:Landroid/widget/FrameLayout;
     :cond_0
@@ -529,7 +529,7 @@
     :cond_1
     const/16 v1, 0x8
 
-    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_0
 .end method

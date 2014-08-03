@@ -106,7 +106,7 @@
     :try_start_1
     iget-object v2, p0, Landroid/filterfw/core/AsyncRunner$AsyncRunnerTask;->this$0:Landroid/filterfw/core/AsyncRunner;
 
-    invoke-virtual {v2}, Landroid/filterfw/core/AsyncRunner;->deactivateGlContext()V
+    invoke-virtual {v2}, Landroid/filterfw/core/GraphRunner;->deactivateGlContext()V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
@@ -155,7 +155,7 @@
     :cond_3
     iget-object v2, p0, Landroid/filterfw/core/AsyncRunner$AsyncRunnerTask;->this$0:Landroid/filterfw/core/AsyncRunner;
 
-    invoke-virtual {v2}, Landroid/filterfw/core/AsyncRunner;->activateGlContext()Z
+    invoke-virtual {v2}, Landroid/filterfw/core/GraphRunner;->activateGlContext()Z
 
     iget-object v2, p0, Landroid/filterfw/core/AsyncRunner$AsyncRunnerTask;->this$0:Landroid/filterfw/core/AsyncRunner;
 
@@ -201,7 +201,7 @@
 
     :cond_6
     :goto_2
-    invoke-virtual {p0}, Landroid/filterfw/core/AsyncRunner$AsyncRunnerTask;->isCancelled()Z
+    invoke-virtual {p0}, Landroid/os/AsyncTask;->isCancelled()Z
 
     move-result v2
 
@@ -250,7 +250,7 @@
     goto :goto_2
 
     :cond_7
-    invoke-virtual {p0}, Landroid/filterfw/core/AsyncRunner$AsyncRunnerTask;->isCancelled()Z
+    invoke-virtual {p0}, Landroid/os/AsyncTask;->isCancelled()Z
 
     move-result v2
 

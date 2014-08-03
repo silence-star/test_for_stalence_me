@@ -111,7 +111,7 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuItemView;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
@@ -176,7 +176,7 @@
 
     iget-object v1, p0, Lcom/android/internal/view/menu/ListMenuItemView;->mIconView:Landroid/widget/ImageView;
 
-    invoke-virtual {p0, v1, v2}, Lcom/android/internal/view/menu/ListMenuItemView;->addView(Landroid/view/View;I)V
+    invoke-virtual {p0, v1, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;I)V
 
     return-void
 .end method
@@ -248,7 +248,7 @@
     const/4 v0, 0x0
 
     :goto_0
-    invoke-virtual {p0, v0}, Lcom/android/internal/view/menu/ListMenuItemView;->setVisibility(I)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
     invoke-virtual {p1, p0}, Lcom/android/internal/view/menu/MenuItemImpl;->getTitleForItemView(Lcom/android/internal/view/menu/MenuView$ItemView;)Ljava/lang/CharSequence;
 
@@ -282,7 +282,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/view/menu/ListMenuItemView;->setEnabled(Z)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setEnabled(Z)V
 
     return-void
 
@@ -296,15 +296,15 @@
     .locals 3
 
     .prologue
-    invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
+    invoke-super {p0}, Landroid/view/View;->onFinishInflate()V
 
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuItemView;->mBackground:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/view/menu/ListMenuItemView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     const v0, 0x1020016
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/view/menu/ListMenuItemView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -329,7 +329,7 @@
     :cond_0
     const v0, 0x10202d6
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/view/menu/ListMenuItemView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -381,14 +381,14 @@
 
     if-eqz v2, :cond_0
 
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/ListMenuItemView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
     .local v1, lp:Landroid/view/ViewGroup$LayoutParams;
     iget-object v2, p0, Lcom/android/internal/view/menu/ListMenuItemView;->mIconView:Landroid/widget/ImageView;
 
-    invoke-virtual {v2}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
@@ -399,13 +399,13 @@
 
     if-lez v2, :cond_0
 
-    iget v2, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
+    iget v2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     if-gtz v2, :cond_0
 
     iget v2, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    iput v2, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
+    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .end local v0           #iconLp:Landroid/widget/LinearLayout$LayoutParams;
     .end local v1           #lp:Landroid/view/ViewGroup$LayoutParams;
@@ -492,24 +492,24 @@
 
     .local v1, newVisibility:I
     :goto_2
-    invoke-virtual {v0}, Landroid/widget/CompoundButton;->getVisibility()I
+    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
     move-result v4
 
     if-eq v4, v1, :cond_3
 
-    invoke-virtual {v0, v1}, Landroid/widget/CompoundButton;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     :cond_3
     if-eqz v2, :cond_0
 
-    invoke-virtual {v2}, Landroid/widget/CompoundButton;->getVisibility()I
+    invoke-virtual {v2}, Landroid/view/View;->getVisibility()I
 
     move-result v4
 
     if-eq v4, v3, :cond_0
 
-    invoke-virtual {v2, v3}, Landroid/widget/CompoundButton;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_0
 
@@ -544,7 +544,7 @@
 
     iget-object v4, p0, Lcom/android/internal/view/menu/ListMenuItemView;->mCheckBox:Landroid/widget/CheckBox;
 
-    invoke-virtual {v4, v3}, Landroid/widget/CheckBox;->setVisibility(I)V
+    invoke-virtual {v4, v3}, Landroid/view/View;->setVisibility(I)V
 
     :cond_8
     iget-object v4, p0, Lcom/android/internal/view/menu/ListMenuItemView;->mRadioButton:Landroid/widget/RadioButton;
@@ -553,7 +553,7 @@
 
     iget-object v4, p0, Lcom/android/internal/view/menu/ListMenuItemView;->mRadioButton:Landroid/widget/RadioButton;
 
-    invoke-virtual {v4, v3}, Landroid/widget/RadioButton;->setVisibility(I)V
+    invoke-virtual {v4, v3}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_0
 .end method
@@ -694,7 +694,7 @@
 
     iget-object v2, p0, Lcom/android/internal/view/menu/ListMenuItemView;->mIconView:Landroid/widget/ImageView;
 
-    invoke-virtual {v2}, Landroid/widget/ImageView;->getVisibility()I
+    invoke-virtual {v2}, Landroid/view/View;->getVisibility()I
 
     move-result v2
 
@@ -757,7 +757,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/internal/view/menu/ListMenuItemView;->mShortcutView:Landroid/widget/TextView;
 
-    invoke-virtual {v1}, Landroid/widget/TextView;->getVisibility()I
+    invoke-virtual {v1}, Landroid/view/View;->getVisibility()I
 
     move-result v1
 
@@ -765,7 +765,7 @@
 
     iget-object v1, p0, Lcom/android/internal/view/menu/ListMenuItemView;->mShortcutView:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
 
     :cond_1
     return-void
@@ -792,7 +792,7 @@
 
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuItemView;->mTitleView:Landroid/widget/TextView;
 
-    invoke-virtual {v0}, Landroid/widget/TextView;->getVisibility()I
+    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
     move-result v0
 
@@ -802,7 +802,7 @@
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     :cond_0
     :goto_0
@@ -811,7 +811,7 @@
     :cond_1
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuItemView;->mTitleView:Landroid/widget/TextView;
 
-    invoke-virtual {v0}, Landroid/widget/TextView;->getVisibility()I
+    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
     move-result v0
 
@@ -819,7 +819,7 @@
 
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuItemView;->mTitleView:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_0
 .end method

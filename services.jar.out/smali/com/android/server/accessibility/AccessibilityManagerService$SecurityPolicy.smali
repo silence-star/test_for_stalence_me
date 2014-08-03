@@ -90,7 +90,7 @@
     .local v0, eventType:I
     sparse-switch v0, :sswitch_data_0
 
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->getWindowId()I
+    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->getWindowId()I
 
     move-result v2
 
@@ -851,7 +851,7 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setSource(Landroid/view/View;)V
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityRecord;->setSource(Landroid/view/View;)V
 
     :cond_0
     return-void

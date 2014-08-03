@@ -2129,7 +2129,7 @@
 
     iput-object v1, v0, Landroid/view/KeyEvent;->mNext:Landroid/view/KeyEvent;
 
-    invoke-virtual {v0}, Landroid/view/KeyEvent;->prepareForReuse()V
+    invoke-virtual {v0}, Landroid/view/InputEvent;->prepareForReuse()V
 
     goto :goto_0
 

@@ -154,7 +154,7 @@
 
     const/4 v1, 0x3
 
-    invoke-virtual {v0, v1}, Lcom/android/server/power/PowerManagerService$PowerManagerHandler;->sendEmptyMessage(I)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     :cond_1
     monitor-exit p0

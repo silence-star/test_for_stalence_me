@@ -3,8 +3,8 @@
 .source "AlignmentSpan.java"
 
 # interfaces
-.implements Landroid/text/style/AlignmentSpan;
 .implements Landroid/text/ParcelableSpan;
+.implements Landroid/text/style/AlignmentSpan;
 
 
 # annotations
@@ -92,7 +92,7 @@
     .prologue
     iget-object v0, p0, Landroid/text/style/AlignmentSpan$Standard;->mAlignment:Landroid/text/Layout$Alignment;
 
-    invoke-virtual {v0}, Landroid/text/Layout$Alignment;->name()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object v0
 

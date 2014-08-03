@@ -683,13 +683,13 @@
 
     new-array v5, v7, [I
 
-    invoke-virtual {v3, v5}, Landroid/widget/TextView;->getLocationOnScreen([I)V
+    invoke-virtual {v3, v5}, Landroid/view/View;->getLocationOnScreen([I)V
 
     const/4 v7, 0x0
 
     aget v8, v5, v7
 
-    invoke-virtual {v3}, Landroid/widget/TextView;->getWidth()I
+    invoke-virtual {v3}, Landroid/view/View;->getWidth()I
 
     move-result v9
 
@@ -703,7 +703,7 @@
 
     aget v8, v5, v7
 
-    invoke-virtual {v3}, Landroid/widget/TextView;->getHeight()I
+    invoke-virtual {v3}, Landroid/view/View;->getHeight()I
 
     move-result v9
 
@@ -1074,7 +1074,7 @@
 
     invoke-direct {v11}, Ljava/util/Date;-><init>()V
 
-    invoke-virtual {v9, v11}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v9, v11}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object v11
 
@@ -1192,7 +1192,7 @@
     invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_1
-    invoke-virtual {v7}, Ljava/io/FileOutputStream;->flush()V
+    invoke-virtual {v7}, Ljava/io/OutputStream;->flush()V
 
     invoke-virtual {v7}, Ljava/io/FileOutputStream;->close()V
     :try_end_1
@@ -1254,7 +1254,7 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {v3}, Ljava/lang/Exception;->printStackTrace()V
+    invoke-virtual {v3}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_1
 

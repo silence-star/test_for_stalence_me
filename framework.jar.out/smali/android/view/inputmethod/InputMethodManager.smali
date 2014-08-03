@@ -866,7 +866,7 @@
     :cond_2
     iget-object v1, p0, Landroid/view/inputmethod/InputMethodManager;->mCurMethod:Lcom/android/internal/view/IInputMethodSession;
 
-    if-nez v1, :cond_miui
+    if-nez v1, :cond_3
 
     const-string v1, "InputMethodManager"
 
@@ -902,7 +902,7 @@
 
     goto :goto_0
 
-    :cond_miui
+    :cond_3
     monitor-exit v10
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0

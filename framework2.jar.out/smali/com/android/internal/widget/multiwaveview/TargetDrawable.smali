@@ -243,7 +243,7 @@
 
     .end local v0           #childDrawable:Landroid/graphics/drawable/Drawable;
     :cond_0
-    invoke-virtual {v1, v8, v8, v4, v3}, Landroid/graphics/drawable/StateListDrawable;->setBounds(IIII)V
+    invoke-virtual {v1, v8, v8, v4, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     const/4 v2, 0x0
 
@@ -552,7 +552,7 @@
     check-cast v0, Landroid/graphics/drawable/StateListDrawable;
 
     .local v0, d:Landroid/graphics/drawable/StateListDrawable;
-    invoke-virtual {v0}, Landroid/graphics/drawable/StateListDrawable;->getState()[I
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getState()[I
 
     move-result-object v2
 
@@ -735,7 +735,7 @@
     check-cast v0, Landroid/graphics/drawable/StateListDrawable;
 
     .local v0, d:Landroid/graphics/drawable/StateListDrawable;
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/StateListDrawable;->setState([I)Z
+    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
     .end local v0           #d:Landroid/graphics/drawable/StateListDrawable;
     :cond_0

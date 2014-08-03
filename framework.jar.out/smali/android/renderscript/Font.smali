@@ -556,7 +556,7 @@
 
     sget-object v1, Landroid/renderscript/Font$1;->$SwitchMap$android$renderscript$Font$Style:[I
 
-    invoke-virtual {p1}, Landroid/renderscript/Font$Style;->ordinal()I
+    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v2
 

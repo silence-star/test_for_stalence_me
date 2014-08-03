@@ -3516,9 +3516,9 @@
 
     move-result-object v4
 
-    invoke-virtual {v3, v4}, Ljava/io/FileOutputStream;->write([B)V
+    invoke-virtual {v3, v4}, Ljava/io/OutputStream;->write([B)V
 
-    invoke-virtual {v3}, Ljava/io/FileOutputStream;->flush()V
+    invoke-virtual {v3}, Ljava/io/OutputStream;->flush()V
 
     invoke-virtual {v2, v3}, Landroid/util/AtomicFile;->finishWrite(Ljava/io/FileOutputStream;)V
     :try_end_1

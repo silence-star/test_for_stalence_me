@@ -203,19 +203,19 @@
 
     invoke-virtual {p0, v8, v2, v5, v9}, Landroid/filterfw/core/Filter;->addFieldPort(Ljava/lang/String;Ljava/lang/reflect/Field;ZZ)V
 
-    invoke-virtual {p1, v8}, Landroid/filterfw/core/KeyValueMap;->containsKey(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v8}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
     move-result v9
 
     if-eqz v9, :cond_2
 
-    invoke-virtual {p1, v8}, Landroid/filterfw/core/KeyValueMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p1, v8}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v9
 
     invoke-direct {p0, v8, v9}, Landroid/filterfw/core/Filter;->setImmediateInputValue(Ljava/lang/String;Ljava/lang/Object;)V
 
-    invoke-virtual {p1, v8}, Landroid/filterfw/core/KeyValueMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p1, v8}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     .end local v4           #generator:Landroid/filterfw/core/GenerateFinalPort;
     .end local v5           #hasDefault:Z
@@ -838,7 +838,7 @@
     check-cast v1, Landroid/filterfw/core/InputPort;
 
     .local v1, port:Landroid/filterfw/core/FilterPort;
-    invoke-virtual {v1}, Landroid/filterfw/core/FilterPort;->isReady()Z
+    invoke-virtual {v1}, Landroid/filterfw/core/InputPort;->isReady()Z
 
     move-result v2
 
@@ -970,7 +970,7 @@
     check-cast v1, Landroid/filterfw/core/OutputPort;
 
     .local v1, port:Landroid/filterfw/core/FilterPort;
-    invoke-virtual {v1}, Landroid/filterfw/core/FilterPort;->isReady()Z
+    invoke-virtual {v1}, Landroid/filterfw/core/OutputPort;->isReady()Z
 
     move-result v2
 
@@ -1118,7 +1118,7 @@
     move-result-object v0
 
     .local v0, port:Landroid/filterfw/core/FilterPort;
-    invoke-virtual {v0}, Landroid/filterfw/core/FilterPort;->open()V
+    invoke-virtual {v0}, Landroid/filterfw/core/InputPort;->open()V
 
     const/4 v1, 0x0
 
@@ -1136,7 +1136,7 @@
     .parameter "values"
 
     .prologue
-    invoke-virtual {p1}, Landroid/filterfw/core/KeyValueMap;->entrySet()Ljava/util/Set;
+    invoke-virtual {p1}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
     move-result-object v2
 
@@ -1238,7 +1238,7 @@
 
     move-result-object v6
 
-    invoke-virtual {v6}, Landroid/filterfw/core/InputPort;->getPortFormat()Landroid/filterfw/core/FrameFormat;
+    invoke-virtual {v6}, Landroid/filterfw/core/FilterPort;->getPortFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v3
 
@@ -1321,7 +1321,7 @@
     .prologue
     const/4 v5, 0x1
 
-    invoke-virtual {p2, v5}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+    invoke-virtual {p2, v5}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
 
     if-eqz p4, :cond_1
 
@@ -1377,7 +1377,7 @@
     move-result-object v1
 
     .local v1, format:Landroid/filterfw/core/MutableFrameFormat;
-    invoke-virtual {v0, v1}, Landroid/filterfw/core/InputPort;->setPortFormat(Landroid/filterfw/core/FrameFormat;)V
+    invoke-virtual {v0, v1}, Landroid/filterfw/core/FilterPort;->setPortFormat(Landroid/filterfw/core/FrameFormat;)V
 
     iget-object v2, p0, Landroid/filterfw/core/Filter;->mInputPorts:Ljava/util/HashMap;
 
@@ -1459,7 +1459,7 @@
 
     invoke-virtual {v1, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v0, p2}, Landroid/filterfw/core/InputPort;->setPortFormat(Landroid/filterfw/core/FrameFormat;)V
+    invoke-virtual {v0, p2}, Landroid/filterfw/core/FilterPort;->setPortFormat(Landroid/filterfw/core/FrameFormat;)V
 
     return-void
 .end method
@@ -1573,7 +1573,7 @@
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
-    invoke-virtual {v0, p2}, Landroid/filterfw/core/OutputPort;->setPortFormat(Landroid/filterfw/core/FrameFormat;)V
+    invoke-virtual {v0, p2}, Landroid/filterfw/core/FilterPort;->setPortFormat(Landroid/filterfw/core/FrameFormat;)V
 
     iget-object v1, p0, Landroid/filterfw/core/Filter;->mOutputPorts:Ljava/util/HashMap;
 
@@ -1593,7 +1593,7 @@
     .prologue
     const/4 v7, 0x1
 
-    invoke-virtual {p3, v7}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+    invoke-virtual {p3, v7}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
 
     new-instance v0, Landroid/filterfw/core/ProgramPort;
 
@@ -1652,7 +1652,7 @@
     move-result-object v6
 
     .local v6, format:Landroid/filterfw/core/MutableFrameFormat;
-    invoke-virtual {v0, v6}, Landroid/filterfw/core/InputPort;->setPortFormat(Landroid/filterfw/core/FrameFormat;)V
+    invoke-virtual {v0, v6}, Landroid/filterfw/core/FilterPort;->setPortFormat(Landroid/filterfw/core/FrameFormat;)V
 
     iget-object v1, p0, Landroid/filterfw/core/Filter;->mInputPorts:Ljava/util/HashMap;
 
@@ -1779,7 +1779,7 @@
     check-cast v1, Landroid/filterfw/core/InputPort;
 
     .local v1, inputPort:Landroid/filterfw/core/InputPort;
-    invoke-virtual {v1}, Landroid/filterfw/core/InputPort;->clear()V
+    invoke-virtual {v1}, Landroid/filterfw/core/FilterPort;->clear()V
 
     goto :goto_0
 
@@ -2465,7 +2465,7 @@
     .local v0, e:Landroid/filterfw/io/GraphIOException;
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
-    invoke-virtual {v0}, Landroid/filterfw/io/GraphIOException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v3
 
@@ -2595,7 +2595,7 @@
     check-cast v1, Landroid/filterfw/core/OutputPort;
 
     .local v1, outputPort:Landroid/filterfw/core/OutputPort;
-    invoke-virtual {v1}, Landroid/filterfw/core/OutputPort;->isOpen()Z
+    invoke-virtual {v1}, Landroid/filterfw/core/FilterPort;->isOpen()Z
 
     move-result v2
 
@@ -3037,7 +3037,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/filterfw/core/InputPort;->pullFrame()Landroid/filterfw/core/Frame;
+    invoke-virtual {v1}, Landroid/filterfw/core/FilterPort;->pullFrame()Landroid/filterfw/core/Frame;
 
     move-result-object v0
 
@@ -3122,7 +3122,7 @@
 
     if-nez v1, :cond_0
 
-    invoke-virtual {v0}, Landroid/filterfw/core/FilterPort;->open()V
+    invoke-virtual {v0}, Landroid/filterfw/core/InputPort;->open()V
 
     :cond_0
     invoke-virtual {v0, p2}, Landroid/filterfw/core/FilterPort;->pushFrame(Landroid/filterfw/core/Frame;)V
@@ -3257,7 +3257,7 @@
 
     if-nez v1, :cond_0
 
-    invoke-virtual {v0}, Landroid/filterfw/core/FilterPort;->open()V
+    invoke-virtual {v0}, Landroid/filterfw/core/InputPort;->open()V
 
     :cond_0
     invoke-virtual {v0, p2}, Landroid/filterfw/core/FilterPort;->setFrame(Landroid/filterfw/core/Frame;)V
@@ -3290,7 +3290,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p2}, Landroid/filterfw/core/InputPort;->setBlocking(Z)V
+    invoke-virtual {v0, p2}, Landroid/filterfw/core/FilterPort;->setBlocking(Z)V
 
     return-void
 .end method
@@ -3305,7 +3305,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p2}, Landroid/filterfw/core/OutputPort;->setBlocking(Z)V
+    invoke-virtual {v0, p2}, Landroid/filterfw/core/FilterPort;->setBlocking(Z)V
 
     return-void
 .end method

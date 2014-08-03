@@ -113,7 +113,7 @@
     .local v2, outBitmap:Landroid/graphics/Bitmap;
     iget-object v5, p0, Landroid/media/videoeditor/MediaArtistNativeHelper$2;->val$decBuffer:Ljava/nio/IntBuffer;
 
-    invoke-virtual {v5}, Ljava/nio/IntBuffer;->rewind()Ljava/nio/Buffer;
+    invoke-virtual {v5}, Ljava/nio/Buffer;->rewind()Ljava/nio/Buffer;
 
     iget-object v5, p0, Landroid/media/videoeditor/MediaArtistNativeHelper$2;->val$decBuffer:Ljava/nio/IntBuffer;
 
@@ -127,7 +127,7 @@
 
     iget-object v5, p0, Landroid/media/videoeditor/MediaArtistNativeHelper$2;->val$decBuffer:Ljava/nio/IntBuffer;
 
-    invoke-virtual {v5}, Ljava/nio/IntBuffer;->rewind()Ljava/nio/Buffer;
+    invoke-virtual {v5}, Ljava/nio/Buffer;->rewind()Ljava/nio/Buffer;
 
     iget-boolean v5, p0, Landroid/media/videoeditor/MediaArtistNativeHelper$2;->val$needToMassage:Z
 

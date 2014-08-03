@@ -1653,7 +1653,7 @@
     :try_start_1
     iget-object v5, p0, Lcom/android/internal/os/ProcessCpuTracker;->mBuffer:[B
 
-    invoke-virtual {v2, v5}, Ljava/io/FileInputStream;->read([B)I
+    invoke-virtual {v2, v5}, Ljava/io/InputStream;->read([B)I
 
     move-result v3
 
@@ -2356,7 +2356,7 @@
     .local v0, pw:Ljava/io/PrintWriter;
     const-string v2, "Load: "
 
-    invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {v0, v2}, Lcom/android/internal/util/FastPrintWriter;->print(Ljava/lang/String;)V
 
     iget v2, p0, Lcom/android/internal/os/ProcessCpuTracker;->mLoad1:F
 
@@ -2364,7 +2364,7 @@
 
     const-string v2, " / "
 
-    invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {v0, v2}, Lcom/android/internal/util/FastPrintWriter;->print(Ljava/lang/String;)V
 
     iget v2, p0, Lcom/android/internal/os/ProcessCpuTracker;->mLoad5:F
 
@@ -2372,13 +2372,13 @@
 
     const-string v2, " / "
 
-    invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {v0, v2}, Lcom/android/internal/util/FastPrintWriter;->print(Ljava/lang/String;)V
 
     iget v2, p0, Lcom/android/internal/os/ProcessCpuTracker;->mLoad15:F
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(F)V
 
-    invoke-virtual {v0}, Ljava/io/PrintWriter;->flush()V
+    invoke-virtual {v0}, Lcom/android/internal/util/FastPrintWriter;->flush()V
 
     invoke-virtual {v1}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
 
@@ -2412,7 +2412,7 @@
     .local v3, pw:Ljava/io/PrintWriter;
     const-string v2, "CPU usage from "
 
-    invoke-virtual {v3, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {v3, v2}, Lcom/android/internal/util/FastPrintWriter;->print(Ljava/lang/String;)V
 
     move-object/from16 v0, p0
 
@@ -2428,11 +2428,11 @@
 
     sub-long v4, p1, v4
 
-    invoke-virtual {v3, v4, v5}, Ljava/io/PrintWriter;->print(J)V
+    invoke-virtual {v3, v4, v5}, Lcom/android/internal/util/FastPrintWriter;->print(J)V
 
     const-string v2, "ms to "
 
-    invoke-virtual {v3, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {v3, v2}, Lcom/android/internal/util/FastPrintWriter;->print(Ljava/lang/String;)V
 
     move-object/from16 v0, p0
 
@@ -2440,11 +2440,11 @@
 
     sub-long v4, p1, v4
 
-    invoke-virtual {v3, v4, v5}, Ljava/io/PrintWriter;->print(J)V
+    invoke-virtual {v3, v4, v5}, Lcom/android/internal/util/FastPrintWriter;->print(J)V
 
     const-string v2, "ms ago"
 
-    invoke-virtual {v3, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {v3, v2}, Lcom/android/internal/util/FastPrintWriter;->print(Ljava/lang/String;)V
 
     :goto_0
     move-object/from16 v0, p0
@@ -2491,15 +2491,15 @@
 
     const-string v2, " with "
 
-    invoke-virtual {v3, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {v3, v2}, Lcom/android/internal/util/FastPrintWriter;->print(Ljava/lang/String;)V
 
     move-wide/from16 v0, v19
 
-    invoke-virtual {v3, v0, v1}, Ljava/io/PrintWriter;->print(J)V
+    invoke-virtual {v3, v0, v1}, Lcom/android/internal/util/FastPrintWriter;->print(J)V
 
     const-string v2, "% awake"
 
-    invoke-virtual {v3, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {v3, v2}, Lcom/android/internal/util/FastPrintWriter;->print(Ljava/lang/String;)V
 
     :cond_0
     const-string v2, ":"
@@ -2742,11 +2742,11 @@
 
     sub-long v4, v4, p1
 
-    invoke-virtual {v3, v4, v5}, Ljava/io/PrintWriter;->print(J)V
+    invoke-virtual {v3, v4, v5}, Lcom/android/internal/util/FastPrintWriter;->print(J)V
 
     const-string v2, "ms to "
 
-    invoke-virtual {v3, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {v3, v2}, Lcom/android/internal/util/FastPrintWriter;->print(Ljava/lang/String;)V
 
     move-object/from16 v0, p0
 
@@ -2754,11 +2754,11 @@
 
     sub-long v4, v4, p1
 
-    invoke-virtual {v3, v4, v5}, Ljava/io/PrintWriter;->print(J)V
+    invoke-virtual {v3, v4, v5}, Lcom/android/internal/util/FastPrintWriter;->print(J)V
 
     const-string v2, "ms later"
 
-    invoke-virtual {v3, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {v3, v2}, Lcom/android/internal/util/FastPrintWriter;->print(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -2855,7 +2855,7 @@
 
     invoke-direct/range {v2 .. v14}, Lcom/android/internal/os/ProcessCpuTracker;->printProcessCPU(Ljava/io/PrintWriter;Ljava/lang/String;ILjava/lang/String;IIIIIIII)V
 
-    invoke-virtual {v3}, Ljava/io/PrintWriter;->flush()V
+    invoke-virtual {v3}, Lcom/android/internal/util/FastPrintWriter;->flush()V
 
     invoke-virtual/range {v26 .. v26}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
 

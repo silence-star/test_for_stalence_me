@@ -329,7 +329,7 @@
 
     iget-object v3, p0, Landroid/widget/AbsListView$RecycleBin;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v3, v4}, Landroid/widget/AbsListView;->notifyViewAccessibilityStateChangedIfNeeded(I)V
+    invoke-virtual {v3, v4}, Landroid/view/View;->notifyViewAccessibilityStateChangedIfNeeded(I)V
 
     invoke-virtual {p1}, Landroid/view/View;->hasTransientState()Z
 
@@ -372,7 +372,7 @@
     :cond_3
     iget-object v3, p0, Landroid/widget/AbsListView$RecycleBin;->this$0:Landroid/widget/AbsListView;
 
-    iget-boolean v3, v3, Landroid/widget/AbsListView;->mDataChanged:Z
+    iget-boolean v3, v3, Landroid/widget/AdapterView;->mDataChanged:Z
 
     if-nez v3, :cond_5
 
@@ -633,7 +633,7 @@
 
     iget-object v4, p0, Landroid/widget/AbsListView$RecycleBin;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v4, v2}, Landroid/widget/AbsListView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v4, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 

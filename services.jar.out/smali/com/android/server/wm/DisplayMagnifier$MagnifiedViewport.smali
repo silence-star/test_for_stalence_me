@@ -263,7 +263,7 @@
     move-result-object v3
 
     .local v3, windowList:Lcom/android/server/wm/WindowList;
-    invoke-virtual {v3}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
@@ -274,7 +274,7 @@
     :goto_0
     if-ge v1, v2, :cond_2
 
-    invoke-virtual {v3, v1}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 

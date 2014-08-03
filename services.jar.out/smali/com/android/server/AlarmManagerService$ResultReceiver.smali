@@ -620,7 +620,7 @@
 
     .local v2, ex:Ljava/lang/IllegalArgumentException;
     :try_start_3
-    invoke-virtual {v2}, Ljava/lang/IllegalArgumentException;->printStackTrace()V
+    invoke-virtual {v2}, Ljava/lang/Throwable;->printStackTrace()V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 

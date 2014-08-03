@@ -67,7 +67,7 @@
 
     iput-object v0, p0, Landroid/widget/ZoomButton;->mHandler:Landroid/os/Handler;
 
-    invoke-virtual {p0, p0}, Landroid/widget/ZoomButton;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
+    invoke-virtual {p0, p0}, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
     return-void
 .end method
@@ -110,9 +110,9 @@
     .parameter "direction"
 
     .prologue
-    invoke-virtual {p0}, Landroid/widget/ZoomButton;->clearFocus()V
+    invoke-virtual {p0}, Landroid/view/View;->clearFocus()V
 
-    invoke-super {p0, p1, p2}, Landroid/widget/ImageButton;->dispatchUnhandledMove(Landroid/view/View;I)Z
+    invoke-super {p0, p1, p2}, Landroid/view/View;->dispatchUnhandledMove(Landroid/view/View;I)Z
 
     move-result v0
 
@@ -132,7 +132,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityRecord;->setClassName(Ljava/lang/CharSequence;)V
 
     return-void
 .end method
@@ -165,7 +165,7 @@
 
     iput-boolean v0, p0, Landroid/widget/ZoomButton;->mIsInLongpress:Z
 
-    invoke-super {p0, p1, p2}, Landroid/widget/ImageButton;->onKeyUp(ILandroid/view/KeyEvent;)Z
+    invoke-super {p0, p1, p2}, Landroid/view/View;->onKeyUp(ILandroid/view/KeyEvent;)Z
 
     move-result v0
 
@@ -217,7 +217,7 @@
     iput-boolean v0, p0, Landroid/widget/ZoomButton;->mIsInLongpress:Z
 
     :cond_1
-    invoke-super {p0, p1}, Landroid/widget/ImageButton;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-super {p0, p1}, Landroid/view/View;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
@@ -233,10 +233,10 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Landroid/widget/ZoomButton;->setPressed(Z)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setPressed(Z)V
 
     :cond_0
-    invoke-super {p0, p1}, Landroid/widget/ImageButton;->setEnabled(Z)V
+    invoke-super {p0, p1}, Landroid/view/View;->setEnabled(Z)V
 
     return-void
 .end method

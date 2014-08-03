@@ -3,8 +3,8 @@
 .source "ListMenuPresenter.java"
 
 # interfaces
-.implements Lcom/android/internal/view/menu/MenuPresenter;
 .implements Landroid/widget/AdapterView$OnItemClickListener;
+.implements Lcom/android/internal/view/menu/MenuPresenter;
 
 
 # annotations
@@ -201,11 +201,11 @@
 
     iget-object v1, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mAdapter:Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;
 
-    invoke-virtual {v0, v1}, Lcom/android/internal/view/menu/ExpandedMenuView;->setAdapter(Landroid/widget/ListAdapter;)V
+    invoke-virtual {v0, v1}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mMenuView:Lcom/android/internal/view/menu/ExpandedMenuView;
 
-    invoke-virtual {v0, p0}, Lcom/android/internal/view/menu/ExpandedMenuView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
+    invoke-virtual {v0, p0}, Landroid/widget/AdapterView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
     :cond_1
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mMenuView:Lcom/android/internal/view/menu/ExpandedMenuView;
@@ -369,7 +369,7 @@
     .parameter "subMenu"
 
     .prologue
-    invoke-virtual {p1}, Lcom/android/internal/view/menu/SubMenuBuilder;->hasVisibleItems()Z
+    invoke-virtual {p1}, Lcom/android/internal/view/menu/MenuBuilder;->hasVisibleItems()Z
 
     move-result v0
 

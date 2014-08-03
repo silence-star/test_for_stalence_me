@@ -127,7 +127,7 @@
     .prologue
     sget-object v0, Landroid/net/wifi/WpsResult$Status;->$VALUES:[Landroid/net/wifi/WpsResult$Status;
 
-    invoke-virtual {v0}, [Landroid/net/wifi/WpsResult$Status;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

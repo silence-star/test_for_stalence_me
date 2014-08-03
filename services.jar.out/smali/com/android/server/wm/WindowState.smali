@@ -619,7 +619,7 @@
 
     iget-object v9, v9, Lcom/android/server/wm/WindowState;->mChildWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v9}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
@@ -630,7 +630,7 @@
 
     iget-object v9, v9, Lcom/android/server/wm/WindowState;->mChildWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v9, p0}, Lcom/android/server/wm/WindowList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v9, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_0
     :goto_1
@@ -783,7 +783,7 @@
 
     iget-object v9, v9, Lcom/android/server/wm/WindowState;->mChildWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v9, v7}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v9, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -800,7 +800,7 @@
 
     iget-object v9, v9, Lcom/android/server/wm/WindowState;->mChildWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v9, v7, p0}, Lcom/android/server/wm/WindowList;->add(ILjava/lang/Object;)V
+    invoke-virtual {v9, v7, p0}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     .end local v3           #child:Lcom/android/server/wm/WindowState;
     :cond_6
@@ -809,7 +809,7 @@
 
     iget-object v9, v9, Lcom/android/server/wm/WindowState;->mChildWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v9}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
 
     move-result v9
 
@@ -819,7 +819,7 @@
 
     iget-object v9, v9, Lcom/android/server/wm/WindowState;->mChildWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v9, p0}, Lcom/android/server/wm/WindowList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v9, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_1
 
@@ -847,7 +847,7 @@
 
     iget-object v9, v9, Lcom/android/server/wm/WindowState;->mChildWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v9, v7, p0}, Lcom/android/server/wm/WindowList;->add(ILjava/lang/Object;)V
+    invoke-virtual {v9, v7, p0}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     goto :goto_a
 
@@ -1355,7 +1355,7 @@
 
     iget-object v1, v0, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
 
-    iget v1, v1, Landroid/view/WindowManager$LayoutParams;->width:I
+    iget v1, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     if-gez v1, :cond_b
 
@@ -1367,7 +1367,7 @@
 
     iget-object v1, v0, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
 
-    iget v1, v1, Landroid/view/WindowManager$LayoutParams;->height:I
+    iget v1, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     if-gez v1, :cond_d
 
@@ -2083,7 +2083,7 @@
 
     iget-object v1, v0, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
 
-    iget v1, v1, Landroid/view/WindowManager$LayoutParams;->width:I
+    iget v1, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     int-to-float v1, v1
 
@@ -2108,7 +2108,7 @@
 
     iget-object v1, v0, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
 
-    iget v2, v1, Landroid/view/WindowManager$LayoutParams;->width:I
+    iget v2, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .restart local v2       #w:I
     goto/16 :goto_3
@@ -2124,7 +2124,7 @@
 
     iget-object v1, v0, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
 
-    iget v1, v1, Landroid/view/WindowManager$LayoutParams;->height:I
+    iget v1, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     int-to-float v1, v1
 
@@ -2149,7 +2149,7 @@
 
     iget-object v1, v0, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
 
-    iget v3, v1, Landroid/view/WindowManager$LayoutParams;->height:I
+    iget v3, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .restart local v3       #h:I
     goto/16 :goto_4
@@ -2161,7 +2161,7 @@
 
     iget-object v1, v0, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
 
-    iget v1, v1, Landroid/view/WindowManager$LayoutParams;->width:I
+    iget v1, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     const/4 v4, -0x1
 
@@ -2175,7 +2175,7 @@
 
     iget-object v1, v0, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
 
-    iget v1, v1, Landroid/view/WindowManager$LayoutParams;->height:I
+    iget v1, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     const/4 v4, -0x1
 
@@ -3576,7 +3576,7 @@
 
     if-gez v0, :cond_2
 
-    invoke-virtual {v1, v2}, Lcom/android/server/wm/WindowList;->indexOf(Ljava/lang/Object;)I
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
 
     move-result v0
 
@@ -3585,7 +3585,7 @@
 
     if-ltz v0, :cond_0
 
-    invoke-virtual {v1, v0}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -4429,7 +4429,7 @@
 
     if-nez v1, :cond_3
 
-    iget-boolean v1, v0, Lcom/android/server/wm/AppWindowToken;->hidden:Z
+    iget-boolean v1, v0, Lcom/android/server/wm/WindowToken;->hidden:Z
 
     if-nez v1, :cond_3
 
@@ -5389,7 +5389,7 @@
 
     iget-object v0, v0, Lcom/android/server/wm/WindowState;->mChildWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v0, p0}, Lcom/android/server/wm/WindowList;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     :cond_0
     iget-object v0, p0, Lcom/android/server/wm/WindowState;->mWinAnimator:Lcom/android/server/wm/WindowStateAnimator;

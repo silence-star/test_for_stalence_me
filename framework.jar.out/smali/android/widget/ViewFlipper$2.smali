@@ -55,9 +55,9 @@
 
     iget-object v0, p0, Landroid/widget/ViewFlipper$2;->this$0:Landroid/widget/ViewFlipper;
 
-    invoke-virtual {v0}, Landroid/widget/ViewFlipper;->showNext()V
+    invoke-virtual {v0}, Landroid/widget/ViewAnimator;->showNext()V
 
-    invoke-virtual {p0, v1}, Landroid/widget/ViewFlipper$2;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {p0, v1}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object p1
 
@@ -70,7 +70,7 @@
 
     int-to-long v0, v0
 
-    invoke-virtual {p0, p1, v0, v1}, Landroid/widget/ViewFlipper$2;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {p0, p1, v0, v1}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     :cond_0
     return-void

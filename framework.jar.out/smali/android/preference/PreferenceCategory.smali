@@ -85,7 +85,7 @@
     .locals 1
 
     .prologue
-    invoke-super {p0}, Landroid/preference/PreferenceGroup;->isEnabled()Z
+    invoke-super {p0}, Landroid/preference/Preference;->isEnabled()Z
 
     move-result v0
 

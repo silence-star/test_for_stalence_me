@@ -562,6 +562,8 @@
     :try_start_0
     invoke-direct {p0, p1}, Landroid/content/ClipboardManager;->addClipDataExtra(Landroid/content/ClipData;)V
 
+    invoke-static {p0, p1}, Landroid/content/Injector$ClipboardManagerHook;->before_setPrimaryClip(Landroid/content/ClipboardManager;Landroid/content/ClipData;)V
+
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Landroid/content/ClipData;->prepareToLeaveProcess()V

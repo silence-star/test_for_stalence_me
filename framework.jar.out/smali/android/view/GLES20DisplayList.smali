@@ -196,7 +196,7 @@
     .locals 1
 
     .prologue
-    invoke-virtual {p0}, Landroid/view/GLES20DisplayList;->clearDirty()V
+    invoke-virtual {p0}, Landroid/view/DisplayList;->clearDirty()V
 
     iget-object v0, p0, Landroid/view/GLES20DisplayList;->mCanvas:Landroid/view/GLES20RecordingCanvas;
 
@@ -246,7 +246,7 @@
 
     iget-object v0, p0, Landroid/view/GLES20DisplayList;->mCanvas:Landroid/view/GLES20RecordingCanvas;
 
-    invoke-virtual {v0}, Landroid/view/GLES20RecordingCanvas;->onPostDraw()V
+    invoke-virtual {v0}, Landroid/view/GLES20Canvas;->onPostDraw()V
 
     iget-object v0, p0, Landroid/view/GLES20DisplayList;->mFinalizer:Landroid/view/GLES20DisplayList$DisplayListFinalizer;
 
@@ -1471,13 +1471,13 @@
 
     iget-object v0, p0, Landroid/view/GLES20DisplayList;->mCanvas:Landroid/view/GLES20RecordingCanvas;
 
-    invoke-virtual {v0, p1, p2}, Landroid/view/GLES20RecordingCanvas;->setViewport(II)V
+    invoke-virtual {v0, p1, p2}, Landroid/view/GLES20Canvas;->setViewport(II)V
 
     iget-object v0, p0, Landroid/view/GLES20DisplayList;->mCanvas:Landroid/view/GLES20RecordingCanvas;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/view/GLES20RecordingCanvas;->onPreDraw(Landroid/graphics/Rect;)I
+    invoke-virtual {v0, v1}, Landroid/view/GLES20Canvas;->onPreDraw(Landroid/graphics/Rect;)I
 
     iget-object v0, p0, Landroid/view/GLES20DisplayList;->mCanvas:Landroid/view/GLES20RecordingCanvas;
 

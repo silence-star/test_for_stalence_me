@@ -267,7 +267,7 @@
 
     const/4 v3, 0x1
 
-    invoke-virtual {p0, v3}, Landroid/app/admin/DeviceAdminReceiver;->getResultExtras(Z)Landroid/os/Bundle;
+    invoke-virtual {p0, v3}, Landroid/content/BroadcastReceiver;->getResultExtras(Z)Landroid/os/Bundle;
 
     move-result-object v1
 

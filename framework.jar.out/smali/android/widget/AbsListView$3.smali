@@ -71,17 +71,17 @@
 
     iget-object v0, p0, Landroid/widget/AbsListView$3;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v0, v2}, Landroid/widget/AbsListView;->setPressed(Z)V
+    invoke-virtual {v0, v2}, Landroid/view/View;->setPressed(Z)V
 
     iget-object v0, p0, Landroid/widget/AbsListView$3;->this$0:Landroid/widget/AbsListView;
 
-    iget-boolean v0, v0, Landroid/widget/AbsListView;->mDataChanged:Z
+    iget-boolean v0, v0, Landroid/widget/AdapterView;->mDataChanged:Z
 
     if-nez v0, :cond_0
 
     iget-object v0, p0, Landroid/widget/AbsListView$3;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v0}, Landroid/widget/AbsListView;->isAttachedToWindow()Z
+    invoke-virtual {v0}, Landroid/view/View;->isAttachedToWindow()Z
 
     move-result v0
 

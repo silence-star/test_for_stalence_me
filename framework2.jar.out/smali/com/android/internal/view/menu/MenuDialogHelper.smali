@@ -3,9 +3,9 @@
 .source "MenuDialogHelper.java"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnKeyListener;
 .implements Landroid/content/DialogInterface$OnClickListener;
 .implements Landroid/content/DialogInterface$OnDismissListener;
+.implements Landroid/content/DialogInterface$OnKeyListener;
 .implements Lcom/android/internal/view/menu/MenuPresenter$Callback;
 
 
@@ -44,7 +44,7 @@
 
     iget-object v0, p0, Lcom/android/internal/view/menu/MenuDialogHelper;->mDialog:Landroid/app/AlertDialog;
 
-    invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
+    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
     :cond_0
     return-void
@@ -153,7 +153,7 @@
 
     iget-object v4, p0, Lcom/android/internal/view/menu/MenuDialogHelper;->mDialog:Landroid/app/AlertDialog;
 
-    invoke-virtual {v4}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {v4}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v2
 
@@ -197,7 +197,7 @@
 
     iget-object v4, p0, Lcom/android/internal/view/menu/MenuDialogHelper;->mDialog:Landroid/app/AlertDialog;
 
-    invoke-virtual {v4}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {v4}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v2
 
@@ -348,11 +348,11 @@
 
     iget-object v4, p0, Lcom/android/internal/view/menu/MenuDialogHelper;->mDialog:Landroid/app/AlertDialog;
 
-    invoke-virtual {v4, p0}, Landroid/app/AlertDialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
+    invoke-virtual {v4, p0}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
     iget-object v4, p0, Lcom/android/internal/view/menu/MenuDialogHelper;->mDialog:Landroid/app/AlertDialog;
 
-    invoke-virtual {v4}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {v4}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v4
 

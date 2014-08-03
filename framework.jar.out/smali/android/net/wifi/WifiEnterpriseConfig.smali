@@ -651,7 +651,7 @@
     if-eqz p2, :cond_0
 
     :try_start_0
-    invoke-virtual {p2}, Ljava/security/cert/X509Certificate;->getEncoded()[B
+    invoke-virtual {p2}, Ljava/security/cert/Certificate;->getEncoded()[B
 
     move-result-object v0
 

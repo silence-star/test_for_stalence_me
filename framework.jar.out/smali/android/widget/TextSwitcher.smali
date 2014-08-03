@@ -65,7 +65,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityRecord;->setClassName(Ljava/lang/CharSequence;)V
 
     return-void
 .end method
@@ -93,7 +93,7 @@
     .parameter "text"
 
     .prologue
-    invoke-virtual {p0}, Landroid/widget/TextSwitcher;->getCurrentView()Landroid/view/View;
+    invoke-virtual {p0}, Landroid/widget/ViewAnimator;->getCurrentView()Landroid/view/View;
 
     move-result-object v0
 
@@ -109,7 +109,7 @@
     .parameter "text"
 
     .prologue
-    invoke-virtual {p0}, Landroid/widget/TextSwitcher;->getNextView()Landroid/view/View;
+    invoke-virtual {p0}, Landroid/widget/ViewSwitcher;->getNextView()Landroid/view/View;
 
     move-result-object v0
 
@@ -118,7 +118,7 @@
     .local v0, t:Landroid/widget/TextView;
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {p0}, Landroid/widget/TextSwitcher;->showNext()V
+    invoke-virtual {p0}, Landroid/widget/ViewAnimator;->showNext()V
 
     return-void
 .end method

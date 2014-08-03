@@ -48,7 +48,7 @@
 
     const-string v0, "android.bluetooth.IQBluetooth"
 
-    invoke-virtual {p0, p0, v0}, Landroid/bluetooth/IQBluetooth$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     return-void
 .end method

@@ -50,7 +50,7 @@
     throw v1
 
     :cond_0
-    invoke-virtual {p0, v0}, Landroid/renderscript/ScriptC;->setID(I)V
+    invoke-virtual {p0, v0}, Landroid/renderscript/BaseObj;->setID(I)V
 
     return-void
 .end method

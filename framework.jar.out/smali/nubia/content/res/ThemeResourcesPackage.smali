@@ -71,7 +71,7 @@
 
     check-cast v2, Ljava/lang/ref/WeakReference;
 
-    invoke-virtual {v2}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v2}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -103,7 +103,7 @@
 
     check-cast v2, Ljava/lang/ref/WeakReference;
 
-    invoke-virtual {v2}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v2}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     move-result-object v2
 
@@ -242,7 +242,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0, v1}, Lnubia/content/res/ThemeResourcesPackage;->getThemeFileStream(Ljava/lang/String;)Lnubia/content/res/ThemeZipFile$ThemeFileInfo;
+    invoke-virtual {p0, v1}, Lnubia/content/res/ThemeResources;->getThemeFileStream(Ljava/lang/String;)Lnubia/content/res/ThemeZipFile$ThemeFileInfo;
 
     move-result-object v0
 
@@ -283,7 +283,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0, v1}, Lnubia/content/res/ThemeResourcesPackage;->getThemeFileStream(Ljava/lang/String;)Lnubia/content/res/ThemeZipFile$ThemeFileInfo;
+    invoke-virtual {p0, v1}, Lnubia/content/res/ThemeResources;->getThemeFileStream(Ljava/lang/String;)Lnubia/content/res/ThemeZipFile$ThemeFileInfo;
 
     move-result-object v0
 
@@ -300,7 +300,7 @@
     goto :goto_0
 
     :cond_2
-    invoke-virtual {p0, p2}, Lnubia/content/res/ThemeResourcesPackage;->getThemeFileStream(Ljava/lang/String;)Lnubia/content/res/ThemeZipFile$ThemeFileInfo;
+    invoke-virtual {p0, p2}, Lnubia/content/res/ThemeResources;->getThemeFileStream(Ljava/lang/String;)Lnubia/content/res/ThemeZipFile$ThemeFileInfo;
 
     move-result-object v0
 

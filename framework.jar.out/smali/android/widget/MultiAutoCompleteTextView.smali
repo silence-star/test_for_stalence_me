@@ -62,12 +62,12 @@
     .prologue
     const/4 v3, 0x0
 
-    invoke-virtual {p0}, Landroid/widget/MultiAutoCompleteTextView;->getText()Landroid/text/Editable;
+    invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v2
 
     .local v2, text:Landroid/text/Editable;
-    invoke-virtual {p0}, Landroid/widget/MultiAutoCompleteTextView;->getSelectionEnd()I
+    invoke-virtual {p0}, Landroid/widget/TextView;->getSelectionEnd()I
 
     move-result v0
 
@@ -92,7 +92,7 @@
     .local v1, start:I
     sub-int v4, v0, v1
 
-    invoke-virtual {p0}, Landroid/widget/MultiAutoCompleteTextView;->getThreshold()I
+    invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->getThreshold()I
 
     move-result v5
 
@@ -115,7 +115,7 @@
     .parameter "event"
 
     .prologue
-    invoke-super {p0, p1}, Landroid/widget/AutoCompleteTextView;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+    invoke-super {p0, p1}, Landroid/widget/EditText;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
     const-class v0, Landroid/widget/MultiAutoCompleteTextView;
 
@@ -123,7 +123,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityRecord;->setClassName(Ljava/lang/CharSequence;)V
 
     return-void
 .end method
@@ -133,7 +133,7 @@
     .parameter "info"
 
     .prologue
-    invoke-super {p0, p1}, Landroid/widget/AutoCompleteTextView;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    invoke-super {p0, p1}, Landroid/widget/EditText;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     const-class v0, Landroid/widget/MultiAutoCompleteTextView;
 
@@ -158,7 +158,7 @@
 
     if-eqz v3, :cond_1
 
-    invoke-virtual {p0}, Landroid/widget/MultiAutoCompleteTextView;->getSelectionEnd()I
+    invoke-virtual {p0}, Landroid/widget/TextView;->getSelectionEnd()I
 
     move-result v0
 
@@ -179,9 +179,9 @@
     return-void
 
     :cond_1
-    invoke-virtual {p0}, Landroid/widget/MultiAutoCompleteTextView;->dismissDropDown()V
+    invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->dismissDropDown()V
 
-    invoke-virtual {p0}, Landroid/widget/MultiAutoCompleteTextView;->getFilter()Landroid/widget/Filter;
+    invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->getFilter()Landroid/widget/Filter;
 
     move-result-object v1
 
@@ -203,7 +203,7 @@
     .parameter "keyCode"
 
     .prologue
-    invoke-virtual {p0}, Landroid/widget/MultiAutoCompleteTextView;->getFilter()Landroid/widget/Filter;
+    invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->getFilter()Landroid/widget/Filter;
 
     move-result-object v0
 
@@ -220,7 +220,7 @@
     .locals 8
 
     .prologue
-    invoke-virtual {p0}, Landroid/widget/MultiAutoCompleteTextView;->getValidator()Landroid/widget/AutoCompleteTextView$Validator;
+    invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->getValidator()Landroid/widget/AutoCompleteTextView$Validator;
 
     move-result-object v5
 
@@ -235,12 +235,12 @@
     return-void
 
     :cond_1
-    invoke-virtual {p0}, Landroid/widget/MultiAutoCompleteTextView;->getText()Landroid/text/Editable;
+    invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v0
 
     .local v0, e:Landroid/text/Editable;
-    invoke-virtual {p0}, Landroid/widget/MultiAutoCompleteTextView;->getText()Landroid/text/Editable;
+    invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v6
 
@@ -314,16 +314,16 @@
     .parameter "text"
 
     .prologue
-    invoke-virtual {p0}, Landroid/widget/MultiAutoCompleteTextView;->clearComposingText()V
+    invoke-virtual {p0}, Landroid/widget/TextView;->clearComposingText()V
 
-    invoke-virtual {p0}, Landroid/widget/MultiAutoCompleteTextView;->getSelectionEnd()I
+    invoke-virtual {p0}, Landroid/widget/TextView;->getSelectionEnd()I
 
     move-result v1
 
     .local v1, end:I
     iget-object v4, p0, Landroid/widget/MultiAutoCompleteTextView;->mTokenizer:Landroid/widget/MultiAutoCompleteTextView$Tokenizer;
 
-    invoke-virtual {p0}, Landroid/widget/MultiAutoCompleteTextView;->getText()Landroid/text/Editable;
+    invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v5
 
@@ -332,7 +332,7 @@
     move-result v3
 
     .local v3, start:I
-    invoke-virtual {p0}, Landroid/widget/MultiAutoCompleteTextView;->getText()Landroid/text/Editable;
+    invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v0
 

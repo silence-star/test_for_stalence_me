@@ -56,17 +56,17 @@
 
     iget-object v1, p0, Landroid/view/NubiaVolumePanel$4;->this$0:Landroid/view/NubiaVolumePanel;
 
-    invoke-virtual {v1, v3}, Landroid/view/NubiaVolumePanel;->removeMessages(I)V
+    invoke-virtual {v1, v3}, Landroid/os/Handler;->removeMessages(I)V
 
     iget-object v1, p0, Landroid/view/NubiaVolumePanel$4;->this$0:Landroid/view/NubiaVolumePanel;
 
     iget-object v2, p0, Landroid/view/NubiaVolumePanel$4;->this$0:Landroid/view/NubiaVolumePanel;
 
-    invoke-virtual {v2, v3}, Landroid/view/NubiaVolumePanel;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {v2, v3}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Landroid/view/NubiaVolumePanel;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     :cond_0
     :goto_0

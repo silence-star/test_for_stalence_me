@@ -284,7 +284,7 @@
 
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mHandler:Lcom/android/server/input/InputManagerService$InputManagerHandler;
 
-    invoke-virtual {v1}, Lcom/android/server/input/InputManagerService$InputManagerHandler;->getLooper()Landroid/os/Looper;
+    invoke-virtual {v1}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
 
     move-result-object v1
 
@@ -1061,7 +1061,7 @@
     if-eqz v2, :cond_1
 
     :try_start_2
-    invoke-virtual {v2}, Ljava/io/FileReader;->close()V
+    invoke-virtual {v2}, Ljava/io/InputStreamReader;->close()V
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
 
@@ -1121,7 +1121,7 @@
     if-eqz v1, :cond_2
 
     :try_start_4
-    invoke-virtual {v1}, Ljava/io/FileReader;->close()V
+    invoke-virtual {v1}, Ljava/io/InputStreamReader;->close()V
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
 
@@ -1186,7 +1186,7 @@
     if-eqz v1, :cond_2
 
     :try_start_6
-    invoke-virtual {v1}, Ljava/io/FileReader;->close()V
+    invoke-virtual {v1}, Ljava/io/InputStreamReader;->close()V
     :try_end_6
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_4
 
@@ -1205,7 +1205,7 @@
     if-eqz v1, :cond_4
 
     :try_start_7
-    invoke-virtual {v1}, Ljava/io/FileReader;->close()V
+    invoke-virtual {v1}, Ljava/io/InputStreamReader;->close()V
     :try_end_7
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_5
 
@@ -1825,7 +1825,7 @@
 
     iget-object v3, p0, Lcom/android/server/input/InputManagerService;->mInputDevices:[Landroid/view/InputDevice;
 
-    invoke-virtual {v0, v2, v3}, Lcom/android/server/input/InputManagerService$InputManagerHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v0, v2, v3}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
@@ -2403,7 +2403,7 @@
     .prologue
     move-object/from16 v0, p2
 
-    iget-object v12, v0, Landroid/content/pm/ActivityInfo;->metaData:Landroid/os/Bundle;
+    iget-object v12, v0, Landroid/content/pm/PackageItemInfo;->metaData:Landroid/os/Bundle;
 
     .local v12, metaData:Landroid/os/Bundle;
     if-nez v12, :cond_0
@@ -2435,7 +2435,7 @@
 
     move-object/from16 v0, p2
 
-    iget-object v0, v0, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v0, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v17, v0
 
@@ -2451,7 +2451,7 @@
 
     move-object/from16 v0, p2
 
-    iget-object v0, v0, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v0, v0, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     move-object/from16 v17, v0
 
@@ -2474,7 +2474,7 @@
 
     move-object/from16 v1, p1
 
-    invoke-virtual {v0, v1}, Landroid/content/pm/ActivityInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
+    invoke-virtual {v0, v1}, Landroid/content/pm/ComponentInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
     move-result-object v15
 
@@ -2490,7 +2490,7 @@
     :try_start_0
     move-object/from16 v0, p2
 
-    iget-object v2, v0, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v2, v0, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     move-object/from16 v0, p1
 
@@ -2551,7 +2551,7 @@
 
     move-object/from16 v0, p2
 
-    iget-object v0, v0, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v0, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v17, v0
 
@@ -2567,7 +2567,7 @@
 
     move-object/from16 v0, p2
 
-    iget-object v0, v0, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v0, v0, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     move-object/from16 v17, v0
 
@@ -2662,7 +2662,7 @@
 
     move-object/from16 v0, p2
 
-    iget-object v0, v0, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v0, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v17, v0
 
@@ -2678,7 +2678,7 @@
 
     move-object/from16 v0, p2
 
-    iget-object v0, v0, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v0, v0, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     move-object/from16 v17, v0
 
@@ -2729,11 +2729,11 @@
     :try_start_7
     move-object/from16 v0, p2
 
-    iget-object v2, v0, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v2, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v0, p2
 
-    iget-object v0, v0, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v0, v0, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     move-object/from16 v16, v0
 
@@ -2803,7 +2803,7 @@
 
     move-object/from16 v0, p2
 
-    iget-object v0, v0, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v0, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v17, v0
 
@@ -2819,7 +2819,7 @@
 
     move-object/from16 v0, p2
 
-    iget-object v0, v0, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v0, v0, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     move-object/from16 v17, v0
 
@@ -2925,7 +2925,7 @@
 
     const/4 v3, 0x3
 
-    invoke-virtual {v1, v3}, Lcom/android/server/input/InputManagerService$InputManagerHandler;->sendEmptyMessage(I)Z
+    invoke-virtual {v1, v3}, Landroid/os/Handler;->sendEmptyMessage(I)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -4084,7 +4084,7 @@
 
     const/4 v3, 0x3
 
-    invoke-virtual {v1, v3}, Lcom/android/server/input/InputManagerService$InputManagerHandler;->sendEmptyMessage(I)Z
+    invoke-virtual {v1, v3}, Landroid/os/Handler;->sendEmptyMessage(I)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -4182,7 +4182,7 @@
 
     const/4 v2, 0x3
 
-    invoke-virtual {v0, v2}, Lcom/android/server/input/InputManagerService$InputManagerHandler;->sendEmptyMessage(I)Z
+    invoke-virtual {v0, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -4511,7 +4511,7 @@
 
     const/4 v1, 0x2
 
-    invoke-virtual {v0, v1, p1, p2}, Lcom/android/server/input/InputManagerService$InputManagerHandler;->obtainMessage(III)Landroid/os/Message;
+    invoke-virtual {v0, v1, p1, p2}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v0
 
@@ -4597,13 +4597,13 @@
 
     const/4 v2, 0x5
 
-    invoke-virtual {v1, v2}, Lcom/android/server/input/InputManagerService$InputManagerHandler;->sendEmptyMessage(I)Z
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mHandler:Lcom/android/server/input/InputManagerService$InputManagerHandler;
 
     const/4 v2, 0x4
 
-    invoke-virtual {v1, v2}, Lcom/android/server/input/InputManagerService$InputManagerHandler;->sendEmptyMessage(I)Z
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     return-void
 .end method

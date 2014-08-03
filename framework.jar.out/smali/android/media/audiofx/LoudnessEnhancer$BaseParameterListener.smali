@@ -114,7 +114,7 @@
 
     iget-object v3, p0, Landroid/media/audiofx/LoudnessEnhancer$BaseParameterListener;->this$0:Landroid/media/audiofx/LoudnessEnhancer;
 
-    invoke-virtual {v3, p3, v5}, Landroid/media/audiofx/LoudnessEnhancer;->byteArrayToInt([BI)I
+    invoke-virtual {v3, p3, v5}, Landroid/media/audiofx/AudioEffect;->byteArrayToInt([BI)I
 
     move-result v1
 
@@ -125,7 +125,7 @@
 
     iget-object v3, p0, Landroid/media/audiofx/LoudnessEnhancer$BaseParameterListener;->this$0:Landroid/media/audiofx/LoudnessEnhancer;
 
-    invoke-virtual {v3, p4, v5}, Landroid/media/audiofx/LoudnessEnhancer;->byteArrayToInt([BI)I
+    invoke-virtual {v3, p4, v5}, Landroid/media/audiofx/AudioEffect;->byteArrayToInt([BI)I
 
     move-result v2
 

@@ -149,17 +149,17 @@
 
     iput-object v3, p0, Lcom/vzw/nfc/dos/FilterEntryDo;->mRoutingModeDo:Lcom/vzw/nfc/dos/RoutingModeDo;
 
-    invoke-virtual {p0}, Lcom/vzw/nfc/dos/FilterEntryDo;->getRawData()[B
+    invoke-virtual {p0}, Lcom/vzw/nfc/dos/VzwTlv;->getRawData()[B
 
     move-result-object v0
 
     .local v0, data:[B
-    invoke-virtual {p0}, Lcom/vzw/nfc/dos/FilterEntryDo;->getValueIndex()I
+    invoke-virtual {p0}, Lcom/vzw/nfc/dos/VzwTlv;->getValueIndex()I
 
     move-result v1
 
     .local v1, index:I
-    invoke-virtual {p0}, Lcom/vzw/nfc/dos/FilterEntryDo;->getValueLength()I
+    invoke-virtual {p0}, Lcom/vzw/nfc/dos/VzwTlv;->getValueLength()I
 
     move-result v3
 
@@ -220,11 +220,11 @@
 
     add-int v1, v3, v4
 
-    invoke-virtual {p0}, Lcom/vzw/nfc/dos/FilterEntryDo;->getValueIndex()I
+    invoke-virtual {p0}, Lcom/vzw/nfc/dos/VzwTlv;->getValueIndex()I
 
     move-result v3
 
-    invoke-virtual {p0}, Lcom/vzw/nfc/dos/FilterEntryDo;->getValueLength()I
+    invoke-virtual {p0}, Lcom/vzw/nfc/dos/VzwTlv;->getValueLength()I
 
     move-result v4
 

@@ -682,7 +682,7 @@
 
     const/4 v2, 0x3
 
-    invoke-virtual {v0, v1, v2}, Landroid/inputmethodservice/KeyboardView;->performHapticFeedback(II)Z
+    invoke-virtual {v0, v1, v2}, Landroid/view/View;->performHapticFeedback(II)Z
 
     :cond_0
     return-void
@@ -768,7 +768,7 @@
     .prologue
     iget-object v1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardView:Landroid/inputmethodservice/KeyboardView;
 
-    invoke-virtual {v1}, Landroid/inputmethodservice/KeyboardView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 

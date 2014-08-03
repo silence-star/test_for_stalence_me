@@ -191,7 +191,7 @@
     .local v1, group:Landroid/media/MediaRouter$RouteGroup;
     iget v2, p0, Landroid/media/MediaRouter$RouteInfo;->mSupportedTypes:I
 
-    iput v2, v1, Landroid/media/MediaRouter$RouteGroup;->mSupportedTypes:I
+    iput v2, v1, Landroid/media/MediaRouter$RouteInfo;->mSupportedTypes:I
 
     sget-object v2, Landroid/media/MediaRouter;->sStatic:Landroid/media/MediaRouter$Static;
 

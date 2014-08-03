@@ -141,7 +141,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, p1, v1}, Lcom/android/server/UpdateLockService$LockWatcher;->acquire(Landroid/os/IBinder;Ljava/lang/String;)V
+    invoke-virtual {v0, p1, v1}, Landroid/os/TokenWatcher;->acquire(Landroid/os/IBinder;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -207,7 +207,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/server/UpdateLockService;->mLocks:Lcom/android/server/UpdateLockService$LockWatcher;
 
-    invoke-virtual {v0, p2}, Lcom/android/server/UpdateLockService$LockWatcher;->dump(Ljava/io/PrintWriter;)V
+    invoke-virtual {v0, p2}, Landroid/os/TokenWatcher;->dump(Ljava/io/PrintWriter;)V
 
     goto :goto_0
 .end method
@@ -232,7 +232,7 @@
 
     iget-object v0, p0, Lcom/android/server/UpdateLockService;->mLocks:Lcom/android/server/UpdateLockService$LockWatcher;
 
-    invoke-virtual {v0, p1}, Lcom/android/server/UpdateLockService$LockWatcher;->release(Landroid/os/IBinder;)V
+    invoke-virtual {v0, p1}, Landroid/os/TokenWatcher;->release(Landroid/os/IBinder;)V
 
     return-void
 .end method

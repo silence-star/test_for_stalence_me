@@ -73,7 +73,7 @@
 
     if-ne v0, v1, :cond_0
 
-    invoke-virtual {p0, v2}, Lcom/android/server/display/nubiaOverlayDisplayWindow$8$1;->removeMessages(I)V
+    invoke-virtual {p0, v2}, Landroid/os/Handler;->removeMessages(I)V
 
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$8$1;->this$1:Lcom/android/server/display/nubiaOverlayDisplayWindow$8;
 

@@ -447,7 +447,7 @@
     .local v3, pmAgent:Lcom/android/server/PackageManagerBackupAgent;
     const-string v7, "@pm@"
 
-    invoke-virtual {v3}, Lcom/android/server/PackageManagerBackupAgent;->onBind()Landroid/os/IBinder;
+    invoke-virtual {v3}, Landroid/app/backup/BackupAgent;->onBind()Landroid/os/IBinder;
 
     move-result-object v8
 
@@ -878,7 +878,7 @@
 
     iget-object v1, p0, Lcom/android/server/BackupManagerService$PerformBackupTask;->mCurrentState:Lcom/android/server/BackupManagerService$BackupState;
 
-    invoke-virtual {v1}, Lcom/android/server/BackupManagerService$BackupState;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
@@ -967,7 +967,7 @@
 
     const/16 v2, 0x14
 
-    invoke-virtual {v1, v2, p0}, Lcom/android/server/BackupManagerService$BackupHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v1, v2, p0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
@@ -976,7 +976,7 @@
 
     iget-object v1, v1, Lcom/android/server/BackupManagerService;->mBackupHandler:Lcom/android/server/BackupManagerService$BackupHandler;
 
-    invoke-virtual {v1, v0}, Lcom/android/server/BackupManagerService$BackupHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     return-void
 .end method
@@ -1559,7 +1559,7 @@
 
     const/4 v2, 0x1
 
-    invoke-virtual {v6}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -2293,7 +2293,7 @@
 
     const/4 v5, 0x7
 
-    invoke-virtual {v4, v5}, Lcom/android/server/BackupManagerService$BackupHandler;->removeMessages(I)V
+    invoke-virtual {v4, v5}, Landroid/os/Handler;->removeMessages(I)V
 
     invoke-virtual {p0}, Lcom/android/server/BackupManagerService$PerformBackupTask;->clearAgentState()V
 

@@ -86,7 +86,7 @@
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     .local v0, rect:Landroid/graphics/Rect;
-    invoke-virtual {p0, v0}, Landroid/widget/TextView;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
+    invoke-virtual {p0, v0}, Landroid/view/View;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
 
     move-result v1
 
@@ -271,7 +271,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p1}, Landroid/widget/TextView;->showContextMenu()Z
+    invoke-virtual {p1}, Landroid/view/View;->showContextMenu()Z
 
     move-result v0
 
@@ -509,7 +509,7 @@
     move-result v1
 
     .local v1, handled:Z
-    invoke-virtual {p1}, Landroid/widget/TextView;->isFocused()Z
+    invoke-virtual {p1}, Landroid/view/View;->isFocused()Z
 
     move-result v6
 
@@ -548,7 +548,7 @@
 
     invoke-interface {p2, v6, v4, v4, v7}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
 
-    invoke-virtual {p1}, Landroid/widget/TextView;->getParent()Landroid/view/ViewParent;
+    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v6
 
@@ -601,7 +601,7 @@
 
     if-ltz v3, :cond_4
 
-    invoke-virtual {p1}, Landroid/widget/TextView;->getScrollY()I
+    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
 
     move-result v6
 
@@ -610,7 +610,7 @@
     :cond_4
     if-ltz v2, :cond_6
 
-    invoke-virtual {p1}, Landroid/widget/TextView;->getScrollX()I
+    invoke-virtual {p1}, Landroid/view/View;->getScrollX()I
 
     move-result v6
 

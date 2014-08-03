@@ -48,7 +48,7 @@
     return-void
 
     :cond_0
-    invoke-virtual {p0}, Landroid/graphics/drawable/StateListDrawable$StateListState;->getCapacity()I
+    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->getCapacity()I
 
     move-result v0
 
@@ -80,7 +80,7 @@
     iget-object v2, p0, Landroid/graphics/drawable/StateListDrawable$StateListState;->mStateSets:[[I
 
     .local v2, stateSets:[[I
-    invoke-virtual {p0}, Landroid/graphics/drawable/StateListDrawable$StateListState;->getChildCount()I
+    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->getChildCount()I
 
     move-result v0
 
@@ -123,7 +123,7 @@
     .parameter "drawable"
 
     .prologue
-    invoke-virtual {p0, p2}, Landroid/graphics/drawable/StateListDrawable$StateListState;->addChild(Landroid/graphics/drawable/Drawable;)I
+    invoke-virtual {p0, p2}, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->addChild(Landroid/graphics/drawable/Drawable;)I
 
     move-result v0
 

@@ -57,7 +57,7 @@
     const/4 v0, 0x1
 
     :cond_0
-    invoke-virtual {v1, v0}, Landroid/view/SurfaceView;->setKeepScreenOn(Z)V
+    invoke-virtual {v1, v0}, Landroid/view/View;->setKeepScreenOn(Z)V
 
     goto :goto_0
 

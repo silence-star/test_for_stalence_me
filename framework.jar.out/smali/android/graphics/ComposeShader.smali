@@ -51,9 +51,9 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/ComposeShader;->native_instance:I
+    iput v0, p0, Landroid/graphics/Shader;->native_instance:I
 
-    iget v0, p0, Landroid/graphics/ComposeShader;->native_instance:I
+    iget v0, p0, Landroid/graphics/Shader;->native_instance:I
 
     iget v1, p1, Landroid/graphics/Shader;->native_shader:I
 
@@ -65,7 +65,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/ComposeShader;->native_shader:I
+    iput v0, p0, Landroid/graphics/Shader;->native_shader:I
 
     return-void
 .end method
@@ -104,7 +104,7 @@
 
     move-result v1
 
-    iput v1, p0, Landroid/graphics/ComposeShader;->native_instance:I
+    iput v1, p0, Landroid/graphics/Shader;->native_instance:I
 
     instance-of v1, p3, Landroid/graphics/PorterDuffXfermode;
 
@@ -116,7 +116,7 @@
     iget-object v0, p3, Landroid/graphics/PorterDuffXfermode;->mode:Landroid/graphics/PorterDuff$Mode;
 
     .local v0, pdMode:Landroid/graphics/PorterDuff$Mode;
-    iget v1, p0, Landroid/graphics/ComposeShader;->native_instance:I
+    iget v1, p0, Landroid/graphics/Shader;->native_instance:I
 
     iget v3, p1, Landroid/graphics/Shader;->native_shader:I
 
@@ -131,7 +131,7 @@
 
     move-result v1
 
-    iput v1, p0, Landroid/graphics/ComposeShader;->native_shader:I
+    iput v1, p0, Landroid/graphics/Shader;->native_shader:I
 
     .end local v0           #pdMode:Landroid/graphics/PorterDuff$Mode;
     :goto_1
@@ -144,7 +144,7 @@
     goto :goto_0
 
     :cond_2
-    iget v1, p0, Landroid/graphics/ComposeShader;->native_instance:I
+    iget v1, p0, Landroid/graphics/Shader;->native_instance:I
 
     iget v3, p1, Landroid/graphics/Shader;->native_shader:I
 
@@ -159,7 +159,7 @@
 
     move-result v1
 
-    iput v1, p0, Landroid/graphics/ComposeShader;->native_shader:I
+    iput v1, p0, Landroid/graphics/Shader;->native_shader:I
 
     goto :goto_1
 .end method
@@ -215,7 +215,7 @@
 
     .local v0, copy:Landroid/graphics/ComposeShader;
     :goto_0
-    invoke-virtual {p0, v0}, Landroid/graphics/ComposeShader;->copyLocalMatrix(Landroid/graphics/Shader;)V
+    invoke-virtual {p0, v0}, Landroid/graphics/Shader;->copyLocalMatrix(Landroid/graphics/Shader;)V
 
     return-object v0
 

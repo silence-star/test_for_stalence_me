@@ -92,7 +92,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/widget/RadioGroup$LayoutParams;->width:I
+    iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     :goto_0
     invoke-virtual {p1, p3}, Landroid/content/res/TypedArray;->hasValue(I)Z
@@ -107,18 +107,18 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/widget/RadioGroup$LayoutParams;->height:I
+    iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     :goto_1
     return-void
 
     :cond_0
-    iput v1, p0, Landroid/widget/RadioGroup$LayoutParams;->width:I
+    iput v1, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     goto :goto_0
 
     :cond_1
-    iput v1, p0, Landroid/widget/RadioGroup$LayoutParams;->height:I
+    iput v1, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     goto :goto_1
 .end method

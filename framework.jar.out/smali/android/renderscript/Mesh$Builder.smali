@@ -405,7 +405,7 @@
 
     iget-object v13, v0, Landroid/renderscript/Mesh$Builder;->mRS:Landroid/renderscript/RenderScript;
 
-    invoke-virtual {v1, v13}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {v1, v13}, Landroid/renderscript/BaseObj;->getID(Landroid/renderscript/RenderScript;)I
 
     move-result v13
 
@@ -545,7 +545,7 @@
 
     iget-object v13, v0, Landroid/renderscript/Mesh$Builder;->mRS:Landroid/renderscript/RenderScript;
 
-    invoke-virtual {v1, v13}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {v1, v13}, Landroid/renderscript/BaseObj;->getID(Landroid/renderscript/RenderScript;)I
 
     move-result v2
 

@@ -182,7 +182,7 @@
 
     invoke-virtual {v1, v6}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setEnabled(Z)V
+    invoke-virtual {v1, v0}, Landroid/view/View;->setEnabled(Z)V
 
     :cond_2
     if-eqz v4, :cond_3
@@ -194,7 +194,7 @@
     :goto_2
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setText(I)V
 
-    invoke-virtual {v4, v7}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v4, v7}, Landroid/view/View;->setVisibility(I)V
 
     invoke-virtual {v4, v0}, Landroid/widget/TextView;->setEnabled(Z)V
 

@@ -62,9 +62,9 @@
     :try_start_0
     iget-object v2, p0, Lcom/android/server/am/ProcessStatsService$3;->val$outData:[B
 
-    invoke-virtual {v1, v2}, Ljava/io/FileOutputStream;->write([B)V
+    invoke-virtual {v1, v2}, Ljava/io/OutputStream;->write([B)V
 
-    invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
+    invoke-virtual {v1}, Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;->close()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 

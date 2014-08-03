@@ -128,7 +128,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
+    invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -174,7 +174,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
+    invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -1156,7 +1156,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/widget/TextMagnifierController;->onParentChanged()V
+    invoke-virtual {v0}, Lnubia/ui/widget/MagnifierController;->onParentChanged()V
 
     :cond_2
     invoke-virtual {p0}, Landroid/widget/NubiaCursorController$NubiaHandleView;->onHandleMoved()V

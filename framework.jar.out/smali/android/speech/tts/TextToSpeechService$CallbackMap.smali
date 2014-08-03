@@ -371,7 +371,7 @@
     if-eqz p2, :cond_1
 
     :try_start_0
-    invoke-virtual {p0, p2, p1}, Landroid/speech/tts/TextToSpeechService$CallbackMap;->register(Landroid/os/IInterface;Ljava/lang/Object;)Z
+    invoke-virtual {p0, p2, p1}, Landroid/os/RemoteCallbackList;->register(Landroid/os/IInterface;Ljava/lang/Object;)Z
 
     iget-object v1, p0, Landroid/speech/tts/TextToSpeechService$CallbackMap;->mCallerToCallback:Ljava/util/HashMap;
 
@@ -387,7 +387,7 @@
 
     if-eq v0, p2, :cond_0
 
-    invoke-virtual {p0, v0}, Landroid/speech/tts/TextToSpeechService$CallbackMap;->unregister(Landroid/os/IInterface;)Z
+    invoke-virtual {p0, v0}, Landroid/os/RemoteCallbackList;->unregister(Landroid/os/IInterface;)Z
 
     :cond_0
     monitor-exit v2

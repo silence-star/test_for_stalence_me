@@ -152,7 +152,7 @@
 
     move-result-object v5
 
-    iget v5, v5, Landroid/widget/AbsoluteLayout$LayoutParams;->width:I
+    iget v5, v5, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     add-int/2addr v4, v5
 
@@ -172,7 +172,7 @@
 
     move-result-object v6
 
-    iget v6, v6, Landroid/widget/AbsoluteLayout$LayoutParams;->height:I
+    iget v6, v6, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     add-int/2addr v5, v6
 

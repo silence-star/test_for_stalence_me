@@ -451,7 +451,7 @@
 
     const/4 v6, 0x1
 
-    invoke-virtual {v15, v6}, Landroid/view/animation/AnimationSet;->setDetachWallpaper(Z)V
+    invoke-virtual {v15, v6}, Landroid/view/animation/Animation;->setDetachWallpaper(Z)V
 
     move-object v11, v15
 
@@ -1224,7 +1224,7 @@
 
     move-object/from16 v0, v19
 
-    invoke-virtual {v0, v7}, Landroid/view/animation/AnimationSet;->setZAdjustment(I)V
+    invoke-virtual {v0, v7}, Landroid/view/animation/Animation;->setZAdjustment(I)V
 
     move-object/from16 v5, v19
 

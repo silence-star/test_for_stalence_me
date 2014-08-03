@@ -984,7 +984,7 @@
     new-array v7, v4, [Ljava/lang/String;
 
     .local v7, emptyArgs:[Ljava/lang/String;
-    invoke-virtual {v6}, Ljava/io/PrintWriter;->println()V
+    invoke-virtual {v6}, Lcom/android/internal/util/FastPrintWriter;->println()V
 
     move-object/from16 v0, p0
 
@@ -1002,7 +1002,7 @@
 
     invoke-virtual/range {v4 .. v10}, Lcom/android/server/am/ActivityManagerService;->dumpProcessesLocked(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;IZLjava/lang/String;)V
 
-    invoke-virtual {v6}, Ljava/io/PrintWriter;->println()V
+    invoke-virtual {v6}, Lcom/android/internal/util/FastPrintWriter;->println()V
 
     move-object/from16 v0, p0
 
@@ -1024,7 +1024,7 @@
 
     invoke-virtual/range {v4 .. v11}, Lcom/android/server/am/IActiveServices;->dumpServicesLocked(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;IZZLjava/lang/String;)V
 
-    invoke-virtual {v6}, Ljava/io/PrintWriter;->println()V
+    invoke-virtual {v6}, Lcom/android/internal/util/FastPrintWriter;->println()V
 
     move-object/from16 v0, p0
 
@@ -1044,7 +1044,7 @@
 
     invoke-virtual/range {v4 .. v11}, Lcom/android/server/am/ActivityManagerService;->dumpActivitiesLocked(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;IZZLjava/lang/String;)V
 
-    invoke-virtual {v6}, Ljava/io/PrintWriter;->flush()V
+    invoke-virtual {v6}, Lcom/android/internal/util/FastPrintWriter;->flush()V
 
     monitor-exit v12
     :try_end_2

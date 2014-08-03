@@ -36,11 +36,11 @@
 
     iput-boolean v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboard$LatinKey;->mEnabled:Z
 
-    iget-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboard$LatinKey;->popupCharacters:Ljava/lang/CharSequence;
+    iget-object v0, p0, Landroid/inputmethodservice/Keyboard$Key;->popupCharacters:Ljava/lang/CharSequence;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboard$LatinKey;->popupCharacters:Ljava/lang/CharSequence;
+    iget-object v0, p0, Landroid/inputmethodservice/Keyboard$Key;->popupCharacters:Ljava/lang/CharSequence;
 
     invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
 
@@ -50,7 +50,7 @@
 
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboard$LatinKey;->popupResId:I
+    iput v0, p0, Landroid/inputmethodservice/Keyboard$Key;->popupResId:I
 
     :cond_0
     return-void
@@ -89,7 +89,7 @@
     return v1
 
     :cond_0
-    iget-object v2, p0, Lcom/android/internal/widget/PasswordEntryKeyboard$LatinKey;->codes:[I
+    iget-object v2, p0, Landroid/inputmethodservice/Keyboard$Key;->codes:[I
 
     aget v0, v2, v1
 
@@ -99,7 +99,7 @@
     if-ne v0, v3, :cond_4
 
     :cond_1
-    iget v1, p0, Lcom/android/internal/widget/PasswordEntryKeyboard$LatinKey;->height:I
+    iget v1, p0, Landroid/inputmethodservice/Keyboard$Key;->height:I
 
     div-int/lit8 v1, v1, 0xa
 
@@ -107,7 +107,7 @@
 
     if-ne v0, v4, :cond_2
 
-    iget v1, p0, Lcom/android/internal/widget/PasswordEntryKeyboard$LatinKey;->width:I
+    iget v1, p0, Landroid/inputmethodservice/Keyboard$Key;->width:I
 
     div-int/lit8 v1, v1, 0x6
 
@@ -116,7 +116,7 @@
     :cond_2
     if-ne v0, v3, :cond_3
 
-    iget v1, p0, Lcom/android/internal/widget/PasswordEntryKeyboard$LatinKey;->width:I
+    iget v1, p0, Landroid/inputmethodservice/Keyboard$Key;->width:I
 
     div-int/lit8 v1, v1, 0x6
 
@@ -157,14 +157,14 @@
     return-void
 
     :cond_0
-    iget-boolean v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboard$LatinKey;->pressed:Z
+    iget-boolean v0, p0, Landroid/inputmethodservice/Keyboard$Key;->pressed:Z
 
     if-nez v0, :cond_1
 
     const/4 v0, 0x1
 
     :goto_1
-    iput-boolean v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboard$LatinKey;->pressed:Z
+    iput-boolean v0, p0, Landroid/inputmethodservice/Keyboard$Key;->pressed:Z
 
     goto :goto_0
 

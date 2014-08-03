@@ -124,7 +124,7 @@
     invoke-direct {v2, v3}, Landroid/view/InflateException;-><init>(Ljava/lang/String;)V
 
     .local v2, ex:Landroid/view/InflateException;
-    invoke-virtual {v2, v1}, Landroid/view/InflateException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+    invoke-virtual {v2, v1}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
     throw v2
 .end method

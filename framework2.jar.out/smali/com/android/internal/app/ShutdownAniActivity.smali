@@ -49,7 +49,7 @@
     .prologue
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    invoke-virtual {p0}, Lcom/android/internal/app/ShutdownAniActivity;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 

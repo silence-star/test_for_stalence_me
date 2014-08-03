@@ -920,7 +920,7 @@
 
     aget-object v9, v9, v5
 
-    iget-object v10, v2, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v10, v2, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {v9, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -932,7 +932,7 @@
 
     aget-object v9, v9, v5
 
-    iget-object v10, v2, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v10, v2, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     invoke-virtual {v9, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

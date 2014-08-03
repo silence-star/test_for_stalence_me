@@ -246,13 +246,13 @@
 
     invoke-direct {p0, v4}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    iput-object p1, p0, Lcom/android/internal/telephony/RIL;->mContext:Landroid/content/Context;
+    iput-object p1, p0, Lcom/android/internal/telephony/BaseCommands;->mContext:Landroid/content/Context;
 
-    iput p3, p0, Lcom/android/internal/telephony/RIL;->mCdmaSubscription:I
+    iput p3, p0, Lcom/android/internal/telephony/BaseCommands;->mCdmaSubscription:I
 
-    iput p2, p0, Lcom/android/internal/telephony/RIL;->mPreferredNetworkType:I
+    iput p2, p0, Lcom/android/internal/telephony/BaseCommands;->mPreferredNetworkType:I
 
-    iput v6, p0, Lcom/android/internal/telephony/RIL;->mPhoneType:I
+    iput v6, p0, Lcom/android/internal/telephony/BaseCommands;->mPhoneType:I
 
     iput-object p4, p0, Lcom/android/internal/telephony/RIL;->mInstanceId:Ljava/lang/Integer;
 
@@ -301,7 +301,7 @@
 
     iget-object v4, p0, Lcom/android/internal/telephony/RIL;->mSenderThread:Landroid/os/HandlerThread;
 
-    invoke-virtual {v4}, Landroid/os/HandlerThread;->start()V
+    invoke-virtual {v4}, Ljava/lang/Thread;->start()V
 
     iget-object v4, p0, Lcom/android/internal/telephony/RIL;->mSenderThread:Landroid/os/HandlerThread;
 
@@ -514,13 +514,13 @@
 
     const/4 v3, 0x2
 
-    invoke-virtual {v1, v3}, Lcom/android/internal/telephony/RIL$RILSender;->removeMessages(I)V
+    invoke-virtual {v1, v3}, Landroid/os/Handler;->removeMessages(I)V
 
     iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mSender:Lcom/android/internal/telephony/RIL$RILSender;
 
     const/4 v3, 0x2
 
-    invoke-virtual {v1, v3}, Lcom/android/internal/telephony/RIL$RILSender;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {v1, v3}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
@@ -531,7 +531,7 @@
 
     int-to-long v3, v3
 
-    invoke-virtual {v1, v0, v3, v4}, Lcom/android/internal/telephony/RIL$RILSender;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v1, v0, v3, v4}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     monitor-exit v2
 
@@ -770,7 +770,7 @@
 
     const/4 v2, 0x2
 
-    invoke-virtual {v0, v2}, Lcom/android/internal/telephony/RIL$RILSender;->removeMessages(I)V
+    invoke-virtual {v0, v2}, Landroid/os/Handler;->removeMessages(I)V
 
     const/4 v0, 0x1
 
@@ -833,7 +833,7 @@
 
     iget-object v7, p1, Lcom/android/internal/telephony/RILRequest;->mParcel:Landroid/os/Parcel;
 
-    invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
+    invoke-virtual {v3}, Ljava/io/FilterInputStream;->read()I
 
     move-result v8
 
@@ -841,7 +841,7 @@
 
     iget-object v7, p1, Lcom/android/internal/telephony/RILRequest;->mParcel:Landroid/os/Parcel;
 
-    invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
+    invoke-virtual {v3}, Ljava/io/FilterInputStream;->read()I
 
     move-result v8
 
@@ -849,7 +849,7 @@
 
     iget-object v7, p1, Lcom/android/internal/telephony/RILRequest;->mParcel:Landroid/os/Parcel;
 
-    invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
+    invoke-virtual {v3}, Ljava/io/FilterInputStream;->read()I
 
     move-result v8
 
@@ -857,13 +857,13 @@
 
     iget-object v7, p1, Lcom/android/internal/telephony/RILRequest;->mParcel:Landroid/os/Parcel;
 
-    invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
+    invoke-virtual {v3}, Ljava/io/FilterInputStream;->read()I
 
     move-result v8
 
     invoke-virtual {v7, v8}, Landroid/os/Parcel;->writeInt(I)V
 
-    invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
+    invoke-virtual {v3}, Ljava/io/FilterInputStream;->read()I
 
     move-result v7
 
@@ -897,7 +897,7 @@
     :cond_0
     iget-object v7, p1, Lcom/android/internal/telephony/RILRequest;->mParcel:Landroid/os/Parcel;
 
-    invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
+    invoke-virtual {v3}, Ljava/io/FilterInputStream;->read()I
 
     move-result v8
 
@@ -905,7 +905,7 @@
 
     iget-object v7, p1, Lcom/android/internal/telephony/RILRequest;->mParcel:Landroid/os/Parcel;
 
-    invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
+    invoke-virtual {v3}, Ljava/io/FilterInputStream;->read()I
 
     move-result v8
 
@@ -913,7 +913,7 @@
 
     invoke-virtual {v7, v8}, Landroid/os/Parcel;->writeByte(B)V
 
-    invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
+    invoke-virtual {v3}, Ljava/io/FilterInputStream;->read()I
 
     move-result v7
 
@@ -944,7 +944,7 @@
     goto :goto_1
 
     :cond_1
-    invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
+    invoke-virtual {v3}, Ljava/io/FilterInputStream;->read()I
 
     move-result v2
 
@@ -1068,7 +1068,7 @@
 
     const/4 v2, 0x2
 
-    invoke-virtual {v0, v2}, Lcom/android/internal/telephony/RIL$RILSender;->removeMessages(I)V
+    invoke-virtual {v0, v2}, Landroid/os/Handler;->removeMessages(I)V
 
     goto :goto_0
 
@@ -1382,7 +1382,7 @@
     .prologue
     const/4 v2, 0x0
 
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->capacity()I
+    invoke-virtual {p1}, Ljava/nio/Buffer;->capacity()I
 
     move-result v3
 
@@ -1402,7 +1402,7 @@
 
     move-result-object v4
 
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->capacity()I
+    invoke-virtual {p1}, Ljava/nio/Buffer;->capacity()I
 
     move-result v5
 
@@ -1488,7 +1488,7 @@
 
     if-eqz v1, :cond_1
 
-    iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mDisplayInfoRegistrants:Landroid/os/RegistrantList;
+    iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mDisplayInfoRegistrants:Landroid/os/RegistrantList;
 
     if-eqz v1, :cond_0
 
@@ -1496,7 +1496,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mDisplayInfoRegistrants:Landroid/os/RegistrantList;
+    iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mDisplayInfoRegistrants:Landroid/os/RegistrantList;
 
     new-instance v2, Landroid/os/AsyncResult;
 
@@ -1517,7 +1517,7 @@
 
     if-eqz v1, :cond_2
 
-    iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mSignalInfoRegistrants:Landroid/os/RegistrantList;
+    iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mSignalInfoRegistrants:Landroid/os/RegistrantList;
 
     if-eqz v1, :cond_0
 
@@ -1525,7 +1525,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mSignalInfoRegistrants:Landroid/os/RegistrantList;
+    iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mSignalInfoRegistrants:Landroid/os/RegistrantList;
 
     new-instance v2, Landroid/os/AsyncResult;
 
@@ -1544,7 +1544,7 @@
 
     if-eqz v1, :cond_3
 
-    iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mNumberInfoRegistrants:Landroid/os/RegistrantList;
+    iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mNumberInfoRegistrants:Landroid/os/RegistrantList;
 
     if-eqz v1, :cond_0
 
@@ -1552,7 +1552,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mNumberInfoRegistrants:Landroid/os/RegistrantList;
+    iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mNumberInfoRegistrants:Landroid/os/RegistrantList;
 
     new-instance v2, Landroid/os/AsyncResult;
 
@@ -1571,7 +1571,7 @@
 
     if-eqz v1, :cond_4
 
-    iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mRedirNumInfoRegistrants:Landroid/os/RegistrantList;
+    iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mRedirNumInfoRegistrants:Landroid/os/RegistrantList;
 
     if-eqz v1, :cond_0
 
@@ -1579,7 +1579,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mRedirNumInfoRegistrants:Landroid/os/RegistrantList;
+    iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mRedirNumInfoRegistrants:Landroid/os/RegistrantList;
 
     new-instance v2, Landroid/os/AsyncResult;
 
@@ -1598,7 +1598,7 @@
 
     if-eqz v1, :cond_5
 
-    iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mLineControlInfoRegistrants:Landroid/os/RegistrantList;
+    iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mLineControlInfoRegistrants:Landroid/os/RegistrantList;
 
     if-eqz v1, :cond_0
 
@@ -1606,7 +1606,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mLineControlInfoRegistrants:Landroid/os/RegistrantList;
+    iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mLineControlInfoRegistrants:Landroid/os/RegistrantList;
 
     new-instance v2, Landroid/os/AsyncResult;
 
@@ -1625,7 +1625,7 @@
 
     if-eqz v1, :cond_6
 
-    iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mT53ClirInfoRegistrants:Landroid/os/RegistrantList;
+    iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mT53ClirInfoRegistrants:Landroid/os/RegistrantList;
 
     if-eqz v1, :cond_0
 
@@ -1633,7 +1633,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mT53ClirInfoRegistrants:Landroid/os/RegistrantList;
+    iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mT53ClirInfoRegistrants:Landroid/os/RegistrantList;
 
     new-instance v2, Landroid/os/AsyncResult;
 
@@ -1652,7 +1652,7 @@
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mT53AudCntrlInfoRegistrants:Landroid/os/RegistrantList;
+    iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mT53AudCntrlInfoRegistrants:Landroid/os/RegistrantList;
 
     if-eqz v1, :cond_0
 
@@ -1660,7 +1660,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mT53AudCntrlInfoRegistrants:Landroid/os/RegistrantList;
+    iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mT53AudCntrlInfoRegistrants:Landroid/os/RegistrantList;
 
     new-instance v2, Landroid/os/AsyncResult;
 
@@ -1680,13 +1680,13 @@
     .prologue
     const/4 v3, 0x0
 
-    iput p1, p0, Lcom/android/internal/telephony/RIL;->mRilVersion:I
+    iput p1, p0, Lcom/android/internal/telephony/BaseCommands;->mRilVersion:I
 
-    iget-object v0, p0, Lcom/android/internal/telephony/RIL;->mRilConnectedRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, p0, Lcom/android/internal/telephony/BaseCommands;->mRilConnectedRegistrants:Landroid/os/RegistrantList;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/internal/telephony/RIL;->mRilConnectedRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, p0, Lcom/android/internal/telephony/BaseCommands;->mRilConnectedRegistrants:Landroid/os/RegistrantList;
 
     new-instance v1, Landroid/os/AsyncResult;
 
@@ -2040,7 +2040,7 @@
 
     if-eqz v7, :cond_6
 
-    iget-object v7, p0, Lcom/android/internal/telephony/RIL;->mEmergencyCallbackModeRegistrant:Landroid/os/Registrant;
+    iget-object v7, p0, Lcom/android/internal/telephony/BaseCommands;->mEmergencyCallbackModeRegistrant:Landroid/os/Registrant;
 
     if-eqz v7, :cond_6
 
@@ -2048,7 +2048,7 @@
 
     invoke-direct {p0, v7}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    iget-object v7, p0, Lcom/android/internal/telephony/RIL;->mEmergencyCallbackModeRegistrant:Landroid/os/Registrant;
+    iget-object v7, p0, Lcom/android/internal/telephony/BaseCommands;->mEmergencyCallbackModeRegistrant:Landroid/os/Registrant;
 
     invoke-virtual {v7}, Landroid/os/Registrant;->notifyRegistrant()V
 
@@ -2788,7 +2788,7 @@
 
     .end local v2           #ret:Ljava/lang/Object;
     :pswitch_76
-    iget-object v7, p0, Lcom/android/internal/telephony/RIL;->mIccStatusChangedRegistrants:Landroid/os/RegistrantList;
+    iget-object v7, p0, Lcom/android/internal/telephony/BaseCommands;->mIccStatusChangedRegistrants:Landroid/os/RegistrantList;
 
     if-eqz v7, :cond_4
 
@@ -2802,7 +2802,7 @@
 
     move-result-object v7
 
-    iget-object v8, p0, Lcom/android/internal/telephony/RIL;->mIccStatusChangedRegistrants:Landroid/os/RegistrantList;
+    iget-object v8, p0, Lcom/android/internal/telephony/BaseCommands;->mIccStatusChangedRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v8}, Landroid/os/RegistrantList;->size()I
 
@@ -2818,14 +2818,14 @@
 
     invoke-direct {p0, v7}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    iget-object v7, p0, Lcom/android/internal/telephony/RIL;->mIccStatusChangedRegistrants:Landroid/os/RegistrantList;
+    iget-object v7, p0, Lcom/android/internal/telephony/BaseCommands;->mIccStatusChangedRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v7}, Landroid/os/RegistrantList;->notifyRegistrants()V
 
     goto/16 :goto_2
 
     :sswitch_0
-    iget-object v6, p0, Lcom/android/internal/telephony/RIL;->mIccStatusChangedRegistrants:Landroid/os/RegistrantList;
+    iget-object v6, p0, Lcom/android/internal/telephony/BaseCommands;->mIccStatusChangedRegistrants:Landroid/os/RegistrantList;
 
     if-eqz v6, :cond_5
 
@@ -2839,7 +2839,7 @@
 
     move-result-object v6
 
-    iget-object v7, p0, Lcom/android/internal/telephony/RIL;->mIccStatusChangedRegistrants:Landroid/os/RegistrantList;
+    iget-object v7, p0, Lcom/android/internal/telephony/BaseCommands;->mIccStatusChangedRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v7}, Landroid/os/RegistrantList;->size()I
 
@@ -2855,7 +2855,7 @@
 
     invoke-direct {p0, v6}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    iget-object v6, p0, Lcom/android/internal/telephony/RIL;->mIccStatusChangedRegistrants:Landroid/os/RegistrantList;
+    iget-object v6, p0, Lcom/android/internal/telephony/BaseCommands;->mIccStatusChangedRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v6}, Landroid/os/RegistrantList;->notifyRegistrants()V
 
@@ -3139,7 +3139,7 @@
     new-array v0, v2, [B
 
     .local v0, responseData:[B
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
+    invoke-virtual {p1}, Ljava/nio/Buffer;->remaining()I
 
     move-result v4
 
@@ -3205,7 +3205,7 @@
 
     move-result-object v5
 
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
+    invoke-virtual {p1}, Ljava/nio/Buffer;->remaining()I
 
     move-result v6
 
@@ -3384,7 +3384,7 @@
     move-result-object v9
 
     .local v9, newState:Lcom/android/internal/telephony/CommandsInterface$RadioState;
-    invoke-virtual {v9}, Lcom/android/internal/telephony/CommandsInterface$RadioState;->toString()Ljava/lang/String;
+    invoke-virtual {v9}, Ljava/lang/Enum;->toString()Ljava/lang/String;
 
     move-result-object v22
 
@@ -3766,7 +3766,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mImsNetworkStateChangedRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mImsNetworkStateChangedRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v22, v0
 
@@ -3793,7 +3793,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mCallStateRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCallStateRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v22, v0
 
@@ -3820,7 +3820,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mVoiceNetworkStateRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mVoiceNetworkStateRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v22, v0
 
@@ -3865,7 +3865,7 @@
     .local v19, sms:Landroid/telephony/SmsMessage;
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mGsmSmsRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mGsmSmsRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -3873,7 +3873,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mGsmSmsRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mGsmSmsRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -3910,7 +3910,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mSmsStatusRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSmsStatusRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -3918,7 +3918,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mSmsStatusRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSmsStatusRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -3974,7 +3974,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mSmsOnSimRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSmsOnSimRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -3982,7 +3982,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mSmsOnSimRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSmsOnSimRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4101,7 +4101,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mUSSDRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mUSSDRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4109,7 +4109,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mUSSDRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mUSSDRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4191,7 +4191,7 @@
     :cond_3
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mNITZTimeRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mNITZTimeRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4199,7 +4199,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mNITZTimeRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mNITZTimeRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4238,7 +4238,7 @@
     :pswitch_33
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mSignalStrengthRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSignalStrengthRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4246,7 +4246,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mSignalStrengthRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSignalStrengthRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4281,7 +4281,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mDataNetworkStateRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mDataNetworkStateRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v22, v0
 
@@ -4316,7 +4316,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mSsnRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSsnRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4324,7 +4324,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mSsnRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSsnRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4357,7 +4357,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mCatSessionEndRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCatSessionEndRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4365,7 +4365,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mCatSessionEndRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCatSessionEndRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4400,7 +4400,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mCatProCmdRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCatProCmdRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4408,7 +4408,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mCatProCmdRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCatProCmdRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4443,7 +4443,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mCatEventRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCatEventRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4451,7 +4451,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mCatEventRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCatEventRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4486,7 +4486,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mCatCallSetUpRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCatCallSetUpRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4494,7 +4494,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mCatCallSetUpRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCatCallSetUpRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4527,7 +4527,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mIccSmsFullRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mIccSmsFullRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4535,7 +4535,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mIccSmsFullRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mIccSmsFullRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4554,7 +4554,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mIccRefreshRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mIccRefreshRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v22, v0
 
@@ -4562,7 +4562,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mIccRefreshRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mIccRefreshRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v22, v0
 
@@ -4597,7 +4597,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mRingRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mRingRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4605,7 +4605,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mRingRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mRingRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4640,7 +4640,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mRestrictedStateRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mRestrictedStateRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4648,7 +4648,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mRestrictedStateRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mRestrictedStateRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4681,7 +4681,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mIccStatusChangedRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mIccStatusChangedRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v22, v0
 
@@ -4689,7 +4689,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mIccStatusChangedRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mIccStatusChangedRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v22, v0
 
@@ -4711,7 +4711,7 @@
     .restart local v19       #sms:Landroid/telephony/SmsMessage;
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mCdmaSmsRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCdmaSmsRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4719,7 +4719,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mCdmaSmsRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCdmaSmsRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4753,7 +4753,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mGsmBroadcastSmsRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mGsmBroadcastSmsRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4761,7 +4761,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mGsmBroadcastSmsRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mGsmBroadcastSmsRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4794,7 +4794,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mIccSmsFullRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mIccSmsFullRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4802,7 +4802,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mIccSmsFullRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mIccSmsFullRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4819,7 +4819,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mEmergencyCallbackModeRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mEmergencyCallbackModeRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4827,7 +4827,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mEmergencyCallbackModeRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mEmergencyCallbackModeRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -4846,7 +4846,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mCallWaitingInfoRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCallWaitingInfoRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v22, v0
 
@@ -4854,7 +4854,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mCallWaitingInfoRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCallWaitingInfoRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v22, v0
 
@@ -4889,7 +4889,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mOtaProvisionRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mOtaProvisionRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v22, v0
 
@@ -4897,7 +4897,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mOtaProvisionRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mOtaProvisionRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v22, v0
 
@@ -5044,7 +5044,7 @@
     :cond_5
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mUnsolOemHookRawRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mUnsolOemHookRawRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -5058,7 +5058,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mUnsolOemHookRawRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mUnsolOemHookRawRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -5094,7 +5094,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mRingbackToneRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mRingbackToneRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v22, v0
 
@@ -5122,7 +5122,7 @@
     :goto_3
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mRingbackToneRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mRingbackToneRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v22, v0
 
@@ -5159,7 +5159,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mResendIncallMuteRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mResendIncallMuteRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v22, v0
 
@@ -5167,7 +5167,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mResendIncallMuteRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mResendIncallMuteRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v22, v0
 
@@ -5202,7 +5202,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mVoiceRadioTechChangedRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mVoiceRadioTechChangedRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v22, v0
 
@@ -5210,7 +5210,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mVoiceRadioTechChangedRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mVoiceRadioTechChangedRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v22, v0
 
@@ -5245,7 +5245,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mCdmaSubscriptionChangedRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCdmaSubscriptionChangedRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v22, v0
 
@@ -5253,7 +5253,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mCdmaSubscriptionChangedRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCdmaSubscriptionChangedRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v22, v0
 
@@ -5288,7 +5288,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mCdmaPrlChangedRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCdmaPrlChangedRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v22, v0
 
@@ -5296,7 +5296,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mCdmaPrlChangedRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCdmaPrlChangedRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v22, v0
 
@@ -5331,7 +5331,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mExitEmergencyCallbackModeRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mExitEmergencyCallbackModeRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v22, v0
 
@@ -5339,7 +5339,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mExitEmergencyCallbackModeRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mExitEmergencyCallbackModeRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v22, v0
 
@@ -5400,7 +5400,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/RIL;->mPreferredNetworkType:I
+    iget v0, v0, Lcom/android/internal/telephony/BaseCommands;->mPreferredNetworkType:I
 
     move/from16 v23, v0
 
@@ -5420,7 +5420,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/RIL;->mPreferredNetworkType:I
+    iget v0, v0, Lcom/android/internal/telephony/BaseCommands;->mPreferredNetworkType:I
 
     move/from16 v22, v0
 
@@ -5437,7 +5437,7 @@
     :cond_7
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/RIL;->mCdmaSubscription:I
+    iget v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCdmaSubscription:I
 
     move/from16 v22, v0
 
@@ -5490,7 +5490,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mRilCellInfoListRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mRilCellInfoListRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v22, v0
 
@@ -5498,7 +5498,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mRilCellInfoListRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mRilCellInfoListRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v22, v0
 
@@ -5533,7 +5533,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mSsRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSsRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -5541,7 +5541,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mSsRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSsRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -5576,7 +5576,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mCatCcAlphaRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCatCcAlphaRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -5584,7 +5584,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mCatCcAlphaRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCatCcAlphaRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v22, v0
 
@@ -5619,7 +5619,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mSubscriptionStatusRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSubscriptionStatusRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v22, v0
 
@@ -5627,7 +5627,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mSubscriptionStatusRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSubscriptionStatusRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v22, v0
 
@@ -6983,7 +6983,7 @@
 
     if-eqz v8, :cond_5
 
-    iget-object v8, p0, Lcom/android/internal/telephony/RIL;->mVoicePrivacyOnRegistrants:Landroid/os/RegistrantList;
+    iget-object v8, p0, Lcom/android/internal/telephony/BaseCommands;->mVoicePrivacyOnRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v8}, Landroid/os/RegistrantList;->notifyRegistrants()V
 
@@ -7030,7 +7030,7 @@
     goto :goto_5
 
     :cond_5
-    iget-object v8, p0, Lcom/android/internal/telephony/RIL;->mVoicePrivacyOffRegistrants:Landroid/os/RegistrantList;
+    iget-object v8, p0, Lcom/android/internal/telephony/BaseCommands;->mVoicePrivacyOffRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v8}, Landroid/os/RegistrantList;->notifyRegistrants()V
 
@@ -7057,7 +7057,7 @@
 
     if-eqz v8, :cond_7
 
-    iget-object v8, p0, Lcom/android/internal/telephony/RIL;->mEmergencyCallbackModeRegistrant:Landroid/os/Registrant;
+    iget-object v8, p0, Lcom/android/internal/telephony/BaseCommands;->mEmergencyCallbackModeRegistrant:Landroid/os/Registrant;
 
     if-eqz v8, :cond_7
 
@@ -7065,7 +7065,7 @@
 
     invoke-direct {p0, v8}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    iget-object v8, p0, Lcom/android/internal/telephony/RIL;->mEmergencyCallbackModeRegistrant:Landroid/os/Registrant;
+    iget-object v8, p0, Lcom/android/internal/telephony/BaseCommands;->mEmergencyCallbackModeRegistrant:Landroid/os/Registrant;
 
     invoke-virtual {v8}, Landroid/os/Registrant;->notifyRegistrant()V
 
@@ -7769,7 +7769,7 @@
 
     aget v1, v0, v1
 
-    iput v1, p0, Lcom/android/internal/telephony/RIL;->mPreferredNetworkType:I
+    iput v1, p0, Lcom/android/internal/telephony/BaseCommands;->mPreferredNetworkType:I
 
     :cond_0
     return-object v0
@@ -9585,7 +9585,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mSender:Lcom/android/internal/telephony/RIL$RILSender;
 
-    invoke-virtual {v1, v2, p1}, Lcom/android/internal/telephony/RIL$RILSender;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v1, v2, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
@@ -9729,7 +9729,7 @@
     .parameter "newState"
 
     .prologue
-    invoke-virtual {p0, p1}, Lcom/android/internal/telephony/RIL;->setRadioState(Lcom/android/internal/telephony/CommandsInterface$RadioState;)V
+    invoke-virtual {p0, p1}, Lcom/android/internal/telephony/BaseCommands;->setRadioState(Lcom/android/internal/telephony/CommandsInterface$RadioState;)V
 
     return-void
 .end method
@@ -13629,7 +13629,7 @@
     invoke-direct {v0, v1, p1, v1}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
 
     .local v0, ar:Landroid/os/AsyncResult;
-    iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mCdmaFwdBurstDtmfRegistrants:Landroid/os/RegistrantList;
+    iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mCdmaFwdBurstDtmfRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
 
@@ -13648,7 +13648,7 @@
     invoke-direct {v0, v1, p1, v1}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
 
     .local v0, ar:Landroid/os/AsyncResult;
-    iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mCdmaFwdContDtmfStartRegistrants:Landroid/os/RegistrantList;
+    iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mCdmaFwdContDtmfStartRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
 
@@ -13666,7 +13666,7 @@
     invoke-direct {v0, v1, v1, v1}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
 
     .local v0, ar:Landroid/os/AsyncResult;
-    iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mCdmaFwdContDtmfStopRegistrants:Landroid/os/RegistrantList;
+    iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mCdmaFwdContDtmfStopRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
 
@@ -13685,7 +13685,7 @@
     invoke-direct {v0, v1, p1, v1}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
 
     .local v0, ar:Landroid/os/AsyncResult;
-    iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mWmsReadyRegistrants:Landroid/os/RegistrantList;
+    iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mWmsReadyRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
 
@@ -13702,7 +13702,7 @@
     .locals 3
 
     .prologue
-    iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mContext:Landroid/content/Context;
 
     const-string v2, "power"
 
@@ -16260,7 +16260,7 @@
 
     if-nez v1, :cond_0
 
-    iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -16322,7 +16322,7 @@
 
     :cond_0
     :try_start_1
-    iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -16354,7 +16354,7 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    iget v1, p0, Lcom/android/internal/telephony/RIL;->mPreferredNetworkType:I
+    iget v1, p0, Lcom/android/internal/telephony/BaseCommands;->mPreferredNetworkType:I
 
     iput v1, p0, Lcom/android/internal/telephony/RIL;->mSetPreferredNetworkType:I
 
@@ -17351,7 +17351,7 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/internal/telephony/RIL;->mNITZTimeRegistrant:Landroid/os/Registrant;
+    iget-object v0, p0, Lcom/android/internal/telephony/BaseCommands;->mNITZTimeRegistrant:Landroid/os/Registrant;
 
     new-instance v1, Landroid/os/AsyncResult;
 
@@ -17392,7 +17392,7 @@
 
     move-result-object v0
 
-    iget v1, p0, Lcom/android/internal/telephony/RIL;->mPhoneType:I
+    iget v1, p0, Lcom/android/internal/telephony/BaseCommands;->mPhoneType:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -17404,7 +17404,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    iput p1, p0, Lcom/android/internal/telephony/RIL;->mPhoneType:I
+    iput p1, p0, Lcom/android/internal/telephony/BaseCommands;->mPhoneType:I
 
     return-void
 .end method
@@ -17434,7 +17434,7 @@
 
     iput p1, p0, Lcom/android/internal/telephony/RIL;->mSetPreferredNetworkType:I
 
-    iput p1, p0, Lcom/android/internal/telephony/RIL;->mPreferredNetworkType:I
+    iput p1, p0, Lcom/android/internal/telephony/BaseCommands;->mPreferredNetworkType:I
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -18805,7 +18805,7 @@
 
     iget-object v9, v7, Lcom/android/internal/telephony/RILRequest;->mParcel:Landroid/os/Parcel;
 
-    invoke-virtual {v4}, Ljava/io/DataInputStream;->read()I
+    invoke-virtual {v4}, Ljava/io/FilterInputStream;->read()I
 
     move-result v10
 
@@ -18815,7 +18815,7 @@
 
     iget-object v9, v7, Lcom/android/internal/telephony/RILRequest;->mParcel:Landroid/os/Parcel;
 
-    invoke-virtual {v4}, Ljava/io/DataInputStream;->read()I
+    invoke-virtual {v4}, Ljava/io/FilterInputStream;->read()I
 
     move-result v10
 
@@ -18823,7 +18823,7 @@
 
     iget-object v9, v7, Lcom/android/internal/telephony/RILRequest;->mParcel:Landroid/os/Parcel;
 
-    invoke-virtual {v4}, Ljava/io/DataInputStream;->read()I
+    invoke-virtual {v4}, Ljava/io/FilterInputStream;->read()I
 
     move-result v10
 
@@ -18831,7 +18831,7 @@
 
     iget-object v9, v7, Lcom/android/internal/telephony/RILRequest;->mParcel:Landroid/os/Parcel;
 
-    invoke-virtual {v4}, Ljava/io/DataInputStream;->read()I
+    invoke-virtual {v4}, Ljava/io/FilterInputStream;->read()I
 
     move-result v10
 
@@ -18839,7 +18839,7 @@
 
     iget-object v9, v7, Lcom/android/internal/telephony/RILRequest;->mParcel:Landroid/os/Parcel;
 
-    invoke-virtual {v4}, Ljava/io/DataInputStream;->read()I
+    invoke-virtual {v4}, Ljava/io/FilterInputStream;->read()I
 
     move-result v10
 
@@ -18847,13 +18847,13 @@
 
     iget-object v9, v7, Lcom/android/internal/telephony/RILRequest;->mParcel:Landroid/os/Parcel;
 
-    invoke-virtual {v4}, Ljava/io/DataInputStream;->read()I
+    invoke-virtual {v4}, Ljava/io/FilterInputStream;->read()I
 
     move-result v10
 
     invoke-virtual {v9, v10}, Landroid/os/Parcel;->writeInt(I)V
 
-    invoke-virtual {v4}, Ljava/io/DataInputStream;->read()I
+    invoke-virtual {v4}, Ljava/io/FilterInputStream;->read()I
 
     move-result v9
 
@@ -18887,7 +18887,7 @@
     :cond_0
     iget-object v9, v7, Lcom/android/internal/telephony/RILRequest;->mParcel:Landroid/os/Parcel;
 
-    invoke-virtual {v4}, Ljava/io/DataInputStream;->read()I
+    invoke-virtual {v4}, Ljava/io/FilterInputStream;->read()I
 
     move-result v10
 
@@ -18895,7 +18895,7 @@
 
     iget-object v9, v7, Lcom/android/internal/telephony/RILRequest;->mParcel:Landroid/os/Parcel;
 
-    invoke-virtual {v4}, Ljava/io/DataInputStream;->read()I
+    invoke-virtual {v4}, Ljava/io/FilterInputStream;->read()I
 
     move-result v10
 
@@ -18903,7 +18903,7 @@
 
     invoke-virtual {v9, v10}, Landroid/os/Parcel;->writeByte(B)V
 
-    invoke-virtual {v4}, Ljava/io/DataInputStream;->read()I
+    invoke-virtual {v4}, Ljava/io/FilterInputStream;->read()I
 
     move-result v9
 

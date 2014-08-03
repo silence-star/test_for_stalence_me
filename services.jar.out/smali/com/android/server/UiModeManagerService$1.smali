@@ -41,7 +41,7 @@
     .prologue
     const/4 v4, 0x0
 
-    invoke-virtual {p0}, Lcom/android/server/UiModeManagerService$1;->getResultCode()I
+    invoke-virtual {p0}, Landroid/content/BroadcastReceiver;->getResultCode()I
 
     move-result v2
 

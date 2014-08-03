@@ -41,7 +41,7 @@
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews$Action;-><init>(Landroid/widget/RemoteViews$1;)V
 
-    iput p2, p0, Landroid/widget/RemoteViews$TextViewSizeAction;->viewId:I
+    iput p2, p0, Landroid/widget/RemoteViews$Action;->viewId:I
 
     iput p3, p0, Landroid/widget/RemoteViews$TextViewSizeAction;->units:I
 
@@ -66,7 +66,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/widget/RemoteViews$TextViewSizeAction;->viewId:I
+    iput v0, p0, Landroid/widget/RemoteViews$Action;->viewId:I
 
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
@@ -92,7 +92,7 @@
     .parameter "handler"
 
     .prologue
-    iget v1, p0, Landroid/widget/RemoteViews$TextViewSizeAction;->viewId:I
+    iget v1, p0, Landroid/widget/RemoteViews$Action;->viewId:I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -135,7 +135,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    iget v0, p0, Landroid/widget/RemoteViews$TextViewSizeAction;->viewId:I
+    iget v0, p0, Landroid/widget/RemoteViews$Action;->viewId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 

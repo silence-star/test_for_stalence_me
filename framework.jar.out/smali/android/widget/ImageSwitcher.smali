@@ -40,7 +40,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityRecord;->setClassName(Ljava/lang/CharSequence;)V
 
     return-void
 .end method
@@ -68,7 +68,7 @@
     .parameter "drawable"
 
     .prologue
-    invoke-virtual {p0}, Landroid/widget/ImageSwitcher;->getNextView()Landroid/view/View;
+    invoke-virtual {p0}, Landroid/widget/ViewSwitcher;->getNextView()Landroid/view/View;
 
     move-result-object v0
 
@@ -77,7 +77,7 @@
     .local v0, image:Landroid/widget/ImageView;
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    invoke-virtual {p0}, Landroid/widget/ImageSwitcher;->showNext()V
+    invoke-virtual {p0}, Landroid/widget/ViewAnimator;->showNext()V
 
     return-void
 .end method
@@ -87,7 +87,7 @@
     .parameter "resid"
 
     .prologue
-    invoke-virtual {p0}, Landroid/widget/ImageSwitcher;->getNextView()Landroid/view/View;
+    invoke-virtual {p0}, Landroid/widget/ViewSwitcher;->getNextView()Landroid/view/View;
 
     move-result-object v0
 
@@ -96,7 +96,7 @@
     .local v0, image:Landroid/widget/ImageView;
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    invoke-virtual {p0}, Landroid/widget/ImageSwitcher;->showNext()V
+    invoke-virtual {p0}, Landroid/widget/ViewAnimator;->showNext()V
 
     return-void
 .end method
@@ -106,7 +106,7 @@
     .parameter "uri"
 
     .prologue
-    invoke-virtual {p0}, Landroid/widget/ImageSwitcher;->getNextView()Landroid/view/View;
+    invoke-virtual {p0}, Landroid/widget/ViewSwitcher;->getNextView()Landroid/view/View;
 
     move-result-object v0
 
@@ -115,7 +115,7 @@
     .local v0, image:Landroid/widget/ImageView;
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageURI(Landroid/net/Uri;)V
 
-    invoke-virtual {p0}, Landroid/widget/ImageSwitcher;->showNext()V
+    invoke-virtual {p0}, Landroid/widget/ViewAnimator;->showNext()V
 
     return-void
 .end method

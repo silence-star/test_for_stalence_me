@@ -144,7 +144,7 @@
 
     if-eqz v6, :cond_1
 
-    iget-object v6, p0, Lcom/android/server/accounts/AccountManagerService$4;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
+    iget-object v6, p0, Lcom/android/server/accounts/AccountManagerService$Session;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
 
     iget-object v8, p0, Lcom/android/server/accounts/AccountManagerService$4;->val$account:Landroid/accounts/Account;
 

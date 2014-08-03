@@ -63,7 +63,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/android/internal/policy/impl/NubiaGlobalActions$GlobalActionsDialog;->dismiss()V
+    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
     goto :goto_0
 
@@ -80,7 +80,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/android/internal/policy/impl/NubiaGlobalActions$MyAdapter;->notifyDataSetChanged()V
+    invoke-virtual {v0}, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
 
     goto :goto_0
 

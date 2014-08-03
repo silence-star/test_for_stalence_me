@@ -480,15 +480,15 @@
 
     iget-object v1, p0, Lcom/android/server/display/OverlayDisplayWindow;->mTextureView:Landroid/view/TextureView;
 
-    invoke-virtual {v1, v4}, Landroid/view/TextureView;->setPivotX(F)V
+    invoke-virtual {v1, v4}, Landroid/view/View;->setPivotX(F)V
 
     iget-object v1, p0, Lcom/android/server/display/OverlayDisplayWindow;->mTextureView:Landroid/view/TextureView;
 
-    invoke-virtual {v1, v4}, Landroid/view/TextureView;->setPivotY(F)V
+    invoke-virtual {v1, v4}, Landroid/view/View;->setPivotY(F)V
 
     iget-object v1, p0, Lcom/android/server/display/OverlayDisplayWindow;->mTextureView:Landroid/view/TextureView;
 
-    invoke-virtual {v1}, Landroid/view/TextureView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
@@ -498,7 +498,7 @@
 
     iget-object v1, p0, Lcom/android/server/display/OverlayDisplayWindow;->mTextureView:Landroid/view/TextureView;
 
-    invoke-virtual {v1}, Landroid/view/TextureView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
@@ -674,7 +674,7 @@
 
     iget-object v0, p0, Lcom/android/server/display/OverlayDisplayWindow;->mTextureView:Landroid/view/TextureView;
 
-    invoke-virtual {v0}, Landroid/view/TextureView;->getScaleX()F
+    invoke-virtual {v0}, Landroid/view/View;->getScaleX()F
 
     move-result v0
 
@@ -866,11 +866,11 @@
 
     iget-object v6, p0, Lcom/android/server/display/OverlayDisplayWindow;->mTextureView:Landroid/view/TextureView;
 
-    invoke-virtual {v6, v2}, Landroid/view/TextureView;->setScaleX(F)V
+    invoke-virtual {v6, v2}, Landroid/view/View;->setScaleX(F)V
 
     iget-object v6, p0, Lcom/android/server/display/OverlayDisplayWindow;->mTextureView:Landroid/view/TextureView;
 
-    invoke-virtual {v6, v2}, Landroid/view/TextureView;->setScaleY(F)V
+    invoke-virtual {v6, v2}, Landroid/view/View;->setScaleY(F)V
 
     iget-object v6, p0, Lcom/android/server/display/OverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
@@ -882,11 +882,11 @@
 
     iget-object v6, p0, Lcom/android/server/display/OverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
-    iput v3, v6, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v3, v6, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     iget-object v6, p0, Lcom/android/server/display/OverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
-    iput v0, v6, Landroid/view/WindowManager$LayoutParams;->height:I
+    iput v0, v6, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     return-void
 .end method
@@ -1052,7 +1052,7 @@
 
     iget-object v1, p0, Lcom/android/server/display/OverlayDisplayWindow;->mTextureView:Landroid/view/TextureView;
 
-    invoke-virtual {v1}, Landroid/view/TextureView;->getScaleX()F
+    invoke-virtual {v1}, Landroid/view/View;->getScaleX()F
 
     move-result v1
 
@@ -1078,7 +1078,7 @@
 
     iget-object v1, p0, Lcom/android/server/display/OverlayDisplayWindow;->mTextureView:Landroid/view/TextureView;
 
-    invoke-virtual {v1}, Landroid/view/TextureView;->getScaleY()F
+    invoke-virtual {v1}, Landroid/view/View;->getScaleY()F
 
     move-result v1
 

@@ -61,7 +61,7 @@
     invoke-interface {v0}, Ljavax/net/ssl/SSLSession;->invalidate()V
 
     :cond_0
-    invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->close()V
+    invoke-virtual {p1}, Ljava/net/Socket;->close()V
 
     .end local v0           #session:Ljavax/net/ssl/SSLSession;
     :cond_1

@@ -319,7 +319,7 @@
     .local v2, getEnable:Ljava/lang/reflect/Method;
     const/4 v6, 0x1
 
-    invoke-virtual {v2, v6}, Ljava/lang/reflect/Method;->setAccessible(Z)V
+    invoke-virtual {v2, v6}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
 
     const/4 v6, 0x0
 
@@ -347,7 +347,7 @@
     move-exception v1
 
     .local v1, e:Ljava/lang/Exception;
-    invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     move v6, v7
 

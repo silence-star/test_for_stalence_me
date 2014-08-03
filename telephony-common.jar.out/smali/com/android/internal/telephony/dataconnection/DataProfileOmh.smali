@@ -89,7 +89,7 @@
 
     new-array v0, v1, [Ljava/lang/String;
 
-    iput-object v0, p0, Lcom/android/internal/telephony/dataconnection/DataProfileOmh;->types:[Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/internal/telephony/dataconnection/DataProfile;->types:[Ljava/lang/String;
 
     return-void
 .end method
@@ -190,7 +190,7 @@
 
     check-cast v5, [Ljava/lang/String;
 
-    iput-object v5, p0, Lcom/android/internal/telephony/dataconnection/DataProfileOmh;->types:[Ljava/lang/String;
+    iput-object v5, p0, Lcom/android/internal/telephony/dataconnection/DataProfile;->types:[Ljava/lang/String;
 
     return-void
 .end method

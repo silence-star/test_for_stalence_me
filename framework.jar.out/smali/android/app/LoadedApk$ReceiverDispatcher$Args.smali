@@ -126,7 +126,7 @@
 
     if-eqz v4, :cond_1
 
-    invoke-virtual {p0, v3}, Landroid/app/LoadedApk$ReceiverDispatcher$Args;->sendFinished(Landroid/app/IActivityManager;)V
+    invoke-virtual {p0, v3}, Landroid/content/BroadcastReceiver$PendingResult;->sendFinished(Landroid/app/IActivityManager;)V
 
     :cond_1
     :goto_0
@@ -153,7 +153,7 @@
     .local v0, cl:Ljava/lang/ClassLoader;
     invoke-virtual {v2, v0}, Landroid/content/Intent;->setExtrasClassLoader(Ljava/lang/ClassLoader;)V
 
-    invoke-virtual {p0, v0}, Landroid/app/LoadedApk$ReceiverDispatcher$Args;->setExtrasClassLoader(Ljava/lang/ClassLoader;)V
+    invoke-virtual {p0, v0}, Landroid/content/BroadcastReceiver$PendingResult;->setExtrasClassLoader(Ljava/lang/ClassLoader;)V
 
     invoke-virtual {v5, p0}, Landroid/content/BroadcastReceiver;->setPendingResult(Landroid/content/BroadcastReceiver$PendingResult;)V
 
@@ -173,7 +173,7 @@
 
     if-eqz v6, :cond_4
 
-    invoke-virtual {p0}, Landroid/app/LoadedApk$ReceiverDispatcher$Args;->finish()V
+    invoke-virtual {p0}, Landroid/content/BroadcastReceiver$PendingResult;->finish()V
 
     :cond_4
     invoke-static {v8, v9}, Landroid/os/Trace;->traceEnd(J)V
@@ -192,7 +192,7 @@
 
     if-eqz v4, :cond_5
 
-    invoke-virtual {p0, v3}, Landroid/app/LoadedApk$ReceiverDispatcher$Args;->sendFinished(Landroid/app/IActivityManager;)V
+    invoke-virtual {p0, v3}, Landroid/content/BroadcastReceiver$PendingResult;->sendFinished(Landroid/app/IActivityManager;)V
 
     :cond_5
     iget-object v6, p0, Landroid/app/LoadedApk$ReceiverDispatcher$Args;->this$0:Landroid/app/LoadedApk$ReceiverDispatcher;

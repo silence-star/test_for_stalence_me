@@ -59,7 +59,7 @@
     .prologue
     new-instance v0, Landroid/hardware/TriggerEvent;
 
-    iget-object v1, p0, Landroid/hardware/SystemSensorManager$TriggerEventQueue;->mManager:Landroid/hardware/SystemSensorManager;
+    iget-object v1, p0, Landroid/hardware/SystemSensorManager$BaseEventQueue;->mManager:Landroid/hardware/SystemSensorManager;
 
     #getter for: Landroid/hardware/SystemSensorManager;->mTargetSdkLevel:I
     invoke-static {v1}, Landroid/hardware/SystemSensorManager;->access$100(Landroid/hardware/SystemSensorManager;)I
@@ -203,7 +203,7 @@
 
     iput-object v1, v2, Landroid/hardware/TriggerEvent;->sensor:Landroid/hardware/Sensor;
 
-    iget-object v3, p0, Landroid/hardware/SystemSensorManager$TriggerEventQueue;->mManager:Landroid/hardware/SystemSensorManager;
+    iget-object v3, p0, Landroid/hardware/SystemSensorManager$BaseEventQueue;->mManager:Landroid/hardware/SystemSensorManager;
 
     iget-object v4, p0, Landroid/hardware/SystemSensorManager$TriggerEventQueue;->mListener:Landroid/hardware/TriggerEventListener;
 

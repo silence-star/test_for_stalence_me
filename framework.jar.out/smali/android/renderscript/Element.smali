@@ -1853,7 +1853,7 @@
     .local v6, size:I
     sget-object v0, Landroid/renderscript/Element$1;->$SwitchMap$android$renderscript$Element$DataKind:[I
 
-    invoke-virtual {p2}, Landroid/renderscript/Element$DataKind;->ordinal()I
+    invoke-virtual {p2}, Ljava/lang/Enum;->ordinal()I
 
     move-result v2
 
@@ -1979,7 +1979,7 @@
     :cond_1
     sget-object v0, Landroid/renderscript/Element$1;->$SwitchMap$android$renderscript$Element$DataType:[I
 
-    invoke-virtual {p1}, Landroid/renderscript/Element$DataType;->ordinal()I
+    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v2
 
@@ -2394,7 +2394,7 @@
     .prologue
     const/4 v0, 0x1
 
-    invoke-virtual {p0, p1}, Landroid/renderscript/Element;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p0, p1}, Landroid/renderscript/BaseObj;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -2493,11 +2493,11 @@
     new-array v1, v9, [I
 
     .local v1, dataBuffer:[I
-    iget-object v9, p0, Landroid/renderscript/Element;->mRS:Landroid/renderscript/RenderScript;
+    iget-object v9, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
 
-    iget-object v12, p0, Landroid/renderscript/Element;->mRS:Landroid/renderscript/RenderScript;
+    iget-object v12, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
 
-    invoke-virtual {p0, v12}, Landroid/renderscript/Element;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {p0, v12}, Landroid/renderscript/BaseObj;->getID(Landroid/renderscript/RenderScript;)I
 
     move-result v12
 
@@ -2631,11 +2631,11 @@
     new-array v8, v7, [I
 
     .local v8, subElementIds:[I
-    iget-object v9, p0, Landroid/renderscript/Element;->mRS:Landroid/renderscript/RenderScript;
+    iget-object v9, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
 
-    iget-object v10, p0, Landroid/renderscript/Element;->mRS:Landroid/renderscript/RenderScript;
+    iget-object v10, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
 
-    invoke-virtual {p0, v10}, Landroid/renderscript/Element;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {p0, v10}, Landroid/renderscript/BaseObj;->getID(Landroid/renderscript/RenderScript;)I
 
     move-result v10
 
@@ -2657,7 +2657,7 @@
 
     aget v11, v8, v4
 
-    iget-object v12, p0, Landroid/renderscript/Element;->mRS:Landroid/renderscript/RenderScript;
+    iget-object v12, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-direct {v10, v11, v12}, Landroid/renderscript/Element;-><init>(ILandroid/renderscript/RenderScript;)V
 

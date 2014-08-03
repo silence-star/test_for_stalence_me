@@ -63,12 +63,6 @@
 
 .field public static final wapiAsCertFileVarName:Ljava/lang/String; = "as_cert_file"
 
-.field public static final wapiPskTypeVarName:Ljava/lang/String; = "wapi_key_type"
-
-.field public static final wapiPskVarName:Ljava/lang/String; = "wapi_psk"
-
-.field public static final wapiUserCertFileVarName:Ljava/lang/String; = "user_cert_file"
-
 .field public static final wapiAsCertVarName:Ljava/lang/String; = "as_cert_file"
 
 .field public static final wapiCertIndexVarName:Ljava/lang/String; = "cert_index"
@@ -76,6 +70,8 @@
 .field public static final wapiPskTypeVarName:Ljava/lang/String; = "wapi_key_type"
 
 .field public static final wapiPskVarName:Ljava/lang/String; = "wapi_psk"
+
+.field public static final wapiUserCertFileVarName:Ljava/lang/String; = "user_cert_file"
 
 .field public static final wapiUserCertVarName:Ljava/lang/String; = "user_cert_file"
 
@@ -118,14 +114,6 @@
 .field public proxySettings:Landroid/net/wifi/WifiConfiguration$ProxySettings;
 
 .field public status:I
-
-.field public wapiASCert:Ljava/lang/String;
-
-.field public wapiPsk:Ljava/lang/String;
-
-.field public wapiPskType:I
-
-.field public wapiUserCert:Ljava/lang/String;
 
 .field public wapiASCert:Ljava/lang/String;
 
@@ -1532,7 +1520,7 @@
 
     iget-object v7, p0, Landroid/net/wifi/WifiConfiguration;->ipAssignment:Landroid/net/wifi/WifiConfiguration$IpAssignment;
 
-    invoke-virtual {v7}, Landroid/net/wifi/WifiConfiguration$IpAssignment;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/Enum;->toString()Ljava/lang/String;
 
     move-result-object v7
 
@@ -1562,7 +1550,7 @@
 
     iget-object v7, p0, Landroid/net/wifi/WifiConfiguration;->proxySettings:Landroid/net/wifi/WifiConfiguration$ProxySettings;
 
-    invoke-virtual {v7}, Landroid/net/wifi/WifiConfiguration$ProxySettings;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/Enum;->toString()Ljava/lang/String;
 
     move-result-object v7
 
@@ -1628,22 +1616,6 @@
     iget-object v4, p0, Landroid/net/wifi/WifiConfiguration;->preSharedKey:Ljava/lang/String;
 
     invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    iget-object v4, p0, Landroid/net/wifi/WifiConfiguration;->wapiASCert:Ljava/lang/String;
-
-    invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    iget-object v4, p0, Landroid/net/wifi/WifiConfiguration;->wapiUserCert:Ljava/lang/String;
-
-    invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    iget-object v4, p0, Landroid/net/wifi/WifiConfiguration;->wapiPsk:Ljava/lang/String;
-
-    invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    iget v4, p0, Landroid/net/wifi/WifiConfiguration;->wapiPskType:I
-
-    invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeInt(I)V
 
     iget-object v4, p0, Landroid/net/wifi/WifiConfiguration;->wapiASCert:Ljava/lang/String;
 
@@ -1727,7 +1699,7 @@
 
     iget-object v4, p0, Landroid/net/wifi/WifiConfiguration;->ipAssignment:Landroid/net/wifi/WifiConfiguration$IpAssignment;
 
-    invoke-virtual {v4}, Landroid/net/wifi/WifiConfiguration$IpAssignment;->name()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object v4
 
@@ -1735,7 +1707,7 @@
 
     iget-object v4, p0, Landroid/net/wifi/WifiConfiguration;->proxySettings:Landroid/net/wifi/WifiConfiguration$ProxySettings;
 
-    invoke-virtual {v4}, Landroid/net/wifi/WifiConfiguration$ProxySettings;->name()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object v4
 

@@ -149,7 +149,7 @@
 
     iput-object v1, p0, Landroid/nfc/NdefMessage;->mRecords:[Landroid/nfc/NdefRecord;
 
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->remaining()I
+    invoke-virtual {v0}, Ljava/nio/Buffer;->remaining()I
 
     move-result v1
 

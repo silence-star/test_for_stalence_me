@@ -439,7 +439,7 @@
 
     invoke-virtual {p0, v5}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    invoke-virtual {p0, v1}, Ljava/io/DataOutputStream;->write([B)V
+    invoke-virtual {p0, v1}, Ljava/io/OutputStream;->write([B)V
 
     add-int/lit8 v2, v2, 0x1
 
@@ -1152,7 +1152,7 @@
     invoke-direct {v1}, Landroid/content/pm/ApplicationInfo;-><init>()V
 
     .local v1, app:Landroid/content/pm/ApplicationInfo;
-    iput-object v6, v1, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+    iput-object v6, v1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     invoke-interface {v7, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 

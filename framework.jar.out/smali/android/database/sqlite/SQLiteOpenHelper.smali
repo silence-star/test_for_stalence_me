@@ -281,7 +281,7 @@
 
     if-eq v0, v5, :cond_6
 
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->close()V
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteClosable;->close()V
 
     :cond_6
     throw v4
@@ -475,7 +475,7 @@
 
     if-eq v0, v4, :cond_3
 
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->close()V
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteClosable;->close()V
 
     goto/16 :goto_0
 
@@ -560,7 +560,7 @@
 
     iget-object v0, p0, Landroid/database/sqlite/SQLiteOpenHelper;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->close()V
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteClosable;->close()V
 
     const/4 v0, 0x0
 

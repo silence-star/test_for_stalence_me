@@ -450,7 +450,7 @@
     if-eqz v3, :cond_0
 
     :try_start_2
-    invoke-virtual {v3}, Ljava/io/FileReader;->close()V
+    invoke-virtual {v3}, Ljava/io/InputStreamReader;->close()V
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_3
 
@@ -488,7 +488,7 @@
     if-eqz v2, :cond_1
 
     :try_start_4
-    invoke-virtual {v2}, Ljava/io/FileReader;->close()V
+    invoke-virtual {v2}, Ljava/io/InputStreamReader;->close()V
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_4
 
@@ -524,7 +524,7 @@
     if-eqz v2, :cond_1
 
     :try_start_6
-    invoke-virtual {v2}, Ljava/io/FileReader;->close()V
+    invoke-virtual {v2}, Ljava/io/InputStreamReader;->close()V
     :try_end_6
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_2
 
@@ -551,7 +551,7 @@
     if-eqz v2, :cond_2
 
     :try_start_7
-    invoke-virtual {v2}, Ljava/io/FileReader;->close()V
+    invoke-virtual {v2}, Ljava/io/InputStreamReader;->close()V
     :try_end_7
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_5
 

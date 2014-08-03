@@ -70,7 +70,7 @@
 
     const/4 v1, 0x1
 
-    invoke-virtual {v0, p1, v1}, Lcom/android/server/location/GeoFencerProxy;->remove(Landroid/app/PendingIntent;Z)V
+    invoke-virtual {v0, p1, v1}, Lcom/android/server/location/GeoFencerBase;->remove(Landroid/app/PendingIntent;Z)V
 
     return-void
 .end method

@@ -902,7 +902,7 @@
     invoke-direct {v0, v4, v5, p3}, Landroid/os/ParcelFileDescriptor$ListenerBridge;-><init>(Ljava/io/FileDescriptor;Landroid/os/Looper;Landroid/os/ParcelFileDescriptor$OnCloseListener;)V
 
     .local v0, bridge:Landroid/os/ParcelFileDescriptor$ListenerBridge;
-    invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor$ListenerBridge;->start()V
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
     goto :goto_0
 .end method

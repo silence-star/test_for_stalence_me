@@ -88,7 +88,7 @@
 
     iget v1, p1, Landroid/renderscript/Path$Primitive;->mID:I
 
-    invoke-virtual {p3, p0}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {p3, p0}, Landroid/renderscript/BaseObj;->getID(Landroid/renderscript/RenderScript;)I
 
     move-result v3
 

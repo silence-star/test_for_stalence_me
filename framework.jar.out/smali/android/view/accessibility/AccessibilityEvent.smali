@@ -947,7 +947,7 @@
     .parameter "record"
 
     .prologue
-    invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityEvent;->enforceNotSealed()V
+    invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityRecord;->enforceNotSealed()V
 
     iget-object v0, p0, Landroid/view/accessibility/AccessibilityEvent;->mRecords:Ljava/util/ArrayList;
 
@@ -1147,7 +1147,7 @@
     if-ne v4, v3, :cond_0
 
     :goto_0
-    iput-boolean v3, p0, Landroid/view/accessibility/AccessibilityEvent;->mSealed:Z
+    iput-boolean v3, p0, Landroid/view/accessibility/AccessibilityRecord;->mSealed:Z
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -1193,7 +1193,7 @@
 
     move-result v3
 
-    iput v3, p0, Landroid/view/accessibility/AccessibilityEvent;->mConnectionId:I
+    iput v3, p0, Landroid/view/accessibility/AccessibilityRecord;->mConnectionId:I
 
     invoke-direct {p0, p0, p1}, Landroid/view/accessibility/AccessibilityEvent;->readAccessibilityRecordFromParcel(Landroid/view/accessibility/AccessibilityRecord;Landroid/os/Parcel;)V
 
@@ -1215,7 +1215,7 @@
     .local v1, record:Landroid/view/accessibility/AccessibilityRecord;
     invoke-direct {p0, v1, p1}, Landroid/view/accessibility/AccessibilityEvent;->readAccessibilityRecordFromParcel(Landroid/view/accessibility/AccessibilityRecord;Landroid/os/Parcel;)V
 
-    iget v3, p0, Landroid/view/accessibility/AccessibilityEvent;->mConnectionId:I
+    iget v3, p0, Landroid/view/accessibility/AccessibilityRecord;->mConnectionId:I
 
     iput v3, v1, Landroid/view/accessibility/AccessibilityRecord;->mConnectionId:I
 
@@ -1259,7 +1259,7 @@
     .parameter "action"
 
     .prologue
-    invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityEvent;->enforceNotSealed()V
+    invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityRecord;->enforceNotSealed()V
 
     iput p1, p0, Landroid/view/accessibility/AccessibilityEvent;->mAction:I
 
@@ -1271,7 +1271,7 @@
     .parameter "changeTypes"
 
     .prologue
-    invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityEvent;->enforceNotSealed()V
+    invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityRecord;->enforceNotSealed()V
 
     iput p1, p0, Landroid/view/accessibility/AccessibilityEvent;->mContentChangeTypes:I
 
@@ -1283,7 +1283,7 @@
     .parameter "eventTime"
 
     .prologue
-    invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityEvent;->enforceNotSealed()V
+    invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityRecord;->enforceNotSealed()V
 
     iput-wide p1, p0, Landroid/view/accessibility/AccessibilityEvent;->mEventTime:J
 
@@ -1295,7 +1295,7 @@
     .parameter "eventType"
 
     .prologue
-    invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityEvent;->enforceNotSealed()V
+    invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityRecord;->enforceNotSealed()V
 
     iput p1, p0, Landroid/view/accessibility/AccessibilityEvent;->mEventType:I
 
@@ -1307,7 +1307,7 @@
     .parameter "granularity"
 
     .prologue
-    invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityEvent;->enforceNotSealed()V
+    invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityRecord;->enforceNotSealed()V
 
     iput p1, p0, Landroid/view/accessibility/AccessibilityEvent;->mMovementGranularity:I
 
@@ -1319,7 +1319,7 @@
     .parameter "packageName"
 
     .prologue
-    invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityEvent;->enforceNotSealed()V
+    invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityRecord;->enforceNotSealed()V
 
     iput-object p1, p0, Landroid/view/accessibility/AccessibilityEvent;->mPackageName:Ljava/lang/CharSequence;
 
@@ -1461,7 +1461,7 @@
     .prologue
     const/4 v4, 0x0
 
-    invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityEvent;->isSealed()Z
+    invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityRecord;->isSealed()Z
 
     move-result v3
 
@@ -1496,7 +1496,7 @@
 
     invoke-virtual {p1, v3, v4}, Landroid/os/Parcel;->writeLong(J)V
 
-    iget v3, p0, Landroid/view/accessibility/AccessibilityEvent;->mConnectionId:I
+    iget v3, p0, Landroid/view/accessibility/AccessibilityRecord;->mConnectionId:I
 
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeInt(I)V
 

@@ -89,11 +89,11 @@
 
     iget-object v3, v0, Landroid/net/DhcpResults;->linkProperties:Landroid/net/LinkProperties;
 
-    iput-object v3, v2, Landroid/net/EthernetDataTracker;->mLinkProperties:Landroid/net/LinkProperties;
+    iput-object v3, v2, Landroid/net/BaseNetworkStateTracker;->mLinkProperties:Landroid/net/LinkProperties;
 
     iget-object v2, p0, Landroid/net/EthernetDataTracker$1;->this$0:Landroid/net/EthernetDataTracker;
 
-    iget-object v2, v2, Landroid/net/EthernetDataTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
+    iget-object v2, v2, Landroid/net/BaseNetworkStateTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
 
     const/4 v3, 0x1
 
@@ -101,7 +101,7 @@
 
     iget-object v2, p0, Landroid/net/EthernetDataTracker$1;->this$0:Landroid/net/EthernetDataTracker;
 
-    iget-object v2, v2, Landroid/net/EthernetDataTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
+    iget-object v2, v2, Landroid/net/BaseNetworkStateTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
 
     sget-object v3, Landroid/net/NetworkInfo$DetailedState;->CONNECTED:Landroid/net/NetworkInfo$DetailedState;
 
@@ -127,7 +127,7 @@
 
     iget-object v4, p0, Landroid/net/EthernetDataTracker$1;->this$0:Landroid/net/EthernetDataTracker;
 
-    iget-object v4, v4, Landroid/net/EthernetDataTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
+    iget-object v4, v4, Landroid/net/BaseNetworkStateTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
 
     invoke-virtual {v2, v3, v4}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 

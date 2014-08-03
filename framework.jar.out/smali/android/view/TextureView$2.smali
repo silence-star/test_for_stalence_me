@@ -58,7 +58,7 @@
 
     iget-object v0, p0, Landroid/view/TextureView$2;->this$0:Landroid/view/TextureView;
 
-    invoke-virtual {v0}, Landroid/view/TextureView;->invalidate()V
+    invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
     :goto_0
     return-void
@@ -66,7 +66,7 @@
     :cond_0
     iget-object v0, p0, Landroid/view/TextureView$2;->this$0:Landroid/view/TextureView;
 
-    invoke-virtual {v0}, Landroid/view/TextureView;->postInvalidate()V
+    invoke-virtual {v0}, Landroid/view/View;->postInvalidate()V
 
     goto :goto_0
 .end method

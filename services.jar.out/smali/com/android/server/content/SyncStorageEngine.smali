@@ -4236,7 +4236,7 @@
     :cond_14
     invoke-interface/range {v18 .. v18}, Landroid/database/Cursor;->close()V
 
-    invoke-virtual {v2}, Landroid/database/sqlite/SQLiteDatabase;->close()V
+    invoke-virtual {v2}, Landroid/database/sqlite/SQLiteClosable;->close()V
 
     new-instance v3, Ljava/io/File;
 
@@ -4868,7 +4868,7 @@
 
     if-eqz v2, :cond_b
 
-    iget-object v2, v15, Lcom/android/server/content/SyncStorageEngine$PendingOperation;->extras:Landroid/os/Bundle;
+    throw v15
 
     move-object/from16 v0, p0
 
@@ -6929,7 +6929,7 @@
     invoke-static {v6, v7}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
-    invoke-virtual {p0, v9}, Lcom/android/server/content/SyncStorageEngine;->removeMessages(I)V
+    invoke-virtual {p0, v9}, Landroid/os/Handler;->removeMessages(I)V
 
     const/4 v3, 0x0
 
@@ -6974,7 +6974,7 @@
 
     move-result-object v6
 
-    invoke-virtual {v3, v6}, Ljava/io/FileOutputStream;->write([B)V
+    invoke-virtual {v3, v6}, Ljava/io/OutputStream;->write([B)V
 
     invoke-virtual {v5}, Landroid/os/Parcel;->recycle()V
 
@@ -7092,7 +7092,7 @@
     :cond_0
     const/4 v6, 0x1
 
-    invoke-virtual {p0, v6}, Lcom/android/server/content/SyncStorageEngine;->removeMessages(I)V
+    invoke-virtual {p0, v6}, Landroid/os/Handler;->removeMessages(I)V
 
     const/4 v2, 0x0
 
@@ -7153,7 +7153,7 @@
 
     move-result-object v6
 
-    invoke-virtual {v2, v6}, Ljava/io/FileOutputStream;->write([B)V
+    invoke-virtual {v2, v6}, Ljava/io/OutputStream;->write([B)V
 
     invoke-virtual {v4}, Landroid/os/Parcel;->recycle()V
 
@@ -10945,7 +10945,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v11}, Lcom/android/server/content/SyncStorageEngine;->hasMessages(I)Z
+    invoke-virtual {v0, v11}, Landroid/os/Handler;->hasMessages(I)Z
 
     move-result v11
 
@@ -10955,7 +10955,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v11}, Lcom/android/server/content/SyncStorageEngine;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {v0, v11}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v11
 
@@ -10963,7 +10963,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v11, v13, v14}, Lcom/android/server/content/SyncStorageEngine;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v0, v11, v13, v14}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     goto/16 :goto_5
 
@@ -10972,7 +10972,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v11}, Lcom/android/server/content/SyncStorageEngine;->hasMessages(I)Z
+    invoke-virtual {v0, v11}, Landroid/os/Handler;->hasMessages(I)Z
 
     move-result v11
 
@@ -10982,7 +10982,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v11}, Lcom/android/server/content/SyncStorageEngine;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {v0, v11}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v11
 
@@ -10990,7 +10990,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v11, v13, v14}, Lcom/android/server/content/SyncStorageEngine;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v0, v11, v13, v14}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 

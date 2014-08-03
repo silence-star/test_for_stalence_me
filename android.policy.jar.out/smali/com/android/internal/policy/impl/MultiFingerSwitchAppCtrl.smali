@@ -287,7 +287,7 @@
     .local v1, homeInfo:Landroid/content/pm/ActivityInfo;
     if-eqz v1, :cond_0
 
-    iget-object v3, v1, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v3, v1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {v3, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

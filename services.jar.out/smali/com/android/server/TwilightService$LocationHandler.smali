@@ -562,7 +562,7 @@
     .prologue
     const/4 v0, 0x1
 
-    invoke-virtual {p0, v0}, Lcom/android/server/TwilightService$LocationHandler;->sendEmptyMessage(I)Z
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     return-void
 .end method
@@ -835,7 +835,7 @@
 
     iget-wide v1, p0, Lcom/android/server/TwilightService$LocationHandler;->mLastUpdateInterval:J
 
-    invoke-virtual {p0, v0, v1, v2}, Lcom/android/server/TwilightService$LocationHandler;->sendEmptyMessageDelayed(IJ)Z
+    invoke-virtual {p0, v0, v1, v2}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
     goto/16 :goto_0
 
@@ -899,12 +899,12 @@
     .prologue
     const/4 v1, 0x3
 
-    invoke-virtual {p0, v1, p1}, Lcom/android/server/TwilightService$LocationHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {p0, v1, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
     .local v0, msg:Landroid/os/Message;
-    invoke-virtual {p0, v0}, Lcom/android/server/TwilightService$LocationHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     return-void
 .end method
@@ -915,7 +915,7 @@
     .prologue
     const/4 v0, 0x2
 
-    invoke-virtual {p0, v0}, Lcom/android/server/TwilightService$LocationHandler;->sendEmptyMessage(I)Z
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     return-void
 .end method
@@ -926,7 +926,7 @@
     .prologue
     const/4 v0, 0x4
 
-    invoke-virtual {p0, v0}, Lcom/android/server/TwilightService$LocationHandler;->sendEmptyMessage(I)Z
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     return-void
 .end method

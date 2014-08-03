@@ -126,7 +126,7 @@
 
     const/4 v3, 0x1
 
-    invoke-virtual {v0, p1, v1, v2, v3}, Lcom/android/server/WallpaperManagerService$MyPackageMonitor;->register(Landroid/content/Context;Landroid/os/Looper;Landroid/os/UserHandle;Z)V
+    invoke-virtual {v0, p1, v1, v2, v3}, Lcom/android/internal/content/PackageMonitor;->register(Landroid/content/Context;Landroid/os/Looper;Landroid/os/UserHandle;Z)V
 
     invoke-static {v4}, Lcom/android/server/WallpaperManagerService;->getWallpaperDir(I)Ljava/io/File;
 
@@ -1598,11 +1598,11 @@
     .local v16, rsi:Landroid/content/pm/ServiceInfo;
     move-object/from16 v0, v16
 
-    iget-object v3, v0, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
+    iget-object v3, v0, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     move-object/from16 v0, v18
 
-    iget-object v4, v0, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
+    iget-object v4, v0, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1612,11 +1612,11 @@
 
     move-object/from16 v0, v16
 
-    iget-object v3, v0, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    iget-object v3, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v0, v18
 
-    iget-object v4, v0, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    iget-object v4, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
     :try_end_1
@@ -2520,7 +2520,7 @@
     .end annotation
 
     .prologue
-    invoke-super {p0}, Landroid/app/IWallpaperManager$Stub;->finalize()V
+    invoke-super {p0}, Landroid/os/Binder;->finalize()V
 
     const/4 v0, 0x0
 
@@ -2545,7 +2545,7 @@
     .local v1, wallpaper:Lcom/android/server/WallpaperManagerService$WallpaperData;
     iget-object v2, v1, Lcom/android/server/WallpaperManagerService$WallpaperData;->wallpaperObserver:Lcom/android/server/WallpaperManagerService$WallpaperObserver;
 
-    invoke-virtual {v2}, Lcom/android/server/WallpaperManagerService$WallpaperObserver;->stopWatching()V
+    invoke-virtual {v2}, Landroid/os/FileObserver;->stopWatching()V
 
     add-int/lit8 v0, v0, 0x1
 
@@ -3120,7 +3120,7 @@
 
     iget-object v1, v0, Lcom/android/server/WallpaperManagerService$WallpaperData;->wallpaperObserver:Lcom/android/server/WallpaperManagerService$WallpaperObserver;
 
-    invoke-virtual {v1}, Lcom/android/server/WallpaperManagerService$WallpaperObserver;->stopWatching()V
+    invoke-virtual {v1}, Landroid/os/FileObserver;->stopWatching()V
 
     const/4 v1, 0x0
 
@@ -3389,7 +3389,7 @@
     if-eqz v12, :cond_3
 
     :try_start_1
-    invoke-virtual {v12}, Ljava/io/InputStream;->close()V
+    throw v12
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_a
 
@@ -3400,7 +3400,7 @@
     invoke-static {v7}, Landroid/os/FileUtils;->sync(Ljava/io/FileOutputStream;)Z
 
     :try_start_2
-    invoke-virtual {v7}, Ljava/io/FileOutputStream;->close()V
+    throw v7
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
 
@@ -4530,7 +4530,7 @@
 
     iget-object v1, v0, Lcom/android/server/WallpaperManagerService$WallpaperData;->wallpaperObserver:Lcom/android/server/WallpaperManagerService$WallpaperObserver;
 
-    invoke-virtual {v1}, Lcom/android/server/WallpaperManagerService$WallpaperObserver;->startWatching()V
+    invoke-virtual {v1}, Landroid/os/FileObserver;->startWatching()V
 
     :cond_1
     invoke-virtual {p0, v0, p2}, Lcom/android/server/WallpaperManagerService;->switchWallpaper(Lcom/android/server/WallpaperManagerService$WallpaperData;Landroid/os/IRemoteCallback;)V
@@ -4671,7 +4671,7 @@
 
     iget-object v3, v2, Lcom/android/server/WallpaperManagerService$WallpaperData;->wallpaperObserver:Lcom/android/server/WallpaperManagerService$WallpaperObserver;
 
-    invoke-virtual {v3}, Lcom/android/server/WallpaperManagerService$WallpaperObserver;->startWatching()V
+    invoke-virtual {v3}, Landroid/os/FileObserver;->startWatching()V
 
     new-instance v1, Landroid/content/IntentFilter;
 
@@ -4714,7 +4714,7 @@
     move-exception v0
 
     .local v0, e:Landroid/os/RemoteException;
-    invoke-virtual {v0}, Landroid/os/RemoteException;->printStackTrace()V
+    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_0
 .end method

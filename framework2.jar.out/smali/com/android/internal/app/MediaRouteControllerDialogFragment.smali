@@ -12,13 +12,13 @@
 
     const/4 v0, 0x1
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/app/MediaRouteControllerDialogFragment;->setCancelable(Z)V
+    invoke-virtual {p0, v0}, Landroid/app/DialogFragment;->setCancelable(Z)V
 
     const/4 v0, 0x0
 
     const v1, 0x103012e
 
-    invoke-virtual {p0, v0, v1}, Lcom/android/internal/app/MediaRouteControllerDialogFragment;->setStyle(II)V
+    invoke-virtual {p0, v0, v1}, Landroid/app/DialogFragment;->setStyle(II)V
 
     return-void
 .end method
@@ -33,7 +33,7 @@
     .prologue
     new-instance v0, Lcom/android/internal/app/MediaRouteControllerDialog;
 
-    invoke-virtual {p0}, Lcom/android/internal/app/MediaRouteControllerDialogFragment;->getTheme()I
+    invoke-virtual {p0}, Landroid/app/DialogFragment;->getTheme()I
 
     move-result v1
 
@@ -47,7 +47,7 @@
     .parameter "savedInstanceState"
 
     .prologue
-    invoke-virtual {p0}, Lcom/android/internal/app/MediaRouteControllerDialogFragment;->getActivity()Landroid/app/Activity;
+    invoke-virtual {p0}, Landroid/app/Fragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 

@@ -702,19 +702,19 @@
 
     iget-object v4, p0, Landroid/media/RemoteController;->mMetadataEditor:Landroid/media/RemoteController$MetadataEditor;
 
-    iget-object v4, v4, Landroid/media/RemoteController$MetadataEditor;->mEditorMetadata:Landroid/os/Bundle;
+    iget-object v4, v4, Landroid/media/MediaMetadataEditor;->mEditorMetadata:Landroid/os/Bundle;
 
     if-eqz v4, :cond_4
 
     iget-object v4, p0, Landroid/media/RemoteController;->mMetadataEditor:Landroid/media/RemoteController$MetadataEditor;
 
-    iget-object v4, v4, Landroid/media/RemoteController$MetadataEditor;->mEditorMetadata:Landroid/os/Bundle;
+    iget-object v4, v4, Landroid/media/MediaMetadataEditor;->mEditorMetadata:Landroid/os/Bundle;
 
     if-eq v4, p2, :cond_3
 
     iget-object v4, p0, Landroid/media/RemoteController;->mMetadataEditor:Landroid/media/RemoteController$MetadataEditor;
 
-    iget-object v4, v4, Landroid/media/RemoteController$MetadataEditor;->mEditorMetadata:Landroid/os/Bundle;
+    iget-object v4, v4, Landroid/media/MediaMetadataEditor;->mEditorMetadata:Landroid/os/Bundle;
 
     invoke-virtual {v4, p2}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
 
@@ -735,7 +735,7 @@
 
     check-cast v4, Landroid/graphics/Bitmap;
 
-    invoke-virtual {v6, v7, v4}, Landroid/media/RemoteController$MetadataEditor;->putBitmap(ILandroid/graphics/Bitmap;)Landroid/media/MediaMetadataEditor;
+    invoke-virtual {v6, v7, v4}, Landroid/media/MediaMetadataEditor;->putBitmap(ILandroid/graphics/Bitmap;)Landroid/media/MediaMetadataEditor;
 
     iget-object v4, p0, Landroid/media/RemoteController;->mMetadataEditor:Landroid/media/RemoteController$MetadataEditor;
 
@@ -1108,19 +1108,19 @@
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    iput-object v1, v0, Landroid/media/RemoteController$MetadataEditor;->mEditorMetadata:Landroid/os/Bundle;
+    iput-object v1, v0, Landroid/media/MediaMetadataEditor;->mEditorMetadata:Landroid/os/Bundle;
 
     const/4 v1, 0x0
 
-    iput-object v1, v0, Landroid/media/RemoteController$MetadataEditor;->mEditorArtwork:Landroid/graphics/Bitmap;
+    iput-object v1, v0, Landroid/media/MediaMetadataEditor;->mEditorArtwork:Landroid/graphics/Bitmap;
 
-    iput-boolean v2, v0, Landroid/media/RemoteController$MetadataEditor;->mMetadataChanged:Z
+    iput-boolean v2, v0, Landroid/media/MediaMetadataEditor;->mMetadataChanged:Z
 
-    iput-boolean v2, v0, Landroid/media/RemoteController$MetadataEditor;->mArtworkChanged:Z
+    iput-boolean v2, v0, Landroid/media/MediaMetadataEditor;->mArtworkChanged:Z
 
     const-wide/16 v1, 0x0
 
-    iput-wide v1, v0, Landroid/media/RemoteController$MetadataEditor;->mEditableKeys:J
+    iput-wide v1, v0, Landroid/media/MediaMetadataEditor;->mEditableKeys:J
 
     return-object v0
 .end method

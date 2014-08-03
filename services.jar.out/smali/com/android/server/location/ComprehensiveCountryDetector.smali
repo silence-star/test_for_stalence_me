@@ -384,7 +384,7 @@
     .prologue
     if-eqz p2, :cond_1
 
-    iget-object v0, p0, Lcom/android/server/location/ComprehensiveCountryDetector;->mListener:Landroid/location/CountryListener;
+    iget-object v0, p0, Lcom/android/server/location/CountryDetectorBase;->mListener:Landroid/location/CountryListener;
 
     if-eqz v0, :cond_1
 
@@ -397,7 +397,7 @@
     if-nez v0, :cond_1
 
     :cond_0
-    invoke-virtual {p0, p2}, Lcom/android/server/location/ComprehensiveCountryDetector;->notifyListener(Landroid/location/Country;)V
+    invoke-virtual {p0, p2}, Lcom/android/server/location/CountryDetectorBase;->notifyListener(Landroid/location/Country;)V
 
     :cond_1
     return-void
@@ -580,7 +580,7 @@
     .prologue
     new-instance v0, Lcom/android/server/location/LocationBasedCountryDetector;
 
-    iget-object v1, p0, Lcom/android/server/location/ComprehensiveCountryDetector;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/server/location/CountryDetectorBase;->mContext:Landroid/content/Context;
 
     invoke-direct {v0, v1}, Lcom/android/server/location/LocationBasedCountryDetector;-><init>(Landroid/content/Context;)V
 
@@ -731,7 +731,7 @@
     .prologue
     const/4 v0, 0x0
 
-    iget-object v1, p0, Lcom/android/server/location/ComprehensiveCountryDetector;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/server/location/CountryDetectorBase;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -832,7 +832,7 @@
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/android/server/location/ComprehensiveCountryDetector;->mListener:Landroid/location/CountryListener;
+    iget-object v0, p0, Lcom/android/server/location/CountryDetectorBase;->mListener:Landroid/location/CountryListener;
 
     if-eqz v0, :cond_2
 
@@ -877,7 +877,7 @@
     .parameter "startLocationBasedDetection"
 
     .prologue
-    iget-object v6, p0, Lcom/android/server/location/ComprehensiveCountryDetector;->mHandler:Landroid/os/Handler;
+    iget-object v6, p0, Lcom/android/server/location/CountryDetectorBase;->mHandler:Landroid/os/Handler;
 
     new-instance v0, Lcom/android/server/location/ComprehensiveCountryDetector$2;
 
@@ -905,12 +905,12 @@
     .prologue
     const/4 v3, 0x0
 
-    iget-object v0, p0, Lcom/android/server/location/ComprehensiveCountryDetector;->mListener:Landroid/location/CountryListener;
+    iget-object v0, p0, Lcom/android/server/location/CountryDetectorBase;->mListener:Landroid/location/CountryListener;
 
     .local v0, prevListener:Landroid/location/CountryListener;
-    iput-object p1, p0, Lcom/android/server/location/ComprehensiveCountryDetector;->mListener:Landroid/location/CountryListener;
+    iput-object p1, p0, Lcom/android/server/location/CountryDetectorBase;->mListener:Landroid/location/CountryListener;
 
-    iget-object v1, p0, Lcom/android/server/location/ComprehensiveCountryDetector;->mListener:Landroid/location/CountryListener;
+    iget-object v1, p0, Lcom/android/server/location/CountryDetectorBase;->mListener:Landroid/location/CountryListener;
 
     if-nez v1, :cond_1
 
@@ -980,7 +980,7 @@
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/android/server/location/ComprehensiveCountryDetector;->mListener:Landroid/location/CountryListener;
+    iput-object v0, p0, Lcom/android/server/location/CountryDetectorBase;->mListener:Landroid/location/CountryListener;
 
     const/4 v0, 0x1
 

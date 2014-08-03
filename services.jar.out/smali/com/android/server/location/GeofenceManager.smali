@@ -3,8 +3,8 @@
 .source "GeofenceManager.java"
 
 # interfaces
-.implements Landroid/location/LocationListener;
 .implements Landroid/app/PendingIntent$OnFinished;
+.implements Landroid/location/LocationListener;
 
 
 # annotations
@@ -296,7 +296,7 @@
 
     iget-object v0, p0, Lcom/android/server/location/GeofenceManager;->mHandler:Lcom/android/server/location/GeofenceManager$GeofenceHandler;
 
-    invoke-virtual {v0, v1}, Lcom/android/server/location/GeofenceManager$GeofenceHandler;->sendEmptyMessage(I)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     :cond_0
     return-void
@@ -847,7 +847,7 @@
 
     move-object/from16 v22, v0
 
-    invoke-virtual/range {v22 .. v22}, Lcom/android/server/location/GeofenceManager$GeofenceHandler;->getLooper()Landroid/os/Looper;
+    invoke-virtual/range {v22 .. v22}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
 
     move-result-object v22
 
@@ -1346,7 +1346,7 @@
 
     const/4 v2, 0x1
 
-    invoke-virtual {v0, v2}, Lcom/android/server/location/GeofenceManager$GeofenceHandler;->removeMessages(I)V
+    invoke-virtual {v0, v2}, Landroid/os/Handler;->removeMessages(I)V
 
     :goto_0
     monitor-exit v1

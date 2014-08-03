@@ -136,7 +136,7 @@
     new-array v6, v0, [C
 
     .local v6, s:[C
-    invoke-virtual {p0, p1, p2, v6, v5}, Landroid/text/Layout$SpannedEllipsizer;->getChars(II[CI)V
+    invoke-virtual {p0, p1, p2, v6, v5}, Landroid/text/Layout$Ellipsizer;->getChars(II[CI)V
 
     new-instance v4, Landroid/text/SpannableString;
 

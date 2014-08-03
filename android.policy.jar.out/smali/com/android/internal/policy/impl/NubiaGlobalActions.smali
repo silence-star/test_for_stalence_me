@@ -3,8 +3,8 @@
 .source "NubiaGlobalActions.java"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnDismissListener;
 .implements Landroid/content/DialogInterface$OnClickListener;
+.implements Landroid/content/DialogInterface$OnDismissListener;
 
 
 # annotations
@@ -948,7 +948,7 @@
     invoke-direct {v7, v0, v8}, Lcom/android/internal/policy/impl/NubiaGlobalActions$GlobalActionsDialog;-><init>(Landroid/content/Context;Lcom/android/internal/app/AlertController$AlertParams;)V
 
     .local v7, dialog:Lcom/android/internal/policy/impl/NubiaGlobalActions$GlobalActionsDialog;
-    invoke-virtual {v7, v9}, Lcom/android/internal/policy/impl/NubiaGlobalActions$GlobalActionsDialog;->setCanceledOnTouchOutside(Z)V
+    invoke-virtual {v7, v9}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
 
     invoke-virtual {v7}, Lcom/android/internal/policy/impl/NubiaGlobalActions$GlobalActionsDialog;->getListView()Landroid/widget/ListView;
 
@@ -960,7 +960,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v10}, Landroid/widget/ListView;->setLongClickable(Z)V
+    invoke-virtual {v0, v10}, Landroid/view/View;->setLongClickable(Z)V
 
     invoke-virtual {v7}, Lcom/android/internal/policy/impl/NubiaGlobalActions$GlobalActionsDialog;->getListView()Landroid/widget/ListView;
 
@@ -970,9 +970,9 @@
 
     invoke-direct {v1, p0}, Lcom/android/internal/policy/impl/NubiaGlobalActions$9;-><init>(Lcom/android/internal/policy/impl/NubiaGlobalActions;)V
 
-    invoke-virtual {v0, v1}, Landroid/widget/ListView;->setOnItemLongClickListener(Landroid/widget/AdapterView$OnItemLongClickListener;)V
+    invoke-virtual {v0, v1}, Landroid/widget/AdapterView;->setOnItemLongClickListener(Landroid/widget/AdapterView$OnItemLongClickListener;)V
 
-    invoke-virtual {v7}, Lcom/android/internal/policy/impl/NubiaGlobalActions$GlobalActionsDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {v7}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
@@ -980,7 +980,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->setBackgroundDrawableResource(I)V
 
-    invoke-virtual {v7}, Lcom/android/internal/policy/impl/NubiaGlobalActions$GlobalActionsDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {v7}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
@@ -988,13 +988,13 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->setType(I)V
 
-    invoke-virtual {v7}, Lcom/android/internal/policy/impl/NubiaGlobalActions$GlobalActionsDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {v7}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
     invoke-virtual {v0, v11, v11}, Landroid/view/Window;->setLayout(II)V
 
-    invoke-virtual {v7, p0}, Lcom/android/internal/policy/impl/NubiaGlobalActions$GlobalActionsDialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
+    invoke-virtual {v7, p0}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
     return-object v7
 
@@ -1264,7 +1264,7 @@
 
     iget-object v2, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions;->mGlobalActionView:Landroid/view/View;
 
-    invoke-virtual {v1, v2}, Lcom/android/internal/policy/impl/NubiaGlobalActions$GlobalActionsDialog;->setContentView(Landroid/view/View;)V
+    invoke-virtual {v1, v2}, Landroid/app/Dialog;->setContentView(Landroid/view/View;)V
 
     return-void
 
@@ -1512,11 +1512,11 @@
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions;->mAdapter:Lcom/android/internal/policy/impl/NubiaGlobalActions$MyAdapter;
 
-    invoke-virtual {v1}, Lcom/android/internal/policy/impl/NubiaGlobalActions$MyAdapter;->notifyDataSetChanged()V
+    invoke-virtual {v1}, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions;->mDialog:Lcom/android/internal/policy/impl/NubiaGlobalActions$GlobalActionsDialog;
 
-    invoke-virtual {v1}, Lcom/android/internal/policy/impl/NubiaGlobalActions$GlobalActionsDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {v1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
@@ -1607,7 +1607,7 @@
     const v0, 0x10802b9
 
     :goto_0
-    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setBackgroundResource(I)V
+    invoke-virtual {v1, v0}, Landroid/view/View;->setBackgroundResource(I)V
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions;->mAirplaneFrameLayout:Landroid/widget/FrameLayout;
 
@@ -1616,7 +1616,7 @@
     const v0, 0x10800cc
 
     :goto_1
-    invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->setBackgroundResource(I)V
+    invoke-virtual {v1, v0}, Landroid/view/View;->setBackgroundResource(I)V
 
     return-void
 
@@ -1641,7 +1641,7 @@
 
     invoke-direct {v1, p0}, Lcom/android/internal/policy/impl/NubiaGlobalActions$1;-><init>(Lcom/android/internal/policy/impl/NubiaGlobalActions;)V
 
-    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     iget-object v0, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions;->mRebootLayout:Landroid/widget/FrameLayout;
 
@@ -1649,7 +1649,7 @@
 
     invoke-direct {v1, p0}, Lcom/android/internal/policy/impl/NubiaGlobalActions$2;-><init>(Lcom/android/internal/policy/impl/NubiaGlobalActions;)V
 
-    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     iget-object v0, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions;->mSilentLayout:Landroid/widget/LinearLayout;
 
@@ -1657,7 +1657,7 @@
 
     invoke-direct {v1, p0}, Lcom/android/internal/policy/impl/NubiaGlobalActions$3;-><init>(Lcom/android/internal/policy/impl/NubiaGlobalActions;)V
 
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     iget-object v0, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions;->mVibratorLayout:Landroid/widget/LinearLayout;
 
@@ -1665,7 +1665,7 @@
 
     invoke-direct {v1, p0}, Lcom/android/internal/policy/impl/NubiaGlobalActions$4;-><init>(Lcom/android/internal/policy/impl/NubiaGlobalActions;)V
 
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     iget-object v0, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions;->mAirplaneLayout:Landroid/widget/LinearLayout;
 
@@ -1673,7 +1673,7 @@
 
     invoke-direct {v1, p0}, Lcom/android/internal/policy/impl/NubiaGlobalActions$5;-><init>(Lcom/android/internal/policy/impl/NubiaGlobalActions;)V
 
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     return-void
 .end method
@@ -1719,26 +1719,26 @@
 
     iget-object v3, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions;->mSilentFrameLayout:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v3, v6}, Landroid/widget/FrameLayout;->setBackgroundResource(I)V
+    invoke-virtual {v3, v6}, Landroid/view/View;->setBackgroundResource(I)V
 
     iget-object v3, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions;->mSilentImageView:Landroid/widget/ImageView;
 
     const v4, 0x10802c3
 
-    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setBackgroundResource(I)V
+    invoke-virtual {v3, v4}, Landroid/view/View;->setBackgroundResource(I)V
 
     :goto_0
     if-ne v1, v2, :cond_2
 
     iget-object v2, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions;->mVibratorFrameLayout:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v2, v6}, Landroid/widget/FrameLayout;->setBackgroundResource(I)V
+    invoke-virtual {v2, v6}, Landroid/view/View;->setBackgroundResource(I)V
 
     iget-object v2, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions;->mVibratorImageView:Landroid/widget/ImageView;
 
     const v3, 0x10802c5
 
-    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setBackgroundResource(I)V
+    invoke-virtual {v2, v3}, Landroid/view/View;->setBackgroundResource(I)V
 
     :goto_1
     return-void
@@ -1746,26 +1746,26 @@
     :cond_1
     iget-object v3, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions;->mSilentFrameLayout:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v3, v5}, Landroid/widget/FrameLayout;->setBackgroundResource(I)V
+    invoke-virtual {v3, v5}, Landroid/view/View;->setBackgroundResource(I)V
 
     iget-object v3, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions;->mSilentImageView:Landroid/widget/ImageView;
 
     const v4, 0x10802c2
 
-    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setBackgroundResource(I)V
+    invoke-virtual {v3, v4}, Landroid/view/View;->setBackgroundResource(I)V
 
     goto :goto_0
 
     :cond_2
     iget-object v2, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions;->mVibratorFrameLayout:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v2, v5}, Landroid/widget/FrameLayout;->setBackgroundResource(I)V
+    invoke-virtual {v2, v5}, Landroid/view/View;->setBackgroundResource(I)V
 
     iget-object v2, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions;->mVibratorImageView:Landroid/widget/ImageView;
 
     const v3, 0x10802c4
 
-    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setBackgroundResource(I)V
+    invoke-virtual {v2, v3}, Landroid/view/View;->setBackgroundResource(I)V
 
     goto :goto_1
 .end method
@@ -1857,7 +1857,7 @@
 
     iget-object v0, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions;->mDialog:Lcom/android/internal/policy/impl/NubiaGlobalActions$GlobalActionsDialog;
 
-    invoke-virtual {v0}, Lcom/android/internal/policy/impl/NubiaGlobalActions$GlobalActionsDialog;->dismiss()V
+    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
     const/4 v0, 0x0
 

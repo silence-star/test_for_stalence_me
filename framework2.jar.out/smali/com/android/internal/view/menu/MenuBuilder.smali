@@ -340,7 +340,7 @@
     check-cast v2, Ljava/lang/ref/WeakReference;
 
     .local v2, ref:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Lcom/android/internal/view/menu/MenuPresenter;>;"
-    invoke-virtual {v2}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v2}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -416,7 +416,7 @@
     check-cast v5, Ljava/lang/ref/WeakReference;
 
     .local v5, ref:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Lcom/android/internal/view/menu/MenuPresenter;>;"
-    invoke-virtual {v5}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v5}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     move-result-object v3
 
@@ -497,7 +497,7 @@
     check-cast v4, Ljava/lang/ref/WeakReference;
 
     .local v4, ref:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Lcom/android/internal/view/menu/MenuPresenter;>;"
-    invoke-virtual {v4}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v4}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     move-result-object v2
 
@@ -587,7 +587,7 @@
     check-cast v2, Ljava/lang/ref/WeakReference;
 
     .local v2, ref:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Lcom/android/internal/view/menu/MenuPresenter;>;"
-    invoke-virtual {v2}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v2}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -1008,13 +1008,13 @@
 
     iget-object v11, v8, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v11, v11, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v11, v11, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    iget-object v11, v11, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+    iget-object v11, v11, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     iget-object v12, v8, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v12, v12, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v12, v12, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     invoke-direct {v10, v11, v12}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -1320,7 +1320,7 @@
     check-cast v2, Ljava/lang/ref/WeakReference;
 
     .local v2, ref:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Lcom/android/internal/view/menu/MenuPresenter;>;"
-    invoke-virtual {v2}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v2}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -1402,7 +1402,7 @@
     check-cast v3, Ljava/lang/ref/WeakReference;
 
     .local v3, ref:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Lcom/android/internal/view/menu/MenuPresenter;>;"
-    invoke-virtual {v3}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v3}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     move-result-object v2
 
@@ -1514,7 +1514,7 @@
     check-cast v3, Ljava/lang/ref/WeakReference;
 
     .local v3, ref:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Lcom/android/internal/view/menu/MenuPresenter;>;"
-    invoke-virtual {v3}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v3}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     move-result-object v2
 
@@ -2065,7 +2065,7 @@
     check-cast v6, Ljava/lang/ref/WeakReference;
 
     .local v6, ref:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Lcom/android/internal/view/menu/MenuPresenter;>;"
-    invoke-virtual {v6}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v6}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     move-result-object v5
 
@@ -2891,7 +2891,7 @@
     check-cast v2, Ljava/lang/ref/WeakReference;
 
     .local v2, ref:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Lcom/android/internal/view/menu/MenuPresenter;>;"
-    invoke-virtual {v2}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v2}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -2983,7 +2983,7 @@
     check-cast v5, Lcom/android/internal/view/menu/SubMenuBuilder;
 
     .local v5, subMenu:Lcom/android/internal/view/menu/SubMenuBuilder;
-    invoke-virtual {v5, p1}, Lcom/android/internal/view/menu/SubMenuBuilder;->restoreActionViewStates(Landroid/os/Bundle;)V
+    invoke-virtual {v5, p1}, Lcom/android/internal/view/menu/MenuBuilder;->restoreActionViewStates(Landroid/os/Bundle;)V
 
     .end local v5           #subMenu:Lcom/android/internal/view/menu/SubMenuBuilder;
     :cond_3
@@ -3103,7 +3103,7 @@
     check-cast v3, Lcom/android/internal/view/menu/SubMenuBuilder;
 
     .local v3, subMenu:Lcom/android/internal/view/menu/SubMenuBuilder;
-    invoke-virtual {v3, p1}, Lcom/android/internal/view/menu/SubMenuBuilder;->saveActionViewStates(Landroid/os/Bundle;)V
+    invoke-virtual {v3, p1}, Lcom/android/internal/view/menu/MenuBuilder;->saveActionViewStates(Landroid/os/Bundle;)V
 
     .end local v3           #subMenu:Lcom/android/internal/view/menu/SubMenuBuilder;
     :cond_2

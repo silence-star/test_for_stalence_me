@@ -196,7 +196,7 @@
     .end local p1
     iget-object v1, p1, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/util/AbstractMap;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -1258,7 +1258,7 @@
     .prologue
     iget-object v0, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
-    invoke-virtual {v0}, Ljava/util/HashMap;->hashCode()I
+    invoke-virtual {v0}, Ljava/util/AbstractMap;->hashCode()I
 
     move-result v0
 

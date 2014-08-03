@@ -49,7 +49,7 @@
 
     const/4 v1, 0x0
 
-    invoke-virtual {p0, v1}, Lcom/android/server/DevicePolicyManagerService$4;->getResultExtras(Z)Landroid/os/Bundle;
+    invoke-virtual {p0, v1}, Landroid/content/BroadcastReceiver;->getResultExtras(Z)Landroid/os/Bundle;
 
     move-result-object v1
 

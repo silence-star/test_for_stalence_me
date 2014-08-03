@@ -25,7 +25,7 @@
     .prologue
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0}, Landroid/widget/EditText;->setFocusable(Z)V
+    invoke-virtual {p1, v0}, Landroid/view/View;->setFocusable(Z)V
 
     return-void
 .end method

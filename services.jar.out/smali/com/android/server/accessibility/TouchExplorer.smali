@@ -2509,7 +2509,7 @@
 
     move-result v2
 
-    invoke-virtual {v1, v2}, Landroid/view/accessibility/AccessibilityEvent;->setWindowId(I)V
+    invoke-virtual {v1, v2}, Landroid/view/accessibility/AccessibilityRecord;->setWindowId(I)V
 
     invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityManager;->sendAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
@@ -2997,7 +2997,7 @@
     goto :goto_0
 
     :sswitch_1
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->getWindowId()I
+    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->getWindowId()I
 
     move-result v1
 

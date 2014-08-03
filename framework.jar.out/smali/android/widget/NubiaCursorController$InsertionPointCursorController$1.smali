@@ -43,7 +43,7 @@
     .prologue
     iget-object v0, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController$1;->this$0:Landroid/widget/NubiaCursorController$InsertionPointCursorController;
 
-    iget-object v0, v0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mEditor:Landroid/widget/Editor;
+    iget-object v0, v0, Landroid/widget/NubiaCursorController;->mEditor:Landroid/widget/Editor;
 
     iget-object v1, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController$1;->this$0:Landroid/widget/NubiaCursorController$InsertionPointCursorController;
 

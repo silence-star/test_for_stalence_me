@@ -409,7 +409,7 @@
     .local v2, version:I
     sget-object v3, Lcom/android/server/pm/InstallerHelper$1;->$SwitchMap$com$android$server$pm$InstallerHelper$Type:[I
 
-    invoke-virtual {p2}, Lcom/android/server/pm/InstallerHelper$Type;->ordinal()I
+    invoke-virtual {p2}, Ljava/lang/Enum;->ordinal()I
 
     move-result v4
 
@@ -1300,7 +1300,7 @@
 
     sget-object v3, Lcom/android/server/pm/InstallerHelper$Result;->PRESET_IS_MAX:Lcom/android/server/pm/InstallerHelper$Result;
 
-    invoke-virtual {v1, v3}, Lcom/android/server/pm/InstallerHelper$Result;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v3}, Ljava/lang/Enum;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 

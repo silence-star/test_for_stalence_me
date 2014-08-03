@@ -37,11 +37,11 @@
 
     new-instance v0, Landroid/speech/tts/AudioPlaybackQueueItem;
 
-    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$AudioSpeechItem;->getCallerIdentity()Ljava/lang/Object;
+    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$SpeechItem;->getCallerIdentity()Ljava/lang/Object;
 
     move-result-object v2
 
-    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$AudioSpeechItem;->getStreamType()I
+    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->getStreamType()I
 
     move-result v5
 

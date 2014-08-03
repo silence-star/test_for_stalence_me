@@ -178,7 +178,7 @@
 
     iget-object v2, p2, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
 
-    iget-boolean v2, v2, Lcom/android/server/wm/AppWindowToken;->paused:Z
+    iget-boolean v2, v2, Lcom/android/server/wm/WindowToken;->paused:Z
 
     :cond_0
     iput-boolean v2, p1, Lcom/android/server/input/InputWindowHandle;->paused:Z
@@ -627,7 +627,7 @@
 
     move-result-object v10
 
-    iget-object v11, v3, Lcom/android/server/wm/AppWindowToken;->stringName:Ljava/lang/String;
+    iget-object v11, v3, Lcom/android/server/wm/WindowToken;->stringName:Ljava/lang/String;
 
     invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1246,7 +1246,7 @@
 
     .restart local v31       #windows:Lcom/android/server/wm/WindowList;
     :cond_5
-    invoke-virtual/range {v31 .. v31}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual/range {v31 .. v31}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
@@ -1260,7 +1260,7 @@
 
     move/from16 v1, v30
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v17
 

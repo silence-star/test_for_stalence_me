@@ -117,12 +117,6 @@
 
 .field public static final FEATURE_ENABLE_SUPL:Ljava/lang/String; = "enableSUPL"
 
-.field public static final LTE_ON_CDMA_FALSE:I = 0x0
-
-.field public static final LTE_ON_CDMA_TRUE:I = 0x1
-
-.field public static final LTE_ON_CDMA_UNKNOWN:I = -0x1
-
 .field public static final NT_MODE_CDMA:I = 0x4
 
 .field public static final NT_MODE_CDMA_GSM:I = 0x19

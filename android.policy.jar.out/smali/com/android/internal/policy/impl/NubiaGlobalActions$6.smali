@@ -86,11 +86,11 @@
     sget-object v0, Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction$State;->TurningOn:Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction$State;
 
     :goto_1
-    iput-object v0, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$6;->mState:Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction$State;
+    iput-object v0, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction;->mState:Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction$State;
 
     iget-object v0, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$6;->this$0:Lcom/android/internal/policy/impl/NubiaGlobalActions;
 
-    iget-object v1, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$6;->mState:Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction$State;
+    iget-object v1, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction;->mState:Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction$State;
 
     #setter for: Lcom/android/internal/policy/impl/NubiaGlobalActions;->mAirplaneState:Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction$State;
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/NubiaGlobalActions;->access$902(Lcom/android/internal/policy/impl/NubiaGlobalActions;Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction$State;)Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction$State;

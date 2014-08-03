@@ -199,7 +199,7 @@
     invoke-direct {v3, p0}, Lcom/android/server/firewall/IntentFirewall$FirewallIntentFilter;-><init>(Lcom/android/server/firewall/IntentFirewall$Rule;)V
 
     .local v3, intentFilter:Lcom/android/server/firewall/IntentFirewall$FirewallIntentFilter;
-    invoke-virtual {v3, p1}, Lcom/android/server/firewall/IntentFirewall$FirewallIntentFilter;->readFromXml(Lorg/xmlpull/v1/XmlPullParser;)V
+    invoke-virtual {v3, p1}, Landroid/content/IntentFilter;->readFromXml(Lorg/xmlpull/v1/XmlPullParser;)V
 
     iget-object v4, p0, Lcom/android/server/firewall/IntentFirewall$Rule;->mIntentFilters:Ljava/util/ArrayList;
 
@@ -277,7 +277,7 @@
     .end local v0           #componentName:Landroid/content/ComponentName;
     .end local v1           #componentStr:Ljava/lang/String;
     :cond_3
-    invoke-super {p0, p1}, Lcom/android/server/firewall/AndFilter;->readChild(Lorg/xmlpull/v1/XmlPullParser;)V
+    invoke-super {p0, p1}, Lcom/android/server/firewall/FilterList;->readChild(Lorg/xmlpull/v1/XmlPullParser;)V
 
     goto :goto_0
 .end method
@@ -337,7 +337,7 @@
 
     iput-boolean v0, p0, Lcom/android/server/firewall/IntentFirewall$Rule;->log:Z
 
-    invoke-super {p0, p1}, Lcom/android/server/firewall/AndFilter;->readFromXml(Lorg/xmlpull/v1/XmlPullParser;)Lcom/android/server/firewall/FilterList;
+    invoke-super {p0, p1}, Lcom/android/server/firewall/FilterList;->readFromXml(Lorg/xmlpull/v1/XmlPullParser;)Lcom/android/server/firewall/FilterList;
 
     return-object p0
 .end method

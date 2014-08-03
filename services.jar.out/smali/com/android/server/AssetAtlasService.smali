@@ -421,7 +421,7 @@
     .local v13, cpuCount:I
     const/4 v7, 0x1
 
-    if-ne v13, v7, :cond_0
+    if-ne v13, v7, :cond_1
 
     new-instance v3, Lcom/android/server/AssetAtlasService$ComputeWorker;
 
@@ -501,13 +501,13 @@
 
     move-result v7
 
-    if-eqz v7, :cond_miui
+    if-eqz v7, :cond_0
 
     const/4 v7, 0x0
 
     return-object v7
 
-    :cond_miui
+    :cond_0
     const/4 v7, 0x0
 
     invoke-interface {v9, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -554,7 +554,7 @@
     :goto_1
     return-object v7
 
-    :cond_0
+    :cond_1
     const/16 v4, 0x300
 
     .local v4, start:I
@@ -579,7 +579,7 @@
     :goto_2
     move/from16 v0, v16
 
-    if-ge v0, v13, :cond_1
+    if-ge v0, v13, :cond_2
 
     new-instance v3, Lcom/android/server/AssetAtlasService$ComputeWorker;
 
@@ -629,7 +629,7 @@
     goto :goto_2
 
     .end local v3           #worker:Lcom/android/server/AssetAtlasService$ComputeWorker;
-    :cond_1
+    :cond_2
     const-wide/16 v7, 0xa
 
     :try_start_0
@@ -683,6 +683,52 @@
     const-string v1, "Could not delete the current configuration"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    return-void
+.end method
+
+.method public static disable()V
+    .locals 3
+
+    .prologue
+    const/4 v2, 0x0
+
+    sget-object v0, Lcom/android/server/AssetAtlasService;->sInstance:Lcom/android/server/AssetAtlasService;
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lcom/android/server/AssetAtlasService;->sInstance:Lcom/android/server/AssetAtlasService;
+
+    iget-object v0, v0, Lcom/android/server/AssetAtlasService;->mAtlasReady:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lcom/android/server/AssetAtlasService;->sInstance:Lcom/android/server/AssetAtlasService;
+
+    iget-object v0, v0, Lcom/android/server/AssetAtlasService;->mAtlasReady:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    sget-object v0, Lcom/android/server/AssetAtlasService;->sInstance:Lcom/android/server/AssetAtlasService;
+
+    iget-object v0, v0, Lcom/android/server/AssetAtlasService;->mBuffer:Landroid/view/GraphicBuffer;
+
+    invoke-virtual {v0}, Landroid/view/GraphicBuffer;->destroy()V
+
+    sget-object v0, Lcom/android/server/AssetAtlasService;->sInstance:Lcom/android/server/AssetAtlasService;
+
+    iput-object v2, v0, Lcom/android/server/AssetAtlasService;->mBuffer:Landroid/view/GraphicBuffer;
+
+    sget-object v0, Lcom/android/server/AssetAtlasService;->sInstance:Lcom/android/server/AssetAtlasService;
+
+    iput-object v2, v0, Lcom/android/server/AssetAtlasService;->mAtlasMap:[I
 
     :cond_0
     return-void
@@ -1300,17 +1346,17 @@
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     invoke-virtual {v2}, Ljava/io/BufferedWriter;->newLine()V
 
     iget-object v3, p1, Lcom/android/server/AssetAtlasService$Configuration;->type:Landroid/graphics/Atlas$Type;
 
-    invoke-virtual {v3}, Landroid/graphics/Atlas$Type;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/Enum;->toString()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     invoke-virtual {v2}, Ljava/io/BufferedWriter;->newLine()V
 
@@ -1320,7 +1366,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     invoke-virtual {v2}, Ljava/io/BufferedWriter;->newLine()V
 
@@ -1330,7 +1376,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     invoke-virtual {v2}, Ljava/io/BufferedWriter;->newLine()V
 
@@ -1340,7 +1386,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     invoke-virtual {v2}, Ljava/io/BufferedWriter;->newLine()V
 
@@ -1350,7 +1396,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     invoke-virtual {v2}, Ljava/io/BufferedWriter;->newLine()V
     :try_end_1
@@ -1621,51 +1667,5 @@
     .locals 0
 
     .prologue
-    return-void
-.end method
-
-.method public static disable()V
-    .locals 3
-
-    .prologue
-    const/4 v2, 0x0
-
-    sget-object v0, Lcom/android/server/AssetAtlasService;->sInstance:Lcom/android/server/AssetAtlasService;
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, Lcom/android/server/AssetAtlasService;->sInstance:Lcom/android/server/AssetAtlasService;
-
-    iget-object v0, v0, Lcom/android/server/AssetAtlasService;->mAtlasReady:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, Lcom/android/server/AssetAtlasService;->sInstance:Lcom/android/server/AssetAtlasService;
-
-    iget-object v0, v0, Lcom/android/server/AssetAtlasService;->mAtlasReady:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-
-    sget-object v0, Lcom/android/server/AssetAtlasService;->sInstance:Lcom/android/server/AssetAtlasService;
-
-    iget-object v0, v0, Lcom/android/server/AssetAtlasService;->mBuffer:Landroid/view/GraphicBuffer;
-
-    invoke-virtual {v0}, Landroid/view/GraphicBuffer;->destroy()V
-
-    sget-object v0, Lcom/android/server/AssetAtlasService;->sInstance:Lcom/android/server/AssetAtlasService;
-
-    iput-object v2, v0, Lcom/android/server/AssetAtlasService;->mBuffer:Landroid/view/GraphicBuffer;
-
-    sget-object v0, Lcom/android/server/AssetAtlasService;->sInstance:Lcom/android/server/AssetAtlasService;
-
-    iput-object v2, v0, Lcom/android/server/AssetAtlasService;->mAtlasMap:[I
-
-    :cond_0
     return-void
 .end method

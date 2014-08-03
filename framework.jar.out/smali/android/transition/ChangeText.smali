@@ -517,7 +517,7 @@
     .local v11, transitionListener:Landroid/transition/Transition$TransitionListener;
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v11}, Landroid/transition/ChangeText;->addListener(Landroid/transition/Transition$TransitionListener;)Landroid/transition/Transition;
+    invoke-virtual {v0, v11}, Landroid/transition/Transition;->addListener(Landroid/transition/Transition$TransitionListener;)Landroid/transition/Transition;
 
     goto/16 :goto_0
 
@@ -668,7 +668,7 @@
 
     move-object/from16 v0, v24
 
-    invoke-virtual {v0, v3}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v0, v3}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     :cond_c
     move-object/from16 v0, p0
@@ -716,7 +716,7 @@
 
     move-object/from16 v0, v23
 
-    invoke-virtual {v0, v3}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v0, v3}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     :cond_e
     if-eqz v24, :cond_f

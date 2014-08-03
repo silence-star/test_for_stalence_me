@@ -44,7 +44,7 @@
     return-void
 
     :cond_0
-    invoke-virtual {p0}, Landroid/graphics/drawable/AnimationDrawable$AnimationState;->getCapacity()I
+    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->getCapacity()I
 
     move-result v0
 

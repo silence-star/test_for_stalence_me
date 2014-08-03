@@ -899,7 +899,7 @@
 
     const v3, 0x102034d
 
-    invoke-virtual {v1, v3}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -913,7 +913,7 @@
 
     const v3, 0x102034c
 
-    invoke-virtual {v1, v3}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -925,7 +925,7 @@
 
     const v3, 0x102034f
 
-    invoke-virtual {v1, v3}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -937,13 +937,13 @@
 
     iget-object v3, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mOnMoveTouchListener:Landroid/view/View$OnTouchListener;
 
-    invoke-virtual {v1, v3}, Landroid/view/ViewGroup;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+    invoke-virtual {v1, v3}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowContent:Landroid/widget/RelativeLayout;
 
     const v3, 0x1020350
 
-    invoke-virtual {v1, v3}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -959,7 +959,7 @@
 
     const v3, 0x1020352
 
-    invoke-virtual {v1, v3}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -973,7 +973,7 @@
 
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mMoveView:Landroid/view/ViewGroup;
 
-    invoke-virtual {v1}, Landroid/view/ViewGroup;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
@@ -985,7 +985,7 @@
 
     const v3, 0x1020354
 
-    invoke-virtual {v1, v3}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -993,7 +993,7 @@
 
     check-cast v1, Landroid/view/ViewGroup;
 
-    invoke-virtual {v1}, Landroid/view/ViewGroup;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
@@ -1005,7 +1005,7 @@
 
     const v3, 0x1020351
 
-    invoke-virtual {v1, v3}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -1017,7 +1017,7 @@
 
     const v3, 0x1020355
 
-    invoke-virtual {v1, v3}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -1029,13 +1029,13 @@
 
     iget-object v3, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mOnMenuKeyTouchListener:Landroid/view/View$OnTouchListener;
 
-    invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+    invoke-virtual {v1, v3}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowContent:Landroid/widget/RelativeLayout;
 
     const v3, 0x1020356
 
-    invoke-virtual {v1, v3}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -1047,13 +1047,13 @@
 
     iget-object v3, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mOnHomeKeyTouchListener:Landroid/view/View$OnTouchListener;
 
-    invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+    invoke-virtual {v1, v3}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowContent:Landroid/widget/RelativeLayout;
 
     const v3, 0x1020357
 
-    invoke-virtual {v1, v3}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -1065,13 +1065,13 @@
 
     iget-object v3, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mOnBackKeyTouchListener:Landroid/view/View$OnTouchListener;
 
-    invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+    invoke-virtual {v1, v3}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowContent:Landroid/widget/RelativeLayout;
 
     const v3, 0x102034e
 
-    invoke-virtual {v1, v3}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -1081,7 +1081,7 @@
 
     const v3, 0x1020353
 
-    invoke-virtual {v1, v3}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -1091,15 +1091,15 @@
 
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mTextureView:Landroid/view/TextureView;
 
-    invoke-virtual {v1, v4}, Landroid/view/TextureView;->setPivotX(F)V
+    invoke-virtual {v1, v4}, Landroid/view/View;->setPivotX(F)V
 
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mTextureView:Landroid/view/TextureView;
 
-    invoke-virtual {v1, v4}, Landroid/view/TextureView;->setPivotY(F)V
+    invoke-virtual {v1, v4}, Landroid/view/View;->setPivotY(F)V
 
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mTextureView:Landroid/view/TextureView;
 
-    invoke-virtual {v1}, Landroid/view/TextureView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
@@ -1117,7 +1117,7 @@
 
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mTextureView:Landroid/view/TextureView;
 
-    invoke-virtual {v1}, Landroid/view/TextureView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
@@ -1161,7 +1161,7 @@
 
     iget v3, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mHeight:I
 
-    iput v3, v1, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v3, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
@@ -1175,7 +1175,7 @@
 
     add-int/2addr v3, v4
 
-    iput v3, v1, Landroid/view/WindowManager$LayoutParams;->height:I
+    iput v3, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
@@ -1205,7 +1205,7 @@
 
     iget v3, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mLogicalWidth:I
 
-    iput v3, v1, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v3, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams2:Landroid/view/WindowManager$LayoutParams;
 
@@ -1213,7 +1213,7 @@
 
     add-int/lit8 v3, v3, -0x1
 
-    iput v3, v1, Landroid/view/WindowManager$LayoutParams;->height:I
+    iput v3, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams2:Landroid/view/WindowManager$LayoutParams;
 
@@ -1387,7 +1387,7 @@
     :goto_0
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mTextureView:Landroid/view/TextureView;
 
-    invoke-virtual {v0}, Landroid/view/TextureView;->getScaleX()F
+    invoke-virtual {v0}, Landroid/view/View;->getScaleX()F
 
     move-result v0
 
@@ -1879,7 +1879,7 @@
 
     iget v6, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mHeight:I
 
-    iput v6, v5, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v6, v5, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
@@ -1893,7 +1893,7 @@
 
     add-int/2addr v6, v7
 
-    iput v6, v5, Landroid/view/WindowManager$LayoutParams;->height:I
+    iput v6, v5, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     :goto_0
     iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mSingleParams:Landroid/widget/AbsoluteLayout$LayoutParams;
@@ -1943,11 +1943,11 @@
 
     iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mTextureView:Landroid/view/TextureView;
 
-    invoke-virtual {v5, v9}, Landroid/view/TextureView;->setScaleX(F)V
+    invoke-virtual {v5, v9}, Landroid/view/View;->setScaleX(F)V
 
     iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mTextureView:Landroid/view/TextureView;
 
-    invoke-virtual {v5, v9}, Landroid/view/TextureView;->setScaleY(F)V
+    invoke-virtual {v5, v9}, Landroid/view/View;->setScaleY(F)V
 
     iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
@@ -2002,7 +2002,7 @@
 
     iget v6, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mRecordW:I
 
-    iput v6, v5, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v6, v5, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
@@ -2016,7 +2016,7 @@
 
     add-int/2addr v6, v7
 
-    iput v6, v5, Landroid/view/WindowManager$LayoutParams;->height:I
+    iput v6, v5, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     :goto_2
     iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->isRight:Ljava/lang/Boolean;
@@ -2082,7 +2082,7 @@
 
     iget v6, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mHeight:I
 
-    iput v6, v5, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v6, v5, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
@@ -2096,7 +2096,7 @@
 
     add-int/2addr v6, v7
 
-    iput v6, v5, Landroid/view/WindowManager$LayoutParams;->height:I
+    iput v6, v5, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     goto :goto_2
 
@@ -2135,7 +2135,7 @@
 
     iget v6, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mHeight:I
 
-    iput v6, v5, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v6, v5, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
@@ -2149,7 +2149,7 @@
 
     add-int/2addr v6, v7
 
-    iput v6, v5, Landroid/view/WindowManager$LayoutParams;->height:I
+    iput v6, v5, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     goto :goto_2
 
@@ -2673,7 +2673,7 @@
 
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mTextureView:Landroid/view/TextureView;
 
-    invoke-virtual {v1}, Landroid/view/TextureView;->getScaleX()F
+    invoke-virtual {v1}, Landroid/view/View;->getScaleX()F
 
     move-result v1
 
@@ -2699,7 +2699,7 @@
 
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mTextureView:Landroid/view/TextureView;
 
-    invoke-virtual {v1}, Landroid/view/TextureView;->getScaleY()F
+    invoke-virtual {v1}, Landroid/view/View;->getScaleY()F
 
     move-result v1
 

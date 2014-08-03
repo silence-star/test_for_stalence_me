@@ -233,7 +233,7 @@
     const/4 v0, 0x0
 
     .local v0, result:Z
-    invoke-virtual {p0}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -640,7 +640,7 @@
 
     iget-object v2, p0, Lnubia/ui/widget/MagnifierController;->mMagnifierView:Lnubia/ui/widget/MagnifierView;
 
-    invoke-virtual {v2}, Lnubia/ui/widget/MagnifierView;->invalidate()V
+    invoke-virtual {v2}, Landroid/view/View;->invalidate()V
 
     .end local v0           #x:I
     .end local v1           #y:I

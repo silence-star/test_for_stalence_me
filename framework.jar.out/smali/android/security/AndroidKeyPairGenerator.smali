@@ -483,7 +483,7 @@
 
     .local v9, cert:Ljava/security/cert/X509Certificate;
     :try_start_3
-    invoke-virtual {v9}, Ljava/security/cert/X509Certificate;->getEncoded()[B
+    invoke-virtual {v9}, Ljava/security/cert/Certificate;->getEncoded()[B
     :try_end_3
     .catch Ljava/security/cert/CertificateEncodingException; {:try_start_3 .. :try_end_3} :catch_4
 

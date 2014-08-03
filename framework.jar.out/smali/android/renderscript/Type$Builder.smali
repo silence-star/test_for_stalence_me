@@ -45,7 +45,7 @@
 
     iput v0, p0, Landroid/renderscript/Type$Builder;->mDimX:I
 
-    invoke-virtual {p2}, Landroid/renderscript/Element;->checkValid()V
+    invoke-virtual {p2}, Landroid/renderscript/BaseObj;->checkValid()V
 
     iput-object p1, p0, Landroid/renderscript/Type$Builder;->mRS:Landroid/renderscript/RenderScript;
 
@@ -163,7 +163,7 @@
 
     iget-object v2, p0, Landroid/renderscript/Type$Builder;->mRS:Landroid/renderscript/RenderScript;
 
-    invoke-virtual {v1, v2}, Landroid/renderscript/Element;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {v1, v2}, Landroid/renderscript/BaseObj;->getID(Landroid/renderscript/RenderScript;)I
 
     move-result v1
 

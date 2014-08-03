@@ -124,7 +124,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchDraw(Landroid/graphics/Canvas;)V
 
     :cond_0
     return-void
@@ -136,7 +136,7 @@
     .prologue
     const/4 v0, 0x1
 
-    invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
+    invoke-super {p0}, Landroid/view/ViewGroup;->onAttachedToWindow()V
 
     iput-boolean v0, p0, Landroid/view/LayoutInflater$BlinkLayout;->mBlink:Z
 
@@ -151,7 +151,7 @@
     .locals 2
 
     .prologue
-    invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
+    invoke-super {p0}, Landroid/view/ViewGroup;->onDetachedFromWindow()V
 
     const/4 v0, 0x0
 

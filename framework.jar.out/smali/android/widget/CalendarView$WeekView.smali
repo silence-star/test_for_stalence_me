@@ -179,7 +179,7 @@
 
     iput v3, v2, Landroid/graphics/Rect;->bottom:I
 
-    invoke-virtual {p0}, Landroid/widget/CalendarView$WeekView;->isLayoutRtl()Z
+    invoke-virtual {p0}, Landroid/view/View;->isLayoutRtl()Z
 
     move-result v0
 
@@ -488,7 +488,7 @@
     const/4 v1, 0x0
 
     .local v1, i:I
-    invoke-virtual {p0}, Landroid/widget/CalendarView$WeekView;->isLayoutRtl()Z
+    invoke-virtual {p0}, Landroid/view/View;->isLayoutRtl()Z
 
     move-result v6
 
@@ -721,7 +721,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/widget/ListView;->getFirstVisiblePosition()I
+    invoke-virtual {v0}, Landroid/widget/AdapterView;->getFirstVisiblePosition()I
 
     move-result v6
 
@@ -735,7 +735,7 @@
 
     const/4 v4, 0x0
 
-    invoke-virtual {v0, v4}, Landroid/widget/ListView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, v4}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -780,7 +780,7 @@
 
     invoke-virtual {v0, v4}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    invoke-virtual {p0}, Landroid/widget/CalendarView$WeekView;->isLayoutRtl()Z
+    invoke-virtual {p0}, Landroid/view/View;->isLayoutRtl()Z
 
     move-result v0
 
@@ -932,7 +932,7 @@
 
     if-eqz v2, :cond_2
 
-    invoke-virtual {p0}, Landroid/widget/CalendarView$WeekView;->isLayoutRtl()Z
+    invoke-virtual {p0}, Landroid/view/View;->isLayoutRtl()Z
 
     move-result v0
 
@@ -1035,7 +1035,7 @@
     .prologue
     const/4 v4, 0x0
 
-    invoke-virtual {p0}, Landroid/widget/CalendarView$WeekView;->isLayoutRtl()Z
+    invoke-virtual {p0}, Landroid/view/View;->isLayoutRtl()Z
 
     move-result v2
 
@@ -1699,7 +1699,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/widget/ListView;->getHeight()I
+    invoke-virtual {v0}, Landroid/view/View;->getHeight()I
 
     move-result v0
 
@@ -1710,7 +1710,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/widget/ListView;->getPaddingTop()I
+    invoke-virtual {v1}, Landroid/view/View;->getPaddingTop()I
 
     move-result v1
 
@@ -1723,7 +1723,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/widget/ListView;->getPaddingBottom()I
+    invoke-virtual {v1}, Landroid/view/View;->getPaddingBottom()I
 
     move-result v1
 
@@ -1746,7 +1746,7 @@
 
     iget v1, p0, Landroid/widget/CalendarView$WeekView;->mHeight:I
 
-    invoke-virtual {p0, v0, v1}, Landroid/widget/CalendarView$WeekView;->setMeasuredDimension(II)V
+    invoke-virtual {p0, v0, v1}, Landroid/view/View;->setMeasuredDimension(II)V
 
     return-void
 .end method

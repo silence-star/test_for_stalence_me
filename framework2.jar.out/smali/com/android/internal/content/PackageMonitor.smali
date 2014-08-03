@@ -977,7 +977,7 @@
 
     const/4 v7, -0x1
 
-    invoke-virtual {p0, v7}, Lcom/android/internal/content/PackageMonitor;->setResultCode(I)V
+    invoke-virtual {p0, v7}, Landroid/content/BroadcastReceiver;->setResultCode(I)V
 
     goto/16 :goto_1
 

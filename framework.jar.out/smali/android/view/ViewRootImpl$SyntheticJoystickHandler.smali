@@ -180,7 +180,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v5}, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->removeMessages(I)V
+    invoke-virtual {v0, v5}, Landroid/os/Handler;->removeMessages(I)V
 
     move-object/from16 v0, p0
 
@@ -261,7 +261,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v5, v2}, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v0, v5, v2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v28
 
@@ -282,7 +282,7 @@
 
     move-object/from16 v1, v28
 
-    invoke-virtual {v0, v1, v5, v6}, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v0, v1, v5, v6}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     .end local v2           #e:Landroid/view/KeyEvent;
     .end local v28           #m:Landroid/os/Message;
@@ -305,7 +305,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v5}, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->removeMessages(I)V
+    invoke-virtual {v0, v5}, Landroid/os/Handler;->removeMessages(I)V
 
     move-object/from16 v0, p0
 
@@ -396,7 +396,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v5, v2}, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v0, v5, v2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v28
 
@@ -417,7 +417,7 @@
 
     move-object/from16 v1, v28
 
-    invoke-virtual {v0, v1, v5, v6}, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v0, v1, v5, v6}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     .end local v2           #e:Landroid/view/KeyEvent;
     .end local v28           #m:Landroid/os/Message;
@@ -497,7 +497,7 @@
 
     iget v3, p1, Landroid/os/Message;->what:I
 
-    invoke-virtual {p0, v3, v0}, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {p0, v3, v0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v1
 
@@ -512,7 +512,7 @@
 
     int-to-long v3, v3
 
-    invoke-virtual {p0, v1, v3, v4}, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {p0, v1, v3, v4}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     goto :goto_0
 

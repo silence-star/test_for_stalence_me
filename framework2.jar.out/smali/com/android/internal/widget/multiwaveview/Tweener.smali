@@ -162,7 +162,7 @@
 
     iget-object v5, v4, Lcom/android/internal/widget/multiwaveview/Tweener;->animator:Landroid/animation/ObjectAnimator;
 
-    invoke-virtual {v5}, Landroid/animation/ObjectAnimator;->cancel()V
+    invoke-virtual {v5}, Landroid/animation/ValueAnimator;->cancel()V
 
     if-eqz p0, :cond_1
 
@@ -180,7 +180,7 @@
 
     check-cast v5, [Landroid/animation/PropertyValuesHolder;
 
-    invoke-virtual {v6, v5}, Landroid/animation/ObjectAnimator;->setValues([Landroid/animation/PropertyValuesHolder;)V
+    invoke-virtual {v6, v5}, Landroid/animation/ValueAnimator;->setValues([Landroid/animation/PropertyValuesHolder;)V
 
     :cond_0
     :goto_1
@@ -613,10 +613,10 @@
     :goto_2
     if-eqz v7, :cond_d
 
-    invoke-virtual {v2, v7}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+    invoke-virtual {v2, v7}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
     :cond_d
-    invoke-virtual {v2, v3, v4}, Landroid/animation/ObjectAnimator;->setStartDelay(J)V
+    invoke-virtual {v2, v3, v4}, Landroid/animation/ValueAnimator;->setStartDelay(J)V
 
     move-wide/from16 v0, p1
 
@@ -624,21 +624,21 @@
 
     if-eqz v12, :cond_e
 
-    invoke-virtual {v2}, Landroid/animation/ObjectAnimator;->removeAllUpdateListeners()V
+    invoke-virtual {v2}, Landroid/animation/ValueAnimator;->removeAllUpdateListeners()V
 
-    invoke-virtual {v2, v12}, Landroid/animation/ObjectAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+    invoke-virtual {v2, v12}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
     :cond_e
     if-eqz v9, :cond_f
 
-    invoke-virtual {v2}, Landroid/animation/ObjectAnimator;->removeAllListeners()V
+    invoke-virtual {v2}, Landroid/animation/Animator;->removeAllListeners()V
 
-    invoke-virtual {v2, v9}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v2, v9}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     :cond_f
     sget-object v14, Lcom/android/internal/widget/multiwaveview/Tweener;->mCleanupListener:Landroid/animation/Animator$AnimatorListener;
 
-    invoke-virtual {v2, v14}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v2, v14}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     return-object v11
 

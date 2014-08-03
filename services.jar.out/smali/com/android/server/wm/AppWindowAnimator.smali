@@ -107,7 +107,7 @@
 
     iput-object p1, p0, Lcom/android/server/wm/AppWindowAnimator;->mAppToken:Lcom/android/server/wm/AppWindowToken;
 
-    iget-object v0, p1, Lcom/android/server/wm/AppWindowToken;->service:Lcom/android/server/wm/WindowManagerService;
+    iget-object v0, p1, Lcom/android/server/wm/WindowToken;->service:Lcom/android/server/wm/WindowManagerService;
 
     iput-object v0, p0, Lcom/android/server/wm/AppWindowAnimator;->mService:Lcom/android/server/wm/WindowManagerService;
 
@@ -969,7 +969,7 @@
 
     iget-object v5, v5, Lcom/android/server/wm/AppWindowToken;->allAppWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v5}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
@@ -991,7 +991,7 @@
 
     iget-object v5, v5, Lcom/android/server/wm/AppWindowToken;->allAppWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v5, v2}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v5, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 

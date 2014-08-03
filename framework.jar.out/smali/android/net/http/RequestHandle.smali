@@ -1500,7 +1500,7 @@
     move-exception v1
 
     .local v1, e:Landroid/net/ParseException;
-    invoke-virtual {v1}, Landroid/net/ParseException;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_1
 

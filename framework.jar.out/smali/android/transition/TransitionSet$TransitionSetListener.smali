@@ -60,7 +60,7 @@
 
     iget-object v0, p0, Landroid/transition/TransitionSet$TransitionSetListener;->mTransitionSet:Landroid/transition/TransitionSet;
 
-    invoke-virtual {v0}, Landroid/transition/TransitionSet;->end()V
+    invoke-virtual {v0}, Landroid/transition/Transition;->end()V
 
     :cond_0
     invoke-virtual {p1, p0}, Landroid/transition/Transition;->removeListener(Landroid/transition/Transition$TransitionListener;)Landroid/transition/Transition;
@@ -81,7 +81,7 @@
 
     iget-object v0, p0, Landroid/transition/TransitionSet$TransitionSetListener;->mTransitionSet:Landroid/transition/TransitionSet;
 
-    invoke-virtual {v0}, Landroid/transition/TransitionSet;->start()V
+    invoke-virtual {v0}, Landroid/transition/Transition;->start()V
 
     iget-object v0, p0, Landroid/transition/TransitionSet$TransitionSetListener;->mTransitionSet:Landroid/transition/TransitionSet;
 

@@ -143,7 +143,7 @@
     .prologue
     sget-object v0, Landroid/net/wifi/WifiConfiguration$ProxySettings;->$VALUES:[Landroid/net/wifi/WifiConfiguration$ProxySettings;
 
-    invoke-virtual {v0}, [Landroid/net/wifi/WifiConfiguration$ProxySettings;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

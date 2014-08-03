@@ -1027,7 +1027,7 @@
 
     invoke-direct {v1, p0, p1}, Lcom/android/server/BootReceiver$1;-><init>(Lcom/android/server/BootReceiver;Landroid/content/Context;)V
 
-    invoke-virtual {v1}, Lcom/android/server/BootReceiver$1;->start()V
+    invoke-virtual {v1}, Ljava/lang/Thread;->start()V
 
     goto :goto_0
 .end method

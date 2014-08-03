@@ -102,7 +102,7 @@
     invoke-static {v6}, Lcom/android/internal/telephony/uicc/SpnOverride$Injector;->closeSpnReader(Ljava/io/FileReader;)V
 
     .end local v6           #spnReader:Ljava/io/FileReader;
-    :goto_miui
+    :goto_2
     return-void
 
     :catch_0
@@ -147,7 +147,7 @@
 
     invoke-static {v7, v8}, Landroid/telephony/Rlog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_miui
+    goto :goto_2
 
     .end local v1           #e:Ljava/io/FileNotFoundException;
     .restart local v2       #name:Ljava/lang/String;

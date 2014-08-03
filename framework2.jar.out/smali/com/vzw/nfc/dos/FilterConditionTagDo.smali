@@ -76,17 +76,17 @@
 
     iput-byte v2, p0, Lcom/vzw/nfc/dos/FilterConditionTagDo;->mFilterConditionTag:B
 
-    invoke-virtual {p0}, Lcom/vzw/nfc/dos/FilterConditionTagDo;->getRawData()[B
+    invoke-virtual {p0}, Lcom/vzw/nfc/dos/VzwTlv;->getRawData()[B
 
     move-result-object v0
 
     .local v0, data:[B
-    invoke-virtual {p0}, Lcom/vzw/nfc/dos/FilterConditionTagDo;->getValueIndex()I
+    invoke-virtual {p0}, Lcom/vzw/nfc/dos/VzwTlv;->getValueIndex()I
 
     move-result v1
 
     .local v1, index:I
-    invoke-virtual {p0}, Lcom/vzw/nfc/dos/FilterConditionTagDo;->getValueLength()I
+    invoke-virtual {p0}, Lcom/vzw/nfc/dos/VzwTlv;->getValueLength()I
 
     move-result v2
 
@@ -105,7 +105,7 @@
     throw v2
 
     :cond_0
-    invoke-virtual {p0}, Lcom/vzw/nfc/dos/FilterConditionTagDo;->getValueLength()I
+    invoke-virtual {p0}, Lcom/vzw/nfc/dos/VzwTlv;->getValueLength()I
 
     move-result v2
 

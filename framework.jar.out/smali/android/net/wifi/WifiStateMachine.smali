@@ -4861,6 +4861,8 @@
 
     invoke-direct {p0, v10}, Landroid/net/wifi/WifiStateMachine;->sendRssiChangeBroadcast(Landroid/net/wifi/WifiRssiInfo;)V
 
+    invoke-direct {p0, v6}, Landroid/net/wifi/WifiStateMachine;->sendRssiChangeBroadcast(I)V
+
     :cond_5
     iput v7, p0, Landroid/net/wifi/WifiStateMachine;->mLastSignalLevel:I
 

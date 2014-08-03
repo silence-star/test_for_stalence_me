@@ -3,8 +3,8 @@
 .source "ViewServer.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
 .implements Lcom/android/server/wm/WindowManagerService$WindowChangeListener;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
@@ -203,7 +203,7 @@
     :try_start_6
     const-string v4, "LIST UPDATE\n"
 
-    invoke-virtual {v3, v4}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     invoke-virtual {v3}, Ljava/io/BufferedWriter;->flush()V
 
@@ -212,7 +212,7 @@
 
     const-string v4, "FOCUS UPDATE\n"
 
-    invoke-virtual {v3, v4}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     invoke-virtual {v3}, Ljava/io/BufferedWriter;->flush()V
     :try_end_6
@@ -607,7 +607,7 @@
     move-exception v1
 
     .local v1, e:Ljava/io/IOException;
-    invoke-virtual {v1}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_2
 
@@ -616,7 +616,7 @@
     move-exception v1
 
     .restart local v1       #e:Ljava/io/IOException;
-    invoke-virtual {v1}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     move-object v2, v3
 
@@ -669,14 +669,14 @@
     :catch_3
     move-exception v1
 
-    invoke-virtual {v1}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto/16 :goto_3
 
     :catch_4
     move-exception v1
 
-    invoke-virtual {v1}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_5
 
@@ -713,7 +713,7 @@
     move-exception v1
 
     .restart local v1       #e:Ljava/io/IOException;
-    invoke-virtual {v1}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_7
 
@@ -722,7 +722,7 @@
     move-exception v1
 
     .restart local v1       #e:Ljava/io/IOException;
-    invoke-virtual {v1}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_8
 

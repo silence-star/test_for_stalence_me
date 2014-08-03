@@ -70,17 +70,17 @@
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->clear()V
 
-    invoke-virtual {p0}, Lcom/vzw/nfc/dos/ClfFilterDoList;->getRawData()[B
+    invoke-virtual {p0}, Lcom/vzw/nfc/dos/VzwTlv;->getRawData()[B
 
     move-result-object v1
 
     .local v1, data:[B
-    invoke-virtual {p0}, Lcom/vzw/nfc/dos/ClfFilterDoList;->getValueIndex()I
+    invoke-virtual {p0}, Lcom/vzw/nfc/dos/VzwTlv;->getValueIndex()I
 
     move-result v3
 
     .local v3, index:I
-    invoke-virtual {p0}, Lcom/vzw/nfc/dos/ClfFilterDoList;->getValueLength()I
+    invoke-virtual {p0}, Lcom/vzw/nfc/dos/VzwTlv;->getValueLength()I
 
     move-result v6
 
@@ -90,7 +90,7 @@
     return-void
 
     :cond_0
-    invoke-virtual {p0}, Lcom/vzw/nfc/dos/ClfFilterDoList;->getValueLength()I
+    invoke-virtual {p0}, Lcom/vzw/nfc/dos/VzwTlv;->getValueLength()I
 
     move-result v6
 
@@ -112,7 +112,7 @@
     move v0, v3
 
     .local v0, currentPos:I
-    invoke-virtual {p0}, Lcom/vzw/nfc/dos/ClfFilterDoList;->getValueLength()I
+    invoke-virtual {p0}, Lcom/vzw/nfc/dos/VzwTlv;->getValueLength()I
 
     move-result v6
 

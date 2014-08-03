@@ -347,7 +347,7 @@
     .prologue
     const/4 v3, 0x0
 
-    invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
+    invoke-super {p0, p1, p2}, Landroid/view/AbsSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
     iget-wide v4, p0, Landroid/widget/AbsListView$SavedState;->selectedId:J
 

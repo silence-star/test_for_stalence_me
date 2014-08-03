@@ -53,7 +53,7 @@
 
     iget-object v1, p0, Landroid/speech/tts/TextToSpeechService$SynthesisSpeechItem;->mText:Ljava/lang/String;
 
-    iget-object v2, p0, Landroid/speech/tts/TextToSpeechService$SynthesisSpeechItem;->mParams:Landroid/os/Bundle;
+    iget-object v2, p0, Landroid/speech/tts/TextToSpeechService$SpeechItem;->mParams:Landroid/os/Bundle;
 
     invoke-direct {v0, v1, v2}, Landroid/speech/tts/SynthesisRequest;-><init>(Ljava/lang/String;Landroid/os/Bundle;)V
 
@@ -110,7 +110,7 @@
 
     const-string v1, ""
 
-    invoke-virtual {p0, v0, v1}, Landroid/speech/tts/TextToSpeechService$SynthesisSpeechItem;->getStringParam(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v0, v1}, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->getStringParam(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -125,7 +125,7 @@
 
     const/16 v1, 0x64
 
-    invoke-virtual {p0, v0, v1}, Landroid/speech/tts/TextToSpeechService$SynthesisSpeechItem;->getIntParam(Ljava/lang/String;I)I
+    invoke-virtual {p0, v0, v1}, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->getIntParam(Ljava/lang/String;I)I
 
     move-result v0
 
@@ -145,7 +145,7 @@
 
     move-result v1
 
-    invoke-virtual {p0, v0, v1}, Landroid/speech/tts/TextToSpeechService$SynthesisSpeechItem;->getIntParam(Ljava/lang/String;I)I
+    invoke-virtual {p0, v0, v1}, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->getIntParam(Ljava/lang/String;I)I
 
     move-result v0
 
@@ -176,7 +176,7 @@
 
     const-string v1, ""
 
-    invoke-virtual {p0, v0, v1}, Landroid/speech/tts/TextToSpeechService$SynthesisSpeechItem;->getStringParam(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v0, v1}, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->getStringParam(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -191,7 +191,7 @@
 
     const/4 v1, 0x0
 
-    invoke-virtual {p0, v0, v1}, Landroid/speech/tts/TextToSpeechService$SynthesisSpeechItem;->getStringParam(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v0, v1}, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->getStringParam(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -258,15 +258,15 @@
     .prologue
     new-instance v0, Landroid/speech/tts/PlaybackSynthesisCallback;
 
-    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$SynthesisSpeechItem;->getStreamType()I
+    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->getStreamType()I
 
     move-result v1
 
-    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$SynthesisSpeechItem;->getVolume()F
+    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->getVolume()F
 
     move-result v2
 
-    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$SynthesisSpeechItem;->getPan()F
+    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->getPan()F
 
     move-result v3
 
@@ -277,7 +277,7 @@
 
     move-result-object v4
 
-    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$SynthesisSpeechItem;->getCallerIdentity()Ljava/lang/Object;
+    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$SpeechItem;->getCallerIdentity()Ljava/lang/Object;
 
     move-result-object v6
 
@@ -302,7 +302,7 @@
 
     aget-object v1, v1, v2
 
-    invoke-virtual {p0, v0, v1}, Landroid/speech/tts/TextToSpeechService$SynthesisSpeechItem;->getStringParam(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v0, v1}, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->getStringParam(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -405,7 +405,7 @@
     monitor-enter p0
 
     :try_start_0
-    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$SynthesisSpeechItem;->isStopped()Z
+    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$SpeechItem;->isStopped()Z
 
     move-result v2
 

@@ -422,23 +422,30 @@
     .prologue
     const/16 v2, -0x64
 
-    if-gt p0, v2, :cond_0
+    if-gt p0, v2, :cond_1
 
     const/4 v2, 0x0
 
     :goto_0
-    return v2
+    add-int/lit8 v0, p1, -0x1
+
+    if-lt v2, v0, :cond_0
+
+    add-int/lit8 v2, p1, -0x1
 
     :cond_0
+    return v2
+
+    :cond_1
     const/16 v2, -0x37
 
-    if-lt p0, v2, :cond_1
+    if-lt p0, v2, :cond_2
 
     add-int/lit8 v2, p1, -0x1
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
     const/high16 v0, 0x4234
 
     .local v0, inputRange:F
@@ -447,7 +454,7 @@
     int-to-float v1, v2
 
     .local v1, outputRange:F
-    add-int/lit8 v2, p0, 0x64
+    add-int/lit8 v2, p0, 0x75
 
     int-to-float v2, v2
 

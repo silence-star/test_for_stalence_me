@@ -242,7 +242,7 @@
 
     const/16 v3, 0x9
 
-    invoke-virtual {v1, v3}, Landroid/media/AudioService$AudioHandler;->removeMessages(I)V
+    invoke-virtual {v1, v3}, Landroid/os/Handler;->removeMessages(I)V
 
     move-object/from16 v0, p0
 

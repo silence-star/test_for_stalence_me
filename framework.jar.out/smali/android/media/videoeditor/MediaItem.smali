@@ -759,7 +759,7 @@
     invoke-virtual {v6, v5, v12, v8}, Ljava/nio/IntBuffer;->put([III)Ljava/nio/IntBuffer;
 
     :try_start_1
-    invoke-virtual {v2, v0}, Ljava/io/DataOutputStream;->write([B)V
+    invoke-virtual {v2, v0}, Ljava/io/OutputStream;->write([B)V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
@@ -913,7 +913,7 @@
 
     check-cast v2, Landroid/media/videoeditor/MediaVideoItem;
 
-    invoke-virtual {v2}, Landroid/media/videoeditor/MediaVideoItem;->getFilename()Ljava/lang/String;
+    invoke-virtual {v2}, Landroid/media/videoeditor/MediaItem;->getFilename()Ljava/lang/String;
 
     move-result-object v3
 
@@ -949,7 +949,7 @@
 
     iget-object v3, p0, Landroid/media/videoeditor/MediaItem;->mMANativeHelper:Landroid/media/videoeditor/MediaArtistNativeHelper;
 
-    invoke-virtual {v2}, Landroid/media/videoeditor/MediaVideoItem;->getRenderingMode()I
+    invoke-virtual {v2}, Landroid/media/videoeditor/MediaItem;->getRenderingMode()I
 
     move-result v4
 

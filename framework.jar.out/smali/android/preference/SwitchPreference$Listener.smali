@@ -59,7 +59,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Landroid/preference/SwitchPreference;->callChangeListener(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Landroid/preference/Preference;->callChangeListener(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -83,7 +83,7 @@
     :cond_1
     iget-object v0, p0, Landroid/preference/SwitchPreference$Listener;->this$0:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v0, p2}, Landroid/preference/SwitchPreference;->setChecked(Z)V
+    invoke-virtual {v0, p2}, Landroid/preference/TwoStatePreference;->setChecked(Z)V
 
     goto :goto_1
 .end method

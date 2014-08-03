@@ -54,22 +54,22 @@
 
     if-nez v5, :cond_2
 
-    iget-object v5, p1, Lcom/android/internal/view/menu/ActionMenuPresenter;->mMenuView:Lcom/android/internal/view/menu/MenuView;
+    iget-object v5, p1, Lcom/android/internal/view/menu/BaseMenuPresenter;->mMenuView:Lcom/android/internal/view/menu/MenuView;
 
     check-cast v5, Landroid/view/View;
 
     :goto_0
-    invoke-virtual {p0, v5}, Lcom/android/internal/view/menu/ActionMenuPresenter$ActionButtonSubmenu;->setAnchorView(Landroid/view/View;)V
+    invoke-virtual {p0, v5}, Lcom/android/internal/view/menu/MenuPopupHelper;->setAnchorView(Landroid/view/View;)V
 
     :cond_0
     iget-object v5, p1, Lcom/android/internal/view/menu/ActionMenuPresenter;->mPopupPresenterCallback:Lcom/android/internal/view/menu/ActionMenuPresenter$PopupPresenterCallback;
 
-    invoke-virtual {p0, v5}, Lcom/android/internal/view/menu/ActionMenuPresenter$ActionButtonSubmenu;->setCallback(Lcom/android/internal/view/menu/MenuPresenter$Callback;)V
+    invoke-virtual {p0, v5}, Lcom/android/internal/view/menu/MenuPopupHelper;->setCallback(Lcom/android/internal/view/menu/MenuPresenter$Callback;)V
 
     const/4 v4, 0x0
 
     .local v4, preserveIconSpacing:Z
-    invoke-virtual {p3}, Lcom/android/internal/view/menu/SubMenuBuilder;->size()I
+    invoke-virtual {p3}, Lcom/android/internal/view/menu/MenuBuilder;->size()I
 
     move-result v1
 
@@ -80,7 +80,7 @@
     :goto_1
     if-ge v2, v1, :cond_1
 
-    invoke-virtual {p3, v2}, Lcom/android/internal/view/menu/SubMenuBuilder;->getItem(I)Landroid/view/MenuItem;
+    invoke-virtual {p3, v2}, Lcom/android/internal/view/menu/MenuBuilder;->getItem(I)Landroid/view/MenuItem;
 
     move-result-object v0
 
@@ -101,7 +101,7 @@
 
     .end local v0           #childItem:Landroid/view/MenuItem;
     :cond_1
-    invoke-virtual {p0, v4}, Lcom/android/internal/view/menu/ActionMenuPresenter$ActionButtonSubmenu;->setForceShowIcon(Z)V
+    invoke-virtual {p0, v4}, Lcom/android/internal/view/menu/MenuPopupHelper;->setForceShowIcon(Z)V
 
     return-void
 

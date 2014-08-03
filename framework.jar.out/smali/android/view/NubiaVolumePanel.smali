@@ -3,9 +3,9 @@
 .source "NubiaVolumePanel.java"
 
 # interfaces
-.implements Landroid/widget/SeekBar$OnSeekBarChangeListener;
-.implements Landroid/view/View$OnClickListener;
 .implements Landroid/media/VolumeController;
+.implements Landroid/view/View$OnClickListener;
+.implements Landroid/widget/SeekBar$OnSeekBarChangeListener;
 
 
 # annotations

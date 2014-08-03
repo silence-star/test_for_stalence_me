@@ -69,7 +69,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/android/internal/view/menu/ActionMenuPresenter$OverflowPopup;->getPopup()Landroid/widget/ListPopupWindow;
+    invoke-virtual {v0}, Lcom/android/internal/view/menu/MenuPopupHelper;->getPopup()Landroid/widget/ListPopupWindow;
 
     move-result-object v0
 

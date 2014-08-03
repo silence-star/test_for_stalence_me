@@ -84,7 +84,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/android/server/FgThread;->getLooper()Landroid/os/Looper;
+    invoke-virtual {v1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
 
     move-result-object v1
 
@@ -910,7 +910,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v1, v3}, Ljava/io/FileOutputStream;->write([B)V
+    invoke-virtual {v1, v3}, Ljava/io/OutputStream;->write([B)V
 
     const/16 v3, 0xa
 

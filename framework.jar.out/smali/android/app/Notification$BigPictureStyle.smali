@@ -47,7 +47,7 @@
 
     iput-boolean v0, p0, Landroid/app/Notification$BigPictureStyle;->mBigLargeIconSet:Z
 
-    invoke-virtual {p0, p1}, Landroid/app/Notification$BigPictureStyle;->setBuilder(Landroid/app/Notification$Builder;)V
+    invoke-virtual {p0, p1}, Landroid/app/Notification$Style;->setBuilder(Landroid/app/Notification$Builder;)V
 
     return-void
 .end method
@@ -58,7 +58,7 @@
     .prologue
     const v1, 0x1090069
 
-    invoke-virtual {p0, v1}, Landroid/app/Notification$BigPictureStyle;->getStandardView(I)Landroid/widget/RemoteViews;
+    invoke-virtual {p0, v1}, Landroid/app/Notification$Style;->getStandardView(I)Landroid/widget/RemoteViews;
 
     move-result-object v0
 
@@ -134,7 +134,7 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Landroid/app/Notification$BigPictureStyle;->mBuilder:Landroid/app/Notification$Builder;
+    iget-object v0, p0, Landroid/app/Notification$Style;->mBuilder:Landroid/app/Notification$Builder;
 
     iget-object v1, p0, Landroid/app/Notification$BigPictureStyle;->mBigLargeIcon:Landroid/graphics/Bitmap;
 
@@ -160,7 +160,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Landroid/app/Notification$BigPictureStyle;->internalSetBigContentTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v0}, Landroid/app/Notification$Style;->internalSetBigContentTitle(Ljava/lang/CharSequence;)V
 
     return-object p0
 .end method
@@ -174,7 +174,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Landroid/app/Notification$BigPictureStyle;->internalSetSummaryText(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v0}, Landroid/app/Notification$Style;->internalSetSummaryText(Ljava/lang/CharSequence;)V
 
     return-object p0
 .end method

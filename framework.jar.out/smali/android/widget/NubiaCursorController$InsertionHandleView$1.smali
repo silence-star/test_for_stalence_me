@@ -42,7 +42,7 @@
     .prologue
     iget-object v0, p0, Landroid/widget/NubiaCursorController$InsertionHandleView$1;->this$1:Landroid/widget/NubiaCursorController$InsertionHandleView;
 
-    invoke-virtual {v0}, Landroid/widget/NubiaCursorController$InsertionHandleView;->hide()V
+    invoke-virtual {v0}, Landroid/widget/NubiaCursorController$NubiaHandleView;->hide()V
 
     return-void
 .end method

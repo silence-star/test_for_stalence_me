@@ -45,7 +45,7 @@
 
     iput-object p4, p0, Landroid/widget/RemoteViews$BitmapReflectionAction;->bitmap:Landroid/graphics/Bitmap;
 
-    iput p2, p0, Landroid/widget/RemoteViews$BitmapReflectionAction;->viewId:I
+    iput p2, p0, Landroid/widget/RemoteViews$Action;->viewId:I
 
     iput-object p3, p0, Landroid/widget/RemoteViews$BitmapReflectionAction;->methodName:Ljava/lang/String;
 
@@ -79,7 +79,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/widget/RemoteViews$BitmapReflectionAction;->viewId:I
+    iput v0, p0, Landroid/widget/RemoteViews$Action;->viewId:I
 
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
@@ -127,7 +127,7 @@
 
     iget-object v1, p0, Landroid/widget/RemoteViews$BitmapReflectionAction;->this$0:Landroid/widget/RemoteViews;
 
-    iget v2, p0, Landroid/widget/RemoteViews$BitmapReflectionAction;->viewId:I
+    iget v2, p0, Landroid/widget/RemoteViews$Action;->viewId:I
 
     iget-object v3, p0, Landroid/widget/RemoteViews$BitmapReflectionAction;->methodName:Ljava/lang/String;
 
@@ -178,7 +178,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    iget v0, p0, Landroid/widget/RemoteViews$BitmapReflectionAction;->viewId:I
+    iget v0, p0, Landroid/widget/RemoteViews$Action;->viewId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 

@@ -167,11 +167,11 @@
     move-result-object v1
 
     .local v1, imiId2:Ljava/lang/CharSequence;
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/String;->toString()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/String;->toString()Ljava/lang/String;
 
     move-result-object v3
 

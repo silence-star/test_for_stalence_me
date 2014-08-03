@@ -387,7 +387,7 @@
     move-exception v4
 
     .local v4, localException:Ljava/lang/Exception;
-    invoke-virtual {v4}, Ljava/lang/Exception;->printStackTrace()V
+    invoke-virtual {v4}, Ljava/lang/Throwable;->printStackTrace()V
 
     .end local v4           #localException:Ljava/lang/Exception;
     :cond_2

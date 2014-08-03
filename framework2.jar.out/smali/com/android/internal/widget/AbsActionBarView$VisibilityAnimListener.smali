@@ -100,7 +100,7 @@
 
     iget v1, p0, Lcom/android/internal/widget/AbsActionBarView$VisibilityAnimListener;->mFinalVisibility:I
 
-    invoke-virtual {v0, v1}, Lcom/android/internal/view/menu/ActionMenuView;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_0
 .end method

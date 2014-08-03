@@ -62,13 +62,13 @@
 
     iget-object v0, p0, Lcom/android/server/pm/PackageSetting;->sharedUser:Lcom/android/server/pm/SharedUserSetting;
 
-    iget-object v0, v0, Lcom/android/server/pm/SharedUserSetting;->gids:[I
+    iget-object v0, v0, Lcom/android/server/pm/GrantedPermissions;->gids:[I
 
     :goto_0
     return-object v0
 
     :cond_0
-    iget-object v0, p0, Lcom/android/server/pm/PackageSetting;->gids:[I
+    iget-object v0, p0, Lcom/android/server/pm/GrantedPermissions;->gids:[I
 
     goto :goto_0
 .end method
@@ -77,7 +77,7 @@
     .locals 2
 
     .prologue
-    iget v0, p0, Lcom/android/server/pm/PackageSetting;->pkgFlags:I
+    iget v0, p0, Lcom/android/server/pm/GrantedPermissions;->pkgFlags:I
 
     const/high16 v1, 0x4000
 
@@ -128,7 +128,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/server/pm/PackageSetting;->name:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/server/pm/PackageSettingBase;->name:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

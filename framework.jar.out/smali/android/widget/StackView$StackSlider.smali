@@ -530,7 +530,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
@@ -627,7 +627,7 @@
 
     move-result-object v4
 
-    invoke-virtual {v4}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
@@ -745,7 +745,7 @@
 
     move-result v5
 
-    invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setAlpha(F)V
+    invoke-virtual {v4, v5}, Landroid/view/View;->setAlpha(F)V
 
     sub-float v4, v8, p1
 
@@ -817,7 +817,7 @@
 
     mul-float/2addr v5, v6
 
-    invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setRotationX(F)V
+    invoke-virtual {v4, v5}, Landroid/view/View;->setRotationX(F)V
 
     goto/16 :goto_0
 
@@ -939,7 +939,7 @@
 
     move-result v5
 
-    invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setAlpha(F)V
+    invoke-virtual {v4, v5}, Landroid/view/View;->setAlpha(F)V
 
     goto/16 :goto_0
 
@@ -1001,7 +1001,7 @@
 
     move-result v5
 
-    invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setAlpha(F)V
+    invoke-virtual {v4, v5}, Landroid/view/View;->setAlpha(F)V
 
     goto/16 :goto_0
 

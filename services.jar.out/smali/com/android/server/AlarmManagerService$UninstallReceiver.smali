@@ -144,7 +144,7 @@
 
     const/4 v9, -0x1
 
-    invoke-virtual {p0, v9}, Lcom/android/server/AlarmManagerService$UninstallReceiver;->setResultCode(I)V
+    invoke-virtual {p0, v9}, Landroid/content/BroadcastReceiver;->setResultCode(I)V
 
     monitor-exit v10
 

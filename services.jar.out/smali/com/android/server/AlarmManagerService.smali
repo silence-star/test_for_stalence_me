@@ -410,7 +410,7 @@
 
     iget-object v3, p0, Lcom/android/server/AlarmManagerService;->mWaitThread:Lcom/android/server/AlarmManagerService$AlarmThread;
 
-    invoke-virtual {v3}, Lcom/android/server/AlarmManagerService$AlarmThread;->start()V
+    invoke-virtual {v3}, Ljava/lang/Thread;->start()V
 
     :goto_0
     return-void
@@ -1832,11 +1832,11 @@
 
     iget-object v0, p0, Lcom/android/server/AlarmManagerService;->mHandler:Lcom/android/server/AlarmManagerService$AlarmHandler;
 
-    invoke-virtual {v0, v2}, Lcom/android/server/AlarmManagerService$AlarmHandler;->removeMessages(I)V
+    invoke-virtual {v0, v2}, Landroid/os/Handler;->removeMessages(I)V
 
     iget-object v0, p0, Lcom/android/server/AlarmManagerService;->mHandler:Lcom/android/server/AlarmManagerService$AlarmHandler;
 
-    invoke-virtual {v0, v7, p2, p3}, Lcom/android/server/AlarmManagerService$AlarmHandler;->sendMessageAtTime(Landroid/os/Message;J)Z
+    invoke-virtual {v0, v7, p2, p3}, Landroid/os/Handler;->sendMessageAtTime(Landroid/os/Message;J)Z
 
     goto :goto_1
 .end method
@@ -2357,7 +2357,7 @@
 
     move-object/from16 v0, v26
 
-    invoke-virtual {v0, v3}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v0, v3}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -2421,7 +2421,7 @@
 
     move-object/from16 v0, v26
 
-    invoke-virtual {v0, v3}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v0, v3}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -2457,7 +2457,7 @@
 
     move-object/from16 v0, v26
 
-    invoke-virtual {v0, v3}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v0, v3}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -3257,14 +3257,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-super {p0}, Landroid/app/IAlarmManager$Stub;->finalize()V
+    invoke-super {p0}, Landroid/os/Binder;->finalize()V
 
     return-void
 
     :catchall_0
     move-exception v0
 
-    invoke-super {p0}, Landroid/app/IAlarmManager$Stub;->finalize()V
+    invoke-super {p0}, Landroid/os/Binder;->finalize()V
 
     throw v0
 .end method
@@ -4248,7 +4248,7 @@
 
     move-object/from16 v0, v25
 
-    invoke-virtual {v0, v8}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v0, v8}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object v8
 
@@ -4280,7 +4280,7 @@
 
     move-object/from16 v0, v25
 
-    invoke-virtual {v0, v8}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v0, v8}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object v8
 

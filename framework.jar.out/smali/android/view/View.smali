@@ -3714,6 +3714,8 @@
 
     nop
 
+    nop
+
     :pswitch_data_0
     .packed-switch 0x7
         :pswitch_28
@@ -35410,6 +35412,10 @@
     move-exception v6
 
     goto :goto_11
+
+    nop
+
+    nop
 
     :sswitch_data_0
     .sparse-switch

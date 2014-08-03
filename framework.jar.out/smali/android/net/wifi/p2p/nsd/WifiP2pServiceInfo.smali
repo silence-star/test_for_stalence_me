@@ -149,7 +149,7 @@
     move-exception v2
 
     .local v2, e:Ljava/lang/Exception;
-    invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
+    invoke-virtual {v2}, Ljava/lang/Throwable;->printStackTrace()V
 
     const/4 v7, 0x0
 

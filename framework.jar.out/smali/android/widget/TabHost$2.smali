@@ -57,7 +57,7 @@
 
     const/4 v1, 0x2
 
-    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->requestFocus(I)Z
+    invoke-virtual {v0, v1}, Landroid/view/View;->requestFocus(I)Z
 
     :cond_0
     return-void

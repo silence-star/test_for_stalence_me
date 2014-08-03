@@ -469,7 +469,7 @@
     .local v2, i:I
     iget-object v7, p0, Landroid/widget/GridLayout$Axis;->this$0:Landroid/widget/GridLayout;
 
-    invoke-virtual {v7}, Landroid/widget/GridLayout;->getChildCount()I
+    invoke-virtual {v7}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
@@ -479,7 +479,7 @@
 
     iget-object v7, p0, Landroid/widget/GridLayout$Axis;->this$0:Landroid/widget/GridLayout;
 
-    invoke-virtual {v7, v2}, Landroid/widget/GridLayout;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v7, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -590,7 +590,7 @@
 
     iget-object v6, p0, Landroid/widget/GridLayout$Axis;->this$0:Landroid/widget/GridLayout;
 
-    invoke-virtual {v6}, Landroid/widget/GridLayout;->getChildCount()I
+    invoke-virtual {v6}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
@@ -600,7 +600,7 @@
 
     iget-object v6, p0, Landroid/widget/GridLayout$Axis;->this$0:Landroid/widget/GridLayout;
 
-    invoke-virtual {v6, v2}, Landroid/widget/GridLayout;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v6, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -807,7 +807,7 @@
     .local v2, i:I
     iget-object v8, p0, Landroid/widget/GridLayout$Axis;->this$0:Landroid/widget/GridLayout;
 
-    invoke-virtual {v8}, Landroid/widget/GridLayout;->getChildCount()I
+    invoke-virtual {v8}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
@@ -817,7 +817,7 @@
 
     iget-object v8, p0, Landroid/widget/GridLayout$Axis;->this$0:Landroid/widget/GridLayout;
 
-    invoke-virtual {v8, v2}, Landroid/widget/GridLayout;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v8, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -1042,7 +1042,7 @@
     .local v4, i:I
     iget-object v7, p0, Landroid/widget/GridLayout$Axis;->this$0:Landroid/widget/GridLayout;
 
-    invoke-virtual {v7}, Landroid/widget/GridLayout;->getChildCount()I
+    invoke-virtual {v7}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
@@ -1052,7 +1052,7 @@
 
     iget-object v7, p0, Landroid/widget/GridLayout$Axis;->this$0:Landroid/widget/GridLayout;
 
-    invoke-virtual {v7, v4}, Landroid/widget/GridLayout;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v7, v4}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 

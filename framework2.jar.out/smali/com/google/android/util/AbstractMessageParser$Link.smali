@@ -60,7 +60,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    invoke-virtual {p0}, Lcom/google/android/util/AbstractMessageParser$Link;->getRawText()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/util/AbstractMessageParser$Token;->getRawText()Ljava/lang/String;
 
     move-result-object v1
 

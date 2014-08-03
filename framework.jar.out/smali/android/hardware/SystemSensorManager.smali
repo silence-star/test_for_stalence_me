@@ -346,7 +346,7 @@
 
     if-nez p2, :cond_2
 
-    invoke-virtual {v0}, Landroid/hardware/SystemSensorManager$TriggerEventQueue;->removeAllSensors()Z
+    invoke-virtual {v0}, Landroid/hardware/SystemSensorManager$BaseEventQueue;->removeAllSensors()Z
 
     move-result v1
 
@@ -354,7 +354,7 @@
     :goto_1
     if-eqz v1, :cond_1
 
-    invoke-virtual {v0}, Landroid/hardware/SystemSensorManager$TriggerEventQueue;->hasSensors()Z
+    invoke-virtual {v0}, Landroid/hardware/SystemSensorManager$BaseEventQueue;->hasSensors()Z
 
     move-result v2
 
@@ -364,7 +364,7 @@
 
     invoke-virtual {v2, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v0}, Landroid/hardware/SystemSensorManager$TriggerEventQueue;->dispose()V
+    invoke-virtual {v0}, Landroid/hardware/SystemSensorManager$BaseEventQueue;->dispose()V
 
     :cond_1
     monitor-exit v3
@@ -385,7 +385,7 @@
     .restart local v0       #queue:Landroid/hardware/SystemSensorManager$TriggerEventQueue;
     :cond_2
     :try_start_1
-    invoke-virtual {v0, p2, p3}, Landroid/hardware/SystemSensorManager$TriggerEventQueue;->removeSensor(Landroid/hardware/Sensor;Z)Z
+    invoke-virtual {v0, p2, p3}, Landroid/hardware/SystemSensorManager$BaseEventQueue;->removeSensor(Landroid/hardware/Sensor;Z)Z
 
     move-result v1
 
@@ -441,7 +441,7 @@
     return v1
 
     :cond_1
-    invoke-virtual {v0}, Landroid/hardware/SystemSensorManager$SensorEventQueue;->flush()I
+    invoke-virtual {v0}, Landroid/hardware/SystemSensorManager$BaseEventQueue;->flush()I
 
     move-result v3
 
@@ -571,13 +571,13 @@
     invoke-direct {v1, p1, v0, p0}, Landroid/hardware/SystemSensorManager$SensorEventQueue;-><init>(Landroid/hardware/SensorEventListener;Landroid/os/Looper;Landroid/hardware/SystemSensorManager;)V
 
     .restart local v1       #queue:Landroid/hardware/SystemSensorManager$SensorEventQueue;
-    invoke-virtual {v1, p2, p3, p5, p6}, Landroid/hardware/SystemSensorManager$SensorEventQueue;->addSensor(Landroid/hardware/Sensor;III)Z
+    invoke-virtual {v1, p2, p3, p5, p6}, Landroid/hardware/SystemSensorManager$BaseEventQueue;->addSensor(Landroid/hardware/Sensor;III)Z
 
     move-result v4
 
     if-nez v4, :cond_6
 
-    invoke-virtual {v1}, Landroid/hardware/SystemSensorManager$SensorEventQueue;->dispose()V
+    invoke-virtual {v1}, Landroid/hardware/SystemSensorManager$BaseEventQueue;->dispose()V
 
     monitor-exit v3
 
@@ -617,7 +617,7 @@
 
     iget-boolean v4, p0, Landroid/hardware/SystemSensorManager;->mReset:Z
 
-    invoke-virtual {v1, v2, v4}, Landroid/hardware/SystemSensorManager$SensorEventQueue;->setPreProcessingMode(IZ)V
+    invoke-virtual {v1, v2, v4}, Landroid/hardware/SystemSensorManager$BaseEventQueue;->setPreProcessingMode(IZ)V
 
     :cond_7
     const/4 v2, 0x1
@@ -632,9 +632,9 @@
 
     iget-boolean v4, p0, Landroid/hardware/SystemSensorManager;->mReset:Z
 
-    invoke-virtual {v1, v2, v4}, Landroid/hardware/SystemSensorManager$SensorEventQueue;->setPreProcessingMode(IZ)V
+    invoke-virtual {v1, v2, v4}, Landroid/hardware/SystemSensorManager$BaseEventQueue;->setPreProcessingMode(IZ)V
 
-    invoke-virtual {v1, p2, p3, p5, p6}, Landroid/hardware/SystemSensorManager$SensorEventQueue;->addSensor(Landroid/hardware/Sensor;III)Z
+    invoke-virtual {v1, p2, p3, p5, p6}, Landroid/hardware/SystemSensorManager$BaseEventQueue;->addSensor(Landroid/hardware/Sensor;III)Z
 
     move-result v2
 
@@ -706,13 +706,13 @@
 
     const/4 v5, 0x0
 
-    invoke-virtual {v0, p2, v3, v4, v5}, Landroid/hardware/SystemSensorManager$TriggerEventQueue;->addSensor(Landroid/hardware/Sensor;III)Z
+    invoke-virtual {v0, p2, v3, v4, v5}, Landroid/hardware/SystemSensorManager$BaseEventQueue;->addSensor(Landroid/hardware/Sensor;III)Z
 
     move-result v3
 
     if-nez v3, :cond_2
 
-    invoke-virtual {v0}, Landroid/hardware/SystemSensorManager$TriggerEventQueue;->dispose()V
+    invoke-virtual {v0}, Landroid/hardware/SystemSensorManager$BaseEventQueue;->dispose()V
 
     monitor-exit v2
 
@@ -748,7 +748,7 @@
 
     const/4 v4, 0x0
 
-    invoke-virtual {v0, p2, v1, v3, v4}, Landroid/hardware/SystemSensorManager$TriggerEventQueue;->addSensor(Landroid/hardware/Sensor;III)Z
+    invoke-virtual {v0, p2, v1, v3, v4}, Landroid/hardware/SystemSensorManager$BaseEventQueue;->addSensor(Landroid/hardware/Sensor;III)Z
 
     move-result v1
 
@@ -842,7 +842,7 @@
     check-cast v3, Landroid/hardware/SystemSensorManager$SensorEventQueue;
 
     .local v3, queue:Landroid/hardware/SystemSensorManager$SensorEventQueue;
-    invoke-virtual {v3, p1, p2}, Landroid/hardware/SystemSensorManager$SensorEventQueue;->setPreProcessingMode(IZ)V
+    invoke-virtual {v3, p1, p2}, Landroid/hardware/SystemSensorManager$BaseEventQueue;->setPreProcessingMode(IZ)V
 
     goto :goto_1
 
@@ -865,7 +865,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-virtual {p0}, Landroid/hardware/SystemSensorManager;->peekLegacySensorManager()Landroid/hardware/LegacySensorManager;
+    invoke-virtual {p0}, Landroid/hardware/SensorManager;->peekLegacySensorManager()Landroid/hardware/LegacySensorManager;
 
     move-result-object v2
 
@@ -915,7 +915,7 @@
 
     if-nez p2, :cond_2
 
-    invoke-virtual {v0}, Landroid/hardware/SystemSensorManager$SensorEventQueue;->removeAllSensors()Z
+    invoke-virtual {v0}, Landroid/hardware/SystemSensorManager$BaseEventQueue;->removeAllSensors()Z
 
     move-result v1
 
@@ -923,7 +923,7 @@
     :goto_1
     if-eqz v1, :cond_1
 
-    invoke-virtual {v0}, Landroid/hardware/SystemSensorManager$SensorEventQueue;->hasSensors()Z
+    invoke-virtual {v0}, Landroid/hardware/SystemSensorManager$BaseEventQueue;->hasSensors()Z
 
     move-result v2
 
@@ -933,7 +933,7 @@
 
     invoke-virtual {v2, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v0}, Landroid/hardware/SystemSensorManager$SensorEventQueue;->dispose()V
+    invoke-virtual {v0}, Landroid/hardware/SystemSensorManager$BaseEventQueue;->dispose()V
 
     .end local v1           #result:Z
     :cond_1
@@ -956,7 +956,7 @@
     const/4 v2, 0x1
 
     :try_start_1
-    invoke-virtual {v0, p2, v2}, Landroid/hardware/SystemSensorManager$SensorEventQueue;->removeSensor(Landroid/hardware/Sensor;Z)Z
+    invoke-virtual {v0, p2, v2}, Landroid/hardware/SystemSensorManager$BaseEventQueue;->removeSensor(Landroid/hardware/Sensor;Z)Z
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 

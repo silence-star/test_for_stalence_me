@@ -317,7 +317,7 @@
     return v2
 
     :cond_1
-    iget-boolean v4, p0, Landroid/animation/ValueAnimator;->mPaused:Z
+    iget-boolean v4, p0, Landroid/animation/Animator;->mPaused:Z
 
     if-eqz v4, :cond_2
 
@@ -404,7 +404,7 @@
 
     iput v4, p0, Landroid/animation/ValueAnimator;->mPlayingState:I
 
-    iput-boolean v4, p0, Landroid/animation/ValueAnimator;->mPaused:Z
+    iput-boolean v4, p0, Landroid/animation/Animator;->mPaused:Z
 
     iget-boolean v3, p0, Landroid/animation/ValueAnimator;->mStarted:Z
 
@@ -415,7 +415,7 @@
     if-eqz v3, :cond_2
 
     :cond_0
-    iget-object v3, p0, Landroid/animation/ValueAnimator;->mListeners:Ljava/util/ArrayList;
+    iget-object v3, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     if-eqz v3, :cond_2
 
@@ -426,7 +426,7 @@
     invoke-direct {p0}, Landroid/animation/ValueAnimator;->notifyStartListeners()V
 
     :cond_1
-    iget-object v3, p0, Landroid/animation/ValueAnimator;->mListeners:Ljava/util/ArrayList;
+    iget-object v3, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->clone()Ljava/lang/Object;
 
@@ -575,7 +575,7 @@
     .locals 4
 
     .prologue
-    iget-object v3, p0, Landroid/animation/ValueAnimator;->mListeners:Ljava/util/ArrayList;
+    iget-object v3, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     if-eqz v3, :cond_0
 
@@ -583,7 +583,7 @@
 
     if-nez v3, :cond_0
 
-    iget-object v3, p0, Landroid/animation/ValueAnimator;->mListeners:Ljava/util/ArrayList;
+    iget-object v3, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->clone()Ljava/lang/Object;
 
@@ -745,7 +745,7 @@
 
     iput-boolean v3, p0, Landroid/animation/ValueAnimator;->mStartedDelay:Z
 
-    iput-boolean v3, p0, Landroid/animation/ValueAnimator;->mPaused:Z
+    iput-boolean v3, p0, Landroid/animation/Animator;->mPaused:Z
 
     invoke-static {}, Landroid/animation/ValueAnimator;->getOrCreateAnimationHandler()Landroid/animation/ValueAnimator$AnimationHandler;
 
@@ -814,7 +814,7 @@
 
     if-lez v0, :cond_1
 
-    iget-object v0, p0, Landroid/animation/ValueAnimator;->mListeners:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_1
 
@@ -976,11 +976,11 @@
     if-ne v4, v6, :cond_7
 
     :cond_0
-    iget-object v4, p0, Landroid/animation/ValueAnimator;->mListeners:Ljava/util/ArrayList;
+    iget-object v4, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     if-eqz v4, :cond_2
 
-    iget-object v4, p0, Landroid/animation/ValueAnimator;->mListeners:Ljava/util/ArrayList;
+    iget-object v4, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
@@ -993,7 +993,7 @@
     :goto_2
     if-ge v2, v3, :cond_2
 
-    iget-object v4, p0, Landroid/animation/ValueAnimator;->mListeners:Ljava/util/ArrayList;
+    iget-object v4, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1126,7 +1126,7 @@
     if-eqz v4, :cond_3
 
     :cond_1
-    iget-object v4, p0, Landroid/animation/ValueAnimator;->mListeners:Ljava/util/ArrayList;
+    iget-object v4, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     if-eqz v4, :cond_3
 
@@ -1137,7 +1137,7 @@
     invoke-direct {p0}, Landroid/animation/ValueAnimator;->notifyStartListeners()V
 
     :cond_2
-    iget-object v4, p0, Landroid/animation/ValueAnimator;->mListeners:Ljava/util/ArrayList;
+    iget-object v4, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clone()Ljava/lang/Object;
 
@@ -1354,7 +1354,7 @@
 
     :cond_0
     :goto_0
-    iget-boolean v3, p0, Landroid/animation/ValueAnimator;->mPaused:Z
+    iget-boolean v3, p0, Landroid/animation/Animator;->mPaused:Z
 
     if-eqz v3, :cond_3
 
@@ -1727,14 +1727,14 @@
     .locals 3
 
     .prologue
-    iget-boolean v0, p0, Landroid/animation/ValueAnimator;->mPaused:Z
+    iget-boolean v0, p0, Landroid/animation/Animator;->mPaused:Z
 
     .local v0, previouslyPaused:Z
     invoke-super {p0}, Landroid/animation/Animator;->pause()V
 
     if-nez v0, :cond_0
 
-    iget-boolean v1, p0, Landroid/animation/ValueAnimator;->mPaused:Z
+    iget-boolean v1, p0, Landroid/animation/Animator;->mPaused:Z
 
     if-eqz v1, :cond_0
 
@@ -1810,7 +1810,7 @@
     .locals 1
 
     .prologue
-    iget-boolean v0, p0, Landroid/animation/ValueAnimator;->mPaused:Z
+    iget-boolean v0, p0, Landroid/animation/Animator;->mPaused:Z
 
     if-eqz v0, :cond_0
 

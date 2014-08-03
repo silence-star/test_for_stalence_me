@@ -76,9 +76,9 @@
     iget-object v0, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
 
     .local v0, params:Landroid/view/WindowManager$LayoutParams;
-    iput v2, v0, Landroid/view/WindowManager$LayoutParams;->height:I
+    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    iput v2, v0, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     const/4 v1, -0x3
 
@@ -143,7 +143,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v2}, Landroid/view/accessibility/AccessibilityRecord;->setClassName(Ljava/lang/CharSequence;)V
 
     iget-object v2, p0, Landroid/widget/Toast$TN;->mView:Landroid/view/View;
 

@@ -45,7 +45,7 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Landroid/widget/NubiaCursorController$MagnifierInsertionHandleView;->mEditor:Landroid/widget/Editor;
+    iget-object v0, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mEditor:Landroid/widget/Editor;
 
     invoke-virtual {v0, p0}, Landroid/widget/Editor;->removePositionListenerSubscriber(Landroid/widget/Editor$TextViewPositionListener;)V
 
@@ -57,11 +57,11 @@
 
     iput-boolean v0, p0, Landroid/widget/NubiaCursorController$MagnifierInsertionHandleView;->canHide:Z
 
-    invoke-virtual {p0}, Landroid/widget/NubiaCursorController$MagnifierInsertionHandleView;->dismiss()V
+    invoke-virtual {p0}, Landroid/widget/NubiaCursorController$NubiaHandleView;->dismiss()V
 
     const/16 v0, 0xc8
 
-    invoke-virtual {p0, v0}, Landroid/widget/NubiaCursorController$MagnifierInsertionHandleView;->hideAfterDelay(I)V
+    invoke-virtual {p0, v0}, Landroid/widget/NubiaCursorController$InsertionHandleView;->hideAfterDelay(I)V
 
     goto :goto_0
 .end method
@@ -83,15 +83,15 @@
 
     const/16 v0, 0xbb8
 
-    invoke-virtual {p0, v0}, Landroid/widget/NubiaCursorController$MagnifierInsertionHandleView;->hideAfterDelay(I)V
+    invoke-virtual {p0, v0}, Landroid/widget/NubiaCursorController$InsertionHandleView;->hideAfterDelay(I)V
 
-    invoke-virtual {p0}, Landroid/widget/NubiaCursorController$MagnifierInsertionHandleView;->getCurrentCursorOffset()I
+    invoke-virtual {p0}, Landroid/widget/NubiaCursorController$InsertionHandleView;->getCurrentCursorOffset()I
 
     move-result v0
 
     const/4 v1, 0x1
 
-    invoke-virtual {p0, v0, v1}, Landroid/widget/NubiaCursorController$MagnifierInsertionHandleView;->updatePositionXY(IZ)V
+    invoke-virtual {p0, v0, v1}, Landroid/widget/NubiaCursorController$InsertionHandleView;->updatePositionXY(IZ)V
 
     return-void
 .end method

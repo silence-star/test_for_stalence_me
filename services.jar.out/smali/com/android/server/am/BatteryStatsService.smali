@@ -522,7 +522,7 @@
     :try_start_3
     iget-object v11, p0, Lcom/android/server/am/BatteryStatsService;->mStats:Lcom/android/internal/os/BatteryStatsImpl;
 
-    invoke-virtual {v11, p2, v0, v7, v5}, Lcom/android/internal/os/BatteryStatsImpl;->dumpCheckinLocked(Ljava/io/PrintWriter;Ljava/util/List;ZZ)V
+    invoke-virtual {v11, p2, v0, v7, v5}, Landroid/os/BatteryStats;->dumpCheckinLocked(Ljava/io/PrintWriter;Ljava/util/List;ZZ)V
 
     monitor-exit v12
 
@@ -2156,7 +2156,7 @@
 
     const-string v0, "batterystats"
 
-    invoke-virtual {p0}, Lcom/android/server/am/BatteryStatsService;->asBinder()Landroid/os/IBinder;
+    invoke-virtual {p0}, Lcom/android/internal/app/IBatteryStats$Stub;->asBinder()Landroid/os/IBinder;
 
     move-result-object v1
 

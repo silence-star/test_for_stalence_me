@@ -75,7 +75,7 @@
 
     invoke-direct {v0, p0}, Lcom/android/server/DropBoxManagerService$1$1;-><init>(Lcom/android/server/DropBoxManagerService$1;)V
 
-    invoke-virtual {v0}, Lcom/android/server/DropBoxManagerService$1$1;->start()V
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
     goto :goto_0
 .end method

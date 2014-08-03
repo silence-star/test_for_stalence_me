@@ -111,7 +111,7 @@
     .prologue
     sget-object v0, Lcom/android/server/pm/InstallerHelper$Result;->$VALUES:[Lcom/android/server/pm/InstallerHelper$Result;
 
-    invoke-virtual {v0}, [Lcom/android/server/pm/InstallerHelper$Result;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

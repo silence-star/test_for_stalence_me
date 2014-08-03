@@ -179,7 +179,7 @@
 
     const v4, 0x26005
 
-    invoke-virtual {v3, v4}, Lcom/android/server/wifi/WifiController;->sendMessage(I)V
+    invoke-virtual {v3, v4}, Lcom/android/internal/util/StateMachine;->sendMessage(I)V
 
     goto :goto_0
 
@@ -287,7 +287,7 @@
 
     const-string v4, "DEFERRED_TOGGLE ignored due to state change"
 
-    #calls: Lcom/android/server/wifi/WifiController;->log(Ljava/lang/String;)V
+    #calls: Lcom/android/internal/util/StateMachine;->log(Ljava/lang/String;)V
     invoke-static {v3, v4}, Lcom/android/server/wifi/WifiController;->access$1200(Lcom/android/server/wifi/WifiController;Ljava/lang/String;)V
 
     goto/16 :goto_0

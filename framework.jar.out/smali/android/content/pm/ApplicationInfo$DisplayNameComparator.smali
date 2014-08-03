@@ -69,7 +69,7 @@
     .local v0, sa:Ljava/lang/CharSequence;
     if-nez v0, :cond_0
 
-    iget-object v0, p1, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+    iget-object v0, p1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     :cond_0
     iget-object v2, p0, Landroid/content/pm/ApplicationInfo$DisplayNameComparator;->mPM:Landroid/content/pm/PackageManager;
@@ -81,7 +81,7 @@
     .local v1, sb:Ljava/lang/CharSequence;
     if-nez v1, :cond_1
 
-    iget-object v1, p2, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+    iget-object v1, p2, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     :cond_1
     iget-object v2, p0, Landroid/content/pm/ApplicationInfo$DisplayNameComparator;->sCollator:Ljava/text/Collator;

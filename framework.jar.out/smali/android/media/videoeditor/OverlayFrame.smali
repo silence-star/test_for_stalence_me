@@ -416,7 +416,7 @@
 
     move-object/from16 v0, v18
 
-    invoke-virtual {v0, v14}, Ljava/io/DataOutputStream;->write([B)V
+    invoke-virtual {v0, v14}, Ljava/io/OutputStream;->write([B)V
 
     add-int/lit8 v9, v9, 0x1
 
@@ -764,7 +764,7 @@
     .restart local v24       #outFileName:Ljava/lang/String;
     .restart local v31       #srcRect:Landroid/graphics/Rect;
     :cond_6
-    invoke-virtual/range {v19 .. v19}, Ljava/io/FileOutputStream;->flush()V
+    invoke-virtual/range {v19 .. v19}, Ljava/io/OutputStream;->flush()V
 
     invoke-virtual/range {v19 .. v19}, Ljava/io/FileOutputStream;->close()V
 
@@ -993,7 +993,7 @@
 
     move-result-object v4
 
-    invoke-virtual {p0}, Landroid/media/videoeditor/OverlayFrame;->getId()Ljava/lang/String;
+    invoke-virtual {p0}, Landroid/media/videoeditor/Overlay;->getId()Ljava/lang/String;
 
     move-result-object v5
 
@@ -1040,7 +1040,7 @@
 
     invoke-virtual {v4, v5, v6, v2}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    invoke-virtual {v2}, Ljava/io/FileOutputStream;->flush()V
+    invoke-virtual {v2}, Ljava/io/OutputStream;->flush()V
 
     invoke-virtual {v2}, Ljava/io/FileOutputStream;->close()V
 
@@ -1082,7 +1082,7 @@
 
     move-result-object v4
 
-    invoke-virtual {p0}, Landroid/media/videoeditor/OverlayFrame;->getId()Ljava/lang/String;
+    invoke-virtual {p0}, Landroid/media/videoeditor/Overlay;->getId()Ljava/lang/String;
 
     move-result-object v5
 
@@ -1159,7 +1159,7 @@
     .parameter "bitmap"
 
     .prologue
-    invoke-virtual {p0}, Landroid/media/videoeditor/OverlayFrame;->getMediaItem()Landroid/media/videoeditor/MediaItem;
+    invoke-virtual {p0}, Landroid/media/videoeditor/Overlay;->getMediaItem()Landroid/media/videoeditor/MediaItem;
 
     move-result-object v0
 
@@ -1192,13 +1192,13 @@
     iput-object v0, p0, Landroid/media/videoeditor/OverlayFrame;->mFilename:Ljava/lang/String;
 
     :cond_0
-    invoke-virtual {p0}, Landroid/media/videoeditor/OverlayFrame;->getMediaItem()Landroid/media/videoeditor/MediaItem;
+    invoke-virtual {p0}, Landroid/media/videoeditor/Overlay;->getMediaItem()Landroid/media/videoeditor/MediaItem;
 
     move-result-object v0
 
-    iget-wide v1, p0, Landroid/media/videoeditor/OverlayFrame;->mStartTimeMs:J
+    iget-wide v1, p0, Landroid/media/videoeditor/Overlay;->mStartTimeMs:J
 
-    iget-wide v3, p0, Landroid/media/videoeditor/OverlayFrame;->mDurationMs:J
+    iget-wide v3, p0, Landroid/media/videoeditor/Overlay;->mDurationMs:J
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/media/videoeditor/MediaItem;->invalidateTransitions(JJ)V
 

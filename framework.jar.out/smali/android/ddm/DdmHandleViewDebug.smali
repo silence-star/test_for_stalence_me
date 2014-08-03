@@ -120,7 +120,7 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     :try_start_1
-    invoke-virtual {v2}, Ljava/io/DataOutputStream;->close()V
+    invoke-virtual {v2}, Ljava/io/FilterOutputStream;->close()V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_2
 
@@ -161,7 +161,7 @@
 
     move-result-object v5
 
-    invoke-virtual {v3}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v6
 
@@ -180,7 +180,7 @@
     move-result-object v4
 
     :try_start_3
-    invoke-virtual {v2}, Ljava/io/DataOutputStream;->close()V
+    invoke-virtual {v2}, Ljava/io/FilterOutputStream;->close()V
     :try_end_3
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
 
@@ -196,7 +196,7 @@
     move-exception v4
 
     :try_start_4
-    invoke-virtual {v2}, Ljava/io/DataOutputStream;->close()V
+    invoke-virtual {v2}, Ljava/io/FilterOutputStream;->close()V
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_3
 
@@ -267,7 +267,7 @@
 
     move-result-object v4
 
-    invoke-virtual {v2}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v5
 
@@ -392,7 +392,7 @@
 
     move-result-object v6
 
-    invoke-virtual {v2}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v7
 
@@ -528,7 +528,7 @@
     move-result-object v8
 
     .local v8, methodName:Ljava/lang/String;
-    invoke-virtual/range {p3 .. p3}, Ljava/nio/ByteBuffer;->hasRemaining()Z
+    invoke-virtual/range {p3 .. p3}, Ljava/nio/Buffer;->hasRemaining()Z
 
     move-result v11
 
@@ -832,7 +832,7 @@
 
     move-result-object v12
 
-    invoke-virtual {v4}, Ljava/lang/NoSuchMethodException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v13
 
@@ -858,7 +858,7 @@
 
     move-result-object v12
 
-    invoke-virtual {v4}, Ljava/lang/NoSuchMethodException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v13
 
@@ -893,7 +893,7 @@
 
     move-result-object v12
 
-    invoke-virtual {v4}, Ljava/lang/Exception;->getCause()Ljava/lang/Throwable;
+    invoke-virtual {v4}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
 
     move-result-object v13
 
@@ -911,7 +911,7 @@
 
     invoke-static {v11, v12}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {v4}, Ljava/lang/Exception;->getCause()Ljava/lang/Throwable;
+    invoke-virtual {v4}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
 
     move-result-object v11
 
@@ -922,7 +922,7 @@
     .local v9, msg:Ljava/lang/String;
     if-nez v9, :cond_3
 
-    invoke-virtual {v4}, Ljava/lang/Exception;->getCause()Ljava/lang/Throwable;
+    invoke-virtual {v4}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
 
     move-result-object v11
 
@@ -1119,7 +1119,7 @@
 
     move-result-object v5
 
-    invoke-virtual {v3}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v6
 
@@ -1283,7 +1283,7 @@
 
     move-result-object v5
 
-    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v6
 

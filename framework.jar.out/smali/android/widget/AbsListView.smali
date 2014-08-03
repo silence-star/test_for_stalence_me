@@ -5,8 +5,8 @@
 # interfaces
 .implements Landroid/text/TextWatcher;
 .implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
-.implements Landroid/widget/Filter$FilterListener;
 .implements Landroid/view/ViewTreeObserver$OnTouchModeChangeListener;
+.implements Landroid/widget/Filter$FilterListener;
 .implements Landroid/widget/RemoteViewsAdapter$RemoteAdapterConnectionCallback;
 
 
@@ -2169,6 +2169,8 @@
     invoke-virtual {v1}, Landroid/widget/AbsListView$FlingRunnable;->startSpringback()V
 
     goto :goto_0
+
+    nop
 
     nop
 
@@ -6624,6 +6626,15 @@
     return v0
 .end method
 
+.method protected getMaximumVelocity()I
+    .locals 1
+
+    .prologue
+    iget v0, p0, Landroid/widget/AbsListView;->mMaximumVelocity:I
+
+    return v0
+.end method
+
 .method protected getRightPaddingOffset()I
     .locals 2
 
@@ -10235,6 +10246,8 @@
 
     nop
 
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
@@ -10906,9 +10919,9 @@
     :cond_3
     if-eqz v6, :cond_0
 
-    iget-object v0, p0, Landroid/widget/AbsListView;->mNubiaHaptic:Lcom/nubia/os/NubiaHaptic;
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, Lcom/nubia/os/NubiaHaptic;->longPressButton()V
+    invoke-virtual {p0, v0}, Landroid/widget/AbsListView;->performHapticFeedback(I)Z
 
     goto :goto_0
 .end method
@@ -14200,7 +14213,7 @@
 
     iput-boolean v0, v1, Landroid/widget/AbsListView;->mBlockLayoutRequests:Z
 
-    if-eqz v11, :cond_miui
+    if-eqz v11, :cond_e
 
     move-object/from16 v0, p0
 
@@ -14216,8 +14229,8 @@
 
     iput v0, v1, Landroid/widget/AbsListView;->mFirstPosition:I
 
-    :cond_miui
-    if-lez v10, :cond_e
+    :cond_e
+    if-lez v10, :cond_f
 
     move-object/from16 v0, p0
 
@@ -14233,16 +14246,16 @@
 
     invoke-virtual/range {v29 .. v29}, Landroid/widget/AbsListView$RecycleBin;->removeSkippedScrap()V
 
-    :cond_e
+    :cond_f
     invoke-virtual/range {p0 .. p0}, Landroid/widget/AbsListView;->awakenScrollBars()Z
 
     move-result v29
 
-    if-nez v29, :cond_f
+    if-nez v29, :cond_10
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/AbsListView;->invalidate()V
 
-    :cond_f
+    :cond_10
     move-object/from16 v0, p0
 
     move/from16 v1, p2
@@ -14816,13 +14829,4 @@
     const/4 v0, 0x0
 
     goto :goto_0
-.end method
-
-.method protected getMaximumVelocity()I
-    .locals 1
-
-    .prologue
-    iget v0, p0, Landroid/widget/AbsListView;->mMaximumVelocity:I
-
-    return v0
 .end method

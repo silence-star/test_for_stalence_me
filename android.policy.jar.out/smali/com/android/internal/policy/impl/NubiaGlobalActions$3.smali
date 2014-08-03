@@ -255,7 +255,7 @@
 
     move-result-object v7
 
-    invoke-virtual {v7}, Lcom/android/internal/policy/impl/NubiaGlobalActions$GlobalActionsDialog;->dismiss()V
+    invoke-virtual {v7}, Landroid/app/Dialog;->dismiss()V
 
     return-void
 

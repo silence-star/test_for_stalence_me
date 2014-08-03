@@ -38,7 +38,7 @@
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews$Action;-><init>(Landroid/widget/RemoteViews$1;)V
 
-    iput p2, p0, Landroid/widget/RemoteViews$SetOnClickFillInIntent;->viewId:I
+    iput p2, p0, Landroid/widget/RemoteViews$Action;->viewId:I
 
     iput-object p3, p0, Landroid/widget/RemoteViews$SetOnClickFillInIntent;->fillInIntent:Landroid/content/Intent;
 
@@ -61,7 +61,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/widget/RemoteViews$SetOnClickFillInIntent;->viewId:I
+    iput v0, p0, Landroid/widget/RemoteViews$Action;->viewId:I
 
     sget-object v0, Landroid/content/Intent;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -85,7 +85,7 @@
     .parameter "handler"
 
     .prologue
-    iget v2, p0, Landroid/widget/RemoteViews$SetOnClickFillInIntent;->viewId:I
+    iget v2, p0, Landroid/widget/RemoteViews$Action;->viewId:I
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -161,7 +161,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    iget v0, p0, Landroid/widget/RemoteViews$SetOnClickFillInIntent;->viewId:I
+    iget v0, p0, Landroid/widget/RemoteViews$Action;->viewId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 

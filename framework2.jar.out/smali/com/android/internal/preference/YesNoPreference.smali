@@ -75,7 +75,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/preference/YesNoPreference;->callChangeListener(Ljava/lang/Object;)Z
+    invoke-virtual {p0, v0}, Landroid/preference/Preference;->callChangeListener(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -134,7 +134,7 @@
     check-cast v0, Lcom/android/internal/preference/YesNoPreference$SavedState;
 
     .local v0, myState:Lcom/android/internal/preference/YesNoPreference$SavedState;
-    invoke-virtual {v0}, Lcom/android/internal/preference/YesNoPreference$SavedState;->getSuperState()Landroid/os/Parcelable;
+    invoke-virtual {v0}, Landroid/view/AbsSavedState;->getSuperState()Landroid/os/Parcelable;
 
     move-result-object v1
 
@@ -156,7 +156,7 @@
     move-result-object v1
 
     .local v1, superState:Landroid/os/Parcelable;
-    invoke-virtual {p0}, Lcom/android/internal/preference/YesNoPreference;->isPersistent()Z
+    invoke-virtual {p0}, Landroid/preference/Preference;->isPersistent()Z
 
     move-result v2
 
@@ -194,7 +194,7 @@
 
     iget-boolean v0, p0, Lcom/android/internal/preference/YesNoPreference;->mWasPositiveResult:Z
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/preference/YesNoPreference;->getPersistedBoolean(Z)Z
+    invoke-virtual {p0, v0}, Landroid/preference/Preference;->getPersistedBoolean(Z)Z
 
     move-result v0
 
@@ -223,14 +223,14 @@
     .prologue
     iput-boolean p1, p0, Lcom/android/internal/preference/YesNoPreference;->mWasPositiveResult:Z
 
-    invoke-virtual {p0, p1}, Lcom/android/internal/preference/YesNoPreference;->persistBoolean(Z)Z
+    invoke-virtual {p0, p1}, Landroid/preference/Preference;->persistBoolean(Z)Z
 
     if-nez p1, :cond_0
 
     const/4 v0, 0x1
 
     :goto_0
-    invoke-virtual {p0, v0}, Lcom/android/internal/preference/YesNoPreference;->notifyDependencyChange(Z)V
+    invoke-virtual {p0, v0}, Landroid/preference/Preference;->notifyDependencyChange(Z)V
 
     return-void
 
@@ -248,7 +248,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-super {p0}, Landroid/preference/DialogPreference;->shouldDisableDependents()Z
+    invoke-super {p0}, Landroid/preference/Preference;->shouldDisableDependents()Z
 
     move-result v0
 

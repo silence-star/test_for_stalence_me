@@ -45,7 +45,7 @@
 
     aget-object v0, v0, v1
 
-    invoke-virtual {p0, v0}, Lcom/android/server/am/SingleUIBlackAppHelper$1;->add(Ljava/lang/Object;)Z
+    invoke-virtual {p0, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     return-void
 .end method

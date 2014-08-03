@@ -95,7 +95,7 @@
 
     iget-object v0, p0, Landroid/app/LoadedApk$ReceiverDispatcher;->mLocation:Landroid/app/IntentReceiverLeaked;
 
-    invoke-virtual {v0}, Landroid/app/IntentReceiverLeaked;->fillInStackTrace()Ljava/lang/Throwable;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->fillInStackTrace()Ljava/lang/Throwable;
 
     return-void
 
@@ -194,7 +194,7 @@
     move-result-object v9
 
     .local v9, mgr:Landroid/app/IActivityManager;
-    invoke-virtual {v0, v9}, Landroid/app/LoadedApk$ReceiverDispatcher$Args;->sendFinished(Landroid/app/IActivityManager;)V
+    invoke-virtual {v0, v9}, Landroid/content/BroadcastReceiver$PendingResult;->sendFinished(Landroid/app/IActivityManager;)V
 
     .end local v9           #mgr:Landroid/app/IActivityManager;
     :cond_0

@@ -3,8 +3,8 @@
 .source "ViewGroup.java"
 
 # interfaces
-.implements Landroid/view/ViewParent;
 .implements Landroid/view/ViewManager;
+.implements Landroid/view/ViewParent;
 
 
 # annotations
@@ -2371,6 +2371,8 @@
 
     return-void
 
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -4276,13 +4278,12 @@
     iget v1, p0, Landroid/view/ViewGroup;->mChildrenCount:I
 
     .local v1, count:I
-    if-gtz v1, :cond_1
+    if-gtz v1, :cond_0
 
-    :goto_miui
-    :cond_0
+    :goto_0
     return-void
 
-    :cond_1
+    :cond_0
     iget-object v0, p0, Landroid/view/ViewGroup;->mChildren:[Landroid/view/View;
 
     .local v0, children:[Landroid/view/View;
@@ -4293,9 +4294,9 @@
     add-int/lit8 v2, v1, -0x1
 
     .local v2, i:I
-    :goto_0
-    if-ltz v2, :cond_miui
- 
+    :goto_1
+    if-ltz v2, :cond_1
+
     aget-object v3, v0, v2
 
     iput-object v4, v3, Landroid/view/View;->mParent:Landroid/view/ViewParent;
@@ -4304,12 +4305,12 @@
 
     add-int/lit8 v2, v2, -0x1
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_miui
+    :cond_1
     invoke-static {p0}, Landroid/view/Injector$ViewGroupHook;->clearChildFocus(Landroid/view/ViewGroup;)V
 
-    goto :goto_miui
+    goto :goto_0
 .end method
 
 .method protected detachViewFromParent(I)V

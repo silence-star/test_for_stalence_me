@@ -156,7 +156,7 @@
     move-exception v0
 
     .local v0, e:Landroid/os/RemoteException;
-    invoke-virtual {v0}, Landroid/os/RemoteException;->printStackTrace()V
+    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_0
 .end method
@@ -293,7 +293,7 @@
     move-exception v0
 
     .local v0, e:Landroid/os/RemoteException;
-    invoke-virtual {v0}, Landroid/os/RemoteException;->printStackTrace()V
+    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_0
 
@@ -357,7 +357,7 @@
     .local v0, e:Landroid/os/RemoteException;
     sget-object v2, Landroid/bluetooth/BluetoothHidDevice;->TAG:Ljava/lang/String;
 
-    invoke-virtual {v0}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -411,7 +411,7 @@
     .local v0, e:Landroid/os/RemoteException;
     sget-object v2, Landroid/bluetooth/BluetoothHidDevice;->TAG:Ljava/lang/String;
 
-    invoke-virtual {v0}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -731,7 +731,7 @@
     .local v6, e:Landroid/os/RemoteException;
     sget-object v0, Landroid/bluetooth/BluetoothHidDevice;->TAG:Ljava/lang/String;
 
-    invoke-virtual {v6}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -814,7 +814,7 @@
     .local v0, e:Landroid/os/RemoteException;
     sget-object v2, Landroid/bluetooth/BluetoothHidDevice;->TAG:Ljava/lang/String;
 
-    invoke-virtual {v0}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -885,7 +885,7 @@
     .local v0, e:Landroid/os/RemoteException;
     sget-object v2, Landroid/bluetooth/BluetoothHidDevice;->TAG:Ljava/lang/String;
 
-    invoke-virtual {v0}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -957,7 +957,7 @@
     .local v0, e:Landroid/os/RemoteException;
     sget-object v2, Landroid/bluetooth/BluetoothHidDevice;->TAG:Ljava/lang/String;
 
-    invoke-virtual {v0}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -1011,7 +1011,7 @@
     .local v0, e:Landroid/os/RemoteException;
     sget-object v2, Landroid/bluetooth/BluetoothHidDevice;->TAG:Ljava/lang/String;
 
-    invoke-virtual {v0}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -1066,7 +1066,7 @@
     .local v0, e:Landroid/os/RemoteException;
     sget-object v2, Landroid/bluetooth/BluetoothHidDevice;->TAG:Ljava/lang/String;
 
-    invoke-virtual {v0}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v3
 

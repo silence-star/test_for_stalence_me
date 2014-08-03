@@ -103,7 +103,7 @@
 
     iget-object v0, p0, Landroid/database/CursorToBulkCursorAdaptor;->mFilledWindow:Landroid/database/CursorWindow;
 
-    invoke-virtual {v0}, Landroid/database/CursorWindow;->close()V
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteClosable;->close()V
 
     const/4 v0, 0x0
 
@@ -360,7 +360,7 @@
 
     iget-object v1, v0, Landroid/database/BulkCursorDescriptor;->window:Landroid/database/CursorWindow;
 
-    invoke-virtual {v1}, Landroid/database/CursorWindow;->acquireReference()V
+    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteClosable;->acquireReference()V
 
     :cond_0
     monitor-exit v2
@@ -453,7 +453,7 @@
     :goto_1
     if-eqz v0, :cond_1
 
-    invoke-virtual {v0}, Landroid/database/CursorWindow;->acquireReference()V
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteClosable;->acquireReference()V
 
     :cond_1
     monitor-exit v2

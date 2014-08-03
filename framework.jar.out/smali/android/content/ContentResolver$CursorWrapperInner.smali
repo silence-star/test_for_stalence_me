@@ -63,7 +63,7 @@
     .locals 2
 
     .prologue
-    invoke-super {p0}, Landroid/database/CrossProcessCursorWrapper;->close()V
+    invoke-super {p0}, Landroid/database/CursorWrapper;->close()V
 
     iget-object v0, p0, Landroid/content/ContentResolver$CursorWrapperInner;->this$0:Landroid/content/ContentResolver;
 

@@ -297,9 +297,9 @@
     check-cast v6, Landroid/graphics/drawable/PaintDrawable;
 
     .local v6, painter:Landroid/graphics/drawable/PaintDrawable;
-    invoke-virtual {v6, v13}, Landroid/graphics/drawable/PaintDrawable;->setIntrinsicWidth(I)V
+    invoke-virtual {v6, v13}, Landroid/graphics/drawable/ShapeDrawable;->setIntrinsicWidth(I)V
 
-    invoke-virtual {v6, v4}, Landroid/graphics/drawable/PaintDrawable;->setIntrinsicHeight(I)V
+    invoke-virtual {v6, v4}, Landroid/graphics/drawable/ShapeDrawable;->setIntrinsicHeight(I)V
 
     .end local v6           #painter:Landroid/graphics/drawable/PaintDrawable;
     :cond_0
@@ -617,7 +617,7 @@
 
     iget v3, p0, Lcom/android/internal/policy/impl/IconUtilities;->mIconTextureHeight:I
 
-    invoke-virtual {v0, v5, v5, v2, v3}, Landroid/graphics/drawable/StateListDrawable;->setBounds(IIII)V
+    invoke-virtual {v0, v5, v5, v2, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     return-object v0
 .end method

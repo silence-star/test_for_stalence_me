@@ -647,7 +647,7 @@
     move-result-object v3
 
     .local v3, result:Ljava/nio/charset/CoderResult;
-    invoke-virtual {v2}, Ljava/nio/CharBuffer;->flip()Ljava/nio/Buffer;
+    invoke-virtual {v2}, Ljava/nio/Buffer;->flip()Ljava/nio/Buffer;
 
     invoke-virtual {v3}, Ljava/nio/charset/CoderResult;->isError()Z
 

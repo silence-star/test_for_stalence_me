@@ -47,13 +47,13 @@
     .prologue
     iget-object v0, p0, Landroid/view/HardwareRenderer$Gl20Renderer$2;->this$0:Landroid/view/HardwareRenderer$Gl20Renderer;
 
-    iget-object v0, v0, Landroid/view/HardwareRenderer$Gl20Renderer;->mCanvas:Landroid/view/HardwareCanvas;
+    iget-object v0, v0, Landroid/view/HardwareRenderer$GlRenderer;->mCanvas:Landroid/view/HardwareCanvas;
 
     if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroid/view/HardwareRenderer$Gl20Renderer$2;->this$0:Landroid/view/HardwareRenderer$Gl20Renderer;
 
-    iget-object v0, v0, Landroid/view/HardwareRenderer$Gl20Renderer;->mCanvas:Landroid/view/HardwareCanvas;
+    iget-object v0, v0, Landroid/view/HardwareRenderer$GlRenderer;->mCanvas:Landroid/view/HardwareCanvas;
 
     invoke-virtual {v0}, Landroid/view/HardwareCanvas;->clearLayerUpdates()V
 

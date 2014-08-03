@@ -48,7 +48,7 @@
     .parameter "buffer"
 
     .prologue
-    invoke-virtual {p0, p1, p2}, Landroid/text/method/ScrollingMovementMethod;->scrollBottom(Landroid/widget/TextView;Landroid/text/Spannable;)Z
+    invoke-virtual {p0, p1, p2}, Landroid/text/method/BaseMovementMethod;->scrollBottom(Landroid/widget/TextView;Landroid/text/Spannable;)Z
 
     move-result v0
 
@@ -63,7 +63,7 @@
     .prologue
     const/4 v0, 0x1
 
-    invoke-virtual {p0, p1, p2, v0}, Landroid/text/method/ScrollingMovementMethod;->scrollDown(Landroid/widget/TextView;Landroid/text/Spannable;I)Z
+    invoke-virtual {p0, p1, p2, v0}, Landroid/text/method/BaseMovementMethod;->scrollDown(Landroid/widget/TextView;Landroid/text/Spannable;I)Z
 
     move-result v0
 
@@ -104,7 +104,7 @@
     .prologue
     const/4 v0, 0x1
 
-    invoke-virtual {p0, p1, p2, v0}, Landroid/text/method/ScrollingMovementMethod;->scrollLeft(Landroid/widget/TextView;Landroid/text/Spannable;I)Z
+    invoke-virtual {p0, p1, p2, v0}, Landroid/text/method/BaseMovementMethod;->scrollLeft(Landroid/widget/TextView;Landroid/text/Spannable;I)Z
 
     move-result v0
 
@@ -117,7 +117,7 @@
     .parameter "buffer"
 
     .prologue
-    invoke-virtual {p0, p1, p2}, Landroid/text/method/ScrollingMovementMethod;->scrollLineEnd(Landroid/widget/TextView;Landroid/text/Spannable;)Z
+    invoke-virtual {p0, p1, p2}, Landroid/text/method/BaseMovementMethod;->scrollLineEnd(Landroid/widget/TextView;Landroid/text/Spannable;)Z
 
     move-result v0
 
@@ -130,7 +130,7 @@
     .parameter "buffer"
 
     .prologue
-    invoke-virtual {p0, p1, p2}, Landroid/text/method/ScrollingMovementMethod;->scrollLineStart(Landroid/widget/TextView;Landroid/text/Spannable;)Z
+    invoke-virtual {p0, p1, p2}, Landroid/text/method/BaseMovementMethod;->scrollLineStart(Landroid/widget/TextView;Landroid/text/Spannable;)Z
 
     move-result v0
 
@@ -155,7 +155,7 @@
 
     if-eqz v3, :cond_0
 
-    invoke-virtual {p1}, Landroid/widget/TextView;->getScrollX()I
+    invoke-virtual {p1}, Landroid/view/View;->getScrollX()I
 
     move-result v3
 
@@ -165,7 +165,7 @@
 
     move-result v4
 
-    invoke-virtual {p1, v3, v4}, Landroid/widget/TextView;->scrollTo(II)V
+    invoke-virtual {p1, v3, v4}, Landroid/view/View;->scrollTo(II)V
 
     :cond_0
     if-eqz v0, :cond_1
@@ -192,7 +192,7 @@
     add-int/lit8 v1, v3, -0x1
 
     .local v1, line:I
-    invoke-virtual {p1}, Landroid/widget/TextView;->getScrollX()I
+    invoke-virtual {p1}, Landroid/view/View;->getScrollX()I
 
     move-result v3
 
@@ -202,7 +202,7 @@
 
     move-result v4
 
-    invoke-virtual {p1}, Landroid/widget/TextView;->getHeight()I
+    invoke-virtual {p1}, Landroid/view/View;->getHeight()I
 
     move-result v5
 
@@ -210,7 +210,7 @@
 
     sub-int/2addr v4, v5
 
-    invoke-virtual {p1, v3, v4}, Landroid/widget/TextView;->scrollTo(II)V
+    invoke-virtual {p1, v3, v4}, Landroid/view/View;->scrollTo(II)V
 
     .end local v1           #line:I
     .end local v2           #padding:I
@@ -238,7 +238,7 @@
     .parameter "buffer"
 
     .prologue
-    invoke-virtual {p0, p1, p2}, Landroid/text/method/ScrollingMovementMethod;->scrollPageDown(Landroid/widget/TextView;Landroid/text/Spannable;)Z
+    invoke-virtual {p0, p1, p2}, Landroid/text/method/BaseMovementMethod;->scrollPageDown(Landroid/widget/TextView;Landroid/text/Spannable;)Z
 
     move-result v0
 
@@ -251,7 +251,7 @@
     .parameter "buffer"
 
     .prologue
-    invoke-virtual {p0, p1, p2}, Landroid/text/method/ScrollingMovementMethod;->scrollPageUp(Landroid/widget/TextView;Landroid/text/Spannable;)Z
+    invoke-virtual {p0, p1, p2}, Landroid/text/method/BaseMovementMethod;->scrollPageUp(Landroid/widget/TextView;Landroid/text/Spannable;)Z
 
     move-result v0
 
@@ -266,7 +266,7 @@
     .prologue
     const/4 v0, 0x1
 
-    invoke-virtual {p0, p1, p2, v0}, Landroid/text/method/ScrollingMovementMethod;->scrollRight(Landroid/widget/TextView;Landroid/text/Spannable;I)Z
+    invoke-virtual {p0, p1, p2, v0}, Landroid/text/method/BaseMovementMethod;->scrollRight(Landroid/widget/TextView;Landroid/text/Spannable;I)Z
 
     move-result v0
 
@@ -279,7 +279,7 @@
     .parameter "buffer"
 
     .prologue
-    invoke-virtual {p0, p1, p2}, Landroid/text/method/ScrollingMovementMethod;->scrollTop(Landroid/widget/TextView;Landroid/text/Spannable;)Z
+    invoke-virtual {p0, p1, p2}, Landroid/text/method/BaseMovementMethod;->scrollTop(Landroid/widget/TextView;Landroid/text/Spannable;)Z
 
     move-result v0
 
@@ -294,7 +294,7 @@
     .prologue
     const/4 v0, 0x1
 
-    invoke-virtual {p0, p1, p2, v0}, Landroid/text/method/ScrollingMovementMethod;->scrollUp(Landroid/widget/TextView;Landroid/text/Spannable;I)Z
+    invoke-virtual {p0, p1, p2, v0}, Landroid/text/method/BaseMovementMethod;->scrollUp(Landroid/widget/TextView;Landroid/text/Spannable;I)Z
 
     move-result v0
 

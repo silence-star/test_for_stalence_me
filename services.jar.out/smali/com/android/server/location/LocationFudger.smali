@@ -409,7 +409,7 @@
     .prologue
     iget-object v0, p0, Lcom/android/server/location/LocationFudger;->mRandom:Ljava/security/SecureRandom;
 
-    invoke-virtual {v0}, Ljava/security/SecureRandom;->nextGaussian()D
+    invoke-virtual {v0}, Ljava/util/Random;->nextGaussian()D
 
     move-result-wide v0
 

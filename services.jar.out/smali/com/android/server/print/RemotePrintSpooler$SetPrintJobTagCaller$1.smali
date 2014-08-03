@@ -47,7 +47,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1, p2}, Lcom/android/server/print/RemotePrintSpooler$SetPrintJobTagCaller;->onRemoteMethodResult(Ljava/lang/Object;I)V
+    invoke-virtual {v0, v1, p2}, Landroid/util/TimedRemoteCaller;->onRemoteMethodResult(Ljava/lang/Object;I)V
 
     return-void
 .end method

@@ -325,7 +325,7 @@
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "BluetoothHeadset"
 
-    invoke-virtual {v0}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -410,7 +410,7 @@
     .local v8, e:Landroid/os/RemoteException;
     const-string v0, "BluetoothHeadset"
 
-    invoke-virtual {v8}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v1
 
@@ -665,7 +665,7 @@
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "BluetoothHeadset"
 
-    invoke-virtual {v0}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -826,7 +826,7 @@
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "BluetoothHeadset"
 
-    invoke-virtual {v0}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -967,7 +967,7 @@
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "BluetoothHeadset"
 
-    invoke-virtual {v0}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -1533,7 +1533,7 @@
     .local v6, e:Landroid/os/RemoteException;
     const-string v0, "BluetoothHeadset"
 
-    invoke-virtual {v6}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v1
 
@@ -1595,7 +1595,7 @@
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "BluetoothHeadset"
 
-    invoke-virtual {v0}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -1871,7 +1871,7 @@
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "BluetoothHeadset"
 
-    invoke-virtual {v0}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -2019,7 +2019,7 @@
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "BluetoothHeadset"
 
-    invoke-virtual {v0}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v2
 

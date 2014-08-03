@@ -49,7 +49,7 @@
 
     .local v8, i:I
     :goto_0
-    iget-object v0, p0, Lcom/android/server/firewall/AndFilter;->children:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/server/firewall/FilterList;->children:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -57,7 +57,7 @@
 
     if-ge v8, v0, :cond_1
 
-    iget-object v0, p0, Lcom/android/server/firewall/AndFilter;->children:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/server/firewall/FilterList;->children:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 

@@ -70,7 +70,7 @@
     .prologue
     const/4 v1, -0x1
 
-    iget-object v0, p1, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v0, p1, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     invoke-direct {p0, v0, p4}, Lcom/android/internal/app/ProcessStats$DurationsTable;-><init>(Lcom/android/internal/app/ProcessStats;Ljava/lang/String;)V
 
@@ -219,7 +219,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mName:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mName:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -257,7 +257,7 @@
 
     iget-object v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCommonProcess:Lcom/android/internal/app/ProcessStats$ProcessState;
 
-    iget-object v2, v2, Lcom/android/internal/app/ProcessStats$ProcessState;->mName:Ljava/lang/String;
+    iget-object v2, v2, Lcom/android/internal/app/ProcessStats$DurationsTable;->mName:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -317,7 +317,7 @@
 
     move-result-object v3
 
-    iget-object v4, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mName:Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mName:Ljava/lang/String;
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -355,7 +355,7 @@
 
     iget-object v4, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCommonProcess:Lcom/android/internal/app/ProcessStats$ProcessState;
 
-    iget-object v4, v4, Lcom/android/internal/app/ProcessStats$ProcessState;->mName:Ljava/lang/String;
+    iget-object v4, v4, Lcom/android/internal/app/ProcessStats$DurationsTable;->mName:Ljava/lang/String;
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -367,13 +367,13 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-object v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v2, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     iget-object v3, v1, Lcom/android/internal/app/ProcessStats$ProcessState;->mPackage:Ljava/lang/String;
 
     iget v4, v1, Lcom/android/internal/app/ProcessStats$ProcessState;->mUid:I
 
-    iget-object v5, v1, Lcom/android/internal/app/ProcessStats$ProcessState;->mName:Ljava/lang/String;
+    iget-object v5, v1, Lcom/android/internal/app/ProcessStats$DurationsTable;->mName:Ljava/lang/String;
 
     invoke-virtual {v2, v3, v4, v5}, Lcom/android/internal/app/ProcessStats;->getProcessStateLocked(Ljava/lang/String;ILjava/lang/String;)Lcom/android/internal/app/ProcessStats$ProcessState;
 
@@ -384,7 +384,7 @@
 
     if-eqz v2, :cond_3
 
-    iget-object v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v2, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     iget-object v3, v2, Lcom/android/internal/app/ProcessStats;->mPackages:Lcom/android/internal/app/ProcessMap;
 
@@ -445,7 +445,7 @@
 
     move-result-object v2
 
-    iget-object v4, v1, Lcom/android/internal/app/ProcessStats$ProcessState;->mName:Ljava/lang/String;
+    iget-object v4, v1, Lcom/android/internal/app/ProcessStats$DurationsTable;->mName:Ljava/lang/String;
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -462,7 +462,7 @@
     :cond_1
     iget-object v2, v0, Lcom/android/internal/app/ProcessStats$PackageState;->mProcesses:Landroid/util/ArrayMap;
 
-    iget-object v3, v1, Lcom/android/internal/app/ProcessStats$ProcessState;->mName:Ljava/lang/String;
+    iget-object v3, v1, Lcom/android/internal/app/ProcessStats$DurationsTable;->mName:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -486,7 +486,7 @@
 
     move-result-object v3
 
-    iget-object v4, v1, Lcom/android/internal/app/ProcessStats$ProcessState;->mName:Ljava/lang/String;
+    iget-object v4, v1, Lcom/android/internal/app/ProcessStats$DurationsTable;->mName:Ljava/lang/String;
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -539,7 +539,7 @@
     .parameter "other"
 
     .prologue
-    invoke-virtual/range {p0 .. p1}, Lcom/android/internal/app/ProcessStats$ProcessState;->addDurations(Lcom/android/internal/app/ProcessStats$DurationsTable;)V
+    invoke-virtual/range {p0 .. p1}, Lcom/android/internal/app/ProcessStats$DurationsTable;->addDurations(Lcom/android/internal/app/ProcessStats$DurationsTable;)V
 
     const/16 v17, 0x0
 
@@ -571,7 +571,7 @@
     .local v2, state:I
     move-object/from16 v0, p1
 
-    iget-object v1, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v1, v0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     const/4 v3, 0x0
 
@@ -585,7 +585,7 @@
 
     move-object/from16 v0, p1
 
-    iget-object v1, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v1, v0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     const/4 v4, 0x1
 
@@ -597,7 +597,7 @@
 
     move-object/from16 v0, p1
 
-    iget-object v1, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v1, v0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     const/4 v6, 0x2
 
@@ -609,7 +609,7 @@
 
     move-object/from16 v0, p1
 
-    iget-object v1, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v1, v0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     const/4 v8, 0x3
 
@@ -621,7 +621,7 @@
 
     move-object/from16 v0, p1
 
-    iget-object v1, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v1, v0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     const/4 v10, 0x4
 
@@ -633,7 +633,7 @@
 
     move-object/from16 v0, p1
 
-    iget-object v1, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v1, v0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     const/4 v12, 0x5
 
@@ -645,7 +645,7 @@
 
     move-object/from16 v0, p1
 
-    iget-object v1, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v1, v0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     const/4 v14, 0x6
 
@@ -753,7 +753,7 @@
 
     .local v6, off:I
     :goto_0
-    iget-object v7, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v7, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     iget-object v7, v7, Lcom/android/internal/app/ProcessStats;->mLongs:Ljava/util/ArrayList;
 
@@ -831,19 +831,19 @@
     .end local v5           #longs:[J
     .end local v6           #off:I
     :cond_1
-    iget-object v7, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v7, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     iget-object v8, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
     iput-object v8, v7, Lcom/android/internal/app/ProcessStats;->mAddLongTable:[I
 
-    iget-object v7, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v7, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     iget v8, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTableSize:I
 
     iput v8, v7, Lcom/android/internal/app/ProcessStats;->mAddLongTableSize:I
 
-    iget-object v7, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v7, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     xor-int/lit8 v8, v4, -0x1
 
@@ -854,13 +854,13 @@
     move-result v6
 
     .restart local v6       #off:I
-    iget-object v7, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v7, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     iget-object v7, v7, Lcom/android/internal/app/ProcessStats;->mAddLongTable:[I
 
     iput-object v7, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
-    iget-object v7, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v7, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     iget v7, v7, Lcom/android/internal/app/ProcessStats;->mAddLongTableSize:I
 
@@ -1177,7 +1177,7 @@
 
     iget v3, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mUid:I
 
-    iget-object v4, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mName:Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mName:Ljava/lang/String;
 
     move-object v1, p0
 
@@ -1188,13 +1188,13 @@
     invoke-direct/range {v0 .. v6}, Lcom/android/internal/app/ProcessStats$ProcessState;-><init>(Lcom/android/internal/app/ProcessStats$ProcessState;Ljava/lang/String;ILjava/lang/String;J)V
 
     .local v0, pnew:Lcom/android/internal/app/ProcessStats$ProcessState;
-    invoke-virtual {p0, v0}, Lcom/android/internal/app/ProcessStats$ProcessState;->copyDurationsTo(Lcom/android/internal/app/ProcessStats$DurationsTable;)V
+    invoke-virtual {p0, v0}, Lcom/android/internal/app/ProcessStats$DurationsTable;->copyDurationsTo(Lcom/android/internal/app/ProcessStats$DurationsTable;)V
 
     iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
     if-eqz v1, :cond_2
 
-    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     iget-object v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
@@ -1204,7 +1204,7 @@
 
     iput-object v2, v1, Lcom/android/internal/app/ProcessStats;->mAddLongTable:[I
 
-    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     const/4 v2, 0x0
 
@@ -1232,7 +1232,7 @@
     and-int v11, v1, v2
 
     .local v11, type:I
-    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     const/4 v2, 0x7
 
@@ -1241,7 +1241,7 @@
     move-result v9
 
     .local v9, newOff:I
-    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     iget-object v1, v1, Lcom/android/internal/app/ProcessStats;->mAddLongTable:[I
 
@@ -1257,9 +1257,9 @@
 
     if-ge v8, v1, :cond_0
 
-    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
-    iget-object v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v2, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     invoke-virtual {v2, v10, v8}, Lcom/android/internal/app/ProcessStats;->getLong(II)J
 
@@ -1281,13 +1281,13 @@
     .end local v10           #origEnt:I
     .end local v11           #type:I
     :cond_1
-    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     iget-object v1, v1, Lcom/android/internal/app/ProcessStats;->mAddLongTable:[I
 
     iput-object v1, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
-    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     iget v1, v1, Lcom/android/internal/app/ProcessStats;->mAddLongTableSize:I
 
@@ -1358,7 +1358,7 @@
 
     iget v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCurState:I
 
-    invoke-virtual {p0, v2, v0, v1}, Lcom/android/internal/app/ProcessStats$ProcessState;->addDuration(IJ)V
+    invoke-virtual {p0, v2, v0, v1}, Lcom/android/internal/app/ProcessStats$DurationsTable;->addDuration(IJ)V
 
     .end local v0           #dur:J
     :cond_0
@@ -1427,7 +1427,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mName:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mName:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1540,7 +1540,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mName:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mName:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1600,7 +1600,7 @@
     .local v0, idx:I
     if-ltz v0, :cond_0
 
-    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     iget-object v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
@@ -1637,7 +1637,7 @@
     .local v0, idx:I
     if-ltz v0, :cond_0
 
-    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     iget-object v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
@@ -1674,7 +1674,7 @@
     .local v0, idx:I
     if-ltz v0, :cond_0
 
-    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     iget-object v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
@@ -1711,7 +1711,7 @@
     .local v0, idx:I
     if-ltz v0, :cond_0
 
-    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     iget-object v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
@@ -1748,7 +1748,7 @@
     .local v0, idx:I
     if-ltz v0, :cond_0
 
-    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     iget-object v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
@@ -1785,7 +1785,7 @@
     .local v0, idx:I
     if-ltz v0, :cond_0
 
-    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     iget-object v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
@@ -1822,7 +1822,7 @@
     .local v0, idx:I
     if-ltz v0, :cond_0
 
-    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     iget-object v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
@@ -1988,7 +1988,7 @@
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v1, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
     iget-object v1, v1, Lcom/android/internal/app/ProcessStats;->mPackages:Lcom/android/internal/app/ProcessMap;
 
@@ -2002,7 +2002,7 @@
 
     iget-object v1, v1, Lcom/android/internal/app/ProcessStats$PackageState;->mProcesses:Landroid/util/ArrayMap;
 
-    iget-object v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mName:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mName:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -2054,7 +2054,7 @@
     iput-boolean v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mMultiPackage:Z
 
     :cond_0
-    invoke-virtual {p0, p1}, Lcom/android/internal/app/ProcessStats$ProcessState;->readDurationsFromParcel(Landroid/os/Parcel;)Z
+    invoke-virtual {p0, p1}, Lcom/android/internal/app/ProcessStats$DurationsTable;->readDurationsFromParcel(Landroid/os/Parcel;)Z
 
     move-result v3
 
@@ -2072,9 +2072,9 @@
 
     .restart local v0       #multiPackage:Z
     :cond_3
-    iget-object v3, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
+    iget-object v3, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mStats:Lcom/android/internal/app/ProcessStats;
 
-    iget-object v4, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mName:Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mName:Ljava/lang/String;
 
     const-string v5, "pss"
 
@@ -2358,7 +2358,7 @@
 
     const/4 v1, 0x0
 
-    invoke-virtual {p0}, Lcom/android/internal/app/ProcessStats$ProcessState;->resetDurationsSafely()V
+    invoke-virtual {p0}, Lcom/android/internal/app/ProcessStats$DurationsTable;->resetDurationsSafely()V
 
     iput-wide p1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStartTime:J
 
@@ -2527,7 +2527,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mName:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/internal/app/ProcessStats$DurationsTable;->mName:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2599,7 +2599,7 @@
     :goto_0
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    invoke-virtual {p0, p1}, Lcom/android/internal/app/ProcessStats$ProcessState;->writeDurationsToParcel(Landroid/os/Parcel;)V
+    invoke-virtual {p0, p1}, Lcom/android/internal/app/ProcessStats$DurationsTable;->writeDurationsToParcel(Landroid/os/Parcel;)V
 
     iget v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTableSize:I
 

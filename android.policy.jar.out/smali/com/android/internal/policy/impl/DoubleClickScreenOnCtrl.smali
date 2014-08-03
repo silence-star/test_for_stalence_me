@@ -3,8 +3,8 @@
 .source "DoubleClickScreenOnCtrl.java"
 
 # interfaces
-.implements Lcom/android/internal/policy/impl/ISettingListener;
 .implements Lcom/android/internal/policy/impl/IKeyBeforeQueueingHandler;
+.implements Lcom/android/internal/policy/impl/ISettingListener;
 
 
 # instance fields

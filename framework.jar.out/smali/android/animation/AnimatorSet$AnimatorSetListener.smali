@@ -67,13 +67,13 @@
 
     iget-object v2, p0, Landroid/animation/AnimatorSet$AnimatorSetListener;->this$0:Landroid/animation/AnimatorSet;
 
-    iget-object v2, v2, Landroid/animation/AnimatorSet;->mListeners:Ljava/util/ArrayList;
+    iget-object v2, v2, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     if-eqz v2, :cond_0
 
     iget-object v2, p0, Landroid/animation/AnimatorSet$AnimatorSetListener;->this$0:Landroid/animation/AnimatorSet;
 
-    iget-object v2, v2, Landroid/animation/AnimatorSet;->mListeners:Ljava/util/ArrayList;
+    iget-object v2, v2, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
@@ -88,7 +88,7 @@
 
     iget-object v2, p0, Landroid/animation/AnimatorSet$AnimatorSetListener;->this$0:Landroid/animation/AnimatorSet;
 
-    iget-object v2, v2, Landroid/animation/AnimatorSet;->mListeners:Ljava/util/ArrayList;
+    iget-object v2, v2, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -191,13 +191,13 @@
 
     iget-object v7, p0, Landroid/animation/AnimatorSet$AnimatorSetListener;->this$0:Landroid/animation/AnimatorSet;
 
-    iget-object v7, v7, Landroid/animation/AnimatorSet;->mListeners:Ljava/util/ArrayList;
+    iget-object v7, v7, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     if-eqz v7, :cond_2
 
     iget-object v7, p0, Landroid/animation/AnimatorSet$AnimatorSetListener;->this$0:Landroid/animation/AnimatorSet;
 
-    iget-object v7, v7, Landroid/animation/AnimatorSet;->mListeners:Ljava/util/ArrayList;
+    iget-object v7, v7, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v7}, Ljava/util/ArrayList;->clone()Ljava/lang/Object;
 
@@ -245,7 +245,7 @@
 
     iget-object v7, p0, Landroid/animation/AnimatorSet$AnimatorSetListener;->mAnimatorSet:Landroid/animation/AnimatorSet;
 
-    iput-boolean v9, v7, Landroid/animation/AnimatorSet;->mPaused:Z
+    iput-boolean v9, v7, Landroid/animation/Animator;->mPaused:Z
 
     .end local v0           #allDone:Z
     .end local v2           #i:I

@@ -70,7 +70,7 @@
     invoke-virtual {p1, v2, v3, v0}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
     :try_start_0
-    invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->flush()V
+    invoke-virtual {v0}, Ljava/io/OutputStream;->flush()V
 
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->close()V
 
@@ -347,7 +347,7 @@
     .local v1, info:Landroid/content/pm/ResolveInfo;
     iget-object v6, v1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v6, v6, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v6, v6, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     invoke-interface {v4, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 

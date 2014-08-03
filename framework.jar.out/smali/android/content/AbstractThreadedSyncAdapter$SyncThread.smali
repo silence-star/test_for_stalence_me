@@ -139,7 +139,7 @@
 
     if-eqz v4, :cond_0
 
-    invoke-virtual {v4}, Landroid/content/ContentProviderClient;->release()Z
+    throw v4
 
     :cond_0
     invoke-direct {p0}, Landroid/content/AbstractThreadedSyncAdapter$SyncThread;->isCanceled()Z

@@ -87,7 +87,7 @@
     .locals 24
 
     .prologue
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->getContext()Landroid/content/Context;
+    invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v6
 
@@ -146,7 +146,7 @@
     .local v7, homeInfo:Landroid/content/pm/ActivityInfo;
     new-instance v10, Lcom/android/internal/policy/impl/IconUtilities;
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->getContext()Landroid/content/Context;
+    invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v21
 
@@ -212,7 +212,7 @@
     :cond_0
     if-eqz v7, :cond_2
 
-    iget-object v0, v7, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v0, v7, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v21, v0
 
@@ -230,7 +230,7 @@
 
     if-eqz v21, :cond_2
 
-    iget-object v0, v7, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v0, v7, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     move-object/from16 v21, v0
 
@@ -287,7 +287,7 @@
     iget-object v4, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     .local v4, activityInfo:Landroid/content/pm/ActivityInfo;
-    invoke-virtual {v4, v15}, Landroid/content/pm/ActivityInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
+    invoke-virtual {v4, v15}, Landroid/content/pm/ComponentInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
     move-result-object v21
 
@@ -296,7 +296,7 @@
     move-result-object v19
 
     .local v19, title:Ljava/lang/String;
-    invoke-virtual {v4, v15}, Landroid/content/pm/ActivityInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v4, v15}, Landroid/content/pm/PackageItemInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v9
 
@@ -367,17 +367,17 @@
 
     move-object/from16 v1, v18
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
     const/16 v21, 0x0
 
-    invoke-virtual/range {v20 .. v21}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual/range {v20 .. v21}, Landroid/view/View;->setVisibility(I)V
 
     const/16 v21, 0x0
 
-    invoke-virtual/range {v20 .. v21}, Landroid/widget/TextView;->setPressed(Z)V
+    invoke-virtual/range {v20 .. v21}, Landroid/view/View;->setPressed(Z)V
 
-    invoke-virtual/range {v20 .. v20}, Landroid/widget/TextView;->clearFocus()V
+    invoke-virtual/range {v20 .. v20}, Landroid/view/View;->clearFocus()V
 
     add-int/lit8 v11, v11, 0x1
 
@@ -426,7 +426,7 @@
 
     const/16 v22, 0x8
 
-    invoke-virtual/range {v21 .. v22}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual/range {v21 .. v22}, Landroid/view/View;->setVisibility(I)V
 
     add-int/lit8 v11, v11, 0x1
 
@@ -452,7 +452,7 @@
 
     if-ltz v2, :cond_1
 
-    invoke-virtual {p0}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
@@ -490,7 +490,7 @@
     invoke-virtual {v2, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     :try_start_0
-    invoke-virtual {p0}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
@@ -539,7 +539,7 @@
 
     aget-object v3, v3, v0
 
-    invoke-virtual {v3}, Landroid/widget/TextView;->getVisibility()I
+    invoke-virtual {v3}, Landroid/view/View;->getVisibility()I
 
     move-result v3
 
@@ -551,7 +551,7 @@
     invoke-direct {p0, v2}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->switchTo(Lcom/android/internal/policy/impl/RecentApplicationsDialog$RecentTag;)V
 
     :cond_1
-    invoke-virtual {p0}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->dismiss()V
+    invoke-virtual {p0}, Landroid/app/Dialog;->dismiss()V
 
     return-void
 
@@ -562,7 +562,7 @@
 
     aget-object v3, v3, v0
 
-    invoke-virtual {v3}, Landroid/widget/TextView;->hasFocus()Z
+    invoke-virtual {v3}, Landroid/view/View;->hasFocus()Z
 
     move-result v3
 
@@ -573,7 +573,7 @@
 
     aget-object v3, v3, v0
 
-    invoke-virtual {v3}, Landroid/widget/TextView;->getTag()Ljava/lang/Object;
+    invoke-virtual {v3}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v2
 
@@ -585,7 +585,7 @@
 
     aget-object v3, v3, v0
 
-    invoke-virtual {v3}, Landroid/widget/TextView;->hasFocus()Z
+    invoke-virtual {v3}, Landroid/view/View;->hasFocus()Z
 
     move-result v3
 
@@ -619,7 +619,7 @@
     .local v1, b:Landroid/widget/TextView;
     if-ne v1, p1, :cond_1
 
-    invoke-virtual {v1}, Landroid/widget/TextView;->getTag()Ljava/lang/Object;
+    invoke-virtual {v1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v4
 
@@ -631,7 +631,7 @@
     .end local v1           #b:Landroid/widget/TextView;
     .end local v4           #tag:Lcom/android/internal/policy/impl/RecentApplicationsDialog$RecentTag;
     :cond_0
-    invoke-virtual {p0}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->dismiss()V
+    invoke-virtual {p0}, Landroid/app/Dialog;->dismiss()V
 
     return-void
 
@@ -659,7 +659,7 @@
 
     invoke-super {p0, p1}, Landroid/app/Dialog;->onCreate(Landroid/os/Bundle;)V
 
-    invoke-virtual {p0}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
@@ -679,7 +679,7 @@
     sput-object v7, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->sStatusBar:Landroid/app/StatusBarManager;
 
     :cond_0
-    invoke-virtual {p0}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v6
 
@@ -698,16 +698,16 @@
 
     const v7, 0x1090092
 
-    invoke-virtual {p0, v7}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->setContentView(I)V
+    invoke-virtual {p0, v7}, Landroid/app/Dialog;->setContentView(I)V
 
     invoke-virtual {v6}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v5
 
     .local v5, params:Landroid/view/WindowManager$LayoutParams;
-    iput v8, v5, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v8, v5, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    iput v8, v5, Landroid/view/WindowManager$LayoutParams;->height:I
+    iput v8, v5, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     invoke-virtual {v6, v5}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
@@ -717,7 +717,7 @@
 
     const v7, 0x102032b
 
-    invoke-virtual {p0, v7}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v7}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
     move-result-object v7
 
@@ -729,7 +729,7 @@
 
     const v7, 0x1020019
 
-    invoke-virtual {p0, v7}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v7}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
     move-result-object v7
 
@@ -741,7 +741,7 @@
 
     const v7, 0x102001a
 
-    invoke-virtual {p0, v7}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v7}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
     move-result-object v7
 
@@ -755,7 +755,7 @@
 
     const v7, 0x102001b
 
-    invoke-virtual {p0, v7}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v7}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
     move-result-object v7
 
@@ -769,7 +769,7 @@
 
     const v7, 0x102032c
 
-    invoke-virtual {p0, v7}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v7}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
     move-result-object v7
 
@@ -783,7 +783,7 @@
 
     const v7, 0x102032d
 
-    invoke-virtual {p0, v7}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v7}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
     move-result-object v7
 
@@ -797,7 +797,7 @@
 
     const v7, 0x102032e
 
-    invoke-virtual {p0, v7}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v7}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
     move-result-object v7
 
@@ -811,7 +811,7 @@
 
     const v7, 0x102032f
 
-    invoke-virtual {p0, v7}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v7}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
     move-result-object v7
 
@@ -821,7 +821,7 @@
 
     const v7, 0x102032a
 
-    invoke-virtual {p0, v7}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v7}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
     move-result-object v7
 
@@ -842,7 +842,7 @@
     aget-object v1, v0, v3
 
     .local v1, b:Landroid/widget/TextView;
-    invoke-virtual {v1, p0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v1, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     add-int/lit8 v3, v3, 0x1
 
@@ -885,7 +885,7 @@
 
     aget-object v7, v7, v4
 
-    invoke-virtual {v7}, Landroid/widget/TextView;->getVisibility()I
+    invoke-virtual {v7}, Landroid/view/View;->getVisibility()I
 
     move-result v7
 
@@ -914,7 +914,7 @@
 
     aget-object v7, v7, v2
 
-    invoke-virtual {v7}, Landroid/widget/TextView;->hasFocus()Z
+    invoke-virtual {v7}, Landroid/view/View;->hasFocus()Z
 
     move-result v7
 
@@ -940,7 +940,7 @@
 
     aget-object v7, v7, v3
 
-    invoke-virtual {v7, v1}, Landroid/widget/TextView;->requestFocus(I)Z
+    invoke-virtual {v7, v1}, Landroid/view/View;->requestFocus(I)Z
 
     move-result v7
 
@@ -954,7 +954,7 @@
 
     move-result v8
 
-    invoke-virtual {v7, v8}, Landroid/widget/TextView;->playSoundEffect(I)V
+    invoke-virtual {v7, v8}, Landroid/view/View;->playSoundEffect(I)V
 
     .end local v0           #backward:Z
     .end local v1           #direction:I
@@ -1025,7 +1025,7 @@
     invoke-virtual {v0, v1}, Landroid/app/StatusBarManager;->disable(I)V
 
     :cond_0
-    invoke-virtual {p0}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -1061,7 +1061,7 @@
     invoke-virtual {v0, v1}, Landroid/app/StatusBarManager;->disable(I)V
 
     :cond_0
-    invoke-virtual {p0}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v0
 

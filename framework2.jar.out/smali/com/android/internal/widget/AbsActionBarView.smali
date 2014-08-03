@@ -148,13 +148,13 @@
     :cond_0
     if-nez p1, :cond_3
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/AbsActionBarView;->getVisibility()I
+    invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    invoke-virtual {p0, v6}, Lcom/android/internal/widget/AbsActionBarView;->setAlpha(F)V
+    invoke-virtual {p0, v6}, Landroid/view/View;->setAlpha(F)V
 
     iget-object v3, p0, Lcom/android/internal/widget/AbsActionBarView;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
@@ -166,7 +166,7 @@
 
     iget-object v3, p0, Lcom/android/internal/widget/AbsActionBarView;->mMenuView:Lcom/android/internal/view/menu/ActionMenuView;
 
-    invoke-virtual {v3, v6}, Lcom/android/internal/view/menu/ActionMenuView;->setAlpha(F)V
+    invoke-virtual {v3, v6}, Landroid/view/View;->setAlpha(F)V
 
     :cond_1
     const-string v3, "alpha"
@@ -184,7 +184,7 @@
 
     sget-object v3, Lcom/android/internal/widget/AbsActionBarView;->sAlphaInterpolator:Landroid/animation/TimeInterpolator;
 
-    invoke-virtual {v0, v3}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+    invoke-virtual {v0, v3}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
     iget-object v3, p0, Lcom/android/internal/widget/AbsActionBarView;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
@@ -220,7 +220,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v1, v3}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v1, v3}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     invoke-virtual {v1, v0}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
 
@@ -242,7 +242,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v0, v3}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v0, v3}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
 
@@ -265,7 +265,7 @@
 
     sget-object v3, Lcom/android/internal/widget/AbsActionBarView;->sAlphaInterpolator:Landroid/animation/TimeInterpolator;
 
-    invoke-virtual {v0, v3}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+    invoke-virtual {v0, v3}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
     iget-object v3, p0, Lcom/android/internal/widget/AbsActionBarView;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
@@ -301,7 +301,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v1, v3}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v1, v3}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     invoke-virtual {v1, v0}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
 
@@ -322,7 +322,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v0, v3}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v0, v3}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
 
@@ -361,7 +361,7 @@
     return v0
 
     :cond_0
-    invoke-virtual {p0}, Lcom/android/internal/widget/AbsActionBarView;->getVisibility()I
+    invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
 
     move-result v0
 
@@ -513,9 +513,9 @@
     .prologue
     const/4 v5, 0x0
 
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onConfigurationChanged(Landroid/content/res/Configuration;)V
+    invoke-super {p0, p1}, Landroid/view/View;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/AbsActionBarView;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -544,7 +544,7 @@
 
     if-eqz v1, :cond_0
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/AbsActionBarView;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -734,7 +734,7 @@
 
     invoke-direct {v0, p0}, Lcom/android/internal/widget/AbsActionBarView$1;-><init>(Lcom/android/internal/widget/AbsActionBarView;)V
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/widget/AbsActionBarView;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {p0, v0}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
     return-void
 .end method
@@ -757,7 +757,7 @@
     invoke-virtual {v0, v1}, Lcom/android/internal/view/menu/ActionMenuView;->setMaxItemHeight(I)V
 
     :cond_0
-    invoke-virtual {p0}, Lcom/android/internal/widget/AbsActionBarView;->requestLayout()V
+    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
 
     return-void
 .end method
@@ -797,7 +797,7 @@
     .parameter "visibility"
 
     .prologue
-    invoke-virtual {p0}, Lcom/android/internal/widget/AbsActionBarView;->getVisibility()I
+    invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
 
     move-result v0
 
@@ -812,7 +812,7 @@
     invoke-virtual {v0}, Landroid/animation/Animator;->end()V
 
     :cond_0
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->setVisibility(I)V
+    invoke-super {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
     :cond_1
     return-void

@@ -270,7 +270,7 @@
     .prologue
     invoke-direct {p0, p1}, Landroid/location/SettingInjectorService;->onHandleIntent(Landroid/content/Intent;)V
 
-    invoke-virtual {p0, p3}, Landroid/location/SettingInjectorService;->stopSelf(I)V
+    invoke-virtual {p0, p3}, Landroid/app/Service;->stopSelf(I)V
 
     const/4 v0, 0x2
 

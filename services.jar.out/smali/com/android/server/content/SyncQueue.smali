@@ -282,7 +282,7 @@
 
     iget v7, v0, Lcom/android/server/content/SyncStorageEngine$PendingOperation;->userId:I
 
-    invoke-virtual {v5, v6, v7}, Landroid/content/SyncAdaptersCache;->getServiceInfo(Ljava/lang/Object;I)Landroid/content/pm/RegisteredServicesCache$ServiceInfo;
+    invoke-virtual {v5, v6, v7}, Landroid/content/pm/RegisteredServicesCache;->getServiceInfo(Ljava/lang/Object;I)Landroid/content/pm/RegisteredServicesCache$ServiceInfo;
 
     move-result-object v23
 

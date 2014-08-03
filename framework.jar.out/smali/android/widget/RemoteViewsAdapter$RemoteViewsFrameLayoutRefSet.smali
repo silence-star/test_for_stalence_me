@@ -174,7 +174,7 @@
     check-cast v3, Ljava/util/LinkedList;
 
     .local v3, refs:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayout;>;"
-    invoke-virtual {v3}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v3}, Ljava/util/AbstractSequentialList;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 

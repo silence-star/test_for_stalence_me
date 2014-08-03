@@ -189,7 +189,7 @@
 
     iget-object v0, p0, Landroid/media/AsyncPlayer;->mThread:Landroid/media/AsyncPlayer$Thread;
 
-    invoke-virtual {v0}, Landroid/media/AsyncPlayer$Thread;->start()V
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
     :cond_0
     return-void

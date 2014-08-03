@@ -109,7 +109,7 @@
     .parameter "x1"
 
     .prologue
-    invoke-virtual {p0, p1}, Landroid/accounts/AccountManager$AmsTask;->setException(Ljava/lang/Throwable;)V
+    invoke-virtual {p0, p1}, Ljava/util/concurrent/FutureTask;->setException(Ljava/lang/Throwable;)V
 
     return-void
 .end method
@@ -129,7 +129,7 @@
     .prologue
     const/4 v4, 0x1
 
-    invoke-virtual {p0}, Landroid/accounts/AccountManager$AmsTask;->isDone()Z
+    invoke-virtual {p0}, Ljava/util/concurrent/FutureTask;->isDone()Z
 
     move-result v2
 
@@ -144,7 +144,7 @@
     if-nez p1, :cond_1
 
     :try_start_0
-    invoke-virtual {p0}, Landroid/accounts/AccountManager$AmsTask;->get()Ljava/lang/Object;
+    invoke-virtual {p0}, Ljava/util/concurrent/FutureTask;->get()Ljava/lang/Object;
 
     move-result-object v2
 
@@ -156,7 +156,7 @@
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_2
     .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_3
 
-    invoke-virtual {p0, v4}, Landroid/accounts/AccountManager$AmsTask;->cancel(Z)Z
+    invoke-virtual {p0, v4}, Ljava/util/concurrent/FutureTask;->cancel(Z)Z
 
     :goto_0
     return-object v2
@@ -167,7 +167,7 @@
 
     move-result-wide v2
 
-    invoke-virtual {p0, v2, v3, p2}, Landroid/accounts/AccountManager$AmsTask;->get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
+    invoke-virtual {p0, v2, v3, p2}, Ljava/util/concurrent/FutureTask;->get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -179,7 +179,7 @@
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_2
     .catch Ljava/util/concurrent/ExecutionException; {:try_start_1 .. :try_end_1} :catch_3
 
-    invoke-virtual {p0, v4}, Landroid/accounts/AccountManager$AmsTask;->cancel(Z)Z
+    invoke-virtual {p0, v4}, Ljava/util/concurrent/FutureTask;->cancel(Z)Z
 
     goto :goto_0
 
@@ -200,14 +200,14 @@
     :catchall_0
     move-exception v2
 
-    invoke-virtual {p0, v4}, Landroid/accounts/AccountManager$AmsTask;->cancel(Z)Z
+    invoke-virtual {p0, v4}, Ljava/util/concurrent/FutureTask;->cancel(Z)Z
 
     throw v2
 
     :catch_1
     move-exception v2
 
-    invoke-virtual {p0, v4}, Landroid/accounts/AccountManager$AmsTask;->cancel(Z)Z
+    invoke-virtual {p0, v4}, Ljava/util/concurrent/FutureTask;->cancel(Z)Z
 
     :goto_1
     new-instance v2, Landroid/accounts/OperationCanceledException;
@@ -219,7 +219,7 @@
     :catch_2
     move-exception v2
 
-    invoke-virtual {p0, v4}, Landroid/accounts/AccountManager$AmsTask;->cancel(Z)Z
+    invoke-virtual {p0, v4}, Ljava/util/concurrent/FutureTask;->cancel(Z)Z
 
     goto :goto_1
 
@@ -228,7 +228,7 @@
 
     .local v1, e:Ljava/util/concurrent/ExecutionException;
     :try_start_3
-    invoke-virtual {v1}, Ljava/util/concurrent/ExecutionException;->getCause()Ljava/lang/Throwable;
+    invoke-virtual {v1}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
 
     move-result-object v0
 
@@ -471,7 +471,7 @@
     move-exception v0
 
     .local v0, e:Landroid/os/RemoteException;
-    invoke-virtual {p0, v0}, Landroid/accounts/AccountManager$AmsTask;->setException(Ljava/lang/Throwable;)V
+    invoke-virtual {p0, v0}, Ljava/util/concurrent/FutureTask;->setException(Ljava/lang/Throwable;)V
 
     goto :goto_0
 .end method

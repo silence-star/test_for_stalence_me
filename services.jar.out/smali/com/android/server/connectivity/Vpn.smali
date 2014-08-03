@@ -88,7 +88,7 @@
 
     iput-object v0, p0, Lcom/android/server/connectivity/Vpn;->mObserver:Landroid/net/INetworkManagementEventObserver;
 
-    iput-object p1, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    iput-object p1, p0, Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
 
     iput-object p2, p0, Lcom/android/server/connectivity/Vpn;->mCallback:Lcom/android/server/ConnectivityService$VpnCallback;
 
@@ -125,7 +125,7 @@
 
     invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/server/connectivity/Vpn;->mUserIntentReceiver:Landroid/content/BroadcastReceiver;
 
@@ -211,7 +211,7 @@
     .parameter "x0"
 
     .prologue
-    iget-object v0, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
 
     return-object v0
 .end method
@@ -263,7 +263,7 @@
     .parameter "x0"
 
     .prologue
-    iget-object v0, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
 
     return-object v0
 .end method
@@ -273,7 +273,7 @@
     .parameter "x0"
 
     .prologue
-    iget-object v0, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
 
     return-object v0
 .end method
@@ -304,7 +304,7 @@
     .parameter "x0"
 
     .prologue
-    iget-object v0, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
 
     return-object v0
 .end method
@@ -314,7 +314,7 @@
     .parameter "x0"
 
     .prologue
-    iget-object v0, p0, Lcom/android/server/connectivity/Vpn;->mNetworkInfo:Landroid/net/NetworkInfo;
+    iget-object v0, p0, Landroid/net/BaseNetworkStateTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
 
     return-object v0
 .end method
@@ -324,7 +324,7 @@
     .parameter "x0"
 
     .prologue
-    iget-object v0, p0, Lcom/android/server/connectivity/Vpn;->mNetworkInfo:Landroid/net/NetworkInfo;
+    iget-object v0, p0, Landroid/net/BaseNetworkStateTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
 
     return-object v0
 .end method
@@ -500,7 +500,7 @@
 
     if-nez v10, :cond_3
 
-    iget-object v10, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    iget-object v10, p0, Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
 
     invoke-virtual {v10}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -527,7 +527,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v8}, Landroid/content/pm/ApplicationInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
+    invoke-virtual {v0, v8}, Landroid/content/pm/PackageItemInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
     move-result-object v10
 
@@ -536,7 +536,7 @@
     move-result-object v7
 
     .local v7, label:Ljava/lang/String;
-    invoke-virtual {v0, v8}, Landroid/content/pm/ApplicationInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0, v8}, Landroid/content/pm/PackageItemInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v6
 
@@ -556,7 +556,7 @@
 
     if-lez v10, :cond_1
 
-    iget-object v10, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    iget-object v10, p0, Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
 
     invoke-virtual {v10}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -569,7 +569,7 @@
     move-result v9
 
     .local v9, width:I
-    iget-object v10, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    iget-object v10, p0, Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
 
     invoke-virtual {v10}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -684,7 +684,7 @@
 
     .local v3, token:J
     :try_start_0
-    iget-object v5, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    iget-object v5, p0, Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
 
     invoke-virtual {v5}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -808,7 +808,7 @@
     :cond_1
     iput-object v3, p0, Lcom/android/server/connectivity/Vpn;->mStatusIntent:Landroid/app/PendingIntent;
 
-    iget-object v1, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
 
     const-string v2, "notification"
 
@@ -880,7 +880,7 @@
     monitor-enter p0
 
     :try_start_0
-    iget-object v3, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
 
     invoke-static {v3}, Landroid/os/UserManager;->get(Landroid/content/Context;)Landroid/os/UserManager;
 
@@ -946,7 +946,7 @@
     monitor-enter p0
 
     :try_start_0
-    iget-object v3, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
 
     invoke-static {v3}, Landroid/os/UserManager;->get(Landroid/content/Context;)Landroid/os/UserManager;
 
@@ -1089,7 +1089,7 @@
     return-void
 
     :cond_1
-    iget-object v4, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
 
     invoke-static {v4}, Lcom/android/internal/net/VpnConfig;->getIntentForStatusPanel(Landroid/content/Context;)Landroid/app/PendingIntent;
 
@@ -1097,7 +1097,7 @@
 
     iput-object v4, p0, Lcom/android/server/connectivity/Vpn;->mStatusIntent:Landroid/app/PendingIntent;
 
-    iget-object v4, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
 
     const-string v5, "notification"
 
@@ -1112,7 +1112,7 @@
 
     if-nez p1, :cond_2
 
-    iget-object v4, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
 
     const v5, 0x10404bb
 
@@ -1128,7 +1128,7 @@
 
     if-nez v4, :cond_3
 
-    iget-object v4, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
 
     const v5, 0x10404bd
 
@@ -1140,7 +1140,7 @@
     :goto_2
     new-instance v4, Landroid/app/Notification$Builder;
 
-    iget-object v5, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    iget-object v5, p0, Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
 
     invoke-direct {v4, v5}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
 
@@ -1193,7 +1193,7 @@
     .end local v2           #text:Ljava/lang/String;
     .end local v3           #title:Ljava/lang/String;
     :cond_2
-    iget-object v4, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
 
     const v5, 0x10404bc
 
@@ -1209,7 +1209,7 @@
 
     .restart local v3       #title:Ljava/lang/String;
     :cond_3
-    iget-object v4, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
 
     const v5, 0x10404be
 
@@ -1260,7 +1260,7 @@
 
     iget-object v0, p0, Lcom/android/server/connectivity/Vpn;->mLegacyVpnRunner:Lcom/android/server/connectivity/Vpn$LegacyVpnRunner;
 
-    invoke-virtual {v0}, Lcom/android/server/connectivity/Vpn$LegacyVpnRunner;->start()V
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -1314,7 +1314,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-object v0, p0, Lcom/android/server/connectivity/Vpn;->mNetworkInfo:Landroid/net/NetworkInfo;
+    iget-object v0, p0, Landroid/net/BaseNetworkStateTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
 
     const/4 v1, 0x0
 
@@ -1324,7 +1324,7 @@
 
     new-instance v1, Landroid/net/NetworkInfo;
 
-    iget-object v2, p0, Lcom/android/server/connectivity/Vpn;->mNetworkInfo:Landroid/net/NetworkInfo;
+    iget-object v2, p0, Landroid/net/BaseNetworkStateTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
 
     invoke-direct {v1, v2}, Landroid/net/NetworkInfo;-><init>(Landroid/net/NetworkInfo;)V
 
@@ -1345,7 +1345,7 @@
     :try_start_0
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
 
     move-object/from16 v19, v0
 
@@ -1356,7 +1356,7 @@
     .local v13, mgr:Landroid/os/UserManager;
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
 
     move-object/from16 v19, v0
 
@@ -1886,7 +1886,7 @@
     .local v7, connection:Lcom/android/server/connectivity/Vpn$Connection;
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
 
     move-object/from16 v19, v0
 
@@ -1955,7 +1955,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
 
     move-object/from16 v19, v0
 
@@ -2411,7 +2411,7 @@
 
     iput-object v1, v0, Lcom/android/internal/net/LegacyVpnInfo;->key:Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/android/server/connectivity/Vpn;->mNetworkInfo:Landroid/net/NetworkInfo;
+    iget-object v1, p0, Landroid/net/BaseNetworkStateTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
 
     invoke-static {v1}, Lcom/android/internal/net/LegacyVpnInfo;->stateFromNetworkInfo(Landroid/net/NetworkInfo;)I
 
@@ -2419,7 +2419,7 @@
 
     iput v1, v0, Lcom/android/internal/net/LegacyVpnInfo;->state:I
 
-    iget-object v1, p0, Lcom/android/server/connectivity/Vpn;->mNetworkInfo:Landroid/net/NetworkInfo;
+    iget-object v1, p0, Landroid/net/BaseNetworkStateTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
 
     invoke-virtual {v1}, Landroid/net/NetworkInfo;->isConnected()Z
 
@@ -2685,7 +2685,7 @@
 
     :goto_2
     :try_start_5
-    iget-object v7, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    iget-object v7, p0, Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
 
     iget-object v8, p0, Lcom/android/server/connectivity/Vpn;->mConnection:Lcom/android/server/connectivity/Vpn$Connection;
 
@@ -2798,7 +2798,7 @@
     .end annotation
 
     .prologue
-    iget-object v4, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Landroid/net/BaseNetworkStateTracker;->mContext:Landroid/content/Context;
 
     invoke-virtual {v4}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 

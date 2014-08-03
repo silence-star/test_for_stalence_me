@@ -481,11 +481,11 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_miui
+    if-eqz v0, :cond_0
 
     return-object v0
 
-    :cond_miui
+    :cond_0
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
@@ -513,7 +513,7 @@
     check-cast v0, Landroid/view/ViewConfiguration;
 
     .local v0, configuration:Landroid/view/ViewConfiguration;
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     new-instance v0, Landroid/view/ViewConfiguration;
 
@@ -525,7 +525,7 @@
 
     invoke-virtual {v3, v1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    :cond_0
+    :cond_1
     return-object v0
 .end method
 

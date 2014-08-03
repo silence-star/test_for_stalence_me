@@ -77,7 +77,7 @@
 
     const/4 v2, 0x3
 
-    invoke-virtual {v1, v2}, Lcom/android/server/MountService$ObbActionHandler;->sendEmptyMessage(I)Z
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     invoke-virtual {p0}, Lcom/android/server/MountService$ObbAction;->handleError()V
 
@@ -96,7 +96,7 @@
 
     const/4 v2, 0x3
 
-    invoke-virtual {v1, v2}, Lcom/android/server/MountService$ObbActionHandler;->sendEmptyMessage(I)Z
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
@@ -116,7 +116,7 @@
 
     const/4 v2, 0x4
 
-    invoke-virtual {v1, v2}, Lcom/android/server/MountService$ObbActionHandler;->sendEmptyMessage(I)Z
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     goto :goto_0
 
@@ -134,7 +134,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v3}, Lcom/android/server/MountService$ObbActionHandler;->sendEmptyMessage(I)Z
+    invoke-virtual {v1, v3}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     goto :goto_0
 .end method

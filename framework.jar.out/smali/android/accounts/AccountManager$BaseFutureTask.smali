@@ -71,7 +71,7 @@
     .parameter "x1"
 
     .prologue
-    invoke-virtual {p0, p1}, Landroid/accounts/AccountManager$BaseFutureTask;->set(Ljava/lang/Object;)V
+    invoke-virtual {p0, p1}, Ljava/util/concurrent/FutureTask;->set(Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -82,7 +82,7 @@
     .parameter "x1"
 
     .prologue
-    invoke-virtual {p0, p1}, Landroid/accounts/AccountManager$BaseFutureTask;->setException(Ljava/lang/Throwable;)V
+    invoke-virtual {p0, p1}, Ljava/util/concurrent/FutureTask;->setException(Ljava/lang/Throwable;)V
 
     return-void
 .end method
@@ -160,7 +160,7 @@
     move-exception v0
 
     .local v0, e:Landroid/os/RemoteException;
-    invoke-virtual {p0, v0}, Landroid/accounts/AccountManager$BaseFutureTask;->setException(Ljava/lang/Throwable;)V
+    invoke-virtual {p0, v0}, Ljava/util/concurrent/FutureTask;->setException(Ljava/lang/Throwable;)V
 
     goto :goto_0
 .end method

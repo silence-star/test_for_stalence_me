@@ -44,7 +44,7 @@
 
     const v0, 0x10900b7
 
-    invoke-virtual {p0, v0}, Landroid/app/TabActivity;->setContentView(I)V
+    invoke-virtual {p0, v0}, Landroid/app/Activity;->setContentView(I)V
 
     :cond_0
     return-void
@@ -82,7 +82,7 @@
     .parameter "title"
 
     .prologue
-    invoke-virtual {p0}, Landroid/app/TabActivity;->getLocalActivityManager()Landroid/app/LocalActivityManager;
+    invoke-virtual {p0}, Landroid/app/ActivityGroup;->getLocalActivityManager()Landroid/app/LocalActivityManager;
 
     move-result-object v1
 
@@ -118,11 +118,11 @@
     .locals 2
 
     .prologue
-    invoke-super {p0}, Landroid/app/ActivityGroup;->onContentChanged()V
+    invoke-super {p0}, Landroid/app/Activity;->onContentChanged()V
 
     const v0, 0x1020012
 
-    invoke-virtual {p0, v0}, Landroid/app/TabActivity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -145,7 +145,7 @@
     :cond_0
     iget-object v0, p0, Landroid/app/TabActivity;->mTabHost:Landroid/widget/TabHost;
 
-    invoke-virtual {p0}, Landroid/app/TabActivity;->getLocalActivityManager()Landroid/app/LocalActivityManager;
+    invoke-virtual {p0}, Landroid/app/ActivityGroup;->getLocalActivityManager()Landroid/app/LocalActivityManager;
 
     move-result-object v1
 
@@ -159,7 +159,7 @@
     .parameter "icicle"
 
     .prologue
-    invoke-super {p0, p1}, Landroid/app/ActivityGroup;->onPostCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Landroid/app/Activity;->onPostCreate(Landroid/os/Bundle;)V
 
     invoke-direct {p0}, Landroid/app/TabActivity;->ensureTabHost()V
 
@@ -188,7 +188,7 @@
     .parameter "state"
 
     .prologue
-    invoke-super {p0, p1}, Landroid/app/ActivityGroup;->onRestoreInstanceState(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Landroid/app/Activity;->onRestoreInstanceState(Landroid/os/Bundle;)V
 
     invoke-direct {p0}, Landroid/app/TabActivity;->ensureTabHost()V
 

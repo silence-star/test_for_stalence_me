@@ -39,7 +39,7 @@
     .prologue
     const/4 v5, 0x0
 
-    invoke-virtual {p0}, Lcom/android/server/RecognitionManagerService$MyPackageMonitor;->getChangingUserId()I
+    invoke-virtual {p0}, Lcom/android/internal/content/PackageMonitor;->getChangingUserId()I
 
     move-result v2
 
@@ -53,7 +53,7 @@
     .local v1, comp:Landroid/content/ComponentName;
     if-nez v1, :cond_1
 
-    invoke-virtual {p0}, Lcom/android/server/RecognitionManagerService$MyPackageMonitor;->anyPackagesAppearing()Z
+    invoke-virtual {p0}, Lcom/android/internal/content/PackageMonitor;->anyPackagesAppearing()Z
 
     move-result v3
 
@@ -80,7 +80,7 @@
 
     move-result-object v3
 
-    invoke-virtual {p0, v3}, Lcom/android/server/RecognitionManagerService$MyPackageMonitor;->isPackageDisappearing(Ljava/lang/String;)I
+    invoke-virtual {p0, v3}, Lcom/android/internal/content/PackageMonitor;->isPackageDisappearing(Ljava/lang/String;)I
 
     move-result v0
 
@@ -111,7 +111,7 @@
 
     move-result-object v3
 
-    invoke-virtual {p0, v3}, Lcom/android/server/RecognitionManagerService$MyPackageMonitor;->isPackageModified(Ljava/lang/String;)Z
+    invoke-virtual {p0, v3}, Lcom/android/internal/content/PackageMonitor;->isPackageModified(Ljava/lang/String;)Z
 
     move-result v3
 

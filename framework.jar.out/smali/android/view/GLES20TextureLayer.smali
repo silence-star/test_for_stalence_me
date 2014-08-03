@@ -26,9 +26,9 @@
 
     move-result v1
 
-    iput v1, p0, Landroid/view/GLES20TextureLayer;->mLayer:I
+    iput v1, p0, Landroid/view/GLES20Layer;->mLayer:I
 
-    iget v1, p0, Landroid/view/GLES20TextureLayer;->mLayer:I
+    iget v1, p0, Landroid/view/GLES20Layer;->mLayer:I
 
     if-eqz v1, :cond_0
 
@@ -40,11 +40,11 @@
 
     new-instance v1, Landroid/view/GLES20Layer$Finalizer;
 
-    iget v2, p0, Landroid/view/GLES20TextureLayer;->mLayer:I
+    iget v2, p0, Landroid/view/GLES20Layer;->mLayer:I
 
     invoke-direct {v1, v2}, Landroid/view/GLES20Layer$Finalizer;-><init>(I)V
 
-    iput-object v1, p0, Landroid/view/GLES20TextureLayer;->mFinalizer:Landroid/view/GLES20Layer$Finalizer;
+    iput-object v1, p0, Landroid/view/GLES20Layer;->mFinalizer:Landroid/view/GLES20Layer$Finalizer;
 
     :goto_0
     return-void
@@ -52,7 +52,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    iput-object v1, p0, Landroid/view/GLES20TextureLayer;->mFinalizer:Landroid/view/GLES20Layer$Finalizer;
+    iput-object v1, p0, Landroid/view/GLES20Layer;->mFinalizer:Landroid/view/GLES20Layer$Finalizer;
 
     goto :goto_0
 .end method
@@ -102,7 +102,7 @@
     .locals 1
 
     .prologue
-    iget v0, p0, Landroid/view/GLES20TextureLayer;->mLayer:I
+    iget v0, p0, Landroid/view/GLES20Layer;->mLayer:I
 
     if-eqz v0, :cond_0
 
@@ -187,7 +187,7 @@
     .parameter "matrix"
 
     .prologue
-    iget v0, p0, Landroid/view/GLES20TextureLayer;->mLayer:I
+    iget v0, p0, Landroid/view/GLES20Layer;->mLayer:I
 
     iget v1, p1, Landroid/graphics/Matrix;->native_instance:I
 
@@ -224,9 +224,9 @@
     .parameter "isOpaque"
 
     .prologue
-    invoke-super {p0, p1, p2, p3}, Landroid/view/GLES20Layer;->update(IIZ)V
+    invoke-super {p0, p1, p2, p3}, Landroid/view/HardwareLayer;->update(IIZ)V
 
-    iget v0, p0, Landroid/view/GLES20TextureLayer;->mLayer:I
+    iget v0, p0, Landroid/view/GLES20Layer;->mLayer:I
 
     iget-object v1, p0, Landroid/view/GLES20TextureLayer;->mSurface:Landroid/graphics/SurfaceTexture;
 

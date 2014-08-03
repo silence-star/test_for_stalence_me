@@ -109,7 +109,7 @@
 
     iget-object v3, p0, Landroid/media/audiofx/BassBoost$BaseParameterListener;->this$0:Landroid/media/audiofx/BassBoost;
 
-    invoke-virtual {v3, p3, v6}, Landroid/media/audiofx/BassBoost;->byteArrayToInt([BI)I
+    invoke-virtual {v3, p3, v6}, Landroid/media/audiofx/AudioEffect;->byteArrayToInt([BI)I
 
     move-result v1
 
@@ -122,7 +122,7 @@
 
     iget-object v3, p0, Landroid/media/audiofx/BassBoost$BaseParameterListener;->this$0:Landroid/media/audiofx/BassBoost;
 
-    invoke-virtual {v3, p4, v6}, Landroid/media/audiofx/BassBoost;->byteArrayToShort([BI)S
+    invoke-virtual {v3, p4, v6}, Landroid/media/audiofx/AudioEffect;->byteArrayToShort([BI)S
 
     move-result v2
 

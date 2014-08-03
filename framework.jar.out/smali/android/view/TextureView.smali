@@ -225,11 +225,11 @@
 
     iget-object v0, p0, Landroid/view/TextureView;->mLayer:Landroid/view/HardwareLayer;
 
-    invoke-virtual {p0}, Landroid/view/TextureView;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v1
 
-    invoke-virtual {p0}, Landroid/view/TextureView;->getHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v2
 
@@ -353,7 +353,7 @@
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
-    iput-object v0, p0, Landroid/view/TextureView;->mLayerPaint:Landroid/graphics/Paint;
+    iput-object v0, p0, Landroid/view/View;->mLayerPaint:Landroid/graphics/Paint;
 
     return-void
 .end method
@@ -414,7 +414,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {p0}, Landroid/view/TextureView;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
 
@@ -446,11 +446,11 @@
 
     invoke-direct {p0}, Landroid/view/TextureView;->destroySurface()V
 
-    invoke-virtual {p0}, Landroid/view/TextureView;->invalidateParentCaches()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidateParentCaches()V
 
     const/4 v0, 0x1
 
-    invoke-virtual {p0, v0}, Landroid/view/TextureView;->invalidate(Z)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->invalidate(Z)V
 
     return-void
 .end method
@@ -470,7 +470,7 @@
     .parameter "canvas"
 
     .prologue
-    iget v0, p0, Landroid/view/TextureView;->mPrivateFlags:I
+    iget v0, p0, Landroid/view/View;->mPrivateFlags:I
 
     const v1, -0x600001
 
@@ -478,7 +478,7 @@
 
     or-int/lit8 v0, v0, 0x20
 
-    iput v0, p0, Landroid/view/TextureView;->mPrivateFlags:I
+    iput v0, p0, Landroid/view/View;->mPrivateFlags:I
 
     invoke-direct {p0}, Landroid/view/TextureView;->applyUpdate()V
 
@@ -491,11 +491,11 @@
     .locals 2
 
     .prologue
-    invoke-virtual {p0}, Landroid/view/TextureView;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v0
 
-    invoke-virtual {p0}, Landroid/view/TextureView;->getHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v1
 
@@ -522,7 +522,7 @@
 
     if-lez p2, :cond_0
 
-    invoke-virtual {p0}, Landroid/view/TextureView;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -562,7 +562,7 @@
 
     if-eqz v1, :cond_2
 
-    iget-object v0, p0, Landroid/view/TextureView;->mAttachInfo:Landroid/view/View$AttachInfo;
+    iget-object v0, p0, Landroid/view/View;->mAttachInfo:Landroid/view/View$AttachInfo;
 
     .local v0, info:Landroid/view/View$AttachInfo;
     if-eqz v0, :cond_0
@@ -628,31 +628,31 @@
     .locals 4
 
     .prologue
-    iget v0, p0, Landroid/view/TextureView;->mPrivateFlags:I
+    iget v0, p0, Landroid/view/View;->mPrivateFlags:I
 
     const v1, 0x8020
 
     or-int/2addr v0, v1
 
-    iput v0, p0, Landroid/view/TextureView;->mPrivateFlags:I
+    iput v0, p0, Landroid/view/View;->mPrivateFlags:I
 
-    iget v0, p0, Landroid/view/TextureView;->mPrivateFlags:I
+    iget v0, p0, Landroid/view/View;->mPrivateFlags:I
 
     const v1, -0x600001
 
     and-int/2addr v0, v1
 
-    iput v0, p0, Landroid/view/TextureView;->mPrivateFlags:I
+    iput v0, p0, Landroid/view/View;->mPrivateFlags:I
 
     iget-object v0, p0, Landroid/view/TextureView;->mLayer:Landroid/view/HardwareLayer;
 
     if-nez v0, :cond_4
 
-    iget-object v0, p0, Landroid/view/TextureView;->mAttachInfo:Landroid/view/View$AttachInfo;
+    iget-object v0, p0, Landroid/view/View;->mAttachInfo:Landroid/view/View$AttachInfo;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Landroid/view/TextureView;->mAttachInfo:Landroid/view/View$AttachInfo;
+    iget-object v0, p0, Landroid/view/View;->mAttachInfo:Landroid/view/View$AttachInfo;
 
     iget-object v0, v0, Landroid/view/View$AttachInfo;->mHardwareRenderer:Landroid/view/HardwareRenderer;
 
@@ -665,7 +665,7 @@
     return-object v0
 
     :cond_1
-    iget-object v0, p0, Landroid/view/TextureView;->mAttachInfo:Landroid/view/View$AttachInfo;
+    iget-object v0, p0, Landroid/view/View;->mAttachInfo:Landroid/view/View$AttachInfo;
 
     iget-object v0, v0, Landroid/view/View$AttachInfo;->mHardwareRenderer:Landroid/view/HardwareRenderer;
 
@@ -681,7 +681,7 @@
 
     if-nez v0, :cond_2
 
-    iget-object v0, p0, Landroid/view/TextureView;->mAttachInfo:Landroid/view/View$AttachInfo;
+    iget-object v0, p0, Landroid/view/View;->mAttachInfo:Landroid/view/View$AttachInfo;
 
     iget-object v0, v0, Landroid/view/View$AttachInfo;->mHardwareRenderer:Landroid/view/HardwareRenderer;
 
@@ -696,11 +696,11 @@
     :cond_2
     iget-object v0, p0, Landroid/view/TextureView;->mSurface:Landroid/graphics/SurfaceTexture;
 
-    invoke-virtual {p0}, Landroid/view/TextureView;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v1
 
-    invoke-virtual {p0}, Landroid/view/TextureView;->getHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v2
 
@@ -734,11 +734,11 @@
 
     iget-object v1, p0, Landroid/view/TextureView;->mSurface:Landroid/graphics/SurfaceTexture;
 
-    invoke-virtual {p0}, Landroid/view/TextureView;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v2
 
-    invoke-virtual {p0}, Landroid/view/TextureView;->getHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v3
 
@@ -747,7 +747,7 @@
     :cond_3
     iget-object v0, p0, Landroid/view/TextureView;->mLayer:Landroid/view/HardwareLayer;
 
-    iget-object v1, p0, Landroid/view/TextureView;->mLayerPaint:Landroid/graphics/Paint;
+    iget-object v1, p0, Landroid/view/View;->mLayerPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, v1}, Landroid/view/HardwareLayer;->setLayerPaint(Landroid/graphics/Paint;)V
 
@@ -766,7 +766,7 @@
 
     iput-boolean v0, p0, Landroid/view/TextureView;->mMatrixChanged:Z
 
-    iget-object v0, p0, Landroid/view/TextureView;->mAttachInfo:Landroid/view/View$AttachInfo;
+    iget-object v0, p0, Landroid/view/View;->mAttachInfo:Landroid/view/View$AttachInfo;
 
     iget-object v0, v0, Landroid/view/View$AttachInfo;->mHardwareRenderer:Landroid/view/HardwareRenderer;
 
@@ -778,11 +778,11 @@
 
     iget-object v0, p0, Landroid/view/TextureView;->mSurface:Landroid/graphics/SurfaceTexture;
 
-    invoke-virtual {p0}, Landroid/view/TextureView;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v1
 
-    invoke-virtual {p0}, Landroid/view/TextureView;->getHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v2
 
@@ -977,7 +977,7 @@
     .prologue
     invoke-super {p0}, Landroid/view/View;->onAttachedToWindow()V
 
-    invoke-virtual {p0}, Landroid/view/TextureView;->isHardwareAccelerated()Z
+    invoke-virtual {p0}, Landroid/view/View;->isHardwareAccelerated()Z
 
     move-result v0
 
@@ -996,7 +996,7 @@
 
     const/4 v0, 0x1
 
-    invoke-virtual {p0, v0}, Landroid/view/TextureView;->invalidate(Z)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->invalidate(Z)V
 
     const/4 v0, 0x0
 
@@ -1020,7 +1020,7 @@
 
     invoke-direct {v1, p0}, Landroid/view/TextureView$1;-><init>(Landroid/view/TextureView;)V
 
-    invoke-virtual {p0, v1}, Landroid/view/TextureView;->executeHardwareAction(Ljava/lang/Runnable;)Z
+    invoke-virtual {p0, v1}, Landroid/view/View;->executeHardwareAction(Ljava/lang/Runnable;)Z
 
     move-result v0
 
@@ -1078,11 +1078,11 @@
 
     iget-object v0, p0, Landroid/view/TextureView;->mSurface:Landroid/graphics/SurfaceTexture;
 
-    invoke-virtual {p0}, Landroid/view/TextureView;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v1
 
-    invoke-virtual {p0}, Landroid/view/TextureView;->getHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v2
 
@@ -1098,11 +1098,11 @@
 
     iget-object v1, p0, Landroid/view/TextureView;->mSurface:Landroid/graphics/SurfaceTexture;
 
-    invoke-virtual {p0}, Landroid/view/TextureView;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v2
 
-    invoke-virtual {p0}, Landroid/view/TextureView;->getHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v3
 
@@ -1154,7 +1154,7 @@
     .parameter "paint"
 
     .prologue
-    iget-object v0, p0, Landroid/view/TextureView;->mLayerPaint:Landroid/graphics/Paint;
+    iget-object v0, p0, Landroid/view/View;->mLayerPaint:Landroid/graphics/Paint;
 
     if-eq p2, v0, :cond_1
 
@@ -1166,9 +1166,9 @@
     invoke-direct {p2}, Landroid/graphics/Paint;-><init>()V
 
     :cond_0
-    iput-object p2, p0, Landroid/view/TextureView;->mLayerPaint:Landroid/graphics/Paint;
+    iput-object p2, p0, Landroid/view/View;->mLayerPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {p0}, Landroid/view/TextureView;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_1
     return-void
@@ -1226,7 +1226,7 @@
 
     iput-boolean v0, p0, Landroid/view/TextureView;->mUpdateSurface:Z
 
-    invoke-virtual {p0}, Landroid/view/TextureView;->invalidateParentIfNeeded()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidateParentIfNeeded()V
 
     return-void
 .end method
@@ -1254,7 +1254,7 @@
 
     iput-boolean v0, p0, Landroid/view/TextureView;->mMatrixChanged:Z
 
-    invoke-virtual {p0}, Landroid/view/TextureView;->invalidateParentIfNeeded()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidateParentIfNeeded()V
 
     return-void
 .end method

@@ -42,11 +42,11 @@
     .prologue
     iget-object v2, p0, Lnubia/fancydrawable/TimeDrawable$1;->this$0:Lnubia/fancydrawable/TimeDrawable;
 
-    invoke-virtual {v2}, Lnubia/fancydrawable/TimeDrawable;->invalidateSelf()V
+    invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
     iget-object v2, p0, Lnubia/fancydrawable/TimeDrawable$1;->this$0:Lnubia/fancydrawable/TimeDrawable;
 
-    iget-object v2, v2, Lnubia/fancydrawable/TimeDrawable;->mHandler:Landroid/os/Handler;
+    iget-object v2, v2, Lnubia/fancydrawable/FancyDrawable;->mHandler:Landroid/os/Handler;
 
     if-eqz v2, :cond_0
 
@@ -95,7 +95,7 @@
     :goto_0
     iget-object v2, p0, Lnubia/fancydrawable/TimeDrawable$1;->this$0:Lnubia/fancydrawable/TimeDrawable;
 
-    iget-object v2, v2, Lnubia/fancydrawable/TimeDrawable;->mHandler:Landroid/os/Handler;
+    iget-object v2, v2, Lnubia/fancydrawable/FancyDrawable;->mHandler:Landroid/os/Handler;
 
     iget-object v3, p0, Lnubia/fancydrawable/TimeDrawable$1;->this$0:Lnubia/fancydrawable/TimeDrawable;
 

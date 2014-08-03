@@ -2210,7 +2210,7 @@
 
     sget-object v12, Ljava/net/Proxy$Type;->HTTP:Ljava/net/Proxy$Type;
 
-    invoke-virtual {v11, v12}, Ljava/net/Proxy$Type;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v11, v12}, Ljava/lang/Enum;->equals(Ljava/lang/Object;)Z
 
     move-result v11
 

@@ -288,7 +288,7 @@
     move-exception v1
 
     .restart local v1       #e:Ljava/lang/Exception;
-    invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto/16 :goto_0
 
@@ -297,7 +297,7 @@
     move-exception v1
 
     .restart local v1       #e:Ljava/lang/Exception;
-    invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto/16 :goto_1
 
@@ -306,7 +306,7 @@
     move-exception v1
 
     .restart local v1       #e:Ljava/lang/Exception;
-    invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto/16 :goto_2
 
@@ -315,7 +315,7 @@
     move-exception v1
 
     .restart local v1       #e:Ljava/lang/Exception;
-    invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto/16 :goto_3
 
@@ -324,7 +324,7 @@
     move-exception v1
 
     .restart local v1       #e:Ljava/lang/Exception;
-    invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_4
 
@@ -333,7 +333,7 @@
     move-exception v1
 
     .restart local v1       #e:Ljava/lang/Exception;
-    invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_5
 
@@ -342,7 +342,7 @@
     move-exception v1
 
     .restart local v1       #e:Ljava/lang/Exception;
-    invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_6
 .end method

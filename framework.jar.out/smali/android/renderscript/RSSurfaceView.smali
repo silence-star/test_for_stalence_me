@@ -42,7 +42,7 @@
     .locals 1
 
     .prologue
-    invoke-virtual {p0}, Landroid/renderscript/RSSurfaceView;->getHolder()Landroid/view/SurfaceHolder;
+    invoke-virtual {p0}, Landroid/view/SurfaceView;->getHolder()Landroid/view/SurfaceHolder;
 
     move-result-object v0
 
@@ -61,7 +61,7 @@
     .prologue
     new-instance v0, Landroid/renderscript/RenderScriptGL;
 
-    invoke-virtual {p0}, Landroid/renderscript/RSSurfaceView;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -82,7 +82,7 @@
     :try_start_0
     iget-object v0, p0, Landroid/renderscript/RSSurfaceView;->mRS:Landroid/renderscript/RenderScriptGL;
 
-    invoke-virtual {v0}, Landroid/renderscript/RenderScriptGL;->destroy()V
+    invoke-virtual {v0}, Landroid/renderscript/RenderScript;->destroy()V
 
     const/4 v0, 0x0
 

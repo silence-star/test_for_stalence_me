@@ -48,6 +48,8 @@
 
     move-result v1
 
+    const/4 v1, 0x0
+
     :goto_0
     if-eqz v1, :cond_0
 
@@ -60,7 +62,7 @@
     move-exception v0
 
     .local v0, e:Landroid/os/RemoteException;
-    invoke-virtual {v0}, Landroid/os/RemoteException;->printStackTrace()V
+    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_0
 
@@ -110,6 +112,8 @@
 
     move-result v1
 
+    const/4 v1, 0x0
+
     :goto_0
     if-eqz v1, :cond_0
 
@@ -120,7 +124,7 @@
     move-exception v0
 
     .local v0, e:Landroid/os/RemoteException;
-    invoke-virtual {v0}, Landroid/os/RemoteException;->printStackTrace()V
+    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_0
 

@@ -69,7 +69,7 @@
 
     iget-object v8, p0, Landroid/widget/TabHost$LabelAndIconIndicatorStrategy;->this$0:Landroid/widget/TabHost;
 
-    invoke-virtual {v8}, Landroid/widget/TabHost;->getContext()Landroid/content/Context;
+    invoke-virtual {v8}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -120,7 +120,7 @@
     check-cast v3, Landroid/widget/ImageView;
 
     .local v3, iconView:Landroid/widget/ImageView;
-    invoke-virtual {v3}, Landroid/widget/ImageView;->getVisibility()I
+    invoke-virtual {v3}, Landroid/view/View;->getVisibility()I
 
     move-result v8
 

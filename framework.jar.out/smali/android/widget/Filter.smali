@@ -162,7 +162,7 @@
     invoke-direct {v4, v7, v8}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;I)V
 
     .local v4, thread:Landroid/os/HandlerThread;
-    invoke-virtual {v4}, Landroid/os/HandlerThread;->start()V
+    invoke-virtual {v4}, Ljava/lang/Thread;->start()V
 
     new-instance v7, Landroid/widget/Filter$RequestHandler;
 

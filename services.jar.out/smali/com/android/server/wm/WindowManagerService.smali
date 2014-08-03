@@ -3,10 +3,10 @@
 .source "WindowManagerService.java"
 
 # interfaces
-.implements Lcom/android/server/Watchdog$Monitor;
-.implements Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
-.implements Lcom/android/server/display/DisplayManagerService$WindowManagerFuncs;
 .implements Landroid/hardware/display/DisplayManager$DisplayListener;
+.implements Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
+.implements Lcom/android/server/Watchdog$Monitor;
+.implements Lcom/android/server/display/DisplayManagerService$WindowManagerFuncs;
 
 
 # annotations
@@ -1563,7 +1563,7 @@
     move-result-object v28
 
     .local v28, windows:Lcom/android/server/wm/WindowList;
-    invoke-virtual/range {v28 .. v28}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual/range {v28 .. v28}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
@@ -1580,12 +1580,12 @@
     const/16 v22, 0x0
 
     .local v22, tokenWindowsPos:I
-    invoke-virtual/range {v21 .. v21}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual/range {v21 .. v21}, Ljava/util/ArrayList;->size()I
 
     move-result v27
 
     .local v27, windowListPos:I
-    invoke-virtual/range {v21 .. v21}, Lcom/android/server/wm/WindowList;->isEmpty()Z
+    invoke-virtual/range {v21 .. v21}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v29
 
@@ -1617,7 +1617,7 @@
 
     move/from16 v1, v29
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v12
 
@@ -1667,7 +1667,7 @@
 
     move/from16 v1, v29
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v11
 
@@ -1720,7 +1720,7 @@
 
     move-object/from16 v2, p1
 
-    invoke-virtual {v0, v1, v2}, Lcom/android/server/wm/WindowList;->add(ILjava/lang/Object;)V
+    invoke-virtual {v0, v1, v2}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     if-gez v14, :cond_2
 
@@ -1740,7 +1740,7 @@
     :cond_2
     move-object/from16 v0, v28
 
-    invoke-virtual {v0, v14}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v14}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v29
 
@@ -1808,7 +1808,7 @@
     move-object/from16 v24, v0
 
     .local v24, tokens:Lcom/android/server/wm/AppTokenList;
-    invoke-virtual/range {v24 .. v24}, Lcom/android/server/wm/AppTokenList;->size()I
+    invoke-virtual/range {v24 .. v24}, Ljava/util/ArrayList;->size()I
 
     move-result v29
 
@@ -1821,7 +1821,7 @@
 
     move/from16 v1, v20
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/AppTokenList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v16
 
@@ -1858,7 +1858,7 @@
 
     move-object/from16 v29, v0
 
-    invoke-virtual/range {v29 .. v29}, Lcom/android/server/wm/AppTokenList;->size()I
+    invoke-virtual/range {v29 .. v29}, Ljava/util/ArrayList;->size()I
 
     move-result v29
 
@@ -1901,7 +1901,7 @@
 
     move-result-object v21
 
-    invoke-virtual/range {v21 .. v21}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual/range {v21 .. v21}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
@@ -1914,7 +1914,7 @@
 
     move/from16 v1, v29
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v7
 
@@ -1960,13 +1960,13 @@
 
     move-object/from16 v0, v16
 
-    iget-boolean v0, v0, Lcom/android/server/wm/AppWindowToken;->sendingToBottom:Z
+    iget-boolean v0, v0, Lcom/android/server/wm/WindowToken;->sendingToBottom:Z
 
     move/from16 v29, v0
 
     if-nez v29, :cond_8
 
-    invoke-virtual/range {v21 .. v21}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual/range {v21 .. v21}, Ljava/util/ArrayList;->size()I
 
     move-result v29
 
@@ -1978,7 +1978,7 @@
 
     move/from16 v1, v29
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v15
 
@@ -2028,7 +2028,7 @@
 
     move/from16 v1, v20
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/AppTokenList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v16
 
@@ -2043,7 +2043,7 @@
 
     move-result-object v21
 
-    invoke-virtual/range {v21 .. v21}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual/range {v21 .. v21}, Ljava/util/ArrayList;->size()I
 
     move-result v5
 
@@ -2056,7 +2056,7 @@
 
     move/from16 v1, v29
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v15
 
@@ -2100,7 +2100,7 @@
 
     move-object/from16 v29, v0
 
-    invoke-virtual/range {v29 .. v29}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual/range {v29 .. v29}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
@@ -2113,7 +2113,7 @@
 
     add-int/lit8 v30, v4, -0x1
 
-    invoke-virtual/range {v29 .. v30}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual/range {v29 .. v30}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v25
 
@@ -2173,7 +2173,7 @@
 
     move-object/from16 v0, v28
 
-    invoke-virtual {v0, v10}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v26
 
@@ -2196,7 +2196,7 @@
 
     move-object/from16 v1, p1
 
-    invoke-virtual {v0, v10, v1}, Lcom/android/server/wm/WindowList;->add(ILjava/lang/Object;)V
+    invoke-virtual {v0, v10, v1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     const/16 v29, 0x1
 
@@ -2241,7 +2241,7 @@
     move-result-object v7
 
     .local v7, tokenWindowList:Lcom/android/server/wm/WindowList;
-    invoke-virtual {v7}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
@@ -2261,7 +2261,7 @@
     :goto_0
     if-ge v3, v0, :cond_3
 
-    invoke-virtual {v7, v3}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v7, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
@@ -2286,7 +2286,7 @@
 
     iget-object v11, v6, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v11, v3, p1}, Lcom/android/server/wm/WindowList;->add(ILjava/lang/Object;)V
+    invoke-virtual {v11, v3, p1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     :cond_1
     if-ltz v9, :cond_2
@@ -2306,7 +2306,7 @@
 
     iget-object v11, v6, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v11, p1}, Lcom/android/server/wm/WindowList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v11, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_4
     if-gez v5, :cond_9
@@ -2328,7 +2328,7 @@
 
     iget-object v11, v6, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v11, v3, p1}, Lcom/android/server/wm/WindowList;->add(ILjava/lang/Object;)V
+    invoke-virtual {v11, v3, p1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     :cond_7
     invoke-direct {p0, v8, p1}, Lcom/android/server/wm/WindowManagerService;->placeWindowBefore(Lcom/android/server/wm/WindowState;Lcom/android/server/wm/WindowState;)V
@@ -2375,7 +2375,7 @@
     iget v1, p1, Lcom/android/server/wm/WindowState;->mBaseLayer:I
 
     .local v1, myLayer:I
-    invoke-virtual {v2}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
@@ -2385,7 +2385,7 @@
     :goto_0
     if-ltz v0, :cond_0
 
-    invoke-virtual {v2, v0}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -2399,7 +2399,7 @@
     add-int/lit8 v0, v0, 0x1
 
     :goto_1
-    invoke-virtual {v2, v0, p1}, Lcom/android/server/wm/WindowList;->add(ILjava/lang/Object;)V
+    invoke-virtual {v2, v0, p1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     const/4 v3, 0x1
 
@@ -2422,7 +2422,7 @@
     move-result v1
 
     .restart local v1       #myLayer:I
-    invoke-virtual {v2}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
@@ -2434,7 +2434,7 @@
 
     iget-object v4, p0, Lcom/android/server/wm/WindowManagerService;->mWmsFuncs:Lcom/android/server/wm/IWmSmartShowFuncs;
 
-    invoke-virtual {v2, v0}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -2486,7 +2486,7 @@
 
     iget-object v2, v0, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v2, v1, p1}, Lcom/android/server/wm/WindowList;->add(ILjava/lang/Object;)V
+    invoke-virtual {v2, v1, p1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     .end local v0           #token:Lcom/android/server/wm/WindowToken;
     .end local v1           #tokenWindowsPos:I
@@ -2502,7 +2502,7 @@
 
     iget-object v2, v2, Lcom/android/server/wm/AppWindowToken;->allAppWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v2, p1}, Lcom/android/server/wm/WindowList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v2, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_1
     return-void
@@ -2654,7 +2654,7 @@
     .parameter "windows"
 
     .prologue
-    invoke-virtual {p1}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
@@ -2674,7 +2674,7 @@
     :goto_0
     if-ge v4, v0, :cond_a
 
-    invoke-virtual {p1, v4}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {p1, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v7
 
@@ -2861,13 +2861,13 @@
 
     if-eqz v1, :cond_c
 
-    invoke-virtual {p1}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v10
 
     add-int/lit8 v10, v10, -0x1
 
-    invoke-virtual {p1, v10}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {p1, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v10
 
@@ -3623,7 +3623,7 @@
     move-result-object v17
 
     .local v17, windows:Lcom/android/server/wm/WindowList;
-    invoke-virtual/range {v17 .. v17}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual/range {v17 .. v17}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
@@ -3672,7 +3672,7 @@
     iget-object v15, v10, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
 
     .local v15, tokens:Lcom/android/server/wm/AppTokenList;
-    invoke-virtual {v15}, Lcom/android/server/wm/AppTokenList;->size()I
+    invoke-virtual {v15}, Ljava/util/ArrayList;->size()I
 
     move-result v19
 
@@ -3682,7 +3682,7 @@
     :goto_2
     if-ltz v14, :cond_2
 
-    invoke-virtual {v15, v14}, Lcom/android/server/wm/AppTokenList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v15, v14}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v18
 
@@ -3704,7 +3704,7 @@
 
     move-object/from16 v0, v18
 
-    iget-boolean v0, v0, Lcom/android/server/wm/AppWindowToken;->sendingToBottom:Z
+    iget-boolean v0, v0, Lcom/android/server/wm/WindowToken;->sendingToBottom:Z
 
     move/from16 v19, v0
 
@@ -3718,11 +3718,11 @@
     :cond_6
     move-object/from16 v0, v18
 
-    iget-object v0, v0, Lcom/android/server/wm/AppWindowToken;->windows:Lcom/android/server/wm/WindowList;
+    iget-object v0, v0, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
     move-object/from16 v19, v0
 
-    invoke-virtual/range {v19 .. v19}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual/range {v19 .. v19}, Ljava/util/ArrayList;->size()I
 
     move-result v19
 
@@ -3734,13 +3734,13 @@
 
     move-object/from16 v0, v18
 
-    iget-object v0, v0, Lcom/android/server/wm/AppWindowToken;->windows:Lcom/android/server/wm/WindowList;
+    iget-object v0, v0, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
     move-object/from16 v19, v0
 
     move-object/from16 v0, v19
 
-    invoke-virtual {v0, v6}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v16
 
@@ -3753,7 +3753,7 @@
 
     move-object/from16 v19, v0
 
-    invoke-virtual/range {v19 .. v19}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual/range {v19 .. v19}, Ljava/util/ArrayList;->size()I
 
     move-result v19
 
@@ -3771,7 +3771,7 @@
 
     move-object/from16 v0, v19
 
-    invoke-virtual {v0, v7}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -3792,7 +3792,7 @@
 
     move-object/from16 v0, v17
 
-    invoke-virtual {v0, v8}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v19
 
@@ -3825,7 +3825,7 @@
 
     move-object/from16 v0, v17
 
-    invoke-virtual {v0, v8}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v19
 
@@ -3866,7 +3866,7 @@
 
     move-object/from16 v0, v17
 
-    invoke-virtual {v0, v8}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v19
 
@@ -3907,7 +3907,7 @@
     move-result-object v9
 
     .local v9, windows:Lcom/android/server/wm/WindowList;
-    invoke-virtual {v9}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
 
     move-result v11
 
@@ -3917,7 +3917,7 @@
     :goto_0
     if-ltz v0, :cond_8
 
-    invoke-virtual {v9, v0}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v9, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v7
 
@@ -3933,7 +3933,7 @@
 
     if-nez v11, :cond_0
 
-    iget-boolean v11, v10, Lcom/android/server/wm/AppWindowToken;->sendingToBottom:Z
+    iget-boolean v11, v10, Lcom/android/server/wm/WindowToken;->sendingToBottom:Z
 
     if-eqz v11, :cond_1
 
@@ -4030,7 +4030,7 @@
     iget-object v6, v11, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
 
     .local v6, tokens:Lcom/android/server/wm/AppTokenList;
-    invoke-virtual {v6}, Lcom/android/server/wm/AppTokenList;->size()I
+    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
     move-result v11
 
@@ -4040,7 +4040,7 @@
     :goto_2
     if-ltz v5, :cond_3
 
-    invoke-virtual {v6, v5}, Lcom/android/server/wm/AppTokenList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v6, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
@@ -4112,7 +4112,7 @@
     move-result-object v2
 
     .local v2, windows:Lcom/android/server/wm/WindowList;
-    invoke-virtual {v2}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
@@ -4122,7 +4122,7 @@
     :goto_0
     if-ltz v0, :cond_1
 
-    invoke-virtual {v2, v0}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -4202,7 +4202,7 @@
     move-result-object v5
 
     .local v5, windows:Lcom/android/server/wm/WindowList;
-    invoke-virtual {v5}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
@@ -4213,7 +4213,7 @@
     :goto_2
     if-ge v4, v2, :cond_2
 
-    invoke-virtual {v5, v4}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v5, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -4462,7 +4462,7 @@
     iget-object v7, v9, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
 
     .local v7, tokens:Lcom/android/server/wm/AppTokenList;
-    invoke-virtual {v7}, Lcom/android/server/wm/AppTokenList;->size()I
+    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
@@ -4473,7 +4473,7 @@
     :goto_1
     if-ge v6, v3, :cond_0
 
-    invoke-virtual {v7, v6}, Lcom/android/server/wm/AppTokenList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v7, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
@@ -4482,7 +4482,7 @@
     .local v8, wtoken:Lcom/android/server/wm/AppWindowToken;
     const/4 v9, 0x0
 
-    iput-boolean v9, v8, Lcom/android/server/wm/AppWindowToken;->sendingToBottom:Z
+    iput-boolean v9, v8, Lcom/android/server/wm/WindowToken;->sendingToBottom:Z
 
     add-int/lit8 v6, v6, 0x1
 
@@ -4874,7 +4874,7 @@
     .parameter "windows"
 
     .prologue
-    invoke-virtual {p2}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
@@ -4884,7 +4884,7 @@
     :goto_0
     if-ltz v0, :cond_3
 
-    invoke-virtual {p2, v0}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {p2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -4904,7 +4904,7 @@
     :cond_1
     iget-object v2, v1, Lcom/android/server/wm/WindowState;->mChildWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v2}, Lcom/android/server/wm/WindowList;->isEmpty()Z
+    invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v2
 
@@ -5510,7 +5510,7 @@
 
     const/4 v2, 0x4
 
-    invoke-virtual {v1, v2}, Lcom/android/server/wm/WindowManagerService$H;->removeMessages(I)V
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->removeMessages(I)V
 
     add-int/lit8 v0, v0, -0x1
 
@@ -5630,7 +5630,7 @@
 
     iget-object v2, v0, Lcom/android/server/wm/DisplayContent;->mExitingAppTokens:Lcom/android/server/wm/AppTokenList;
 
-    invoke-virtual {v2}, Lcom/android/server/wm/AppTokenList;->size()I
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
@@ -5645,7 +5645,7 @@
 
     move/from16 v0, v40
 
-    invoke-virtual {v2, v0}, Lcom/android/server/wm/AppTokenList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -5653,7 +5653,7 @@
 
     const/4 v8, 0x0
 
-    iput-boolean v8, v2, Lcom/android/server/wm/AppWindowToken;->hasVisible:Z
+    iput-boolean v8, v2, Lcom/android/server/wm/WindowToken;->hasVisible:Z
 
     add-int/lit8 v40, v40, -0x1
 
@@ -5922,7 +5922,7 @@
 
     .local v47, someoneLosingFocus:Z
     :goto_6
-    invoke-virtual/range {v54 .. v54}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual/range {v54 .. v54}, Ljava/util/ArrayList;->size()I
 
     move-result v17
 
@@ -5937,7 +5937,7 @@
 
     move/from16 v1, v40
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -6452,7 +6452,7 @@
 
     const/16 v8, 0x12
 
-    invoke-virtual {v2, v8}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessage(I)Z
+    invoke-virtual {v2, v8}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     :cond_16
     move-object/from16 v0, v30
@@ -6542,7 +6542,7 @@
 
     invoke-interface {v2, v0, v1}, Landroid/view/WindowManagerPolicy;->beginPostLayoutPolicyLw(II)V
 
-    invoke-virtual/range {v54 .. v54}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual/range {v54 .. v54}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
@@ -6556,7 +6556,7 @@
 
     move/from16 v1, v40
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -7095,7 +7095,7 @@
 
     const/4 v8, 0x3
 
-    invoke-virtual {v2, v8}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessage(I)Z
+    invoke-virtual {v2, v8}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     :cond_29
     move-object/from16 v0, p0
@@ -7217,7 +7217,7 @@
 
     invoke-direct/range {v8 .. v16}, Lcom/android/server/wm/WindowManagerService$7;-><init>(Lcom/android/server/wm/WindowManagerService;Landroid/view/IWindow;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;ZLandroid/content/res/Configuration;)V
 
-    invoke-virtual {v2, v8}, Lcom/android/server/wm/WindowManagerService$H;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v2, v8}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     :goto_14
     const/4 v2, 0x0
@@ -7384,7 +7384,7 @@
 
     const/16 v8, 0xb
 
-    invoke-virtual {v2, v8}, Lcom/android/server/wm/WindowManagerService$H;->removeMessages(I)V
+    invoke-virtual {v2, v8}, Landroid/os/Handler;->removeMessages(I)V
 
     :cond_30
     invoke-direct/range {p0 .. p0}, Lcom/android/server/wm/WindowManagerService;->stopFreezingDisplayLocked()V
@@ -7558,7 +7558,7 @@
     move-object/from16 v37, v0
 
     .local v37, exitingAppTokens:Lcom/android/server/wm/AppTokenList;
-    invoke-virtual/range {v37 .. v37}, Lcom/android/server/wm/AppTokenList;->size()I
+    invoke-virtual/range {v37 .. v37}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
@@ -7571,7 +7571,7 @@
 
     move/from16 v1, v40
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/AppTokenList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v49
 
@@ -7580,7 +7580,7 @@
     .local v49, token:Lcom/android/server/wm/AppWindowToken;
     move-object/from16 v0, v49
 
-    iget-boolean v2, v0, Lcom/android/server/wm/AppWindowToken;->hasVisible:Z
+    iget-boolean v2, v0, Lcom/android/server/wm/WindowToken;->hasVisible:Z
 
     if-nez v2, :cond_39
 
@@ -7648,7 +7648,7 @@
 
     move/from16 v1, v40
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/AppTokenList;->remove(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     .end local v48           #task:Lcom/android/server/wm/Task;
     :cond_39
@@ -7964,7 +7964,7 @@
 
     const/16 v8, 0x12
 
-    invoke-virtual {v2, v8}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessage(I)Z
+    invoke-virtual {v2, v8}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     :cond_45
     :goto_1e
@@ -8073,7 +8073,7 @@
 
     move-object/from16 v0, v33
 
-    invoke-virtual {v0, v2}, Lcom/android/server/wm/DisplayContentList;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -8083,7 +8083,7 @@
 
     move-object/from16 v0, v33
 
-    invoke-virtual {v0, v2}, Lcom/android/server/wm/DisplayContentList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_48
     add-int/lit8 v40, v40, 0x1
@@ -8156,7 +8156,7 @@
     .restart local v17       #N:I
     .restart local v33       #displayList:Lcom/android/server/wm/DisplayContentList;
     :cond_4c
-    invoke-virtual/range {v33 .. v33}, Lcom/android/server/wm/DisplayContentList;->iterator()Ljava/util/Iterator;
+    invoke-virtual/range {v33 .. v33}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v41
 
@@ -8440,13 +8440,13 @@
 
     const/16 v6, 0x13
 
-    invoke-virtual {v5, v6}, Lcom/android/server/wm/WindowManagerService$H;->removeMessages(I)V
+    invoke-virtual {v5, v6}, Landroid/os/Handler;->removeMessages(I)V
 
     iget-object v5, p0, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
 
     const/16 v6, 0x13
 
-    invoke-virtual {v5, v6}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessage(I)Z
+    invoke-virtual {v5, v6}, Landroid/os/Handler;->sendEmptyMessage(I)Z
     :try_end_3
     .catch Ljava/lang/RuntimeException; {:try_start_3 .. :try_end_3} :catch_1
 
@@ -8624,7 +8624,7 @@
     goto :goto_1
 
     :cond_2
-    invoke-virtual/range {v18 .. v18}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual/range {v18 .. v18}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
@@ -8761,7 +8761,7 @@
 
     move-object/from16 v0, v18
 
-    invoke-virtual {v0, v12}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v17
 
@@ -9090,7 +9090,7 @@
 
     move-object/from16 v0, v18
 
-    invoke-virtual {v0, v12}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v17
 
@@ -9319,14 +9319,14 @@
     move-result-object v1
 
     .local v1, windows:Lcom/android/server/wm/WindowList;
-    invoke-virtual {v1, p1}, Lcom/android/server/wm/WindowList;->indexOf(Ljava/lang/Object;)I
+    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
 
     move-result v0
 
     .local v0, i:I
     add-int/lit8 v2, v0, 0x1
 
-    invoke-virtual {v1, v2, p2}, Lcom/android/server/wm/WindowList;->add(ILjava/lang/Object;)V
+    invoke-virtual {v1, v2, p2}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     const/4 v2, 0x1
 
@@ -9346,7 +9346,7 @@
     move-result-object v1
 
     .local v1, windows:Lcom/android/server/wm/WindowList;
-    invoke-virtual {v1, p1}, Lcom/android/server/wm/WindowList;->indexOf(Ljava/lang/Object;)I
+    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
 
     move-result v0
 
@@ -9388,7 +9388,7 @@
     const/4 v0, 0x0
 
     :cond_0
-    invoke-virtual {v1, v0, p2}, Lcom/android/server/wm/WindowList;->add(ILjava/lang/Object;)V
+    invoke-virtual {v1, v0, p2}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     const/4 v2, 0x1
 
@@ -9406,7 +9406,7 @@
     .prologue
     iget-object v3, p3, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v3}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
@@ -9419,7 +9419,7 @@
 
     iget-object v3, p3, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v3, v1}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -9459,7 +9459,7 @@
     .local v4, windows:Lcom/android/server/wm/WindowList;
     iget-object v5, p2, Lcom/android/server/wm/WindowState;->mChildWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v5}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
@@ -9475,7 +9475,7 @@
 
     iget-object v5, p2, Lcom/android/server/wm/WindowState;->mChildWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v5, v3}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v5, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -9490,7 +9490,7 @@
 
     iput-boolean v6, p2, Lcom/android/server/wm/WindowState;->mRebuilding:Z
 
-    invoke-virtual {v4, p1, p2}, Lcom/android/server/wm/WindowList;->add(ILjava/lang/Object;)V
+    invoke-virtual {v4, p1, p2}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     add-int/lit8 p1, p1, 0x1
 
@@ -9499,7 +9499,7 @@
     :cond_0
     iput-boolean v6, v2, Lcom/android/server/wm/WindowState;->mRebuilding:Z
 
-    invoke-virtual {v4, p1, v2}, Lcom/android/server/wm/WindowList;->add(ILjava/lang/Object;)V
+    invoke-virtual {v4, p1, v2}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     add-int/lit8 p1, p1, 0x1
 
@@ -9513,7 +9513,7 @@
 
     iput-boolean v6, p2, Lcom/android/server/wm/WindowState;->mRebuilding:Z
 
-    invoke-virtual {v4, p1, p2}, Lcom/android/server/wm/WindowList;->add(ILjava/lang/Object;)V
+    invoke-virtual {v4, p1, p2}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     add-int/lit8 p1, p1, 0x1
 
@@ -9539,14 +9539,14 @@
     move-result-object v0
 
     .local v0, windows:Lcom/android/server/wm/WindowList;
-    invoke-virtual {v0, p1}, Lcom/android/server/wm/WindowList;->indexOf(Ljava/lang/Object;)I
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
 
     move-result v1
 
     .local v1, wpos:I
     if-ltz v1, :cond_0
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/WindowList;->remove(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     const/4 v2, 0x1
 
@@ -9847,7 +9847,7 @@
     move-result-object v20
 
     .local v20, windows:Lcom/android/server/wm/WindowList;
-    invoke-virtual/range {v20 .. v20}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual/range {v20 .. v20}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
@@ -9897,7 +9897,7 @@
 
     move-object/from16 v0, v20
 
-    invoke-virtual {v0, v6}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v18
 
@@ -9914,7 +9914,7 @@
 
     move-object/from16 v0, v20
 
-    invoke-virtual {v0, v6}, Lcom/android/server/wm/WindowList;->remove(I)Ljava/lang/Object;
+    invoke-virtual {v0, v6}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     move-result-object v19
 
@@ -10018,7 +10018,7 @@
     iget-object v5, v0, Lcom/android/server/wm/DisplayContent;->mExitingAppTokens:Lcom/android/server/wm/AppTokenList;
 
     .local v5, exitingAppTokens:Lcom/android/server/wm/AppTokenList;
-    invoke-virtual {v5}, Lcom/android/server/wm/AppTokenList;->size()I
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
@@ -10029,7 +10029,7 @@
     :goto_1
     if-ge v7, v3, :cond_5
 
-    invoke-virtual {v5, v7}, Lcom/android/server/wm/AppTokenList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v5, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v23
 
@@ -10079,7 +10079,7 @@
     move-object/from16 v17, v0
 
     .local v17, tokens:Lcom/android/server/wm/AppTokenList;
-    invoke-virtual/range {v17 .. v17}, Lcom/android/server/wm/AppTokenList;->size()I
+    invoke-virtual/range {v17 .. v17}, Ljava/util/ArrayList;->size()I
 
     move-result v11
 
@@ -10096,7 +10096,7 @@
 
     move/from16 v1, v16
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/AppTokenList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v22
 
@@ -10171,7 +10171,7 @@
 
     invoke-direct/range {v25 .. v26}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual/range {v25 .. v25}, Ljava/lang/RuntimeException;->fillInStackTrace()Ljava/lang/Throwable;
+    invoke-virtual/range {v25 .. v25}, Ljava/lang/Throwable;->fillInStackTrace()Ljava/lang/Throwable;
 
     move-result-object v25
 
@@ -10229,7 +10229,7 @@
 
     invoke-virtual {v0, v12, v1, v2}, Lcom/android/server/wm/WindowState;->dump(Ljava/io/PrintWriter;Ljava/lang/String;Z)V
 
-    invoke-virtual {v12}, Ljava/io/PrintWriter;->flush()V
+    invoke-virtual {v12}, Lcom/android/internal/util/FastPrintWriter;->flush()V
 
     const-string v23, "WindowManager"
 
@@ -10363,7 +10363,7 @@
 
     const/16 v2, 0x12
 
-    invoke-virtual {v1, v2}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessage(I)Z
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     :cond_1
     invoke-direct {p0}, Lcom/android/server/wm/WindowManagerService;->performLayoutAndPlaceSurfacesLocked()V
@@ -10512,7 +10512,7 @@
     :cond_0
     iget-object v5, p2, Lcom/android/server/wm/WindowState;->mChildWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v5}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v5
 
@@ -10524,7 +10524,7 @@
 
     iget-object v5, p2, Lcom/android/server/wm/WindowState;->mChildWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v5, v2}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v5, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -10624,7 +10624,7 @@
     move-result-object v4
 
     .local v4, windows:Lcom/android/server/wm/WindowList;
-    invoke-virtual {v4, p2}, Lcom/android/server/wm/WindowList;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v4, p2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     iget-object v5, p0, Lcom/android/server/wm/WindowManagerService;->mPendingRemove:Ljava/util/ArrayList;
 
@@ -10652,18 +10652,18 @@
     .local v0, atoken:Lcom/android/server/wm/AppWindowToken;
     iget-object v5, v3, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v5, p2}, Lcom/android/server/wm/WindowList;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v5, p2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     if-eqz v0, :cond_5
 
     iget-object v5, v0, Lcom/android/server/wm/AppWindowToken;->allAppWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v5, p2}, Lcom/android/server/wm/WindowList;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v5, p2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     :cond_5
     iget-object v5, v3, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v5}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v5
 
@@ -10773,7 +10773,7 @@
     :cond_c
     iget-object v5, v0, Lcom/android/server/wm/AppWindowToken;->allAppWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v5}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v5
 
@@ -10790,7 +10790,7 @@
     :cond_d
     iget-object v5, v0, Lcom/android/server/wm/AppWindowToken;->allAppWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v5}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v5
 
@@ -10865,7 +10865,7 @@
     move-result-object v5
 
     .local v5, windows:Lcom/android/server/wm/WindowList;
-    invoke-virtual {v5}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
@@ -10877,7 +10877,7 @@
     if-ge v4, v2, :cond_0
 
     :try_start_0
-    invoke-virtual {v5, v4}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v5, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
@@ -11159,7 +11159,7 @@
     move-result-object v6
 
     .local v6, windows:Lcom/android/server/wm/WindowList;
-    invoke-virtual {v6}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
@@ -11170,7 +11170,7 @@
     :goto_2
     if-ge v5, v3, :cond_0
 
-    invoke-virtual {v6, v5}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v6, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v7
 
@@ -11526,7 +11526,7 @@
 
     const/16 v3, 0x11
 
-    invoke-virtual {v2, v3}, Lcom/android/server/wm/WindowManagerService$H;->removeMessages(I)V
+    invoke-virtual {v2, v3}, Landroid/os/Handler;->removeMessages(I)V
 
     move-object/from16 v0, p0
 
@@ -11534,7 +11534,7 @@
 
     const/16 v3, 0x1e
 
-    invoke-virtual {v2, v3}, Lcom/android/server/wm/WindowManagerService$H;->removeMessages(I)V
+    invoke-virtual {v2, v3}, Landroid/os/Handler;->removeMessages(I)V
 
     const/16 v16, 0x0
 
@@ -11659,7 +11659,7 @@
 
     const/16 v3, 0xf
 
-    invoke-virtual {v2, v3}, Lcom/android/server/wm/WindowManagerService$H;->removeMessages(I)V
+    invoke-virtual {v2, v3}, Landroid/os/Handler;->removeMessages(I)V
 
     move-object/from16 v0, p0
 
@@ -11669,7 +11669,7 @@
 
     const-wide/16 v4, 0x7d0
 
-    invoke-virtual {v2, v3, v4, v5}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessageDelayed(IJ)Z
+    invoke-virtual {v2, v3, v4, v5}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
     move-object/from16 v0, p0
 
@@ -11698,7 +11698,7 @@
 
     const/16 v3, 0x12
 
-    invoke-virtual {v2, v3}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessage(I)Z
+    invoke-virtual {v2, v3}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     goto/16 :goto_0
 
@@ -11750,7 +11750,7 @@
 
     iget-object v6, p1, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v6}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
@@ -11768,7 +11768,7 @@
 
     iget-object v6, p1, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v6, v2}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v6, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
@@ -11779,11 +11779,11 @@
 
     move-result-object v6
 
-    invoke-virtual {v6, v4}, Lcom/android/server/wm/WindowList;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v6, v4}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     iget-object v6, v4, Lcom/android/server/wm/WindowState;->mChildWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v6}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
@@ -11795,7 +11795,7 @@
 
     iget-object v6, v4, Lcom/android/server/wm/WindowState;->mChildWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v6, v3}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v6, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -11806,7 +11806,7 @@
 
     move-result-object v6
 
-    invoke-virtual {v6, v1}, Lcom/android/server/wm/WindowList;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v6, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     goto :goto_1
 
@@ -11841,7 +11841,7 @@
     move-result-object v3
 
     .local v3, windows:Lcom/android/server/wm/WindowList;
-    invoke-virtual {v3, p2}, Lcom/android/server/wm/WindowList;->indexOf(Ljava/lang/Object;)I
+    invoke-virtual {v3, p2}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
 
     move-result v4
 
@@ -11853,7 +11853,7 @@
     add-int/lit8 p1, p1, -0x1
 
     :cond_0
-    invoke-virtual {v3, v4}, Lcom/android/server/wm/WindowList;->remove(I)Ljava/lang/Object;
+    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     const/4 v5, 0x1
 
@@ -11861,7 +11861,7 @@
 
     iget-object v5, p2, Lcom/android/server/wm/WindowState;->mChildWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v5}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
@@ -11874,14 +11874,14 @@
 
     iget-object v5, p2, Lcom/android/server/wm/WindowState;->mChildWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v5, v0}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v5, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lcom/android/server/wm/WindowState;
 
     .local v2, cw:Lcom/android/server/wm/WindowState;
-    invoke-virtual {v3, v2}, Lcom/android/server/wm/WindowList;->indexOf(Ljava/lang/Object;)I
+    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
 
     move-result v1
 
@@ -11893,7 +11893,7 @@
     add-int/lit8 p1, p1, -0x1
 
     :cond_2
-    invoke-virtual {v3, v1}, Lcom/android/server/wm/WindowList;->remove(I)Ljava/lang/Object;
+    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     goto :goto_0
 
@@ -11948,7 +11948,7 @@
     iget-object v6, v8, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
 
     .local v6, tokens:Lcom/android/server/wm/AppTokenList;
-    invoke-virtual {v6}, Lcom/android/server/wm/AppTokenList;->size()I
+    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
@@ -11959,7 +11959,7 @@
     :goto_1
     if-ge v5, v2, :cond_1
 
-    invoke-virtual {v6, v5}, Lcom/android/server/wm/AppTokenList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v6, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v7
 
@@ -11987,9 +11987,9 @@
 
     const/16 v9, 0x20
 
-    iget-object v10, v7, Lcom/android/server/wm/AppWindowToken;->token:Landroid/os/IBinder;
+    iget-object v10, v7, Lcom/android/server/wm/WindowToken;->token:Landroid/os/IBinder;
 
-    invoke-virtual {v8, v9, v10}, Lcom/android/server/wm/WindowManagerService$H;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v8, v9, v10}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v8
 
@@ -12045,11 +12045,11 @@
 
     iget-object v5, p0, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
 
-    invoke-virtual {v5, v8}, Lcom/android/server/wm/WindowManagerService$H;->removeMessages(I)V
+    invoke-virtual {v5, v8}, Landroid/os/Handler;->removeMessages(I)V
 
     iget-object v5, p0, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
 
-    invoke-virtual {v5, v8}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessage(I)Z
+    invoke-virtual {v5, v8}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     invoke-virtual {p0}, Lcom/android/server/wm/WindowManagerService;->getDefaultDisplayContentLocked()Lcom/android/server/wm/DisplayContent;
 
@@ -12598,7 +12598,7 @@
 
     const/4 v6, 0x1
 
-    iput-boolean v6, v1, Lcom/android/server/wm/AppWindowToken;->hidden:Z
+    iput-boolean v6, v1, Lcom/android/server/wm/WindowToken;->hidden:Z
 
     const/4 v6, 0x1
 
@@ -12755,7 +12755,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v0, p1}, Lcom/android/server/wm/WindowList;->add(ILjava/lang/Object;)V
+    invoke-virtual {v1, v0, p1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     iput-boolean v2, p0, Lcom/android/server/wm/WindowManagerService;->mWindowsChanged:Z
 
@@ -13982,7 +13982,7 @@
 
     iget-object v5, v6, Lcom/android/server/wm/WindowToken;->appWindowToken:Lcom/android/server/wm/AppWindowToken;
 
-    invoke-virtual {v3, v4, v5}, Lcom/android/server/wm/WindowManagerService$H;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v3, v4, v5}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v19
 
@@ -13995,7 +13995,7 @@
 
     move-object/from16 v0, v19
 
-    invoke-virtual {v3, v0, v4, v5}, Lcom/android/server/wm/WindowManagerService$H;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v3, v0, v4, v5}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     .end local v19           #m:Landroid/os/Message;
     :cond_18
@@ -14427,7 +14427,7 @@
     move-result-object v2
 
     .local v2, windows:Lcom/android/server/wm/WindowList;
-    invoke-virtual {v2}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
@@ -14437,7 +14437,7 @@
     :goto_0
     if-ltz v0, :cond_1
 
-    invoke-virtual {v2, v0}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -14516,7 +14516,7 @@
     move-result-object v30
 
     .local v30, windows:Lcom/android/server/wm/WindowList;
-    invoke-virtual/range {v30 .. v30}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual/range {v30 .. v30}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
@@ -14550,7 +14550,7 @@
 
     move-object/from16 v0, v30
 
-    invoke-virtual {v0, v13}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v26
 
@@ -14623,7 +14623,7 @@
 
     move-object/from16 v0, v31
 
-    iget-boolean v0, v0, Lcom/android/server/wm/AppWindowToken;->hidden:Z
+    iget-boolean v0, v0, Lcom/android/server/wm/WindowToken;->hidden:Z
 
     move/from16 v31, v0
 
@@ -14811,7 +14811,7 @@
 
     move-object/from16 v1, v19
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/WindowList;->indexOf(Ljava/lang/Object;)I
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
 
     move-result v17
 
@@ -14929,7 +14929,7 @@
 
     add-int/lit8 v31, v11, -0x1
 
-    invoke-virtual/range {v30 .. v31}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual/range {v30 .. v31}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v28
 
@@ -15223,7 +15223,7 @@
 
     move-object/from16 v31, v0
 
-    invoke-virtual/range {v31 .. v31}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual/range {v31 .. v31}, Ljava/util/ArrayList;->size()I
 
     move-result v6
 
@@ -15241,7 +15241,7 @@
 
     move-object/from16 v0, v31
 
-    invoke-virtual {v0, v6}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v27
 
@@ -15305,7 +15305,7 @@
 
     add-int/lit8 v31, v11, -0x1
 
-    invoke-virtual/range {v30 .. v31}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual/range {v30 .. v31}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v31
 
@@ -15472,7 +15472,7 @@
 
     add-int/lit8 v31, v11, -0x1
 
-    invoke-virtual/range {v30 .. v31}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual/range {v30 .. v31}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v31
 
@@ -15508,7 +15508,7 @@
 
     move-object/from16 v1, v27
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/WindowList;->indexOf(Ljava/lang/Object;)I
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
 
     move-result v18
 
@@ -15519,7 +15519,7 @@
 
     move/from16 v1, v18
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/WindowList;->remove(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     const/16 v31, 0x1
 
@@ -15573,7 +15573,7 @@
     :cond_1d
     move-object/from16 v0, v30
 
-    invoke-virtual {v0, v12}, Lcom/android/server/wm/WindowList;->indexOf(Ljava/lang/Object;)I
+    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
 
     move-result v14
 
@@ -15583,7 +15583,7 @@
 
     move-object/from16 v1, v27
 
-    invoke-virtual {v0, v14, v1}, Lcom/android/server/wm/WindowList;->add(ILjava/lang/Object;)V
+    invoke-virtual {v0, v14, v1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     const/16 v31, 0x1
 
@@ -15802,7 +15802,7 @@
 
     iget-object v3, p0, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
 
-    invoke-virtual {v3, v6, v1}, Lcom/android/server/wm/WindowManagerService$H;->removeMessages(ILjava/lang/Object;)V
+    invoke-virtual {v3, v6, v1}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
 
     :cond_0
     :goto_2
@@ -15835,7 +15835,7 @@
 
     iget-object v3, p0, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
 
-    invoke-virtual {v3, v6, v1}, Lcom/android/server/wm/WindowManagerService$H;->removeMessages(ILjava/lang/Object;)V
+    invoke-virtual {v3, v6, v1}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
 
     goto :goto_2
 
@@ -16101,7 +16101,7 @@
     move-result-object v5
 
     .local v5, windows:Lcom/android/server/wm/WindowList;
-    invoke-virtual {v5}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
@@ -16112,7 +16112,7 @@
     :goto_1
     if-ge v4, v2, :cond_1
 
-    invoke-virtual {v5, v4}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v5, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -16918,7 +16918,7 @@
 
     const/16 v8, 0x16
 
-    invoke-virtual {v3, v8}, Lcom/android/server/wm/WindowManagerService$H;->removeMessages(I)V
+    invoke-virtual {v3, v8}, Landroid/os/Handler;->removeMessages(I)V
 
     move-object/from16 v0, p0
 
@@ -16926,7 +16926,7 @@
 
     const/16 v8, 0x16
 
-    invoke-virtual {v3, v8}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessage(I)Z
+    invoke-virtual {v3, v8}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     :cond_12
     move-object/from16 v0, p0
@@ -17361,7 +17361,7 @@
     if-eqz v4, :cond_3
 
     :try_start_3
-    invoke-virtual {v4}, Ljava/io/DataInputStream;->close()V
+    invoke-virtual {v4}, Ljava/io/FilterInputStream;->close()V
     :try_end_3
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
 
@@ -17439,7 +17439,7 @@
     if-eqz v3, :cond_4
 
     :try_start_5
-    invoke-virtual {v3}, Ljava/io/DataInputStream;->close()V
+    invoke-virtual {v3}, Ljava/io/FilterInputStream;->close()V
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
 
@@ -17472,7 +17472,7 @@
     if-eqz v3, :cond_5
 
     :try_start_7
-    invoke-virtual {v3}, Ljava/io/DataInputStream;->close()V
+    invoke-virtual {v3}, Ljava/io/FilterInputStream;->close()V
     :try_end_7
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_6
 
@@ -17505,7 +17505,7 @@
     if-eqz v3, :cond_7
 
     :try_start_9
-    invoke-virtual {v3}, Ljava/io/DataInputStream;->close()V
+    invoke-virtual {v3}, Ljava/io/FilterInputStream;->close()V
     :try_end_9
     .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_9
 
@@ -17772,24 +17772,20 @@
 
     if-gtz v3, :cond_1
 
-    if-lez v4, :cond_2
+    if-lez v4, :cond_3
 
     :cond_1
     move v5, v6
 
-    :cond_2
+    :goto_0
     iput-boolean v5, p0, Lcom/android/server/wm/WindowManagerService;->mSafeMode:Z
 
-    const/4 v6, 0x0
+    if-lez v1, :cond_4
 
-    if-lez v1, :cond_miui_0
+    if-lez v4, :cond_4
 
-    if-lez v4, :cond_miui_0
-
-    const/4 v6, 0x1
-
-    :cond_miui_0
-    iput-boolean v6, p0, Lcom/android/server/wm/WindowManagerService;->mSafeMode:Z
+    :goto_1
+    iput-boolean v5, p0, Lcom/android/server/wm/WindowManagerService;->mSafeMode:Z
 
     :try_start_0
     const-string v5, "persist.sys.safemode"
@@ -17800,7 +17796,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_3
+    if-eqz v5, :cond_2
 
     const/4 v5, 0x1
 
@@ -17814,11 +17810,11 @@
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_3
-    :goto_0
+    :cond_2
+    :goto_2
     iget-boolean v5, p0, Lcom/android/server/wm/WindowManagerService;->mSafeMode:Z
 
-    if-eqz v5, :cond_4
+    if-eqz v5, :cond_5
 
     const-string v5, "WindowManager"
 
@@ -17878,7 +17874,7 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    :goto_1
+    :goto_3
     iget-object v5, p0, Lcom/android/server/wm/WindowManagerService;->mPolicy:Landroid/view/WindowManagerPolicy;
 
     iget-boolean v6, p0, Lcom/android/server/wm/WindowManagerService;->mSafeMode:Z
@@ -17889,19 +17885,29 @@
 
     return v5
 
+    :cond_3
+    const/4 v5, 0x0
+
+    goto :goto_0
+
     :cond_4
+    const/4 v5, 0x0
+
+    goto :goto_1
+
+    :cond_5
     const-string v5, "WindowManager"
 
     const-string v6, "SAFE MODE not enabled"
 
     invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_1
+    goto :goto_3
 
     :catch_0
     move-exception v5
 
-    goto :goto_0
+    goto :goto_2
 .end method
 
 .method public disableKeyguard(Landroid/os/IBinder;Ljava/lang/String;)V
@@ -17939,11 +17945,11 @@
 
     invoke-direct {v3, p1, p2}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    invoke-virtual {v1, v2, v3}, Lcom/android/server/wm/KeyguardDisableHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v1, v2, v3}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/KeyguardDisableHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     return-void
 .end method
@@ -18931,7 +18937,7 @@
     iget-object v7, v9, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
 
     .local v7, tokens:Lcom/android/server/wm/AppTokenList;
-    invoke-virtual {v7}, Lcom/android/server/wm/AppTokenList;->size()I
+    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
 
     move-result v9
 
@@ -18941,7 +18947,7 @@
     :goto_2
     if-ltz v6, :cond_0
 
-    invoke-virtual {v7, v6}, Lcom/android/server/wm/AppTokenList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v7, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
@@ -18972,7 +18978,7 @@
 
     move-result-object v10
 
-    iget-object v11, v8, Lcom/android/server/wm/AppWindowToken;->token:Landroid/os/IBinder;
+    iget-object v11, v8, Lcom/android/server/wm/WindowToken;->token:Landroid/os/IBinder;
 
     invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -19490,7 +19496,7 @@
     move-result-object v5
 
     .local v5, windowList:Lcom/android/server/wm/WindowList;
-    invoke-virtual {v5}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v7
 
@@ -19500,7 +19506,7 @@
     :goto_1
     if-ltz v4, :cond_1
 
-    invoke-virtual {v5, v4}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v5, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -19513,7 +19519,7 @@
 
     if-eqz v7, :cond_0
 
-    invoke-virtual {v6, v3}, Lcom/android/server/wm/WindowList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v6, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_0
     add-int/lit8 v4, v4, -0x1
@@ -19534,7 +19540,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :goto_2
-    invoke-virtual {v6}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
     move-result v7
 
@@ -19604,7 +19610,7 @@
     move-result-object v5
 
     .restart local v5       #windowList:Lcom/android/server/wm/WindowList;
-    invoke-virtual {v5}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v7
 
@@ -19614,7 +19620,7 @@
     :goto_6
     if-ltz v4, :cond_6
 
-    invoke-virtual {v5, v4}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v5, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -19639,7 +19645,7 @@
 
     if-eqz v7, :cond_4
 
-    invoke-virtual {v6, v3}, Lcom/android/server/wm/WindowList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v6, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_4
     :goto_7
@@ -19654,7 +19660,7 @@
 
     if-ne v7, v2, :cond_4
 
-    invoke-virtual {v6, v3}, Lcom/android/server/wm/WindowList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v6, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_7
 
@@ -19757,7 +19763,7 @@
     move-result-object v5
 
     .local v5, windows:Lcom/android/server/wm/WindowList;
-    invoke-virtual {v5}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v6
 
@@ -19797,7 +19803,7 @@
 
     move-result-object v7
 
-    invoke-virtual {v5, v4}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v5, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
@@ -19911,7 +19917,7 @@
     move-result-object v7
 
     .local v7, windowList:Lcom/android/server/wm/WindowList;
-    invoke-virtual {v7}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
 
     move-result v8
 
@@ -19921,7 +19927,7 @@
     :goto_1
     if-ltz v6, :cond_4
 
-    invoke-virtual {v7, v6}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v7, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v5
 
@@ -20954,7 +20960,7 @@
 
     const-wide/16 v3, 0x7530
 
-    invoke-virtual {v0, v2, v3, v4}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessageDelayed(IJ)Z
+    invoke-virtual {v0, v2, v3, v4}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
     monitor-exit v1
     :try_end_0
@@ -21005,7 +21011,7 @@
 
     const/16 v1, 0x10
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessage(I)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     goto :goto_0
 .end method
@@ -21150,7 +21156,7 @@
     const/4 v7, 0x0
 
     .local v7, w:Lcom/android/server/wm/WindowState;
-    invoke-virtual {v10}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v10}, Ljava/util/ArrayList;->size()I
 
     move-result v11
 
@@ -21160,7 +21166,7 @@
     :goto_0
     if-ltz v4, :cond_2
 
-    invoke-virtual {v10, v4}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v10, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v9
 
@@ -21207,7 +21213,7 @@
 
     add-int/lit8 v11, v4, -0x1
 
-    invoke-virtual {v10, v11}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v10, v11}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
@@ -21263,7 +21269,7 @@
     if-le v11, v12, :cond_4
 
     :cond_3
-    invoke-virtual {v10, v0}, Lcom/android/server/wm/WindowList;->indexOf(Ljava/lang/Object;)I
+    invoke-virtual {v10, v0}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
 
     move-result v11
 
@@ -21309,7 +21315,7 @@
     move-result-object v1
 
     .local v1, curWindows:Lcom/android/server/wm/WindowList;
-    invoke-virtual {v1, v0}, Lcom/android/server/wm/WindowList;->indexOf(Ljava/lang/Object;)I
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
 
     move-result v5
 
@@ -21317,7 +21323,7 @@
     :goto_3
     if-ltz v5, :cond_6
 
-    invoke-virtual {v1, v5}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v1, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v9
 
@@ -22476,7 +22482,7 @@
     iget-object v10, v11, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
 
     .local v10, tokens:Lcom/android/server/wm/AppTokenList;
-    invoke-virtual {v10}, Lcom/android/server/wm/AppTokenList;->size()I
+    invoke-virtual {v10}, Ljava/util/ArrayList;->size()I
 
     move-result v11
 
@@ -22489,7 +22495,7 @@
     :goto_1
     if-ltz v9, :cond_9
 
-    invoke-virtual {v10, v9}, Lcom/android/server/wm/AppTokenList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v10, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -22517,7 +22523,7 @@
     :cond_1
     if-nez v2, :cond_2
 
-    iget-boolean v11, v0, Lcom/android/server/wm/AppWindowToken;->hidden:Z
+    iget-boolean v11, v0, Lcom/android/server/wm/WindowToken;->hidden:Z
 
     if-nez v11, :cond_2
 
@@ -22643,7 +22649,7 @@
     move-result-object v3
 
     .local v3, windows:Lcom/android/server/wm/WindowList;
-    invoke-virtual {v3}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v5
 
@@ -22653,7 +22659,7 @@
     :cond_2
     if-ltz v0, :cond_5
 
-    invoke-virtual {v3, v0}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -23015,7 +23021,7 @@
     .local v3, windowList:Lcom/android/server/wm/WindowList;
     iget-object v4, p1, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v4}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
@@ -23028,7 +23034,7 @@
 
     iget-object v4, p1, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v4, v1}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v4, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -23039,7 +23045,7 @@
 
     if-ne v4, p2, :cond_0
 
-    invoke-virtual {v3, v2}, Lcom/android/server/wm/WindowList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_0
     add-int/lit8 v1, v1, 0x1
@@ -23452,7 +23458,7 @@
 
     const/16 v5, 0xd
 
-    invoke-virtual {v2, v5}, Lcom/android/server/wm/WindowManagerService$H;->removeMessages(I)V
+    invoke-virtual {v2, v5}, Landroid/os/Handler;->removeMessages(I)V
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/wm/WindowManagerService;->rebuildAppWindowListLocked()V
 
@@ -23814,7 +23820,7 @@
 
     const/4 v2, 0x0
 
-    iput-boolean v2, v3, Lcom/android/server/wm/AppWindowToken;->waitingToShow:Z
+    iput-boolean v2, v3, Lcom/android/server/wm/WindowToken;->waitingToShow:Z
 
     move-object/from16 v0, v18
 
@@ -23824,7 +23830,7 @@
 
     iget-object v2, v3, Lcom/android/server/wm/AppWindowToken;->allAppWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v2}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v14
 
@@ -23845,7 +23851,7 @@
 
     move/from16 v0, v32
 
-    invoke-virtual {v2, v0}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -23965,9 +23971,9 @@
     const/16 v32, 0x0
 
     :goto_9
-    iget-object v2, v3, Lcom/android/server/wm/AppWindowToken;->windows:Lcom/android/server/wm/WindowList;
+    iget-object v2, v3, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v2}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
@@ -23975,11 +23981,11 @@
 
     if-ge v0, v2, :cond_12
 
-    iget-object v2, v3, Lcom/android/server/wm/AppWindowToken;->windows:Lcom/android/server/wm/WindowList;
+    iget-object v2, v3, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
     move/from16 v0, v32
 
-    invoke-virtual {v2, v0}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v42
 
@@ -24091,7 +24097,7 @@
 
     const/4 v2, 0x0
 
-    iput-boolean v2, v3, Lcom/android/server/wm/AppWindowToken;->waitingToHide:Z
+    iput-boolean v2, v3, Lcom/android/server/wm/WindowToken;->waitingToHide:Z
 
     const/4 v2, 0x1
 
@@ -24577,19 +24583,19 @@
 
     .local v2, windows:Lcom/android/server/wm/WindowList;
     :goto_0
-    invoke-virtual {v2}, Lcom/android/server/wm/WindowList;->isEmpty()Z
+    invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v3
 
     if-nez v3, :cond_1
 
-    invoke-virtual {v2}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
     add-int/lit8 v3, v3, -0x1
 
-    invoke-virtual {v2, v3}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -24687,7 +24693,7 @@
 
     add-int/lit8 v8, v1, -0x1
 
-    invoke-virtual {v7, v8}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v7, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -24714,9 +24720,9 @@
     :goto_0
     iget-object v7, v2, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
 
-    iget-object v7, v7, Lcom/android/server/wm/AppWindowToken;->windows:Lcom/android/server/wm/WindowList;
+    iget-object v7, v7, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v7}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
 
     move-result v7
 
@@ -24724,9 +24730,9 @@
 
     iget-object v7, v2, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
 
-    iget-object v7, v7, Lcom/android/server/wm/AppWindowToken;->windows:Lcom/android/server/wm/WindowList;
+    iget-object v7, v7, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v7, v0}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v7, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -25068,7 +25074,7 @@
     .parameter "prefix"
 
     .prologue
-    invoke-virtual {p1}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
@@ -25104,7 +25110,7 @@
 
     move-result-object v2
 
-    invoke-virtual {p1, v0}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -25157,13 +25163,13 @@
 
     iget-object v0, p0, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
 
-    invoke-virtual {v0, v3}, Lcom/android/server/wm/WindowManagerService$H;->removeMessages(I)V
+    invoke-virtual {v0, v3}, Landroid/os/Handler;->removeMessages(I)V
 
     iget-object v0, p0, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
 
     const-wide/16 v1, 0x7d0
 
-    invoke-virtual {v0, v3, v1, v2}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessageDelayed(IJ)Z
+    invoke-virtual {v0, v3, v1, v2}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
     :cond_0
     return-void
@@ -25238,13 +25244,13 @@
     iget-object v3, v7, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
 
     .local v3, targetAppToken:Lcom/android/server/wm/AppWindowToken;
-    invoke-virtual {v5}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v7
 
     if-ge p1, v7, :cond_1
 
-    invoke-virtual {v5, p1}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v5, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
@@ -25356,14 +25362,14 @@
     .local v5, imPos:I
     if-ltz v5, :cond_d
 
-    invoke-virtual {v8}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
     .local v1, N:I
     if-ge v5, v1, :cond_1
 
-    invoke-virtual {v8, v5}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v8, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v9
 
@@ -25381,7 +25387,7 @@
     :goto_1
     iget-object v9, v2, Lcom/android/server/wm/WindowState;->mChildWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v9}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
 
     move-result v9
 
@@ -25389,7 +25395,7 @@
 
     iget-object v9, v2, Lcom/android/server/wm/WindowState;->mChildWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v9, v10}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v9, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -25412,7 +25418,7 @@
     :goto_2
     if-ge v7, v1, :cond_3
 
-    invoke-virtual {v8, v7}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v8, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v9
 
@@ -25428,7 +25434,7 @@
     :goto_3
     if-ge v7, v1, :cond_4
 
-    invoke-virtual {v8, v7}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v8, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v9
 
@@ -25581,7 +25587,7 @@
     iget-object v7, v9, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
 
     .local v7, tokens:Lcom/android/server/wm/AppTokenList;
-    invoke-virtual {v7}, Lcom/android/server/wm/AppTokenList;->size()I
+    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
@@ -25592,7 +25598,7 @@
     :goto_1
     if-ltz v6, :cond_0
 
-    invoke-virtual {v7, v6}, Lcom/android/server/wm/AppTokenList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v7, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v9
 
@@ -25627,7 +25633,7 @@
     iget-object v7, v9, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
 
     .restart local v7       #tokens:Lcom/android/server/wm/AppTokenList;
-    invoke-virtual {v7, v10}, Lcom/android/server/wm/AppTokenList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v7, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v9
 
@@ -25638,7 +25644,7 @@
     move-result v3
 
     .local v3, pos:I
-    invoke-virtual {v7}, Lcom/android/server/wm/AppTokenList;->size()I
+    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
@@ -25649,7 +25655,7 @@
     :goto_3
     if-ge v6, v2, :cond_4
 
-    invoke-virtual {v7, v6}, Lcom/android/server/wm/AppTokenList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v7, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
@@ -26026,11 +26032,11 @@
 
     const/4 v3, 0x0
 
-    invoke-virtual {v1, v2, p1, v3}, Lcom/android/server/wm/WindowManagerService$H;->obtainMessage(III)Landroid/os/Message;
+    invoke-virtual {v1, v2, p1, v3}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/WindowManagerService$H;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     return-void
 .end method
@@ -26048,11 +26054,11 @@
 
     const/4 v3, 0x0
 
-    invoke-virtual {v1, v2, p1, v3}, Lcom/android/server/wm/WindowManagerService$H;->obtainMessage(III)Landroid/os/Message;
+    invoke-virtual {v1, v2, p1, v3}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/WindowManagerService$H;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     return-void
 .end method
@@ -26070,11 +26076,11 @@
 
     const/4 v3, 0x0
 
-    invoke-virtual {v1, v2, p1, v3}, Lcom/android/server/wm/WindowManagerService$H;->obtainMessage(III)Landroid/os/Message;
+    invoke-virtual {v1, v2, p1, v3}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/WindowManagerService$H;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     return-void
 .end method
@@ -26695,7 +26701,7 @@
     move-result-object v14
 
     .local v14, windows:Lcom/android/server/wm/WindowList;
-    invoke-virtual {v14}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v14}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
@@ -26706,7 +26712,7 @@
     :goto_2
     if-ge v9, v2, :cond_b
 
-    invoke-virtual {v14, v9}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v14, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v12
 
@@ -27096,7 +27102,7 @@
 
     const/16 v2, 0xd
 
-    invoke-virtual {v0, v2}, Lcom/android/server/wm/WindowManagerService$H;->removeMessages(I)V
+    invoke-virtual {v0, v2}, Landroid/os/Handler;->removeMessages(I)V
 
     iget-object v0, p0, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
 
@@ -27104,7 +27110,7 @@
 
     const-wide/16 v3, 0x1388
 
-    invoke-virtual {v0, v2, v3, v4}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessageDelayed(IJ)Z
+    invoke-virtual {v0, v2, v3, v4}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
     :cond_3
     monitor-exit v1
@@ -27297,7 +27303,7 @@
 
     const/16 v3, 0x14
 
-    invoke-virtual {v2, v3, v7}, Lcom/android/server/wm/WindowManagerService$H;->removeMessages(ILjava/lang/Object;)V
+    invoke-virtual {v2, v3, v7}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
 
     move-object/from16 v0, p0
 
@@ -27305,7 +27311,7 @@
 
     const/16 v3, 0x14
 
-    invoke-virtual {v2, v3, v7}, Lcom/android/server/wm/WindowManagerService$H;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v2, v3, v7}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v12
 
@@ -27316,7 +27322,7 @@
 
     const-wide/16 v5, 0x1388
 
-    invoke-virtual {v2, v12, v5, v6}, Lcom/android/server/wm/WindowManagerService$H;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v2, v12, v5, v6}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_3
     .catch Landroid/view/Surface$OutOfResourcesException; {:try_start_3 .. :try_end_3} :catch_0
@@ -27669,7 +27675,7 @@
     move-result-object v15
 
     .local v15, windows:Lcom/android/server/wm/WindowList;
-    invoke-virtual {v15}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v15}, Ljava/util/ArrayList;->size()I
 
     move-result v10
 
@@ -27680,7 +27686,7 @@
     :goto_1
     if-ge v14, v10, :cond_3
 
-    invoke-virtual {v15, v14}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v15, v14}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v16
 
@@ -28039,7 +28045,7 @@
     move-result-object v15
 
     .restart local v15       #windows:Lcom/android/server/wm/WindowList;
-    invoke-virtual {v15}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v15}, Ljava/util/ArrayList;->size()I
 
     move-result v10
 
@@ -28050,7 +28056,7 @@
     :goto_4
     if-ge v14, v10, :cond_7
 
-    invoke-virtual {v15, v14}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v15, v14}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v16
 
@@ -28382,11 +28388,11 @@
 
     const/4 v2, 0x2
 
-    invoke-virtual {v1, v2, p1}, Lcom/android/server/wm/KeyguardDisableHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v1, v2, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/KeyguardDisableHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     return-void
 .end method
@@ -28846,7 +28852,7 @@
 
     move-object/from16 v0, p4
 
-    iget v0, v0, Landroid/view/WindowManager$LayoutParams;->width:I
+    iget v0, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     move/from16 v30, v0
 
@@ -28858,7 +28864,7 @@
 
     move-object/from16 v0, p4
 
-    iget v0, v0, Landroid/view/WindowManager$LayoutParams;->width:I
+    iget v0, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     move/from16 v30, v0
 
@@ -28885,7 +28891,7 @@
 
     move-object/from16 v0, p4
 
-    iget v0, v0, Landroid/view/WindowManager$LayoutParams;->height:I
+    iget v0, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     move/from16 v30, v0
 
@@ -28897,7 +28903,7 @@
 
     move-object/from16 v0, p4
 
-    iget v0, v0, Landroid/view/WindowManager$LayoutParams;->height:I
+    iget v0, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     move/from16 v30, v0
 
@@ -30245,7 +30251,7 @@
 
     const/4 v0, 0x0
 
-    iput-boolean v0, v1, Lcom/android/server/wm/AppWindowToken;->waitingToShow:Z
+    iput-boolean v0, v1, Lcom/android/server/wm/WindowToken;->waitingToShow:Z
 
     iget-object v0, p0, Lcom/android/server/wm/WindowManagerService;->mClosingApps:Ljava/util/ArrayList;
 
@@ -30279,7 +30285,7 @@
 
     iget-object v0, v8, Lcom/android/server/wm/DisplayContent;->mExitingAppTokens:Lcom/android/server/wm/AppTokenList;
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/AppTokenList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :goto_1
     invoke-virtual {v12, v1}, Lcom/android/server/wm/Task;->removeAppToken(Lcom/android/server/wm/AppWindowToken;)Z
@@ -30369,7 +30375,7 @@
 
     const/4 v0, 0x1
 
-    iput-boolean v0, v1, Lcom/android/server/wm/AppWindowToken;->waitingToHide:Z
+    iput-boolean v0, v1, Lcom/android/server/wm/WindowToken;->waitingToHide:Z
 
     const/4 v7, 0x1
 
@@ -30622,7 +30628,7 @@
 
     const/16 v1, 0x21
 
-    invoke-virtual {v0, v1, p1}, Lcom/android/server/wm/WindowManagerService$H;->removeMessages(ILjava/lang/Object;)V
+    invoke-virtual {v0, v1, p1}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
 
     :cond_0
     return-void
@@ -30919,7 +30925,7 @@
 
     const/16 v5, 0x12
 
-    invoke-virtual {v4, v5}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessage(I)Z
+    invoke-virtual {v4, v5}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     :cond_7
     invoke-direct {p0, v7, v6}, Lcom/android/server/wm/WindowManagerService;->updateFocusedWindowLocked(IZ)Z
@@ -30986,7 +30992,7 @@
 
     iget-object v9, v8, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v9}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
@@ -31002,7 +31008,7 @@
 
     iget-object v9, v8, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v9, v4}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v9, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v7
 
@@ -31211,7 +31217,7 @@
 
     const/4 v1, 0x4
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessage(I)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     :cond_0
     return-void
@@ -31443,7 +31449,7 @@
 
     const/16 v2, 0x12
 
-    invoke-virtual {v1, v2}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessage(I)Z
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     .end local v0           #changed:Z
     :cond_0
@@ -31515,7 +31521,7 @@
 
     move-result-object v2
 
-    iget-object v3, p1, Lcom/android/server/wm/AppWindowToken;->stringName:Ljava/lang/String;
+    iget-object v3, p1, Lcom/android/server/wm/WindowToken;->stringName:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -31580,7 +31586,7 @@
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     :cond_2
-    invoke-virtual {v0}, Ljava/io/PrintWriter;->println()V
+    invoke-virtual {v0}, Lcom/android/internal/util/FastPrintWriter;->println()V
 
     const/4 v2, 0x1
 
@@ -31588,7 +31594,7 @@
 
     invoke-virtual {p0, v0, v2, v3}, Lcom/android/server/wm/WindowManagerService;->dumpWindowsNoHeaderLocked(Ljava/io/PrintWriter;ZLjava/util/ArrayList;)V
 
-    invoke-virtual {v0}, Ljava/io/PrintWriter;->close()V
+    invoke-virtual {v0}, Lcom/android/internal/util/FastPrintWriter;->close()V
 
     invoke-virtual {v1}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
 
@@ -31653,7 +31659,7 @@
 
     if-eqz v5, :cond_1
 
-    invoke-virtual {v4}, Ljava/io/FileOutputStream;->flush()V
+    invoke-virtual {v4}, Ljava/io/OutputStream;->flush()V
 
     invoke-virtual {v4}, Ljava/io/FileOutputStream;->close()V
     :try_end_1
@@ -31804,14 +31810,14 @@
 
     const/4 v2, 0x6
 
-    invoke-virtual {v1, v2, p1}, Lcom/android/server/wm/WindowManagerService$H;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v1, v2, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
     .local v0, m:Landroid/os/Message;
     iget-object v1, p0, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
 
-    invoke-virtual {v1, v0}, Lcom/android/server/wm/WindowManagerService$H;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     .end local v0           #m:Landroid/os/Message;
     :cond_0
@@ -32078,7 +32084,7 @@
     invoke-direct/range {v31 .. v31}, Landroid/graphics/Rect;-><init>()V
 
     .local v31, stackBounds:Landroid/graphics/Rect;
-    invoke-virtual/range {v36 .. v36}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual/range {v36 .. v36}, Ljava/util/ArrayList;->size()I
 
     move-result v38
 
@@ -32092,7 +32098,7 @@
 
     move/from16 v1, v17
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v37
 
@@ -32171,7 +32177,7 @@
 
     move-object/from16 v0, v38
 
-    iget-object v0, v0, Lcom/android/server/wm/AppWindowToken;->token:Landroid/os/IBinder;
+    iget-object v0, v0, Lcom/android/server/wm/WindowToken;->token:Landroid/os/IBinder;
 
     move-object/from16 v38, v0
 
@@ -32366,7 +32372,7 @@
 
     move-object/from16 v0, v38
 
-    iget-object v0, v0, Lcom/android/server/wm/AppWindowToken;->token:Landroid/os/IBinder;
+    iget-object v0, v0, Lcom/android/server/wm/WindowToken;->token:Landroid/os/IBinder;
 
     move-object/from16 v38, v0
 
@@ -33050,7 +33056,7 @@
     .local v10, token:Lcom/android/server/wm/WindowToken;
     iget-object v0, v10, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v0}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v8
 
@@ -33062,7 +33068,7 @@
 
     iget-object v0, v10, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v0, v8}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v11
 
@@ -33152,7 +33158,7 @@
 
     const/16 v1, 0xe
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessage(I)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     return-void
 
@@ -33256,7 +33262,7 @@
 
     const/16 v1, 0xe
 
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessage(I)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     return-void
 .end method
@@ -33386,7 +33392,7 @@
     :cond_2
     iget-object v3, v1, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
 
-    invoke-virtual {v3, v0}, Lcom/android/server/wm/AppTokenList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     monitor-exit v4
 
@@ -33741,7 +33747,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2, v15}, Lcom/android/server/wm/WindowList;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v15}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     const/4 v2, 0x1
 
@@ -33751,15 +33757,15 @@
 
     move-object/from16 v0, v17
 
-    iget-object v2, v0, Lcom/android/server/wm/AppWindowToken;->windows:Lcom/android/server/wm/WindowList;
+    iget-object v2, v0, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v2, v15}, Lcom/android/server/wm/WindowList;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v15}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     move-object/from16 v0, v17
 
     iget-object v2, v0, Lcom/android/server/wm/AppWindowToken;->allAppWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v2, v15}, Lcom/android/server/wm/WindowList;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v15}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     const/4 v2, 0x1
 
@@ -33803,7 +33809,7 @@
     :cond_6
     move-object/from16 v0, v17
 
-    iget-boolean v2, v0, Lcom/android/server/wm/AppWindowToken;->hidden:Z
+    iget-boolean v2, v0, Lcom/android/server/wm/WindowToken;->hidden:Z
 
     if-nez v2, :cond_7
 
@@ -33811,7 +33817,7 @@
 
     move-object/from16 v0, v19
 
-    iput-boolean v2, v0, Lcom/android/server/wm/AppWindowToken;->hidden:Z
+    iput-boolean v2, v0, Lcom/android/server/wm/WindowToken;->hidden:Z
 
     const/4 v2, 0x0
 
@@ -33970,7 +33976,7 @@
 
     move-object/from16 v0, v19
 
-    invoke-virtual {v2, v3, v0}, Lcom/android/server/wm/WindowManagerService$H;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v2, v3, v0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v12
 
@@ -33979,7 +33985,7 @@
 
     iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
 
-    invoke-virtual {v2, v12}, Lcom/android/server/wm/WindowManagerService$H;->sendMessageAtFrontOfQueue(Landroid/os/Message;)Z
+    invoke-virtual {v2, v12}, Landroid/os/Handler;->sendMessageAtFrontOfQueue(Landroid/os/Message;)Z
 
     monitor-exit v20
 
@@ -34202,7 +34208,7 @@
 
     move-object/from16 v0, v19
 
-    invoke-virtual {v2, v3, v0}, Lcom/android/server/wm/WindowManagerService$H;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v2, v3, v0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v12
 
@@ -34211,7 +34217,7 @@
 
     iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
 
-    invoke-virtual {v2, v12}, Lcom/android/server/wm/WindowManagerService$H;->sendMessageAtFrontOfQueue(Landroid/os/Message;)Z
+    invoke-virtual {v2, v12}, Landroid/os/Handler;->sendMessageAtFrontOfQueue(Landroid/os/Message;)Z
 
     monitor-exit v20
 
@@ -34334,9 +34340,9 @@
 
     const/4 v0, 0x0
 
-    iput-boolean v0, v1, Lcom/android/server/wm/AppWindowToken;->waitingToHide:Z
+    iput-boolean v0, v1, Lcom/android/server/wm/WindowToken;->waitingToHide:Z
 
-    iput-boolean v0, v1, Lcom/android/server/wm/AppWindowToken;->waitingToShow:Z
+    iput-boolean v0, v1, Lcom/android/server/wm/WindowToken;->waitingToShow:Z
 
     const/4 v0, 0x1
 
@@ -34352,7 +34358,7 @@
 
     iput-boolean v0, v1, Lcom/android/server/wm/AppWindowToken;->startingMoved:Z
 
-    iget-boolean v0, v1, Lcom/android/server/wm/AppWindowToken;->hidden:Z
+    iget-boolean v0, v1, Lcom/android/server/wm/WindowToken;->hidden:Z
 
     if-eqz v0, :cond_3
 
@@ -34366,7 +34372,7 @@
 
     const/4 v0, 0x1
 
-    iput-boolean v0, v1, Lcom/android/server/wm/AppWindowToken;->waitingToShow:Z
+    iput-boolean v0, v1, Lcom/android/server/wm/WindowToken;->waitingToShow:Z
 
     iget-boolean v0, v1, Lcom/android/server/wm/AppWindowToken;->clientHidden:Z
 
@@ -34406,13 +34412,13 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    iget-boolean v0, v1, Lcom/android/server/wm/AppWindowToken;->hidden:Z
+    iget-boolean v0, v1, Lcom/android/server/wm/WindowToken;->hidden:Z
 
     if-nez v0, :cond_3
 
     const/4 v0, 0x1
 
-    iput-boolean v0, v1, Lcom/android/server/wm/AppWindowToken;->waitingToHide:Z
+    iput-boolean v0, v1, Lcom/android/server/wm/WindowToken;->waitingToHide:Z
 
     goto :goto_2
 
@@ -34986,7 +34992,7 @@
     iget-object v3, v4, Lcom/android/server/wm/AppWindowToken;->allAppWindows:Lcom/android/server/wm/WindowList;
 
     .local v3, windows:Lcom/android/server/wm/WindowList;
-    invoke-virtual {v3}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
@@ -34996,7 +35002,7 @@
     :goto_1
     if-ltz v1, :cond_2
 
-    invoke-virtual {v3, v1}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -35330,7 +35336,7 @@
 
     const/16 v2, 0x12
 
-    invoke-virtual {v0, v2}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessage(I)Z
+    invoke-virtual {v0, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     :cond_0
     monitor-exit v1
@@ -35500,7 +35506,7 @@
 
     iget-object v4, v2, Lcom/android/server/wm/WindowState;->mChildWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v4}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
@@ -35512,7 +35518,7 @@
 
     iget-object v4, v2, Lcom/android/server/wm/WindowState;->mChildWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v4, v3}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -36067,7 +36073,7 @@
 
     iput-boolean v8, p1, Lcom/android/server/wm/AppWindowToken;->willBeHidden:Z
 
-    iget-boolean v8, p1, Lcom/android/server/wm/AppWindowToken;->hidden:Z
+    iget-boolean v8, p1, Lcom/android/server/wm/WindowToken;->hidden:Z
 
     if-ne v8, p3, :cond_e
 
@@ -36136,7 +36142,7 @@
     :cond_4
     iget-object v8, p1, Lcom/android/server/wm/AppWindowToken;->allAppWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v8}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
@@ -36149,7 +36155,7 @@
 
     iget-object v8, p1, Lcom/android/server/wm/AppWindowToken;->allAppWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v8, v3}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v8, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
@@ -36282,7 +36288,7 @@
     :goto_3
     iput-boolean v8, p1, Lcom/android/server/wm/AppWindowToken;->hiddenRequested:Z
 
-    iput-boolean v8, p1, Lcom/android/server/wm/AppWindowToken;->hidden:Z
+    iput-boolean v8, p1, Lcom/android/server/wm/WindowToken;->hidden:Z
 
     if-nez p3, :cond_12
 
@@ -36333,7 +36339,7 @@
     :cond_f
     iget-object v8, p1, Lcom/android/server/wm/AppWindowToken;->allAppWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v8}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
 
     move-result v8
 
@@ -36347,7 +36353,7 @@
 
     iget-object v8, p1, Lcom/android/server/wm/AppWindowToken;->allAppWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v8, v3}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v8, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
@@ -36659,7 +36665,7 @@
     .local v2, token:Lcom/android/server/wm/WindowToken;
     iget-object v4, v2, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v4}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
@@ -36671,7 +36677,7 @@
 
     iget-object v4, v2, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v4, v1}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v4, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -36839,11 +36845,11 @@
     const/4 v1, 0x1
 
     :goto_1
-    invoke-virtual {v3, v4, v1, v0}, Lcom/android/server/wm/WindowManagerService$H;->obtainMessage(III)Landroid/os/Message;
+    invoke-virtual {v3, v4, v1, v0}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v1
 
-    invoke-virtual {v2, v1}, Lcom/android/server/wm/WindowManagerService$H;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v2, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     goto :goto_0
 
@@ -37031,18 +37037,18 @@
 
     iget-object v3, p0, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
 
-    invoke-virtual {v3, v7}, Lcom/android/server/wm/WindowManagerService$H;->removeMessages(I)V
+    invoke-virtual {v3, v7}, Landroid/os/Handler;->removeMessages(I)V
 
     iget-object v3, p0, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
 
     const-wide/16 v4, 0x1388
 
-    invoke-virtual {v3, v7, v4, v5}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessageDelayed(IJ)Z
+    invoke-virtual {v3, v7, v4, v5}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
     :cond_0
     iget-object v3, p1, Lcom/android/server/wm/AppWindowToken;->allAppWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v3}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
@@ -37055,7 +37061,7 @@
 
     iget-object v3, p1, Lcom/android/server/wm/AppWindowToken;->allAppWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v3, v1}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -37129,7 +37135,7 @@
 
     const/16 v4, 0x1e
 
-    invoke-virtual {v2, v4}, Lcom/android/server/wm/WindowManagerService$H;->removeMessages(I)V
+    invoke-virtual {v2, v4}, Landroid/os/Handler;->removeMessages(I)V
 
     iget-object v2, p0, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
 
@@ -37137,7 +37143,7 @@
 
     const-wide/16 v5, 0x1388
 
-    invoke-virtual {v2, v4, v5, v6}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessageDelayed(IJ)Z
+    invoke-virtual {v2, v4, v5, v6}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -37677,12 +37683,12 @@
 
     if-eqz v2, :cond_1
 
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
+    throw v2
 
     :cond_1
     if-eqz v6, :cond_2
 
-    invoke-virtual {v6}, Landroid/os/Parcel;->recycle()V
+    throw v6
 
     .end local v1           #code:Ljava/lang/String;
     .end local v4           #hashCode:I
@@ -37933,7 +37939,7 @@
 
     iget-object v4, p1, Lcom/android/server/wm/AppWindowToken;->allAppWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v4}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
@@ -37949,7 +37955,7 @@
 
     iget-object v4, p1, Lcom/android/server/wm/AppWindowToken;->allAppWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v4, v1}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v4, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -38075,7 +38081,7 @@
     move-result-object v6
 
     .local v6, windows:Lcom/android/server/wm/WindowList;
-    invoke-virtual {v6}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
@@ -38086,7 +38092,7 @@
     :goto_1
     if-ge v5, v3, :cond_2
 
-    invoke-virtual {v6, v5}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v6, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
@@ -38538,7 +38544,7 @@
 
     const/16 v5, 0xb
 
-    invoke-virtual {v4, v5}, Lcom/android/server/wm/WindowManagerService$H;->removeMessages(I)V
+    invoke-virtual {v4, v5}, Landroid/os/Handler;->removeMessages(I)V
 
     move-object/from16 v0, p0
 
@@ -38548,7 +38554,7 @@
 
     const-wide/16 v6, 0x7d0
 
-    invoke-virtual {v4, v5, v6, v7}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessageDelayed(IJ)Z
+    invoke-virtual {v4, v5, v6, v7}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
     const/4 v4, 0x1
 
@@ -38677,7 +38683,7 @@
     move-result-object v16
 
     .local v16, windows:Lcom/android/server/wm/WindowList;
-    invoke-virtual/range {v16 .. v16}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual/range {v16 .. v16}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
@@ -38689,7 +38695,7 @@
 
     move-object/from16 v0, v16
 
-    invoke-virtual {v0, v14}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v14}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v15
 
@@ -38829,7 +38835,7 @@
     move-result-object v5
 
     .local v5, windows:Lcom/android/server/wm/WindowList;
-    invoke-virtual {v5}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
@@ -38840,7 +38846,7 @@
     :goto_0
     if-ge v3, v0, :cond_3
 
-    invoke-virtual {v5, v3}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v5, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
@@ -38991,7 +38997,7 @@
     .local v7, token:Lcom/android/server/wm/WindowToken;
     iget-object v10, v7, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v10}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v10}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
@@ -39004,7 +39010,7 @@
 
     iget-object v10, v7, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v10, v1}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v10, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
@@ -39580,7 +39586,7 @@
     :cond_1
     iget-object v9, v6, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v9}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
@@ -39592,7 +39598,7 @@
 
     iget-object v9, v6, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v9, v1}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v9, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
@@ -39834,7 +39840,7 @@
     goto/16 :goto_0
 
     :cond_2
-    invoke-virtual {v6}, Lcom/android/server/wm/AppTokenList;->size()I
+    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
     move-result v15
 
@@ -39855,7 +39861,7 @@
 
     if-ltz v14, :cond_4
 
-    invoke-virtual {v6, v12}, Lcom/android/server/wm/AppTokenList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v6, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -39875,7 +39881,7 @@
 
     move-result-object v15
 
-    iget-object v0, v2, Lcom/android/server/wm/AppWindowToken;->token:Landroid/os/IBinder;
+    iget-object v0, v2, Lcom/android/server/wm/WindowToken;->token:Landroid/os/IBinder;
 
     move-object/from16 v17, v0
 
@@ -40082,7 +40088,7 @@
 
     move-result-object v6
 
-    invoke-virtual {v4, v6}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v4, v6}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     const/16 v6, 0x20
 
@@ -40094,7 +40100,7 @@
 
     move-result-object v6
 
-    invoke-virtual {v4, v6}, Ljava/io/BufferedWriter;->append(Ljava/lang/CharSequence;)Ljava/io/Writer;
+    invoke-virtual {v4, v6}, Ljava/io/Writer;->append(Ljava/lang/CharSequence;)Ljava/io/Writer;
 
     :cond_2
     const/16 v6, 0xa
@@ -40274,7 +40280,7 @@
 
     move-result-object v12
 
-    invoke-virtual {v11, v12}, Lcom/android/server/wm/WindowList;->addAll(Ljava/util/Collection;)Z
+    invoke-virtual {v11, v12}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
     add-int/lit8 v3, v3, 0x1
 
@@ -40311,7 +40317,7 @@
     .end local v7           #out:Ljava/io/BufferedWriter;
     .local v8, out:Ljava/io/BufferedWriter;
     :try_start_2
-    invoke-virtual {v11}, Lcom/android/server/wm/WindowList;->size()I
+    invoke-virtual {v11}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
@@ -40322,7 +40328,7 @@
     :goto_2
     if-ge v5, v1, :cond_3
 
-    invoke-virtual {v11, v5}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v11, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v10
 
@@ -40337,7 +40343,7 @@
 
     move-result-object v12
 
-    invoke-virtual {v8, v12}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v8, v12}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     const/16 v12, 0x20
 
@@ -40349,7 +40355,7 @@
 
     move-result-object v12
 
-    invoke-virtual {v8, v12}, Ljava/io/BufferedWriter;->append(Ljava/lang/CharSequence;)Ljava/io/Writer;
+    invoke-virtual {v8, v12}, Ljava/io/Writer;->append(Ljava/lang/CharSequence;)Ljava/io/Writer;
 
     const/16 v12, 0xa
 
@@ -40389,7 +40395,7 @@
     :try_start_4
     const-string v12, "DONE.\n"
 
-    invoke-virtual {v8, v12}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v8, v12}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     invoke-virtual {v8}, Ljava/io/BufferedWriter;->flush()V
     :try_end_4
@@ -40610,18 +40616,18 @@
     .end local v10           #success:Z
     if-eqz v3, :cond_3
 
-    invoke-virtual {v3}, Landroid/os/Parcel;->recycle()V
+    throw v3
 
     :cond_3
     if-eqz v9, :cond_4
 
-    invoke-virtual {v9}, Landroid/os/Parcel;->recycle()V
+    throw v9
 
     :cond_4
     if-eqz v7, :cond_0
 
     :try_start_1
-    invoke-virtual {v7}, Ljava/io/BufferedWriter;->close()V
+    throw v7
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
@@ -40715,7 +40721,7 @@
     :try_start_3
     const-string v12, "DONE\n"
 
-    invoke-virtual {v8, v12}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v8, v12}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     invoke-virtual {v8}, Ljava/io/BufferedWriter;->flush()V
     :try_end_3
@@ -40922,7 +40928,7 @@
 
     const/16 v6, 0x18
 
-    invoke-virtual {v5, v6, v1}, Lcom/android/server/wm/WindowManagerService$H;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v5, v6, v1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
@@ -40931,7 +40937,7 @@
 
     const-wide/16 v6, 0x7d0
 
-    invoke-virtual {v5, v0, v6, v7}, Lcom/android/server/wm/WindowManagerService$H;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v5, v0, v6, v7}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     iget-object v5, p0, Lcom/android/server/wm/WindowManagerService;->mWaitingForDrawn:Ljava/util/ArrayList;
 

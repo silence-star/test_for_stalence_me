@@ -150,7 +150,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
+    invoke-virtual {p1}, Ljava/nio/Buffer;->remaining()I
 
     move-result v0
 
@@ -172,7 +172,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
+    invoke-virtual {p1}, Ljava/nio/Buffer;->remaining()I
 
     move-result v1
 

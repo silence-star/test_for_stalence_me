@@ -50,7 +50,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2}, Landroid/widget/ListView;->getSelectedItem()Ljava/lang/Object;
+    invoke-virtual {v2}, Landroid/widget/AdapterView;->getSelectedItem()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -66,7 +66,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2}, Landroid/widget/ListView;->getSelectedView()Landroid/view/View;
+    invoke-virtual {v2}, Landroid/widget/AbsListView;->getSelectedView()Landroid/view/View;
 
     move-result-object v1
 

@@ -64,7 +64,7 @@
 
     const-string v0, "com.android.internal.widget.ILockSettings"
 
-    invoke-virtual {p0, p0, v0}, Lcom/android/internal/widget/ILockSettings$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -553,9 +553,9 @@
 
     goto/16 :goto_0
 
-    .end local v0           #_arg0:Ljava/lang/String;
+    .end local v0           #_arg0:I
     .end local v1           #_arg1:I
-    :sswitch_2a
+    :sswitch_e
     const-string v7, "com.android.internal.widget.ILockSettings"
 
     invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
@@ -576,6 +576,8 @@
 
     goto/16 :goto_0
 
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
@@ -591,7 +593,7 @@
         0xb -> :sswitch_b
         0xc -> :sswitch_c
         0xd -> :sswitch_d
-        0x2a -> :sswitch_2a
+        0x2a -> :sswitch_e
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

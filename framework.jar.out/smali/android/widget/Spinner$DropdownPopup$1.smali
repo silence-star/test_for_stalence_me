@@ -53,13 +53,13 @@
 
     iget-object v0, v0, Landroid/widget/Spinner$DropdownPopup;->this$0:Landroid/widget/Spinner;
 
-    invoke-virtual {v0, p3}, Landroid/widget/Spinner;->setSelection(I)V
+    invoke-virtual {v0, p3}, Landroid/widget/AbsSpinner;->setSelection(I)V
 
     iget-object v0, p0, Landroid/widget/Spinner$DropdownPopup$1;->this$1:Landroid/widget/Spinner$DropdownPopup;
 
     iget-object v0, v0, Landroid/widget/Spinner$DropdownPopup;->this$0:Landroid/widget/Spinner;
 
-    iget-object v0, v0, Landroid/widget/Spinner;->mOnItemClickListener:Landroid/widget/AdapterView$OnItemClickListener;
+    iget-object v0, v0, Landroid/widget/AdapterView;->mOnItemClickListener:Landroid/widget/AdapterView$OnItemClickListener;
 
     if-eqz v0, :cond_0
 
@@ -78,12 +78,12 @@
 
     move-result-wide v1
 
-    invoke-virtual {v0, p2, p3, v1, v2}, Landroid/widget/Spinner;->performItemClick(Landroid/view/View;IJ)Z
+    invoke-virtual {v0, p2, p3, v1, v2}, Landroid/widget/AdapterView;->performItemClick(Landroid/view/View;IJ)Z
 
     :cond_0
     iget-object v0, p0, Landroid/widget/Spinner$DropdownPopup$1;->this$1:Landroid/widget/Spinner$DropdownPopup;
 
-    invoke-virtual {v0}, Landroid/widget/Spinner$DropdownPopup;->dismiss()V
+    invoke-virtual {v0}, Landroid/widget/ListPopupWindow;->dismiss()V
 
     return-void
 .end method

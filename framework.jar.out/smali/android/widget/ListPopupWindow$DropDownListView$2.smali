@@ -61,7 +61,7 @@
 
     iget-wide v3, p0, Landroid/widget/ListPopupWindow$DropDownListView$2;->val$id:J
 
-    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/ListPopupWindow$DropDownListView;->performItemClick(Landroid/view/View;IJ)Z
+    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/AbsListView;->performItemClick(Landroid/view/View;IJ)Z
 
     return-void
 .end method

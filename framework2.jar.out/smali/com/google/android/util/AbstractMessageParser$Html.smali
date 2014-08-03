@@ -167,13 +167,13 @@
     .locals 1
 
     .prologue
-    iget-object v0, p0, Lcom/google/android/util/AbstractMessageParser$Html;->text:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/util/AbstractMessageParser$Token;->text:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/google/android/util/AbstractMessageParser$Html;->trimLeadingWhitespace(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/util/AbstractMessageParser$Html;->text:Ljava/lang/String;
+    iput-object v0, p0, Lcom/google/android/util/AbstractMessageParser$Token;->text:Ljava/lang/String;
 
     iget-object v0, p0, Lcom/google/android/util/AbstractMessageParser$Html;->html:Ljava/lang/String;
 
@@ -190,13 +190,13 @@
     .locals 1
 
     .prologue
-    iget-object v0, p0, Lcom/google/android/util/AbstractMessageParser$Html;->text:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/util/AbstractMessageParser$Token;->text:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/google/android/util/AbstractMessageParser$Html;->trimTrailingWhitespace(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/util/AbstractMessageParser$Html;->text:Ljava/lang/String;
+    iput-object v0, p0, Lcom/google/android/util/AbstractMessageParser$Token;->text:Ljava/lang/String;
 
     iget-object v0, p0, Lcom/google/android/util/AbstractMessageParser$Html;->html:Ljava/lang/String;
 

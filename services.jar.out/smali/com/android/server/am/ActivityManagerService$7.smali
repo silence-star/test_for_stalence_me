@@ -95,7 +95,7 @@
 
     const/4 v1, -0x1
 
-    invoke-virtual {p0, v1}, Lcom/android/server/am/ActivityManagerService$7;->setResultCode(I)V
+    invoke-virtual {p0, v1}, Landroid/content/BroadcastReceiver;->setResultCode(I)V
 
     monitor-exit v14
 

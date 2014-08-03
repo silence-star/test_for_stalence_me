@@ -5385,18 +5385,20 @@
     .parameter "userId"
 
     .prologue
-    if-nez p1, :cond_miui
-
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_miui
     iget-object v1, p0, Lcom/android/server/pm/UserManagerService;->mPackagesLock:Ljava/lang/Object;
 
     monitor-enter v1
 
+    if-nez p1, :cond_0
+
+    const/4 v0, 0x1
+
     :try_start_0
+    monitor-exit v1
+
+    return v0
+
+    :cond_0
     iget-object v0, p0, Lcom/android/server/pm/UserManagerService;->mUserIds:[I
 
     invoke-static {v0, p1}, Lcom/android/internal/util/ArrayUtils;->contains([II)Z
@@ -6494,7 +6496,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v3}, Ljava/security/SecureRandom;->nextLong()J
+    invoke-virtual {v3}, Ljava/util/Random;->nextLong()J
 
     move-result-wide v5
 

@@ -22,11 +22,11 @@
 
     const v0, 0x10900a6
 
-    invoke-virtual {p0, v0}, Landroid/preference/SeekBarDialogPreference;->setDialogLayoutResource(I)V
+    invoke-virtual {p0, v0}, Landroid/preference/DialogPreference;->setDialogLayoutResource(I)V
 
     invoke-virtual {p0}, Landroid/preference/SeekBarDialogPreference;->createActionButtons()V
 
-    invoke-virtual {p0}, Landroid/preference/SeekBarDialogPreference;->getDialogIcon()Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p0}, Landroid/preference/DialogPreference;->getDialogIcon()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -34,7 +34,7 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Landroid/preference/SeekBarDialogPreference;->setDialogIcon(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {p0, v0}, Landroid/preference/DialogPreference;->setDialogIcon(Landroid/graphics/drawable/Drawable;)V
 
     return-void
 .end method
@@ -63,11 +63,11 @@
     .prologue
     const v0, 0x104000a
 
-    invoke-virtual {p0, v0}, Landroid/preference/SeekBarDialogPreference;->setPositiveButtonText(I)V
+    invoke-virtual {p0, v0}, Landroid/preference/DialogPreference;->setPositiveButtonText(I)V
 
     const/high16 v0, 0x104
 
-    invoke-virtual {p0, v0}, Landroid/preference/SeekBarDialogPreference;->setNegativeButtonText(I)V
+    invoke-virtual {p0, v0}, Landroid/preference/DialogPreference;->setNegativeButtonText(I)V
 
     return-void
 .end method

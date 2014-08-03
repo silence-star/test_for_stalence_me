@@ -44,7 +44,7 @@
 
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator$2;->this$0:Landroid/widget/AdapterViewAnimator;
 
-    invoke-virtual {v0}, Landroid/widget/AdapterViewAnimator;->handleDataChanged()V
+    invoke-virtual {v0}, Landroid/widget/AdapterView;->handleDataChanged()V
 
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator$2;->this$0:Landroid/widget/AdapterViewAnimator;
 
@@ -78,18 +78,18 @@
 
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator$2;->this$0:Landroid/widget/AdapterViewAnimator;
 
-    invoke-virtual {v0}, Landroid/widget/AdapterViewAnimator;->requestLayout()V
+    invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
 
     return-void
 
     :cond_1
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator$2;->this$0:Landroid/widget/AdapterViewAnimator;
 
-    iget v0, v0, Landroid/widget/AdapterViewAnimator;->mOldItemCount:I
+    iget v0, v0, Landroid/widget/AdapterView;->mOldItemCount:I
 
     iget-object v1, p0, Landroid/widget/AdapterViewAnimator$2;->this$0:Landroid/widget/AdapterViewAnimator;
 
-    invoke-virtual {v1}, Landroid/widget/AdapterViewAnimator;->getCount()I
+    invoke-virtual {v1}, Landroid/widget/AdapterView;->getCount()I
 
     move-result v1
 

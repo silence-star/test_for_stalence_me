@@ -245,7 +245,7 @@
     move-exception v1
 
     .local v1, e:Ljava/util/concurrent/ExecutionException;
-    invoke-virtual {v1}, Ljava/util/concurrent/ExecutionException;->getCause()Ljava/lang/Throwable;
+    invoke-virtual {v1}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
 
     move-result-object v4
 
@@ -485,7 +485,7 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    invoke-virtual {p1}, Ljava/io/DataOutputStream;->close()V
+    invoke-virtual {p1}, Ljava/io/FilterOutputStream;->close()V
 
     return-void
 
@@ -493,7 +493,7 @@
     :catchall_0
     move-exception v1
 
-    invoke-virtual {p1}, Ljava/io/DataOutputStream;->close()V
+    invoke-virtual {p1}, Ljava/io/FilterOutputStream;->close()V
 
     throw v1
 
@@ -1111,7 +1111,7 @@
 
     const/4 v7, 0x1
 
-    invoke-virtual {v1, v7}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+    invoke-virtual {v1, v7}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
 
     invoke-virtual {v4, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -1239,7 +1239,7 @@
 
     const/4 v7, 0x1
 
-    invoke-virtual {v4, v7}, Ljava/lang/reflect/Method;->setAccessible(Z)V
+    invoke-virtual {v4, v7}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -2038,7 +2038,7 @@
     move-object v2, v0
 
     .local v2, group:Landroid/view/ViewGroup;
-    invoke-virtual {v2}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
+    invoke-virtual {v2}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -2054,7 +2054,7 @@
     :cond_0
     const-string v1, "DONE."
 
-    invoke-virtual {v3, v1}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v3, v1}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     invoke-virtual {v3}, Ljava/io/BufferedWriter;->newLine()V
     :try_end_1
@@ -2253,7 +2253,7 @@
     const-string v0, "ViewOverlay"
 
     :cond_1
-    invoke-virtual {p2, v0}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p2, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     const/16 v3, 0x40
 
@@ -2267,7 +2267,7 @@
 
     move-result-object v3
 
-    invoke-virtual {p2, v3}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p2, v3}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     const/16 v3, 0x20
 
@@ -2471,7 +2471,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p2, v1}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p2, v1}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     :goto_0
     return-void
@@ -4062,7 +4062,7 @@
 
     move-result-object v9
 
-    invoke-virtual {v5, v9}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v5, v9}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     invoke-virtual {v5}, Ljava/io/BufferedWriter;->flush()V
 
@@ -4132,7 +4132,7 @@
 
     move-result-object v10
 
-    invoke-virtual {v0}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v11
 
@@ -4285,7 +4285,7 @@
 
     const/4 v7, 0x1
 
-    invoke-virtual {v1, v7}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+    invoke-virtual {v1, v7}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
 
     invoke-virtual {v4, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -4438,7 +4438,7 @@
 
     const/4 v7, 0x1
 
-    invoke-virtual {v4, v7}, Ljava/lang/reflect/Method;->setAccessible(Z)V
+    invoke-virtual {v4, v7}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -4808,7 +4808,7 @@
 
     move-object/from16 v1, v24
 
-    invoke-virtual {v0, v1}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     invoke-virtual/range {v17 .. v17}, Ljava/io/BufferedWriter;->flush()V
     :try_end_1
@@ -4860,7 +4860,7 @@
 
     move-result-object v25
 
-    invoke-virtual {v8}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v26
 
@@ -5031,7 +5031,7 @@
 
     move-result-object v9
 
-    invoke-virtual {v5, v9}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v5, v9}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     invoke-virtual {v5}, Ljava/io/BufferedWriter;->flush()V
     :try_end_1
@@ -5105,7 +5105,7 @@
 
     move-result-object v10
 
-    invoke-virtual {v0}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v11
 
@@ -5248,7 +5248,7 @@
 
     move-result-object v7
 
-    invoke-virtual {v5, v7}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v5, v7}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     invoke-virtual {v5}, Ljava/io/BufferedWriter;->flush()V
     :try_end_1
@@ -5316,7 +5316,7 @@
 
     move-result-object v8
 
-    invoke-virtual {v0}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v9
 
@@ -5721,7 +5721,7 @@
 
     move-result-object v20
 
-    invoke-virtual {v5}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v21
 
@@ -5758,7 +5758,7 @@
 
     move-object/from16 v0, v19
 
-    invoke-virtual {v14, v0}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v14, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     invoke-virtual {v14}, Ljava/io/BufferedWriter;->flush()V
     :try_end_3
@@ -5917,7 +5917,7 @@
     :cond_0
     const-string v5, "OK,finished,check ui."
 
-    invoke-virtual {v4, v5}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v4, v5}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     invoke-virtual {v4}, Ljava/io/BufferedWriter;->flush()V
 
@@ -5956,7 +5956,7 @@
 
     move-result-object v6
 
-    invoke-virtual {v1}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v7
 
@@ -6325,7 +6325,7 @@
     :goto_0
     const-string v4, "DONE."
 
-    invoke-virtual {v2, v4}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v2, v4}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     invoke-virtual {v2}, Ljava/io/BufferedWriter;->newLine()V
     :try_end_1
@@ -6350,7 +6350,7 @@
     :try_start_2
     const-string v4, "-1 -1 -1"
 
-    invoke-virtual {v2, v4}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v2, v4}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     invoke-virtual {v2}, Ljava/io/BufferedWriter;->newLine()V
     :try_end_2
@@ -6522,7 +6522,7 @@
 
     move-result-object v9
 
-    invoke-virtual {p1, v9}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p1, v9}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     invoke-virtual {p1, v10}, Ljava/io/BufferedWriter;->write(I)V
 
@@ -6530,7 +6530,7 @@
 
     move-result-object v9
 
-    invoke-virtual {p1, v9}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p1, v9}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     invoke-virtual {p1, v10}, Ljava/io/BufferedWriter;->write(I)V
 
@@ -6538,7 +6538,7 @@
 
     move-result-object v9
 
-    invoke-virtual {p1, v9}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p1, v9}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     invoke-virtual {p1}, Ljava/io/BufferedWriter;->newLine()V
 
@@ -6900,7 +6900,7 @@
 
     move-result-object v9
 
-    invoke-virtual {v5, v9}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v5, v9}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     invoke-virtual {v5}, Ljava/io/BufferedWriter;->flush()V
     :try_end_1
@@ -6943,7 +6943,7 @@
 
     move-result-object v10
 
-    invoke-virtual {v0}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v11
 
@@ -7184,7 +7184,7 @@
 
     const-string v3, "takeScreenshot done."
 
-    invoke-virtual {v2, v3}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     invoke-virtual {v2}, Ljava/io/BufferedWriter;->flush()V
     :try_end_1
@@ -7221,7 +7221,7 @@
 
     move-result-object v4
 
-    invoke-virtual {v0}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v5
 
@@ -7324,15 +7324,15 @@
     .end annotation
 
     .prologue
-    invoke-virtual {p0, p1}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p0, p1}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
-    invoke-virtual {p0, p2}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p0, p2}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
-    invoke-virtual {p0, p3}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p0, p3}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     const-string v0, "="
 
-    invoke-virtual {p0, v0}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p0, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     invoke-static {p0, p4}, Landroid/view/ViewDebug;->writeValue(Ljava/io/BufferedWriter;Ljava/lang/Object;)V
 
@@ -7382,13 +7382,13 @@
 
     move-result-object v1
 
-    invoke-virtual {p0, v1}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p0, v1}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     const-string v1, ","
 
-    invoke-virtual {p0, v1}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p0, v1}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
-    invoke-virtual {p0, v0}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p0, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     .end local v0           #output:Ljava/lang/String;
     :goto_0
@@ -7406,13 +7406,13 @@
 
     move-result-object v2
 
-    invoke-virtual {p0, v2}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p0, v2}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     const-string v2, ","
 
-    invoke-virtual {p0, v2}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p0, v2}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
-    invoke-virtual {p0, v0}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p0, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     throw v1
 
@@ -7420,7 +7420,7 @@
     :cond_0
     const-string v1, "4,null"
 
-    invoke-virtual {p0, v1}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p0, v1}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     goto :goto_0
 .end method

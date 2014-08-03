@@ -62,13 +62,13 @@
 
     const v1, 0x1020003
 
-    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setId(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setId(I)V
 
     iget-object v0, p0, Landroid/preference/EditTextPreference;->mEditText:Landroid/widget/EditText;
 
     const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setEnabled(Z)V
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEnabled(Z)V
 
     return-void
 .end method
@@ -143,9 +143,9 @@
 
     move-result-object v2
 
-    invoke-virtual {v0, v2}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v0}, Landroid/widget/EditText;->getParent()Landroid/view/ViewParent;
+    invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v1
 
@@ -188,7 +188,7 @@
     move-result-object v0
 
     .local v0, value:Ljava/lang/String;
-    invoke-virtual {p0, v0}, Landroid/preference/EditTextPreference;->callChangeListener(Ljava/lang/Object;)Z
+    invoke-virtual {p0, v0}, Landroid/preference/Preference;->callChangeListener(Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -245,7 +245,7 @@
     check-cast v0, Landroid/preference/EditTextPreference$SavedState;
 
     .local v0, myState:Landroid/preference/EditTextPreference$SavedState;
-    invoke-virtual {v0}, Landroid/preference/EditTextPreference$SavedState;->getSuperState()Landroid/os/Parcelable;
+    invoke-virtual {v0}, Landroid/view/AbsSavedState;->getSuperState()Landroid/os/Parcelable;
 
     move-result-object v1
 
@@ -267,7 +267,7 @@
     move-result-object v1
 
     .local v1, superState:Landroid/os/Parcelable;
-    invoke-virtual {p0}, Landroid/preference/EditTextPreference;->isPersistent()Z
+    invoke-virtual {p0}, Landroid/preference/Preference;->isPersistent()Z
 
     move-result v2
 
@@ -305,7 +305,7 @@
 
     iget-object v0, p0, Landroid/preference/EditTextPreference;->mText:Ljava/lang/String;
 
-    invoke-virtual {p0, v0}, Landroid/preference/EditTextPreference;->getPersistedString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Landroid/preference/Preference;->getPersistedString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -334,7 +334,7 @@
     .local v1, wasBlocking:Z
     iput-object p1, p0, Landroid/preference/EditTextPreference;->mText:Ljava/lang/String;
 
-    invoke-virtual {p0, p1}, Landroid/preference/EditTextPreference;->persistString(Ljava/lang/String;)Z
+    invoke-virtual {p0, p1}, Landroid/preference/Preference;->persistString(Ljava/lang/String;)Z
 
     invoke-virtual {p0}, Landroid/preference/EditTextPreference;->shouldDisableDependents()Z
 
@@ -343,7 +343,7 @@
     .local v0, isBlocking:Z
     if-eq v0, v1, :cond_0
 
-    invoke-virtual {p0, v0}, Landroid/preference/EditTextPreference;->notifyDependencyChange(Z)V
+    invoke-virtual {p0, v0}, Landroid/preference/Preference;->notifyDependencyChange(Z)V
 
     :cond_0
     return-void
@@ -361,7 +361,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-super {p0}, Landroid/preference/DialogPreference;->shouldDisableDependents()Z
+    invoke-super {p0}, Landroid/preference/Preference;->shouldDisableDependents()Z
 
     move-result v0
 

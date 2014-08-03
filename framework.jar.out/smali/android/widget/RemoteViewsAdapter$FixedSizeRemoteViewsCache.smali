@@ -880,7 +880,7 @@
 
     iget-object v8, p0, Landroid/widget/RemoteViewsAdapter$FixedSizeRemoteViewsCache;->mRequestedIndices:Ljava/util/HashSet;
 
-    invoke-virtual {v6, v8}, Ljava/util/HashSet;->addAll(Ljava/util/Collection;)Z
+    invoke-virtual {v6, v8}, Ljava/util/AbstractCollection;->addAll(Ljava/util/Collection;)Z
 
     iget v6, p0, Landroid/widget/RemoteViewsAdapter$FixedSizeRemoteViewsCache;->mMaxCount:I
 
@@ -961,7 +961,7 @@
 
     move-result-object v8
 
-    invoke-virtual {v6, v8}, Ljava/util/HashSet;->removeAll(Ljava/util/Collection;)Z
+    invoke-virtual {v6, v8}, Ljava/util/AbstractSet;->removeAll(Ljava/util/Collection;)Z
 
     monitor-exit v7
 

@@ -255,7 +255,7 @@
     .locals 1
 
     .prologue
-    invoke-virtual {p0}, Landroid/opengl/GLSurfaceView;->getHolder()Landroid/view/SurfaceHolder;
+    invoke-virtual {p0}, Landroid/view/SurfaceView;->getHolder()Landroid/view/SurfaceHolder;
 
     move-result-object v0
 
@@ -378,7 +378,7 @@
     :cond_1
     iget-object v1, p0, Landroid/opengl/GLSurfaceView;->mGLThread:Landroid/opengl/GLSurfaceView$GLThread;
 
-    invoke-virtual {v1}, Landroid/opengl/GLSurfaceView$GLThread;->start()V
+    invoke-virtual {v1}, Ljava/lang/Thread;->start()V
 
     .end local v0           #renderMode:I
     :cond_2
@@ -649,7 +649,7 @@
 
     iget-object v0, p0, Landroid/opengl/GLSurfaceView;->mGLThread:Landroid/opengl/GLSurfaceView$GLThread;
 
-    invoke-virtual {v0}, Landroid/opengl/GLSurfaceView$GLThread;->start()V
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
     return-void
 .end method

@@ -136,7 +136,7 @@
 
     iget-object v1, p0, Landroid/widget/NubiaCursorController$FloatPanelViewController;->mContent:Landroid/widget/FloatPanelView;
 
-    invoke-virtual {v1}, Landroid/widget/FloatPanelView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+    invoke-virtual {v1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v1
 
@@ -203,14 +203,14 @@
 
     iget-object v9, p0, Landroid/widget/NubiaCursorController$FloatPanelViewController;->mContent:Landroid/widget/FloatPanelView;
 
-    invoke-virtual {v9}, Landroid/widget/FloatPanelView;->getWidth()I
+    invoke-virtual {v9}, Landroid/view/View;->getWidth()I
 
     move-result v1
 
     .local v1, contentWidth:I
     iget-object v9, p0, Landroid/widget/NubiaCursorController$FloatPanelViewController;->mContent:Landroid/widget/FloatPanelView;
 
-    invoke-virtual {v9}, Landroid/widget/FloatPanelView;->getHeight()I
+    invoke-virtual {v9}, Landroid/view/View;->getHeight()I
 
     move-result v0
 
@@ -378,7 +378,7 @@
     .prologue
     iget-object v0, p0, Landroid/widget/NubiaCursorController$FloatPanelViewController;->mContent:Landroid/widget/FloatPanelView;
 
-    invoke-virtual {v0, p1}, Landroid/widget/FloatPanelView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -417,7 +417,7 @@
     .prologue
     iget-object v1, p0, Landroid/widget/NubiaCursorController$FloatPanelViewController;->mContent:Landroid/widget/FloatPanelView;
 
-    invoke-virtual {v1, p1}, Landroid/widget/FloatPanelView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -611,7 +611,7 @@
     .prologue
     iget-object v1, p0, Landroid/widget/NubiaCursorController$FloatPanelViewController;->mContent:Landroid/widget/FloatPanelView;
 
-    invoke-virtual {v1, p1}, Landroid/widget/FloatPanelView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -661,7 +661,7 @@
 
     invoke-direct {v1, p0}, Landroid/widget/NubiaCursorController$FloatPanelViewController$2;-><init>(Landroid/widget/NubiaCursorController$FloatPanelViewController;)V
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v1}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
     :goto_0
     return-void
@@ -680,7 +680,7 @@
     .prologue
     iget-object v2, p0, Landroid/widget/NubiaCursorController$FloatPanelViewController;->mContent:Landroid/widget/FloatPanelView;
 
-    invoke-virtual {v2, p1}, Landroid/widget/FloatPanelView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v2, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 

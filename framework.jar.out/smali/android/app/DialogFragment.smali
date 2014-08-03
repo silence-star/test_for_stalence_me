@@ -139,7 +139,7 @@
 
     if-ltz v1, :cond_2
 
-    invoke-virtual {p0}, Landroid/app/DialogFragment;->getFragmentManager()Landroid/app/FragmentManager;
+    invoke-virtual {p0}, Landroid/app/Fragment;->getFragmentManager()Landroid/app/FragmentManager;
 
     move-result-object v1
 
@@ -154,7 +154,7 @@
     goto :goto_0
 
     :cond_2
-    invoke-virtual {p0}, Landroid/app/DialogFragment;->getFragmentManager()Landroid/app/FragmentManager;
+    invoke-virtual {p0}, Landroid/app/Fragment;->getFragmentManager()Landroid/app/FragmentManager;
 
     move-result-object v1
 
@@ -358,7 +358,7 @@
     goto :goto_1
 
     :cond_1
-    iget-object v0, p0, Landroid/app/DialogFragment;->mActivity:Landroid/app/Activity;
+    iget-object v0, p0, Landroid/app/Fragment;->mActivity:Landroid/app/Activity;
 
     const-string v1, "layout_inflater"
 
@@ -425,7 +425,7 @@
 
     if-eqz v2, :cond_0
 
-    invoke-virtual {p0}, Landroid/app/DialogFragment;->getView()Landroid/view/View;
+    invoke-virtual {p0}, Landroid/app/Fragment;->getView()Landroid/view/View;
 
     move-result-object v1
 
@@ -454,7 +454,7 @@
     :cond_3
     iget-object v2, p0, Landroid/app/DialogFragment;->mDialog:Landroid/app/Dialog;
 
-    invoke-virtual {p0}, Landroid/app/DialogFragment;->getActivity()Landroid/app/Activity;
+    invoke-virtual {p0}, Landroid/app/Fragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v3
 
@@ -541,7 +541,7 @@
 
     invoke-super {p0, p1}, Landroid/app/Fragment;->onCreate(Landroid/os/Bundle;)V
 
-    iget v0, p0, Landroid/app/DialogFragment;->mContainerId:I
+    iget v0, p0, Landroid/app/Fragment;->mContainerId:I
 
     if-nez v0, :cond_1
 
@@ -612,7 +612,7 @@
     .prologue
     new-instance v0, Landroid/app/Dialog;
 
-    invoke-virtual {p0}, Landroid/app/DialogFragment;->getActivity()Landroid/app/Activity;
+    invoke-virtual {p0}, Landroid/app/Fragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
 

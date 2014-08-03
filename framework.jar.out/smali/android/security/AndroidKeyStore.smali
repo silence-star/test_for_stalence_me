@@ -570,7 +570,7 @@
     :try_start_0
     aget-object v19, v18, v19
 
-    invoke-virtual/range {v19 .. v19}, Ljava/security/cert/X509Certificate;->getEncoded()[B
+    invoke-virtual/range {v19 .. v19}, Ljava/security/cert/Certificate;->getEncoded()[B
     :try_end_0
     .catch Ljava/security/cert/CertificateEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -623,7 +623,7 @@
     :try_start_1
     aget-object v19, v18, v19
 
-    invoke-virtual/range {v19 .. v19}, Ljava/security/cert/X509Certificate;->getEncoded()[B
+    invoke-virtual/range {v19 .. v19}, Ljava/security/cert/Certificate;->getEncoded()[B
 
     move-result-object v19
 
@@ -1888,7 +1888,7 @@
     invoke-direct {v2, v3}, Ljava/security/UnrecoverableKeyException;-><init>(Ljava/lang/String;)V
 
     .local v2, t:Ljava/security/UnrecoverableKeyException;
-    invoke-virtual {v2, v0}, Ljava/security/UnrecoverableKeyException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+    invoke-virtual {v2, v0}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
     throw v2
 .end method

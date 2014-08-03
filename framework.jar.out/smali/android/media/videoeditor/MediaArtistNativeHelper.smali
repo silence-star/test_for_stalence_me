@@ -4286,7 +4286,7 @@
 
     move-result-object v5
 
-    invoke-virtual {p2}, Landroid/media/videoeditor/MediaImageItem;->getId()Ljava/lang/String;
+    invoke-virtual {p2}, Landroid/media/videoeditor/MediaItem;->getId()Ljava/lang/String;
 
     move-result-object v6
 
@@ -4710,7 +4710,7 @@
     invoke-direct {v0}, Landroid/media/videoeditor/MediaArtistNativeHelper$EffectSettings;-><init>()V
 
     .local v0, effectSettings:Landroid/media/videoeditor/MediaArtistNativeHelper$EffectSettings;
-    invoke-virtual {p1}, Landroid/media/videoeditor/EffectColor;->getStartTime()J
+    invoke-virtual {p1}, Landroid/media/videoeditor/Effect;->getStartTime()J
 
     move-result-wide v1
 
@@ -4718,7 +4718,7 @@
 
     iput v1, v0, Landroid/media/videoeditor/MediaArtistNativeHelper$EffectSettings;->startTime:I
 
-    invoke-virtual {p1}, Landroid/media/videoeditor/EffectColor;->getDuration()J
+    invoke-virtual {p1}, Landroid/media/videoeditor/Effect;->getDuration()J
 
     move-result-wide v1
 
@@ -5074,7 +5074,7 @@
     const/4 v1, 0x0
 
     .local v1, bitmap:Landroid/graphics/Bitmap;
-    invoke-virtual/range {p1 .. p1}, Landroid/media/videoeditor/OverlayFrame;->getStartTime()J
+    invoke-virtual/range {p1 .. p1}, Landroid/media/videoeditor/Overlay;->getStartTime()J
 
     move-result-wide v2
 
@@ -5082,7 +5082,7 @@
 
     iput v2, v12, Landroid/media/videoeditor/MediaArtistNativeHelper$EffectSettings;->startTime:I
 
-    invoke-virtual/range {p1 .. p1}, Landroid/media/videoeditor/OverlayFrame;->getDuration()J
+    invoke-virtual/range {p1 .. p1}, Landroid/media/videoeditor/Overlay;->getDuration()J
 
     move-result-wide v2
 
@@ -5423,7 +5423,7 @@
 
     iput v2, v12, Landroid/media/videoeditor/MediaArtistNativeHelper$EffectSettings;->rgb16InputColor:I
 
-    invoke-virtual/range {p1 .. p1}, Landroid/media/videoeditor/OverlayFrame;->getMediaItem()Landroid/media/videoeditor/MediaItem;
+    invoke-virtual/range {p1 .. p1}, Landroid/media/videoeditor/Overlay;->getMediaItem()Landroid/media/videoeditor/MediaItem;
 
     move-result-object v2
 
@@ -5431,7 +5431,7 @@
 
     if-eqz v2, :cond_c
 
-    invoke-virtual/range {p1 .. p1}, Landroid/media/videoeditor/OverlayFrame;->getMediaItem()Landroid/media/videoeditor/MediaItem;
+    invoke-virtual/range {p1 .. p1}, Landroid/media/videoeditor/Overlay;->getMediaItem()Landroid/media/videoeditor/MediaItem;
 
     move-result-object v2
 
@@ -5443,7 +5443,7 @@
 
     if-eqz v2, :cond_b
 
-    invoke-virtual/range {p1 .. p1}, Landroid/media/videoeditor/OverlayFrame;->getMediaItem()Landroid/media/videoeditor/MediaItem;
+    invoke-virtual/range {p1 .. p1}, Landroid/media/videoeditor/Overlay;->getMediaItem()Landroid/media/videoeditor/MediaItem;
 
     move-result-object v2
 
@@ -5454,7 +5454,7 @@
     move-result v15
 
     .local v15, mediaItemHeight:I
-    invoke-virtual/range {p1 .. p1}, Landroid/media/videoeditor/OverlayFrame;->getMediaItem()Landroid/media/videoeditor/MediaItem;
+    invoke-virtual/range {p1 .. p1}, Landroid/media/videoeditor/Overlay;->getMediaItem()Landroid/media/videoeditor/MediaItem;
 
     move-result-object v2
 
@@ -5485,7 +5485,7 @@
     .end local v10           #aspectRatio:I
     .end local v15           #mediaItemHeight:I
     :cond_b
-    invoke-virtual/range {p1 .. p1}, Landroid/media/videoeditor/OverlayFrame;->getMediaItem()Landroid/media/videoeditor/MediaItem;
+    invoke-virtual/range {p1 .. p1}, Landroid/media/videoeditor/Overlay;->getMediaItem()Landroid/media/videoeditor/MediaItem;
 
     move-result-object v2
 
@@ -5496,7 +5496,7 @@
     move-result v15
 
     .restart local v15       #mediaItemHeight:I
-    invoke-virtual/range {p1 .. p1}, Landroid/media/videoeditor/OverlayFrame;->getMediaItem()Landroid/media/videoeditor/MediaItem;
+    invoke-virtual/range {p1 .. p1}, Landroid/media/videoeditor/Overlay;->getMediaItem()Landroid/media/videoeditor/MediaItem;
 
     move-result-object v2
 
@@ -5510,7 +5510,7 @@
     .end local v10           #aspectRatio:I
     .end local v15           #mediaItemHeight:I
     :cond_c
-    invoke-virtual/range {p1 .. p1}, Landroid/media/videoeditor/OverlayFrame;->getMediaItem()Landroid/media/videoeditor/MediaItem;
+    invoke-virtual/range {p1 .. p1}, Landroid/media/videoeditor/Overlay;->getMediaItem()Landroid/media/videoeditor/MediaItem;
 
     move-result-object v2
 
@@ -5519,7 +5519,7 @@
     move-result v10
 
     .restart local v10       #aspectRatio:I
-    invoke-virtual/range {p1 .. p1}, Landroid/media/videoeditor/OverlayFrame;->getMediaItem()Landroid/media/videoeditor/MediaItem;
+    invoke-virtual/range {p1 .. p1}, Landroid/media/videoeditor/Overlay;->getMediaItem()Landroid/media/videoeditor/MediaItem;
 
     move-result-object v2
 

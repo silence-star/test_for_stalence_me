@@ -287,9 +287,9 @@
     invoke-direct {v0, v2}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
     .local v0, fos:Ljava/io/FileOutputStream;
-    invoke-virtual {v0, v3}, Ljava/io/FileOutputStream;->write([B)V
+    invoke-virtual {v0, v3}, Ljava/io/OutputStream;->write([B)V
 
-    invoke-virtual {v0}, Ljava/io/FileOutputStream;->flush()V
+    invoke-virtual {v0}, Ljava/io/OutputStream;->flush()V
 
     invoke-static {v0}, Landroid/os/FileUtils;->sync(Ljava/io/FileOutputStream;)Z
 

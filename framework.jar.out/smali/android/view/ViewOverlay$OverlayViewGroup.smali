@@ -48,19 +48,19 @@
 
     iget-object v0, v0, Landroid/view/View;->mAttachInfo:Landroid/view/View$AttachInfo;
 
-    iput-object v0, p0, Landroid/view/ViewOverlay$OverlayViewGroup;->mAttachInfo:Landroid/view/View$AttachInfo;
+    iput-object v0, p0, Landroid/view/View;->mAttachInfo:Landroid/view/View$AttachInfo;
 
     invoke-virtual {p2}, Landroid/view/View;->getWidth()I
 
     move-result v0
 
-    iput v0, p0, Landroid/view/ViewOverlay$OverlayViewGroup;->mRight:I
+    iput v0, p0, Landroid/view/View;->mRight:I
 
     invoke-virtual {p2}, Landroid/view/View;->getHeight()I
 
     move-result v0
 
-    iput v0, p0, Landroid/view/ViewOverlay$OverlayViewGroup;->mBottom:I
+    iput v0, p0, Landroid/view/View;->mBottom:I
 
     return-void
 .end method
@@ -137,13 +137,13 @@
 
     if-eq v1, v3, :cond_0
 
-    invoke-virtual {v1}, Landroid/view/ViewGroup;->getParent()Landroid/view/ViewParent;
+    invoke-virtual {v1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v3
 
     if-eqz v3, :cond_0
 
-    iget-object v3, v1, Landroid/view/ViewGroup;->mAttachInfo:Landroid/view/View$AttachInfo;
+    iget-object v3, v1, Landroid/view/View;->mAttachInfo:Landroid/view/View$AttachInfo;
 
     if-eqz v3, :cond_0
 
@@ -153,7 +153,7 @@
     new-array v0, v6, [I
 
     .local v0, hostViewLocation:[I
-    invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->getLocationOnScreen([I)V
+    invoke-virtual {v1, v2}, Landroid/view/View;->getLocationOnScreen([I)V
 
     iget-object v3, p0, Landroid/view/ViewOverlay$OverlayViewGroup;->mHostView:Landroid/view/View;
 
@@ -216,7 +216,7 @@
     .locals 1
 
     .prologue
-    invoke-virtual {p0}, Landroid/view/ViewOverlay$OverlayViewGroup;->removeAllViews()V
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->removeAllViews()V
 
     iget-object v0, p0, Landroid/view/ViewOverlay$OverlayViewGroup;->mDrawables:Ljava/util/ArrayList;
 
@@ -286,7 +286,7 @@
     .locals 1
 
     .prologue
-    invoke-super {p0}, Landroid/view/ViewGroup;->invalidate()V
+    invoke-super {p0}, Landroid/view/View;->invalidate()V
 
     iget-object v0, p0, Landroid/view/ViewOverlay$OverlayViewGroup;->mHostView:Landroid/view/View;
 
@@ -308,7 +308,7 @@
     .parameter "b"
 
     .prologue
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/view/ViewGroup;->invalidate(IIII)V
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->invalidate(IIII)V
 
     iget-object v0, p0, Landroid/view/ViewOverlay$OverlayViewGroup;->mHostView:Landroid/view/View;
 
@@ -327,7 +327,7 @@
     .parameter "dirty"
 
     .prologue
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->invalidate(Landroid/graphics/Rect;)V
+    invoke-super {p0, p1}, Landroid/view/View;->invalidate(Landroid/graphics/Rect;)V
 
     iget-object v0, p0, Landroid/view/ViewOverlay$OverlayViewGroup;->mHostView:Landroid/view/View;
 
@@ -346,7 +346,7 @@
     .parameter "invalidateCache"
 
     .prologue
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->invalidate(Z)V
+    invoke-super {p0, p1}, Landroid/view/View;->invalidate(Z)V
 
     iget-object v0, p0, Landroid/view/ViewOverlay$OverlayViewGroup;->mHostView:Landroid/view/View;
 
@@ -501,7 +501,7 @@
     .locals 1
 
     .prologue
-    invoke-super {p0}, Landroid/view/ViewGroup;->invalidateParentCaches()V
+    invoke-super {p0}, Landroid/view/View;->invalidateParentCaches()V
 
     iget-object v0, p0, Landroid/view/ViewOverlay$OverlayViewGroup;->mHostView:Landroid/view/View;
 
@@ -519,7 +519,7 @@
     .locals 1
 
     .prologue
-    invoke-super {p0}, Landroid/view/ViewGroup;->invalidateParentIfNeeded()V
+    invoke-super {p0}, Landroid/view/View;->invalidateParentIfNeeded()V
 
     iget-object v0, p0, Landroid/view/ViewOverlay$OverlayViewGroup;->mHostView:Landroid/view/View;
 
@@ -539,7 +539,7 @@
     .parameter "forceRedraw"
 
     .prologue
-    invoke-super {p0, p1, p2}, Landroid/view/ViewGroup;->invalidateViewProperty(ZZ)V
+    invoke-super {p0, p1, p2}, Landroid/view/View;->invalidateViewProperty(ZZ)V
 
     iget-object v0, p0, Landroid/view/ViewOverlay$OverlayViewGroup;->mHostView:Landroid/view/View;
 
@@ -557,7 +557,7 @@
     .locals 1
 
     .prologue
-    invoke-virtual {p0}, Landroid/view/ViewOverlay$OverlayViewGroup;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 

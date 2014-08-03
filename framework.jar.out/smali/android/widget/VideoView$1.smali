@@ -81,7 +81,7 @@
 
     iget-object v0, p0, Landroid/widget/VideoView$1;->this$0:Landroid/widget/VideoView;
 
-    invoke-virtual {v0}, Landroid/widget/VideoView;->getHolder()Landroid/view/SurfaceHolder;
+    invoke-virtual {v0}, Landroid/view/SurfaceView;->getHolder()Landroid/view/SurfaceHolder;
 
     move-result-object v0
 
@@ -103,7 +103,7 @@
 
     iget-object v0, p0, Landroid/widget/VideoView$1;->this$0:Landroid/widget/VideoView;
 
-    invoke-virtual {v0}, Landroid/widget/VideoView;->requestLayout()V
+    invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
 
     :cond_0
     return-void

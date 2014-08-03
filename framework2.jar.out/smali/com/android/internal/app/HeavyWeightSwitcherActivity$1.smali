@@ -61,7 +61,7 @@
     :goto_0
     iget-object v0, p0, Lcom/android/internal/app/HeavyWeightSwitcherActivity$1;->this$0:Lcom/android/internal/app/HeavyWeightSwitcherActivity;
 
-    invoke-virtual {v0}, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->finish()V
+    invoke-virtual {v0}, Landroid/app/Activity;->finish()V
 
     return-void
 

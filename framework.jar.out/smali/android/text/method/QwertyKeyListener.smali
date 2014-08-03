@@ -523,7 +523,7 @@
     .parameter "cap"
 
     .prologue
-    invoke-virtual {p1}, Landroid/text/method/TextKeyListener$Capitalize;->ordinal()I
+    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
@@ -834,7 +834,7 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/text/method/CharacterPickerDialog;-><init>(Landroid/content/Context;Landroid/view/View;Landroid/text/Editable;Ljava/lang/String;Z)V
 
-    invoke-virtual {v0}, Landroid/text/method/CharacterPickerDialog;->show()V
+    invoke-virtual {v0}, Landroid/app/Dialog;->show()V
 
     :cond_1
     move v0, v6

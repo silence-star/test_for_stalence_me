@@ -2255,7 +2255,7 @@
 
     if-eq v7, v12, :cond_2
 
-    invoke-virtual/range {p0 .. p0}, Ljava/nio/ByteBuffer;->remaining()I
+    invoke-virtual/range {p0 .. p0}, Ljava/nio/Buffer;->remaining()I
 
     move-result v11
 
@@ -2353,7 +2353,7 @@
 
     .local v10, primitiveSize:I
     :goto_1
-    invoke-virtual/range {p0 .. p0}, Ljava/nio/ByteBuffer;->remaining()I
+    invoke-virtual/range {p0 .. p0}, Ljava/nio/Buffer;->remaining()I
 
     move-result v12
 
@@ -2391,7 +2391,7 @@
     .end local v3           #arrayList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Object;>;"
     .end local v10           #primitiveSize:I
     :cond_4
-    invoke-virtual/range {p0 .. p0}, Ljava/nio/ByteBuffer;->remaining()I
+    invoke-virtual/range {p0 .. p0}, Ljava/nio/Buffer;->remaining()I
 
     move-result v12
 
@@ -2409,7 +2409,7 @@
 
     move-result-object v13
 
-    invoke-virtual/range {p0 .. p0}, Ljava/nio/ByteBuffer;->remaining()I
+    invoke-virtual/range {p0 .. p0}, Ljava/nio/Buffer;->remaining()I
 
     move-result v14
 

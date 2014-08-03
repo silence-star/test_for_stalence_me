@@ -150,7 +150,7 @@
 
     invoke-virtual {v8, v10}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
-    invoke-virtual {v8}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
+    invoke-virtual {v8}, Ljava/nio/Buffer;->rewind()Ljava/nio/Buffer;
 
     const-string v10, "pssh"
 
@@ -163,7 +163,7 @@
 
     .restart local v6       #psshMap:Ljava/util/Map;,"Ljava/util/Map<Ljava/util/UUID;[B>;"
     :goto_0
-    invoke-virtual {v8}, Ljava/nio/ByteBuffer;->remaining()I
+    invoke-virtual {v8}, Ljava/nio/Buffer;->remaining()I
 
     move-result v10
 

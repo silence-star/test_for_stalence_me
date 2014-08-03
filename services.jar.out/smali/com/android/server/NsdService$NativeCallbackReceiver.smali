@@ -75,7 +75,7 @@
 
     const v2, 0x6001a
 
-    invoke-virtual {v1, v2, v0}, Lcom/android/server/NsdService$NsdStateMachine;->sendMessage(ILjava/lang/Object;)V
+    invoke-virtual {v1, v2, v0}, Lcom/android/internal/util/StateMachine;->sendMessage(ILjava/lang/Object;)V
 
     const/4 v1, 0x1
 

@@ -277,7 +277,7 @@
     .local v5, egressProp:Landroid/net/LinkProperties;
     iget-object v12, p0, Lcom/android/server/net/LockdownVpnTracker;->mVpn:Lcom/android/server/connectivity/Vpn;
 
-    invoke-virtual {v12}, Lcom/android/server/connectivity/Vpn;->getNetworkInfo()Landroid/net/NetworkInfo;
+    invoke-virtual {v12}, Landroid/net/BaseNetworkStateTracker;->getNetworkInfo()Landroid/net/NetworkInfo;
 
     move-result-object v11
 
@@ -297,7 +297,7 @@
 
     move-result-object v13
 
-    invoke-virtual {v12, v13}, Landroid/net/NetworkInfo$State;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v12, v13}, Ljava/lang/Enum;->equals(Ljava/lang/Object;)Z
 
     move-result v12
 
@@ -989,7 +989,7 @@
 
     iget-object v2, p0, Lcom/android/server/net/LockdownVpnTracker;->mVpn:Lcom/android/server/connectivity/Vpn;
 
-    invoke-virtual {v2}, Lcom/android/server/connectivity/Vpn;->getNetworkInfo()Landroid/net/NetworkInfo;
+    invoke-virtual {v2}, Landroid/net/BaseNetworkStateTracker;->getNetworkInfo()Landroid/net/NetworkInfo;
 
     move-result-object v1
 

@@ -398,7 +398,7 @@
 
     sget v1, Lnubia/ui/widget/MagnifierView;->sHeight:I
 
-    invoke-virtual {p0, v0, v1}, Lnubia/ui/widget/MagnifierView;->setMeasuredDimension(II)V
+    invoke-virtual {p0, v0, v1}, Landroid/view/View;->setMeasuredDimension(II)V
 
     return-void
 .end method

@@ -575,39 +575,6 @@
     return-object v0
 .end method
 
-.method protected getLong(Ljava/lang/String;J)J
-    .locals 3
-    .parameter "secureSettingKey"
-    .parameter "defaultValue"
-
-    .prologue
-    :try_start_0
-    invoke-direct {p0}, Lcom/android/internal/widget/LockPatternUtils;->getLockSettings()Lcom/android/internal/widget/ILockSettings;
-
-    move-result-object v1
-
-    invoke-direct {p0}, Lcom/android/internal/widget/LockPatternUtils;->getCurrentOrCallingUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, p1, p2, p3, v2}, Lcom/android/internal/widget/ILockSettings;->getLong(Ljava/lang/String;JI)J
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-wide p2
-
-    .end local p2
-    :goto_0
-    return-wide p2
-
-    .restart local p2
-    :catch_0
-    move-exception v0
-
-    .local v0, re:Landroid/os/RemoteException;
-    goto :goto_0
-.end method
-
 .method private getSalt()Ljava/lang/String;
     .locals 6
 
@@ -632,7 +599,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v3}, Ljava/security/SecureRandom;->nextLong()J
+    invoke-virtual {v3}, Ljava/util/Random;->nextLong()J
 
     move-result-wide v1
 
@@ -980,21 +947,6 @@
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
-.end method
-
-.method protected setLong(Ljava/lang/String;J)V
-    .locals 1
-    .parameter "secureSettingKey"
-    .parameter "value"
-
-    .prologue
-    invoke-direct {p0}, Lcom/android/internal/widget/LockPatternUtils;->getCurrentOrCallingUserId()I
-
-    move-result v0
-
-    invoke-direct {p0, p1, p2, p3, v0}, Lcom/android/internal/widget/LockPatternUtils;->setLong(Ljava/lang/String;JI)V
-
-    return-void
 .end method
 
 .method private setLong(Ljava/lang/String;JI)V
@@ -1947,6 +1899,39 @@
     .end local v0           #deadline:J
     :cond_1
     return-wide v0
+.end method
+
+.method protected getLong(Ljava/lang/String;J)J
+    .locals 3
+    .parameter "secureSettingKey"
+    .parameter "defaultValue"
+
+    .prologue
+    :try_start_0
+    invoke-direct {p0}, Lcom/android/internal/widget/LockPatternUtils;->getLockSettings()Lcom/android/internal/widget/ILockSettings;
+
+    move-result-object v1
+
+    invoke-direct {p0}, Lcom/android/internal/widget/LockPatternUtils;->getCurrentOrCallingUserId()I
+
+    move-result v2
+
+    invoke-interface {v1, p1, p2, p3, v2}, Lcom/android/internal/widget/ILockSettings;->getLong(Ljava/lang/String;JI)J
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-wide p2
+
+    .end local p2
+    :goto_0
+    return-wide p2
+
+    .restart local p2
+    :catch_0
+    move-exception v0
+
+    .local v0, re:Landroid/os/RemoteException;
+    goto :goto_0
 .end method
 
 .method public getNextAlarm()Ljava/lang/String;
@@ -4039,6 +4024,21 @@
     return-wide v0
 .end method
 
+.method protected setLong(Ljava/lang/String;J)V
+    .locals 1
+    .parameter "secureSettingKey"
+    .parameter "value"
+
+    .prologue
+    invoke-direct {p0}, Lcom/android/internal/widget/LockPatternUtils;->getCurrentOrCallingUserId()I
+
+    move-result v0
+
+    invoke-direct {p0, p1, p2, p3, v0}, Lcom/android/internal/widget/LockPatternUtils;->setLong(Ljava/lang/String;JI)V
+
+    return-void
+.end method
+
 .method public setOwnerInfo(Ljava/lang/String;I)V
     .locals 1
     .parameter "info"
@@ -4153,7 +4153,7 @@
 
     if-eqz p3, :cond_0
 
-    invoke-virtual {p1, v3}, Landroid/widget/Button;->setVisibility(I)V
+    invoke-virtual {p1, v3}, Landroid/view/View;->setVisibility(I)V
 
     const/4 v4, 0x2
 
@@ -4168,11 +4168,11 @@
 
     .local v1, phoneCallIcon:I
     :goto_0
-    invoke-virtual {p1, v1, v3, v3, v3}, Landroid/widget/Button;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
+    invoke-virtual {p1, v1, v3, v3, v3}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
 
     .end local v1           #phoneCallIcon:I
     :goto_1
-    invoke-virtual {p1, v2}, Landroid/widget/Button;->setText(I)V
+    invoke-virtual {p1, v2}, Landroid/widget/TextView;->setText(I)V
 
     .end local v2           #textId:I
     :goto_2
@@ -4181,7 +4181,7 @@
     :cond_0
     const/16 v3, 0x8
 
-    invoke-virtual {p1, v3}, Landroid/widget/Button;->setVisibility(I)V
+    invoke-virtual {p1, v3}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_2
 
@@ -4202,7 +4202,7 @@
 
     .local v0, emergencyIcon:I
     :goto_3
-    invoke-virtual {p1, v0, v3, v3, v3}, Landroid/widget/Button;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
+    invoke-virtual {p1, v0, v3, v3, v3}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
 
     goto :goto_1
 

@@ -74,7 +74,7 @@
     .locals 3
 
     .prologue
-    iget-object v0, p0, Landroid/widget/TableRow;->mOnHierarchyChangeListener:Landroid/view/ViewGroup$OnHierarchyChangeListener;
+    iget-object v0, p0, Landroid/view/ViewGroup;->mOnHierarchyChangeListener:Landroid/view/ViewGroup$OnHierarchyChangeListener;
 
     .local v0, oldListener:Landroid/view/ViewGroup$OnHierarchyChangeListener;
     new-instance v1, Landroid/widget/TableRow$ChildrenTracker;
@@ -95,7 +95,7 @@
     :cond_0
     iget-object v1, p0, Landroid/widget/TableRow;->mChildrenTracker:Landroid/widget/TableRow$ChildrenTracker;
 
-    invoke-super {p0, v1}, Landroid/widget/LinearLayout;->setOnHierarchyChangeListener(Landroid/view/ViewGroup$OnHierarchyChangeListener;)V
+    invoke-super {p0, v1}, Landroid/view/ViewGroup;->setOnHierarchyChangeListener(Landroid/view/ViewGroup$OnHierarchyChangeListener;)V
 
     return-void
 .end method
@@ -111,7 +111,7 @@
     const/4 v6, 0x0
 
     .local v6, virtualCount:I
-    invoke-virtual {p0}, Landroid/widget/TableRow;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v2
 
@@ -131,7 +131,7 @@
     :goto_0
     if-ge v3, v2, :cond_2
 
-    invoke-virtual {p0, v3}, Landroid/widget/TableRow;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -280,7 +280,7 @@
     .prologue
     new-instance v0, Landroid/widget/TableRow$LayoutParams;
 
-    invoke-virtual {p0}, Landroid/widget/TableRow;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -374,11 +374,11 @@
 
     if-ne v7, v8, :cond_2
 
-    iget v7, v3, Landroid/widget/TableRow$LayoutParams;->width:I
+    iget v7, v3, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     packed-switch v7, :pswitch_data_0
 
-    iget v7, v3, Landroid/widget/TableRow$LayoutParams;->width:I
+    iget v7, v3, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     const/high16 v8, 0x4000
 
@@ -394,11 +394,11 @@
 
     move-result v7
 
-    iget v8, v3, Landroid/widget/TableRow$LayoutParams;->leftMargin:I
+    iget v8, v3, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
     add-int/2addr v7, v8
 
-    iget v8, v3, Landroid/widget/TableRow$LayoutParams;->rightMargin:I
+    iget v8, v3, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     add-int v6, v7, v8
 
@@ -525,7 +525,7 @@
     .local v0, deflectedIndex:I
     if-eq v0, v2, :cond_1
 
-    invoke-virtual {p0, v0}, Landroid/widget/TableRow;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -608,7 +608,7 @@
     goto :goto_0
 
     :cond_0
-    iget v7, v11, Landroid/widget/TableRow$LayoutParams;->gravity:I
+    iget v7, v11, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
 
     .local v7, gravity:I
     invoke-static {v7}, Landroid/view/Gravity;->isHorizontal(I)Z
@@ -623,11 +623,11 @@
     :cond_1
     const/4 v14, 0x0
 
-    iget v15, v11, Landroid/widget/TableRow$LayoutParams;->leftMargin:I
+    iget v15, v11, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
     sub-int v15, v5, v15
 
-    iget v0, v11, Landroid/widget/TableRow$LayoutParams;->rightMargin:I
+    iget v0, v11, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     move/from16 v16, v0
 
@@ -644,25 +644,25 @@
     .local v4, childWidthMeasureSpec:I
     move-object/from16 v0, p0
 
-    iget v14, v0, Landroid/widget/TableRow;->mPaddingTop:I
+    iget v14, v0, Landroid/view/View;->mPaddingTop:I
 
     move-object/from16 v0, p0
 
-    iget v15, v0, Landroid/widget/TableRow;->mPaddingBottom:I
+    iget v15, v0, Landroid/view/View;->mPaddingBottom:I
 
     add-int/2addr v14, v15
 
-    iget v15, v11, Landroid/widget/TableRow$LayoutParams;->topMargin:I
+    iget v15, v11, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     add-int/2addr v14, v15
 
-    iget v15, v11, Landroid/widget/TableRow$LayoutParams;->bottomMargin:I
+    iget v15, v11, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
     add-int/2addr v14, v15
 
     add-int v14, v14, p6
 
-    iget v15, v11, Landroid/widget/TableRow$LayoutParams;->height:I
+    iget v15, v11, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     move/from16 v0, p5
 
@@ -693,7 +693,7 @@
 
     aput v16, v14, v15
 
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/TableRow;->getLayoutDirection()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getLayoutDirection()I
 
     move-result v10
 
@@ -857,7 +857,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityRecord;->setClassName(Ljava/lang/CharSequence;)V
 
     return-void
 .end method
@@ -889,7 +889,7 @@
     .parameter "b"
 
     .prologue
-    invoke-virtual {p0, p2, p3, p4, p5}, Landroid/widget/TableRow;->layoutHorizontal(IIII)V
+    invoke-virtual {p0, p2, p3, p4, p5}, Landroid/widget/LinearLayout;->layoutHorizontal(IIII)V
 
     return-void
 .end method
@@ -900,7 +900,7 @@
     .parameter "heightMeasureSpec"
 
     .prologue
-    invoke-virtual {p0, p1, p2}, Landroid/widget/TableRow;->measureHorizontal(II)V
+    invoke-virtual {p0, p1, p2}, Landroid/widget/LinearLayout;->measureHorizontal(II)V
 
     return-void
 .end method

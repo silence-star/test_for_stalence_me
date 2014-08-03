@@ -217,7 +217,7 @@
     :cond_0
     iget-object v0, p0, Landroid/filterfw/core/GLFrame;->mGLEnvironment:Landroid/filterfw/core/GLEnvironment;
 
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->getFormat()Landroid/filterfw/core/FrameFormat;
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v1
 
@@ -225,7 +225,7 @@
 
     move-result v1
 
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->getFormat()Landroid/filterfw/core/FrameFormat;
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v2
 
@@ -256,7 +256,7 @@
     .parameter "fboId"
 
     .prologue
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->getFormat()Landroid/filterfw/core/FrameFormat;
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v2
 
@@ -265,7 +265,7 @@
     move-result v1
 
     .local v1, width:I
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->getFormat()Landroid/filterfw/core/FrameFormat;
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v2
 
@@ -299,7 +299,7 @@
     .parameter "texId"
 
     .prologue
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->getFormat()Landroid/filterfw/core/FrameFormat;
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v2
 
@@ -308,7 +308,7 @@
     move-result v1
 
     .local v1, width:I
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->getFormat()Landroid/filterfw/core/FrameFormat;
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v2
 
@@ -338,7 +338,7 @@
 
     iput-boolean v2, p0, Landroid/filterfw/core/GLFrame;->mOwnsTexture:Z
 
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->markReadOnly()V
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->markReadOnly()V
 
     return-void
 .end method
@@ -482,7 +482,7 @@
     .locals 2
 
     .prologue
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->assertFrameMutable()V
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->assertFrameMutable()V
 
     invoke-direct {p0}, Landroid/filterfw/core/GLFrame;->assertGLEnvValid()V
 
@@ -514,7 +514,7 @@
 
     invoke-virtual {p0, v1}, Landroid/filterfw/core/GLFrame;->flushGPU(Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->getFormat()Landroid/filterfw/core/FrameFormat;
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v1
 
@@ -522,7 +522,7 @@
 
     move-result v1
 
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->getFormat()Landroid/filterfw/core/FrameFormat;
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v2
 
@@ -698,7 +698,7 @@
     .parameter "glEnv"
 
     .prologue
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->getFormat()Landroid/filterfw/core/FrameFormat;
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v1
 
@@ -739,7 +739,7 @@
     throw v3
 
     :cond_1
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->getFormat()Landroid/filterfw/core/FrameFormat;
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v3
 
@@ -758,7 +758,7 @@
     throw v3
 
     :cond_2
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->getBindingType()I
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->getBindingType()I
 
     move-result v0
 
@@ -773,7 +773,7 @@
     invoke-direct {p0, v3}, Landroid/filterfw/core/GLFrame;->initNew(Z)V
 
     :goto_0
-    invoke-virtual {p0, v2}, Landroid/filterfw/core/GLFrame;->setReusable(Z)V
+    invoke-virtual {p0, v2}, Landroid/filterfw/core/Frame;->setReusable(Z)V
 
     return-void
 
@@ -795,7 +795,7 @@
 
     if-ne v0, v3, :cond_5
 
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->getBindingId()J
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->getBindingId()J
 
     move-result-wide v3
 
@@ -810,7 +810,7 @@
 
     if-ne v0, v3, :cond_6
 
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->getBindingId()J
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->getBindingId()J
 
     move-result-wide v3
 
@@ -825,7 +825,7 @@
 
     if-ne v0, v3, :cond_7
 
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->getBindingId()J
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->getBindingId()J
 
     move-result-wide v3
 
@@ -840,7 +840,7 @@
 
     if-ne v0, v3, :cond_8
 
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->getBindingId()J
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->getBindingId()J
 
     move-result-wide v3
 
@@ -967,11 +967,11 @@
     .parameter "bitmap"
 
     .prologue
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->assertFrameMutable()V
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->assertFrameMutable()V
 
     invoke-direct {p0}, Landroid/filterfw/core/GLFrame;->assertGLEnvValid()V
 
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->getFormat()Landroid/filterfw/core/FrameFormat;
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v1
 
@@ -985,7 +985,7 @@
 
     if-ne v1, v2, :cond_0
 
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->getFormat()Landroid/filterfw/core/FrameFormat;
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v1
 
@@ -1043,7 +1043,7 @@
     .parameter "length"
 
     .prologue
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->assertFrameMutable()V
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->assertFrameMutable()V
 
     invoke-direct {p0}, Landroid/filterfw/core/GLFrame;->assertGLEnvValid()V
 
@@ -1052,7 +1052,7 @@
     move-result-object v0
 
     .local v0, bytes:[B
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->getFormat()Landroid/filterfw/core/FrameFormat;
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v1
 
@@ -1098,7 +1098,7 @@
     .prologue
     invoke-direct {p0}, Landroid/filterfw/core/GLFrame;->assertGLEnvValid()V
 
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->getFormat()Landroid/filterfw/core/FrameFormat;
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v0
 
@@ -1152,7 +1152,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->getFormat()Landroid/filterfw/core/FrameFormat;
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v2
 
@@ -1214,7 +1214,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Landroid/filterfw/core/GLFrame;->setObjectValue(Ljava/lang/Object;)V
+    invoke-virtual {p0, v0}, Landroid/filterfw/core/Frame;->setObjectValue(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -1229,7 +1229,7 @@
     .parameter "floats"
 
     .prologue
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->assertFrameMutable()V
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->assertFrameMutable()V
 
     invoke-direct {p0}, Landroid/filterfw/core/GLFrame;->assertGLEnvValid()V
 
@@ -1256,7 +1256,7 @@
     .parameter "ints"
 
     .prologue
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->assertFrameMutable()V
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->assertFrameMutable()V
 
     invoke-direct {p0}, Landroid/filterfw/core/GLFrame;->assertGLEnvValid()V
 
@@ -1284,7 +1284,7 @@
     .parameter "value"
 
     .prologue
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->assertFrameMutable()V
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->assertFrameMutable()V
 
     invoke-direct {p0}, Landroid/filterfw/core/GLFrame;->assertGLEnvValid()V
 
@@ -1352,7 +1352,7 @@
     .parameter "height"
 
     .prologue
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->assertFrameMutable()V
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->assertFrameMutable()V
 
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/filterfw/core/GLFrame;->setNativeViewport(IIII)Z
 
@@ -1364,7 +1364,7 @@
     .parameter "rect"
 
     .prologue
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->assertFrameMutable()V
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->assertFrameMutable()V
 
     iget v0, p1, Landroid/graphics/Rect;->left:I
 
@@ -1413,7 +1413,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Landroid/filterfw/core/GLFrame;->getFormat()Landroid/filterfw/core/FrameFormat;
+    invoke-virtual {p0}, Landroid/filterfw/core/Frame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v1
 

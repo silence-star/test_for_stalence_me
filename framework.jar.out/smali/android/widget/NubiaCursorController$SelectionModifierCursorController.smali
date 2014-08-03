@@ -77,13 +77,13 @@
 
     const/4 v1, 0x1
 
-    invoke-virtual {p0, p1, v1, p0}, Landroid/widget/NubiaCursorController$SelectionModifierCursorController;->initHandleView(Landroid/widget/Editor;ILandroid/widget/NubiaCursorController;)Landroid/widget/NubiaCursorController$NubiaHandleView;
+    invoke-virtual {p0, p1, v1, p0}, Landroid/widget/NubiaCursorController;->initHandleView(Landroid/widget/Editor;ILandroid/widget/NubiaCursorController;)Landroid/widget/NubiaCursorController$NubiaHandleView;
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/widget/NubiaCursorController$SelectionModifierCursorController;->mStartHandle:Landroid/widget/NubiaCursorController$NubiaHandleView;
 
-    invoke-virtual {p0, p1, v3, p0}, Landroid/widget/NubiaCursorController$SelectionModifierCursorController;->initHandleView(Landroid/widget/Editor;ILandroid/widget/NubiaCursorController;)Landroid/widget/NubiaCursorController$NubiaHandleView;
+    invoke-virtual {p0, p1, v3, p0}, Landroid/widget/NubiaCursorController;->initHandleView(Landroid/widget/Editor;ILandroid/widget/NubiaCursorController;)Landroid/widget/NubiaCursorController$NubiaHandleView;
 
     move-result-object v1
 
@@ -96,7 +96,7 @@
     .local v0, onClickListener:Landroid/view/View$OnClickListener;
     const v1, 0x10900c5
 
-    invoke-virtual {p0, v1}, Landroid/widget/NubiaCursorController$SelectionModifierCursorController;->createFloatPanelViewController(I)Landroid/widget/NubiaCursorController$FloatPanelViewController;
+    invoke-virtual {p0, v1}, Landroid/widget/NubiaCursorController;->createFloatPanelViewController(I)Landroid/widget/NubiaCursorController$FloatPanelViewController;
 
     move-result-object v1
 
@@ -176,11 +176,11 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/NubiaCursorController$NubiaHandleView;->getHotspotLocationOnScreen([I)V
 
-    iget-object v0, p0, Landroid/widget/NubiaCursorController$SelectionModifierCursorController;->mTextView:Landroid/widget/TextView;
+    iget-object v0, p0, Landroid/widget/NubiaCursorController;->mTextView:Landroid/widget/TextView;
 
     iget-object v1, p0, Landroid/widget/NubiaCursorController$SelectionModifierCursorController;->mCoords:[I
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->getLocationOnScreen([I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->getLocationOnScreen([I)V
 
     iget-object v0, p0, Landroid/widget/NubiaCursorController$SelectionModifierCursorController;->mCoords1:[I
 
@@ -249,9 +249,9 @@
 
     aget v0, v0, v3
 
-    iget-object v1, p0, Landroid/widget/NubiaCursorController$SelectionModifierCursorController;->mTextView:Landroid/widget/TextView;
+    iget-object v1, p0, Landroid/widget/NubiaCursorController;->mTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v1}, Landroid/widget/TextView;->getWidth()I
+    invoke-virtual {v1}, Landroid/view/View;->getWidth()I
 
     move-result v1
 
@@ -315,7 +315,7 @@
 
     aget v0, v0, v1
 
-    iget-object v1, p0, Landroid/widget/NubiaCursorController$SelectionModifierCursorController;->mTextView:Landroid/widget/TextView;
+    iget-object v1, p0, Landroid/widget/NubiaCursorController;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v1}, Landroid/widget/TextView;->getLineHeight()I
 
@@ -493,9 +493,9 @@
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Landroid/widget/NubiaCursorController$SelectionModifierCursorController;->mTextView:Landroid/widget/TextView;
+    iget-object v2, v0, Landroid/widget/NubiaCursorController;->mTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v2}, Landroid/widget/TextView;->getParent()Landroid/view/ViewParent;
+    invoke-virtual {v2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v2
 
@@ -503,9 +503,9 @@
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Landroid/widget/NubiaCursorController$SelectionModifierCursorController;->mTextView:Landroid/widget/TextView;
+    iget-object v2, v0, Landroid/widget/NubiaCursorController;->mTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v2}, Landroid/widget/TextView;->getParent()Landroid/view/ViewParent;
+    invoke-virtual {v2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v2
 
@@ -622,9 +622,9 @@
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Landroid/widget/NubiaCursorController$SelectionModifierCursorController;->mTextView:Landroid/widget/TextView;
+    iget-object v2, v0, Landroid/widget/NubiaCursorController;->mTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v2}, Landroid/widget/TextView;->getParent()Landroid/view/ViewParent;
+    invoke-virtual {v2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v2
 
@@ -632,9 +632,9 @@
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Landroid/widget/NubiaCursorController$SelectionModifierCursorController;->mTextView:Landroid/widget/TextView;
+    iget-object v2, v0, Landroid/widget/NubiaCursorController;->mTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v2}, Landroid/widget/TextView;->getParent()Landroid/view/ViewParent;
+    invoke-virtual {v2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v2
 
@@ -697,7 +697,7 @@
     :pswitch_0
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Landroid/widget/NubiaCursorController$SelectionModifierCursorController;->mEditor:Landroid/widget/Editor;
+    iget-object v2, v0, Landroid/widget/NubiaCursorController;->mEditor:Landroid/widget/Editor;
 
     invoke-virtual {v2}, Landroid/widget/Editor;->hasMagnifierController()Z
 
@@ -711,7 +711,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Landroid/widget/NubiaCursorController$SelectionModifierCursorController;->mEditor:Landroid/widget/Editor;
+    iget-object v2, v0, Landroid/widget/NubiaCursorController;->mEditor:Landroid/widget/Editor;
 
     invoke-virtual {v2}, Landroid/widget/Editor;->getMagnifierController()Landroid/widget/TextMagnifierController;
 
@@ -719,14 +719,14 @@
 
     move-object/from16 v0, p1
 
-    invoke-virtual {v2, v0}, Landroid/widget/TextMagnifierController;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-virtual {v2, v0}, Lnubia/ui/widget/MagnifierController;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v10
 
     :cond_b
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Landroid/widget/NubiaCursorController$SelectionModifierCursorController;->mEditor:Landroid/widget/Editor;
+    iget-object v2, v0, Landroid/widget/NubiaCursorController;->mEditor:Landroid/widget/Editor;
 
     invoke-virtual {v2}, Landroid/widget/Editor;->hasInsertionController()Z
 
@@ -736,7 +736,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Landroid/widget/NubiaCursorController$SelectionModifierCursorController;->mEditor:Landroid/widget/Editor;
+    iget-object v2, v0, Landroid/widget/NubiaCursorController;->mEditor:Landroid/widget/Editor;
 
     invoke-virtual {v2}, Landroid/widget/Editor;->getInsertionController()Landroid/widget/NubiaCursorController;
 
@@ -763,7 +763,7 @@
     .local v6, y:F
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Landroid/widget/NubiaCursorController$SelectionModifierCursorController;->mTextView:Landroid/widget/TextView;
+    iget-object v2, v0, Landroid/widget/NubiaCursorController;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2, v5, v6}, Landroid/widget/TextView;->getOffsetForPosition(FF)I
 
@@ -780,7 +780,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Landroid/widget/NubiaCursorController$SelectionModifierCursorController;->mEditor:Landroid/widget/Editor;
+    iget-object v2, v0, Landroid/widget/NubiaCursorController;->mEditor:Landroid/widget/Editor;
 
     move-object/from16 v0, p0
 
@@ -812,7 +812,7 @@
     :pswitch_2
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Landroid/widget/NubiaCursorController$SelectionModifierCursorController;->mContext:Landroid/content/Context;
+    iget-object v2, v0, Landroid/widget/NubiaCursorController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -841,7 +841,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Landroid/widget/NubiaCursorController$SelectionModifierCursorController;->mTextView:Landroid/widget/TextView;
+    iget-object v2, v0, Landroid/widget/NubiaCursorController;->mTextView:Landroid/widget/TextView;
 
     move-object/from16 v0, p1
 
@@ -900,7 +900,7 @@
     :pswitch_3
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Landroid/widget/NubiaCursorController$SelectionModifierCursorController;->mEditor:Landroid/widget/Editor;
+    iget-object v2, v0, Landroid/widget/NubiaCursorController;->mEditor:Landroid/widget/Editor;
 
     invoke-virtual {v2}, Landroid/widget/Editor;->onTapUpEvent()V
 
@@ -961,7 +961,7 @@
 
     iput-object v3, p0, Landroid/widget/NubiaCursorController$SelectionModifierCursorController;->mTouchOnHandle:Landroid/widget/NubiaCursorController$NubiaHandleView;
 
-    iget-object v3, p0, Landroid/widget/NubiaCursorController$SelectionModifierCursorController;->mTextView:Landroid/widget/TextView;
+    iget-object v3, p0, Landroid/widget/NubiaCursorController;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v3}, Landroid/widget/TextView;->isInBatchEditMode()Z
 
@@ -991,7 +991,7 @@
 
     invoke-virtual {v3}, Landroid/widget/NubiaCursorController$FloatPanelViewController;->showAndUpdatePositionAsync()V
 
-    iget-object v3, p0, Landroid/widget/NubiaCursorController$SelectionModifierCursorController;->mEditor:Landroid/widget/Editor;
+    iget-object v3, p0, Landroid/widget/NubiaCursorController;->mEditor:Landroid/widget/Editor;
 
     invoke-virtual {v3}, Landroid/widget/Editor;->hideInsertionPointCursorControllerWrap()V
 
@@ -1009,7 +1009,7 @@
     fill-array-data v1, :array_1
 
     .local v1, splitIds:[I
-    iget-object v3, p0, Landroid/widget/NubiaCursorController$SelectionModifierCursorController;->mEditor:Landroid/widget/Editor;
+    iget-object v3, p0, Landroid/widget/NubiaCursorController;->mEditor:Landroid/widget/Editor;
 
     invoke-virtual {v3, v0}, Landroid/widget/Editor;->getFloatPanelShowHides([I)Ljava/util/ArrayList;
 
@@ -1070,14 +1070,14 @@
     goto :goto_0
 
     :cond_2
-    iget-object v2, p0, Landroid/widget/NubiaCursorController$SelectionModifierCursorController;->mTextView:Landroid/widget/TextView;
+    iget-object v2, p0, Landroid/widget/NubiaCursorController;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2}, Landroid/widget/TextView;->getSelectionStart()I
 
     move-result v1
 
     .local v1, start:I
-    iget-object v2, p0, Landroid/widget/NubiaCursorController$SelectionModifierCursorController;->mTextView:Landroid/widget/TextView;
+    iget-object v2, p0, Landroid/widget/NubiaCursorController;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2}, Landroid/widget/TextView;->getSelectionEnd()I
 

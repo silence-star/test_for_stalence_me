@@ -915,9 +915,9 @@
 
     invoke-static {v7, v9}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v6, Lcom/android/server/LightsService;
+    new-instance v6, Lcom/android/server/MiuiLightsService;
 
-    invoke-direct {v6, v5}, Lcom/android/server/LightsService;-><init>(Landroid/content/Context;)V
+    invoke-direct {v6, v5}, Lcom/android/server/MiuiLightsService;-><init>(Landroid/content/Context;)V
     :try_end_f
     .catch Ljava/lang/RuntimeException; {:try_start_f .. :try_end_f} :catch_5a
 
@@ -1638,6 +1638,14 @@
     invoke-direct {v9, v5}, Lcom/android/server/ClipboardService;-><init>(Landroid/content/Context;)V
 
     invoke-static {v7, v9}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;)V
+
+    const-string v7, "miui.clipserviceext"
+
+    new-instance v9, Lcom/miui/server/ClipServiceExtra;
+
+    invoke-direct {v9}, Lcom/miui/server/ClipServiceExtra;-><init>()V
+
+    invoke-static {v7, v9}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;)V
     :try_end_28
     .catch Ljava/lang/Throwable; {:try_start_28 .. :try_end_28} :catch_e
 
@@ -2124,6 +2132,8 @@
     invoke-direct {v9, v5}, Lcom/android/server/DeviceStorageMonitorService;-><init>(Landroid/content/Context;)V
 
     invoke-static {v7, v9}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;)V
+
+    invoke-static {}, Lcom/android/server/ServerThread$Injector;->setMemoryLowThresholdProperty()V
     :try_end_3b
     .catch Ljava/lang/Throwable; {:try_start_3b .. :try_end_3b} :catch_1b
 

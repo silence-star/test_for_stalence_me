@@ -77,7 +77,7 @@
 
     add-int/lit8 v3, v0, -0x3
 
-    invoke-virtual {v1, v2, v3}, Ljava/util/ArrayList;->subList(II)Ljava/util/List;
+    invoke-virtual {v1, v2, v3}, Ljava/util/AbstractList;->subList(II)Ljava/util/List;
 
     move-result-object v1
 
@@ -125,7 +125,7 @@
 
     sub-int v2, v0, p1
 
-    invoke-virtual {v1, v2, v0}, Ljava/util/ArrayList;->subList(II)Ljava/util/List;
+    invoke-virtual {v1, v2, v0}, Ljava/util/AbstractList;->subList(II)Ljava/util/List;
 
     move-result-object v1
 

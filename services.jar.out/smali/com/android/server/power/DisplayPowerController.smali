@@ -1341,7 +1341,7 @@
 
     const/4 v4, 0x2
 
-    invoke-virtual {v3, v4}, Lcom/android/server/power/DisplayPowerController$DisplayControllerHandler;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {v3, v4}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
@@ -1354,7 +1354,7 @@
 
     iget-wide v4, p0, Lcom/android/server/power/DisplayPowerController;->mPendingProximityDebounceTime:J
 
-    invoke-virtual {v3, v0, v4, v5}, Lcom/android/server/power/DisplayPowerController$DisplayControllerHandler;->sendMessageAtTime(Landroid/os/Message;J)Z
+    invoke-virtual {v3, v0, v4, v5}, Landroid/os/Handler;->sendMessageAtTime(Landroid/os/Message;J)Z
 
     goto :goto_0
 .end method
@@ -1964,7 +1964,7 @@
 
     iget-object v1, p0, Lcom/android/server/power/DisplayPowerController;->mElectronBeamOnAnimator:Landroid/animation/ObjectAnimator;
 
-    invoke-virtual {v1}, Landroid/animation/ObjectAnimator;->isStarted()Z
+    invoke-virtual {v1}, Landroid/animation/ValueAnimator;->isStarted()Z
 
     move-result v1
 
@@ -1995,7 +1995,7 @@
 
     iget-object v1, p0, Lcom/android/server/power/DisplayPowerController;->mElectronBeamOffAnimator:Landroid/animation/ObjectAnimator;
 
-    invoke-virtual {v1}, Landroid/animation/ObjectAnimator;->isStarted()Z
+    invoke-virtual {v1}, Landroid/animation/ValueAnimator;->isStarted()Z
 
     move-result v1
 
@@ -2111,7 +2111,7 @@
 
     const/4 v1, 0x3
 
-    invoke-virtual {v0, v1}, Lcom/android/server/power/DisplayPowerController$DisplayControllerHandler;->removeMessages(I)V
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
     iput p3, p0, Lcom/android/server/power/DisplayPowerController;->mAmbientLuxZteControlMode:F
 
@@ -2156,7 +2156,7 @@
 
     const/4 v1, 0x2
 
-    invoke-virtual {v0, v1}, Lcom/android/server/power/DisplayPowerController$DisplayControllerHandler;->removeMessages(I)V
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
     if-eqz p3, :cond_3
 
@@ -2239,7 +2239,7 @@
 
     iget-object v1, p0, Lcom/android/server/power/DisplayPowerController;->mAnimatorListener:Landroid/animation/Animator$AnimatorListener;
 
-    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerController;->mPowerState:Lcom/android/server/power/DisplayPowerState;
 
@@ -2265,7 +2265,7 @@
 
     iget-object v1, p0, Lcom/android/server/power/DisplayPowerController;->mAnimatorListener:Landroid/animation/Animator$AnimatorListener;
 
-    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     new-instance v0, Lcom/android/server/power/RampAnimator;
 
@@ -2455,7 +2455,7 @@
 
     iget-object v1, p0, Lcom/android/server/power/DisplayPowerController;->mHandler:Lcom/android/server/power/DisplayPowerController$DisplayControllerHandler;
 
-    invoke-virtual {v1, v2}, Lcom/android/server/power/DisplayPowerController$DisplayControllerHandler;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
@@ -2464,7 +2464,7 @@
 
     iget-object v1, p0, Lcom/android/server/power/DisplayPowerController;->mHandler:Lcom/android/server/power/DisplayPowerController$DisplayControllerHandler;
 
-    invoke-virtual {v1, v0}, Lcom/android/server/power/DisplayPowerController$DisplayControllerHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     .end local v0           #msg:Landroid/os/Message;
     :cond_0
@@ -2559,7 +2559,7 @@
 
     const/4 v1, 0x3
 
-    invoke-virtual {v0, v1}, Lcom/android/server/power/DisplayPowerController$DisplayControllerHandler;->removeMessages(I)V
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerController;->mSensorManager:Landroid/hardware/SensorManager;
 
@@ -2643,7 +2643,7 @@
 
     const/4 v1, 0x2
 
-    invoke-virtual {v0, v1}, Lcom/android/server/power/DisplayPowerController$DisplayControllerHandler;->removeMessages(I)V
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerController;->mSensorManager:Landroid/hardware/SensorManager;
 
@@ -2971,7 +2971,7 @@
 
     iget-object v4, p0, Lcom/android/server/power/DisplayPowerController;->mHandler:Lcom/android/server/power/DisplayPowerController$DisplayControllerHandler;
 
-    invoke-virtual {v4, v9, v2, v3}, Lcom/android/server/power/DisplayPowerController$DisplayControllerHandler;->sendEmptyMessageAtTime(IJ)Z
+    invoke-virtual {v4, v9, v2, v3}, Landroid/os/Handler;->sendEmptyMessageAtTime(IJ)Z
 
     .end local v2           #timeWhenSensorWarmedUp:J
     :cond_0
@@ -3071,7 +3071,7 @@
 
     add-long/2addr v5, p1
 
-    invoke-virtual {v4, v9, v5, v6}, Lcom/android/server/power/DisplayPowerController$DisplayControllerHandler;->sendEmptyMessageAtTime(IJ)Z
+    invoke-virtual {v4, v9, v5, v6}, Landroid/os/Handler;->sendEmptyMessageAtTime(IJ)Z
 
     goto :goto_0
 
@@ -3178,7 +3178,7 @@
 
     iget-object v4, p0, Lcom/android/server/power/DisplayPowerController;->mHandler:Lcom/android/server/power/DisplayPowerController$DisplayControllerHandler;
 
-    invoke-virtual {v4, v9, v0, v1}, Lcom/android/server/power/DisplayPowerController$DisplayControllerHandler;->sendEmptyMessageAtTime(IJ)Z
+    invoke-virtual {v4, v9, v0, v1}, Landroid/os/Handler;->sendEmptyMessageAtTime(IJ)Z
 
     goto/16 :goto_0
 
@@ -3362,7 +3362,7 @@
 
     iget-object v4, p0, Lcom/android/server/power/DisplayPowerController;->mHandler:Lcom/android/server/power/DisplayPowerController$DisplayControllerHandler;
 
-    invoke-virtual {v4, v9, v0, v1}, Lcom/android/server/power/DisplayPowerController$DisplayControllerHandler;->sendEmptyMessageAtTime(IJ)Z
+    invoke-virtual {v4, v9, v0, v1}, Landroid/os/Handler;->sendEmptyMessageAtTime(IJ)Z
 
     goto/16 :goto_0
 
@@ -4111,7 +4111,7 @@
 
     iget-object v6, p0, Lcom/android/server/power/DisplayPowerController;->mElectronBeamOffAnimator:Landroid/animation/ObjectAnimator;
 
-    invoke-virtual {v6}, Landroid/animation/ObjectAnimator;->isStarted()Z
+    invoke-virtual {v6}, Landroid/animation/ValueAnimator;->isStarted()Z
 
     move-result v6
 
@@ -4147,7 +4147,7 @@
 
     iget-object v6, p0, Lcom/android/server/power/DisplayPowerController;->mElectronBeamOnAnimator:Landroid/animation/ObjectAnimator;
 
-    invoke-virtual {v6}, Landroid/animation/ObjectAnimator;->isStarted()Z
+    invoke-virtual {v6}, Landroid/animation/ValueAnimator;->isStarted()Z
 
     move-result v6
 
@@ -4155,7 +4155,7 @@
 
     iget-object v6, p0, Lcom/android/server/power/DisplayPowerController;->mElectronBeamOffAnimator:Landroid/animation/ObjectAnimator;
 
-    invoke-virtual {v6}, Landroid/animation/ObjectAnimator;->isStarted()Z
+    invoke-virtual {v6}, Landroid/animation/ValueAnimator;->isStarted()Z
 
     move-result v6
 
@@ -4403,7 +4403,7 @@
     :cond_18
     iget-object v6, p0, Lcom/android/server/power/DisplayPowerController;->mElectronBeamOnAnimator:Landroid/animation/ObjectAnimator;
 
-    invoke-virtual {v6}, Landroid/animation/ObjectAnimator;->isStarted()Z
+    invoke-virtual {v6}, Landroid/animation/ValueAnimator;->isStarted()Z
 
     move-result v6
 
@@ -4411,7 +4411,7 @@
 
     iget-object v6, p0, Lcom/android/server/power/DisplayPowerController;->mElectronBeamOffAnimator:Landroid/animation/ObjectAnimator;
 
-    invoke-virtual {v6}, Landroid/animation/ObjectAnimator;->isStarted()Z
+    invoke-virtual {v6}, Landroid/animation/ValueAnimator;->isStarted()Z
 
     move-result v6
 
@@ -4466,7 +4466,7 @@
     :cond_1b
     iget-object v6, p0, Lcom/android/server/power/DisplayPowerController;->mElectronBeamOffAnimator:Landroid/animation/ObjectAnimator;
 
-    invoke-virtual {v6}, Landroid/animation/ObjectAnimator;->end()V
+    invoke-virtual {v6}, Landroid/animation/ValueAnimator;->end()V
 
     goto/16 :goto_a
 
@@ -4785,7 +4785,7 @@
 
     const-wide/16 v2, 0x3e8
 
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/server/power/DisplayPowerController$DisplayControllerHandler;->runWithScissors(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->runWithScissors(Ljava/lang/Runnable;J)Z
 
     return-void
 

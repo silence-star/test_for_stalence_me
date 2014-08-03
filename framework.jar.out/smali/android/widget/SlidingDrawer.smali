@@ -277,7 +277,7 @@
 
     iput v1, p0, Landroid/widget/SlidingDrawer;->mContentId:I
 
-    invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v5
 
@@ -350,7 +350,7 @@
 
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    invoke-virtual {p0, v7}, Landroid/widget/SlidingDrawer;->setAlwaysDrawnWithCacheEnabled(Z)V
+    invoke-virtual {p0, v7}, Landroid/view/ViewGroup;->setAlwaysDrawnWithCacheEnabled(Z)V
 
     return-void
 .end method
@@ -485,7 +485,7 @@
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->getHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v0
 
@@ -509,7 +509,7 @@
     return-void
 
     :cond_1
-    invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v0
 
@@ -650,7 +650,7 @@
 
     invoke-virtual {v3, v7}, Landroid/view/View;->offsetTopAndBottom(I)V
 
-    invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :goto_0
     return-void
@@ -660,11 +660,11 @@
 
     iget v7, p0, Landroid/widget/SlidingDrawer;->mBottomOffset:I
 
-    iget v8, p0, Landroid/widget/SlidingDrawer;->mBottom:I
+    iget v8, p0, Landroid/view/View;->mBottom:I
 
     add-int/2addr v7, v8
 
-    iget v8, p0, Landroid/widget/SlidingDrawer;->mTop:I
+    iget v8, p0, Landroid/view/View;->mTop:I
 
     sub-int/2addr v7, v8
 
@@ -680,7 +680,7 @@
 
     invoke-virtual {v3, v7}, Landroid/view/View;->offsetTopAndBottom(I)V
 
-    invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     goto :goto_0
 
@@ -733,7 +733,7 @@
 
     sub-int/2addr v7, v1
 
-    invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v8
 
@@ -751,7 +751,7 @@
 
     invoke-virtual {v5, v11, v7, v8, v9}, Landroid/graphics/Rect;->union(IIII)V
 
-    invoke-virtual {p0, v5}, Landroid/widget/SlidingDrawer;->invalidate(Landroid/graphics/Rect;)V
+    invoke-virtual {p0, v5}, Landroid/view/View;->invalidate(Landroid/graphics/Rect;)V
 
     goto :goto_0
 
@@ -760,11 +760,11 @@
     :cond_3
     iget v7, p0, Landroid/widget/SlidingDrawer;->mBottomOffset:I
 
-    iget v8, p0, Landroid/widget/SlidingDrawer;->mBottom:I
+    iget v8, p0, Landroid/view/View;->mBottom:I
 
     add-int/2addr v7, v8
 
-    iget v8, p0, Landroid/widget/SlidingDrawer;->mTop:I
+    iget v8, p0, Landroid/view/View;->mTop:I
 
     sub-int/2addr v7, v8
 
@@ -778,11 +778,11 @@
 
     iget v7, p0, Landroid/widget/SlidingDrawer;->mBottomOffset:I
 
-    iget v8, p0, Landroid/widget/SlidingDrawer;->mBottom:I
+    iget v8, p0, Landroid/view/View;->mBottom:I
 
     add-int/2addr v7, v8
 
-    iget v8, p0, Landroid/widget/SlidingDrawer;->mTop:I
+    iget v8, p0, Landroid/view/View;->mTop:I
 
     sub-int/2addr v7, v8
 
@@ -809,7 +809,7 @@
 
     invoke-virtual {v3, v7}, Landroid/view/View;->offsetLeftAndRight(I)V
 
-    invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     goto/16 :goto_0
 
@@ -818,11 +818,11 @@
 
     iget v7, p0, Landroid/widget/SlidingDrawer;->mBottomOffset:I
 
-    iget v8, p0, Landroid/widget/SlidingDrawer;->mRight:I
+    iget v8, p0, Landroid/view/View;->mRight:I
 
     add-int/2addr v7, v8
 
-    iget v8, p0, Landroid/widget/SlidingDrawer;->mLeft:I
+    iget v8, p0, Landroid/view/View;->mLeft:I
 
     sub-int/2addr v7, v8
 
@@ -838,7 +838,7 @@
 
     invoke-virtual {v3, v7}, Landroid/view/View;->offsetLeftAndRight(I)V
 
-    invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     goto/16 :goto_0
 
@@ -903,13 +903,13 @@
 
     add-int/2addr v8, v9
 
-    invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->getHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v9
 
     invoke-virtual {v5, v7, v11, v8, v9}, Landroid/graphics/Rect;->union(IIII)V
 
-    invoke-virtual {p0, v5}, Landroid/widget/SlidingDrawer;->invalidate(Landroid/graphics/Rect;)V
+    invoke-virtual {p0, v5}, Landroid/view/View;->invalidate(Landroid/graphics/Rect;)V
 
     goto/16 :goto_0
 
@@ -918,11 +918,11 @@
     :cond_8
     iget v7, p0, Landroid/widget/SlidingDrawer;->mBottomOffset:I
 
-    iget v8, p0, Landroid/widget/SlidingDrawer;->mRight:I
+    iget v8, p0, Landroid/view/View;->mRight:I
 
     add-int/2addr v7, v8
 
-    iget v8, p0, Landroid/widget/SlidingDrawer;->mLeft:I
+    iget v8, p0, Landroid/view/View;->mLeft:I
 
     sub-int/2addr v7, v8
 
@@ -936,11 +936,11 @@
 
     iget v7, p0, Landroid/widget/SlidingDrawer;->mBottomOffset:I
 
-    iget v8, p0, Landroid/widget/SlidingDrawer;->mRight:I
+    iget v8, p0, Landroid/view/View;->mRight:I
 
     add-int/2addr v7, v8
 
-    iget v8, p0, Landroid/widget/SlidingDrawer;->mLeft:I
+    iget v8, p0, Landroid/view/View;->mLeft:I
 
     sub-int/2addr v7, v8
 
@@ -1135,7 +1135,7 @@
 
     if-eqz v2, :cond_6
 
-    invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->getHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v2
 
@@ -1170,7 +1170,7 @@
     goto :goto_1
 
     :cond_6
-    invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v2
 
@@ -1226,9 +1226,9 @@
     iget v0, p0, Landroid/widget/SlidingDrawer;->mHandleHeight:I
 
     .local v0, childHeight:I
-    iget v5, p0, Landroid/widget/SlidingDrawer;->mBottom:I
+    iget v5, p0, Landroid/view/View;->mBottom:I
 
-    iget v6, p0, Landroid/widget/SlidingDrawer;->mTop:I
+    iget v6, p0, Landroid/view/View;->mTop:I
 
     sub-int/2addr v5, v6
 
@@ -1239,9 +1239,9 @@
     sub-int v3, v5, v6
 
     .local v3, height:I
-    iget v5, p0, Landroid/widget/SlidingDrawer;->mRight:I
+    iget v5, p0, Landroid/view/View;->mRight:I
 
-    iget v6, p0, Landroid/widget/SlidingDrawer;->mLeft:I
+    iget v6, p0, Landroid/view/View;->mLeft:I
 
     sub-int/2addr v5, v6
 
@@ -1308,9 +1308,9 @@
     move-result v1
 
     .local v1, childWidth:I
-    iget v5, p0, Landroid/widget/SlidingDrawer;->mRight:I
+    iget v5, p0, Landroid/view/View;->mRight:I
 
-    iget v6, p0, Landroid/widget/SlidingDrawer;->mLeft:I
+    iget v6, p0, Landroid/view/View;->mLeft:I
 
     sub-int/2addr v5, v6
 
@@ -1325,9 +1325,9 @@
 
     move-result v5
 
-    iget v6, p0, Landroid/widget/SlidingDrawer;->mBottom:I
+    iget v6, p0, Landroid/view/View;->mBottom:I
 
-    iget v7, p0, Landroid/widget/SlidingDrawer;->mTop:I
+    iget v7, p0, Landroid/view/View;->mTop:I
 
     sub-int/2addr v6, v7
 
@@ -1407,7 +1407,7 @@
 
     if-eqz v3, :cond_1
 
-    invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->getHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v3
 
@@ -1461,7 +1461,7 @@
 
     .restart local v2       #opening:Z
     :cond_1
-    invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v3
 
@@ -1600,7 +1600,7 @@
 
     const/16 v1, 0x20
 
-    invoke-virtual {p0, v1}, Landroid/widget/SlidingDrawer;->sendAccessibilityEvent(I)V
+    invoke-virtual {p0, v1}, Landroid/view/View;->sendAccessibilityEvent(I)V
 
     if-eqz v0, :cond_1
 
@@ -1644,9 +1644,9 @@
     .prologue
     invoke-direct {p0}, Landroid/widget/SlidingDrawer;->closeDrawer()V
 
-    invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->requestLayout()V
+    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
 
     return-void
 .end method
@@ -1660,7 +1660,7 @@
 
     const/4 v5, 0x0
 
-    invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->getDrawingTime()J
+    invoke-virtual {p0}, Landroid/view/View;->getDrawingTime()J
 
     move-result-wide v1
 
@@ -1671,7 +1671,7 @@
     iget-boolean v4, p0, Landroid/widget/SlidingDrawer;->mVertical:Z
 
     .local v4, isVertical:Z
-    invoke-virtual {p0, p1, v3, v1, v2}, Landroid/widget/SlidingDrawer;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
+    invoke-virtual {p0, p1, v3, v1, v2}, Landroid/view/ViewGroup;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
     iget-boolean v6, p0, Landroid/widget/SlidingDrawer;->mTracking:Z
 
@@ -1743,7 +1743,7 @@
 
     iget-object v5, p0, Landroid/widget/SlidingDrawer;->mContent:Landroid/view/View;
 
-    invoke-virtual {p0, p1, v5, v1, v2}, Landroid/widget/SlidingDrawer;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
+    invoke-virtual {p0, p1, v5, v1, v2}, Landroid/view/ViewGroup;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
@@ -1770,7 +1770,7 @@
 
     iget-object v5, p0, Landroid/widget/SlidingDrawer;->mContent:Landroid/view/View;
 
-    invoke-virtual {p0, p1, v5, v1, v2}, Landroid/widget/SlidingDrawer;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
+    invoke-virtual {p0, p1, v5, v1, v2}, Landroid/view/ViewGroup;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
     goto :goto_0
 .end method
@@ -1843,7 +1843,7 @@
     .prologue
     iget v0, p0, Landroid/widget/SlidingDrawer;->mHandleId:I
 
-    invoke-virtual {p0, v0}, Landroid/widget/SlidingDrawer;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -1874,7 +1874,7 @@
 
     iget v0, p0, Landroid/widget/SlidingDrawer;->mContentId:I
 
-    invoke-virtual {p0, v0}, Landroid/widget/SlidingDrawer;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -1907,7 +1907,7 @@
     .parameter "event"
 
     .prologue
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+    invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
     const-class v0, Landroid/widget/SlidingDrawer;
 
@@ -1915,7 +1915,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityRecord;->setClassName(Ljava/lang/CharSequence;)V
 
     return-void
 .end method
@@ -1925,7 +1925,7 @@
     .parameter "info"
 
     .prologue
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     const-class v0, Landroid/widget/SlidingDrawer;
 
@@ -2265,7 +2265,7 @@
     iget-object v0, p0, Landroid/widget/SlidingDrawer;->mHandle:Landroid/view/View;
 
     .local v0, handle:Landroid/view/View;
-    invoke-virtual {p0, v0, p1, p2}, Landroid/widget/SlidingDrawer;->measureChild(Landroid/view/View;II)V
+    invoke-virtual {p0, v0, p1, p2}, Landroid/view/ViewGroup;->measureChild(Landroid/view/View;II)V
 
     iget-boolean v7, p0, Landroid/widget/SlidingDrawer;->mVertical:Z
 
@@ -2296,7 +2296,7 @@
 
     .end local v1           #height:I
     :goto_0
-    invoke-virtual {p0, v6, v3}, Landroid/widget/SlidingDrawer;->setMeasuredDimension(II)V
+    invoke-virtual {p0, v6, v3}, Landroid/view/View;->setMeasuredDimension(II)V
 
     return-void
 
@@ -2368,7 +2368,7 @@
 
     if-nez v9, :cond_2
 
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-super {p0, p1}, Landroid/view/View;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v9
 
@@ -2526,11 +2526,11 @@
 
     iget v9, p0, Landroid/widget/SlidingDrawer;->mBottomOffset:I
 
-    iget v10, p0, Landroid/widget/SlidingDrawer;->mBottom:I
+    iget v10, p0, Landroid/view/View;->mBottom:I
 
     add-int/2addr v9, v10
 
-    iget v10, p0, Landroid/widget/SlidingDrawer;->mTop:I
+    iget v10, p0, Landroid/view/View;->mTop:I
 
     sub-int/2addr v9, v10
 
@@ -2551,7 +2551,7 @@
 
     const/4 v9, 0x0
 
-    invoke-virtual {p0, v9}, Landroid/widget/SlidingDrawer;->playSoundEffect(I)V
+    invoke-virtual {p0, v9}, Landroid/view/View;->playSoundEffect(I)V
 
     iget-boolean v9, p0, Landroid/widget/SlidingDrawer;->mExpanded:Z
 
@@ -2637,11 +2637,11 @@
 
     iget v9, p0, Landroid/widget/SlidingDrawer;->mBottomOffset:I
 
-    iget v10, p0, Landroid/widget/SlidingDrawer;->mRight:I
+    iget v10, p0, Landroid/view/View;->mRight:I
 
     add-int/2addr v9, v10
 
-    iget v10, p0, Landroid/widget/SlidingDrawer;->mLeft:I
+    iget v10, p0, Landroid/view/View;->mLeft:I
 
     sub-int/2addr v9, v10
 
@@ -2756,13 +2756,13 @@
     .prologue
     invoke-direct {p0}, Landroid/widget/SlidingDrawer;->openDrawer()V
 
-    invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->requestLayout()V
+    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
 
     const/16 v0, 0x20
 
-    invoke-virtual {p0, v0}, Landroid/widget/SlidingDrawer;->sendAccessibilityEvent(I)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->sendAccessibilityEvent(I)V
 
     return-void
 .end method
@@ -2808,9 +2808,9 @@
     invoke-direct {p0}, Landroid/widget/SlidingDrawer;->openDrawer()V
 
     :goto_0
-    invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->requestLayout()V
+    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
 
     return-void
 

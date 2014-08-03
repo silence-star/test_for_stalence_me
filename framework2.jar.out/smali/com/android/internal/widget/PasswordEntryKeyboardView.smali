@@ -51,7 +51,7 @@
     move-result v5
 
     .local v5, result:Z
-    invoke-virtual {p0}, Lcom/android/internal/widget/PasswordEntryKeyboardView;->getKeyboard()Landroid/inputmethodservice/Keyboard;
+    invoke-virtual {p0}, Landroid/inputmethodservice/KeyboardView;->getKeyboard()Landroid/inputmethodservice/Keyboard;
 
     move-result-object v6
 
@@ -75,7 +75,7 @@
     aget v2, v0, v1
 
     .local v2, index:I
-    invoke-virtual {p0, v2}, Lcom/android/internal/widget/PasswordEntryKeyboardView;->invalidateKey(I)V
+    invoke-virtual {p0, v2}, Landroid/inputmethodservice/KeyboardView;->invalidateKey(I)V
 
     add-int/lit8 v1, v1, 0x1
 

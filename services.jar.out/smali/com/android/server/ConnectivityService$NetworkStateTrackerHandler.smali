@@ -195,7 +195,7 @@
 
     move-result-object v8
 
-    invoke-virtual {v8}, Landroid/net/NetworkInfo$DetailedState;->ordinal()I
+    invoke-virtual {v8}, Ljava/lang/Enum;->ordinal()I
 
     move-result v8
 

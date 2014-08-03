@@ -195,7 +195,7 @@
 
     iget-object v0, p0, Lcom/android/internal/telephony/dataconnection/DcAsyncChannel;->mDc:Lcom/android/internal/telephony/dataconnection/DataConnection;
 
-    invoke-virtual {v0}, Lcom/android/internal/telephony/dataconnection/DataConnection;->getHandler()Landroid/os/Handler;
+    invoke-virtual {v0}, Lcom/android/internal/util/StateMachine;->getHandler()Landroid/os/Handler;
 
     move-result-object v0
 
@@ -341,7 +341,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/internal/telephony/dataconnection/DataConnection$ConnectionParams;-><init>(Lcom/android/internal/telephony/dataconnection/ApnContext;IIILandroid/os/Message;)V
 
-    invoke-virtual {p0, v6, v0}, Lcom/android/internal/telephony/dataconnection/DcAsyncChannel;->sendMessage(ILjava/lang/Object;)V
+    invoke-virtual {p0, v6, v0}, Lcom/android/internal/util/AsyncChannel;->sendMessage(ILjava/lang/Object;)V
 
     return-void
 .end method
@@ -358,7 +358,7 @@
 
     const v2, 0x41004
 
-    invoke-virtual {p0, v2}, Lcom/android/internal/telephony/dataconnection/DcAsyncChannel;->sendMessageSynchronously(I)Landroid/os/Message;
+    invoke-virtual {p0, v2}, Lcom/android/internal/util/AsyncChannel;->sendMessageSynchronously(I)Landroid/os/Message;
 
     move-result-object v0
 
@@ -433,7 +433,7 @@
 
     const v2, 0x41002
 
-    invoke-virtual {p0, v2}, Lcom/android/internal/telephony/dataconnection/DcAsyncChannel;->sendMessageSynchronously(I)Landroid/os/Message;
+    invoke-virtual {p0, v2}, Lcom/android/internal/util/AsyncChannel;->sendMessageSynchronously(I)Landroid/os/Message;
 
     move-result-object v0
 
@@ -521,7 +521,7 @@
 
     const v2, 0x4100a
 
-    invoke-virtual {p0, v2}, Lcom/android/internal/telephony/dataconnection/DcAsyncChannel;->sendMessageSynchronously(I)Landroid/os/Message;
+    invoke-virtual {p0, v2}, Lcom/android/internal/util/AsyncChannel;->sendMessageSynchronously(I)Landroid/os/Message;
 
     move-result-object v0
 
@@ -576,7 +576,7 @@
 
     const v2, 0x41006
 
-    invoke-virtual {p0, v2}, Lcom/android/internal/telephony/dataconnection/DcAsyncChannel;->sendMessageSynchronously(I)Landroid/os/Message;
+    invoke-virtual {p0, v2}, Lcom/android/internal/util/AsyncChannel;->sendMessageSynchronously(I)Landroid/os/Message;
 
     move-result-object v0
 
@@ -651,7 +651,7 @@
 
     const v2, 0x41000
 
-    invoke-virtual {p0, v2}, Lcom/android/internal/telephony/dataconnection/DcAsyncChannel;->sendMessageSynchronously(I)Landroid/os/Message;
+    invoke-virtual {p0, v2}, Lcom/android/internal/util/AsyncChannel;->sendMessageSynchronously(I)Landroid/os/Message;
 
     move-result-object v0
 
@@ -720,7 +720,7 @@
     .prologue
     const v0, 0x41004
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/telephony/dataconnection/DcAsyncChannel;->sendMessage(I)V
+    invoke-virtual {p0, v0}, Lcom/android/internal/util/AsyncChannel;->sendMessage(I)V
 
     return-void
 .end method
@@ -731,7 +731,7 @@
     .prologue
     const v0, 0x41002
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/telephony/dataconnection/DcAsyncChannel;->sendMessage(I)V
+    invoke-virtual {p0, v0}, Lcom/android/internal/util/AsyncChannel;->sendMessage(I)V
 
     return-void
 .end method
@@ -742,7 +742,7 @@
     .prologue
     const v0, 0x41000
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/telephony/dataconnection/DcAsyncChannel;->sendMessage(I)V
+    invoke-virtual {p0, v0}, Lcom/android/internal/util/AsyncChannel;->sendMessage(I)V
 
     return-void
 .end method
@@ -753,7 +753,7 @@
     .prologue
     const v0, 0x4100a
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/telephony/dataconnection/DcAsyncChannel;->sendMessage(I)V
+    invoke-virtual {p0, v0}, Lcom/android/internal/util/AsyncChannel;->sendMessage(I)V
 
     return-void
 .end method
@@ -764,7 +764,7 @@
     .prologue
     const v0, 0x41006
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/telephony/dataconnection/DcAsyncChannel;->sendMessage(I)V
+    invoke-virtual {p0, v0}, Lcom/android/internal/util/AsyncChannel;->sendMessage(I)V
 
     return-void
 .end method
@@ -775,7 +775,7 @@
     .prologue
     const v0, 0x4100c
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/telephony/dataconnection/DcAsyncChannel;->sendMessage(I)V
+    invoke-virtual {p0, v0}, Lcom/android/internal/util/AsyncChannel;->sendMessage(I)V
 
     return-void
 .end method
@@ -787,7 +787,7 @@
     .prologue
     const v0, 0x41008
 
-    invoke-virtual {p0, v0, p1}, Lcom/android/internal/telephony/dataconnection/DcAsyncChannel;->sendMessage(ILjava/lang/Object;)V
+    invoke-virtual {p0, v0, p1}, Lcom/android/internal/util/AsyncChannel;->sendMessage(ILjava/lang/Object;)V
 
     return-void
 .end method
@@ -877,7 +877,7 @@
 
     const v1, 0x41008
 
-    invoke-virtual {p0, v1, p1}, Lcom/android/internal/telephony/dataconnection/DcAsyncChannel;->sendMessageSynchronously(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {p0, v1, p1}, Lcom/android/internal/util/AsyncChannel;->sendMessageSynchronously(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
@@ -940,7 +940,7 @@
 
     invoke-direct {v1, p1, p2, p3}, Lcom/android/internal/telephony/dataconnection/DataConnection$DisconnectParams;-><init>(Lcom/android/internal/telephony/dataconnection/ApnContext;Ljava/lang/String;Landroid/os/Message;)V
 
-    invoke-virtual {p0, v0, v1}, Lcom/android/internal/telephony/dataconnection/DcAsyncChannel;->sendMessage(ILjava/lang/Object;)V
+    invoke-virtual {p0, v0, v1}, Lcom/android/internal/util/AsyncChannel;->sendMessage(ILjava/lang/Object;)V
 
     return-void
 .end method
@@ -959,7 +959,7 @@
 
     invoke-direct {v1, v2, p1, p2}, Lcom/android/internal/telephony/dataconnection/DataConnection$DisconnectParams;-><init>(Lcom/android/internal/telephony/dataconnection/ApnContext;Ljava/lang/String;Landroid/os/Message;)V
 
-    invoke-virtual {p0, v0, v1}, Lcom/android/internal/telephony/dataconnection/DcAsyncChannel;->sendMessage(ILjava/lang/Object;)V
+    invoke-virtual {p0, v0, v1}, Lcom/android/internal/util/AsyncChannel;->sendMessage(ILjava/lang/Object;)V
 
     return-void
 .end method
@@ -970,7 +970,7 @@
     .prologue
     iget-object v0, p0, Lcom/android/internal/telephony/dataconnection/DcAsyncChannel;->mDc:Lcom/android/internal/telephony/dataconnection/DataConnection;
 
-    invoke-virtual {v0}, Lcom/android/internal/telephony/dataconnection/DataConnection;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/android/internal/util/StateMachine;->getName()Ljava/lang/String;
 
     move-result-object v0
 

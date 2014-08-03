@@ -34,13 +34,13 @@
 
 .field public frequency:I
 
-.field public level:I
-
-.field public timestamp:J
-
 .field public isWpsConfigured:Z
 
 .field public isXiaomiRouter:Z
+
+.field public level:I
+
+.field public timestamp:J
 
 .field public wifiSsid:Landroid/net/wifi/WifiSsid;
 

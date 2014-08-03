@@ -508,7 +508,7 @@
 
     if-eqz v14, :cond_0
 
-    iget-object v6, v0, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v6, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     .local v6, packageName:Ljava/lang/String;
     invoke-virtual {v7, v6}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
@@ -528,14 +528,14 @@
     .local v1, applicationName:Ljava/lang/String;
     new-instance v12, Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;
 
-    iget-object v14, v0, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v14, v0, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget v14, v14, Landroid/content/pm/ApplicationInfo;->uid:I
 
     invoke-direct {v12, v1, v6, v14}, Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;-><init>(Ljava/lang/String;Ljava/lang/String;I)V
 
     .local v12, smsApplicationData:Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;
-    iget-object v14, v0, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v14, v0, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     iput-object v14, v12, Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;->mSmsReceiverClass:Ljava/lang/String;
 
@@ -604,7 +604,7 @@
 
     if-eqz v14, :cond_2
 
-    iget-object v6, v0, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v6, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     .restart local v6       #packageName:Ljava/lang/String;
     invoke-virtual {v7, v6}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -616,7 +616,7 @@
     .restart local v12       #smsApplicationData:Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;
     if-eqz v12, :cond_2
 
-    iget-object v14, v0, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v14, v0, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     iput-object v14, v12, Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;->mMmsReceiverClass:Ljava/lang/String;
 
@@ -686,7 +686,7 @@
 
     if-eqz v14, :cond_4
 
-    iget-object v6, v11, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    iget-object v6, v11, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     .restart local v6       #packageName:Ljava/lang/String;
     invoke-virtual {v7, v6}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -698,7 +698,7 @@
     .restart local v12       #smsApplicationData:Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;
     if-eqz v12, :cond_4
 
-    iget-object v14, v11, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
+    iget-object v14, v11, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     iput-object v14, v12, Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;->mRespondViaMessageClass:Ljava/lang/String;
 
@@ -758,7 +758,7 @@
     .restart local v0       #activityInfo:Landroid/content/pm/ActivityInfo;
     if-eqz v0, :cond_6
 
-    iget-object v6, v0, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v6, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     .restart local v6       #packageName:Ljava/lang/String;
     invoke-virtual {v7, v6}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -770,7 +770,7 @@
     .restart local v12       #smsApplicationData:Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;
     if-eqz v12, :cond_6
 
-    iget-object v14, v0, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v14, v0, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     iput-object v14, v12, Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;->mSendToClass:Ljava/lang/String;
 
@@ -805,7 +805,7 @@
     .restart local v0       #activityInfo:Landroid/content/pm/ActivityInfo;
     if-eqz v0, :cond_8
 
-    iget-object v6, v0, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v6, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     .restart local v6       #packageName:Ljava/lang/String;
     invoke-virtual {v7, v6}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1061,7 +1061,7 @@
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, p0, v1, v2}, Lcom/android/internal/telephony/SmsApplication$SmsPackageMonitor;->register(Landroid/content/Context;Landroid/os/Looper;Z)V
+    invoke-virtual {v0, p0, v1, v2}, Lcom/android/internal/content/PackageMonitor;->register(Landroid/content/Context;Landroid/os/Looper;Z)V
 
     return-void
 .end method
@@ -1120,11 +1120,11 @@
 
     iget-object v8, v1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v8, v8, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v8, v8, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     iget-object v9, v1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v9, v9, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v9, v9, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     invoke-direct {v7, v8, v9}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 

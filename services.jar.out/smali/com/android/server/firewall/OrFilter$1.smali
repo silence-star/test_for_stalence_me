@@ -42,7 +42,7 @@
 
     invoke-direct {v0}, Lcom/android/server/firewall/OrFilter;-><init>()V
 
-    invoke-virtual {v0, p1}, Lcom/android/server/firewall/OrFilter;->readFromXml(Lorg/xmlpull/v1/XmlPullParser;)Lcom/android/server/firewall/FilterList;
+    invoke-virtual {v0, p1}, Lcom/android/server/firewall/FilterList;->readFromXml(Lorg/xmlpull/v1/XmlPullParser;)Lcom/android/server/firewall/FilterList;
 
     move-result-object v0
 

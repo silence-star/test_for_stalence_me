@@ -213,11 +213,11 @@
 
     move-result-object v8
 
-    invoke-virtual {v7, v8}, Lcom/android/internal/os/storage/ExternalStorageFormatter;->sendBroadcast(Landroid/content/Intent;)V
+    invoke-virtual {v7, v8}, Landroid/content/ContextWrapper;->sendBroadcast(Landroid/content/Intent;)V
 
     iget-object v7, p0, Lcom/android/internal/os/storage/ExternalStorageFormatter$3;->this$0:Lcom/android/internal/os/storage/ExternalStorageFormatter;
 
-    invoke-virtual {v7}, Lcom/android/internal/os/storage/ExternalStorageFormatter;->stopSelf()V
+    invoke-virtual {v7}, Landroid/app/Service;->stopSelf()V
 
     goto :goto_0
 
@@ -242,12 +242,12 @@
 
     move-result-object v8
 
-    invoke-virtual {v7, v8}, Lcom/android/internal/os/storage/ExternalStorageFormatter;->sendBroadcast(Landroid/content/Intent;)V
+    invoke-virtual {v7, v8}, Landroid/content/ContextWrapper;->sendBroadcast(Landroid/content/Intent;)V
 
     :goto_3
     iget-object v7, p0, Lcom/android/internal/os/storage/ExternalStorageFormatter$3;->this$0:Lcom/android/internal/os/storage/ExternalStorageFormatter;
 
-    invoke-virtual {v7}, Lcom/android/internal/os/storage/ExternalStorageFormatter;->stopSelf()V
+    invoke-virtual {v7}, Landroid/app/Service;->stopSelf()V
 
     goto :goto_0
 

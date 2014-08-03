@@ -125,7 +125,7 @@
     move-result-object v3
 
     .local v3, p2:Ljava/lang/String;
-    invoke-virtual {p0}, Lcom/android/server/am/ReceiverList;->size()I
+    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
@@ -136,7 +136,7 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    invoke-virtual {p0, v2}, Lcom/android/server/am/ReceiverList;->get(I)Ljava/lang/Object;
+    invoke-virtual {p0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 

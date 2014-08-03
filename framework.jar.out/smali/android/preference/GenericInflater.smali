@@ -259,7 +259,7 @@
     invoke-direct {v1, v3}, Landroid/view/InflateException;-><init>(Ljava/lang/String;)V
 
     .local v1, ie:Landroid/view/InflateException;
-    invoke-virtual {v1, v0}, Landroid/view/InflateException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+    invoke-virtual {v1, v0}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
     throw v1
 
@@ -300,7 +300,7 @@
     invoke-direct {v1, v3}, Landroid/view/InflateException;-><init>(Ljava/lang/String;)V
 
     .restart local v1       #ie:Landroid/view/InflateException;
-    invoke-virtual {v1, v0}, Landroid/view/InflateException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+    invoke-virtual {v1, v0}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
     throw v1
 .end method
@@ -554,7 +554,7 @@
     invoke-direct {v4, v5}, Landroid/view/InflateException;-><init>(Ljava/lang/String;)V
 
     .local v4, ie:Landroid/view/InflateException;
-    invoke-virtual {v4, v3}, Landroid/view/InflateException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+    invoke-virtual {v4, v3}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
     throw v4
 
@@ -611,7 +611,7 @@
     invoke-direct {v4, v5}, Landroid/view/InflateException;-><init>(Ljava/lang/String;)V
 
     .restart local v4       #ie:Landroid/view/InflateException;
-    invoke-virtual {v4, v3}, Landroid/view/InflateException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+    invoke-virtual {v4, v3}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
     throw v4
 .end method
@@ -911,14 +911,14 @@
     .local v1, e:Lorg/xmlpull/v1/XmlPullParserException;
     new-instance v2, Landroid/view/InflateException;
 
-    invoke-virtual {v1}, Lorg/xmlpull/v1/XmlPullParserException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v6
 
     invoke-direct {v2, v6}, Landroid/view/InflateException;-><init>(Ljava/lang/String;)V
 
     .local v2, ex:Landroid/view/InflateException;
-    invoke-virtual {v2, v1}, Landroid/view/InflateException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+    invoke-virtual {v2, v1}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
     throw v2
 
@@ -948,7 +948,7 @@
 
     move-result-object v6
 
-    invoke-virtual {v1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v8
 
@@ -963,7 +963,7 @@
     invoke-direct {v2, v6}, Landroid/view/InflateException;-><init>(Ljava/lang/String;)V
 
     .restart local v2       #ex:Landroid/view/InflateException;
-    invoke-virtual {v2, v1}, Landroid/view/InflateException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+    invoke-virtual {v2, v1}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
     throw v2
     :try_end_4

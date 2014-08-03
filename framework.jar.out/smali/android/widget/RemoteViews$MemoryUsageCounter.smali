@@ -63,7 +63,7 @@
 
     sget-object v2, Landroid/widget/RemoteViews$3;->$SwitchMap$android$graphics$Bitmap$Config:[I
 
-    invoke-virtual {v1}, Landroid/graphics/Bitmap$Config;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v3
 

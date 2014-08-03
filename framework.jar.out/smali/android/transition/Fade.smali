@@ -172,9 +172,9 @@
     :cond_2
     if-eqz p4, :cond_0
 
-    invoke-virtual {v0, p4}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v0, p4}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    invoke-virtual {v0, p4}, Landroid/animation/ObjectAnimator;->addPauseListener(Landroid/animation/Animator$AnimatorPauseListener;)V
+    invoke-virtual {v0, p4}, Landroid/animation/Animator;->addPauseListener(Landroid/animation/Animator$AnimatorPauseListener;)V
 
     goto :goto_0
 .end method
@@ -295,7 +295,7 @@
     invoke-direct {v2, p0, v0}, Landroid/transition/Fade$1;-><init>(Landroid/transition/Fade;Landroid/view/View;)V
 
     .local v2, transitionListener:Landroid/transition/Transition$TransitionListener;
-    invoke-virtual {p0, v2}, Landroid/transition/Fade;->addListener(Landroid/transition/Transition$TransitionListener;)Landroid/transition/Transition;
+    invoke-virtual {p0, v2}, Landroid/transition/Transition;->addListener(Landroid/transition/Transition$TransitionListener;)Landroid/transition/Transition;
 
     const/high16 v4, 0x3f80
 
@@ -498,7 +498,7 @@
 
     move-object/from16 v1, v20
 
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getLocationOnScreen([I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->getLocationOnScreen([I)V
 
     const/4 v4, 0x0
 
@@ -664,7 +664,7 @@
 
     move/from16 v1, v19
 
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v4
 
@@ -672,7 +672,7 @@
 
     move-object/from16 v0, p0
 
-    iget-boolean v4, v0, Landroid/transition/Fade;->mCanRemoveViews:Z
+    iget-boolean v4, v0, Landroid/transition/Transition;->mCanRemoveViews:Z
 
     if-eqz v4, :cond_3
 

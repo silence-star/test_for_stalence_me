@@ -146,7 +146,7 @@
     :cond_1
     iget-object v3, p0, Lcom/android/internal/telephony/ExtCallManager$ExtCmHandler;->this$0:Lcom/android/internal/telephony/ExtCallManager;
 
-    iget-object v4, v3, Lcom/android/internal/telephony/ExtCallManager;->mNewRingingConnectionRegistrants:Landroid/os/RegistrantList;
+    iget-object v4, v3, Lcom/android/internal/telephony/CallManager;->mNewRingingConnectionRegistrants:Landroid/os/RegistrantList;
 
     iget-object v3, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 

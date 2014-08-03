@@ -64,7 +64,7 @@
 
     iput-byte p4, p0, Landroid/bluetooth/BluetoothHidDeviceAppSdpSettings;->subclass:B
 
-    invoke-virtual {p5}, [B->clone()Ljava/lang/Object;
+    invoke-virtual {p5}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

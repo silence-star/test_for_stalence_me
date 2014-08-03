@@ -143,7 +143,7 @@
 
     move-result v2
 
-    invoke-virtual {v0, v3, v3, v1, v2}, Landroid/graphics/drawable/BitmapDrawable;->setBounds(IIII)V
+    invoke-virtual {v0, v3, v3, v1, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     return-void
 .end method
@@ -199,11 +199,11 @@
     .local v0, anim:Landroid/animation/ObjectAnimator;
     invoke-virtual {v0, p1, p2}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    invoke-virtual {v0, p3, p4}, Landroid/animation/ObjectAnimator;->setStartDelay(J)V
+    invoke-virtual {v0, p3, p4}, Landroid/animation/ValueAnimator;->setStartDelay(J)V
 
     sget-object v1, Lcom/android/internal/widget/DrawableHolder;->EASE_OUT_INTERPOLATOR:Landroid/view/animation/DecelerateInterpolator;
 
-    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+    invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
     invoke-direct {p0, v0, p7}, Lcom/android/internal/widget/DrawableHolder;->addAnimation(Landroid/animation/ObjectAnimator;Z)Lcom/android/internal/widget/DrawableHolder;
 
@@ -235,7 +235,7 @@
     check-cast v0, Landroid/animation/ObjectAnimator;
 
     .local v0, currentAnim:Landroid/animation/ObjectAnimator;
-    invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->cancel()V
+    invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     goto :goto_0
 
@@ -487,7 +487,7 @@
 
     if-eqz v3, :cond_0
 
-    invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->cancel()V
+    invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     goto :goto_0
 
@@ -572,9 +572,9 @@
     check-cast v0, Landroid/animation/ObjectAnimator;
 
     .local v0, anim:Landroid/animation/ObjectAnimator;
-    invoke-virtual {v0, p1}, Landroid/animation/ObjectAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+    invoke-virtual {v0, p1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    invoke-virtual {v0, p0}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v0, p0}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
 

@@ -334,14 +334,14 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :cond_0
-    invoke-super {p0}, Landroid/content/IIntentSender$Stub;->finalize()V
+    invoke-super {p0}, Landroid/os/Binder;->finalize()V
 
     return-void
 
     :catchall_0
     move-exception v0
 
-    invoke-super {p0}, Landroid/content/IIntentSender$Stub;->finalize()V
+    invoke-super {p0}, Landroid/os/Binder;->finalize()V
 
     throw v0
 .end method

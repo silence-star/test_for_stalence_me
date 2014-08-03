@@ -82,7 +82,7 @@
 
     .local v2, query:Landroid/database/sqlite/SQLiteQuery;
     :try_start_0
-    invoke-virtual {v2, p2}, Landroid/database/sqlite/SQLiteQuery;->bindAllArgsAsStrings([Ljava/lang/String;)V
+    invoke-virtual {v2, p2}, Landroid/database/sqlite/SQLiteProgram;->bindAllArgsAsStrings([Ljava/lang/String;)V
 
     if-nez p1, :cond_0
 
@@ -121,7 +121,7 @@
     move-exception v1
 
     .local v1, ex:Ljava/lang/RuntimeException;
-    invoke-virtual {v2}, Landroid/database/sqlite/SQLiteQuery;->close()V
+    invoke-virtual {v2}, Landroid/database/sqlite/SQLiteClosable;->close()V
 
     throw v1
 .end method
@@ -133,7 +133,7 @@
     .prologue
     iget-object v0, p0, Landroid/database/sqlite/SQLiteDirectCursorDriver;->mQuery:Landroid/database/sqlite/SQLiteQuery;
 
-    invoke-virtual {v0, p1}, Landroid/database/sqlite/SQLiteQuery;->bindAllArgsAsStrings([Ljava/lang/String;)V
+    invoke-virtual {v0, p1}, Landroid/database/sqlite/SQLiteProgram;->bindAllArgsAsStrings([Ljava/lang/String;)V
 
     return-void
 .end method

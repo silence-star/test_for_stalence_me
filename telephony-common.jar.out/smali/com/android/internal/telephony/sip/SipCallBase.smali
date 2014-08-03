@@ -19,7 +19,7 @@
     .locals 4
 
     .prologue
-    iget-object v2, p0, Lcom/android/internal/telephony/sip/SipCallBase;->mConnections:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/android/internal/telephony/Call;->mConnections:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -55,7 +55,7 @@
 
     .end local v0           #c:Lcom/android/internal/telephony/Connection;
     :cond_1
-    iget-object v2, p0, Lcom/android/internal/telephony/sip/SipCallBase;->mConnections:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/android/internal/telephony/Call;->mConnections:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -84,7 +84,7 @@
     .end annotation
 
     .prologue
-    iget-object v0, p0, Lcom/android/internal/telephony/sip/SipCallBase;->mConnections:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/internal/telephony/Call;->mConnections:Ljava/util/ArrayList;
 
     return-object v0
 .end method
@@ -95,7 +95,7 @@
     .prologue
     const/4 v0, 0x1
 
-    iget-object v1, p0, Lcom/android/internal/telephony/sip/SipCallBase;->mConnections:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/android/internal/telephony/Call;->mConnections:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -123,9 +123,9 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v1, p0, Lcom/android/internal/telephony/sip/SipCallBase;->mState:Lcom/android/internal/telephony/Call$State;
+    iget-object v1, p0, Lcom/android/internal/telephony/Call;->mState:Lcom/android/internal/telephony/Call$State;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/Call$State;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/Enum;->toString()Ljava/lang/String;
 
     move-result-object v1
 

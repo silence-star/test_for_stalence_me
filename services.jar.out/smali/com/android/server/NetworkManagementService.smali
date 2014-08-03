@@ -524,15 +524,15 @@
     const/4 v6, 0x0
 
     .local v6, internalNetworkInterface:Ljava/net/NetworkInterface;
-    :try_start_miui
+    :try_start_0
     invoke-static {p2}, Ljava/net/NetworkInterface;->getByName(Ljava/lang/String;)Ljava/net/NetworkInterface;
-    :try_end_miui
-    .catch Ljava/net/SocketException; {:try_start_miui .. :try_end_miui} :catch_miui
+    :try_end_0
+    .catch Ljava/net/SocketException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v6
 
     .local v6, internalNetworkInterface:Ljava/net/NetworkInterface;
-    :goto_miui
+    :goto_0
     if-nez v6, :cond_1
 
     const-string v7, "0"
@@ -540,16 +540,16 @@
     invoke-virtual {v1, v7}, Lcom/android/server/NativeDaemonConnector$Command;->appendArg(Ljava/lang/Object;)Lcom/android/server/NativeDaemonConnector$Command;
 
     :cond_0
-    :try_start_0
+    :try_start_1
     iget-object v7, p0, Lcom/android/server/NetworkManagementService;->mConnector:Lcom/android/server/NativeDaemonConnector;
 
     invoke-virtual {v7, v1}, Lcom/android/server/NativeDaemonConnector;->execute(Lcom/android/server/NativeDaemonConnector$Command;)Lcom/android/server/NativeDaemonEvent;
-    :try_end_0
-    .catch Lcom/android/server/NativeDaemonConnectorException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_1
+    .catch Lcom/android/server/NativeDaemonConnectorException; {:try_start_1 .. :try_end_1} :catch_1
 
     return-void
 
-    :catch_miui
+    :catch_0
     move-exception v2
 
     .local v2, e:Ljava/net/SocketException;
@@ -579,7 +579,7 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_miui
+    goto :goto_0
 
     .end local v2           #e:Ljava/net/SocketException;
     :cond_1
@@ -603,7 +603,7 @@
     move-result-object v3
 
     .local v3, i$:Ljava/util/Iterator;
-    :goto_0
+    :goto_1
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v7
@@ -662,13 +662,13 @@
 
     invoke-virtual {v1, v7}, Lcom/android/server/NativeDaemonConnector$Command;->appendArg(Ljava/lang/Object;)Lcom/android/server/NativeDaemonConnector$Command;
 
-    goto :goto_0
+    goto :goto_1
 
     .end local v0           #addr:Ljava/net/InetAddress;
     .end local v3           #i$:Ljava/util/Iterator;
     .end local v4           #ia:Ljava/net/InterfaceAddress;
     .end local v5           #interfaceAddresses:Ljava/util/Collection;,"Ljava/util/Collection<Ljava/net/InterfaceAddress;>;"
-    :catch_0
+    :catch_1
     move-exception v2
 
     .local v2, e:Lcom/android/server/NativeDaemonConnectorException;
@@ -3178,7 +3178,7 @@
 
     iget-object v2, p0, Lcom/android/server/NetworkManagementService;->mActiveQuotas:Ljava/util/HashMap;
 
-    invoke-virtual {v2}, Ljava/util/HashMap;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/util/AbstractMap;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -3190,7 +3190,7 @@
 
     iget-object v2, p0, Lcom/android/server/NetworkManagementService;->mActiveAlerts:Ljava/util/HashMap;
 
-    invoke-virtual {v2}, Ljava/util/HashMap;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/util/AbstractMap;->toString()Ljava/lang/String;
 
     move-result-object v2
 

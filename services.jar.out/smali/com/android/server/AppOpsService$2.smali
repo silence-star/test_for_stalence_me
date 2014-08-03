@@ -138,7 +138,7 @@
 
     iput-object v2, v3, Lcom/android/server/PermissionDialogResult;->mDialog:Lcom/android/server/PermissionDialog;
 
-    invoke-virtual {v1}, Landroid/app/Dialog;->show()V
+    invoke-virtual {v1}, Landroid/app/AlertDialog;->show()V
 
     .end local v1           #d:Landroid/app/Dialog;
     .end local v6           #packageName:Ljava/lang/String;

@@ -50,7 +50,7 @@
 
     iget-object v0, v0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstallerMsgDialog:Landroid/app/ProgressDialog;
 
-    invoke-virtual {v0}, Landroid/app/ProgressDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {v0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
@@ -62,7 +62,7 @@
 
     iget-object v0, v0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstallerMsgDialog:Landroid/app/ProgressDialog;
 
-    invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
+    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
     iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller$2;->this$0:Lcom/android/server/pm/PresetPackagesInstaller;
 

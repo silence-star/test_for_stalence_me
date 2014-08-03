@@ -52,15 +52,15 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/SweepGradient;->native_instance:I
+    iput v0, p0, Landroid/graphics/Shader;->native_instance:I
 
-    iget v0, p0, Landroid/graphics/SweepGradient;->native_instance:I
+    iget v0, p0, Landroid/graphics/Shader;->native_instance:I
 
     invoke-static {v0, p1, p2, p3, p4}, Landroid/graphics/SweepGradient;->nativePostCreate2(IFFII)I
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/SweepGradient;->native_shader:I
+    iput v0, p0, Landroid/graphics/Shader;->native_shader:I
 
     return-void
 .end method
@@ -123,15 +123,15 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/SweepGradient;->native_instance:I
+    iput v0, p0, Landroid/graphics/Shader;->native_instance:I
 
-    iget v0, p0, Landroid/graphics/SweepGradient;->native_instance:I
+    iget v0, p0, Landroid/graphics/Shader;->native_instance:I
 
     invoke-static {v0, p1, p2, p3, p4}, Landroid/graphics/SweepGradient;->nativePostCreate1(IFF[I[F)I
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/SweepGradient;->native_shader:I
+    iput v0, p0, Landroid/graphics/Shader;->native_shader:I
 
     return-void
 .end method
@@ -175,7 +175,7 @@
 
     iget-object v1, p0, Landroid/graphics/SweepGradient;->mColors:[I
 
-    invoke-virtual {v1}, [I->clone()Ljava/lang/Object;
+    invoke-virtual {v1}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -187,7 +187,7 @@
 
     iget-object v2, p0, Landroid/graphics/SweepGradient;->mPositions:[F
 
-    invoke-virtual {v2}, [F->clone()Ljava/lang/Object;
+    invoke-virtual {v2}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v2
 
@@ -198,7 +198,7 @@
 
     .local v0, copy:Landroid/graphics/SweepGradient;
     :goto_1
-    invoke-virtual {p0, v0}, Landroid/graphics/SweepGradient;->copyLocalMatrix(Landroid/graphics/Shader;)V
+    invoke-virtual {p0, v0}, Landroid/graphics/Shader;->copyLocalMatrix(Landroid/graphics/Shader;)V
 
     return-object v0
 

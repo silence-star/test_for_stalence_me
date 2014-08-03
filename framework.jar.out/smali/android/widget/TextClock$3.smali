@@ -61,7 +61,7 @@
     .local v0, next:J
     iget-object v4, p0, Landroid/widget/TextClock$3;->this$0:Landroid/widget/TextClock;
 
-    invoke-virtual {v4}, Landroid/widget/TextClock;->getHandler()Landroid/os/Handler;
+    invoke-virtual {v4}, Landroid/view/View;->getHandler()Landroid/os/Handler;
 
     move-result-object v4
 

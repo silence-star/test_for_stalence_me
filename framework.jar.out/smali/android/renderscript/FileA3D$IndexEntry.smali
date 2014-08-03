@@ -107,7 +107,7 @@
 
     iget-object v3, p1, Landroid/renderscript/FileA3D$IndexEntry;->mEntryType:Landroid/renderscript/FileA3D$EntryType;
 
-    invoke-virtual {v3}, Landroid/renderscript/FileA3D$EntryType;->ordinal()I
+    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
 
     move-result v3
 

@@ -396,7 +396,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/android/server/Watchdog;->start()V
+    invoke-virtual {v1}, Ljava/lang/Thread;->start()V
 
     :try_start_c
     iget-object v1, p0, Lcom/android/server/ServerThread$2;->val$appWidgetF:Lcom/android/server/AppWidgetService;

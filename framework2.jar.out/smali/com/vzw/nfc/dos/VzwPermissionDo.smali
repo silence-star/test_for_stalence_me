@@ -76,17 +76,17 @@
 
     iput-boolean v3, p0, Lcom/vzw/nfc/dos/VzwPermissionDo;->mVzwAllowed:Z
 
-    invoke-virtual {p0}, Lcom/vzw/nfc/dos/VzwPermissionDo;->getRawData()[B
+    invoke-virtual {p0}, Lcom/vzw/nfc/dos/VzwTlv;->getRawData()[B
 
     move-result-object v0
 
     .local v0, data:[B
-    invoke-virtual {p0}, Lcom/vzw/nfc/dos/VzwPermissionDo;->getValueIndex()I
+    invoke-virtual {p0}, Lcom/vzw/nfc/dos/VzwTlv;->getValueIndex()I
 
     move-result v1
 
     .local v1, index:I
-    invoke-virtual {p0}, Lcom/vzw/nfc/dos/VzwPermissionDo;->getValueLength()I
+    invoke-virtual {p0}, Lcom/vzw/nfc/dos/VzwTlv;->getValueLength()I
 
     move-result v4
 
@@ -105,7 +105,7 @@
     throw v2
 
     :cond_0
-    invoke-virtual {p0}, Lcom/vzw/nfc/dos/VzwPermissionDo;->getValueLength()I
+    invoke-virtual {p0}, Lcom/vzw/nfc/dos/VzwTlv;->getValueLength()I
 
     move-result v4
 

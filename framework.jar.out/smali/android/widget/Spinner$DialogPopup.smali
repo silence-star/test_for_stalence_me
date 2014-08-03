@@ -3,8 +3,8 @@
 .source "Spinner.java"
 
 # interfaces
-.implements Landroid/widget/Spinner$SpinnerPopup;
 .implements Landroid/content/DialogInterface$OnClickListener;
+.implements Landroid/widget/Spinner$SpinnerPopup;
 
 
 # annotations
@@ -60,7 +60,7 @@
     .prologue
     iget-object v0, p0, Landroid/widget/Spinner$DialogPopup;->mPopup:Landroid/app/AlertDialog;
 
-    invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
+    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
     const/4 v0, 0x0
 
@@ -115,7 +115,7 @@
 
     iget-object v0, p0, Landroid/widget/Spinner$DialogPopup;->mPopup:Landroid/app/AlertDialog;
 
-    invoke-virtual {v0}, Landroid/app/AlertDialog;->isShowing()Z
+    invoke-virtual {v0}, Landroid/app/Dialog;->isShowing()Z
 
     move-result v0
 
@@ -136,11 +136,11 @@
     .prologue
     iget-object v0, p0, Landroid/widget/Spinner$DialogPopup;->this$0:Landroid/widget/Spinner;
 
-    invoke-virtual {v0, p2}, Landroid/widget/Spinner;->setSelection(I)V
+    invoke-virtual {v0, p2}, Landroid/widget/AbsSpinner;->setSelection(I)V
 
     iget-object v0, p0, Landroid/widget/Spinner$DialogPopup;->this$0:Landroid/widget/Spinner;
 
-    iget-object v0, v0, Landroid/widget/Spinner;->mOnItemClickListener:Landroid/widget/AdapterView$OnItemClickListener;
+    iget-object v0, v0, Landroid/widget/AdapterView;->mOnItemClickListener:Landroid/widget/AdapterView$OnItemClickListener;
 
     if-eqz v0, :cond_0
 
@@ -154,7 +154,7 @@
 
     move-result-wide v2
 
-    invoke-virtual {v0, v1, p2, v2, v3}, Landroid/widget/Spinner;->performItemClick(Landroid/view/View;IJ)Z
+    invoke-virtual {v0, v1, p2, v2, v3}, Landroid/widget/AdapterView;->performItemClick(Landroid/view/View;IJ)Z
 
     :cond_0
     invoke-virtual {p0}, Landroid/widget/Spinner$DialogPopup;->dismiss()V
@@ -242,7 +242,7 @@
 
     iget-object v2, p0, Landroid/widget/Spinner$DialogPopup;->this$0:Landroid/widget/Spinner;
 
-    invoke-virtual {v2}, Landroid/widget/Spinner;->getContext()Landroid/content/Context;
+    invoke-virtual {v2}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
@@ -262,7 +262,7 @@
 
     iget-object v3, p0, Landroid/widget/Spinner$DialogPopup;->this$0:Landroid/widget/Spinner;
 
-    invoke-virtual {v3}, Landroid/widget/Spinner;->getSelectedItemPosition()I
+    invoke-virtual {v3}, Landroid/widget/AdapterView;->getSelectedItemPosition()I
 
     move-result v3
 

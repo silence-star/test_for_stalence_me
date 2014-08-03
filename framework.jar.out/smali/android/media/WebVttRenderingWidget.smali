@@ -123,7 +123,7 @@
 
     const/4 v1, 0x0
 
-    invoke-virtual {p0, v0, v1}, Landroid/media/WebVttRenderingWidget;->setLayerType(ILandroid/graphics/Paint;)V
+    invoke-virtual {p0, v0, v1}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
 
     const-string v0, "captioning"
 
@@ -149,7 +149,7 @@
 
     move-result v0
 
-    invoke-virtual {p0}, Landroid/media/WebVttRenderingWidget;->getHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v1
 
@@ -298,7 +298,7 @@
     move-result-object v4
 
     .local v4, cue:Landroid/media/TextTrackCue;
-    invoke-virtual/range {p0 .. p0}, Landroid/media/WebVttRenderingWidget;->getLayoutDirection()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getLayoutDirection()I
 
     move-result v6
 
@@ -317,7 +317,7 @@
     iget-boolean v5, v4, Landroid/media/TextTrackCue;->mSnapToLines:Z
 
     .local v5, cueSnapToLines:Z
-    invoke-virtual/range {p3 .. p3}, Landroid/media/WebVttRenderingWidget$CueLayout;->getMeasuredWidth()I
+    invoke-virtual/range {p3 .. p3}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v17
 
@@ -349,7 +349,7 @@
     :cond_0
     if-eqz v5, :cond_2
 
-    invoke-virtual/range {p0 .. p0}, Landroid/media/WebVttRenderingWidget;->getPaddingLeft()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v17
 
@@ -358,7 +358,7 @@
     div-int v9, v17, p1
 
     .local v9, paddingLeft:I
-    invoke-virtual/range {p0 .. p0}, Landroid/media/WebVttRenderingWidget;->getPaddingRight()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingRight()I
 
     move-result v17
 
@@ -432,7 +432,7 @@
     move-result v16
 
     .local v16, yPosition:I
-    invoke-virtual/range {p3 .. p3}, Landroid/media/WebVttRenderingWidget$CueLayout;->getMeasuredHeight()I
+    invoke-virtual/range {p3 .. p3}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v7
 
@@ -455,7 +455,7 @@
 
     move/from16 v2, v18
 
-    invoke-virtual {v0, v8, v13, v1, v2}, Landroid/media/WebVttRenderingWidget$CueLayout;->layout(IIII)V
+    invoke-virtual {v0, v8, v13, v1, v2}, Landroid/view/ViewGroup;->layout(IIII)V
 
     return-void
 
@@ -517,12 +517,12 @@
     move-result-object v1
 
     .local v1, region:Landroid/media/TextTrackRegion;
-    invoke-virtual {p3}, Landroid/media/WebVttRenderingWidget$RegionLayout;->getMeasuredHeight()I
+    invoke-virtual {p3}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v2
 
     .local v2, regionHeight:I
-    invoke-virtual {p3}, Landroid/media/WebVttRenderingWidget$RegionLayout;->getMeasuredWidth()I
+    invoke-virtual {p3}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v3
 
@@ -559,7 +559,7 @@
 
     add-int v8, v4, v2
 
-    invoke-virtual {p3, v0, v4, v7, v8}, Landroid/media/WebVttRenderingWidget$RegionLayout;->layout(IIII)V
+    invoke-virtual {p3, v0, v4, v7, v8}, Landroid/view/ViewGroup;->layout(IIII)V
 
     return-void
 .end method
@@ -568,13 +568,13 @@
     .locals 5
 
     .prologue
-    invoke-virtual {p0}, Landroid/media/WebVttRenderingWidget;->isAttachedToWindow()Z
+    invoke-virtual {p0}, Landroid/view/View;->isAttachedToWindow()Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    invoke-virtual {p0}, Landroid/media/WebVttRenderingWidget;->getVisibility()I
+    invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
 
     move-result v3
 
@@ -611,7 +611,7 @@
 
     move-result v3
 
-    invoke-virtual {p0}, Landroid/media/WebVttRenderingWidget;->getHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v4
 
@@ -747,7 +747,7 @@
 
     if-eqz v5, :cond_0
 
-    invoke-virtual {p0, v3}, Landroid/media/WebVttRenderingWidget;->removeView(Landroid/view/View;)V
+    invoke-virtual {p0, v3}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
     iget-object v5, p0, Landroid/media/WebVttRenderingWidget;->mRegionBoxes:Landroid/util/ArrayMap;
 
@@ -791,7 +791,7 @@
 
     if-nez v5, :cond_2
 
-    invoke-virtual {p0, v0}, Landroid/media/WebVttRenderingWidget;->removeView(Landroid/view/View;)V
+    invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
     iget-object v5, p0, Landroid/media/WebVttRenderingWidget;->mCueBoxes:Landroid/util/ArrayMap;
 
@@ -1055,7 +1055,7 @@
     .parameter "heightMeasureSpec"
 
     .prologue
-    invoke-super {p0, p1, p2}, Landroid/view/ViewGroup;->onMeasure(II)V
+    invoke-super {p0, p1, p2}, Landroid/view/View;->onMeasure(II)V
 
     iget-object v5, p0, Landroid/media/WebVttRenderingWidget;->mRegionBoxes:Landroid/util/ArrayMap;
 
@@ -1136,7 +1136,7 @@
     .local p1, activeCues:Ljava/util/Vector;,"Ljava/util/Vector<Landroid/media/SubtitleTrack$Cue;>;"
     const/4 v12, -0x2
 
-    invoke-virtual {p0}, Landroid/media/WebVttRenderingWidget;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -1193,7 +1193,7 @@
 
     invoke-virtual {v11, v8, v9}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {p0, v9, v12, v12}, Landroid/media/WebVttRenderingWidget;->addView(Landroid/view/View;II)V
+    invoke-virtual {p0, v9, v12, v12}, Landroid/view/ViewGroup;->addView(Landroid/view/View;II)V
 
     :cond_0
     invoke-virtual {v9, v3}, Landroid/media/WebVttRenderingWidget$RegionLayout;->put(Landroid/media/TextTrackCue;)V
@@ -1226,7 +1226,7 @@
 
     invoke-virtual {v11, v3, v4}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {p0, v4, v12, v12}, Landroid/media/WebVttRenderingWidget;->addView(Landroid/view/View;II)V
+    invoke-virtual {p0, v4, v12, v12}, Landroid/view/ViewGroup;->addView(Landroid/view/View;II)V
 
     :cond_2
     invoke-virtual {v4}, Landroid/media/WebVttRenderingWidget$CueLayout;->update()V
@@ -1241,12 +1241,12 @@
     :cond_3
     invoke-direct {p0}, Landroid/media/WebVttRenderingWidget;->prune()V
 
-    invoke-virtual {p0}, Landroid/media/WebVttRenderingWidget;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v10
 
     .local v10, width:I
-    invoke-virtual {p0}, Landroid/media/WebVttRenderingWidget;->getHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v6
 
@@ -1295,9 +1295,9 @@
     move-result v0
 
     .local v0, heightSpec:I
-    invoke-virtual {p0, v1, v0}, Landroid/media/WebVttRenderingWidget;->measure(II)V
+    invoke-virtual {p0, v1, v0}, Landroid/view/View;->measure(II)V
 
-    invoke-virtual {p0, v2, v2, p1, p2}, Landroid/media/WebVttRenderingWidget;->layout(IIII)V
+    invoke-virtual {p0, v2, v2, p1, p2}, Landroid/view/ViewGroup;->layout(IIII)V
 
     return-void
 .end method
@@ -1311,7 +1311,7 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Landroid/media/WebVttRenderingWidget;->setVisibility(I)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
     :goto_0
     invoke-direct {p0}, Landroid/media/WebVttRenderingWidget;->manageChangeListener()V
@@ -1321,7 +1321,7 @@
     :cond_0
     const/16 v0, 0x8
 
-    invoke-virtual {p0, v0}, Landroid/media/WebVttRenderingWidget;->setVisibility(I)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_0
 .end method

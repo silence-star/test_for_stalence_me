@@ -338,7 +338,7 @@
 
     invoke-virtual {v4, v0}, Lcom/android/server/am/AppErrorDialog;->setMsg(Ljava/lang/String;)V
 
-    invoke-virtual {v8}, Landroid/app/Dialog;->show()V
+    invoke-virtual {v8}, Landroid/app/AlertDialog;->show()V
 
     move-object/from16 v0, v45
 
@@ -561,7 +561,7 @@
     invoke-direct/range {v8 .. v13}, Lcom/android/server/am/AppNotRespondingDialog;-><init>(Lcom/android/server/am/ActivityManagerService;Landroid/content/Context;Lcom/android/server/am/ProcessRecord;Lcom/android/server/am/ActivityRecord;Z)V
 
     .restart local v8       #d:Landroid/app/Dialog;
-    invoke-virtual {v8}, Landroid/app/Dialog;->show()V
+    invoke-virtual {v8}, Landroid/app/AlertDialog;->show()V
 
     move-object/from16 v0, v45
 
@@ -750,7 +750,7 @@
     invoke-direct {v8, v4, v6, v0, v1}, Lcom/android/server/am/StrictModeViolationDialog;-><init>(Landroid/content/Context;Lcom/android/server/am/ActivityManagerService;Lcom/android/server/am/AppErrorResult;Lcom/android/server/am/ProcessRecord;)V
 
     .restart local v8       #d:Landroid/app/Dialog;
-    invoke-virtual {v8}, Landroid/app/Dialog;->show()V
+    invoke-virtual {v8}, Landroid/app/AlertDialog;->show()V
 
     move-object/from16 v0, v45
 
@@ -807,7 +807,7 @@
     invoke-direct {v8, v4, v5}, Lcom/android/server/am/FactoryErrorDialog;-><init>(Landroid/content/Context;Ljava/lang/CharSequence;)V
 
     .restart local v8       #d:Landroid/app/Dialog;
-    invoke-virtual {v8}, Landroid/app/Dialog;->show()V
+    invoke-virtual {v8}, Landroid/app/AlertDialog;->show()V
 
     move-object/from16 v0, p0
 
@@ -926,7 +926,7 @@
 
     iput-boolean v4, v0, Lcom/android/server/am/ProcessRecord;->waitedForDebugger:Z
 
-    invoke-virtual {v8}, Landroid/app/Dialog;->show()V
+    invoke-virtual {v8}, Landroid/app/AlertDialog;->show()V
 
     .end local v8           #d:Landroid/app/Dialog;
     :cond_f
@@ -1517,7 +1517,7 @@
     invoke-direct {v8, v4}, Lcom/android/server/am/BaseErrorDialog;-><init>(Landroid/content/Context;)V
 
     .local v8, d:Landroid/app/AlertDialog;
-    invoke-virtual {v8}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {v8}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v4
 
@@ -1583,7 +1583,7 @@
 
     iget-object v4, v4, Lcom/android/server/am/ActivityManagerService;->mUidAlert:Landroid/app/AlertDialog;
 
-    invoke-virtual {v4}, Landroid/app/AlertDialog;->dismiss()V
+    invoke-virtual {v4}, Landroid/app/Dialog;->dismiss()V
 
     move-object/from16 v0, p0
 
@@ -1857,7 +1857,7 @@
 
     iget-object v5, v0, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
 
-    iget-object v5, v5, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+    iget-object v5, v5, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     const/4 v6, 0x0
 
@@ -1888,7 +1888,7 @@
 
     move-result-object v14
 
-    invoke-virtual {v13, v14}, Landroid/content/pm/ApplicationInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
+    invoke-virtual {v13, v14}, Landroid/content/pm/PackageItemInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
     move-result-object v13
 
@@ -2140,13 +2140,13 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v4}, Lcom/android/server/am/ActivityManagerService$2;->removeMessages(I)V
+    invoke-virtual {v0, v4}, Landroid/os/Handler;->removeMessages(I)V
 
     const/16 v4, 0x1b
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v4}, Lcom/android/server/am/ActivityManagerService$2;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {v0, v4}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v40
 
@@ -2157,7 +2157,7 @@
 
     move-object/from16 v1, v40
 
-    invoke-virtual {v0, v1, v13, v14}, Lcom/android/server/am/ActivityManagerService$2;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v0, v1, v13, v14}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     monitor-exit v5
 
@@ -2206,15 +2206,15 @@
 
     iget-object v4, v4, Lcom/android/server/am/CompatModeDialog;->mAppInfo:Landroid/content/pm/ApplicationInfo;
 
-    iget-object v4, v4, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+    iget-object v4, v4, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v0, v27
 
     iget-object v6, v0, Lcom/android/server/am/ActivityRecord;->info:Landroid/content/pm/ActivityInfo;
 
-    iget-object v6, v6, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v6, v6, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    iget-object v6, v6, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+    iget-object v6, v6, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {v4, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2245,7 +2245,7 @@
 
     iget-object v4, v4, Lcom/android/server/am/ActivityManagerService;->mCompatModeDialog:Lcom/android/server/am/CompatModeDialog;
 
-    invoke-virtual {v4}, Lcom/android/server/am/CompatModeDialog;->dismiss()V
+    invoke-virtual {v4}, Landroid/app/Dialog;->dismiss()V
 
     move-object/from16 v0, p0
 

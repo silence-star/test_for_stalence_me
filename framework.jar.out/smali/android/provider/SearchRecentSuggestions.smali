@@ -351,7 +351,7 @@
 
     invoke-direct {v0, p0, v1, p1, p2}, Landroid/provider/SearchRecentSuggestions$1;-><init>(Landroid/provider/SearchRecentSuggestions;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Landroid/provider/SearchRecentSuggestions$1;->start()V
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
     goto :goto_0
 .end method

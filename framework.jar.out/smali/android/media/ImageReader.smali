@@ -393,7 +393,7 @@
     check-cast v2, Ljava/lang/ref/WeakReference;
 
     .local v2, weakSelf:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/media/ImageReader;>;"
-    invoke-virtual {v2}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v2}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -534,7 +534,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Landroid/media/Image;->close()V
+    throw v0
 
     goto :goto_0
 
@@ -801,7 +801,7 @@
 
     iget-object v1, p0, Landroid/media/ImageReader;->mListenerHandler:Landroid/media/ImageReader$ListenerHandler;
 
-    invoke-virtual {v1}, Landroid/media/ImageReader$ListenerHandler;->getLooper()Landroid/os/Looper;
+    invoke-virtual {v1}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
 
     move-result-object v1
 

@@ -127,7 +127,7 @@
     move-exception v1
 
     .local v1, e:Ljava/lang/Exception;
-    invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_0
 .end method
@@ -254,7 +254,7 @@
     move-exception v2
 
     .local v2, e:Ljava/lang/Exception;
-    invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
+    invoke-virtual {v2}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_0
 .end method
@@ -284,7 +284,7 @@
     .local v5, info:Landroid/content/pm/ApplicationInfo;
     if-eqz v5, :cond_0
 
-    iget-object v0, v5, Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;
+    iget-object v0, v5, Landroid/content/pm/PackageItemInfo;->metaData:Landroid/os/Bundle;
 
     .local v0, bundle:Landroid/os/Bundle;
     if-eqz v0, :cond_0
@@ -332,7 +332,7 @@
     move-exception v2
 
     .local v2, e:Landroid/content/pm/PackageManager$NameNotFoundException;
-    invoke-virtual {v2}, Landroid/content/pm/PackageManager$NameNotFoundException;->printStackTrace()V
+    invoke-virtual {v2}, Ljava/lang/Throwable;->printStackTrace()V
 
     const/4 v8, 0x0
 
@@ -366,7 +366,7 @@
     move-exception v0
 
     .local v0, e:Landroid/content/pm/PackageManager$NameNotFoundException;
-    invoke-virtual {v0}, Landroid/content/pm/PackageManager$NameNotFoundException;->printStackTrace()V
+    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_0
 .end method
@@ -412,7 +412,7 @@
     move-exception v0
 
     .local v0, e:Ljava/lang/Exception;
-    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
     const/4 v2, 0x0
 

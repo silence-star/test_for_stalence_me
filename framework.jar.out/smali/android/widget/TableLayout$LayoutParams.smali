@@ -97,7 +97,7 @@
     .prologue
     const/4 v0, -0x1
 
-    iput v0, p0, Landroid/widget/TableLayout$LayoutParams;->width:I
+    iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     invoke-virtual {p1, p3}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
@@ -111,7 +111,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/widget/TableLayout$LayoutParams;->height:I
+    iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     :goto_0
     return-void
@@ -119,7 +119,7 @@
     :cond_0
     const/4 v0, -0x2
 
-    iput v0, p0, Landroid/widget/TableLayout$LayoutParams;->height:I
+    iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     goto :goto_0
 .end method

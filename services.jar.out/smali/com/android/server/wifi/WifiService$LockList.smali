@@ -122,7 +122,7 @@
     .parameter "lock"
 
     .prologue
-    iget-object v0, p1, Lcom/android/server/wifi/WifiService$WifiLock;->mBinder:Landroid/os/IBinder;
+    iget-object v0, p1, Lcom/android/server/wifi/WifiService$DeathRecipient;->mBinder:Landroid/os/IBinder;
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiService$LockList;->findLockByBinder(Landroid/os/IBinder;)I
 
@@ -203,7 +203,7 @@
 
     check-cast v2, Lcom/android/server/wifi/WifiService$WifiLock;
 
-    iget-object v2, v2, Lcom/android/server/wifi/WifiService$WifiLock;->mBinder:Landroid/os/IBinder;
+    iget-object v2, v2, Lcom/android/server/wifi/WifiService$DeathRecipient;->mBinder:Landroid/os/IBinder;
 
     if-ne v2, p1, :cond_0
 
@@ -244,7 +244,7 @@
     check-cast v1, Lcom/android/server/wifi/WifiService$WifiLock;
 
     .local v1, ret:Lcom/android/server/wifi/WifiService$WifiLock;
-    invoke-virtual {v1}, Lcom/android/server/wifi/WifiService$WifiLock;->unlinkDeathRecipient()V
+    invoke-virtual {v1}, Lcom/android/server/wifi/WifiService$DeathRecipient;->unlinkDeathRecipient()V
 
     .end local v1           #ret:Lcom/android/server/wifi/WifiService$WifiLock;
     :goto_0
@@ -409,7 +409,7 @@
 
     check-cast v1, Lcom/android/server/wifi/WifiService$WifiLock;
 
-    iget-object v1, v1, Lcom/android/server/wifi/WifiService$WifiLock;->mWorkSource:Landroid/os/WorkSource;
+    iget-object v1, v1, Lcom/android/server/wifi/WifiService$DeathRecipient;->mWorkSource:Landroid/os/WorkSource;
 
     invoke-virtual {p1, v1}, Landroid/os/WorkSource;->add(Landroid/os/WorkSource;)Z
     :try_end_0

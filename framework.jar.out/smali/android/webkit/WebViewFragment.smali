@@ -58,7 +58,7 @@
     :cond_0
     new-instance v0, Landroid/webkit/WebView;
 
-    invoke-virtual {p0}, Landroid/webkit/WebViewFragment;->getActivity()Landroid/app/Activity;
+    invoke-virtual {p0}, Landroid/app/Fragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
 

@@ -179,7 +179,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/filterfw/core/MutableFrameFormat;->getWidth()I
+    invoke-virtual {v0}, Landroid/filterfw/core/FrameFormat;->getWidth()I
 
     move-result v0
 
@@ -192,7 +192,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/filterfw/core/MutableFrameFormat;->getHeight()I
+    invoke-virtual {v0}, Landroid/filterfw/core/FrameFormat;->getHeight()I
 
     move-result v0
 

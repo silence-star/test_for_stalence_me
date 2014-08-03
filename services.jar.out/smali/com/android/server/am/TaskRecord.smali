@@ -453,7 +453,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/android/server/am/TaskRecord;->lastThumbnail:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lcom/android/server/am/ThumbnailHolder;->lastThumbnail:Landroid/graphics/Bitmap;
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/Object;)V
 
@@ -461,7 +461,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/android/server/am/TaskRecord;->lastDescription:Ljava/lang/CharSequence;
+    iget-object v0, p0, Lcom/android/server/am/ThumbnailHolder;->lastDescription:Ljava/lang/CharSequence;
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
@@ -617,7 +617,7 @@
 
     iget-object v7, v2, Lcom/android/server/am/ThumbnailHolder;->lastThumbnail:Landroid/graphics/Bitmap;
 
-    iput-object v7, v6, Lcom/android/server/am/TaskAccessInfo;->mainThumbnail:Landroid/graphics/Bitmap;
+    iput-object v7, v6, Landroid/app/ActivityManager$TaskThumbnails;->mainThumbnail:Landroid/graphics/Bitmap;
 
     :cond_0
     add-int/lit8 v3, v3, 0x1
@@ -670,11 +670,11 @@
 
     if-eqz v2, :cond_5
 
-    iget v7, v6, Lcom/android/server/am/TaskAccessInfo;->numSubThumbbails:I
+    iget v7, v6, Landroid/app/ActivityManager$TaskThumbnails;->numSubThumbbails:I
 
     add-int/lit8 v7, v7, 0x1
 
-    iput v7, v6, Lcom/android/server/am/TaskAccessInfo;->numSubThumbbails:I
+    iput v7, v6, Landroid/app/ActivityManager$TaskThumbnails;->numSubThumbbails:I
 
     iget-object v2, v1, Lcom/android/server/am/ActivityRecord;->thumbHolder:Lcom/android/server/am/ThumbnailHolder;
 
@@ -698,7 +698,7 @@
     .end local v1           #ar:Lcom/android/server/am/ActivityRecord;
     .end local v4           #sub:Lcom/android/server/am/TaskAccessInfo$SubTask;
     :cond_6
-    iget v7, v6, Lcom/android/server/am/TaskAccessInfo;->numSubThumbbails:I
+    iget v7, v6, Landroid/app/ActivityManager$TaskThumbnails;->numSubThumbbails:I
 
     if-lez v7, :cond_2
 
@@ -706,7 +706,7 @@
 
     invoke-direct {v7, p0, v6}, Lcom/android/server/am/TaskRecord$1;-><init>(Lcom/android/server/am/TaskRecord;Lcom/android/server/am/TaskAccessInfo;)V
 
-    iput-object v7, v6, Lcom/android/server/am/TaskAccessInfo;->retriever:Landroid/app/IThumbnailRetriever;
+    iput-object v7, v6, Landroid/app/ActivityManager$TaskThumbnails;->retriever:Landroid/app/IThumbnailRetriever;
 
     goto :goto_1
 .end method
@@ -739,16 +739,16 @@
 
     move-result-object v2
 
-    iput-object v2, v0, Lcom/android/server/am/TaskAccessInfo;->mainThumbnail:Landroid/graphics/Bitmap;
+    iput-object v2, v0, Landroid/app/ActivityManager$TaskThumbnails;->mainThumbnail:Landroid/graphics/Bitmap;
 
     :cond_0
-    iget-object v2, v0, Lcom/android/server/am/TaskAccessInfo;->mainThumbnail:Landroid/graphics/Bitmap;
+    iget-object v2, v0, Landroid/app/ActivityManager$TaskThumbnails;->mainThumbnail:Landroid/graphics/Bitmap;
 
     if-nez v2, :cond_1
 
-    iget-object v2, p0, Lcom/android/server/am/TaskRecord;->lastThumbnail:Landroid/graphics/Bitmap;
+    iget-object v2, p0, Lcom/android/server/am/ThumbnailHolder;->lastThumbnail:Landroid/graphics/Bitmap;
 
-    iput-object v2, v0, Lcom/android/server/am/TaskAccessInfo;->mainThumbnail:Landroid/graphics/Bitmap;
+    iput-object v2, v0, Landroid/app/ActivityManager$TaskThumbnails;->mainThumbnail:Landroid/graphics/Bitmap;
 
     :cond_1
     return-object v0
@@ -786,27 +786,27 @@
     move-result-object v0
 
     .local v0, info:Lcom/android/server/am/TaskAccessInfo;
-    iget v2, v0, Lcom/android/server/am/TaskAccessInfo;->numSubThumbbails:I
+    iget v2, v0, Landroid/app/ActivityManager$TaskThumbnails;->numSubThumbbails:I
 
     if-gtz v2, :cond_2
 
-    iget-object v2, v0, Lcom/android/server/am/TaskAccessInfo;->mainThumbnail:Landroid/graphics/Bitmap;
+    iget-object v2, v0, Landroid/app/ActivityManager$TaskThumbnails;->mainThumbnail:Landroid/graphics/Bitmap;
 
     if-eqz v2, :cond_1
 
-    iget-object v2, v0, Lcom/android/server/am/TaskAccessInfo;->mainThumbnail:Landroid/graphics/Bitmap;
+    iget-object v2, v0, Landroid/app/ActivityManager$TaskThumbnails;->mainThumbnail:Landroid/graphics/Bitmap;
 
     goto :goto_0
 
     :cond_1
-    iget-object v2, p0, Lcom/android/server/am/TaskRecord;->lastThumbnail:Landroid/graphics/Bitmap;
+    iget-object v2, p0, Lcom/android/server/am/ThumbnailHolder;->lastThumbnail:Landroid/graphics/Bitmap;
 
     goto :goto_0
 
     :cond_2
     iget-object v2, v0, Lcom/android/server/am/TaskAccessInfo;->subtasks:Ljava/util/ArrayList;
 
-    iget v3, v0, Lcom/android/server/am/TaskAccessInfo;->numSubThumbbails:I
+    iget v3, v0, Landroid/app/ActivityManager$TaskThumbnails;->numSubThumbbails:I
 
     add-int/lit8 v3, v3, -0x1
 
@@ -1392,11 +1392,11 @@
     iput-boolean v3, p0, Lcom/android/server/am/TaskRecord;->rootWasReset:Z
 
     :cond_2
-    iget-object v3, p2, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v3, p2, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     if-eqz v3, :cond_3
 
-    iget-object v3, p2, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v3, p2, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget v3, v3, Landroid/content/pm/ApplicationInfo;->uid:I
 
@@ -1417,7 +1417,7 @@
     :cond_5
     new-instance v1, Landroid/content/ComponentName;
 
-    iget-object v3, p2, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v3, p2, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     iget-object v5, p2, Landroid/content/pm/ActivityInfo;->targetActivity:Ljava/lang/String;
 
@@ -1457,9 +1457,9 @@
 
     new-instance v3, Landroid/content/ComponentName;
 
-    iget-object v4, p2, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v4, p2, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
-    iget-object v5, p2, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v5, p2, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     invoke-direct {v3, v4, v5}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 

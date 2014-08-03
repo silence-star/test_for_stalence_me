@@ -436,12 +436,12 @@
     check-cast v5, Landroid/widget/ListView;
 
     .local v5, listview:Landroid/widget/ListView;
-    invoke-virtual {v5, p1}, Landroid/widget/ListView;->getPositionForView(Landroid/view/View;)I
+    invoke-virtual {v5, p1}, Landroid/widget/AdapterView;->getPositionForView(Landroid/view/View;)I
 
     move-result v8
 
     .local v8, position:I
-    invoke-virtual {v5, v8}, Landroid/widget/ListView;->getItemIdAtPosition(I)J
+    invoke-virtual {v5, v8}, Landroid/widget/AdapterView;->getItemIdAtPosition(I)J
 
     move-result-wide v3
 
@@ -1106,7 +1106,7 @@
     move-result v1
 
     .local v1, id:I
-    invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v3
 
@@ -1848,12 +1848,12 @@
 
     move-object/from16 v1, v34
 
-    invoke-virtual {v0, v1}, Landroid/widget/ListView;->getPositionForView(Landroid/view/View;)I
+    invoke-virtual {v0, v1}, Landroid/widget/AdapterView;->getPositionForView(Landroid/view/View;)I
 
     move-result v27
 
     .local v27, position:I
-    invoke-virtual/range {v26 .. v27}, Landroid/widget/ListView;->getItemIdAtPosition(I)J
+    invoke-virtual/range {v26 .. v27}, Landroid/widget/AdapterView;->getItemIdAtPosition(I)J
 
     move-result-wide v21
 
@@ -2988,7 +2988,7 @@
 
     iget-object v7, p0, Landroid/transition/Transition;->mParent:Landroid/transition/TransitionSet;
 
-    invoke-virtual {v7, p1, p2}, Landroid/transition/TransitionSet;->getTransitionValues(Landroid/view/View;Z)Landroid/transition/TransitionValues;
+    invoke-virtual {v7, p1, p2}, Landroid/transition/Transition;->getTransitionValues(Landroid/view/View;Z)Landroid/transition/TransitionValues;
 
     move-result-object v5
 
@@ -3049,12 +3049,12 @@
     check-cast v3, Landroid/widget/ListView;
 
     .local v3, listview:Landroid/widget/ListView;
-    invoke-virtual {v3, p1}, Landroid/widget/ListView;->getPositionForView(Landroid/view/View;)I
+    invoke-virtual {v3, p1}, Landroid/widget/AdapterView;->getPositionForView(Landroid/view/View;)I
 
     move-result v4
 
     .local v4, position:I
-    invoke-virtual {v3, v4}, Landroid/widget/ListView;->getItemIdAtPosition(I)J
+    invoke-virtual {v3, v4}, Landroid/widget/AdapterView;->getItemIdAtPosition(I)J
 
     move-result-wide v1
 
@@ -3448,7 +3448,7 @@
 
     move-result-object v17
 
-    invoke-virtual/range {p1 .. p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
+    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v18
 

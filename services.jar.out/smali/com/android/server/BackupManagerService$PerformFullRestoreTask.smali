@@ -1045,7 +1045,7 @@
 
     invoke-direct {v2, v3}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v2, v1}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v2, v1}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -1427,7 +1427,7 @@
 
     cmp-long v18, v13, v18
 
-    if-lez v18, :cond_2
+    if-lez v18, :cond_1
 
     array-length v0, v6
 
@@ -1441,7 +1441,7 @@
 
     cmp-long v18, v18, v13
 
-    if-gez v18, :cond_1
+    if-gez v18, :cond_0
 
     array-length v0, v6
 
@@ -1470,7 +1470,7 @@
     move-result v7
 
     .local v7, didRead:I
-    if-ltz v7, :cond_2
+    if-ltz v7, :cond_1
 
     move-object/from16 v0, p0
 
@@ -1490,7 +1490,6 @@
 
     iput-wide v0, v2, Lcom/android/server/BackupManagerService$PerformFullRestoreTask;->mBytes:J
 
-    :cond_0
     const/16 v18, 0x0
 
     move/from16 v0, v18
@@ -1507,12 +1506,12 @@
 
     .end local v7           #didRead:I
     .end local v15           #toRead:J
-    :cond_1
+    :cond_0
     move-wide v15, v13
 
     goto :goto_1
 
-    :cond_2
+    :cond_1
     invoke-virtual {v5}, Ljava/io/FileOutputStream;->close()V
 
     const/16 v18, 0x1
@@ -1591,7 +1590,7 @@
 
     move/from16 v1, v19
 
-    if-eq v0, v1, :cond_4
+    if-eq v0, v1, :cond_3
 
     move-object/from16 v0, p0
 
@@ -1618,7 +1617,7 @@
 
     move-object/from16 v1, v19
 
-    if-eq v0, v1, :cond_3
+    if-eq v0, v1, :cond_2
 
     const/4 v9, 0x0
 
@@ -1626,7 +1625,7 @@
     .end local v6           #buffer:[B
     .end local v10           #packageUri:Landroid/net/Uri;
     .end local v13           #size:J
-    :cond_3
+    :cond_2
     :goto_2
     invoke-virtual {v4}, Ljava/io/File;->delete()Z
 
@@ -1636,7 +1635,7 @@
     .restart local v6       #buffer:[B
     .restart local v10       #packageUri:Landroid/net/Uri;
     .restart local v13       #size:J
-    :cond_4
+    :cond_3
     const/16 v17, 0x0
 
     .local v17, uninstall:Z
@@ -1663,7 +1662,7 @@
 
     move-result v18
 
-    if-nez v18, :cond_6
+    if-nez v18, :cond_5
 
     const-string v18, "BackupManagerService"
 
@@ -1719,9 +1718,9 @@
 
     const/16 v17, 0x1
 
-    :cond_5
+    :cond_4
     :goto_3
-    if-eqz v17, :cond_3
+    if-eqz v17, :cond_2
 
     move-object/from16 v0, p0
 
@@ -1805,7 +1804,7 @@
     .restart local v10       #packageUri:Landroid/net/Uri;
     .restart local v13       #size:J
     .restart local v17       #uninstall:Z
-    :cond_6
+    :cond_5
     :try_start_3
     move-object/from16 v0, p0
 
@@ -1845,7 +1844,7 @@
 
     and-int v18, v18, v19
 
-    if-nez v18, :cond_7
+    if-nez v18, :cond_6
 
     const-string v18, "BackupManagerService"
 
@@ -1885,7 +1884,7 @@
 
     goto/16 :goto_3
 
-    :cond_7
+    :cond_6
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/BackupManagerService$PerformFullRestoreTask;->mManifestSignatures:Ljava/util/HashMap;
@@ -1918,7 +1917,7 @@
 
     move-result v18
 
-    if-eqz v18, :cond_8
+    if-eqz v18, :cond_7
 
     iget-object v0, v11, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
@@ -1936,7 +1935,7 @@
 
     move/from16 v1, v19
 
-    if-ge v0, v1, :cond_5
+    if-ge v0, v1, :cond_4
 
     iget-object v0, v11, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
@@ -1948,7 +1947,7 @@
 
     move-object/from16 v18, v0
 
-    if-nez v18, :cond_5
+    if-nez v18, :cond_4
 
     const-string v18, "BackupManagerService"
 
@@ -1988,7 +1987,7 @@
 
     goto/16 :goto_3
 
-    :cond_8
+    :cond_7
     const-string v18, "BackupManagerService"
 
     new-instance v19, Ljava/lang/StringBuilder;
@@ -2954,7 +2953,7 @@
     .local v5, e:Ljava/lang/IllegalArgumentException;
     const-string v18, "BackupManagerService"
 
-    invoke-virtual {v5}, Ljava/lang/IllegalArgumentException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v19
 
@@ -3753,7 +3752,7 @@
 
     move-result-object v9
 
-    invoke-virtual {v1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v10
 
@@ -4329,7 +4328,7 @@
     .local v40, policy:Lcom/android/server/BackupManagerService$RestorePolicy;
     sget-object v4, Lcom/android/server/BackupManagerService$3;->$SwitchMap$com$android$server$BackupManagerService$RestorePolicy:[I
 
-    invoke-virtual/range {v40 .. v40}, Lcom/android/server/BackupManagerService$RestorePolicy;->ordinal()I
+    invoke-virtual/range {v40 .. v40}, Ljava/lang/Enum;->ordinal()I
 
     move-result v6
 
@@ -4830,7 +4829,7 @@
 
     const/4 v6, 0x7
 
-    invoke-virtual {v4, v6}, Lcom/android/server/BackupManagerService$BackupHandler;->removeMessages(I)V
+    invoke-virtual {v4, v6}, Landroid/os/Handler;->removeMessages(I)V
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/BackupManagerService$PerformFullRestoreTask;->tearDownPipes()V
 
@@ -5571,12 +5570,12 @@
     if-eqz v12, :cond_2
 
     :try_start_3
-    invoke-virtual {v12}, Ljava/io/DataInputStream;->close()V
+    throw v12
 
     :cond_2
     if-eqz v14, :cond_3
 
-    invoke-virtual {v14}, Ljava/io/FileInputStream;->close()V
+    throw v14
 
     :cond_3
     move-object/from16 v0, p0
@@ -5866,7 +5865,7 @@
     if-eqz v13, :cond_6
 
     :try_start_9
-    invoke-virtual {v13}, Ljava/io/DataInputStream;->close()V
+    invoke-virtual {v13}, Ljava/io/FilterInputStream;->close()V
 
     :cond_6
     if-eqz v15, :cond_7
@@ -6089,7 +6088,7 @@
     if-eqz v12, :cond_a
 
     :try_start_e
-    invoke-virtual {v12}, Ljava/io/DataInputStream;->close()V
+    invoke-virtual {v12}, Ljava/io/FilterInputStream;->close()V
 
     :cond_a
     if-eqz v14, :cond_b
@@ -6262,7 +6261,7 @@
     if-eqz v13, :cond_d
 
     :try_start_13
-    invoke-virtual {v13}, Ljava/io/DataInputStream;->close()V
+    invoke-virtual {v13}, Ljava/io/FilterInputStream;->close()V
 
     :cond_d
     if-eqz v15, :cond_e
@@ -6442,7 +6441,7 @@
     if-eqz v13, :cond_10
 
     :try_start_18
-    invoke-virtual {v13}, Ljava/io/DataInputStream;->close()V
+    invoke-virtual {v13}, Ljava/io/FilterInputStream;->close()V
 
     :cond_10
     if-eqz v15, :cond_11
@@ -6641,7 +6640,7 @@
     if-eqz v12, :cond_13
 
     :try_start_1c
-    invoke-virtual {v12}, Ljava/io/DataInputStream;->close()V
+    invoke-virtual {v12}, Ljava/io/FilterInputStream;->close()V
 
     :cond_13
     if-eqz v14, :cond_14
@@ -6816,7 +6815,7 @@
     if-eqz v13, :cond_18
 
     :try_start_20
-    invoke-virtual {v13}, Ljava/io/DataInputStream;->close()V
+    invoke-virtual {v13}, Ljava/io/FilterInputStream;->close()V
 
     :cond_18
     if-eqz v15, :cond_19
@@ -7577,7 +7576,7 @@
 
     if-eq v1, v2, :cond_1
 
-    iget-object v1, p1, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+    iget-object v1, p1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     const-string v2, "com.android.backupconfirm"
 

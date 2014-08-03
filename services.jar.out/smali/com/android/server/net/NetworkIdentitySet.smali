@@ -108,7 +108,7 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/net/NetworkIdentity;-><init>(IILjava/lang/String;Ljava/lang/String;Z)V
 
-    invoke-virtual {p0, v0}, Lcom/android/server/net/NetworkIdentitySet;->add(Ljava/lang/Object;)Z
+    invoke-virtual {p0, v0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v6, v6, 0x1
 
@@ -212,13 +212,13 @@
 
     invoke-virtual {p1, v2}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    invoke-virtual {p0}, Lcom/android/server/net/NetworkIdentitySet;->size()I
+    invoke-virtual {p0}, Ljava/util/HashSet;->size()I
 
     move-result v2
 
     invoke-virtual {p1, v2}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    invoke-virtual {p0}, Lcom/android/server/net/NetworkIdentitySet;->iterator()Ljava/util/Iterator;
+    invoke-virtual {p0}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 

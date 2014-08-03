@@ -59,9 +59,9 @@
 
     const/4 v0, -0x1
 
-    iget v2, p1, Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;->flags:I
+    iget v2, p1, Landroid/content/pm/PermissionGroupInfo;->flags:I
 
-    iget v3, p2, Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;->flags:I
+    iget v3, p2, Landroid/content/pm/PermissionGroupInfo;->flags:I
 
     xor-int/2addr v2, v3
 
@@ -69,7 +69,7 @@
 
     if-eqz v2, :cond_2
 
-    iget v2, p1, Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;->flags:I
+    iget v2, p1, Landroid/content/pm/PermissionGroupInfo;->flags:I
 
     and-int/lit8 v2, v2, 0x1
 
@@ -85,15 +85,15 @@
     goto :goto_0
 
     :cond_2
-    iget v2, p1, Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;->priority:I
+    iget v2, p1, Landroid/content/pm/PermissionGroupInfo;->priority:I
 
-    iget v3, p2, Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;->priority:I
+    iget v3, p2, Landroid/content/pm/PermissionGroupInfo;->priority:I
 
     if-eq v2, v3, :cond_3
 
-    iget v2, p1, Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;->priority:I
+    iget v2, p1, Landroid/content/pm/PermissionGroupInfo;->priority:I
 
-    iget v3, p2, Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;->priority:I
+    iget v3, p2, Landroid/content/pm/PermissionGroupInfo;->priority:I
 
     if-gt v2, v3, :cond_0
 

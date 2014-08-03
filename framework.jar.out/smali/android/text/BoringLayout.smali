@@ -144,7 +144,7 @@
 
     .local v10, trust:Z
     :goto_0
-    invoke-virtual {p0}, Landroid/text/BoringLayout;->getText()Ljava/lang/CharSequence;
+    invoke-virtual {p0}, Landroid/text/Layout;->getText()Ljava/lang/CharSequence;
 
     move-result-object v2
 
@@ -200,7 +200,7 @@
 
     move/from16 v7, p6
 
-    invoke-virtual/range {v1 .. v7}, Landroid/text/BoringLayout;->replaceWith(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FF)V
+    invoke-virtual/range {v1 .. v7}, Landroid/text/Layout;->replaceWith(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FF)V
 
     move/from16 v0, p10
 
@@ -738,7 +738,7 @@
     return v0
 
     :cond_0
-    invoke-virtual {p0}, Landroid/text/BoringLayout;->getText()Ljava/lang/CharSequence;
+    invoke-virtual {p0}, Landroid/text/Layout;->getText()Ljava/lang/CharSequence;
 
     move-result-object v0
 
@@ -820,11 +820,11 @@
 
     move-object/from16 v0, p7
 
-    iget v2, v0, Landroid/text/BoringLayout$Metrics;->bottom:I
+    iget v2, v0, Landroid/graphics/Paint$FontMetricsInt;->bottom:I
 
     move-object/from16 v0, p7
 
-    iget v3, v0, Landroid/text/BoringLayout$Metrics;->top:I
+    iget v3, v0, Landroid/graphics/Paint$FontMetricsInt;->top:I
 
     sub-int v10, v2, v3
 
@@ -862,7 +862,7 @@
 
     move-object/from16 v0, p7
 
-    iget v2, v0, Landroid/text/BoringLayout$Metrics;->top:I
+    iget v2, v0, Landroid/graphics/Paint$FontMetricsInt;->top:I
 
     add-int/2addr v2, v10
 
@@ -884,11 +884,11 @@
 
     move-object/from16 v0, p7
 
-    iget v2, v0, Landroid/text/BoringLayout$Metrics;->top:I
+    iget v2, v0, Landroid/graphics/Paint$FontMetricsInt;->top:I
 
     move-object/from16 v0, p7
 
-    iget v3, v0, Landroid/text/BoringLayout$Metrics;->ascent:I
+    iget v3, v0, Landroid/graphics/Paint$FontMetricsInt;->ascent:I
 
     sub-int/2addr v2, v3
 
@@ -896,11 +896,11 @@
 
     move-object/from16 v0, p7
 
-    iget v2, v0, Landroid/text/BoringLayout$Metrics;->bottom:I
+    iget v2, v0, Landroid/graphics/Paint$FontMetricsInt;->bottom:I
 
     move-object/from16 v0, p7
 
-    iget v3, v0, Landroid/text/BoringLayout$Metrics;->descent:I
+    iget v3, v0, Landroid/graphics/Paint$FontMetricsInt;->descent:I
 
     sub-int/2addr v2, v3
 
@@ -920,11 +920,11 @@
     :cond_4
     move-object/from16 v0, p7
 
-    iget v2, v0, Landroid/text/BoringLayout$Metrics;->descent:I
+    iget v2, v0, Landroid/graphics/Paint$FontMetricsInt;->descent:I
 
     move-object/from16 v0, p7
 
-    iget v3, v0, Landroid/text/BoringLayout$Metrics;->ascent:I
+    iget v3, v0, Landroid/graphics/Paint$FontMetricsInt;->ascent:I
 
     sub-int v10, v2, v3
 
@@ -934,7 +934,7 @@
     :cond_5
     move-object/from16 v0, p7
 
-    iget v2, v0, Landroid/text/BoringLayout$Metrics;->ascent:I
+    iget v2, v0, Landroid/graphics/Paint$FontMetricsInt;->ascent:I
 
     add-int/2addr v2, v10
 
@@ -1001,7 +1001,7 @@
     .parameter "includepad"
 
     .prologue
-    invoke-virtual/range {p0 .. p6}, Landroid/text/BoringLayout;->replaceWith(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FF)V
+    invoke-virtual/range {p0 .. p6}, Landroid/text/Layout;->replaceWith(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FF)V
 
     iput p3, p0, Landroid/text/BoringLayout;->mEllipsizedWidth:I
 
@@ -1061,7 +1061,7 @@
     if-ne v0, v1, :cond_1
 
     :cond_0
-    invoke-virtual/range {p0 .. p6}, Landroid/text/BoringLayout;->replaceWith(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FF)V
+    invoke-virtual/range {p0 .. p6}, Landroid/text/Layout;->replaceWith(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FF)V
 
     iput p3, p0, Landroid/text/BoringLayout;->mEllipsizedWidth:I
 
@@ -1077,7 +1077,7 @@
 
     .local v10, trust:Z
     :goto_0
-    invoke-virtual {p0}, Landroid/text/BoringLayout;->getText()Ljava/lang/CharSequence;
+    invoke-virtual {p0}, Landroid/text/Layout;->getText()Ljava/lang/CharSequence;
 
     move-result-object v2
 
@@ -1133,7 +1133,7 @@
 
     move/from16 v7, p6
 
-    invoke-virtual/range {v1 .. v7}, Landroid/text/BoringLayout;->replaceWith(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FF)V
+    invoke-virtual/range {v1 .. v7}, Landroid/text/Layout;->replaceWith(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FF)V
 
     move/from16 v0, p10
 

@@ -42,7 +42,7 @@
     .prologue
     iget-object v0, p0, Lnubia/fancydrawable/DateDrawable$2;->this$0:Lnubia/fancydrawable/DateDrawable;
 
-    invoke-virtual {v0}, Lnubia/fancydrawable/DateDrawable;->invalidateSelf()V
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
     return-void
 .end method

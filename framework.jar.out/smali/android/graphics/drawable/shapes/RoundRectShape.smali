@@ -123,7 +123,7 @@
 
     iget-object v1, p0, Landroid/graphics/drawable/shapes/RoundRectShape;->mOuterRadii:[F
 
-    invoke-virtual {v1}, [F->clone()Ljava/lang/Object;
+    invoke-virtual {v1}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -138,7 +138,7 @@
 
     iget-object v1, p0, Landroid/graphics/drawable/shapes/RoundRectShape;->mInnerRadii:[F
 
-    invoke-virtual {v1}, [F->clone()Ljava/lang/Object;
+    invoke-virtual {v1}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -237,7 +237,7 @@
     .prologue
     invoke-super {p0, p1, p2}, Landroid/graphics/drawable/shapes/RectShape;->onResize(FF)V
 
-    invoke-virtual {p0}, Landroid/graphics/drawable/shapes/RoundRectShape;->rect()Landroid/graphics/RectF;
+    invoke-virtual {p0}, Landroid/graphics/drawable/shapes/RectShape;->rect()Landroid/graphics/RectF;
 
     move-result-object v0
 

@@ -11,7 +11,7 @@
     .prologue
     invoke-direct {p0}, Landroid/graphics/MaskFilter;-><init>()V
 
-    iput p1, p0, Landroid/graphics/TableMaskFilter;->native_instance:I
+    iput p1, p0, Landroid/graphics/MaskFilter;->native_instance:I
 
     return-void
 .end method
@@ -42,7 +42,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/TableMaskFilter;->native_instance:I
+    iput v0, p0, Landroid/graphics/MaskFilter;->native_instance:I
 
     return-void
 .end method

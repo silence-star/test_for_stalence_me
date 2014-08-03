@@ -57,7 +57,7 @@
     monitor-enter p0
 
     :try_start_0
-    iget-boolean v0, p0, Landroid/media/RemoteControlClient$MetadataEditor;->mApplied:Z
+    iget-boolean v0, p0, Landroid/media/MediaMetadataEditor;->mApplied:Z
 
     if-eqz v0, :cond_0
 
@@ -92,7 +92,7 @@
 
     new-instance v2, Landroid/os/Bundle;
 
-    iget-object v3, p0, Landroid/media/RemoteControlClient$MetadataEditor;->mEditorMetadata:Landroid/os/Bundle;
+    iget-object v3, p0, Landroid/media/MediaMetadataEditor;->mEditorMetadata:Landroid/os/Bundle;
 
     invoke-direct {v2, v3}, Landroid/os/Bundle;-><init>(Landroid/os/Bundle;)V
 
@@ -112,7 +112,7 @@
 
     move-result-object v2
 
-    iget-wide v3, p0, Landroid/media/RemoteControlClient$MetadataEditor;->mEditableKeys:J
+    iget-wide v3, p0, Landroid/media/MediaMetadataEditor;->mEditableKeys:J
 
     invoke-virtual {v0, v2, v3, v4}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
@@ -132,7 +132,7 @@
 
     move-result-object v0
 
-    iget-object v2, p0, Landroid/media/RemoteControlClient$MetadataEditor;->mEditorArtwork:Landroid/graphics/Bitmap;
+    iget-object v2, p0, Landroid/media/MediaMetadataEditor;->mEditorArtwork:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
@@ -152,18 +152,18 @@
     :cond_1
     iget-object v0, p0, Landroid/media/RemoteControlClient$MetadataEditor;->this$0:Landroid/media/RemoteControlClient;
 
-    iget-object v2, p0, Landroid/media/RemoteControlClient$MetadataEditor;->mEditorArtwork:Landroid/graphics/Bitmap;
+    iget-object v2, p0, Landroid/media/MediaMetadataEditor;->mEditorArtwork:Landroid/graphics/Bitmap;
 
     #setter for: Landroid/media/RemoteControlClient;->mOriginalArtwork:Landroid/graphics/Bitmap;
     invoke-static {v0, v2}, Landroid/media/RemoteControlClient;->access$202(Landroid/media/RemoteControlClient;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Landroid/media/RemoteControlClient$MetadataEditor;->mEditorArtwork:Landroid/graphics/Bitmap;
+    iput-object v0, p0, Landroid/media/MediaMetadataEditor;->mEditorArtwork:Landroid/graphics/Bitmap;
 
-    iget-boolean v0, p0, Landroid/media/RemoteControlClient$MetadataEditor;->mMetadataChanged:Z
+    iget-boolean v0, p0, Landroid/media/MediaMetadataEditor;->mMetadataChanged:Z
 
-    iget-boolean v2, p0, Landroid/media/RemoteControlClient$MetadataEditor;->mArtworkChanged:Z
+    iget-boolean v2, p0, Landroid/media/MediaMetadataEditor;->mArtworkChanged:Z
 
     and-int/2addr v0, v2
 
@@ -184,7 +184,7 @@
     :goto_1
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroid/media/RemoteControlClient$MetadataEditor;->mApplied:Z
+    iput-boolean v0, p0, Landroid/media/MediaMetadataEditor;->mApplied:Z
 
     monitor-exit v1
 
@@ -211,7 +211,7 @@
 
     :cond_3
     :try_start_4
-    iget-boolean v0, p0, Landroid/media/RemoteControlClient$MetadataEditor;->mMetadataChanged:Z
+    iget-boolean v0, p0, Landroid/media/MediaMetadataEditor;->mMetadataChanged:Z
 
     if-eqz v0, :cond_4
 
@@ -225,7 +225,7 @@
     goto :goto_1
 
     :cond_4
-    iget-boolean v0, p0, Landroid/media/RemoteControlClient$MetadataEditor;->mArtworkChanged:Z
+    iget-boolean v0, p0, Landroid/media/MediaMetadataEditor;->mArtworkChanged:Z
 
     if-eqz v0, :cond_2
 

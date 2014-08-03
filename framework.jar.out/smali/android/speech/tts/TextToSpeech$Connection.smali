@@ -142,7 +142,7 @@
 
     const/4 v3, 0x0
 
-    invoke-virtual {v1, v3}, Landroid/speech/tts/TextToSpeech$Connection$SetupConnectionAsyncTask;->cancel(Z)Z
+    invoke-virtual {v1, v3}, Landroid/os/AsyncTask;->cancel(Z)Z
 
     move-result v0
 
@@ -318,7 +318,7 @@
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, v2}, Landroid/speech/tts/TextToSpeech$Connection$SetupConnectionAsyncTask;->cancel(Z)Z
+    invoke-virtual {v0, v2}, Landroid/os/AsyncTask;->cancel(Z)Z
 
     :cond_0
     invoke-static {p2}, Landroid/speech/tts/ITextToSpeechService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/speech/tts/ITextToSpeechService;
@@ -348,7 +348,7 @@
 
     new-array v2, v2, [Ljava/lang/Void;
 
-    invoke-virtual {v0, v2}, Landroid/speech/tts/TextToSpeech$Connection$SetupConnectionAsyncTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v0, v2}, Landroid/os/AsyncTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
     monitor-exit v1
 

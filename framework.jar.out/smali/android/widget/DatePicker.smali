@@ -240,6 +240,14 @@
     invoke-direct {v10, v0}, Landroid/widget/DatePicker$1;-><init>(Landroid/widget/DatePicker;)V
 
     .local v10, onChangeListener:Landroid/widget/NumberPicker$OnValueChangeListener;
+    new-instance v10, Landroid/widget/DatePicker$OnDateChangeListener;
+
+    .end local v10           #onChangeListener:Landroid/widget/NumberPicker$OnValueChangeListener;
+    move-object/from16 v0, p0
+
+    invoke-direct {v10, v0}, Landroid/widget/DatePicker$OnDateChangeListener;-><init>(Landroid/widget/DatePicker;)V
+
+    .restart local v10       #onChangeListener:Landroid/widget/NumberPicker$OnValueChangeListener;
     const v13, 0x1020293
 
     move-object/from16 v0, p0
@@ -1049,6 +1057,8 @@
 
     :cond_0
     return-void
+
+    nop
 
     nop
 

@@ -174,7 +174,7 @@
 
     const/16 v8, 0x8
 
-    invoke-virtual {v4, v8}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v4, v8}, Landroid/view/View;->setVisibility(I)V
 
     :goto_2
     const v8, 0x10202d7
@@ -193,7 +193,7 @@
     const/4 v7, 0x1
 
     :cond_3
-    invoke-virtual {v3, v7}, Landroid/widget/RadioButton;->setChecked(Z)V
+    invoke-virtual {v3, v7}, Landroid/widget/CompoundButton;->setChecked(Z)V
 
     goto :goto_1
 
@@ -203,7 +203,7 @@
 
     invoke-virtual {v4, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v4, v7}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v4, v7}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_2
 .end method

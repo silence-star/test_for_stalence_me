@@ -127,7 +127,7 @@
 
     move-result v1
 
-    invoke-virtual {p0}, Landroid/content/SearchRecentSuggestionsProvider;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/content/ContentProvider;->getContext()Landroid/content/Context;
 
     move-result-object v4
 
@@ -332,7 +332,7 @@
     throw v6
 
     :cond_2
-    invoke-virtual {p0}, Landroid/content/SearchRecentSuggestionsProvider;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/content/ContentProvider;->getContext()Landroid/content/Context;
 
     move-result-object v6
 
@@ -376,7 +376,7 @@
     .local v0, mWorkingDbVersion:I
     new-instance v1, Landroid/content/SearchRecentSuggestionsProvider$DatabaseHelper;
 
-    invoke-virtual {p0}, Landroid/content/SearchRecentSuggestionsProvider;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/content/ContentProvider;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
@@ -457,7 +457,7 @@
     move-result-object v16
 
     .local v16, c:Landroid/database/Cursor;
-    invoke-virtual/range {p0 .. p0}, Landroid/content/SearchRecentSuggestionsProvider;->getContext()Landroid/content/Context;
+    invoke-virtual/range {p0 .. p0}, Landroid/content/ContentProvider;->getContext()Landroid/content/Context;
 
     move-result-object v3
 
@@ -756,7 +756,7 @@
     move-result-object v16
 
     .restart local v16       #c:Landroid/database/Cursor;
-    invoke-virtual/range {p0 .. p0}, Landroid/content/SearchRecentSuggestionsProvider;->getContext()Landroid/content/Context;
+    invoke-virtual/range {p0 .. p0}, Landroid/content/ContentProvider;->getContext()Landroid/content/Context;
 
     move-result-object v3
 

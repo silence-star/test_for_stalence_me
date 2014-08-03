@@ -57,7 +57,7 @@
     .prologue
     iget-object v3, p0, Landroid/widget/AbsListView$PerformClick;->this$0:Landroid/widget/AbsListView;
 
-    iget-boolean v3, v3, Landroid/widget/AbsListView;->mDataChanged:Z
+    iget-boolean v3, v3, Landroid/widget/AdapterView;->mDataChanged:Z
 
     if-eqz v3, :cond_1
 
@@ -78,7 +78,7 @@
 
     iget-object v3, p0, Landroid/widget/AbsListView$PerformClick;->this$0:Landroid/widget/AbsListView;
 
-    iget v3, v3, Landroid/widget/AbsListView;->mItemCount:I
+    iget v3, v3, Landroid/widget/AdapterView;->mItemCount:I
 
     if-lez v3, :cond_0
 
@@ -92,7 +92,7 @@
 
     if-ge v1, v3, :cond_0
 
-    invoke-virtual {p0}, Landroid/widget/AbsListView$PerformClick;->sameWindow()Z
+    invoke-virtual {p0}, Landroid/widget/AbsListView$WindowRunnnable;->sameWindow()Z
 
     move-result v3
 
@@ -102,11 +102,11 @@
 
     iget-object v4, p0, Landroid/widget/AbsListView$PerformClick;->this$0:Landroid/widget/AbsListView;
 
-    iget v4, v4, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v4, v4, Landroid/widget/AdapterView;->mFirstPosition:I
 
     sub-int v4, v1, v4
 
-    invoke-virtual {v3, v4}, Landroid/widget/AbsListView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 

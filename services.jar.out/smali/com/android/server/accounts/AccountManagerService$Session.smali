@@ -3,8 +3,8 @@
 .source "AccountManagerService.java"
 
 # interfaces
-.implements Landroid/os/IBinder$DeathRecipient;
 .implements Landroid/content/ServiceConnection;
+.implements Landroid/os/IBinder$DeathRecipient;
 
 
 # annotations
@@ -113,7 +113,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v1, v3, p0}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v3, p0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     monitor-exit v2
     :try_end_0
@@ -375,7 +375,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v0, v2}, Ljava/util/LinkedHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -563,7 +563,7 @@
 
     const/4 v1, 0x3
 
-    invoke-virtual {v0, v1, p0}, Lcom/android/server/accounts/AccountManagerService$MessageHandler;->removeMessages(ILjava/lang/Object;)V
+    invoke-virtual {v0, v1, p0}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
 
     return-void
 .end method
@@ -792,7 +792,7 @@
     .local v10, resolveInfo:Landroid/content/pm/ResolveInfo;
     iget-object v13, v10, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v13, v13, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v13, v13, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget v12, v13, Landroid/content/pm/ApplicationInfo;->uid:I
 
@@ -1313,13 +1313,13 @@
 
     const/4 v2, 0x3
 
-    invoke-virtual {v1, v2, p0}, Lcom/android/server/accounts/AccountManagerService$MessageHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v1, v2, p0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v1
 
     const-wide/32 v2, 0xea60
 
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/server/accounts/AccountManagerService$MessageHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     return-void
 .end method

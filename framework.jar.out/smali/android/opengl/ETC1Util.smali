@@ -124,7 +124,7 @@
 
     move-result-object v8
 
-    invoke-virtual {v8, v10}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {v8, v10}, Ljava/nio/Buffer;->position(I)Ljava/nio/Buffer;
 
     invoke-static {v3}, Landroid/opengl/ETC1;->isValid(Ljava/nio/Buffer;)Z
 
@@ -205,7 +205,7 @@
 
     .end local v0           #chunkSize:I
     :cond_3
-    invoke-virtual {v1, v10}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {v1, v10}, Ljava/nio/Buffer;->position(I)Ljava/nio/Buffer;
 
     new-instance v8, Landroid/opengl/ETC1Util$ETC1Texture;
 
@@ -481,7 +481,7 @@
     move-result-object v1
 
     .local v1, dataBuffer:Ljava/nio/ByteBuffer;
-    invoke-virtual {v1}, Ljava/nio/ByteBuffer;->position()I
+    invoke-virtual {v1}, Ljava/nio/Buffer;->position()I
 
     move-result v7
 
@@ -567,7 +567,7 @@
 
     .end local v0           #chunkSize:I
     :cond_0
-    invoke-virtual {v1, v7}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {v1, v7}, Ljava/nio/Buffer;->position(I)Ljava/nio/Buffer;
 
     return-void
 
@@ -580,7 +580,7 @@
     :catchall_0
     move-exception v9
 
-    invoke-virtual {v1, v7}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {v1, v7}, Ljava/nio/Buffer;->position(I)Ljava/nio/Buffer;
 
     throw v9
 .end method

@@ -486,7 +486,7 @@
     invoke-direct {v0, p1, v1}, Landroid/preference/PreferenceScreen;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .local v0, preferenceScreen:Landroid/preference/PreferenceScreen;
-    invoke-virtual {v0, p0}, Landroid/preference/PreferenceScreen;->onAttachedToHierarchy(Landroid/preference/PreferenceManager;)V
+    invoke-virtual {v0, p0}, Landroid/preference/Preference;->onAttachedToHierarchy(Landroid/preference/PreferenceManager;)V
 
     return-object v0
 .end method
@@ -729,7 +729,7 @@
     :cond_0
     iget-object v0, p0, Landroid/preference/PreferenceManager;->mPreferenceScreen:Landroid/preference/PreferenceScreen;
 
-    invoke-virtual {v0, p1}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+    invoke-virtual {v0, p1}, Landroid/preference/PreferenceGroup;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
     move-result-object v0
 
@@ -956,7 +956,7 @@
     iget-object v1, v10, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     .local v1, activityInfo:Landroid/content/pm/ActivityInfo;
-    iget-object v7, v1, Landroid/content/pm/ActivityInfo;->metaData:Landroid/os/Bundle;
+    iget-object v7, v1, Landroid/content/pm/PackageItemInfo;->metaData:Landroid/os/Bundle;
 
     .local v7, metaData:Landroid/os/Bundle;
     if-eqz v7, :cond_0
@@ -980,7 +980,7 @@
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v11, v1, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v11, v1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -992,7 +992,7 @@
 
     move-result-object v10
 
-    iget-object v11, v1, Landroid/content/pm/ActivityInfo;->metaData:Landroid/os/Bundle;
+    iget-object v11, v1, Landroid/content/pm/PackageItemInfo;->metaData:Landroid/os/Bundle;
 
     const-string v12, "android.preference"
 
@@ -1020,7 +1020,7 @@
     :try_start_0
     iget-object v10, p0, Landroid/preference/PreferenceManager;->mContext:Landroid/content/Context;
 
-    iget-object v11, v1, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v11, v1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     const/4 v12, 0x0
 
@@ -1042,14 +1042,14 @@
 
     const-string v11, "android.preference"
 
-    invoke-virtual {v1, v10, v11}, Landroid/content/pm/ActivityInfo;->loadXmlMetaData(Landroid/content/pm/PackageManager;Ljava/lang/String;)Landroid/content/res/XmlResourceParser;
+    invoke-virtual {v1, v10, v11}, Landroid/content/pm/PackageItemInfo;->loadXmlMetaData(Landroid/content/pm/PackageManager;Ljava/lang/String;)Landroid/content/res/XmlResourceParser;
 
     move-result-object v8
 
     .local v8, parser:Landroid/content/res/XmlResourceParser;
     const/4 v10, 0x1
 
-    invoke-virtual {v6, v8, p2, v10}, Landroid/preference/PreferenceInflater;->inflate(Lorg/xmlpull/v1/XmlPullParser;Landroid/preference/GenericInflater$Parent;Z)Ljava/lang/Object;
+    invoke-virtual {v6, v8, p2, v10}, Landroid/preference/GenericInflater;->inflate(Lorg/xmlpull/v1/XmlPullParser;Landroid/preference/GenericInflater$Parent;Z)Ljava/lang/Object;
 
     move-result-object p2
 
@@ -1080,7 +1080,7 @@
 
     move-result-object v11
 
-    iget-object v12, v1, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v12, v1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1113,7 +1113,7 @@
     .end local v7           #metaData:Landroid/os/Bundle;
     .end local v9           #uniqueResId:Ljava/lang/String;
     :cond_2
-    invoke-virtual {p2, p0}, Landroid/preference/PreferenceScreen;->onAttachedToHierarchy(Landroid/preference/PreferenceManager;)V
+    invoke-virtual {p2, p0}, Landroid/preference/Preference;->onAttachedToHierarchy(Landroid/preference/PreferenceManager;)V
 
     return-object p2
 .end method
@@ -1134,7 +1134,7 @@
     invoke-direct {v0, p1, p0}, Landroid/preference/PreferenceInflater;-><init>(Landroid/content/Context;Landroid/preference/PreferenceManager;)V
 
     .local v0, inflater:Landroid/preference/PreferenceInflater;
-    invoke-virtual {v0, p2, p3, v1}, Landroid/preference/PreferenceInflater;->inflate(ILandroid/preference/GenericInflater$Parent;Z)Ljava/lang/Object;
+    invoke-virtual {v0, p2, p3, v1}, Landroid/preference/GenericInflater;->inflate(ILandroid/preference/GenericInflater$Parent;Z)Ljava/lang/Object;
 
     move-result-object p3
 
@@ -1142,7 +1142,7 @@
     check-cast p3, Landroid/preference/PreferenceScreen;
 
     .restart local p3
-    invoke-virtual {p3, p0}, Landroid/preference/PreferenceScreen;->onAttachedToHierarchy(Landroid/preference/PreferenceManager;)V
+    invoke-virtual {p3, p0}, Landroid/preference/Preference;->onAttachedToHierarchy(Landroid/preference/PreferenceManager;)V
 
     const/4 v1, 0x0
 

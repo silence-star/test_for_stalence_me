@@ -242,7 +242,7 @@
 
     const-wide/16 v5, 0x3e8
 
-    invoke-virtual {v3, v4, v5, v6}, Lcom/android/server/media/MediaRouterService$UserHandler;->runWithScissors(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v3, v4, v5, v6}, Landroid/os/Handler;->runWithScissors(Ljava/lang/Runnable;J)Z
 
     move-result v3
 

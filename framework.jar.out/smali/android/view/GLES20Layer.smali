@@ -77,11 +77,11 @@
     .locals 1
 
     .prologue
-    iget-object v0, p0, Landroid/view/GLES20Layer;->mDisplayList:Landroid/view/DisplayList;
+    iget-object v0, p0, Landroid/view/HardwareLayer;->mDisplayList:Landroid/view/DisplayList;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Landroid/view/GLES20Layer;->mDisplayList:Landroid/view/DisplayList;
+    iget-object v0, p0, Landroid/view/HardwareLayer;->mDisplayList:Landroid/view/DisplayList;
 
     invoke-virtual {v0}, Landroid/view/DisplayList;->reset()V
 

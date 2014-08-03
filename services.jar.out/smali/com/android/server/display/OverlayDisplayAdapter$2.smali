@@ -42,7 +42,7 @@
     .prologue
     iget-object v0, p0, Lcom/android/server/display/OverlayDisplayAdapter$2;->this$0:Lcom/android/server/display/OverlayDisplayAdapter;
 
-    invoke-virtual {v0}, Lcom/android/server/display/OverlayDisplayAdapter;->getContext()Landroid/content/Context;
+    invoke-virtual {v0}, Lcom/android/server/display/DisplayAdapter;->getContext()Landroid/content/Context;
 
     move-result-object v0
 

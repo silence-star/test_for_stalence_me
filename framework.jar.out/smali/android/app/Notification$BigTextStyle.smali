@@ -35,7 +35,7 @@
     .prologue
     invoke-direct {p0}, Landroid/app/Notification$Style;-><init>()V
 
-    invoke-virtual {p0, p1}, Landroid/app/Notification$BigTextStyle;->setBuilder(Landroid/app/Notification$Builder;)V
+    invoke-virtual {p0, p1}, Landroid/app/Notification$Style;->setBuilder(Landroid/app/Notification$Builder;)V
 
     return-void
 .end method
@@ -48,7 +48,7 @@
 
     const/4 v2, 0x0
 
-    iget-object v1, p0, Landroid/app/Notification$BigTextStyle;->mBuilder:Landroid/app/Notification$Builder;
+    iget-object v1, p0, Landroid/app/Notification$Style;->mBuilder:Landroid/app/Notification$Builder;
 
     #getter for: Landroid/app/Notification$Builder;->mContentText:Ljava/lang/CharSequence;
     invoke-static {v1}, Landroid/app/Notification$Builder;->access$500(Landroid/app/Notification$Builder;)Ljava/lang/CharSequence;
@@ -57,7 +57,7 @@
 
     if-eqz v1, :cond_1
 
-    iget-object v1, p0, Landroid/app/Notification$BigTextStyle;->mBuilder:Landroid/app/Notification$Builder;
+    iget-object v1, p0, Landroid/app/Notification$Style;->mBuilder:Landroid/app/Notification$Builder;
 
     #getter for: Landroid/app/Notification$Builder;->mSubText:Ljava/lang/CharSequence;
     invoke-static {v1}, Landroid/app/Notification$Builder;->access$300(Landroid/app/Notification$Builder;)Ljava/lang/CharSequence;
@@ -70,7 +70,7 @@
 
     .local v6, hadThreeLines:Z
     :goto_0
-    iget-object v1, p0, Landroid/app/Notification$BigTextStyle;->mBuilder:Landroid/app/Notification$Builder;
+    iget-object v1, p0, Landroid/app/Notification$Style;->mBuilder:Landroid/app/Notification$Builder;
 
     const/4 v3, 0x0
 
@@ -79,7 +79,7 @@
 
     const v1, 0x109006a
 
-    invoke-virtual {p0, v1}, Landroid/app/Notification$BigTextStyle;->getStandardView(I)Landroid/widget/RemoteViews;
+    invoke-virtual {p0, v1}, Landroid/app/Notification$Style;->getStandardView(I)Landroid/widget/RemoteViews;
 
     move-result-object v0
 
@@ -182,7 +182,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Landroid/app/Notification$BigTextStyle;->internalSetBigContentTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v0}, Landroid/app/Notification$Style;->internalSetBigContentTitle(Ljava/lang/CharSequence;)V
 
     return-object p0
 .end method
@@ -196,7 +196,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Landroid/app/Notification$BigTextStyle;->internalSetSummaryText(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v0}, Landroid/app/Notification$Style;->internalSetSummaryText(Ljava/lang/CharSequence;)V
 
     return-object p0
 .end method

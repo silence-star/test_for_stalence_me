@@ -60,7 +60,7 @@
     .end annotation
 
     .prologue
-    invoke-virtual {p0}, Lcom/android/server/print/RemotePrintSpooler$SetPrintJobTagCaller;->onBeforeRemoteCall()I
+    invoke-virtual {p0}, Landroid/util/TimedRemoteCaller;->onBeforeRemoteCall()I
 
     move-result v0
 
@@ -69,7 +69,7 @@
 
     invoke-interface {p1, p2, p3, v1, v0}, Landroid/print/IPrintSpooler;->setPrintJobTag(Landroid/print/PrintJobId;Ljava/lang/String;Landroid/print/IPrintSpoolerCallbacks;I)V
 
-    invoke-virtual {p0, v0}, Lcom/android/server/print/RemotePrintSpooler$SetPrintJobTagCaller;->getResultTimed(I)Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Landroid/util/TimedRemoteCaller;->getResultTimed(I)Ljava/lang/Object;
 
     move-result-object v1
 

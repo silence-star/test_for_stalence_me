@@ -68,7 +68,7 @@
 
     const-wide/16 v1, 0x3e8
 
-    invoke-virtual {p0, v0, v1, v2}, Landroid/widget/Chronometer$1;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {p0, v0, v1, v2}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     :cond_0
     return-void

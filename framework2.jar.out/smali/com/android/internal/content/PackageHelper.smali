@@ -122,7 +122,7 @@
     .restart local v3       #num:I
     :cond_1
     :try_start_1
-    invoke-virtual {p2}, Ljava/util/zip/ZipOutputStream;->flush()V
+    invoke-virtual {p2}, Ljava/util/zip/DeflaterOutputStream;->flush()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -485,7 +485,7 @@
     :try_start_5
     invoke-virtual {v3}, Ljava/util/zip/ZipOutputStream;->finish()V
 
-    invoke-virtual {v3}, Ljava/util/zip/ZipOutputStream;->flush()V
+    invoke-virtual {v3}, Ljava/util/zip/DeflaterOutputStream;->flush()V
 
     invoke-static {v0}, Landroid/os/FileUtils;->sync(Ljava/io/FileOutputStream;)Z
 

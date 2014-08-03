@@ -50,7 +50,7 @@
 
     iget-object v0, p0, Lcom/android/server/MountService$UmsEnableCallBack;->this$0:Lcom/android/server/MountService;
 
-    iget-object v1, p0, Lcom/android/server/MountService$UmsEnableCallBack;->path:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/server/MountService$UnmountCallBack;->path:Ljava/lang/String;
 
     iget-object v2, p0, Lcom/android/server/MountService$UmsEnableCallBack;->method:Ljava/lang/String;
 

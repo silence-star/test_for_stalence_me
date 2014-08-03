@@ -54,7 +54,7 @@
 
     invoke-direct {v0, p0}, Lcom/android/server/search/SearchManagerService$BootCompletedReceiver$1;-><init>(Lcom/android/server/search/SearchManagerService$BootCompletedReceiver;)V
 
-    invoke-virtual {v0}, Lcom/android/server/search/SearchManagerService$BootCompletedReceiver$1;->start()V
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
     return-void
 .end method

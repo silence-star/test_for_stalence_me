@@ -195,7 +195,7 @@
     :cond_0
     const/4 v0, 0x3
 
-    invoke-virtual {p4}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+    invoke-virtual {p4}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v1
 
@@ -518,7 +518,7 @@
     .prologue
     iget-object v0, p0, Landroid/accounts/AbstractAccountAuthenticator;->mTransport:Landroid/accounts/AbstractAccountAuthenticator$Transport;
 
-    invoke-virtual {v0}, Landroid/accounts/AbstractAccountAuthenticator$Transport;->asBinder()Landroid/os/IBinder;
+    invoke-virtual {v0}, Landroid/accounts/IAccountAuthenticator$Stub;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 

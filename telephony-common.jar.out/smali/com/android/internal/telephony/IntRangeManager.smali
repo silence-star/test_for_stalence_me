@@ -678,7 +678,7 @@
 
     move-object/from16 v0, v17
 
-    invoke-virtual {v0, v10}, Ljava/util/ArrayList;->removeAll(Ljava/util/Collection;)Z
+    invoke-virtual {v0, v10}, Ljava/util/AbstractCollection;->removeAll(Ljava/util/Collection;)Z
 
     move-object/from16 v0, p0
 

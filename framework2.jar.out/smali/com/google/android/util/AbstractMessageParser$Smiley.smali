@@ -47,7 +47,7 @@
     move-result-object v0
 
     .local v0, info:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
-    invoke-virtual {p0}, Lcom/google/android/util/AbstractMessageParser$Smiley;->getRawText()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/util/AbstractMessageParser$Token;->getRawText()Ljava/lang/String;
 
     move-result-object v1
 

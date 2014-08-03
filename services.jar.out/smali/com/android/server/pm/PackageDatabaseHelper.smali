@@ -133,7 +133,7 @@
     :try_start_1
     iget-object v2, p0, Lcom/android/server/pm/PackageDatabaseHelper;->mOpenHelper:Lcom/android/server/pm/PackageDatabaseHelper$OpenHelper;
 
-    invoke-virtual {v2}, Lcom/android/server/pm/PackageDatabaseHelper$OpenHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+    invoke-virtual {v2}, Landroid/database/sqlite/SQLiteOpenHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
@@ -250,7 +250,7 @@
     :try_start_2
     iget-object v3, p0, Lcom/android/server/pm/PackageDatabaseHelper;->mOpenHelper:Lcom/android/server/pm/PackageDatabaseHelper$OpenHelper;
 
-    invoke-virtual {v3}, Lcom/android/server/pm/PackageDatabaseHelper$OpenHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+    invoke-virtual {v3}, Landroid/database/sqlite/SQLiteOpenHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
@@ -346,7 +346,7 @@
     :try_start_1
     iget-object v1, p0, Lcom/android/server/pm/PackageDatabaseHelper;->mOpenHelper:Lcom/android/server/pm/PackageDatabaseHelper$OpenHelper;
 
-    invoke-virtual {v1}, Lcom/android/server/pm/PackageDatabaseHelper$OpenHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteOpenHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
@@ -427,7 +427,7 @@
     :try_start_1
     iget-object v2, p0, Lcom/android/server/pm/PackageDatabaseHelper;->mOpenHelper:Lcom/android/server/pm/PackageDatabaseHelper$OpenHelper;
 
-    invoke-virtual {v2}, Lcom/android/server/pm/PackageDatabaseHelper$OpenHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+    invoke-virtual {v2}, Landroid/database/sqlite/SQLiteOpenHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 

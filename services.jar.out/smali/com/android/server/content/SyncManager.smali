@@ -355,7 +355,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/android/internal/os/BackgroundThread;->getLooper()Landroid/os/Looper;
+    invoke-virtual {v1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
 
     move-result-object v1
 
@@ -371,7 +371,7 @@
 
     iget-object v2, p0, Lcom/android/server/content/SyncManager;->mSyncHandler:Lcom/android/server/content/SyncManager$SyncHandler;
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/SyncAdaptersCache;->setListener(Landroid/content/pm/RegisteredServicesCacheListener;Landroid/os/Handler;)V
+    invoke-virtual {v0, v1, v2}, Landroid/content/pm/RegisteredServicesCache;->setListener(Landroid/content/pm/RegisteredServicesCacheListener;Landroid/os/Handler;)V
 
     iget-object v0, p0, Lcom/android/server/content/SyncManager;->mContext:Landroid/content/Context;
 
@@ -3231,7 +3231,7 @@
     .parameter "pw"
 
     .prologue
-    invoke-virtual {p1}, Lcom/android/internal/util/IndentingPrintWriter;->println()V
+    invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
     invoke-direct {p0}, Lcom/android/server/content/SyncManager;->getAllUsers()Ljava/util/List;
 
@@ -3282,7 +3282,7 @@
 
     move-result-object v5
 
-    invoke-virtual {p1, v5}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {p1, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     invoke-virtual {p1}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()V
 
@@ -3290,7 +3290,7 @@
 
     iget v6, v3, Landroid/content/pm/UserInfo;->id:I
 
-    invoke-virtual {v5, v6}, Landroid/content/SyncAdaptersCache;->getAllServices(I)Ljava/util/Collection;
+    invoke-virtual {v5, v6}, Landroid/content/pm/RegisteredServicesCache;->getAllServices(I)Ljava/util/Collection;
 
     move-result-object v5
 
@@ -3313,7 +3313,7 @@
     check-cast v2, Landroid/content/pm/RegisteredServicesCache$ServiceInfo;
 
     .local v2, info:Landroid/content/pm/RegisteredServicesCache$ServiceInfo;,"Landroid/content/pm/RegisteredServicesCache$ServiceInfo<*>;"
-    invoke-virtual {p1, v2}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/Object;)V
+    invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -3321,7 +3321,7 @@
     :cond_0
     invoke-virtual {p1}, Lcom/android/internal/util/IndentingPrintWriter;->decreaseIndent()V
 
-    invoke-virtual {p1}, Lcom/android/internal/util/IndentingPrintWriter;->println()V
+    invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
     goto :goto_0
 
@@ -3914,7 +3914,7 @@
 
     move/from16 v0, p1
 
-    invoke-virtual {v1, v0}, Landroid/content/SyncAdaptersCache;->invalidateCache(I)V
+    invoke-virtual {v1, v0}, Landroid/content/pm/RegisteredServicesCache;->invalidateCache(I)V
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/content/SyncManager;->updateRunningAccounts()V
 
@@ -4082,7 +4082,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/server/content/SyncManager;->mSyncHandler:Lcom/android/server/content/SyncManager$SyncHandler;
 
-    invoke-virtual {v1}, Lcom/android/server/content/SyncManager$SyncHandler;->obtainMessage()Landroid/os/Message;
+    invoke-virtual {v1}, Landroid/os/Handler;->obtainMessage()Landroid/os/Message;
 
     move-result-object v0
 
@@ -4101,7 +4101,7 @@
 
     iget-object v1, p0, Lcom/android/server/content/SyncManager;->mSyncHandler:Lcom/android/server/content/SyncManager$SyncHandler;
 
-    invoke-virtual {v1, v0}, Lcom/android/server/content/SyncManager$SyncHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     return-void
 .end method
@@ -4131,11 +4131,11 @@
     :cond_0
     iget-object v0, p0, Lcom/android/server/content/SyncManager;->mSyncHandler:Lcom/android/server/content/SyncManager$SyncHandler;
 
-    invoke-virtual {v0, v2}, Lcom/android/server/content/SyncManager$SyncHandler;->removeMessages(I)V
+    invoke-virtual {v0, v2}, Landroid/os/Handler;->removeMessages(I)V
 
     iget-object v0, p0, Lcom/android/server/content/SyncManager;->mSyncHandler:Lcom/android/server/content/SyncManager$SyncHandler;
 
-    invoke-virtual {v0, v2}, Lcom/android/server/content/SyncManager$SyncHandler;->sendEmptyMessage(I)Z
+    invoke-virtual {v0, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     return-void
 .end method
@@ -4163,7 +4163,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/server/content/SyncManager;->mSyncHandler:Lcom/android/server/content/SyncManager$SyncHandler;
 
-    invoke-virtual {v0, v2}, Lcom/android/server/content/SyncManager$SyncHandler;->sendEmptyMessage(I)Z
+    invoke-virtual {v0, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     return-void
 .end method
@@ -4193,7 +4193,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/server/content/SyncManager;->mSyncHandler:Lcom/android/server/content/SyncManager$SyncHandler;
 
-    invoke-virtual {v1}, Lcom/android/server/content/SyncManager$SyncHandler;->obtainMessage()Landroid/os/Message;
+    invoke-virtual {v1}, Landroid/os/Handler;->obtainMessage()Landroid/os/Message;
 
     move-result-object v0
 
@@ -4210,7 +4210,7 @@
 
     iget-object v1, p0, Lcom/android/server/content/SyncManager;->mSyncHandler:Lcom/android/server/content/SyncManager$SyncHandler;
 
-    invoke-virtual {v1, v0}, Lcom/android/server/content/SyncManager$SyncHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     return-void
 .end method
@@ -5357,7 +5357,7 @@
 
     move/from16 v35, v0
 
-    invoke-virtual/range {v34 .. v35}, Landroid/content/SyncAdaptersCache;->getAllServices(I)Ljava/util/Collection;
+    invoke-virtual/range {v34 .. v35}, Landroid/content/pm/RegisteredServicesCache;->getAllServices(I)Ljava/util/Collection;
 
     move-result-object v34
 
@@ -6512,7 +6512,7 @@
 
     move-result-object v7
 
-    invoke-virtual {v6, v7, p2}, Landroid/content/SyncAdaptersCache;->getServiceInfo(Ljava/lang/Object;I)Landroid/content/pm/RegisteredServicesCache$ServiceInfo;
+    invoke-virtual {v6, v7, p2}, Landroid/content/pm/RegisteredServicesCache;->getServiceInfo(Ljava/lang/Object;I)Landroid/content/pm/RegisteredServicesCache$ServiceInfo;
 
     move-result-object v3
 
@@ -6576,7 +6576,7 @@
     .prologue
     iget-object v5, p0, Lcom/android/server/content/SyncManager;->mSyncAdapters:Landroid/content/SyncAdaptersCache;
 
-    invoke-virtual {v5, p1}, Landroid/content/SyncAdaptersCache;->getAllServices(I)Ljava/util/Collection;
+    invoke-virtual {v5, p1}, Landroid/content/pm/RegisteredServicesCache;->getAllServices(I)Ljava/util/Collection;
 
     move-result-object v3
 
@@ -7340,7 +7340,7 @@
 
     iget v3, v0, Landroid/accounts/AccountAndUser;->userId:I
 
-    invoke-virtual {v2, v3}, Landroid/content/SyncAdaptersCache;->getAllServices(I)Ljava/util/Collection;
+    invoke-virtual {v2, v3}, Landroid/content/pm/RegisteredServicesCache;->getAllServices(I)Ljava/util/Collection;
 
     move-result-object v2
 
@@ -7533,7 +7533,7 @@
 
     iget v4, v0, Landroid/accounts/AccountAndUser;->userId:I
 
-    invoke-virtual {v2, v3, v4}, Landroid/content/SyncAdaptersCache;->getServiceInfo(Ljava/lang/Object;I)Landroid/content/pm/RegisteredServicesCache$ServiceInfo;
+    invoke-virtual {v2, v3, v4}, Landroid/content/pm/RegisteredServicesCache;->getServiceInfo(Ljava/lang/Object;I)Landroid/content/pm/RegisteredServicesCache$ServiceInfo;
 
     move-result-object v50
 

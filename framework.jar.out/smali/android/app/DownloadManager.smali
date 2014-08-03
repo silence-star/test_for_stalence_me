@@ -617,11 +617,11 @@
     move-result-object v0
 
     .local v0, downloadUri:Landroid/net/Uri;
-    if-nez v0, :cond_4
+    if-nez v0, :cond_3
 
     const-wide/16 v3, -0x1
 
-    :goto_3
+    :goto_2
     return-wide v3
 
     .end local v0           #downloadUri:Landroid/net/Uri;
@@ -636,7 +636,7 @@
     goto :goto_1
 
     .restart local v0       #downloadUri:Landroid/net/Uri;
-    :cond_4
+    :cond_3
     invoke-virtual {v0}, Landroid/net/Uri;->getLastPathSegment()Ljava/lang/String;
 
     move-result-object v3
@@ -645,7 +645,7 @@
 
     move-result-wide v3
 
-    goto :goto_3
+    goto :goto_2
 .end method
 
 .method public enqueue(Landroid/app/DownloadManager$Request;)J

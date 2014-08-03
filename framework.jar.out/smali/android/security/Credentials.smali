@@ -183,7 +183,7 @@
     throw v7
 
     :cond_1
-    invoke-virtual {v4}, Lcom/android/org/bouncycastle/util/io/pem/PemReader;->close()V
+    invoke-virtual {v4}, Ljava/io/BufferedReader;->close()V
 
     return-object v6
 .end method
@@ -249,7 +249,7 @@
 
     .end local v4           #o:Ljava/security/cert/Certificate;
     :cond_0
-    invoke-virtual {v5}, Lcom/android/org/bouncycastle/util/io/pem/PemWriter;->close()V
+    invoke-virtual {v5}, Ljava/io/BufferedWriter;->close()V
 
     invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
@@ -397,7 +397,7 @@
     .local v0, e:Landroid/content/ActivityNotFoundException;
     const-string v2, "Credentials"
 
-    invoke-virtual {v0}, Landroid/content/ActivityNotFoundException;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -435,7 +435,7 @@
     .local v0, e:Landroid/content/ActivityNotFoundException;
     const-string v2, "Credentials"
 
-    invoke-virtual {v0}, Landroid/content/ActivityNotFoundException;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -494,7 +494,7 @@
     .local v0, e:Landroid/content/ActivityNotFoundException;
     const-string v2, "Credentials"
 
-    invoke-virtual {v0}, Landroid/content/ActivityNotFoundException;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -530,7 +530,7 @@
     .local v0, e:Landroid/content/ActivityNotFoundException;
     const-string v2, "Credentials"
 
-    invoke-virtual {v0}, Landroid/content/ActivityNotFoundException;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v3
 

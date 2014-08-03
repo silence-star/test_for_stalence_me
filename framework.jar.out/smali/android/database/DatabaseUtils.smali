@@ -344,14 +344,14 @@
 
     move-result-object v1
 
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteStatement;->close()V
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteClosable;->close()V
 
     return-object v1
 
     :catchall_0
     move-exception v1
 
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteStatement;->close()V
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteClosable;->close()V
 
     throw v1
 .end method
@@ -362,7 +362,7 @@
     .parameter "selectionArgs"
 
     .prologue
-    invoke-virtual {p0, p1}, Landroid/database/sqlite/SQLiteStatement;->bindAllArgsAsStrings([Ljava/lang/String;)V
+    invoke-virtual {p0, p1}, Landroid/database/sqlite/SQLiteProgram;->bindAllArgsAsStrings([Ljava/lang/String;)V
 
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteStatement;->simpleQueryForBlobFileDescriptor()Landroid/os/ParcelFileDescriptor;
 
@@ -496,7 +496,7 @@
     :cond_1
     invoke-virtual {v1, p2}, Landroid/database/sqlite/SQLiteDatabase;->setVersion(I)V
 
-    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->close()V
+    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteClosable;->close()V
 
     return-void
 .end method
@@ -2113,14 +2113,14 @@
 
     move-result-wide v1
 
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteStatement;->close()V
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteClosable;->close()V
 
     return-wide v1
 
     :catchall_0
     move-exception v1
 
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteStatement;->close()V
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteClosable;->close()V
 
     throw v1
 .end method
@@ -2131,7 +2131,7 @@
     .parameter "selectionArgs"
 
     .prologue
-    invoke-virtual {p0, p1}, Landroid/database/sqlite/SQLiteStatement;->bindAllArgsAsStrings([Ljava/lang/String;)V
+    invoke-virtual {p0, p1}, Landroid/database/sqlite/SQLiteProgram;->bindAllArgsAsStrings([Ljava/lang/String;)V
 
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteStatement;->simpleQueryForLong()J
 
@@ -2536,14 +2536,14 @@
 
     move-result-object v1
 
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteStatement;->close()V
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteClosable;->close()V
 
     return-object v1
 
     :catchall_0
     move-exception v1
 
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteStatement;->close()V
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteClosable;->close()V
 
     throw v1
 .end method
@@ -2554,7 +2554,7 @@
     .parameter "selectionArgs"
 
     .prologue
-    invoke-virtual {p0, p1}, Landroid/database/sqlite/SQLiteStatement;->bindAllArgsAsStrings([Ljava/lang/String;)V
+    invoke-virtual {p0, p1}, Landroid/database/sqlite/SQLiteProgram;->bindAllArgsAsStrings([Ljava/lang/String;)V
 
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteStatement;->simpleQueryForString()Ljava/lang/String;
 
@@ -2586,7 +2586,7 @@
     :goto_0
     invoke-virtual {p0, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v2
 

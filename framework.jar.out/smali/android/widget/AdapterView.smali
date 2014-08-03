@@ -237,7 +237,7 @@
 
     iput-boolean v0, p0, Landroid/widget/AdapterView;->mBlockLayoutRequests:Z
 
-    invoke-virtual {p0}, Landroid/widget/AdapterView;->getImportantForAccessibility()I
+    invoke-virtual {p0}, Landroid/view/View;->getImportantForAccessibility()I
 
     move-result v0
 
@@ -245,7 +245,7 @@
 
     const/4 v0, 0x1
 
-    invoke-virtual {p0, v0}, Landroid/widget/AdapterView;->setImportantForAccessibility(I)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setImportantForAccessibility(I)V
 
     :cond_0
     return-void
@@ -257,7 +257,7 @@
     .parameter "x1"
 
     .prologue
-    invoke-virtual {p0, p1}, Landroid/widget/AdapterView;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-virtual {p0, p1}, Landroid/view/View;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     return-void
 .end method
@@ -267,7 +267,7 @@
     .parameter "x0"
 
     .prologue
-    invoke-virtual {p0}, Landroid/widget/AdapterView;->onSaveInstanceState()Landroid/os/Parcelable;
+    invoke-virtual {p0}, Landroid/view/View;->onSaveInstanceState()Landroid/os/Parcelable;
 
     move-result-object v0
 
@@ -392,7 +392,7 @@
 
     .prologue
     .local p0, this:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<TT;>;"
-    iget-object v1, p0, Landroid/widget/AdapterView;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Landroid/view/accessibility/AccessibilityManager;->getInstance(Landroid/content/Context;)Landroid/view/accessibility/AccessibilityManager;
 
@@ -418,7 +418,7 @@
 
     const/4 v1, 0x4
 
-    invoke-virtual {p0, v1}, Landroid/widget/AdapterView;->sendAccessibilityEvent(I)V
+    invoke-virtual {p0, v1}, Landroid/view/View;->sendAccessibilityEvent(I)V
 
     goto :goto_0
 .end method
@@ -452,20 +452,20 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    invoke-virtual {p0, v2}, Landroid/widget/AdapterView;->setVisibility(I)V
+    invoke-virtual {p0, v2}, Landroid/view/View;->setVisibility(I)V
 
     :goto_0
     iget-boolean v0, p0, Landroid/widget/AdapterView;->mDataChanged:Z
 
     if-eqz v0, :cond_1
 
-    iget v2, p0, Landroid/widget/AdapterView;->mLeft:I
+    iget v2, p0, Landroid/view/View;->mLeft:I
 
-    iget v3, p0, Landroid/widget/AdapterView;->mTop:I
+    iget v3, p0, Landroid/view/View;->mTop:I
 
-    iget v4, p0, Landroid/widget/AdapterView;->mRight:I
+    iget v4, p0, Landroid/view/View;->mRight:I
 
-    iget v5, p0, Landroid/widget/AdapterView;->mBottom:I
+    iget v5, p0, Landroid/view/View;->mBottom:I
 
     move-object v0, p0
 
@@ -476,7 +476,7 @@
     return-void
 
     :cond_2
-    invoke-virtual {p0, v1}, Landroid/widget/AdapterView;->setVisibility(I)V
+    invoke-virtual {p0, v1}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_0
 
@@ -490,7 +490,7 @@
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
     :cond_4
-    invoke-virtual {p0, v1}, Landroid/widget/AdapterView;->setVisibility(I)V
+    invoke-virtual {p0, v1}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_1
 .end method
@@ -636,7 +636,7 @@
     move v3, v4
 
     :goto_2
-    invoke-super {p0, v3}, Landroid/view/ViewGroup;->setFocusableInTouchMode(Z)V
+    invoke-super {p0, v3}, Landroid/view/View;->setFocusableInTouchMode(Z)V
 
     if-eqz v2, :cond_8
 
@@ -647,7 +647,7 @@
     move v3, v4
 
     :goto_3
-    invoke-super {p0, v3}, Landroid/view/ViewGroup;->setFocusable(Z)V
+    invoke-super {p0, v3}, Landroid/view/View;->setFocusable(Z)V
 
     iget-object v3, p0, Landroid/widget/AdapterView;->mEmptyView:Landroid/view/View;
 
@@ -781,7 +781,7 @@
     .prologue
     .local p0, this:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<TT;>;"
     .local p1, container:Landroid/util/SparseArray;,"Landroid/util/SparseArray<Landroid/os/Parcelable;>;"
-    invoke-virtual {p0, p1}, Landroid/widget/AdapterView;->dispatchThawSelfOnly(Landroid/util/SparseArray;)V
+    invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->dispatchThawSelfOnly(Landroid/util/SparseArray;)V
 
     return-void
 .end method
@@ -802,7 +802,7 @@
     .prologue
     .local p0, this:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<TT;>;"
     .local p1, container:Landroid/util/SparseArray;,"Landroid/util/SparseArray<Landroid/os/Parcelable;>;"
-    invoke-virtual {p0, p1}, Landroid/widget/AdapterView;->dispatchFreezeSelfOnly(Landroid/util/SparseArray;)V
+    invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->dispatchFreezeSelfOnly(Landroid/util/SparseArray;)V
 
     return-void
 .end method
@@ -1088,7 +1088,7 @@
     .local p0, this:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<TT;>;"
     iget v0, p0, Landroid/widget/AdapterView;->mFirstPosition:I
 
-    invoke-virtual {p0}, Landroid/widget/AdapterView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v1
 
@@ -1171,7 +1171,7 @@
 
     .restart local v4       #v:Landroid/view/View;
     :cond_1
-    invoke-virtual {p0}, Landroid/widget/AdapterView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
@@ -1182,7 +1182,7 @@
     :goto_2
     if-ge v2, v0, :cond_0
 
-    invoke-virtual {p0, v2}, Landroid/widget/AdapterView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v6
 
@@ -1372,7 +1372,7 @@
     invoke-virtual {p0}, Landroid/widget/AdapterView;->checkSelectionChanged()V
 
     :cond_5
-    invoke-virtual {p0}, Landroid/widget/AdapterView;->notifySubtreeAccessibilityStateChangedIfNeeded()V
+    invoke-virtual {p0}, Landroid/view/View;->notifySubtreeAccessibilityStateChangedIfNeeded()V
 
     return-void
 .end method
@@ -1406,7 +1406,7 @@
 
     iget-object v0, p0, Landroid/widget/AdapterView;->mSelectionNotifier:Landroid/widget/AdapterView$SelectionNotifier;
 
-    invoke-virtual {p0, v0}, Landroid/widget/AdapterView;->removeCallbacks(Ljava/lang/Runnable;)Z
+    invoke-virtual {p0, v0}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     return-void
 .end method
@@ -1417,7 +1417,7 @@
 
     .prologue
     .local p0, this:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<TT;>;"
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+    invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
     const-class v1, Landroid/widget/AdapterView;
 
@@ -1425,13 +1425,13 @@
 
     move-result-object v1
 
-    invoke-virtual {p1, v1}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
+    invoke-virtual {p1, v1}, Landroid/view/accessibility/AccessibilityRecord;->setClassName(Ljava/lang/CharSequence;)V
 
     invoke-direct {p0}, Landroid/widget/AdapterView;->isScrollableForAccessibility()Z
 
     move-result v1
 
-    invoke-virtual {p1, v1}, Landroid/view/accessibility/AccessibilityEvent;->setScrollable(Z)V
+    invoke-virtual {p1, v1}, Landroid/view/accessibility/AccessibilityRecord;->setScrollable(Z)V
 
     invoke-virtual {p0}, Landroid/widget/AdapterView;->getSelectedView()Landroid/view/View;
 
@@ -1444,32 +1444,32 @@
 
     move-result v1
 
-    invoke-virtual {p1, v1}, Landroid/view/accessibility/AccessibilityEvent;->setEnabled(Z)V
+    invoke-virtual {p1, v1}, Landroid/view/accessibility/AccessibilityRecord;->setEnabled(Z)V
 
     :cond_0
     invoke-virtual {p0}, Landroid/widget/AdapterView;->getSelectedItemPosition()I
 
     move-result v1
 
-    invoke-virtual {p1, v1}, Landroid/view/accessibility/AccessibilityEvent;->setCurrentItemIndex(I)V
+    invoke-virtual {p1, v1}, Landroid/view/accessibility/AccessibilityRecord;->setCurrentItemIndex(I)V
 
     invoke-virtual {p0}, Landroid/widget/AdapterView;->getFirstVisiblePosition()I
 
     move-result v1
 
-    invoke-virtual {p1, v1}, Landroid/view/accessibility/AccessibilityEvent;->setFromIndex(I)V
+    invoke-virtual {p1, v1}, Landroid/view/accessibility/AccessibilityRecord;->setFromIndex(I)V
 
     invoke-virtual {p0}, Landroid/widget/AdapterView;->getLastVisiblePosition()I
 
     move-result v1
 
-    invoke-virtual {p1, v1}, Landroid/view/accessibility/AccessibilityEvent;->setToIndex(I)V
+    invoke-virtual {p1, v1}, Landroid/view/accessibility/AccessibilityRecord;->setToIndex(I)V
 
     invoke-virtual {p0}, Landroid/widget/AdapterView;->getCount()I
 
     move-result v1
 
-    invoke-virtual {p1, v1}, Landroid/view/accessibility/AccessibilityEvent;->setItemCount(I)V
+    invoke-virtual {p1, v1}, Landroid/view/accessibility/AccessibilityRecord;->setItemCount(I)V
 
     return-void
 .end method
@@ -1480,7 +1480,7 @@
 
     .prologue
     .local p0, this:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<TT;>;"
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     const-class v1, Landroid/widget/AdapterView;
 
@@ -1523,7 +1523,7 @@
 
     .prologue
     .local p0, this:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<TT;>;"
-    invoke-virtual {p0}, Landroid/widget/AdapterView;->getHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v0
 
@@ -1584,7 +1584,7 @@
 
     if-eqz v1, :cond_1
 
-    invoke-virtual {p0, v0}, Landroid/widget/AdapterView;->playSoundEffect(I)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->playSoundEffect(I)V
 
     if-eqz p1, :cond_0
 
@@ -1618,7 +1618,7 @@
 
     const/4 v4, 0x0
 
-    invoke-virtual {p0}, Landroid/widget/AdapterView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v2
 
@@ -1642,7 +1642,7 @@
 
     sub-int/2addr v2, v3
 
-    invoke-virtual {p0, v2}, Landroid/widget/AdapterView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -1672,7 +1672,7 @@
     return-void
 
     :cond_2
-    invoke-virtual {p0, v4}, Landroid/widget/AdapterView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v4}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -1781,7 +1781,7 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Landroid/widget/AdapterView;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/accessibility/AccessibilityManager;->getInstance(Landroid/content/Context;)Landroid/view/accessibility/AccessibilityManager;
 
@@ -1818,7 +1818,7 @@
     :cond_2
     iget-object v0, p0, Landroid/widget/AdapterView;->mSelectionNotifier:Landroid/widget/AdapterView$SelectionNotifier;
 
-    invoke-virtual {p0, v0}, Landroid/widget/AdapterView;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {p0, v0}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
     :cond_3
     :goto_0
@@ -1937,7 +1937,7 @@
 
     :cond_2
     :goto_1
-    invoke-super {p0, v3}, Landroid/view/ViewGroup;->setFocusable(Z)V
+    invoke-super {p0, v3}, Landroid/view/View;->setFocusable(Z)V
 
     return-void
 
@@ -2001,7 +2001,7 @@
 
     :cond_2
     :goto_1
-    invoke-super {p0, v3}, Landroid/view/ViewGroup;->setFocusableInTouchMode(Z)V
+    invoke-super {p0, v3}, Landroid/view/View;->setFocusableInTouchMode(Z)V
 
     return-void
 
@@ -2084,7 +2084,7 @@
 
     .prologue
     .local p0, this:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<TT;>;"
-    invoke-virtual {p0}, Landroid/widget/AdapterView;->isLongClickable()Z
+    invoke-virtual {p0}, Landroid/view/View;->isLongClickable()Z
 
     move-result v0
 
@@ -2092,7 +2092,7 @@
 
     const/4 v0, 0x1
 
-    invoke-virtual {p0, v0}, Landroid/widget/AdapterView;->setLongClickable(Z)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setLongClickable(Z)V
 
     :cond_0
     iput-object p1, p0, Landroid/widget/AdapterView;->mOnItemLongClickListener:Landroid/widget/AdapterView$OnItemLongClickListener;

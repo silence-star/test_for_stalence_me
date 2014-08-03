@@ -79,7 +79,7 @@
 
     move-result-object v5
 
-    invoke-virtual {v0, v4, v5}, Landroid/appwidget/AppWidgetHostView$ParcelableSparseArray;->put(ILjava/lang/Object;)V
+    invoke-virtual {v0, v4, v5}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     add-int/lit8 v2, v2, 0x1
 

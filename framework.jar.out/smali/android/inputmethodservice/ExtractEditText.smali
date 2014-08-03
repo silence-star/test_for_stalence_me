@@ -79,7 +79,7 @@
     .locals 1
 
     .prologue
-    invoke-virtual {p0}, Landroid/inputmethodservice/ExtractEditText;->isEnabled()Z
+    invoke-virtual {p0}, Landroid/view/View;->isEnabled()Z
 
     move-result v0
 
@@ -90,11 +90,11 @@
     .locals 2
 
     .prologue
-    invoke-virtual {p0}, Landroid/inputmethodservice/ExtractEditText;->computeVerticalScrollRange()I
+    invoke-virtual {p0}, Landroid/widget/TextView;->computeVerticalScrollRange()I
 
     move-result v0
 
-    invoke-virtual {p0}, Landroid/inputmethodservice/ExtractEditText;->computeVerticalScrollExtent()I
+    invoke-virtual {p0}, Landroid/widget/TextView;->computeVerticalScrollExtent()I
 
     move-result v1
 
@@ -115,7 +115,7 @@
     .locals 1
 
     .prologue
-    invoke-virtual {p0}, Landroid/inputmethodservice/ExtractEditText;->isEnabled()Z
+    invoke-virtual {p0}, Landroid/view/View;->isEnabled()Z
 
     move-result v0
 
@@ -126,7 +126,7 @@
     .locals 1
 
     .prologue
-    invoke-virtual {p0}, Landroid/inputmethodservice/ExtractEditText;->isEnabled()Z
+    invoke-virtual {p0}, Landroid/view/View;->isEnabled()Z
 
     move-result v0
 
@@ -189,7 +189,7 @@
 
     if-ne p1, v0, :cond_0
 
-    invoke-virtual {p0}, Landroid/inputmethodservice/ExtractEditText;->stopSelectionActionMode()V
+    invoke-virtual {p0}, Landroid/widget/TextView;->stopSelectionActionMode()V
 
     :cond_0
     const/4 v0, 0x1
@@ -198,7 +198,7 @@
     return v0
 
     :cond_1
-    invoke-super {p0, p1}, Landroid/widget/EditText;->onTextContextMenuItem(I)Z
+    invoke-super {p0, p1}, Landroid/widget/TextView;->onTextContextMenuItem(I)Z
 
     move-result v0
 
@@ -209,7 +209,7 @@
     .locals 1
 
     .prologue
-    invoke-super {p0}, Landroid/widget/EditText;->performClick()Z
+    invoke-super {p0}, Landroid/view/View;->performClick()Z
 
     move-result v0
 
@@ -273,7 +273,7 @@
 
     iput v0, p0, Landroid/inputmethodservice/ExtractEditText;->mSettingExtractedText:I
 
-    invoke-super {p0, p1}, Landroid/widget/EditText;->setExtractedText(Landroid/view/inputmethod/ExtractedText;)V
+    invoke-super {p0, p1}, Landroid/widget/TextView;->setExtractedText(Landroid/view/inputmethod/ExtractedText;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 

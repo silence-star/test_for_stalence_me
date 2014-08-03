@@ -49,7 +49,7 @@
 
     invoke-super {p0, p1, p2}, Landroid/widget/TextView;->onMeasure(II)V
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/DialogTitle;->getLayout()Landroid/text/Layout;
+    invoke-virtual {p0}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
 
     move-result-object v2
 
@@ -72,13 +72,13 @@
     .local v1, ellipsisCount:I
     if-lez v1, :cond_1
 
-    invoke-virtual {p0, v10}, Lcom/android/internal/widget/DialogTitle;->setSingleLine(Z)V
+    invoke-virtual {p0, v10}, Landroid/widget/TextView;->setSingleLine(Z)V
 
     const/4 v5, 0x2
 
-    invoke-virtual {p0, v5}, Lcom/android/internal/widget/DialogTitle;->setMaxLines(I)V
+    invoke-virtual {p0, v5}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    iget-object v5, p0, Lcom/android/internal/widget/DialogTitle;->mContext:Landroid/content/Context;
+    iget-object v5, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     const/4 v6, 0x0
 
@@ -102,7 +102,7 @@
 
     int-to-float v5, v4
 
-    invoke-virtual {p0, v10, v5}, Lcom/android/internal/widget/DialogTitle;->setTextSize(IF)V
+    invoke-virtual {p0, v10, v5}, Landroid/widget/TextView;->setTextSize(IF)V
 
     :cond_0
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V

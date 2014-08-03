@@ -175,11 +175,11 @@
 
     move-result v19
 
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/TextView;->getScrollX()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getScrollX()I
 
     move-result v20
 
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/TextView;->getScrollY()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getScrollY()I
 
     move-result v21
 
@@ -329,7 +329,7 @@
 
     if-nez v17, :cond_5
 
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v17
 
@@ -549,7 +549,7 @@
 
     iput v0, v1, Landroid/text/method/Touch$DragState;->mY:F
 
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/TextView;->getScrollX()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getScrollX()I
 
     move-result v17
 
@@ -560,7 +560,7 @@
     add-int v11, v17, v18
 
     .local v11, nx:I
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/TextView;->getScrollY()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getScrollY()I
 
     move-result v17
 
@@ -591,7 +591,7 @@
 
     move-result v17
 
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/TextView;->getHeight()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getHeight()I
 
     move-result v18
 
@@ -613,12 +613,12 @@
 
     move-result v12
 
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/TextView;->getScrollX()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getScrollX()I
 
     move-result v13
 
     .local v13, oldX:I
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/TextView;->getScrollY()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getScrollY()I
 
     move-result v14
 
@@ -627,7 +627,7 @@
 
     invoke-static {v0, v10, v11, v12}, Landroid/text/method/Touch;->scrollTo(Landroid/widget/TextView;Landroid/text/Layout;II)V
 
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/TextView;->getScrollX()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getScrollX()I
 
     move-result v17
 
@@ -635,7 +635,7 @@
 
     if-ne v13, v0, :cond_7
 
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/TextView;->getScrollY()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getScrollY()I
 
     move-result v17
 
@@ -732,7 +732,7 @@
     add-int v6, v13, v14
 
     .local v6, horizontalPadding:I
-    invoke-virtual {p0}, Landroid/widget/TextView;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v13
 
@@ -784,7 +784,7 @@
     add-int v12, v13, v14
 
     .local v12, verticalPadding:I
-    invoke-virtual {p0}, Landroid/widget/TextView;->getHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v13
 
@@ -883,7 +883,7 @@
 
     move/from16 v1, p3
 
-    invoke-virtual {p0, v0, v1}, Landroid/widget/TextView;->scrollTo(II)V
+    invoke-virtual {p0, v0, v1}, Landroid/view/View;->scrollTo(II)V
 
     return-void
 

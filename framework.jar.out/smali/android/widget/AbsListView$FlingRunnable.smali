@@ -49,7 +49,7 @@
 
     new-instance v0, Landroid/widget/OverScroller;
 
-    invoke-virtual {p1}, Landroid/widget/AbsListView;->getContext()Landroid/content/Context;
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -146,7 +146,7 @@
 
     iget-object v2, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v2}, Landroid/widget/AbsListView;->getOverScrollMode()I
+    invoke-virtual {v2}, Landroid/view/View;->getOverScrollMode()I
 
     move-result v0
 
@@ -198,11 +198,11 @@
     :goto_0
     iget-object v2, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v2}, Landroid/widget/AbsListView;->invalidate()V
+    invoke-virtual {v2}, Landroid/view/View;->invalidate()V
 
     iget-object v2, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v2, p0}, Landroid/widget/AbsListView;->postOnAnimation(Ljava/lang/Runnable;)V
+    invoke-virtual {v2, p0}, Landroid/view/View;->postOnAnimation(Ljava/lang/Runnable;)V
 
     return-void
 
@@ -254,13 +254,13 @@
 
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v0, p0}, Landroid/widget/AbsListView;->removeCallbacks(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, p0}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     iget-object v1, p0, Landroid/widget/AbsListView$FlingRunnable;->mCheckFlywheel:Ljava/lang/Runnable;
 
-    invoke-virtual {v0, v1}, Landroid/widget/AbsListView;->removeCallbacks(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v1}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
@@ -316,7 +316,7 @@
 
     const-wide/16 v2, 0x28
 
-    invoke-virtual {v0, v1, v2, v3}, Landroid/widget/AbsListView;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v0, v1, v2, v3}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
 
     return-void
 .end method
@@ -365,7 +365,7 @@
 
     iget-object v2, v0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
-    iget-boolean v2, v2, Landroid/widget/AbsListView;->mDataChanged:Z
+    iget-boolean v2, v2, Landroid/widget/AdapterView;->mDataChanged:Z
 
     if-eqz v2, :cond_1
 
@@ -380,7 +380,7 @@
 
     iget-object v2, v0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
-    iget v2, v2, Landroid/widget/AbsListView;->mItemCount:I
+    iget v2, v2, Landroid/widget/AdapterView;->mItemCount:I
 
     if-eqz v2, :cond_2
 
@@ -388,7 +388,7 @@
 
     iget-object v2, v0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v2}, Landroid/widget/AbsListView;->getChildCount()I
+    invoke-virtual {v2}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v2
 
@@ -434,7 +434,7 @@
 
     iget-object v3, v0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
-    iget v3, v3, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v3, v3, Landroid/widget/AdapterView;->mFirstPosition:I
 
     iput v3, v2, Landroid/widget/AbsListView;->mMotionPosition:I
 
@@ -444,7 +444,7 @@
 
     const/4 v3, 0x0
 
-    invoke-virtual {v2, v3}, Landroid/widget/AbsListView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v21
 
@@ -463,7 +463,7 @@
 
     iget-object v2, v0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v2}, Landroid/widget/AbsListView;->getHeight()I
+    invoke-virtual {v2}, Landroid/view/View;->getHeight()I
 
     move-result v2
 
@@ -513,11 +513,11 @@
 
     iget-object v5, v0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
-    iget v5, v5, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v5, v5, Landroid/widget/AdapterView;->mFirstPosition:I
 
     sub-int/2addr v3, v5
 
-    invoke-virtual {v2, v3}, Landroid/widget/AbsListView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v24
 
@@ -635,7 +635,7 @@
 
     iget-object v2, v0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v2}, Landroid/widget/AbsListView;->getChildCount()I
+    invoke-virtual {v2}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v2
 
@@ -650,7 +650,7 @@
 
     iget-object v3, v0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
-    iget v3, v3, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v3, v3, Landroid/widget/AdapterView;->mFirstPosition:I
 
     add-int v3, v3, v25
 
@@ -662,7 +662,7 @@
 
     move/from16 v0, v25
 
-    invoke-virtual {v2, v0}, Landroid/widget/AbsListView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v2, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v22
 
@@ -681,7 +681,7 @@
 
     iget-object v2, v0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v2}, Landroid/widget/AbsListView;->getHeight()I
+    invoke-virtual {v2}, Landroid/view/View;->getHeight()I
 
     move-result v2
 
@@ -741,7 +741,7 @@
 
     iget-object v2, v0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v2}, Landroid/widget/AbsListView;->invalidate()V
+    invoke-virtual {v2}, Landroid/view/View;->invalidate()V
 
     :cond_9
     move/from16 v0, v29
@@ -756,7 +756,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v2, v0}, Landroid/widget/AbsListView;->postOnAnimation(Ljava/lang/Runnable;)V
+    invoke-virtual {v2, v0}, Landroid/view/View;->postOnAnimation(Ljava/lang/Runnable;)V
 
     goto/16 :goto_0
 
@@ -916,7 +916,7 @@
 
     iget-object v2, v0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v2}, Landroid/widget/AbsListView;->invalidate()V
+    invoke-virtual {v2}, Landroid/view/View;->invalidate()V
 
     move-object/from16 v0, p0
 
@@ -924,7 +924,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v2, v0}, Landroid/widget/AbsListView;->postOnAnimation(Ljava/lang/Runnable;)V
+    invoke-virtual {v2, v0}, Landroid/view/View;->postOnAnimation(Ljava/lang/Runnable;)V
 
     goto/16 :goto_0
 
@@ -992,7 +992,7 @@
 
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v0, p0}, Landroid/widget/AbsListView;->postOnAnimation(Ljava/lang/Runnable;)V
+    invoke-virtual {v0, p0}, Landroid/view/View;->postOnAnimation(Ljava/lang/Runnable;)V
 
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
@@ -1052,7 +1052,7 @@
 
     iget-object v3, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v3}, Landroid/widget/AbsListView;->getHeight()I
+    invoke-virtual {v3}, Landroid/view/View;->getHeight()I
 
     move-result v10
 
@@ -1076,11 +1076,11 @@
 
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v0}, Landroid/widget/AbsListView;->invalidate()V
+    invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v0, p0}, Landroid/widget/AbsListView;->postOnAnimation(Ljava/lang/Runnable;)V
+    invoke-virtual {v0, p0}, Landroid/view/View;->postOnAnimation(Ljava/lang/Runnable;)V
 
     return-void
 .end method
@@ -1129,7 +1129,7 @@
 
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v0, p0}, Landroid/widget/AbsListView;->postOnAnimation(Ljava/lang/Runnable;)V
+    invoke-virtual {v0, p0}, Landroid/view/View;->postOnAnimation(Ljava/lang/Runnable;)V
 
     return-void
 
@@ -1183,11 +1183,11 @@
 
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v0}, Landroid/widget/AbsListView;->invalidate()V
+    invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v0, p0}, Landroid/widget/AbsListView;->postOnAnimation(Ljava/lang/Runnable;)V
+    invoke-virtual {v0, p0}, Landroid/view/View;->postOnAnimation(Ljava/lang/Runnable;)V
 
     :goto_0
     return-void

@@ -50,7 +50,7 @@
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews$Action;-><init>(Landroid/widget/RemoteViews$1;)V
 
-    iput p2, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->viewId:I
+    iput p2, p0, Landroid/widget/RemoteViews$Action;->viewId:I
 
     iput-boolean p3, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->targetBackground:Z
 
@@ -85,7 +85,7 @@
 
     move-result v1
 
-    iput v1, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->viewId:I
+    iput v1, p0, Landroid/widget/RemoteViews$Action;->viewId:I
 
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
@@ -170,7 +170,7 @@
     .prologue
     const/4 v5, -0x1
 
-    iget v3, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->viewId:I
+    iget v3, p0, Landroid/widget/RemoteViews$Action;->viewId:I
 
     invoke-virtual {p1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -273,7 +273,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    iget v0, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->viewId:I
+    iget v0, p0, Landroid/widget/RemoteViews$Action;->viewId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
@@ -302,7 +302,7 @@
 
     iget-object v0, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->filterMode:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-virtual {v0}, Landroid/graphics/PorterDuff$Mode;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Enum;->toString()Ljava/lang/String;
 
     move-result-object v0
 

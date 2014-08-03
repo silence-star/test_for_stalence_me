@@ -141,7 +141,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/server/wifi/WifiService$BatchedScanRequest;->mBinder:Landroid/os/IBinder;
+    iget-object v1, p0, Lcom/android/server/wifi/WifiService$DeathRecipient;->mBinder:Landroid/os/IBinder;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

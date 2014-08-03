@@ -89,7 +89,7 @@
 
     iget-object v1, p0, Lcom/android/internal/app/MediaRouteControllerDialog$1;->mStopTrackingTouch:Ljava/lang/Runnable;
 
-    invoke-virtual {v0, v1}, Landroid/widget/SeekBar;->removeCallbacks(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v1}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     :goto_0
     return-void
@@ -121,7 +121,7 @@
 
     const-wide/16 v2, 0xfa
 
-    invoke-virtual {v0, v1, v2, v3}, Landroid/widget/SeekBar;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v0, v1, v2, v3}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
 
     return-void
 .end method

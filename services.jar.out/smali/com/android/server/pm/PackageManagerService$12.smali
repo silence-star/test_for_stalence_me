@@ -58,7 +58,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v1, v0}, Lcom/android/server/pm/PackageManagerService$PackageHandler;->removeCallbacks(Ljava/lang/Runnable;)V
+    invoke-virtual {v1, v0}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
     move-object/from16 v0, p0
 
@@ -891,11 +891,11 @@
 
     move-object/from16 v0, v19
 
-    iput-object v1, v0, Lcom/android/server/pm/PackageSetting;->codePath:Ljava/io/File;
+    iput-object v1, v0, Lcom/android/server/pm/PackageSettingBase;->codePath:Ljava/io/File;
 
     move-object/from16 v0, v19
 
-    iget-object v1, v0, Lcom/android/server/pm/PackageSetting;->codePath:Ljava/io/File;
+    iget-object v1, v0, Lcom/android/server/pm/PackageSettingBase;->codePath:Ljava/io/File;
 
     invoke-virtual {v1}, Ljava/io/File;->getPath()Ljava/lang/String;
 
@@ -903,7 +903,7 @@
 
     move-object/from16 v0, v19
 
-    iput-object v1, v0, Lcom/android/server/pm/PackageSetting;->codePathString:Ljava/lang/String;
+    iput-object v1, v0, Lcom/android/server/pm/PackageSettingBase;->codePathString:Ljava/lang/String;
 
     new-instance v1, Ljava/io/File;
 
@@ -917,11 +917,11 @@
 
     move-object/from16 v0, v19
 
-    iput-object v1, v0, Lcom/android/server/pm/PackageSetting;->resourcePath:Ljava/io/File;
+    iput-object v1, v0, Lcom/android/server/pm/PackageSettingBase;->resourcePath:Ljava/io/File;
 
     move-object/from16 v0, v19
 
-    iget-object v1, v0, Lcom/android/server/pm/PackageSetting;->resourcePath:Ljava/io/File;
+    iget-object v1, v0, Lcom/android/server/pm/PackageSettingBase;->resourcePath:Ljava/io/File;
 
     invoke-virtual {v1}, Ljava/io/File;->getPath()Ljava/lang/String;
 
@@ -929,11 +929,11 @@
 
     move-object/from16 v0, v19
 
-    iput-object v1, v0, Lcom/android/server/pm/PackageSetting;->resourcePathString:Ljava/lang/String;
+    iput-object v1, v0, Lcom/android/server/pm/PackageSettingBase;->resourcePathString:Ljava/lang/String;
 
     move-object/from16 v0, v19
 
-    iput-object v13, v0, Lcom/android/server/pm/PackageSetting;->nativeLibraryPathString:Ljava/lang/String;
+    iput-object v13, v0, Lcom/android/server/pm/PackageSettingBase;->nativeLibraryPathString:Ljava/lang/String;
 
     move-object/from16 v0, p0
 
@@ -966,7 +966,7 @@
 
     move-object/from16 v0, v19
 
-    invoke-virtual {v0, v1}, Lcom/android/server/pm/PackageSetting;->setFlags(I)V
+    invoke-virtual {v0, v1}, Lcom/android/server/pm/GrantedPermissions;->setFlags(I)V
 
     move-object/from16 v0, p0
 

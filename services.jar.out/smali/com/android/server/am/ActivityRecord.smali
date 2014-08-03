@@ -269,7 +269,7 @@
 
     iput-object p4, p0, Lcom/android/server/am/ActivityRecord;->launchedFromPackage:Ljava/lang/String;
 
-    iget-object v3, p7, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v3, p7, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget v3, v3, Landroid/content/pm/ApplicationInfo;->uid:I
 
@@ -420,29 +420,29 @@
     :goto_1
     iput-boolean v3, p0, Lcom/android/server/am/ActivityRecord;->stateNotNeeded:Z
 
-    iget-object v3, p7, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v3, p7, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget-object v3, v3, Landroid/content/pm/ApplicationInfo;->sourceDir:Ljava/lang/String;
 
     iput-object v3, p0, Lcom/android/server/am/ActivityRecord;->baseDir:Ljava/lang/String;
 
-    iget-object v3, p7, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v3, p7, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget-object v3, v3, Landroid/content/pm/ApplicationInfo;->publicSourceDir:Ljava/lang/String;
 
     iput-object v3, p0, Lcom/android/server/am/ActivityRecord;->resDir:Ljava/lang/String;
 
-    iget-object v3, p7, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v3, p7, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget-object v3, v3, Landroid/content/pm/ApplicationInfo;->dataDir:Ljava/lang/String;
 
     iput-object v3, p0, Lcom/android/server/am/ActivityRecord;->dataDir:Ljava/lang/String;
 
-    iget-object v3, p7, Landroid/content/pm/ActivityInfo;->nonLocalizedLabel:Ljava/lang/CharSequence;
+    iget-object v3, p7, Landroid/content/pm/PackageItemInfo;->nonLocalizedLabel:Ljava/lang/CharSequence;
 
     iput-object v3, p0, Lcom/android/server/am/ActivityRecord;->nonLocalizedLabel:Ljava/lang/CharSequence;
 
-    iget v3, p7, Landroid/content/pm/ActivityInfo;->labelRes:I
+    iget v3, p7, Landroid/content/pm/PackageItemInfo;->labelRes:I
 
     iput v3, p0, Lcom/android/server/am/ActivityRecord;->labelRes:I
 
@@ -454,26 +454,26 @@
 
     if-nez v3, :cond_1
 
-    iget-object v1, p7, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v1, p7, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     .local v1, app:Landroid/content/pm/ApplicationInfo;
-    iget-object v3, v1, Landroid/content/pm/ApplicationInfo;->nonLocalizedLabel:Ljava/lang/CharSequence;
+    iget-object v3, v1, Landroid/content/pm/PackageItemInfo;->nonLocalizedLabel:Ljava/lang/CharSequence;
 
     iput-object v3, p0, Lcom/android/server/am/ActivityRecord;->nonLocalizedLabel:Ljava/lang/CharSequence;
 
-    iget v3, v1, Landroid/content/pm/ApplicationInfo;->labelRes:I
+    iget v3, v1, Landroid/content/pm/PackageItemInfo;->labelRes:I
 
     iput v3, p0, Lcom/android/server/am/ActivityRecord;->labelRes:I
 
     .end local v1           #app:Landroid/content/pm/ApplicationInfo;
     :cond_1
-    invoke-virtual {p7}, Landroid/content/pm/ActivityInfo;->getIconResource()I
+    invoke-virtual {p7}, Landroid/content/pm/ComponentInfo;->getIconResource()I
 
     move-result v3
 
     iput v3, p0, Lcom/android/server/am/ActivityRecord;->icon:I
 
-    invoke-virtual {p7}, Landroid/content/pm/ActivityInfo;->getLogoResource()I
+    invoke-virtual {p7}, Landroid/content/pm/ComponentInfo;->getLogoResource()I
 
     move-result v3
 
@@ -493,7 +493,7 @@
 
     if-nez v3, :cond_2
 
-    iget-object v3, p7, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v3, p7, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget v3, v3, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
 
@@ -530,7 +530,7 @@
 
     if-eqz p2, :cond_c
 
-    iget-object v3, p7, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v3, p7, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget v3, v3, Landroid/content/pm/ApplicationInfo;->uid:I
 
@@ -538,7 +538,7 @@
 
     if-eq v3, v4, :cond_4
 
-    iget-object v3, p7, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v3, p7, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget v3, v3, Landroid/content/pm/ApplicationInfo;->uid:I
 
@@ -571,9 +571,9 @@
     invoke-virtual {v3, v4}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     :cond_5
-    iget-object v3, p7, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v3, p7, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    iget-object v3, v3, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+    iget-object v3, v3, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     iput-object v3, p0, Lcom/android/server/am/ActivityRecord;->packageName:Ljava/lang/String;
 
@@ -766,7 +766,7 @@
     :cond_9
     new-instance v3, Landroid/content/ComponentName;
 
-    iget-object v4, p7, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v4, p7, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     iget-object v5, p7, Landroid/content/pm/ActivityInfo;->targetActivity:Ljava/lang/String;
 
@@ -787,7 +787,7 @@
     goto/16 :goto_2
 
     :cond_c
-    iget-object v3, p7, Landroid/content/pm/ActivityInfo;->processName:Ljava/lang/String;
+    iget-object v3, p7, Landroid/content/pm/ComponentInfo;->processName:Ljava/lang/String;
 
     iput-object v3, p0, Lcom/android/server/am/ActivityRecord;->processName:Ljava/lang/String;
 
@@ -968,7 +968,7 @@
 
     iget-object v2, v2, Lcom/android/server/am/ActivityRecord$Token;->weakActivity:Ljava/lang/ref/WeakReference;
 
-    invoke-virtual {v2}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v2}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     move-result-object v2
 
@@ -2352,7 +2352,7 @@
     .local v6, wpir:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Lcom/android/server/am/PendingIntentRecord;>;"
     if-eqz v6, :cond_5
 
-    invoke-virtual {v6}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v6}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     move-result-object v7
 
@@ -3435,14 +3435,14 @@
     goto :goto_0
 
     :cond_1
-    iget-object v2, v1, Lcom/android/server/am/ActivityResult;->mResultWho:Ljava/lang/String;
+    iget-object v2, v1, Landroid/app/ResultInfo;->mResultWho:Ljava/lang/String;
 
     if-nez v2, :cond_3
 
     if-nez p2, :cond_0
 
     :cond_2
-    iget v2, v1, Lcom/android/server/am/ActivityResult;->mRequestCode:I
+    iget v2, v1, Landroid/app/ResultInfo;->mRequestCode:I
 
     if-ne v2, p3, :cond_0
 
@@ -3453,7 +3453,7 @@
     goto :goto_1
 
     :cond_3
-    iget-object v2, v1, Lcom/android/server/am/ActivityResult;->mResultWho:Ljava/lang/String;
+    iget-object v2, v1, Landroid/app/ResultInfo;->mResultWho:Ljava/lang/String;
 
     invoke-virtual {v2, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

@@ -881,7 +881,7 @@
     check-cast p1, Landroid/view/GLES20RenderLayer;
 
     .end local p1
-    iget v1, p1, Landroid/view/GLES20RenderLayer;->mLayer:I
+    iget v1, p1, Landroid/view/GLES20Layer;->mLayer:I
 
     invoke-static {v0, v1}, Landroid/view/GLES20Canvas;->nCancelLayerUpdate(II)V
 
@@ -4495,7 +4495,7 @@
     check-cast p1, Landroid/view/GLES20RenderLayer;
 
     .end local p1
-    iget v1, p1, Landroid/view/GLES20RenderLayer;->mLayer:I
+    iget v1, p1, Landroid/view/GLES20Layer;->mLayer:I
 
     invoke-static {v0, v1}, Landroid/view/GLES20Canvas;->nPushLayerUpdate(II)V
 

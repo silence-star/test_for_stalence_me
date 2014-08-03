@@ -216,7 +216,7 @@
 
     check-cast v1, Ljava/util/Vector;
 
-    invoke-virtual {v1}, Ljava/util/Vector;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v1}, Ljava/util/AbstractList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 

@@ -453,7 +453,7 @@
     move-exception v1
 
     .local v1, e:Lcom/vzw/nfc/dos/DoParserException;
-    invoke-virtual {v1}, Lcom/vzw/nfc/dos/DoParserException;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_1
 

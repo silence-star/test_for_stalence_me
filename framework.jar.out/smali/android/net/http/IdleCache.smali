@@ -265,7 +265,7 @@
 
     iget-object v5, p0, Landroid/net/http/IdleCache;->mThread:Landroid/net/http/IdleCache$IdleReaper;
 
-    invoke-virtual {v5}, Landroid/net/http/IdleCache$IdleReaper;->start()V
+    invoke-virtual {v5}, Ljava/lang/Thread;->start()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 

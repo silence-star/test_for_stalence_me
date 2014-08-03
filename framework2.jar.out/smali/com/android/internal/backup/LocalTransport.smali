@@ -740,7 +740,7 @@
     new-array v2, v11, [B
 
     .local v2, buf:[B
-    invoke-virtual {v6, v2}, Ljava/io/FileInputStream;->read([B)I
+    invoke-virtual {v6, v2}, Ljava/io/InputStream;->read([B)I
 
     new-instance v7, Ljava/lang/String;
 
@@ -1022,13 +1022,13 @@
 
     move-result v10
 
-    if-nez v10, :cond_miui
+    if-nez v10, :cond_0
 
     const/4 v10, 0x0
 
     return v10
 
-    :cond_miui
+    :cond_0
     const/16 v2, 0x200
 
     .local v2, bufSize:I
@@ -1040,7 +1040,7 @@
 
     move-result v10
 
-    if-eqz v10, :cond_3
+    if-eqz v10, :cond_4
 
     invoke-virtual {v3}, Landroid/app/backup/BackupDataInput;->getKey()Ljava/lang/String;
 
@@ -1112,29 +1112,29 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-ltz v4, :cond_2
+    if-ltz v4, :cond_3
 
     invoke-virtual {v7}, Ljava/io/File;->exists()Z
 
     move-result v10
 
-    if-eqz v10, :cond_0
+    if-eqz v10, :cond_1
 
     invoke-virtual {v7}, Ljava/io/File;->delete()Z
 
-    :cond_0
+    :cond_1
     new-instance v6, Ljava/io/FileOutputStream;
 
     invoke-direct {v6, v7}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
     .local v6, entity:Ljava/io/FileOutputStream;
-    if-le v4, v2, :cond_1
+    if-le v4, v2, :cond_2
 
     move v2, v4
 
     new-array v1, v2, [B
 
-    :cond_1
+    :cond_2
     const/4 v10, 0x0
 
     invoke-virtual {v3, v1, v10, v4}, Landroid/app/backup/BackupDataInput;->readEntityData([BII)I
@@ -1255,7 +1255,7 @@
     throw v10
 
     .end local v6           #entity:Ljava/io/FileOutputStream;
-    :cond_2
+    :cond_3
     invoke-virtual {v7}, Ljava/io/File;->delete()Z
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
@@ -1266,7 +1266,7 @@
     .end local v4           #dataSize:I
     .end local v7           #entityFile:Ljava/io/File;
     .end local v8           #key:Ljava/lang/String;
-    :cond_3
+    :cond_4
     const/4 v10, 0x0
 
     goto :goto_1

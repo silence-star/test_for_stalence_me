@@ -740,7 +740,7 @@
 
     move-result-object v2
 
-    invoke-virtual {p0}, Landroid/util/ReflectiveProperty;->getName()Ljava/lang/String;
+    invoke-virtual {p0}, Landroid/util/Property;->getName()Ljava/lang/String;
 
     move-result-object v3
 

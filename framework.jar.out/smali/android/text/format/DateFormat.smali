@@ -1351,11 +1351,11 @@
 
     move-result v6
 
-    if-eqz v6, :cond_miui
+    if-eqz v6, :cond_0
 
     return v5
 
-    :cond_miui
+    :cond_0
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v5
@@ -1367,7 +1367,7 @@
     move-result-object v4
 
     .local v4, value:Ljava/lang/String;
-    if-nez v4, :cond_3
+    if-nez v4, :cond_4
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -1387,7 +1387,7 @@
     :try_start_0
     sget-object v5, Landroid/text/format/DateFormat;->sIs24HourLocale:Ljava/util/Locale;
 
-    if-eqz v5, :cond_0
+    if-eqz v5, :cond_1
 
     sget-object v5, Landroid/text/format/DateFormat;->sIs24HourLocale:Ljava/util/Locale;
 
@@ -1395,7 +1395,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_0
+    if-eqz v5, :cond_1
 
     sget-boolean v5, Landroid/text/format/DateFormat;->sIs24Hour:Z
 
@@ -1406,7 +1406,7 @@
     return v5
 
     .restart local v0       #locale:Ljava/util/Locale;
-    :cond_0
+    :cond_1
     monitor-exit v6
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1420,7 +1420,7 @@
     .local v1, natural:Ljava/text/DateFormat;
     instance-of v5, v1, Ljava/text/SimpleDateFormat;
 
-    if-eqz v5, :cond_2
+    if-eqz v5, :cond_3
 
     move-object v3, v1
 
@@ -1438,7 +1438,7 @@
 
     move-result v5
 
-    if-ltz v5, :cond_1
+    if-ltz v5, :cond_2
 
     const-string v4, "24"
 
@@ -1482,14 +1482,14 @@
     .restart local v1       #natural:Ljava/text/DateFormat;
     .restart local v2       #pattern:Ljava/lang/String;
     .restart local v3       #sdf:Ljava/text/SimpleDateFormat;
-    :cond_1
+    :cond_2
     const-string v4, "12"
 
     goto :goto_1
 
     .end local v2           #pattern:Ljava/lang/String;
     .end local v3           #sdf:Ljava/text/SimpleDateFormat;
-    :cond_2
+    :cond_3
     const-string v4, "12"
 
     goto :goto_1
@@ -1506,7 +1506,7 @@
 
     .end local v0           #locale:Ljava/util/Locale;
     .end local v1           #natural:Ljava/text/DateFormat;
-    :cond_3
+    :cond_4
     const-string v5, "24"
 
     invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

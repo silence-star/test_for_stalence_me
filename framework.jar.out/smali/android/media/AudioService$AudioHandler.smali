@@ -226,7 +226,7 @@
 
     move-result-object v11
 
-    invoke-virtual {v11}, Landroid/media/AudioService$SoundPoolListenerThread;->start()V
+    invoke-virtual {v11}, Ljava/lang/Thread;->start()V
 
     const/4 v1, 0x3
 

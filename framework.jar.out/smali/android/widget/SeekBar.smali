@@ -68,7 +68,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityRecord;->setClassName(Ljava/lang/CharSequence;)V
 
     return-void
 .end method
@@ -105,7 +105,7 @@
 
     iget-object v0, p0, Landroid/widget/SeekBar;->mOnSeekBarChangeListener:Landroid/widget/SeekBar$OnSeekBarChangeListener;
 
-    invoke-virtual {p0}, Landroid/widget/SeekBar;->getProgress()I
+    invoke-virtual {p0}, Landroid/widget/ProgressBar;->getProgress()I
 
     move-result v1
 

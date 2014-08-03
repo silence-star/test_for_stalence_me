@@ -56,7 +56,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityRecord;->setClassName(Ljava/lang/CharSequence;)V
 
     return-void
 .end method
@@ -83,7 +83,7 @@
     .locals 1
 
     .prologue
-    invoke-virtual {p0}, Landroid/widget/RadioButton;->isChecked()Z
+    invoke-virtual {p0}, Landroid/widget/CompoundButton;->isChecked()Z
 
     move-result v0
 

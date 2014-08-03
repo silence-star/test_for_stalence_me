@@ -532,7 +532,7 @@
     :cond_0
     :goto_0
     :try_start_0
-    invoke-virtual {v3, v0}, Ljava/io/FileInputStream;->read([B)I
+    invoke-virtual {v3, v0}, Ljava/io/InputStream;->read([B)I
 
     move-result v7
 
@@ -557,7 +557,7 @@
     monitor-enter p0
 
     :try_start_1
-    invoke-virtual {v2}, Ljava/io/IOException;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v9
 
@@ -600,7 +600,7 @@
 
     if-eqz v6, :cond_3
 
-    invoke-virtual {v4, v1}, Ljava/io/FileOutputStream;->write([B)V
+    invoke-virtual {v4, v1}, Ljava/io/OutputStream;->write([B)V
 
     const/4 v6, 0x0
 

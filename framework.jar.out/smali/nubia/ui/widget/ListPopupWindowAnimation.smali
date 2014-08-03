@@ -94,7 +94,7 @@
 
     const-wide/16 v4, 0xfa
 
-    invoke-virtual {v0, v4, v5}, Landroid/view/animation/ScaleAnimation;->setDuration(J)V
+    invoke-virtual {v0, v4, v5}, Landroid/view/animation/Animation;->setDuration(J)V
 
     new-instance v2, Landroid/view/animation/OvershootInterpolator;
 
@@ -102,10 +102,10 @@
 
     invoke-direct {v2, v4}, Landroid/view/animation/OvershootInterpolator;-><init>(F)V
 
-    invoke-virtual {v0, v2}, Landroid/view/animation/ScaleAnimation;->setInterpolator(Landroid/view/animation/Interpolator;)V
+    invoke-virtual {v0, v2}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
     :goto_0
-    invoke-virtual {v0, p0}, Landroid/view/animation/ScaleAnimation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
+    invoke-virtual {v0, p0}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
     invoke-virtual {v11, v0}, Landroid/view/animation/AnimationSet;->addAnimation(Landroid/view/animation/Animation;)V
 
@@ -114,7 +114,7 @@
     invoke-direct {v9, v3, v1}, Landroid/view/animation/AlphaAnimation;-><init>(FF)V
 
     .local v9, alphaAnimation:Landroid/view/animation/AlphaAnimation;
-    invoke-virtual {v9, v12, v13}, Landroid/view/animation/AlphaAnimation;->setDuration(J)V
+    invoke-virtual {v9, v12, v13}, Landroid/view/animation/Animation;->setDuration(J)V
 
     invoke-virtual {v11, v9}, Landroid/view/animation/AnimationSet;->addAnimation(Landroid/view/animation/Animation;)V
 
@@ -124,13 +124,13 @@
 
     .end local v9           #alphaAnimation:Landroid/view/animation/AlphaAnimation;
     :cond_1
-    invoke-virtual {v0, v12, v13}, Landroid/view/animation/ScaleAnimation;->setDuration(J)V
+    invoke-virtual {v0, v12, v13}, Landroid/view/animation/Animation;->setDuration(J)V
 
     new-instance v2, Landroid/view/animation/AccelerateInterpolator;
 
     invoke-direct {v2}, Landroid/view/animation/AccelerateInterpolator;-><init>()V
 
-    invoke-virtual {v0, v2}, Landroid/view/animation/ScaleAnimation;->setInterpolator(Landroid/view/animation/Interpolator;)V
+    invoke-virtual {v0, v2}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
     goto :goto_0
 .end method

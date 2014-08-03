@@ -3,8 +3,8 @@
 .source "VolumePreference.java"
 
 # interfaces
-.implements Landroid/widget/SeekBar$OnSeekBarChangeListener;
 .implements Landroid/os/Handler$Callback;
+.implements Landroid/widget/SeekBar$OnSeekBarChangeListener;
 
 
 # annotations
@@ -128,7 +128,7 @@
     invoke-direct {v0, v1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
 
     .local v0, thread:Landroid/os/HandlerThread;
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
     new-instance v1, Landroid/os/Handler;
 
@@ -199,7 +199,7 @@
 
     move-result v0
 
-    invoke-virtual {p1, v0}, Landroid/widget/SeekBar;->setMax(I)V
+    invoke-virtual {p1, v0}, Landroid/widget/AbsSeekBar;->setMax(I)V
 
     iget-object v0, p0, Landroid/preference/VolumePreference$SeekBarVolumizer;->mAudioManager:Landroid/media/AudioManager;
 
@@ -213,7 +213,7 @@
 
     iget v0, p0, Landroid/preference/VolumePreference$SeekBarVolumizer;->mOriginalStreamVolume:I
 
-    invoke-virtual {p1, v0}, Landroid/widget/SeekBar;->setProgress(I)V
+    invoke-virtual {p1, v0}, Landroid/widget/ProgressBar;->setProgress(I)V
 
     invoke-virtual {p1, p0}, Landroid/widget/SeekBar;->setOnSeekBarChangeListener(Landroid/widget/SeekBar$OnSeekBarChangeListener;)V
 
@@ -406,11 +406,11 @@
     .prologue
     iget-object v0, p0, Landroid/preference/VolumePreference$SeekBarVolumizer;->mSeekBar:Landroid/widget/SeekBar;
 
-    invoke-virtual {v0, p1}, Landroid/widget/SeekBar;->incrementProgressBy(I)V
+    invoke-virtual {v0, p1}, Landroid/widget/ProgressBar;->incrementProgressBy(I)V
 
     iget-object v0, p0, Landroid/preference/VolumePreference$SeekBarVolumizer;->mSeekBar:Landroid/widget/SeekBar;
 
-    invoke-virtual {v0}, Landroid/widget/SeekBar;->getProgress()I
+    invoke-virtual {v0}, Landroid/widget/ProgressBar;->getProgress()I
 
     move-result v0
 
@@ -546,7 +546,7 @@
 
     iget v1, p0, Landroid/preference/VolumePreference$SeekBarVolumizer;->mVolumeBeforeMute:I
 
-    invoke-virtual {v0, v1}, Landroid/widget/SeekBar;->setProgress(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setProgress(I)V
 
     iget v0, p0, Landroid/preference/VolumePreference$SeekBarVolumizer;->mVolumeBeforeMute:I
 
@@ -562,7 +562,7 @@
     :cond_0
     iget-object v0, p0, Landroid/preference/VolumePreference$SeekBarVolumizer;->mSeekBar:Landroid/widget/SeekBar;
 
-    invoke-virtual {v0}, Landroid/widget/SeekBar;->getProgress()I
+    invoke-virtual {v0}, Landroid/widget/ProgressBar;->getProgress()I
 
     move-result v0
 
@@ -570,7 +570,7 @@
 
     iget-object v0, p0, Landroid/preference/VolumePreference$SeekBarVolumizer;->mSeekBar:Landroid/widget/SeekBar;
 
-    invoke-virtual {v0, v1}, Landroid/widget/SeekBar;->setProgress(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setProgress(I)V
 
     invoke-direct {p0}, Landroid/preference/VolumePreference$SeekBarVolumizer;->postStopSample()V
 

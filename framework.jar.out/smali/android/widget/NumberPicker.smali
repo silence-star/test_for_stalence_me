@@ -32,10 +32,6 @@
 
 .field private static final SELECTOR_MAX_FLING_VELOCITY_ADJUSTMENT:I = 0x8
 
-.field private SELECTOR_MIDDLE_ITEM_INDEX:I
-
-.field private SELECTOR_WHEEL_ITEM_COUNT:I
-
 .field private static final SIZE_UNSPECIFIED:I = -0x1
 
 .field private static final SNAP_SCROLL_DURATION:I = 0x12c
@@ -52,6 +48,10 @@
 
 
 # instance fields
+.field private SELECTOR_MIDDLE_ITEM_INDEX:I
+
+.field private SELECTOR_WHEEL_ITEM_COUNT:I
+
 .field private mAccessibilityNodeProvider:Landroid/widget/NumberPicker$AccessibilityNodeProviderImpl;
 
 .field private final mAdjustScroller:Landroid/widget/Scroller;
@@ -118,9 +118,9 @@
 
 .field private mMinimumFlingVelocity:I
 
-.field private mNubiaNumberPicker:Lnubia/ui/INumberPicker;
-
 .field private mNeedSoftInput:Z
+
+.field private mNubiaNumberPicker:Lnubia/ui/INumberPicker;
 
 .field private mOnScrollListener:Landroid/widget/NumberPicker$OnScrollListener;
 
@@ -188,6 +188,10 @@
     invoke-direct {v0}, Landroid/widget/NumberPicker$TwoDigitFormatter;-><init>()V
 
     sput-object v0, Landroid/widget/NumberPicker;->sTwoDigitFormatter:Landroid/widget/NumberPicker$TwoDigitFormatter;
+
+    sget-object v0, Landroid/widget/NumberPicker;->sTwoDigitFormatter:Landroid/widget/NumberPicker$TwoDigitFormatter;
+
+    sput-object v0, Landroid/widget/NumberPicker;->TWO_DIGIT_FORMATTER:Landroid/widget/NumberPicker$Formatter;
 
     const/16 v0, 0x28
 
@@ -3110,27 +3114,27 @@
 
     iget-boolean v1, p0, Landroid/widget/NumberPicker;->mNeedSoftInput:Z
 
-    if-nez v1, :cond_miui
+    if-nez v1, :cond_0
 
     return-void
 
-    :cond_miui
+    :cond_0
     invoke-static {}, Landroid/view/inputmethod/InputMethodManager;->peekInstance()Landroid/view/inputmethod/InputMethodManager;
 
     move-result-object v0
 
     .local v0, inputMethodManager:Landroid/view/inputmethod/InputMethodManager;
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     iget-boolean v1, p0, Landroid/widget/NumberPicker;->mHasSelectorWheel:Z
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
     iget-object v1, p0, Landroid/widget/NumberPicker;->mInputText:Landroid/widget/EditText;
 
     invoke-virtual {v1, v2}, Landroid/widget/EditText;->setVisibility(I)V
 
-    :cond_0
+    :cond_1
     iget-object v1, p0, Landroid/widget/NumberPicker;->mInputText:Landroid/widget/EditText;
 
     invoke-virtual {v1}, Landroid/widget/EditText;->requestFocus()Z
@@ -3139,7 +3143,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/inputmethod/InputMethodManager;->showSoftInput(Landroid/view/View;I)Z
 
-    :cond_1
+    :cond_2
     return-void
 .end method
 
@@ -4550,7 +4554,7 @@
 
     cmpg-float v5, v5, v6
 
-    if-gez v5, :cond_3
+    if-gez v5, :cond_4
 
     iget v5, p0, Landroid/widget/NumberPicker;->mScrollState:I
 
@@ -4564,19 +4568,24 @@
 
     :cond_2
     :goto_1
+    iget-boolean v5, p0, Landroid/widget/NumberPicker;->mIsV5:Z
+
+    if-nez v5, :cond_3
+
     invoke-virtual {p0}, Landroid/widget/NumberPicker;->getParent()Landroid/view/ViewParent;
 
     move-result-object v5
 
     invoke-interface {v5, v3}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
+    :cond_3
     iget-object v5, p0, Landroid/widget/NumberPicker;->mFlingScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v5}, Landroid/widget/Scroller;->isFinished()Z
 
     move-result v5
 
-    if-nez v5, :cond_4
+    if-nez v5, :cond_5
 
     iget-object v5, p0, Landroid/widget/NumberPicker;->mFlingScroller:Landroid/widget/Scroller;
 
@@ -4590,7 +4599,7 @@
 
     goto :goto_0
 
-    :cond_3
+    :cond_4
     iget v5, p0, Landroid/widget/NumberPicker;->mLastDownEventY:F
 
     iget v6, p0, Landroid/widget/NumberPicker;->mBottomSelectionDividerBottom:I
@@ -4611,14 +4620,14 @@
 
     goto :goto_1
 
-    :cond_4
+    :cond_5
     iget-object v5, p0, Landroid/widget/NumberPicker;->mAdjustScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v5}, Landroid/widget/Scroller;->isFinished()Z
 
     move-result v5
 
-    if-nez v5, :cond_5
+    if-nez v5, :cond_6
 
     iget-object v4, p0, Landroid/widget/NumberPicker;->mFlingScroller:Landroid/widget/Scroller;
 
@@ -4630,7 +4639,7 @@
 
     goto :goto_0
 
-    :cond_5
+    :cond_6
     iget v5, p0, Landroid/widget/NumberPicker;->mLastDownEventY:F
 
     iget v6, p0, Landroid/widget/NumberPicker;->mTopSelectionDividerTop:I
@@ -4639,7 +4648,7 @@
 
     cmpg-float v5, v5, v6
 
-    if-gez v5, :cond_6
+    if-gez v5, :cond_7
 
     invoke-direct {p0}, Landroid/widget/NumberPicker;->hideSoftInput()V
 
@@ -4653,7 +4662,7 @@
 
     goto/16 :goto_0
 
-    :cond_6
+    :cond_7
     iget v5, p0, Landroid/widget/NumberPicker;->mLastDownEventY:F
 
     iget v6, p0, Landroid/widget/NumberPicker;->mBottomSelectionDividerBottom:I
@@ -4662,7 +4671,7 @@
 
     cmpl-float v5, v5, v6
 
-    if-lez v5, :cond_7
+    if-lez v5, :cond_8
 
     invoke-direct {p0}, Landroid/widget/NumberPicker;->hideSoftInput()V
 
@@ -4676,7 +4685,7 @@
 
     goto/16 :goto_0
 
-    :cond_7
+    :cond_8
     invoke-virtual {p0}, Landroid/widget/NumberPicker;->getContext()Landroid/content/Context;
 
     move-result-object v5
@@ -4699,7 +4708,7 @@
     .local v2, isNubiaStyle:Z
     invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
-    if-eqz v2, :cond_8
+    if-eqz v2, :cond_9
 
     iput-boolean v4, p0, Landroid/widget/NumberPicker;->mShowSoftInputOnTap:Z
 
@@ -4708,7 +4717,7 @@
 
     goto/16 :goto_0
 
-    :cond_8
+    :cond_9
     iput-boolean v3, p0, Landroid/widget/NumberPicker;->mShowSoftInputOnTap:Z
 
     goto :goto_2

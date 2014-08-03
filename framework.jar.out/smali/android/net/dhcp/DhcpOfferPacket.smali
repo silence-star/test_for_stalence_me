@@ -56,7 +56,7 @@
     move-result-object v6
 
     .local v6, result:Ljava/nio/ByteBuffer;
-    iget-boolean v0, p0, Landroid/net/dhcp/DhcpOfferPacket;->mBroadcast:Z
+    iget-boolean v0, p0, Landroid/net/dhcp/DhcpPacket;->mBroadcast:Z
 
     if-eqz v0, :cond_0
 
@@ -64,7 +64,7 @@
 
     .local v2, destIp:Ljava/net/InetAddress;
     :goto_0
-    iget-boolean v0, p0, Landroid/net/dhcp/DhcpOfferPacket;->mBroadcast:Z
+    iget-boolean v0, p0, Landroid/net/dhcp/DhcpPacket;->mBroadcast:Z
 
     if-eqz v0, :cond_1
 
@@ -74,7 +74,7 @@
     :goto_1
     const/4 v7, 0x2
 
-    iget-boolean v8, p0, Landroid/net/dhcp/DhcpOfferPacket;->mBroadcast:Z
+    iget-boolean v8, p0, Landroid/net/dhcp/DhcpPacket;->mBroadcast:Z
 
     move-object v0, p0
 
@@ -84,16 +84,16 @@
 
     move v5, p3
 
-    invoke-virtual/range {v0 .. v8}, Landroid/net/dhcp/DhcpOfferPacket;->fillInPacket(ILjava/net/InetAddress;Ljava/net/InetAddress;SSLjava/nio/ByteBuffer;BZ)V
+    invoke-virtual/range {v0 .. v8}, Landroid/net/dhcp/DhcpPacket;->fillInPacket(ILjava/net/InetAddress;Ljava/net/InetAddress;SSLjava/nio/ByteBuffer;BZ)V
 
-    invoke-virtual {v6}, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
+    invoke-virtual {v6}, Ljava/nio/Buffer;->flip()Ljava/nio/Buffer;
 
     return-object v6
 
     .end local v2           #destIp:Ljava/net/InetAddress;
     .end local v3           #srcIp:Ljava/net/InetAddress;
     :cond_0
-    iget-object v2, p0, Landroid/net/dhcp/DhcpOfferPacket;->mYourIp:Ljava/net/InetAddress;
+    iget-object v2, p0, Landroid/net/dhcp/DhcpPacket;->mYourIp:Ljava/net/InetAddress;
 
     goto :goto_0
 
@@ -109,15 +109,15 @@
     .parameter "machine"
 
     .prologue
-    iget-boolean v1, p0, Landroid/net/dhcp/DhcpOfferPacket;->mBroadcast:Z
+    iget-boolean v1, p0, Landroid/net/dhcp/DhcpPacket;->mBroadcast:Z
 
-    iget v2, p0, Landroid/net/dhcp/DhcpOfferPacket;->mTransId:I
+    iget v2, p0, Landroid/net/dhcp/DhcpPacket;->mTransId:I
 
-    iget-object v3, p0, Landroid/net/dhcp/DhcpOfferPacket;->mClientMac:[B
+    iget-object v3, p0, Landroid/net/dhcp/DhcpPacket;->mClientMac:[B
 
-    iget-object v4, p0, Landroid/net/dhcp/DhcpOfferPacket;->mYourIp:Ljava/net/InetAddress;
+    iget-object v4, p0, Landroid/net/dhcp/DhcpPacket;->mYourIp:Ljava/net/InetAddress;
 
-    iget-object v5, p0, Landroid/net/dhcp/DhcpOfferPacket;->mServerIdentifier:Ljava/net/InetAddress;
+    iget-object v5, p0, Landroid/net/dhcp/DhcpPacket;->mServerIdentifier:Ljava/net/InetAddress;
 
     move-object v0, p1
 
@@ -135,27 +135,27 @@
 
     const/4 v1, 0x2
 
-    invoke-virtual {p0, p1, v0, v1}, Landroid/net/dhcp/DhcpOfferPacket;->addTlv(Ljava/nio/ByteBuffer;BB)V
+    invoke-virtual {p0, p1, v0, v1}, Landroid/net/dhcp/DhcpPacket;->addTlv(Ljava/nio/ByteBuffer;BB)V
 
     const/16 v0, 0x36
 
-    iget-object v1, p0, Landroid/net/dhcp/DhcpOfferPacket;->mServerIdentifier:Ljava/net/InetAddress;
+    iget-object v1, p0, Landroid/net/dhcp/DhcpPacket;->mServerIdentifier:Ljava/net/InetAddress;
 
-    invoke-virtual {p0, p1, v0, v1}, Landroid/net/dhcp/DhcpOfferPacket;->addTlv(Ljava/nio/ByteBuffer;BLjava/net/InetAddress;)V
+    invoke-virtual {p0, p1, v0, v1}, Landroid/net/dhcp/DhcpPacket;->addTlv(Ljava/nio/ByteBuffer;BLjava/net/InetAddress;)V
 
     const/16 v0, 0x33
 
-    iget-object v1, p0, Landroid/net/dhcp/DhcpOfferPacket;->mLeaseTime:Ljava/lang/Integer;
+    iget-object v1, p0, Landroid/net/dhcp/DhcpPacket;->mLeaseTime:Ljava/lang/Integer;
 
-    invoke-virtual {p0, p1, v0, v1}, Landroid/net/dhcp/DhcpOfferPacket;->addTlv(Ljava/nio/ByteBuffer;BLjava/lang/Integer;)V
+    invoke-virtual {p0, p1, v0, v1}, Landroid/net/dhcp/DhcpPacket;->addTlv(Ljava/nio/ByteBuffer;BLjava/lang/Integer;)V
 
-    iget-object v0, p0, Landroid/net/dhcp/DhcpOfferPacket;->mLeaseTime:Ljava/lang/Integer;
+    iget-object v0, p0, Landroid/net/dhcp/DhcpPacket;->mLeaseTime:Ljava/lang/Integer;
 
     if-eqz v0, :cond_0
 
     const/16 v0, 0x3a
 
-    iget-object v1, p0, Landroid/net/dhcp/DhcpOfferPacket;->mLeaseTime:Ljava/lang/Integer;
+    iget-object v1, p0, Landroid/net/dhcp/DhcpPacket;->mLeaseTime:Ljava/lang/Integer;
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
@@ -167,40 +167,40 @@
 
     move-result-object v1
 
-    invoke-virtual {p0, p1, v0, v1}, Landroid/net/dhcp/DhcpOfferPacket;->addTlv(Ljava/nio/ByteBuffer;BLjava/lang/Integer;)V
+    invoke-virtual {p0, p1, v0, v1}, Landroid/net/dhcp/DhcpPacket;->addTlv(Ljava/nio/ByteBuffer;BLjava/lang/Integer;)V
 
     :cond_0
     const/4 v0, 0x1
 
-    iget-object v1, p0, Landroid/net/dhcp/DhcpOfferPacket;->mSubnetMask:Ljava/net/InetAddress;
+    iget-object v1, p0, Landroid/net/dhcp/DhcpPacket;->mSubnetMask:Ljava/net/InetAddress;
 
-    invoke-virtual {p0, p1, v0, v1}, Landroid/net/dhcp/DhcpOfferPacket;->addTlv(Ljava/nio/ByteBuffer;BLjava/net/InetAddress;)V
+    invoke-virtual {p0, p1, v0, v1}, Landroid/net/dhcp/DhcpPacket;->addTlv(Ljava/nio/ByteBuffer;BLjava/net/InetAddress;)V
 
     const/4 v0, 0x3
 
-    iget-object v1, p0, Landroid/net/dhcp/DhcpOfferPacket;->mGateway:Ljava/net/InetAddress;
+    iget-object v1, p0, Landroid/net/dhcp/DhcpPacket;->mGateway:Ljava/net/InetAddress;
 
-    invoke-virtual {p0, p1, v0, v1}, Landroid/net/dhcp/DhcpOfferPacket;->addTlv(Ljava/nio/ByteBuffer;BLjava/net/InetAddress;)V
+    invoke-virtual {p0, p1, v0, v1}, Landroid/net/dhcp/DhcpPacket;->addTlv(Ljava/nio/ByteBuffer;BLjava/net/InetAddress;)V
 
     const/16 v0, 0xf
 
-    iget-object v1, p0, Landroid/net/dhcp/DhcpOfferPacket;->mDomainName:Ljava/lang/String;
+    iget-object v1, p0, Landroid/net/dhcp/DhcpPacket;->mDomainName:Ljava/lang/String;
 
-    invoke-virtual {p0, p1, v0, v1}, Landroid/net/dhcp/DhcpOfferPacket;->addTlv(Ljava/nio/ByteBuffer;BLjava/lang/String;)V
+    invoke-virtual {p0, p1, v0, v1}, Landroid/net/dhcp/DhcpPacket;->addTlv(Ljava/nio/ByteBuffer;BLjava/lang/String;)V
 
     const/16 v0, 0x1c
 
-    iget-object v1, p0, Landroid/net/dhcp/DhcpOfferPacket;->mBroadcastAddress:Ljava/net/InetAddress;
+    iget-object v1, p0, Landroid/net/dhcp/DhcpPacket;->mBroadcastAddress:Ljava/net/InetAddress;
 
-    invoke-virtual {p0, p1, v0, v1}, Landroid/net/dhcp/DhcpOfferPacket;->addTlv(Ljava/nio/ByteBuffer;BLjava/net/InetAddress;)V
+    invoke-virtual {p0, p1, v0, v1}, Landroid/net/dhcp/DhcpPacket;->addTlv(Ljava/nio/ByteBuffer;BLjava/net/InetAddress;)V
 
     const/4 v0, 0x6
 
-    iget-object v1, p0, Landroid/net/dhcp/DhcpOfferPacket;->mDnsServers:Ljava/util/List;
+    iget-object v1, p0, Landroid/net/dhcp/DhcpPacket;->mDnsServers:Ljava/util/List;
 
-    invoke-virtual {p0, p1, v0, v1}, Landroid/net/dhcp/DhcpOfferPacket;->addTlv(Ljava/nio/ByteBuffer;BLjava/util/List;)V
+    invoke-virtual {p0, p1, v0, v1}, Landroid/net/dhcp/DhcpPacket;->addTlv(Ljava/nio/ByteBuffer;BLjava/util/List;)V
 
-    invoke-virtual {p0, p1}, Landroid/net/dhcp/DhcpOfferPacket;->addTlvEnd(Ljava/nio/ByteBuffer;)V
+    invoke-virtual {p0, p1}, Landroid/net/dhcp/DhcpPacket;->addTlvEnd(Ljava/nio/ByteBuffer;)V
 
     return-void
 .end method
@@ -217,11 +217,11 @@
     const-string v1, ", DNS servers: "
 
     .local v1, dnsServers:Ljava/lang/String;
-    iget-object v4, p0, Landroid/net/dhcp/DhcpOfferPacket;->mDnsServers:Ljava/util/List;
+    iget-object v4, p0, Landroid/net/dhcp/DhcpPacket;->mDnsServers:Ljava/util/List;
 
     if-eqz v4, :cond_0
 
-    iget-object v4, p0, Landroid/net/dhcp/DhcpOfferPacket;->mDnsServers:Ljava/util/List;
+    iget-object v4, p0, Landroid/net/dhcp/DhcpPacket;->mDnsServers:Ljava/util/List;
 
     invoke-interface {v4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -283,7 +283,7 @@
 
     move-result-object v4
 
-    iget-object v5, p0, Landroid/net/dhcp/DhcpOfferPacket;->mYourIp:Ljava/net/InetAddress;
+    iget-object v5, p0, Landroid/net/dhcp/DhcpPacket;->mYourIp:Ljava/net/InetAddress;
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -295,7 +295,7 @@
 
     move-result-object v4
 
-    iget-object v5, p0, Landroid/net/dhcp/DhcpOfferPacket;->mSubnetMask:Ljava/net/InetAddress;
+    iget-object v5, p0, Landroid/net/dhcp/DhcpPacket;->mSubnetMask:Ljava/net/InetAddress;
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -311,7 +311,7 @@
 
     move-result-object v4
 
-    iget-object v5, p0, Landroid/net/dhcp/DhcpOfferPacket;->mGateway:Ljava/net/InetAddress;
+    iget-object v5, p0, Landroid/net/dhcp/DhcpPacket;->mGateway:Ljava/net/InetAddress;
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -323,7 +323,7 @@
 
     move-result-object v4
 
-    iget-object v5, p0, Landroid/net/dhcp/DhcpOfferPacket;->mLeaseTime:Ljava/lang/Integer;
+    iget-object v5, p0, Landroid/net/dhcp/DhcpPacket;->mLeaseTime:Ljava/lang/Integer;
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -335,7 +335,7 @@
 
     move-result-object v4
 
-    iget-object v5, p0, Landroid/net/dhcp/DhcpOfferPacket;->mDomainName:Ljava/lang/String;
+    iget-object v5, p0, Landroid/net/dhcp/DhcpPacket;->mDomainName:Ljava/lang/String;
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

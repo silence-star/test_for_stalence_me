@@ -52,11 +52,11 @@
 
     const-string v1, "string"
 
-    invoke-virtual {p0, v1, v0}, Landroid/filterpacks/text/StringSource;->pushOutput(Ljava/lang/String;Landroid/filterfw/core/Frame;)V
+    invoke-virtual {p0, v1, v0}, Landroid/filterfw/core/Filter;->pushOutput(Ljava/lang/String;Landroid/filterfw/core/Frame;)V
 
     const-string v1, "string"
 
-    invoke-virtual {p0, v1}, Landroid/filterpacks/text/StringSource;->closeOutputPort(Ljava/lang/String;)V
+    invoke-virtual {p0, v1}, Landroid/filterfw/core/Filter;->closeOutputPort(Ljava/lang/String;)V
 
     return-void
 .end method
@@ -79,7 +79,7 @@
 
     iget-object v1, p0, Landroid/filterpacks/text/StringSource;->mOutputFormat:Landroid/filterfw/core/FrameFormat;
 
-    invoke-virtual {p0, v0, v1}, Landroid/filterpacks/text/StringSource;->addOutputPort(Ljava/lang/String;Landroid/filterfw/core/FrameFormat;)V
+    invoke-virtual {p0, v0, v1}, Landroid/filterfw/core/Filter;->addOutputPort(Ljava/lang/String;Landroid/filterfw/core/FrameFormat;)V
 
     return-void
 .end method

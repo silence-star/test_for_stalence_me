@@ -60,7 +60,7 @@
 
     const-string v0, "multipart/form-data"
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/http/multipart/MultipartEntity;->setContentType(Ljava/lang/String;)V
+    invoke-virtual {p0, v0}, Lorg/apache/http/entity/AbstractHttpEntity;->setContentType(Ljava/lang/String;)V
 
     if-nez p1, :cond_0
 

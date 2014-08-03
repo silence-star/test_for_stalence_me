@@ -63,7 +63,7 @@
     .prologue
     const/4 v3, 0x0
 
-    invoke-super {p0}, Landroid/database/AbstractWindowedCursor;->close()V
+    invoke-super {p0}, Landroid/database/AbstractCursor;->close()V
 
     iget-object v1, p0, Landroid/database/BulkCursorToCursorAdaptor;->mBulkCursor:Landroid/database/IBulkCursor;
 
@@ -113,7 +113,7 @@
     .locals 3
 
     .prologue
-    invoke-super {p0}, Landroid/database/AbstractWindowedCursor;->deactivate()V
+    invoke-super {p0}, Landroid/database/AbstractCursor;->deactivate()V
 
     iget-object v1, p0, Landroid/database/BulkCursorToCursorAdaptor;->mBulkCursor:Landroid/database/IBulkCursor;
 
@@ -199,7 +199,7 @@
     .prologue
     iget-object v0, p0, Landroid/database/BulkCursorToCursorAdaptor;->mObserverBridge:Landroid/database/AbstractCursor$SelfContentObserver;
 
-    invoke-virtual {v0}, Landroid/database/AbstractCursor$SelfContentObserver;->getContentObserver()Landroid/database/IContentObserver;
+    invoke-virtual {v0}, Landroid/database/ContentObserver;->getContentObserver()Landroid/database/IContentObserver;
 
     move-result-object v0
 
@@ -225,7 +225,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/database/BulkCursorToCursorAdaptor;->mRowIdColumnIndex:I
+    iput v0, p0, Landroid/database/AbstractCursor;->mRowIdColumnIndex:I
 
     iget-boolean v0, p1, Landroid/database/BulkCursorDescriptor;->wantsAllOnMoveCalls:Z
 
@@ -241,7 +241,7 @@
 
     iget-object v0, p1, Landroid/database/BulkCursorDescriptor;->window:Landroid/database/CursorWindow;
 
-    invoke-virtual {p0, v0}, Landroid/database/BulkCursorToCursorAdaptor;->setWindow(Landroid/database/CursorWindow;)V
+    invoke-virtual {p0, v0}, Landroid/database/AbstractWindowedCursor;->setWindow(Landroid/database/CursorWindow;)V
 
     :cond_0
     return-void
@@ -258,11 +258,11 @@
     invoke-direct {p0}, Landroid/database/BulkCursorToCursorAdaptor;->throwIfCursorIsClosed()V
 
     :try_start_0
-    iget-object v2, p0, Landroid/database/BulkCursorToCursorAdaptor;->mWindow:Landroid/database/CursorWindow;
+    iget-object v2, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
 
     if-eqz v2, :cond_0
 
-    iget-object v2, p0, Landroid/database/BulkCursorToCursorAdaptor;->mWindow:Landroid/database/CursorWindow;
+    iget-object v2, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
 
     invoke-virtual {v2}, Landroid/database/CursorWindow;->getStartPosition()I
 
@@ -270,13 +270,13 @@
 
     if-lt p2, v2, :cond_0
 
-    iget-object v2, p0, Landroid/database/BulkCursorToCursorAdaptor;->mWindow:Landroid/database/CursorWindow;
+    iget-object v2, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
 
     invoke-virtual {v2}, Landroid/database/CursorWindow;->getStartPosition()I
 
     move-result v2
 
-    iget-object v3, p0, Landroid/database/BulkCursorToCursorAdaptor;->mWindow:Landroid/database/CursorWindow;
+    iget-object v3, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
 
     invoke-virtual {v3}, Landroid/database/CursorWindow;->getNumRows()I
 
@@ -293,13 +293,13 @@
 
     move-result-object v2
 
-    invoke-virtual {p0, v2}, Landroid/database/BulkCursorToCursorAdaptor;->setWindow(Landroid/database/CursorWindow;)V
+    invoke-virtual {p0, v2}, Landroid/database/AbstractWindowedCursor;->setWindow(Landroid/database/CursorWindow;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     :cond_1
     :goto_0
-    iget-object v2, p0, Landroid/database/BulkCursorToCursorAdaptor;->mWindow:Landroid/database/CursorWindow;
+    iget-object v2, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
 
     if-nez v2, :cond_3
 
@@ -368,11 +368,11 @@
 
     const/4 v2, -0x1
 
-    iput v2, p0, Landroid/database/BulkCursorToCursorAdaptor;->mPos:I
+    iput v2, p0, Landroid/database/AbstractCursor;->mPos:I
 
-    invoke-virtual {p0}, Landroid/database/BulkCursorToCursorAdaptor;->closeWindow()V
+    invoke-virtual {p0}, Landroid/database/AbstractWindowedCursor;->closeWindow()V
 
-    invoke-super {p0}, Landroid/database/AbstractWindowedCursor;->requery()Z
+    invoke-super {p0}, Landroid/database/AbstractCursor;->requery()Z
 
     const/4 v1, 0x1
 
@@ -402,7 +402,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v4
 

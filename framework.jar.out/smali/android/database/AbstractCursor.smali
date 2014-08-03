@@ -163,7 +163,7 @@
 
     iget-object v0, p0, Landroid/database/AbstractCursor;->mContentObservable:Landroid/database/ContentObservable;
 
-    invoke-virtual {v0}, Landroid/database/ContentObservable;->unregisterAll()V
+    invoke-virtual {v0}, Landroid/database/Observable;->unregisterAll()V
 
     invoke-virtual {p0}, Landroid/database/AbstractCursor;->onDeactivateOrClose()V
 
@@ -962,7 +962,7 @@
     .prologue
     iget-object v0, p0, Landroid/database/AbstractCursor;->mDataSetObservable:Landroid/database/DataSetObservable;
 
-    invoke-virtual {v0, p1}, Landroid/database/DataSetObservable;->registerObserver(Ljava/lang/Object;)V
+    invoke-virtual {v0, p1}, Landroid/database/Observable;->registerObserver(Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -1112,7 +1112,7 @@
 
     iget-object v0, p0, Landroid/database/AbstractCursor;->mContentObservable:Landroid/database/ContentObservable;
 
-    invoke-virtual {v0, p1}, Landroid/database/ContentObservable;->unregisterObserver(Ljava/lang/Object;)V
+    invoke-virtual {v0, p1}, Landroid/database/Observable;->unregisterObserver(Ljava/lang/Object;)V
 
     :cond_0
     return-void
@@ -1125,7 +1125,7 @@
     .prologue
     iget-object v0, p0, Landroid/database/AbstractCursor;->mDataSetObservable:Landroid/database/DataSetObservable;
 
-    invoke-virtual {v0, p1}, Landroid/database/DataSetObservable;->unregisterObserver(Ljava/lang/Object;)V
+    invoke-virtual {v0, p1}, Landroid/database/Observable;->unregisterObserver(Ljava/lang/Object;)V
 
     return-void
 .end method

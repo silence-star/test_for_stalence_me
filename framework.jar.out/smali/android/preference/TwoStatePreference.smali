@@ -125,7 +125,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0, v1}, Landroid/preference/TwoStatePreference;->callChangeListener(Ljava/lang/Object;)Z
+    invoke-virtual {p0, v1}, Landroid/preference/Preference;->callChangeListener(Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -197,7 +197,7 @@
     check-cast v0, Landroid/preference/TwoStatePreference$SavedState;
 
     .local v0, myState:Landroid/preference/TwoStatePreference$SavedState;
-    invoke-virtual {v0}, Landroid/preference/TwoStatePreference$SavedState;->getSuperState()Landroid/os/Parcelable;
+    invoke-virtual {v0}, Landroid/view/AbsSavedState;->getSuperState()Landroid/os/Parcelable;
 
     move-result-object v1
 
@@ -219,7 +219,7 @@
     move-result-object v1
 
     .local v1, superState:Landroid/os/Parcelable;
-    invoke-virtual {p0}, Landroid/preference/TwoStatePreference;->isPersistent()Z
+    invoke-virtual {p0}, Landroid/preference/Preference;->isPersistent()Z
 
     move-result v2
 
@@ -257,7 +257,7 @@
 
     iget-boolean v0, p0, Landroid/preference/TwoStatePreference;->mChecked:Z
 
-    invoke-virtual {p0, v0}, Landroid/preference/TwoStatePreference;->getPersistedBoolean(Z)Z
+    invoke-virtual {p0, v0}, Landroid/preference/Preference;->getPersistedBoolean(Z)Z
 
     move-result v0
 
@@ -284,7 +284,7 @@
     .parameter "view"
 
     .prologue
-    invoke-virtual {p0}, Landroid/preference/TwoStatePreference;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/preference/Preference;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
@@ -353,7 +353,7 @@
 
     iput-boolean v1, p0, Landroid/preference/TwoStatePreference;->mCheckedSet:Z
 
-    invoke-virtual {p0, p1}, Landroid/preference/TwoStatePreference;->persistBoolean(Z)Z
+    invoke-virtual {p0, p1}, Landroid/preference/Preference;->persistBoolean(Z)Z
 
     if-eqz v0, :cond_1
 
@@ -361,9 +361,9 @@
 
     move-result v1
 
-    invoke-virtual {p0, v1}, Landroid/preference/TwoStatePreference;->notifyDependencyChange(Z)V
+    invoke-virtual {p0, v1}, Landroid/preference/Preference;->notifyDependencyChange(Z)V
 
-    invoke-virtual {p0}, Landroid/preference/TwoStatePreference;->notifyChanged()V
+    invoke-virtual {p0}, Landroid/preference/Preference;->notifyChanged()V
 
     :cond_1
     return-void
@@ -390,7 +390,7 @@
     .parameter "summaryResId"
 
     .prologue
-    invoke-virtual {p0}, Landroid/preference/TwoStatePreference;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/preference/Preference;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -416,7 +416,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-virtual {p0}, Landroid/preference/TwoStatePreference;->notifyChanged()V
+    invoke-virtual {p0}, Landroid/preference/Preference;->notifyChanged()V
 
     :cond_0
     return-void
@@ -427,7 +427,7 @@
     .parameter "summaryResId"
 
     .prologue
-    invoke-virtual {p0}, Landroid/preference/TwoStatePreference;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/preference/Preference;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -453,7 +453,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Landroid/preference/TwoStatePreference;->notifyChanged()V
+    invoke-virtual {p0}, Landroid/preference/Preference;->notifyChanged()V
 
     :cond_0
     return-void
@@ -546,7 +546,7 @@
     :goto_0
     if-eqz v3, :cond_1
 
-    invoke-virtual {p0}, Landroid/preference/TwoStatePreference;->getSummary()Ljava/lang/CharSequence;
+    invoke-virtual {p0}, Landroid/preference/Preference;->getSummary()Ljava/lang/CharSequence;
 
     move-result-object v1
 
@@ -571,13 +571,13 @@
     const/4 v0, 0x0
 
     :cond_2
-    invoke-virtual {v2}, Landroid/widget/TextView;->getVisibility()I
+    invoke-virtual {v2}, Landroid/view/View;->getVisibility()I
 
     move-result v4
 
     if-eq v0, v4, :cond_3
 
-    invoke-virtual {v2, v0}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v2, v0}, Landroid/view/View;->setVisibility(I)V
 
     .end local v0           #newVisibility:I
     .end local v3           #useDefaultSummary:Z

@@ -102,7 +102,7 @@
 
     const-string v0, "DEVPATH=/devices/virtual/switch/dock"
 
-    invoke-virtual {p0, v0}, Lcom/android/server/DockObserver;->startObserving(Ljava/lang/String;)V
+    invoke-virtual {p0, v0}, Landroid/os/UEventObserver;->startObserving(Ljava/lang/String;)V
 
     return-void
 .end method
@@ -390,7 +390,7 @@
     const/16 v6, 0x400
 
     :try_start_1
-    invoke-virtual {v2, v0, v4, v6}, Ljava/io/FileReader;->read([CII)I
+    invoke-virtual {v2, v0, v4, v6}, Ljava/io/InputStreamReader;->read([CII)I
 
     move-result v3
 
@@ -422,7 +422,7 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :try_start_2
-    invoke-virtual {v2}, Ljava/io/FileReader;->close()V
+    invoke-virtual {v2}, Ljava/io/InputStreamReader;->close()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
     .catch Ljava/io/FileNotFoundException; {:try_start_2 .. :try_end_2} :catch_0
@@ -445,7 +445,7 @@
     move-exception v4
 
     :try_start_4
-    invoke-virtual {v2}, Ljava/io/FileReader;->close()V
+    invoke-virtual {v2}, Ljava/io/InputStreamReader;->close()V
 
     throw v4
     :try_end_4

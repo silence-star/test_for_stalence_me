@@ -82,7 +82,7 @@
 
     invoke-direct {v2, v3}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    invoke-virtual {p0}, Lcom/android/server/am/ActivityManagerService$AThread;->getName()Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/Thread;->getName()Ljava/lang/String;
 
     move-result-object v3
 

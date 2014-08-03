@@ -330,12 +330,12 @@
 
     const/16 v9, 0x400
 
-    invoke-virtual {v3, v0, v7, v9}, Ljava/io/FileReader;->read([CII)I
+    invoke-virtual {v3, v0, v7, v9}, Ljava/io/InputStreamReader;->read([CII)I
 
     move-result v5
 
     .local v5, len:I
-    invoke-virtual {v3}, Ljava/io/FileReader;->close()V
+    invoke-virtual {v3}, Ljava/io/InputStreamReader;->close()V
 
     new-instance v7, Ljava/lang/String;
 
@@ -496,7 +496,7 @@
 
     move-result-object v7
 
-    invoke-virtual {p0, v7}, Lcom/android/server/WiredAccessoryManager$WiredAccessoryObserver;->startObserving(Ljava/lang/String;)V
+    invoke-virtual {p0, v7}, Landroid/os/UEventObserver;->startObserving(Ljava/lang/String;)V
 
     add-int/lit8 v4, v4, 0x1
 

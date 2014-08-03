@@ -509,7 +509,7 @@
     invoke-direct {v0, v1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
 
     .local v0, thread:Landroid/os/HandlerThread;
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
     new-instance v1, Landroid/os/Handler;
 
@@ -1206,11 +1206,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_miui
+    if-eqz v1, :cond_0
 
     return-void
 
-    :cond_miui
+    :cond_0
     invoke-direct/range {p0 .. p2}, Lcom/android/server/net/NetworkPolicyManagerService;->buildNotificationTag(Landroid/net/NetworkPolicy;I)Ljava/lang/String;
 
     move-result-object v4
@@ -1394,10 +1394,6 @@
 
     .restart local v16       #title:Ljava/lang/CharSequence;
     :goto_2
-    const/4 v1, 0x1
-
-    invoke-virtual {v10, v1}, Landroid/app/Notification$Builder;->setOngoing(Z)Landroid/app/Notification$Builder;
-
     const v1, 0x108061b
 
     invoke-virtual {v10, v1}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
@@ -1620,6 +1616,8 @@
     move-exception v1
 
     goto/16 :goto_1
+
+    nop
 
     nop
 
@@ -4256,7 +4254,7 @@
 
     new-array v5, v5, [Ljava/lang/String;
 
-    invoke-virtual {v4, v5}, Ljava/util/HashSet;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-virtual {v4, v5}, Ljava/util/AbstractCollection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v24
 
@@ -4291,7 +4289,7 @@
     .local v6, beforeNotifs:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mActiveNotifs:Ljava/util/HashSet;
 
-    invoke-virtual {v6, v0}, Ljava/util/HashSet;->addAll(Ljava/util/Collection;)Z
+    invoke-virtual {v6, v0}, Ljava/util/AbstractCollection;->addAll(Ljava/util/Collection;)Z
 
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mActiveNotifs:Ljava/util/HashSet;
 
@@ -5355,7 +5353,7 @@
 
     const-string v14, "Cleared snooze timestamps"
 
-    invoke-virtual {v5, v14}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v5, v14}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     monitor-exit v15
 
@@ -5366,17 +5364,17 @@
     :cond_2
     const-string v14, "Restrict background: "
 
-    invoke-virtual {v5, v14}, Lcom/android/internal/util/IndentingPrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {v5, v14}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     move-object/from16 v0, p0
 
     iget-boolean v14, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mRestrictBackground:Z
 
-    invoke-virtual {v5, v14}, Lcom/android/internal/util/IndentingPrintWriter;->println(Z)V
+    invoke-virtual {v5, v14}, Ljava/io/PrintWriter;->println(Z)V
 
     const-string v14, "Network policies:"
 
-    invoke-virtual {v5, v14}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v5, v14}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     invoke-virtual {v5}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()V
 
@@ -5411,7 +5409,7 @@
 
     move-result-object v14
 
-    invoke-virtual {v5, v14}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v5, v14}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     goto :goto_3
 
@@ -5421,7 +5419,7 @@
 
     const-string v14, "Policy for UIDs:"
 
-    invoke-virtual {v5, v14}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v5, v14}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     invoke-virtual {v5}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()V
 
@@ -5460,17 +5458,17 @@
     .local v10, policy:I
     const-string v14, "UID="
 
-    invoke-virtual {v5, v14}, Lcom/android/internal/util/IndentingPrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {v5, v14}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    invoke-virtual {v5, v13}, Lcom/android/internal/util/IndentingPrintWriter;->print(I)V
+    invoke-virtual {v5, v13}, Ljava/io/PrintWriter;->print(I)V
 
     const-string v14, " policy="
 
-    invoke-virtual {v5, v14}, Lcom/android/internal/util/IndentingPrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {v5, v14}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     invoke-static {v5, v10}, Landroid/net/NetworkPolicyManager;->dumpPolicy(Ljava/io/PrintWriter;I)V
 
-    invoke-virtual {v5}, Lcom/android/internal/util/IndentingPrintWriter;->println()V
+    invoke-virtual {v5}, Ljava/io/PrintWriter;->println()V
 
     add-int/lit8 v6, v6, 0x1
 
@@ -5500,7 +5498,7 @@
 
     const-string v14, "Status for known UIDs:"
 
-    invoke-virtual {v5, v14}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v5, v14}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     invoke-virtual {v5}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()V
 
@@ -5520,13 +5518,13 @@
     .restart local v13       #uid:I
     const-string v14, "UID="
 
-    invoke-virtual {v5, v14}, Lcom/android/internal/util/IndentingPrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {v5, v14}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    invoke-virtual {v5, v13}, Lcom/android/internal/util/IndentingPrintWriter;->print(I)V
+    invoke-virtual {v5, v13}, Ljava/io/PrintWriter;->print(I)V
 
     const-string v14, " foreground="
 
-    invoke-virtual {v5, v14}, Lcom/android/internal/util/IndentingPrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {v5, v14}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     move-object/from16 v0, p0
 
@@ -5541,12 +5539,12 @@
 
     const-string v14, "UNKNOWN"
 
-    invoke-virtual {v5, v14}, Lcom/android/internal/util/IndentingPrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {v5, v14}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     :goto_6
     const-string v14, " rules="
 
-    invoke-virtual {v5, v14}, Lcom/android/internal/util/IndentingPrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {v5, v14}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     move-object/from16 v0, p0
 
@@ -5561,10 +5559,10 @@
 
     const-string v14, "UNKNOWN"
 
-    invoke-virtual {v5, v14}, Lcom/android/internal/util/IndentingPrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {v5, v14}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     :goto_7
-    invoke-virtual {v5}, Lcom/android/internal/util/IndentingPrintWriter;->println()V
+    invoke-virtual {v5}, Ljava/io/PrintWriter;->println()V
 
     add-int/lit8 v6, v6, 0x1
 

@@ -44,7 +44,7 @@
 
     iget-object v0, p0, Lnubia/ui/widget/BezierView$1;->this$0:Lnubia/ui/widget/BezierView;
 
-    invoke-virtual {v0}, Lnubia/ui/widget/BezierView;->invalidate()V
+    invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
     return-void
 .end method

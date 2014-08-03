@@ -321,7 +321,7 @@
 
     iget-object v0, p0, Landroid/view/SurfaceView$4;->this$0:Landroid/view/SurfaceView;
 
-    invoke-virtual {v0}, Landroid/view/SurfaceView;->requestLayout()V
+    invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
 
     :cond_1
     return-void
@@ -424,7 +424,7 @@
 
     iget-object v0, p0, Landroid/view/SurfaceView$4;->this$0:Landroid/view/SurfaceView;
 
-    invoke-virtual {v0}, Landroid/view/SurfaceView;->requestLayout()V
+    invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
 
     :cond_1
     return-void

@@ -267,7 +267,7 @@
     invoke-direct/range {v0 .. v5}, Lcom/android/internal/widget/PasswordEntryKeyboard$LatinKey;-><init>(Landroid/content/res/Resources;Landroid/inputmethodservice/Keyboard$Row;IILandroid/content/res/XmlResourceParser;)V
 
     .local v0, key:Lcom/android/internal/widget/PasswordEntryKeyboard$LatinKey;
-    iget-object v1, v0, Lcom/android/internal/widget/PasswordEntryKeyboard$LatinKey;->codes:[I
+    iget-object v1, v0, Landroid/inputmethodservice/Keyboard$Key;->codes:[I
 
     aget v6, v1, v7
 
@@ -289,12 +289,12 @@
     :cond_0
     const-string v1, " "
 
-    iput-object v1, v0, Lcom/android/internal/widget/PasswordEntryKeyboard$LatinKey;->label:Ljava/lang/CharSequence;
+    iput-object v1, v0, Landroid/inputmethodservice/Keyboard$Key;->label:Ljava/lang/CharSequence;
 
     invoke-virtual {v0, v7}, Lcom/android/internal/widget/PasswordEntryKeyboard$LatinKey;->setEnabled(Z)V
 
     :cond_1
-    iget-object v1, v0, Lcom/android/internal/widget/PasswordEntryKeyboard$LatinKey;->codes:[I
+    iget-object v1, v0, Landroid/inputmethodservice/Keyboard$Key;->codes:[I
 
     aget v1, v1, v7
 
@@ -335,7 +335,7 @@
     const/4 v1, 0x0
 
     .local v1, i:I
-    invoke-virtual {p0}, Lcom/android/internal/widget/PasswordEntryKeyboard;->getShiftKeyIndices()[I
+    invoke-virtual {p0}, Landroid/inputmethodservice/Keyboard;->getShiftKeyIndices()[I
 
     move-result-object v0
 
@@ -362,7 +362,7 @@
 
     iget-object v6, p0, Lcom/android/internal/widget/PasswordEntryKeyboard;->mShiftKeys:[Landroid/inputmethodservice/Keyboard$Key;
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/PasswordEntryKeyboard;->getKeys()Ljava/util/List;
+    invoke-virtual {p0}, Landroid/inputmethodservice/Keyboard;->getKeys()Ljava/util/List;
 
     move-result-object v5
 

@@ -45,7 +45,7 @@
 
     invoke-direct {p0, p2, p3, p4}, Landroid/widget/CursorAdapter;-><init>(Landroid/content/Context;Landroid/database/Cursor;Z)V
 
-    invoke-virtual {p0}, Lcom/android/internal/app/AlertController$AlertParams$2;->getCursor()Landroid/database/Cursor;
+    invoke-virtual {p0}, Landroid/widget/CursorAdapter;->getCursor()Landroid/database/Cursor;
 
     move-result-object v0
 
@@ -99,7 +99,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v0, v2}, Landroid/widget/CheckedTextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     iget-object v2, p0, Lcom/android/internal/app/AlertController$AlertParams$2;->val$listView:Lcom/android/internal/app/AlertController$RecycleListView;
 
@@ -116,7 +116,7 @@
     if-ne v4, v1, :cond_0
 
     :goto_0
-    invoke-virtual {v2, v3, v1}, Lcom/android/internal/app/AlertController$RecycleListView;->setItemChecked(IZ)V
+    invoke-virtual {v2, v3, v1}, Landroid/widget/AbsListView;->setItemChecked(IZ)V
 
     return-void
 

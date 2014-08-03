@@ -357,7 +357,7 @@
     const/4 v1, 0x0
 
     .local v1, p:Lcom/android/internal/telephony/Phone;
-    iget-object v3, p0, Lcom/android/internal/telephony/ExtCallManager;->mPhones:Ljava/util/ArrayList;
+    iget-object v3, p0, Lcom/android/internal/telephony/CallManager;->mPhones:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -401,7 +401,7 @@
     const/4 v1, 0x0
 
     .local v1, count:I
-    iget-object v4, p0, Lcom/android/internal/telephony/ExtCallManager;->mBackgroundCalls:Ljava/util/ArrayList;
+    iget-object v4, p0, Lcom/android/internal/telephony/CallManager;->mBackgroundCalls:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -477,7 +477,7 @@
     const/4 v1, 0x0
 
     .local v1, count:I
-    iget-object v5, p0, Lcom/android/internal/telephony/ExtCallManager;->mRingingCalls:Ljava/util/ArrayList;
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager;->mRingingCalls:Ljava/util/ArrayList;
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -635,11 +635,11 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-object v4, p0, Lcom/android/internal/telephony/ExtCallManager;->mHandler:Lcom/android/internal/telephony/CallManager$CmHandler;
+    iget-object v4, p0, Lcom/android/internal/telephony/CallManager;->mHandler:Lcom/android/internal/telephony/CallManager$CmHandler;
 
     const/16 v5, 0xca
 
-    invoke-virtual {v4, v5}, Lcom/android/internal/telephony/CallManager$CmHandler;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {v4, v5}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v4
 
@@ -777,9 +777,9 @@
 
     if-ne v0, v5, :cond_0
 
-    iget-object v5, p0, Lcom/android/internal/telephony/ExtCallManager;->mDialString:Ljava/lang/String;
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager;->mDialString:Ljava/lang/String;
 
-    invoke-virtual {p0, v5}, Lcom/android/internal/telephony/ExtCallManager;->isExplicitCallTransferMMI(Ljava/lang/String;)Z
+    invoke-virtual {p0, v5}, Lcom/android/internal/telephony/CallManager;->isExplicitCallTransferMMI(Ljava/lang/String;)Z
 
     move-result v5
 
@@ -920,7 +920,7 @@
     .parameter "subscription"
 
     .prologue
-    iget-object v2, p0, Lcom/android/internal/telephony/ExtCallManager;->mPhones:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/android/internal/telephony/CallManager;->mPhones:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -995,7 +995,7 @@
 
     .restart local v0       #fgPhone:Lcom/android/internal/telephony/Phone;
     :cond_0
-    invoke-virtual {p0, p1}, Lcom/android/internal/telephony/ExtCallManager;->canConference(Lcom/android/internal/telephony/Call;)Z
+    invoke-virtual {p0, p1}, Lcom/android/internal/telephony/CallManager;->canConference(Lcom/android/internal/telephony/Call;)Z
 
     move-result v2
 
@@ -1042,7 +1042,7 @@
     move-result v4
 
     .local v4, subscription:I
-    iput-object p2, p0, Lcom/android/internal/telephony/ExtCallManager;->mDialString:Ljava/lang/String;
+    iput-object p2, p0, Lcom/android/internal/telephony/CallManager;->mDialString:Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/ExtCallManager;->canDial(Lcom/android/internal/telephony/Phone;)Z
 
@@ -1216,7 +1216,7 @@
     .parameter "subscription"
 
     .prologue
-    iget-object v2, p0, Lcom/android/internal/telephony/ExtCallManager;->mForegroundCalls:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/android/internal/telephony/CallManager;->mForegroundCalls:Ljava/util/ArrayList;
 
     invoke-direct {p0, v2, p1}, Lcom/android/internal/telephony/ExtCallManager;->getFirstNonIdleCall(Ljava/util/List;I)Lcom/android/internal/telephony/Call;
 
@@ -1326,7 +1326,7 @@
     return-object v1
 
     :cond_0
-    iget-object v1, p0, Lcom/android/internal/telephony/ExtCallManager;->mEmptyConnections:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/android/internal/telephony/CallManager;->mEmptyConnections:Ljava/util/ArrayList;
 
     goto :goto_0
 .end method
@@ -1376,7 +1376,7 @@
     return-object v1
 
     :cond_0
-    iget-object v1, p0, Lcom/android/internal/telephony/ExtCallManager;->mEmptyConnections:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/android/internal/telephony/CallManager;->mEmptyConnections:Ljava/util/ArrayList;
 
     goto :goto_0
 .end method
@@ -1462,7 +1462,7 @@
     return-object v0
 
     :cond_1
-    iget-object v2, p0, Lcom/android/internal/telephony/ExtCallManager;->mBackgroundCalls:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/android/internal/telephony/CallManager;->mBackgroundCalls:Ljava/util/ArrayList;
 
     invoke-direct {p0, v2, p1}, Lcom/android/internal/telephony/ExtCallManager;->getFirstNonIdleCall(Ljava/util/List;I)Lcom/android/internal/telephony/Call;
 
@@ -1511,7 +1511,7 @@
     move-result-object v1
 
     .local v1, phone:Lcom/android/internal/telephony/Phone;
-    iget-object v2, p0, Lcom/android/internal/telephony/ExtCallManager;->mRingingCalls:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/android/internal/telephony/CallManager;->mRingingCalls:Ljava/util/ArrayList;
 
     invoke-direct {p0, v2, p1}, Lcom/android/internal/telephony/ExtCallManager;->getFirstNonIdleCall(Ljava/util/List;I)Lcom/android/internal/telephony/Call;
 
@@ -1764,7 +1764,7 @@
     const/4 v2, 0x1
 
     .local v2, resultState:I
-    iget-object v4, p0, Lcom/android/internal/telephony/ExtCallManager;->mPhones:Ljava/util/ArrayList;
+    iget-object v4, p0, Lcom/android/internal/telephony/CallManager;->mPhones:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -1859,7 +1859,7 @@
     sget-object v2, Lcom/android/internal/telephony/PhoneConstants$State;->IDLE:Lcom/android/internal/telephony/PhoneConstants$State;
 
     .local v2, s:Lcom/android/internal/telephony/PhoneConstants$State;
-    iget-object v3, p0, Lcom/android/internal/telephony/ExtCallManager;->mPhones:Ljava/util/ArrayList;
+    iget-object v3, p0, Lcom/android/internal/telephony/CallManager;->mPhones:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -1941,7 +1941,7 @@
     .parameter "subscription"
 
     .prologue
-    iget-object v0, p0, Lcom/android/internal/telephony/ExtCallManager;->mBackgroundCalls:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/internal/telephony/CallManager;->mBackgroundCalls:Ljava/util/ArrayList;
 
     invoke-direct {p0, v0, p1}, Lcom/android/internal/telephony/ExtCallManager;->getFirstActiveCall(Ljava/util/ArrayList;I)Lcom/android/internal/telephony/Call;
 
@@ -1980,7 +1980,7 @@
     .parameter "subscription"
 
     .prologue
-    iget-object v0, p0, Lcom/android/internal/telephony/ExtCallManager;->mForegroundCalls:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/internal/telephony/CallManager;->mForegroundCalls:Ljava/util/ArrayList;
 
     invoke-direct {p0, v0, p1}, Lcom/android/internal/telephony/ExtCallManager;->getFirstActiveCall(Ljava/util/ArrayList;I)Lcom/android/internal/telephony/Call;
 
@@ -2030,7 +2030,7 @@
     .parameter "subscription"
 
     .prologue
-    iget-object v0, p0, Lcom/android/internal/telephony/ExtCallManager;->mRingingCalls:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/internal/telephony/CallManager;->mRingingCalls:Ljava/util/ArrayList;
 
     invoke-direct {p0, v0, p1}, Lcom/android/internal/telephony/ExtCallManager;->getFirstActiveCall(Ljava/util/ArrayList;I)Lcom/android/internal/telephony/Call;
 
@@ -2065,7 +2065,7 @@
     .parameter "subscription"
 
     .prologue
-    iget-object v0, p0, Lcom/android/internal/telephony/ExtCallManager;->mBackgroundCalls:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/internal/telephony/CallManager;->mBackgroundCalls:Ljava/util/ArrayList;
 
     sget-object v1, Lcom/android/internal/telephony/Call$State;->DISCONNECTED:Lcom/android/internal/telephony/Call$State;
 
@@ -2091,7 +2091,7 @@
     .parameter "subscription"
 
     .prologue
-    iget-object v0, p0, Lcom/android/internal/telephony/ExtCallManager;->mForegroundCalls:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/internal/telephony/CallManager;->mForegroundCalls:Ljava/util/ArrayList;
 
     sget-object v1, Lcom/android/internal/telephony/Call$State;->DISCONNECTED:Lcom/android/internal/telephony/Call$State;
 
@@ -2116,7 +2116,7 @@
     .locals 1
 
     .prologue
-    iget-object v0, p0, Lcom/android/internal/telephony/ExtCallManager;->mHandler:Lcom/android/internal/telephony/CallManager$CmHandler;
+    iget-object v0, p0, Lcom/android/internal/telephony/CallManager;->mHandler:Lcom/android/internal/telephony/CallManager$CmHandler;
 
     if-nez v0, :cond_0
 
@@ -2124,7 +2124,7 @@
 
     invoke-direct {v0, p0}, Lcom/android/internal/telephony/ExtCallManager$ExtCmHandler;-><init>(Lcom/android/internal/telephony/ExtCallManager;)V
 
-    iput-object v0, p0, Lcom/android/internal/telephony/ExtCallManager;->mHandler:Lcom/android/internal/telephony/CallManager$CmHandler;
+    iput-object v0, p0, Lcom/android/internal/telephony/CallManager;->mHandler:Lcom/android/internal/telephony/CallManager$CmHandler;
 
     :cond_0
     return-void
@@ -2154,7 +2154,7 @@
     move-result v1
 
     .local v1, retVal:Z
-    invoke-virtual {p0}, Lcom/android/internal/telephony/ExtCallManager;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Lcom/android/internal/telephony/CallManager;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -2272,7 +2272,7 @@
 
     move-result-object v7
 
-    invoke-virtual {v7}, Lcom/android/internal/telephony/PhoneConstants$State;->ordinal()I
+    invoke-virtual {v7}, Ljava/lang/Enum;->ordinal()I
 
     move-result v7
 
@@ -2339,7 +2339,7 @@
     invoke-virtual {v6, v8, v8}, Landroid/media/AudioManager;->requestAudioFocusForCall(II)V
 
     :cond_2
-    iget-boolean v6, p0, Lcom/android/internal/telephony/ExtCallManager;->mSpeedUpAudioForMtCall:Z
+    iget-boolean v6, p0, Lcom/android/internal/telephony/CallManager;->mSpeedUpAudioForMtCall:Z
 
     if-nez v6, :cond_3
 
@@ -2354,7 +2354,7 @@
     invoke-virtual {v6, v10}, Landroid/media/AudioManager;->setMode(I)V
 
     :cond_3
-    iget-boolean v6, p0, Lcom/android/internal/telephony/ExtCallManager;->mSpeedUpAudioForMtCall:Z
+    iget-boolean v6, p0, Lcom/android/internal/telephony/CallManager;->mSpeedUpAudioForMtCall:Z
 
     if-eqz v6, :cond_1
 
@@ -2395,7 +2395,7 @@
     goto :goto_2
 
     :cond_4
-    invoke-virtual {p0}, Lcom/android/internal/telephony/ExtCallManager;->getFgPhone()Lcom/android/internal/telephony/Phone;
+    invoke-virtual {p0}, Lcom/android/internal/telephony/CallManager;->getFgPhone()Lcom/android/internal/telephony/Phone;
 
     move-result-object v4
 
@@ -2425,7 +2425,7 @@
     .local v1, currMode:I
     if-ne v1, v3, :cond_6
 
-    iget-boolean v6, p0, Lcom/android/internal/telephony/ExtCallManager;->mSpeedUpAudioForMtCall:Z
+    iget-boolean v6, p0, Lcom/android/internal/telephony/CallManager;->mSpeedUpAudioForMtCall:Z
 
     if-eqz v6, :cond_7
 
@@ -2471,7 +2471,7 @@
     invoke-virtual {v6, v3}, Landroid/media/AudioManager;->setMode(I)V
 
     :cond_7
-    iput-boolean v9, p0, Lcom/android/internal/telephony/ExtCallManager;->mSpeedUpAudioForMtCall:Z
+    iput-boolean v9, p0, Lcom/android/internal/telephony/CallManager;->mSpeedUpAudioForMtCall:Z
 
     goto/16 :goto_1
 
@@ -2525,7 +2525,7 @@
 
     .end local v5           #sub:I
     :cond_9
-    iput-boolean v9, p0, Lcom/android/internal/telephony/ExtCallManager;->mSpeedUpAudioForMtCall:Z
+    iput-boolean v9, p0, Lcom/android/internal/telephony/CallManager;->mSpeedUpAudioForMtCall:Z
 
     goto/16 :goto_1
 
@@ -2797,7 +2797,7 @@
 
     .end local v1           #call:Lcom/android/internal/telephony/Call;
     :cond_0
-    invoke-virtual {p0}, Lcom/android/internal/telephony/ExtCallManager;->getAllPhones()Ljava/util/List;
+    invoke-virtual {p0}, Lcom/android/internal/telephony/CallManager;->getAllPhones()Ljava/util/List;
 
     move-result-object v5
 
@@ -3027,11 +3027,11 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-object v2, p0, Lcom/android/internal/telephony/ExtCallManager;->mHandler:Lcom/android/internal/telephony/CallManager$CmHandler;
+    iget-object v2, p0, Lcom/android/internal/telephony/CallManager;->mHandler:Lcom/android/internal/telephony/CallManager$CmHandler;
 
     const/16 v3, 0xca
 
-    invoke-virtual {v2, v3}, Lcom/android/internal/telephony/CallManager$CmHandler;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {v2, v3}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v2
 

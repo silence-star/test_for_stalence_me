@@ -599,7 +599,7 @@
 
     invoke-virtual {v0, v13, v4, v2}, Lcom/android/server/IntentResolver;->dumpFilter(Ljava/io/PrintWriter;Ljava/lang/String;Landroid/content/IntentFilter;)V
 
-    invoke-virtual {v13}, Ljava/io/PrintWriter;->flush()V
+    invoke-virtual {v13}, Lcom/android/internal/util/FastPrintWriter;->flush()V
 
     const-string v4, "    "
 

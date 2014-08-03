@@ -36,9 +36,9 @@
 
     move-result v3
 
-    iput v3, p0, Landroid/view/GLES20RenderLayer;->mLayer:I
+    iput v3, p0, Landroid/view/GLES20Layer;->mLayer:I
 
-    iget v3, p0, Landroid/view/GLES20RenderLayer;->mLayer:I
+    iget v3, p0, Landroid/view/GLES20Layer;->mLayer:I
 
     if-eqz v3, :cond_1
 
@@ -52,7 +52,7 @@
 
     new-instance v3, Landroid/view/GLES20Canvas;
 
-    iget v4, p0, Landroid/view/GLES20RenderLayer;->mLayer:I
+    iget v4, p0, Landroid/view/GLES20Layer;->mLayer:I
 
     if-nez p3, :cond_0
 
@@ -63,11 +63,11 @@
 
     new-instance v1, Landroid/view/GLES20Layer$Finalizer;
 
-    iget v2, p0, Landroid/view/GLES20RenderLayer;->mLayer:I
+    iget v2, p0, Landroid/view/GLES20Layer;->mLayer:I
 
     invoke-direct {v1, v2}, Landroid/view/GLES20Layer$Finalizer;-><init>(I)V
 
-    iput-object v1, p0, Landroid/view/GLES20RenderLayer;->mFinalizer:Landroid/view/GLES20Layer$Finalizer;
+    iput-object v1, p0, Landroid/view/GLES20Layer;->mFinalizer:Landroid/view/GLES20Layer$Finalizer;
 
     :goto_1
     return-void
@@ -80,7 +80,7 @@
     :cond_1
     iput-object v4, p0, Landroid/view/GLES20RenderLayer;->mCanvas:Landroid/view/GLES20Canvas;
 
-    iput-object v4, p0, Landroid/view/GLES20RenderLayer;->mFinalizer:Landroid/view/GLES20Layer$Finalizer;
+    iput-object v4, p0, Landroid/view/GLES20Layer;->mFinalizer:Landroid/view/GLES20Layer$Finalizer;
 
     goto :goto_1
 .end method
@@ -128,7 +128,7 @@
     .locals 1
 
     .prologue
-    iget v0, p0, Landroid/view/GLES20RenderLayer;->mLayer:I
+    iget v0, p0, Landroid/view/GLES20Layer;->mLayer:I
 
     if-eqz v0, :cond_0
 
@@ -157,7 +157,7 @@
     .parameter "dirtyRect"
 
     .prologue
-    iget v0, p0, Landroid/view/GLES20RenderLayer;->mLayer:I
+    iget v0, p0, Landroid/view/GLES20Layer;->mLayer:I
 
     iget-object v1, p0, Landroid/view/GLES20RenderLayer;->mCanvas:Landroid/view/GLES20Canvas;
 
@@ -208,9 +208,9 @@
     return v1
 
     :cond_1
-    iput p1, p0, Landroid/view/GLES20RenderLayer;->mWidth:I
+    iput p1, p0, Landroid/view/HardwareLayer;->mWidth:I
 
-    iput p2, p0, Landroid/view/GLES20RenderLayer;->mHeight:I
+    iput p2, p0, Landroid/view/HardwareLayer;->mHeight:I
 
     iget v2, p0, Landroid/view/GLES20RenderLayer;->mLayerWidth:I
 
@@ -226,7 +226,7 @@
     new-array v0, v2, [I
 
     .local v0, layerInfo:[I
-    iget v2, p0, Landroid/view/GLES20RenderLayer;->mLayer:I
+    iget v2, p0, Landroid/view/GLES20Layer;->mLayer:I
 
     invoke-static {v2, p1, p2, v0}, Landroid/view/GLES20Canvas;->nResizeLayer(III[I)Z
 
@@ -255,7 +255,7 @@
 
     .restart local v0       #layerInfo:[I
     :cond_4
-    iput v1, p0, Landroid/view/GLES20RenderLayer;->mLayer:I
+    iput v1, p0, Landroid/view/GLES20Layer;->mLayer:I
 
     iput v1, p0, Landroid/view/GLES20RenderLayer;->mLayerWidth:I
 
@@ -269,9 +269,9 @@
     .parameter "isOpaque"
 
     .prologue
-    iput-boolean p1, p0, Landroid/view/GLES20RenderLayer;->mOpaque:Z
+    iput-boolean p1, p0, Landroid/view/HardwareLayer;->mOpaque:Z
 
-    iget v0, p0, Landroid/view/GLES20RenderLayer;->mLayer:I
+    iget v0, p0, Landroid/view/GLES20Layer;->mLayer:I
 
     invoke-static {v0, p1}, Landroid/view/GLES20Canvas;->nSetOpaqueLayer(IZ)V
 
@@ -321,11 +321,11 @@
     move-result-object v0
 
     .local v0, canvas:Landroid/view/HardwareCanvas;
-    iget v1, p0, Landroid/view/GLES20RenderLayer;->mWidth:I
+    iget v1, p0, Landroid/view/HardwareLayer;->mWidth:I
 
-    iget v2, p0, Landroid/view/GLES20RenderLayer;->mHeight:I
+    iget v2, p0, Landroid/view/HardwareLayer;->mHeight:I
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/HardwareCanvas;->setViewport(II)V
+    invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->setViewport(II)V
 
     invoke-virtual {v0, p2}, Landroid/view/HardwareCanvas;->onPreDraw(Landroid/graphics/Rect;)I
 

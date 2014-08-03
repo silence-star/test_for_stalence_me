@@ -129,7 +129,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Landroid/media/videoeditor/TransitionAlpha;->mNativeHelper:Landroid/media/videoeditor/MediaArtistNativeHelper;
+    iget-object v5, v0, Landroid/media/videoeditor/Transition;->mNativeHelper:Landroid/media/videoeditor/MediaArtistNativeHelper;
 
     invoke-virtual {v5}, Landroid/media/videoeditor/MediaArtistNativeHelper;->getProjectPath()Ljava/lang/String;
 
@@ -275,7 +275,7 @@
     invoke-virtual {v0, v3, v4, v5}, Ljava/nio/IntBuffer;->put([III)Ljava/nio/IntBuffer;
 
     :try_start_1
-    invoke-virtual {v13, v10}, Ljava/io/DataOutputStream;->write([B)V
+    invoke-virtual {v13, v10}, Ljava/io/OutputStream;->write([B)V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 

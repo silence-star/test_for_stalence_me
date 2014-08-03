@@ -184,7 +184,7 @@
 
     const-string v1, "location"
 
-    invoke-virtual {p0, v1}, Lcom/android/internal/app/NetInitiatedActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0, v1}, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -241,7 +241,7 @@
     invoke-direct {p0, v0}, Lcom/android/internal/app/NetInitiatedActivity;->sendUserResponse(I)V
 
     :cond_1
-    invoke-virtual {p0}, Lcom/android/internal/app/NetInitiatedActivity;->finish()V
+    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
 
     iput v1, p0, Lcom/android/internal/app/NetInitiatedActivity;->notificationId:I
 
@@ -259,15 +259,15 @@
 
     invoke-super {p0, p1}, Lcom/android/internal/app/AlertActivity;->onCreate(Landroid/os/Bundle;)V
 
-    invoke-virtual {p0}, Lcom/android/internal/app/NetInitiatedActivity;->getIntent()Landroid/content/Intent;
+    invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
     move-result-object v1
 
     .local v1, intent:Landroid/content/Intent;
-    iget-object v2, p0, Lcom/android/internal/app/NetInitiatedActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
+    iget-object v2, p0, Lcom/android/internal/app/AlertActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
     .local v2, p:Lcom/android/internal/app/AlertController$AlertParams;
-    invoke-virtual {p0}, Lcom/android/internal/app/NetInitiatedActivity;->getApplicationContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -416,7 +416,7 @@
 
     invoke-virtual {v3, v4, v5, v6}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    invoke-virtual {p0}, Lcom/android/internal/app/NetInitiatedActivity;->setupAlert()V
+    invoke-virtual {p0}, Lcom/android/internal/app/AlertActivity;->setupAlert()V
 
     return-void
 .end method
@@ -425,7 +425,7 @@
     .locals 2
 
     .prologue
-    invoke-super {p0}, Lcom/android/internal/app/AlertActivity;->onPause()V
+    invoke-super {p0}, Landroid/app/Activity;->onPause()V
 
     const-string v0, "NetInitiatedActivity"
 
@@ -435,7 +435,7 @@
 
     iget-object v0, p0, Lcom/android/internal/app/NetInitiatedActivity;->mNetInitiatedReceiver:Landroid/content/BroadcastReceiver;
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/app/NetInitiatedActivity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+    invoke-virtual {p0, v0}, Landroid/content/ContextWrapper;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
     return-void
 .end method
@@ -444,7 +444,7 @@
     .locals 3
 
     .prologue
-    invoke-super {p0}, Lcom/android/internal/app/AlertActivity;->onResume()V
+    invoke-super {p0}, Landroid/app/Activity;->onResume()V
 
     const-string v0, "NetInitiatedActivity"
 
@@ -460,7 +460,7 @@
 
     invoke-direct {v1, v2}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p0, v0, v1}, Lcom/android/internal/app/NetInitiatedActivity;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+    invoke-virtual {p0, v0, v1}, Landroid/content/ContextWrapper;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
     return-void
 .end method

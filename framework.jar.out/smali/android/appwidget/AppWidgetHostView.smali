@@ -122,7 +122,7 @@
 
     const/4 v0, 0x1
 
-    invoke-virtual {p0, v0}, Landroid/appwidget/AppWidgetHostView;->setIsRootNamespace(Z)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setIsRootNamespace(Z)V
 
     return-void
 .end method
@@ -148,7 +148,7 @@
     .locals 2
 
     .prologue
-    invoke-virtual {p0}, Landroid/appwidget/AppWidgetHostView;->getId()I
+    invoke-virtual {p0}, Landroid/view/View;->getId()I
 
     move-result v0
 
@@ -386,7 +386,7 @@
     .restart local v1       #jail:Landroid/appwidget/AppWidgetHostView$ParcelableSparseArray;
     :cond_1
     :try_start_0
-    invoke-super {p0, v1}, Landroid/widget/FrameLayout;->dispatchRestoreInstanceState(Landroid/util/SparseArray;)V
+    invoke-super {p0, v1}, Landroid/view/ViewGroup;->dispatchRestoreInstanceState(Landroid/util/SparseArray;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -470,7 +470,7 @@
     invoke-direct {v0, v1}, Landroid/appwidget/AppWidgetHostView$ParcelableSparseArray;-><init>(Landroid/appwidget/AppWidgetHostView$1;)V
 
     .local v0, jail:Landroid/appwidget/AppWidgetHostView$ParcelableSparseArray;
-    invoke-super {p0, v0}, Landroid/widget/FrameLayout;->dispatchSaveInstanceState(Landroid/util/SparseArray;)V
+    invoke-super {p0, v0}, Landroid/view/ViewGroup;->dispatchSaveInstanceState(Landroid/util/SparseArray;)V
 
     invoke-direct {p0}, Landroid/appwidget/AppWidgetHostView;->generateId()I
 
@@ -488,7 +488,7 @@
     .parameter "drawingTime"
 
     .prologue
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/view/ViewGroup;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
     move-result v0
 
@@ -694,7 +694,7 @@
 
     move-result-object v11
 
-    invoke-virtual {v3}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object v12
 
@@ -791,7 +791,7 @@
 
     move-result v1
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setBackgroundColor(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundColor(I)V
 
     return-object v0
 .end method
@@ -895,11 +895,11 @@
 
     iget v4, v0, Landroid/graphics/Rect;->bottom:I
 
-    invoke-virtual {p0, v1, v2, v3, v4}, Landroid/appwidget/AppWidgetHostView;->setPadding(IIII)V
+    invoke-virtual {p0, v1, v2, v3, v4}, Landroid/view/View;->setPadding(IIII)V
 
     iget-object v1, p2, Landroid/appwidget/AppWidgetProviderInfo;->label:Ljava/lang/String;
 
-    invoke-virtual {p0, v1}, Landroid/appwidget/AppWidgetHostView;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v1}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
 
     .end local v0           #padding:Landroid/graphics/Rect;
     :cond_0
@@ -993,7 +993,7 @@
 
     invoke-virtual {p0, v0}, Landroid/appwidget/AppWidgetHostView;->prepareView(Landroid/view/View;)V
 
-    invoke-virtual {p0, v0}, Landroid/appwidget/AppWidgetHostView;->addView(Landroid/view/View;)V
+    invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     :cond_3
     iget-object v5, p0, Landroid/appwidget/AppWidgetHostView;->mView:Landroid/view/View;
@@ -1002,7 +1002,7 @@
 
     iget-object v5, p0, Landroid/appwidget/AppWidgetHostView;->mView:Landroid/view/View;
 
-    invoke-virtual {p0, v5}, Landroid/appwidget/AppWidgetHostView;->removeView(Landroid/view/View;)V
+    invoke-virtual {p0, v5}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
     iput-object v0, p0, Landroid/appwidget/AppWidgetHostView;->mView:Landroid/view/View;
 
@@ -1169,7 +1169,7 @@
     move-result-object v7
 
     :cond_1
-    invoke-virtual {p0}, Landroid/appwidget/AppWidgetHostView;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v11
 
@@ -1342,7 +1342,7 @@
     .parameter "viewId"
 
     .prologue
-    invoke-virtual {p0, p1}, Landroid/appwidget/AppWidgetHostView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v3
 

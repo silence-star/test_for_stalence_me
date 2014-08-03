@@ -40,9 +40,9 @@
 
     move-result v1
 
-    iput v1, p0, Landroid/graphics/BitmapShader;->native_instance:I
+    iput v1, p0, Landroid/graphics/Shader;->native_instance:I
 
-    iget v1, p0, Landroid/graphics/BitmapShader;->native_instance:I
+    iget v1, p0, Landroid/graphics/Shader;->native_instance:I
 
     iget v2, p2, Landroid/graphics/Shader$TileMode;->nativeInt:I
 
@@ -52,7 +52,7 @@
 
     move-result v1
 
-    iput v1, p0, Landroid/graphics/BitmapShader;->native_shader:I
+    iput v1, p0, Landroid/graphics/Shader;->native_shader:I
 
     return-void
 .end method
@@ -80,7 +80,7 @@
     invoke-direct {v0, v1, v2, v3}, Landroid/graphics/BitmapShader;-><init>(Landroid/graphics/Bitmap;Landroid/graphics/Shader$TileMode;Landroid/graphics/Shader$TileMode;)V
 
     .local v0, copy:Landroid/graphics/BitmapShader;
-    invoke-virtual {p0, v0}, Landroid/graphics/BitmapShader;->copyLocalMatrix(Landroid/graphics/Shader;)V
+    invoke-virtual {p0, v0}, Landroid/graphics/Shader;->copyLocalMatrix(Landroid/graphics/Shader;)V
 
     return-object v0
 .end method

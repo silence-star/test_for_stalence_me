@@ -83,7 +83,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayDevice;->this$0:Lcom/android/server/display/nubiaOverlayDisplayAdapter;
 
-    invoke-virtual {v0}, Lcom/android/server/display/nubiaOverlayDisplayAdapter;->sendTraversalRequestLocked()V
+    invoke-virtual {v0}, Lcom/android/server/display/DisplayAdapter;->sendTraversalRequestLocked()V
 
     return-void
 .end method
@@ -230,14 +230,14 @@
     :cond_0
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayDevice;->mSurface:Landroid/view/Surface;
 
-    invoke-virtual {p0, v0}, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayDevice;->setSurfaceInTransactionLocked(Landroid/view/Surface;)V
+    invoke-virtual {p0, v0}, Lcom/android/server/display/DisplayDevice;->setSurfaceInTransactionLocked(Landroid/view/Surface;)V
 
     :cond_1
     :goto_0
     return-void
 
     :cond_2
-    invoke-virtual {p0, v2}, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayDevice;->setSurfaceInTransactionLocked(Landroid/view/Surface;)V
+    invoke-virtual {p0, v2}, Lcom/android/server/display/DisplayDevice;->setSurfaceInTransactionLocked(Landroid/view/Surface;)V
 
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayDevice;->mSurface:Landroid/view/Surface;
 
