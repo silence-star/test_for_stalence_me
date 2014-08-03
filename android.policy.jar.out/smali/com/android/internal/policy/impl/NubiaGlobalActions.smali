@@ -1167,7 +1167,7 @@
 
     iget-object v3, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions;->mDialog:Lcom/android/internal/policy/impl/NubiaGlobalActions$GlobalActionsDialog;
 
-    invoke-virtual {v3}, Lcom/android/internal/policy/impl/NubiaGlobalActions$GlobalActionsDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {v3}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v3
 
@@ -1182,7 +1182,7 @@
 
     iget-object v3, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions;->mDialog:Lcom/android/internal/policy/impl/NubiaGlobalActions$GlobalActionsDialog;
 
-    invoke-virtual {v3}, Lcom/android/internal/policy/impl/NubiaGlobalActions$GlobalActionsDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {v3}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v3
 
@@ -1226,11 +1226,11 @@
 
     iget-object v3, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions;->mDialog:Lcom/android/internal/policy/impl/NubiaGlobalActions$GlobalActionsDialog;
 
-    invoke-virtual {v3}, Lcom/android/internal/policy/impl/NubiaGlobalActions$GlobalActionsDialog;->show()V
+    invoke-virtual {v3}, Landroid/app/Dialog;->show()V
 
     iget-object v3, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions;->mDialog:Lcom/android/internal/policy/impl/NubiaGlobalActions$GlobalActionsDialog;
 
-    invoke-virtual {v3}, Lcom/android/internal/policy/impl/NubiaGlobalActions$GlobalActionsDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {v3}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v3
 

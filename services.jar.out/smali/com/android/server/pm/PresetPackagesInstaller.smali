@@ -407,7 +407,7 @@
 
     new-array v2, v2, [Ljava/lang/Void;
 
-    invoke-virtual {v1, v2}, Lcom/android/server/pm/PresetPackagesInstaller$InstallTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v1, v2}, Landroid/os/AsyncTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
     goto :goto_0
 .end method

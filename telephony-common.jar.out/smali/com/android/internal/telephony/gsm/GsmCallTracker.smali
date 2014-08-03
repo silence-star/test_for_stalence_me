@@ -3305,7 +3305,7 @@
 
     if-ne p1, v0, :cond_3
 
-    invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/GsmCall;->isDialingOrAlerting()Z
+    invoke-virtual {p1}, Lcom/android/internal/telephony/Call;->isDialingOrAlerting()Z
 
     move-result v0
 

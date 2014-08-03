@@ -13609,7 +13609,7 @@
 
     if-ne v0, v1, :cond_0
 
-    invoke-virtual {v13}, Ljava/io/FileReader;->close()V
+    invoke-virtual {v13}, Ljava/io/InputStreamReader;->close()V
     :try_end_1
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_2

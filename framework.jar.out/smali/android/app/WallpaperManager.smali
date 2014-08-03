@@ -2300,7 +2300,7 @@
     :goto_1
     if-eqz v1, :cond_2
 
-    invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
+    invoke-virtual {v1}, Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;->close()V
 
     :cond_2
     throw v6
@@ -2449,7 +2449,7 @@
     :goto_1
     if-eqz v1, :cond_3
 
-    invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
+    invoke-virtual {v1}, Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;->close()V
 
     :cond_3
     throw v4
@@ -2565,7 +2565,7 @@
     :goto_1
     if-eqz v1, :cond_3
 
-    invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
+    invoke-virtual {v1}, Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;->close()V
 
     :cond_3
     throw v3
